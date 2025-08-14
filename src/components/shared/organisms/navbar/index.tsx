@@ -23,9 +23,11 @@ const Navbar = () => {
           </nav>
         </div>
         <div className="ml-auto">
-          <Button className="px-4.5 py-3 hidden md:flex gradient">
-            Apply to be an Early Tester
-          </Button>
+          <Link href="/apply">
+            <Button className="px-4.5 py-3 hidden md:flex gradient">
+              Apply to be an Early Tester
+            </Button>
+          </Link>
           <button className="md:hidden size-12 border border-transparent flex items-center justify-center">
             {JamMenu}
           </button>

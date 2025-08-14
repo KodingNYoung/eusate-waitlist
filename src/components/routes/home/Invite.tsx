@@ -4,6 +4,7 @@ import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import React from "react";
 import BenefitAutoScroller from "./BenefitAutoscroller";
+import Link from "next/link";
 
 const Invite = () => {
   return (
@@ -37,15 +38,17 @@ const Invite = () => {
           Join hundreds of forward-thinking businesses already testing Eusate.
           Applications are reviewed within 24 hours.
         </Typography>
-        <Button
-          classNames={{
-            root: "gradient py-4.5 px-7",
-            label: "text-semibold-sm",
-          }}
-          endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
-        >
-          Apply Now - It’s Free!
-        </Button>
+        <Link href="/apply">
+          <Button
+            classNames={{
+              root: "gradient py-4.5 px-7",
+              label: "text-semibold-sm",
+            }}
+            endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
+          >
+            Apply Now - It’s Free!
+          </Button>
+        </Link>
         <BenefitAutoScroller />
       </div>
     </section>

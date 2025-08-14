@@ -5,6 +5,7 @@ import Button from "@/components/shared/molecules/Button";
 import React from "react";
 import BenefitAutoScroller from "../BenefitAutoscroller";
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeHero = () => {
   return (
@@ -41,17 +42,19 @@ const HomeHero = () => {
             future of customer service.
           </Typography>
           <div className="my-10">
-            <Button
-              classNames={{
-                root: "gradient py-4.5 px-7",
-                label: "text-semibold-sm",
-              }}
-              endContent={
-                <span className="stroke-white">{ArrowRightIcon}</span>
-              }
-            >
-              Apply to be an Early Tester
-            </Button>
+            <Link href="/apply">
+              <Button
+                classNames={{
+                  root: "gradient py-4.5 px-7",
+                  label: "text-semibold-sm",
+                }}
+                endContent={
+                  <span className="stroke-white">{ArrowRightIcon}</span>
+                }
+              >
+                Apply to be an Early Tester
+              </Button>
+            </Link>
           </div>
           <BenefitAutoScroller />
         </div>

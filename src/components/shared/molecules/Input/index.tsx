@@ -4,6 +4,7 @@ import { cls } from "@/utils/helpers";
 import styles from "./style.module.css";
 import Typography from "../../atoms/Typography";
 import HelperText from "../../atoms/HelperText";
+import { InfoCircleIcon, TickCircleIcon } from "@/assets/icons";
 
 type Sizes = "lg" | "sm" | "md";
 type Slots =
@@ -95,7 +96,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 "p-4 transition-colors duration-200 outline-0 w-full relative regular-sm font-app text-gray-900 bg-white-100",
                 "placeholder:text-regular-sm placeholder:text-gray-400 rounded-[inherit] resize-none",
                 !multiline && inputSize[size],
-                !!endComponent && "pr-10",
+                (!!endComponent || isError || isSuccess) && "pr-10",
                 !!startComponent && "pl-10",
                 className,
                 classNames?.input
@@ -105,24 +106,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {(isError || isSuccess || endComponent) && (
               <span
                 className={cls(
-                  "absolute right-3 -ml-7 flex h-5 w-5 items-center text-gray-900 bg-white",
+                  "absolute right-3 -ml-7 flex h-5 w-5 items-center text-gray-900",
                   classNames?.endContent
                 )}
               >
-                {
-                  // isError ? (
-                  //   <Icon
-                  //     name="icon-info-circle"
-                  //     className="text-error-500 text-regular-xl"
-                  //   />
-                  // ) : isSuccess ? (
-                  //   <Icon
-                  //     name="icon-tick-circle"
-                  //     className="text-success-600 text-regular-xl"
-                  //   />
-                  // ) :
-                  endComponent && endComponent
-                }
+                {isError
+                  ? InfoCircleIcon
+                  : isSuccess
+                  ? TickCircleIcon
+                  : endComponent && endComponent}
               </span>
             )}
           </div>

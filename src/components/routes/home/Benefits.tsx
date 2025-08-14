@@ -8,6 +8,7 @@ import {
 import GradientBorder from "@/components/shared/atoms/GradientBorder";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
+import Link from "next/link";
 import React from "react";
 
 const benefits = [
@@ -68,15 +69,19 @@ const Benefits = () => {
             the future of AI-powered customer support.
           </Typography>
 
-          <Button
-            classNames={{
-              root: "gradient py-4.5 px-7",
-              label: "text-semibold-sm",
-            }}
-            endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
-          >
-            Apply to be an Early Tester
-          </Button>
+          <Link href="/apply">
+            <Button
+              classNames={{
+                root: "gradient py-4.5 px-7",
+                label: "text-semibold-sm",
+              }}
+              endContent={
+                <span className="stroke-white">{ArrowRightIcon}</span>
+              }
+            >
+              Apply to be an Early Tester
+            </Button>
+          </Link>
         </div>
 
         <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(342px,_1fr))] mt-[72px]">
