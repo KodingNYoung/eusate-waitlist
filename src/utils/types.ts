@@ -49,6 +49,16 @@ export type TypographyVariants =
   | "bold-8xl"
   | "bold-9xl";
 
+export type LogoVariants =
+  | "icon-gradient"
+  | "icon-white"
+  | "icon-black"
+  | "full-white"
+  | "full-gray"
+  | "full-black"
+  | "full-gradient-white"
+  | "full-gradient-black";
+
 export type FC<PropsType = unknown> = {
   (
     props: { className?: TWClassNames } & PropsWithChildren<PropsType>, // These line automatically add `className` and `children` to all component using the `FC` type

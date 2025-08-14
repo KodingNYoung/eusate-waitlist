@@ -13,6 +13,11 @@
 
 @layer utilities {
   @import url(./typography.css);
+
+  /* gradient-text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-brand-gradient;
+  }
 }
 
 @layer components {
@@ -29,7 +34,7 @@
   }
 
   .container {
-    @apply w-full max-w-[1536px] mx-auto;
+    @apply w-full max-w-[1248px] mx-auto px-6;
   }
 
   /* BUTTONS */
@@ -111,5 +116,14 @@
   .text-btn:disabled > span {
     --btnColor1: #b9bdc7 !important;
     --btnColor2: #b9bdc7 !important;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
