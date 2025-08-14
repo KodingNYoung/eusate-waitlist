@@ -36,7 +36,7 @@ const HomeHero = () => {
             as="p"
             className="text-gray-600 max-w-[644px] text-regular-base sm:text-regular-lg"
           >
-            Join forward-thinking businesses testing Eusate's revolutionary
+            Join forward-thinking businesses testing Eusate&apos;s revolutionary
             AI-powered support platform. Get 3 months free access and shape the
             future of customer service.
           </Typography>

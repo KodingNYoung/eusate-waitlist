@@ -1,10 +1,9 @@
 import React, { createElement, forwardRef, HTMLProps, ReactNode } from "react";
 import { TWClassNames } from "@/utils/types";
 import { cls } from "@/utils/helpers";
-import Typography from "@/components/atoms/Typography";
 import styles from "./style.module.css";
-// import Icon from "@/components/atoms/Icon"
-import HelperText from "@/components/atoms/HelperText";
+import Typography from "../../atoms/Typography";
+import HelperText from "../../atoms/HelperText";
 
 type Sizes = "lg" | "sm" | "md";
 type Slots =
