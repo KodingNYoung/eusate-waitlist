@@ -5,7 +5,6 @@ import Button from "../../molecules/Button";
 import { ArrowRightIcon, CloseIcon, JamMenu } from "@/assets/icons";
 import { cls } from "@/utils/helpers";
 import { AnimatePresence, motion } from "motion/react";
-import { span } from "motion/react-client";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

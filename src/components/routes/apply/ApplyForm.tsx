@@ -144,8 +144,8 @@ const ApplyForm = () => {
                   Your response has been recorded.
                 </Typography>
                 <Typography className="text-gray-500 text-regular-sm sm:text-regular-base">
-                  If you're selected, we'll reach out to you via email with a
-                  summary of your responses.
+                  If you&apos;re selected, we&apos;ll reach out to you via email
+                  with a summary of your responses.
                 </Typography>
               </div>
               <Button
