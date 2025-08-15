@@ -38,7 +38,7 @@ const Invite = () => {
           Join hundreds of forward-thinking businesses already testing Eusate.
           Applications are reviewed within 24 hours.
         </Typography>
-        <Link href="/apply">
+        <Link href="/apply" target="_blank" rel="noreferrer">
           <Button
             classNames={{
               root: "gradient py-4.5 px-7",

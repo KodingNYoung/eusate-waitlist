@@ -69,7 +69,7 @@ const Benefits = () => {
             the future of AI-powered customer support.
           </Typography>
 
-          <Link href="/apply">
+          <Link href="/apply" target="_blank" rel="noreferrer">
             <Button
               classNames={{
                 root: "gradient py-4.5 px-7",

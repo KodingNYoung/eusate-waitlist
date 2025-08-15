@@ -56,7 +56,7 @@ export const useValidation = (
       setFieldErrors(fieldErrors);
       setErrors(newErrors);
     },
-    [formRef, touched, errors]
+    [formRef, touched, errors, fieldErrors]
   );
 
   const markFieldTouched = useCallback(
@@ -78,7 +78,7 @@ export const useValidation = (
 
     setTouched(fields);
     validate();
-  }, [formRef, validate]);
+  }, [formRef.current]);
 
   useEffect(() => {
     schemaRef.current = schema;
@@ -89,7 +89,7 @@ export const useValidation = (
     form.addEventListener("submit", onSubmit);
     validate();
     return () => form?.removeEventListener("submit", onSubmit);
-  }, [formRef, onSubmit, validate]);
+  }, [formRef.current, onSubmit]);
 
   return {
     touched,

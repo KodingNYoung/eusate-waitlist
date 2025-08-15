@@ -11,7 +11,7 @@ const ApplyForm = dynamic(() => import("@/components/routes/apply/ApplyForm"), {
 
 const Apply: FC = () => {
   return (
-    <div className="h-screen bg-black flex flex-col md:flex-row">
+    <div className="h-screen bg-center bg-cover bg-[url(/images/particles.webp),_linear-gradient(#0A0A0A,_#0A0A0A)] flex flex-col md:flex-row">
       <div className="bg-[url(/images/particles.webp),_url(/images/form-bg.webp)] bg-no-repeat bg-center bg-cover px-6 py-14 sm:px-10 sm:py-20 min-w-[350px] md:flex-1 overflow-y-auto max-h-full">
         <Logo type="full-gradient-white" />
         <div className="mt-10 flex flex-col gap-6">
@@ -64,7 +64,7 @@ const Apply: FC = () => {
           </div>
         </div>
       </div>
-      <div className="md:p-2 flex-[2] h-full min-w-[390px]">
+      <div className="md:p-2 md:pl-0 flex-[2] h-full min-w-[390px]">
         <div className="bg-white w-full h-full md:rounded-x20 md:overflow-auto">
           <section className="w-full container max-w-[568px] py-16 sm:py-20 flex flex-col gap-10">
             <header className="flex flex-col gap-2.5">

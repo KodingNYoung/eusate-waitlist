@@ -17,11 +17,7 @@ export const apply = async (formdata: FormData) => {
       headers: { "Content-Type": "application/json" },
     });
     const data = await response.json();
-    if (data.success) {
-      toast.success(
-        "Your application has been logged. You will be contacted if you are shortlisted"
-      );
-    }
+    return data
   } catch (err) {
     toast.error(err instanceof Error ? err.message : "Something went wrong");
   }
