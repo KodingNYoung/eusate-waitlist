@@ -12,8 +12,15 @@ const MetaProps: FC<Props> = ({title, description}) => {
     <div>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content={title} />
+
         <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+
         <meta name="image" content="/social-image.jpeg" />
+        <meta property="og:image" content="/social-image.jpeg" />
+        <meta property="og:image:alt" content="eusate logo" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
     </div>
