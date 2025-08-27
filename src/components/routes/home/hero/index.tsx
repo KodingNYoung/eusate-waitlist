@@ -1,4 +1,4 @@
-import { AiFillIcon, ArrowRightIcon } from "@/assets/icons";
+import { ArrowRightIcon } from "@/assets/icons";
 import GradientBorder from "@/components/shared/atoms/GradientBorder";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
@@ -9,29 +9,46 @@ import Link from "next/link";
 
 const HomeHero = () => {
   return (
-    <div className="flex h-screen max-h-[700px] sm:max-h-[879px]">
+    <div className="flex h-screen max-h-[700px] sm:max-h-[916px]">
       <div className="min-w-[calc(50%_+_194.4px)] w-full h-full pt-24 bg-[url(/images/benefit-bg-sm.webp),_linear-gradient(#000000,_#000000)] sm:bg-[url(/images/benefit-bg.webp),_linear-gradient(#000000,_#000000)] bg-center bg-no-repeat bg-cover">
         <div className="max-w-[890.4px] px-6 h-full w-full ml-auto flex flex-col justify-center items-start">
           <GradientBorder
             classNames={{
               root: "w-fit rounded-[90px]",
               container:
-                "flex items-center justify-center gap-2 bg-black py-2.5 px-3",
+                "flex items-center justify-center gap-6 bg-black p-2 pl-4",
             }}
             borderWidth={1}
-            borderColor="bg-[linear-gradient(90deg,_rgba(215,_171,_7,_0.2)_0%,_rgba(232,_101,_85,_0.2)_100%)]"
-            bgColor="#170C06"
+            borderColor="bg-[linear-gradient(268.2deg,_rgba(255,_255,_255,_0.3)_21.15%,_rgba(255,_255,_255,_0.09)_78.85%)]"
+            bgColor="bg-[#0E0E0E]"
           >
-            {AiFillIcon}
-            <Typography as="span" className="text-gradient text-medium-sm">
-              Early Access Now Open
+            <Typography as="span" className="text-gray-300 text-regular-base">
+              Claim early access
             </Typography>
+            <Link href="/waitlist">
+              <GradientBorder
+                classNames={{
+                  root: "w-fit rounded-[90px] group",
+                  container: "bg-black py-1.5 px-4",
+                }}
+                borderWidth={1}
+                bgColor="bg-[linear-gradient(180deg,_#151515_0%,_#1C1B1B_100%)]"
+                borderColor="bg-[linear-gradient(140deg,_rgba(194,_194,_194,_0.6)_9.8%,_rgba(194,_194,_194,_0)_39.18%),_linear-gradient(154.19deg,_rgba(204,_204,_204,_0)_70.34%,_rgba(194,_194,_194,_0.6)_94.92%)]"
+              >
+                <Typography
+                  as="span"
+                  className="text-gradient text-semibold-sm inline-block"
+                >
+                  Join waitlist
+                </Typography>
+              </GradientBorder>
+            </Link>
           </GradientBorder>
           <Typography
             as="h2"
             className="text-white text-bold-4xl my-6 sm:text-bold-6xl max-w-[644px]"
           >
-            The Future of AI Customer Support
+            The Future of Customer Support
           </Typography>
           <Typography
             as="p"

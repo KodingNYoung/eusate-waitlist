@@ -1,4 +1,5 @@
 import Typography from "@/components/shared/atoms/Typography";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
 import Footer from "@/components/shared/organisms/footer";
 import Navbar from "@/components/shared/organisms/navbar";
@@ -7,6 +8,10 @@ import React from "react";
 const TermsAndCondition = () => {
   return (
     <div>
+      <MetaProps
+        title="Terms and Conditions - eusate"
+        description="Review eusate's terms of service for our customer support platform. Understand user rights, service limitations, and agreement details."
+      />
       <Navbar />
       <div className="pt-24 sm:pt-32 bg-[url(/images/benefit-bg.webp),_linear-gradient(#0A0A0A,_#0A0A0A)] bg-center bg-no-repeat bg-cover min-h-screen">
         <div className="bg-white rounded-t-x20">
@@ -32,8 +37,9 @@ const TermsAndCondition = () => {
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
                 Welcome to Eusate, an AI-driven customer support platform
-                developed by [Company Name] (&apos;we&apos;, &apos;us&apos;, &apos;Eusate&apos;). These Terms
-                & Conditions (&apos;Terms&apos;) govern your access to and use of Eusate,
+                developed by [Company Name] (&apos;we&apos;, &apos;us&apos;,
+                &apos;Eusate&apos;). These Terms & Conditions
+                (&apos;Terms&apos;) govern your access to and use of Eusate,
                 including its Early Tester Program with three months of free
                 access, founder support, and no credit card requirement. By
                 applying, registering, or using the service, you agree to these
@@ -191,9 +197,9 @@ const TermsAndCondition = () => {
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                The Early Access service is provided &apos;as is&apos; and may contain
-                bugs or inaccuracies. We disclaim all warranties, express or
-                implied, regarding reliability, suitability, or
+                The Early Access service is provided &apos;as is&apos; and may
+                contain bugs or inaccuracies. We disclaim all warranties,
+                express or implied, regarding reliability, suitability, or
                 non-infringement. Our liability is limited to rectify the
                 service or refund any paid fees, to the extent permitted by law.
               </Typography>

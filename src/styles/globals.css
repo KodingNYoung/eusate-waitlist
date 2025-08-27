@@ -16,7 +16,7 @@
 
   /* gradient-text */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-brand-gradient;
+    @apply bg-clip-text text-transparent bg-[linear-gradient(90deg,_#E86555_0%,_#D7AB07_50%,_#E86555_100%)] bg-[length:200%] bg-[100%] group-hover:bg-[0%] hover:bg-[0%] transition-all duration-500;
   }
 }
 
@@ -39,13 +39,21 @@
 
   /* BUTTONS */
   .primary-btn {
-    background: linear-gradient(90deg, var(--btnColor1), var(--btnColor2));
-    background-size: calc(100% + 2px); /* 2px for the borders */
-    background-position: -1px; /* 1px to the left */
-    transition: all 0.3s, --btnColor1 0.3s, --btnColor2 0.3s;
+    background: linear-gradient(
+      90deg,
+      var(--btnColor2) 0%,
+      var(--btnColor1) 50%,
+      var(--btnColor2) 100%
+    );
+    background-size: calc(200% + 2px); /* 2px for the borders */
+    background-position: 100%; /* 1px to the left */
+    transition: all 0.5s, --btnColor1 0.5s, --btnColor2 0.5s;
   }
   .primary-btn.gradient {
     @apply [--btnColor1:#d7ab07] [--btnColor2:#e86555];
+  }
+  .primary-btn.gradient:hover {
+    background-position: 0%;
   }
   .primary-btn:hover {
     --btnColor1: #d7ab07;
@@ -56,8 +64,8 @@
     --btnColor2: #e86555b3;
   }
   .primary-btn:disabled {
-    --btnColor1: #d0d3d9;
-    --btnColor2: #d0d3d9;
+    --btnColor1: #d7ab07a3;
+    --btnColor2: #e86555a3;
   }
 
   .outlined-btn:not(:active):hover::before {

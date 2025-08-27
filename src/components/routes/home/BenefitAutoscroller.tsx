@@ -8,7 +8,7 @@ const benefits = [
 ];
 
 const BenefitAutoScroller = () => (
-  <div className="overflow-hidden whitespace-nowrap w-full max-w-[610px] scroll-container [mask:_radial-gradient(44.94%_28583.45%_at_51.52%_50%,_#2C2D30_0%,_rgba(44,_45,_48,_0)_100%);]">
+  <div className="overflow-hidden whitespace-nowrap w-full max-w-[610px] scroll-container [mask:_radial-gradient(50.94%_28583.45%_at_50%_50%,_#2C2D30_0%,_rgba(44,_45,_48,_0)_100%)]">
     <div className="inline-flex animate-[scroll_10s_linear_infinite]">
       {[...benefits, ...benefits].map((benefit, idx) => (
         <Typography

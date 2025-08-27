@@ -1,10 +1,10 @@
-import { apply } from "@/actions";
+import { applyToBeta } from "@/actions";
 import { ArrowRightIcon, SuccessCheckIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Input from "@/components/shared/molecules/Input";
 import Select from "@/components/shared/molecules/Select";
-import { APPLICATION_FORM_FIELDS, validationSchema } from "@/utils/constants";
+import { APPLICATION_FORM_FIELDS, betaFormSchema } from "@/utils/constants";
 import { useValidation } from "@/utils/hooks";
 import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/router";
@@ -17,7 +17,7 @@ const ApplyForm = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const { errors, hasErrors, markFieldTouched } = useValidation(
-    validationSchema,
+    betaFormSchema,
     formRef
   );
 
@@ -26,7 +26,7 @@ const ApplyForm = () => {
 
     setSubmitting(true);
     const formdata = new FormData(e.currentTarget);
-    const response = await apply(formdata);
+    const response = await applyToBeta(formdata);
     setShowSuccess(response.success);
     setSubmitting(false);
     (e.target as HTMLFormElement)?.reset();

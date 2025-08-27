@@ -95,7 +95,7 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 };
 
-export const validationSchema = z.object({
+export const betaFormSchema = z.object({
   email: z
     .email("Invalid email address")
     .regex(EMAIL_REGEX_PATTERNS, {
@@ -118,4 +118,7 @@ export const validationSchema = z.object({
     }),
     {}
   ),
+});
+export const waitlistFormSchema = z.object({
+  email: z.email("Invalid email address").min(1, "Email is a required field"),
 });

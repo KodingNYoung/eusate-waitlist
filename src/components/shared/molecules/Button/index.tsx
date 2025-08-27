@@ -75,7 +75,7 @@ const buttonVariant: { [variant in ButtonVariants]?: TWClassNames } = {
     "success-btn border-transparent border-1 bg-success-500 text-white-100", // default
     "hover:bg-success-600", // hover
     "active:bg-success-700", // active
-    "disabled:bg-success-100", // disabled
+    "disabled:bg-success-500 disabled:bg-opacity-40", // disabled
     "focus:border-success-100 focus:bg-success-600", // focused
     "focus:border-success-100 focus:bg-success-600" // focused when used as trigger
   ),
@@ -144,7 +144,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   return (
     <button
       className={cls(
-        "border rounded-[90px] cursor-pointer disabled:cursor-not-allowed flex items-center justify-center gap-1.5 outline-none whitespace-nowrap transition-all duration-300",
+        "border rounded-[90px] cursor-pointer disabled:cursor-not-allowed flex items-center justify-center gap-1.5 outline-none whitespace-nowrap",
         variant && buttonVariant[variant],
         className,
         classNames?.root

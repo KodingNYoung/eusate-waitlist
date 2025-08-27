@@ -12,34 +12,51 @@ enum RoadmapStatus {
 const roadmapItems = [
   {
     status: RoadmapStatus.COMPLETED,
-    quarter: "Q1 2024",
-    title: "Core AI Engine",
-    desc: "Advanced natural language processing and context understanding.",
+    quarter: "April 2024",
+    title: "Problem Discovery",
+    desc: "Customer support is broken. Businesses of all sizes struggle with long wait times, costly support teams, human error, and poor documentation — leaving customers frustrated and businesses stretched thin.",
   },
   {
     status: RoadmapStatus.COMPLETED,
-    quarter: "Q1 2024",
-    title: "Core AI Engine",
-    desc: "Advanced natural language processing and context understanding.",
+    quarter: "May 2024",
+    title: "Problem Validation",
+    desc: "We put this challenge to the test with interviews, surveys, and real-world research. The feedback was clear: businesses everywhere share the same frustrations and are eager for a smarter solution.",
+  },
+  {
+    status: RoadmapStatus.COMPLETED,
+    quarter: "August 2024",
+    title: "Ideation & Strategy",
+    desc: "Our vision is simple — reinvent customer support with AI. By combining automated ticketing, an AI-powered helpdesk, a developer-friendly space, and more, we're building a product designed to solve today's biggest support problems.",
+  },
+  {
+    status: RoadmapStatus.COMPLETED,
+    quarter: "September 2024",
+    title: "MVP",
+    desc: "We built a working prototype to prove the concept. Our MVP showcases the Core AI Engine, the AI Playground, and the Developer Space, delivering the foundation of a next-generation support platform.",
   },
   {
     status: RoadmapStatus.CURRENT,
-    quarter: "Q1 2024",
-    title: "Core AI Engine",
-    desc: "Advanced natural language processing and context understanding.",
-    badge: "Currently available",
+    quarter: "September 2025",
+    title: "Beta Launch",
+    desc: "We're inviting 10 fast-growing businesses to be the first to experience Eusate. Early testers get 3 months of free access, direct founder support, and the chance to shape the product — no credit card required.",
   },
   {
     status: RoadmapStatus.UPCOMING,
-    quarter: "Q1 2024",
-    title: "Core AI Engine",
-    desc: "Advanced natural language processing and context understanding.",
+    quarter: "Q4 2025",
+    title: "Continuous Iteration",
+    desc: "Feedback fuels growth. Every insight from our testers helps us refine, improve, and evolve the platform in real time, ensuring we're ready for a powerful full launch.",
   },
   {
     status: RoadmapStatus.UPCOMING,
-    quarter: "Q1 2024",
-    title: "Core AI Engine",
-    desc: "Advanced natural language processing and context understanding.",
+    quarter: "Q1 2026",
+    title: "Public Launch",
+    desc: "The big step forward. We'll open Eusate to the wider market, ready to scale, support heavier workloads, and deliver AI-powered customer support to businesses everywhere.",
+  },
+  {
+    status: RoadmapStatus.UPCOMING,
+    quarter: "Q2 2026",
+    title: "Growth & Expansion",
+    desc: "This is just the beginning. We're scaling globally, adding powerful CRM integrations, expanding infrastructure, and setting the stage to compete with the world's leading platforms.",
   },
 ];
 
@@ -155,7 +172,7 @@ const Roadmap = () => {
                   >
                     <div className="size-2 min-w-2 min-h-2 bg-brand-gradient rounded-full" />
                     <div className="text-gradient text-semibold-sm">
-                      Currently available
+                      Current Milestone
                     </div>
                   </GradientBorder>
                 )}

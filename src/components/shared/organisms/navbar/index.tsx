@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>
           <div className="ml-auto">
             <Link href="/apply" target="_blank" rel="noreferrer">
-              <Button className="px-4.5 py-3 hidden md:flex gradient">
+              <Button className="px-4.5 py-3 hidden md:flex" size="lg">
                 Apply to be an Early Tester
               </Button>
             </Link>
