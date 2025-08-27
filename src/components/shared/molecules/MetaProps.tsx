@@ -5,7 +5,7 @@ import React from "react";
 type Props = {
   title: string;
   description: string;
-  path: string
+  path: string;
 };
 
 const MetaProps: FC<Props> = ({ title, description, path }) => {
@@ -13,18 +13,21 @@ const MetaProps: FC<Props> = ({ title, description, path }) => {
     <div>
       <Head>
         <title>{title}</title>
+        <meta name="twitter:title" content={title} />
         <meta property="og:title" content={title} />
 
-        <meta
-          property="og:url"
-          content={`http://www.eusate.com${path}`}
-        />
+        <meta property="og:url" content={`http://www.eusate.com${path}`} />
         <meta property="og:type" content="wbite" />
 
         <meta name="description" content={description} />
+        <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
 
         <meta name="image" content="/social-image.png" />
+        <meta
+          name="twitter:image"
+          content="https://www.eusate.com/social-image.png"
+        />
         <meta
           property="og:image"
           content="https://www.eusate.com/social-image.png"
@@ -34,6 +37,9 @@ const MetaProps: FC<Props> = ({ title, description, path }) => {
         <meta property="og:image:height" content="630" />
 
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@eusate_ai" />
       </Head>
     </div>
   );
