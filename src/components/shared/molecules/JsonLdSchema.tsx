@@ -129,7 +129,7 @@ const JsonLdSchema: FC<JsonLdProps> = ({ type, data = {}, baseUrl }) => {
               priceCurrency: "USD",
               availability: "https://schema.org/ComingSoon",
             },
-            developer: {
+            author: {
               "@type": "Organization",
               name: "eusate",
             },
