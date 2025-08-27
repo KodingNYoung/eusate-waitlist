@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Script from "next/script";
 import { FC } from "react";
 
@@ -31,7 +30,7 @@ type SoftwareApplicationSchema = {
 
 interface JsonLdProps {
   type: "software" | "homepage" | "legal";
-  data?: any;
+  data?: Record<string, unknown>;
   baseUrl: string
 }
 
@@ -150,6 +149,7 @@ const JsonLdSchema: FC<JsonLdProps> = ({ type, data = {}, baseUrl }) => {
 
   return (
     <Script
+    id="application-ld-json"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schema, null, 2),

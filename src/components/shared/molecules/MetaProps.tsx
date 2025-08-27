@@ -7,7 +7,10 @@ type Props = {
   title: string;
   description: string;
   path: string;
-  jsonLdData: { type: "software" | "homepage" | "legal"; data?: any };
+  jsonLdData: {
+    type: "software" | "homepage" | "legal";
+    data?: Record<string, unknown>;
+  };
 };
 
 const SITE_URL = "https://www.eusate.com";
