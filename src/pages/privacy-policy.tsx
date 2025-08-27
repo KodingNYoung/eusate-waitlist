@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
             description:
               "Privacy policy and data handling practices for Eusate platform",
             path: "/privacy-policy",
-            lastModified: "2024-08-27", // Update with your actual last modified date
+            lastModified: "2025-08-27", // Update with your actual last modified date
           },
         }}
       />

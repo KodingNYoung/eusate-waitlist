@@ -19,7 +19,7 @@ const TermsAndCondition = () => {
             description:
               "Terms of service and user agreement for Eusate platform",
             path: "/terms-and-condition",
-            lastModified: "2024-08-27", // Update with your actual last modified date
+            lastModified: "2025-08-27", // Update with your actual last modified date
           },
         }}
       />
