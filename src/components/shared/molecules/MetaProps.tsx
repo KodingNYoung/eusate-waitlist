@@ -33,86 +33,84 @@ const MetaProps: FC<Props> = ({ title, description, path, jsonLdData }) => {
   const fullImageUrl = `${SITE_URL}${DEFAULT_IMAGE}`;
 
   return (
-    <div>
-      <Head>
-        {/* Basic Meta Tags */}
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Head>
+      {/* Basic Meta Tags */}
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Title */}
-        <title>{optimizedTitle}</title>
+      {/* Title */}
+      <title>{optimizedTitle}</title>
 
-        {/* Description */}
-        <meta name="description" content={optimizedDescription} />
+      {/* Description */}
+      <meta name="description" content={optimizedDescription} />
 
-        {/* Robots */}
+      {/* Robots */}
 
-        {/* Canonical URL */}
-        <link rel="canonical" href={fullUrl} />
+      {/* Canonical URL */}
+      <link rel="canonical" href={fullUrl} />
 
-        {/* OG tags for WA and FB */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Eusate" />
-        <meta property="og:title" content={optimizedTitle} />
-        <meta property="og:description" content={optimizedDescription} />
-        <meta property="og:url" content={fullUrl} />
-        <meta property="og:image" content={fullImageUrl} />
-        <meta property="og:image:alt" content={DEFAULT_IMAGE_ALT} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content="en_US" />
+      {/* OG tags for WA and FB */}
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Eusate" />
+      <meta property="og:title" content={optimizedTitle} />
+      <meta property="og:description" content={optimizedDescription} />
+      <meta property="og:url" content={fullUrl} />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:alt" content={DEFAULT_IMAGE_ALT} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_US" />
 
-        {/* Twitter card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@eusate_ai" />
-        <meta name="twitter:creator" content="@eusate_ai" />
-        <meta name="twitter:title" content={optimizedTitle} />
-        <meta name="twitter:description" content={optimizedDescription} />
-        <meta name="twitter:image" content={fullImageUrl} />
-        <meta name="twitter:image:alt" content={DEFAULT_IMAGE_ALT} />
+      {/* Twitter card tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@eusate_ai" />
+      <meta name="twitter:creator" content="@eusate_ai" />
+      <meta name="twitter:title" content={optimizedTitle} />
+      <meta name="twitter:description" content={optimizedDescription} />
+      <meta name="twitter:image" content={fullImageUrl} />
+      <meta name="twitter:image:alt" content={DEFAULT_IMAGE_ALT} />
 
-        {/* Additional SEO Meta tags */}
-        <meta name="author" content="Eusate" />
-        <meta name="publisher" content="Eusate" />
-        <meta name="application-name" content="Eusate" />
+      {/* Additional SEO Meta tags */}
+      <meta name="author" content="Eusate" />
+      <meta name="publisher" content="Eusate" />
+      <meta name="application-name" content="Eusate" />
 
-        {/* Favicon and Icons */}
-        <meta name="image" content={fullImageUrl} />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
+      {/* Favicon and Icons */}
+      <meta name="image" content={fullImageUrl} />
+      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
 
-        {/* Theme Color */}
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
+      {/* Theme Color */}
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
 
-        {/* Preconnect to external domains for better performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+      {/* Preconnect to external domains for better performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
 
-        <JsonLdSchema {...jsonLdData} baseUrl={SITE_URL} />
-      </Head>
-    </div>
+      <JsonLdSchema {...jsonLdData} baseUrl={SITE_URL} />
+    </Head>
   );
 };
 

@@ -1,3 +1,4 @@
+import { EUSATE_SOCIALS } from "@/utils/constants";
 import { FC } from "react";
 
 // Types for different schema types
@@ -100,7 +101,7 @@ const JsonLdSchema: FC<JsonLdProps> = ({ type, data = {}, baseUrl }) => {
             description:
               "AI-powered customer support platform that helps businesses provide intelligent, automated customer service solutions.",
             foundingDate: "2024",
-            sameAs: ["https://twitter.com/eusate_ai"],
+            sameAs: Object.values(EUSATE_SOCIALS),
           },
           {
             "@context": "https://schema.org",
