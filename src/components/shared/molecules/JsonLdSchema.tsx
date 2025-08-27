@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { FC } from "react";
 
 // Types for different schema types
@@ -31,12 +30,11 @@ type SoftwareApplicationSchema = {
 interface JsonLdProps {
   type: "software" | "homepage" | "legal";
   data?: Record<string, unknown>;
-  baseUrl: string
+  baseUrl: string;
 }
 
 const JsonLdSchema: FC<JsonLdProps> = ({ type, data = {}, baseUrl }) => {
   const getSchema = () => {
-
     switch (type) {
       case "software":
         return {
@@ -148,8 +146,8 @@ const JsonLdSchema: FC<JsonLdProps> = ({ type, data = {}, baseUrl }) => {
   if (!schema) return null;
 
   return (
-    <Script
-    id="application-ld-json"
+    <script
+      id="application-ld-json"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schema, null, 2),
