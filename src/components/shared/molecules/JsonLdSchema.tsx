@@ -19,7 +19,7 @@ type SoftwareApplicationSchema = {
     priceCurrency: string;
     availability: string;
   };
-  developer: {
+  author: {
     "@type": "Organization";
     name: string;
   };
@@ -52,7 +52,7 @@ const JsonLdSchema: FC<JsonLdProps> = ({ type, data = {}, baseUrl }) => {
             priceCurrency: "USD",
             availability: "https://schema.org/ComingSoon",
           },
-          developer: {
+          author: {
             "@type": "Organization",
             name: "eusate",
           },
