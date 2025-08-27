@@ -13,6 +13,7 @@ export default function Home() {
       <MetaProps
         title="eusate - Customer Support for Fast-Growing Businesses and Startups"
         description="Transform your customer support with SATE. Reduce support costs by 50-70% while scaling. Built specifically for fast-growing businesses and startups."
+        path="/"
       />
       <Navbar />
       <HomeHero />

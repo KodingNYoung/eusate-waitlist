@@ -16,6 +16,7 @@ const Apply: FC = () => {
       <MetaProps
         title="eusate Beta Program - Free AI Customer Support for Businesses and Startups"
         description="Apply for eusate's beta program. Get free AI customer support, reduce costs by 50-70%, and help shape the future of customer service."
+        path="/apply"
       />
       <div className="h-screen bg-center bg-cover bg-[url(/images/particles.webp),_linear-gradient(#0A0A0A,_#0A0A0A)] flex flex-col md:flex-row">
         <div className="bg-[url(/images/particles.webp),_url(/images/form-bg.webp)] bg-no-repeat bg-center bg-cover px-6 py-14 sm:px-10 sm:py-20 min-w-[350px] md:flex-1 overflow-y-auto max-h-full">

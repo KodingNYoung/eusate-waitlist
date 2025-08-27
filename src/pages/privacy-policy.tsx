@@ -11,6 +11,7 @@ const PrivacyPolicy = () => {
       <MetaProps
         title="Privacy Policy - eusate"
         description="Learn how eusate protects your data and customer information. Our privacy policy outlines data collection, usage, and security practices for our platform."
+        path="/privacy-policy"
       />
       <Navbar />
       <div className="pt-24 sm:pt-32 bg-[url(/images/benefit-bg.webp),_linear-gradient(#0A0A0A,_#0A0A0A)] bg-center bg-no-repeat bg-cover min-h-screen">

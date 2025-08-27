@@ -11,6 +11,8 @@ const TermsAndCondition = () => {
       <MetaProps
         title="Terms and Conditions - eusate"
         description="Review eusate's terms of service for our customer support platform. Understand user rights, service limitations, and agreement details."
+        path="/terms-and-condition"
+
       />
       <Navbar />
       <div className="pt-24 sm:pt-32 bg-[url(/images/benefit-bg.webp),_linear-gradient(#0A0A0A,_#0A0A0A)] bg-center bg-no-repeat bg-cover min-h-screen">
