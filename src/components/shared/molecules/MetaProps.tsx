@@ -1,18 +1,20 @@
 import { FC } from "@/utils/types";
 import Head from "next/head";
 import React from "react";
+import JsonLdSchema from "./JsonLdSchema";
 
 type Props = {
   title: string;
   description: string;
   path: string;
+  jsonLdData: { type: "software" | "homepage" | "legal"; data?: any };
 };
 
 const SITE_URL = "https://www.eusate.com";
 const DEFAULT_IMAGE = "/social-image.png";
 const DEFAULT_IMAGE_ALT = "Eusate - AI-Powered Customer Support Platform";
 
-const MetaProps: FC<Props> = ({ title, description, path }) => {
+const MetaProps: FC<Props> = ({ title, description, path, jsonLdData }) => {
   // Ensure title is not too long (recommended max 60 characters)
   const optimizedTitle =
     title.length > 60 ? `${title.substring(0, 57)}...` : title;
@@ -104,6 +106,8 @@ const MetaProps: FC<Props> = ({ title, description, path }) => {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+
+        <JsonLdSchema {...jsonLdData} baseUrl={SITE_URL} />
       </Head>
     </div>
   );

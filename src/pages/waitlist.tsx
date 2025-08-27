@@ -14,6 +14,13 @@ const Waitlist: FC = () => {
         title="Join eusate Waitlist - Early Access to AI Customer Support"
         description="Be among the first to experience EUSATE's exceptional customer support. Join our waitlist for early access, exclusive updates, and special launch pricing for your business and startup."
         path="/waitlist"
+        jsonLdData={{
+          type: "software",
+          data: {
+            description:
+              "Join the waitlist for Eusate - AI-powered customer support platform launching soon. Get early access notifications and exclusive benefits.",
+          },
+        }}
       />
       <Navbar />
       <section className="h-full flex flex-col md:items-center justify-center gap-10 container">
