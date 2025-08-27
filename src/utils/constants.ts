@@ -2,6 +2,12 @@ import z from "zod";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
+export const EUSATE_SOCIALS ={
+  LINKEDIN: "https://www.linkedin.com/company/eusate/",
+  INSTAGRAM: "https://www.instagram.com/eusate_ai/",
+  X: "https://x.com/eusate_ai"
+}
+
 export const EMAIL_REGEX_PATTERNS =
   /^[^@]+@(?!gmail\.com|yahoo\.com|hotmail\.com|outlook\.com|aol\.com|icloud\.com|mail\.com|yandex\.com|zoho\.com|protonmail\.com|gmx\.com|me\.com|live\.com$).+$/i;
 
