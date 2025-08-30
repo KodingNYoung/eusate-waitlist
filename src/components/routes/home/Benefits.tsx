@@ -10,6 +10,7 @@ import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Link from "next/link";
 import React from "react";
+import { motion } from "motion/react";
 
 const benefits = [
   {
@@ -39,56 +40,127 @@ const Benefits = () => {
       id="benefits"
     >
       <div className="container py-16 sm:py-28">
-        <GradientBorder
-          classNames={{
-            root: "w-fit rounded-[90px]",
-            container:
-              "flex items-center justify-center gap-2 bg-black py-2.5 px-3",
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 1.2,
+            type: "spring",
+            bounce: 0,
+            ease: "easeInOut",
           }}
-          borderWidth={1}
-          borderColor="bg-[linear-gradient(90deg,_rgba(215,_171,_7,_0.2)_0%,_rgba(232,_101,_85,_0.2)_100%)]"
-          bgColor="#170C06"
+          viewport={{ once: true, margin: "-100px 0px" }}
         >
-          {MessageQuestionIcon}
-          <Typography as="span" className="text-gradient text-medium-sm">
-            Why join now
-          </Typography>
-        </GradientBorder>
-        <Typography
-          as="h2"
-          className="text-white text-bold-2xl my-6 sm:mb-10 sm:text-bold-5xl max-w-[580px]"
-        >
-          Why join our early tester program?
-        </Typography>
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          <Typography
-            as="p"
-            className="text-gray-600 max-w-[720px] text-regular-sm sm:text-regular-lg"
+          <GradientBorder
+            classNames={{
+              root: "w-fit rounded-[90px]",
+              container:
+                "flex items-center justify-center gap-2 bg-black py-2.5 px-3",
+            }}
+            borderWidth={1}
+            borderColor="bg-[linear-gradient(90deg,_rgba(215,_171,_7,_0.2)_0%,_rgba(232,_101,_85,_0.2)_100%)]"
+            bgColor="#170C06"
           >
-            Get exclusive benefits, direct access to founders, and help shape
-            the future of AI-powered customer support.
+            {MessageQuestionIcon}
+            <Typography as="span" className="text-gradient text-medium-sm">
+              Why join now
+            </Typography>
+          </GradientBorder>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 1.2,
+            type: "spring",
+            bounce: 0,
+            delay: 0.2,
+            ease: "easeInOut",
+          }}
+          viewport={{ once: true, margin: "-100px 0px" }}
+        >
+          <Typography
+            as="h2"
+            className="text-white text-bold-2xl my-6 sm:mb-10 sm:text-bold-5xl max-w-[580px]"
+          >
+            Why join our early tester program?
           </Typography>
-
-          <Link href="/apply" target="_blank" rel="noreferrer">
-            <Button
-              classNames={{
-                root: "gradient py-4.5 px-7",
-                label: "text-semibold-sm",
-              }}
-              endContent={
-                <span className="stroke-white">{ArrowRightIcon}</span>
-              }
+        </motion.div>
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 1.2,
+              type: "spring",
+              bounce: 0,
+              delay: 0.4,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true, margin: "-100px 0px" }}
+          >
+            <Typography
+              as="p"
+              className="text-gray-600 max-w-[720px] text-regular-sm sm:text-regular-lg"
             >
-              Apply to be an Early Tester
-            </Button>
-          </Link>
+              Get exclusive benefits, direct access to founders, and help shape
+              the future of AI-powered customer support.
+            </Typography>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 1.2,
+              type: "spring",
+              bounce: 0,
+              delay: 0.5,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true, margin: "-100px 0px" }}
+          >
+            <Link href="/apply" target="_blank" rel="noreferrer">
+              <Button
+                classNames={{
+                  root: "gradient py-4.5 px-7",
+                  label: "text-semibold-sm",
+                }}
+                endContent={
+                  <span className="stroke-white">{ArrowRightIcon}</span>
+                }
+              >
+                Apply to be an Early Tester
+              </Button>
+            </Link>
+          </motion.div>
         </div>
 
         <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(342px,_1fr))] mt-[72px]">
           {benefits.map((benefit, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="bg-white bg-opacity-5 backdrop-blur-medium rounded-x20 p-12 flex items-center text-center flex-col gap-2 border border-white border-opacity-10"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                bounce: 0,
+                opacity: {
+                  duration: 1,
+                  delay: 0.2 + 0.1 * idx,
+                  ease: "easeInOut",
+                },
+                y: {
+                  duration: 1,
+                  delay: 0.2 + 0.1 * idx,
+                  ease: "easeInOut",
+                },
+              }}
+              viewport={{ once: true, margin: "-100px 0px" }}
             >
               <GradientBorder
                 classNames={{
@@ -107,7 +179,7 @@ const Benefits = () => {
               <Typography as="p" className="text-regular-base text-gray-400">
                 {benefit.desc}
               </Typography>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -5,6 +5,7 @@ import { waitlistFormSchema } from "@/utils/constants";
 import { useValidation } from "@/utils/hooks";
 import { FC } from "@/utils/types";
 import React, { FormEvent, useRef, useState } from "react";
+import { motion } from "motion/react";
 
 const WaitlistForm: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -29,10 +30,19 @@ const WaitlistForm: FC = () => {
   };
 
   return (
-    <form
+    <motion.form
       ref={formRef}
       onSubmit={handleSubmit}
       className="flex flex-col gap-10 md:items-center max-w-[488px] w-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{
+        type: "spring",
+        bounce: 0,
+        ease: "easeInOut",
+        opacity: { delay: 0.6, duration: 1.5 },
+      }}
     >
       <Input
         name="email"
@@ -62,7 +72,7 @@ const WaitlistForm: FC = () => {
       >
         {showSuccess ? "You are now on the waitlist" : "Join waitlist"}
       </Button>
-    </form>
+    </motion.form>
   );
 };
 
