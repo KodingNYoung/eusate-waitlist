@@ -5,8 +5,11 @@ import Button from "../../molecules/Button";
 import { ArrowRightIcon, CloseIcon, JamMenu } from "@/assets/icons";
 import { cls } from "@/utils/helpers";
 import { AnimatePresence, motion } from "motion/react";
-
-const Navbar = () => {
+import { FC, LogoVariants } from "@/utils/types";
+type Props = {
+  logoType?: LogoVariants;
+};
+const Navbar: FC<Props> = ({ logoType = "full-gradient-white" }) => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -19,7 +22,7 @@ const Navbar = () => {
         <div className="container max-w-[1344px] flex items-center relative">
           <div className="w-3/5 flex items-center justify-between">
             <Link href="/">
-              <Logo type="full-gradient-white" />
+              <Logo type={logoType} />
             </Link>
             <nav className="md:flex items-center justify-end gap-8 hidden">
               <Link
