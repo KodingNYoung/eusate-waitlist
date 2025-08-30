@@ -101,8 +101,7 @@ const Roadmap = () => {
           as="span"
           className="text-regular-sm sm:text-regular-lg w-11/12 max-w-[661px] text-gray-600 leading-[170%]"
         >
-          Eusate combines cutting-edge AI with intuitive design to create the
-          most powerful customer support platform ever built.
+          Discover what&apos;s next on our journey to redefine customer experience.
         </Typography>
       </header>
       <div className="max-w-[696px] mx-auto w-full">

@@ -14,17 +14,17 @@ const features = [
   {
     icon: TicketIcon,
     title: "AI-Powered Helpdesk",
-    desc: "Intelligent ticket routing and automated responses that learn from your business context.",
+    desc: "AI automated responses that learn from your business context to provide instant, accurate answers.",
   },
   {
     icon: BookIcon,
-    title: "Smart Knowledge Base",
-    desc: "Dynamic documentation that updates itself and provides instant, accurate answers.",
+    title: "Dynamic Knowledge Base",
+    desc: "Dynamic documentation that allow information from multiple kinds of sources as context for AI.",
   },
   {
     icon: CodeIcon,
     title: "Developer Space",
-    desc: "Complete auth configurations and custom functions tailored to your tech stack.",
+    desc: "Connect our AI to your systems so it can actually solve problems, not just provide answers.",
   },
   {
     icon: AiStrokeIcon,

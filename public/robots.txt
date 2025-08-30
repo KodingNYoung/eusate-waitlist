@@ -1,0 +1,49 @@
+# robots.txt for Eusate - AI Customer Support Platform
+# Last updated: 2025-08-27
+
+# Allow all search engines to crawl all public content
+User-agent: *
+Allow: /
+Allow: /beta
+Allow: /waitlist
+Allow: /privacy
+Allow: /terms
+
+# Block Next.js internal files and API routes
+Disallow: /_next/
+Disallow: /api/
+
+# Block common system files
+Disallow: /*.json$
+Disallow: /favicon.ico
+Disallow: /apple-touch-icon.png
+Disallow: /favicon-*.png
+Disallow: /android-chrome-*.png
+
+# Block potential future admin or private areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /internal/
+
+# Allow important SEO files
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Special rules for different bot types
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Block aggressive crawlers or scrapers (optional)
+# User-agent: BadBot
+# Disallow: /
+
+# Sitemap location (very important!)
+Sitemap: https://www.eusate.com/sitemap.xml
+
+# Optional: Be nice to servers (1 second delay between requests)
+Crawl-delay: 1

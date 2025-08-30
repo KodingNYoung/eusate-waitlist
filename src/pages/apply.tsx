@@ -52,17 +52,6 @@ const Apply: FC = () => {
                   as="h4"
                   className="text-white fill-white text-bold-base flex items-center gap-4"
                 >
-                  {PinIcon}Deadline
-                </Typography>
-                <Typography as="p" className="text-regular-base text-gray-300">
-                  This application closes on 18 Aug, 2025.
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-4">
-                <Typography
-                  as="h4"
-                  className="text-white fill-white text-bold-base flex items-center gap-4"
-                >
                   {PinIcon}Who should apply?
                 </Typography>
                 <Typography as="p" className="text-regular-base text-gray-300">
@@ -99,15 +88,15 @@ const Apply: FC = () => {
                   as="p"
                   className="text-regular-sm sm:text-regular-base text-gray-600"
                 >
-                  Eusate combines cutting-edge AI with intuitive design to
-                  create the most powerful customer support platform ever built.
+                  Help us build EUSATE for your specific needs.
                 </Typography>
                 <Typography
                   as="span"
                   className="text-regular-sm sm:text-regular-base text-gray-300"
                 >
-                  Your feedback is invaluable! By completing this quick survey,
-                  you can help shape the future of our product.
+                  Complete our questionnaire and get early access, plus a
+                  personalized demo showing exactly how EUSATE would work for
+                  your business.
                 </Typography>
               </header>
               <ApplyForm />

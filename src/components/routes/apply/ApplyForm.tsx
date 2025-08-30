@@ -141,11 +141,13 @@ const ApplyForm = () => {
               <div className="flex flex-col items-center gap-4 text-center">
                 {SuccessCheckIcon}
                 <Typography className="text-bold-xl mt-4 text-gray-900">
-                  Your response has been recorded.
+                  Thank you! Your response has been submitted.
                 </Typography>
                 <Typography className="text-gray-500 text-regular-sm sm:text-regular-base">
-                  If you&apos;re selected, we&apos;ll reach out to you via email
-                  with a summary of your responses.
+                  We&apos;ll review your information within 72 hours and send you a
+                  personalized follow-up with next steps. Check your inbox -
+                  we&apos;re excited to show you how EUSATE can transform your
+                  customer support.
                 </Typography>
               </div>
               <Button
@@ -155,7 +157,7 @@ const ApplyForm = () => {
                   push("/");
                 }}
               >
-                OK Got it
+                OK, Got it
               </Button>
             </motion.div>
           </div>

@@ -35,8 +35,8 @@ const Invite = () => {
           as="p"
           className="text-gray-600 max-w-[562px] text-regular-sm sm:text-regular-lg mb-9"
         >
-          Join hundreds of forward-thinking businesses already testing Eusate.
-          Applications are reviewed within 24 hours.
+          Join other forward-thinking businesses already testing Eusate.
+          Applications are reviewed within 72 hours.
         </Typography>
         <Link href="/apply" target="_blank" rel="noreferrer">
           <Button

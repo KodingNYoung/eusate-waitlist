@@ -16,19 +16,19 @@ const benefits = [
     icon: GiftIcon,
     iconBg: "bg-[#191311]",
     title: "3 Months Completely Free",
-    desc: "Intelligent ticket routing and automated responses that learn from your business context.",
+    desc: "Experience the future of customer support without paying a dime.",
   },
   {
     icon: UserStarIcon,
     iconBg: "bg-[#191311]",
     title: "Direct Founder Support",
-    desc: "Dynamic documentation that updates itself and provides instant, accurate answers.",
+    desc: "Collaborate with our founders to make EUSATE work best for you.",
   },
   {
     icon: ChartBarIcon,
     iconBg: "bg-[#4F2C12]",
     title: "Shape the Future",
-    desc: "Complete auth configurations and custom functions tailored to your tech stack.",
+    desc: "Help build the next generation of customer support.",
   },
 ];
 

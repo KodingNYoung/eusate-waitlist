@@ -27,15 +27,15 @@ export const APPLICATION_FORM_FIELDS: Record<
       "Long response times",
       "Inconsistent service quality",
       "High volume overwhelming team",
-      "Limited 24/7 availability",
+      "Limited availability",
       "Language barriers",
       "Complex query resolution",
       "Other",
     ],
   },
 
-  "whats-your-approximate-monthly-customer-inquiry-volume": {
-    label: "What's your approximate monthly customer inquiry volume?",
+  "whats-your-monthly-customer-inquiry-volume": {
+    label: "What's your monthly customer inquiry volume?",
     hasSpecify: false,
     options: ["Under 100", "100-500", "500-2,000", "2,000-10,000", "10,000+"],
   },
@@ -62,9 +62,9 @@ export const APPLICATION_FORM_FIELDS: Record<
     ],
   },
 
-  "would-you-be-willing-to-provide-regular-feedback-during-the-beta-period": {
+  "would-you-be-willing-to-provide-feedback-during-the-beta-period": {
     label:
-      "Would you be willing to provide regular feedback during the beta period?",
+      "Would you be willing to provide feedback during the beta period?",
     hasSpecify: false,
     options: [
       "Yes, weekly check-ins",
