@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
             description:
               "Privacy policy and data handling practices for Eusate platform",
             path: "/privacy-policy",
-            lastModified: "2025-08-27", // Update with your actual last modified date
+            lastModified: "2025-09-01", // Update with your actual last modified date
           },
         }}
       />
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
                 as="span"
                 className="text-regular-sm sm:text-regular-lg text-gray-600"
               >
-                Last Updated: [Insert Date]
+                Last Updated: Monday, 01 September, 2025
               </Typography>
             </header>
 
@@ -46,66 +46,133 @@ const PrivacyPolicy = () => {
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                Welcome to Eusate, an AI-driven customer support platform
-                developed by [Company Name] (&apos;we&apos;, &apos;us&apos;,
-                &apos;Eusate&apos;). These Terms & Conditions
-                (&apos;Terms&apos;) govern your access to and use of Eusate,
-                including its Early Tester Program with three months of free
-                access, founder support, and no credit card requirement. By
-                applying, registering, or using the service, you agree to these
-                Terms.
+                Eusate (“we,” “us,” or “our”) is committed to protecting the
+                privacy and security of our users and their customers. This
+                Privacy Policy explains how we collect, use, store, and protect
+                your personal information when you access or use our AI-powered
+                customer support platform, including during the Early Tester
+                Program. By using our platform, you agree to the collection and
+                use of information in accordance with this Privacy Policy.
               </Typography>
             </PolicySection>
-
-            <PolicySection title="2. Early Tester Program">
-              <ul className="list-disc list-outside pl-4 space-y-2">
-                <li>
+            <PolicySection title="2. Information We Collect">
+              <Typography
+                as="span"
+                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+              >
+                We collect the following categories of information:
+              </Typography>
+              <ol className="list-outside list-[lower-alpha] pl-5 mt-3 space-y-3">
+                <li className="text-medium-base sm:text-medium-lg">
+                  <Typography
+                    as="h3"
+                    className="mb-2 text-medium-base sm:text-medium-lg"
+                  >
+                    Information You Provide
+                  </Typography>
+                  <ul className="list-disc list-outside pl-4 space-y-2">
+                    <li>
+                      <Typography
+                        as="span"
+                        className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                      >
+                        Name, email address, company name, and other details
+                        submitted during registration or Early Tester Program
+                        application.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        as="span"
+                        className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                      >
+                        Content you submit through the platform, such as support
+                        tickets, conversation logs, documents, and uploaded
+                        files.
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        as="span"
+                        className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                      >
+                        Feedback, feature requests, or other communication you
+                        send to us.
+                      </Typography>
+                    </li>
+                  </ul>
+                </li>
+                <li className="text-medium-base sm:text-medium-lg">
+                  <Typography
+                    as="h3"
+                    className="mb-2 text-medium-base sm:text-medium-lg"
+                  >
+                    Automatically Collected Information
+                  </Typography>
+                  <ul className="list-disc list-outside pl-4 space-y-2">
+                    <li>
+                      <Typography
+                        as="span"
+                        className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                      >
+                        Usage data (e.g., pages visited, features used,
+                        date/time of access).
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        as="span"
+                        className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                      >
+                        Device and browser information (e.g., IP address,
+                        operating system, browser type).
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        as="span"
+                        className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                      >
+                        Interaction analytics to help improve AI responses and
+                        platform functionality.
+                      </Typography>
+                    </li>
+                  </ul>
+                </li>
+                <li className="text-medium-base sm:text-medium-lg">
+                  <Typography
+                    as="h3"
+                    className="mb-2 text-medium-base sm:text-medium-lg"
+                  >
+                    Customer & End-User Data
+                  </Typography>
                   <Typography
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    Eligible users may apply to participate in the Early Tester
-                    Program, subject to approval.
+                    When you use Eusate to handle customer support, we may
+                    process your customers’ personal data (e.g., names, emails,
+                    conversation history). You are the “data controller” for
+                    such information; Eusate acts as a “data processor” in
+                    accordance with your instructions.
                   </Typography>
                 </li>
-                <li>
-                  <Typography
-                    as="span"
-                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-                  >
-                    Approved users receive three (3) months of free access, with
-                    no credit card required and direct access to founder
-                    support.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography
-                    as="span"
-                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-                  >
-                    We reserve the right to modify or cancel the program at any
-                    time, and participation does not guarantee continued access
-                    beyond the period.
-                  </Typography>
-                </li>
-              </ul>
+              </ol>
             </PolicySection>
-
-            <PolicySection title="3. Scope of Service">
+            <PolicySection title="3. How We Use Your Information">
               <Typography
                 as="p"
                 className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                Eusate offers:
+                We use collected data to:
               </Typography>
-              <ul className="list-disc list-outside space-y-2 pl-4">
+              <ul className="list-disc list-outside space-y-2 pl-4 py-3">
                 <li>
                   <Typography
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    AI-powered helpdesk with intelligent ticket routing and
-                    automated responses;
+                    Provide and maintain the Eusate platform and services.
                   </Typography>
                 </li>
                 <li>
@@ -113,7 +180,7 @@ const PrivacyPolicy = () => {
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    Dynamic, self-updating smart knowledge base;
+                    Enable AI-powered responses
                   </Typography>
                 </li>
                 <li>
@@ -121,8 +188,8 @@ const PrivacyPolicy = () => {
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    Developer Space with authentication configuration and
-                    customizable functionalities
+                    Improve system performance through analytics and
+                    troubleshooting.
                   </Typography>
                 </li>
                 <li>
@@ -130,7 +197,7 @@ const PrivacyPolicy = () => {
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    AI Playground to test and refine AI behavior;
+                    Communicate updates, service notices, and feature releases.
                   </Typography>
                 </li>
                 <li>
@@ -138,8 +205,26 @@ const PrivacyPolicy = () => {
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    Advanced analytics tracking customer interactions and
-                    support metrics;
+                    Enforce our Terms & Conditions and prevent misuse.
+                  </Typography>
+                </li>
+              </ul>
+              <Typography
+                as="p"
+                className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
+              >
+                We do <b>not</b> sell your personal information or customer
+                data.
+              </Typography>
+            </PolicySection>
+            <PolicySection title="4. Data Storage & Retention">
+              <ul className="list-disc list-outside space-y-2 pl-4 py-3">
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    Your data is stored on secure servers located in UK, London.
                   </Typography>
                 </li>
                 <li>
@@ -147,104 +232,199 @@ const PrivacyPolicy = () => {
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    Continuous learning features to enhance AI performance over
-                    time.
+                    We retain personal information only as long as necessary for
+                    the purposes described in this policy, or as required by
+                    law.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    Upon request, we will delete or anonymize your data, subject
+                    to legal retention requirements.
                   </Typography>
                 </li>
               </ul>
             </PolicySection>
-
-            <PolicySection title="4. Registration & Access">
+            <PolicySection title="5. Data Security">
               <Typography
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                Users must provide accurate information during registration. You
-                are responsible for safeguarding your credentials and liable for
-                any account activity.
+                We implement appropriate technical and organizational measures
+                to protect your data against unauthorized access, loss, misuse,
+                or disclosure. However, no internet transmission is completely
+                secure, and we cannot guarantee absolute security.
+              </Typography>
+            </PolicySection>
+            <PolicySection title="6. How We Use Your Information">
+              <Typography
+                as="p"
+                className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
+              >
+                We may share your information:
+              </Typography>
+              <ul className="list-disc list-outside space-y-2 pl-4 py-3">
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    With trusted service providers who assist us in operating
+                    the platform (e.g., hosting providers, analytics tools).
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    If required by law, regulation, or legal process.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    To investigate potential violations of our Terms or protect
+                    our rights, property, and safety.
+                  </Typography>
+                </li>
+              </ul>
+              <Typography
+                as="p"
+                className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
+              >
+                We do <b>not</b> share customer data with third parties for
+                marketing purposes.
+              </Typography>
+            </PolicySection>
+            <PolicySection title="7. Your Rights">
+              <Typography
+                as="p"
+                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+              >
+                Depending on your location, you may have rights under applicable
+                data protection laws (e.g., GDPR, CCPA), including:
+              </Typography>
+              <ul className="list-disc list-outside space-y-2 pl-4 py-3">
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    Right to access, correct, or delete your personal data.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    Right to restrict or object to processing.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    Right to data portability.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    as="span"
+                    className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                  >
+                    Right to withdraw consent at any time.
+                  </Typography>
+                </li>
+              </ul>
+              <Typography
+                as="p"
+                className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
+              >
+                To exercise these rights, contact us at{" "}
+                <a
+                  className="text-info-500"
+                  href="mailto:info@eusate.com"
+                  target="_blank"
+                  rel="noreferer nofollow"
+                >
+                  info@eusate.com
+                </a>
+                .
               </Typography>
             </PolicySection>
 
-            <PolicySection title="5. Acceptable Use">
+            <PolicySection title="8. International Data Transfers">
               <Typography
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                You agree not to misuse the platform—for instance by introducing
-                malicious content, harassing others, or attempting unauthorized
-                access. We may suspend or terminate access for misuse.
+                If you are located outside Nigeria, your data may be transferred
+                to and processed in countries where data protection laws may
+                differ from yours. We will take appropriate measures to protect
+                your data during such transfers.
               </Typography>
             </PolicySection>
 
-            <PolicySection title="6. Intellectual Property">
+            <PolicySection title="9. Children’s Privacy">
               <Typography
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                All intellectual property rights in Eusate, including AI models,
-                software, documentation, and trademarks, remain our exclusive
-                property. You may not copy, reverse engineer, or redistribute
-                any part of the service.
+                Eusate is not directed to individuals under the age of 16. We do
+                not knowingly collect personal data from minors. If we learn we
+                have collected personal data from a minor, we will delete it
+                promptly.
               </Typography>
             </PolicySection>
 
-            <PolicySection title="7. Privacy & Data">
+            <PolicySection title="10. Changes to This Policy">
               <Typography
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                Your data privacy is important to us. Any customer data,
-                including tickets, conversation logs, analytics, and support
-                documentation, will be handled in accordance with our Privacy
-                Policy. Your data will not be used for AI training or other
-                external purposes without explicit consent. (You may wish to
-                expand this with relevant privacy policy language.)
+                We may update this Privacy Policy from time to time. Changes
+                will be posted on this page with the updated “Last Updated”
+                date. Significant changes may be communicated via email or
+                platform notification.
               </Typography>
             </PolicySection>
 
-            <PolicySection title="8. Disclaimers & Limitations">
+            <PolicySection title="11. Contact Us">
               <Typography
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                The Early Access service is provided &apos;as is&apos; and may
-                contain bugs or inaccuracies. We disclaim all warranties,
-                express or implied, regarding reliability, suitability, or
-                non-infringement. Our liability is limited to rectify the
-                service or refund any paid fees, to the extent permitted by law.
+                If you have any questions, concerns, or requests regarding this
+                Privacy Policy, please contact us at:
               </Typography>
-            </PolicySection>
-
-            <PolicySection title="9. Modifications & Termination">
-              <Typography
-                as="p"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                We may update these Terms or suspend/terminate your access to
-                Eusate at any time, with or without notice—especially after the
-                Early Access phase ends or the service evolves beyond this
-                preview.
-              </Typography>
-            </PolicySection>
-
-            <PolicySection title="10. Governing Law">
-              <Typography
-                as="p"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                These Terms are governed by the laws of [Jurisdiction, e.g.,
-                Delaware, U.S.]. Disputes will be resolved in the courts of that
-                jurisdiction.
-              </Typography>
-            </PolicySection>
-
-            <PolicySection title="11. Contact">
-              <Typography
-                as="p"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                For any inquiries, feedback, or support, please reach out via
-                [contact email or support portal].
+              <Typography as="p" className="grid text-gray-600 mt-2">
+                <span>Eusate</span>
+                <span>
+                  Email:{" "}
+                  <a className="text-info-500" href="mailto:info@eusate.com">
+                    {" "}
+                    info@eusate.com
+                  </a>
+                </span>
+                <span>
+                  Website:{" "}
+                  <a
+                    className="text-info-500"
+                    target="_blank"
+                    rel="noreferer nofollow"
+                    href="https://www.eusate.com"
+                  >
+                    www.eusate.com
+                  </a>
+                </span>
               </Typography>
             </PolicySection>
           </div>

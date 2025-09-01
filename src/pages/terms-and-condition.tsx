@@ -3,6 +3,7 @@ import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
 import Footer from "@/components/shared/organisms/footer";
 import Navbar from "@/components/shared/organisms/navbar";
+import Link from "next/link";
 import React from "react";
 
 const TermsAndCondition = () => {
@@ -19,7 +20,7 @@ const TermsAndCondition = () => {
             description:
               "Terms of service and user agreement for Eusate platform",
             path: "/terms-and-condition",
-            lastModified: "2025-08-27", // Update with your actual last modified date
+            lastModified: "2025-09-01", // Update with your actual last modified date
           },
         }}
       />
@@ -38,7 +39,7 @@ const TermsAndCondition = () => {
                 as="span"
                 className="text-regular-sm sm:text-regular-lg text-gray-600"
               >
-                Last Updated: [Insert Date]
+                Last Updated: Monday, 01 September, 2025
               </Typography>
             </header>
 
@@ -48,13 +49,12 @@ const TermsAndCondition = () => {
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
                 Welcome to Eusate, an AI-driven customer support platform
-                developed by [Company Name] (&apos;we&apos;, &apos;us&apos;,
-                &apos;Eusate&apos;). These Terms & Conditions
-                (&apos;Terms&apos;) govern your access to and use of Eusate,
-                including its Early Tester Program with three months of free
-                access, founder support, and no credit card requirement. By
-                applying, registering, or using the service, you agree to these
-                Terms.
+                (&apos;we&apos;, &apos;us&apos;, &apos;Eusate&apos;). These
+                Terms & Conditions (&apos;Terms&apos;) govern your access to and
+                use of Eusate, including its Early Tester Program with three
+                months of free access, founder support, and no credit card
+                requirement. By applying, registering, or using the service, you
+                agree to these Terms.
               </Typography>
             </PolicySection>
 
@@ -105,8 +105,8 @@ const TermsAndCondition = () => {
                     as="span"
                     className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                   >
-                    AI-powered helpdesk with intelligent ticket routing and
-                    automated responses;
+                    AI automated responses that learn from your business context
+                    to provide instant, accurate answers;
                   </Typography>
                 </li>
                 <li>
@@ -196,10 +196,12 @@ const TermsAndCondition = () => {
               >
                 Your data privacy is important to us. Any customer data,
                 including tickets, conversation logs, analytics, and support
-                documentation, will be handled in accordance with our Privacy
-                Policy. Your data will not be used for AI training or other
-                external purposes without explicit consent. (You may wish to
-                expand this with relevant privacy policy language.)
+                documentation, will be handled in accordance with our{" "}
+                <Link href="/privacy-policy" className="text-info-500">
+                  Privacy Policy
+                </Link>
+                . Your data will not be used for external purposes without
+                explicit consent.
               </Typography>
             </PolicySection>
 
@@ -233,8 +235,8 @@ const TermsAndCondition = () => {
                 as="p"
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
-                These Terms are governed by the laws of [Jurisdiction, e.g.,
-                Delaware, U.S.]. Disputes will be resolved in the courts of that
+                These Terms are governed by the laws of the Federal Republic of
+                Nigeria. Disputes will be resolved in the courts of that
                 jurisdiction.
               </Typography>
             </PolicySection>
@@ -245,7 +247,27 @@ const TermsAndCondition = () => {
                 className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
               >
                 For any inquiries, feedback, or support, please reach out via
-                [contact email or support portal].
+                <Typography as="p" className="grid text-gray-600 mt-2">
+                  <span>Eusate</span>
+                  <span>
+                    Email:{" "}
+                    <a className="text-info-500" href="mailto:info@eusate.com">
+                      {" "}
+                      info@eusate.com
+                    </a>
+                  </span>
+                  <span>
+                    Website:{" "}
+                    <a
+                      className="text-info-500"
+                      target="_blank"
+                      rel="noreferer nofollow"
+                      href="https://www.eusate.com"
+                    >
+                      www.eusate.com
+                    </a>
+                  </span>
+                </Typography>.
               </Typography>
             </PolicySection>
           </div>
