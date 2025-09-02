@@ -123,7 +123,7 @@ const HomeHero = () => {
             </Link>
           </motion.div>
           <motion.div
-            className="my-10"
+            className="my-10 w-full"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
