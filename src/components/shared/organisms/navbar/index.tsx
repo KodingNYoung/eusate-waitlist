@@ -6,10 +6,12 @@ import { ArrowRightIcon, CloseIcon, JamMenu } from "@/assets/icons";
 import { cls } from "@/utils/helpers";
 import { AnimatePresence, motion } from "motion/react";
 import { FC, LogoVariants } from "@/utils/types";
+
 type Props = {
   logoType?: LogoVariants;
+  betaType?: "light" | "dark";
 };
-const Navbar: FC<Props> = ({ logoType = "full-gradient-white" }) => {
+const Navbar: FC<Props> = ({ logoType = "full-gradient-white", betaType }) => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -21,8 +23,8 @@ const Navbar: FC<Props> = ({ logoType = "full-gradient-white" }) => {
       >
         <div className="container max-w-[1344px] flex items-center relative">
           <div className="w-3/5 flex items-center justify-between">
-            <Link href="/">
-              <Logo type={logoType} />
+            <Link href="/" className="flex items-center gap-2.5">
+              <Logo type={logoType} betaType={betaType} className="h-7 w-28" />
             </Link>
             <nav className="md:flex items-center justify-end gap-8 hidden">
               <Link

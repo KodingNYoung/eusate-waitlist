@@ -9,7 +9,7 @@ import React from "react";
 const Custom404 = () => {
   return (
     <main className="h-screen bg-[url(/images/404-swatch.webp)] bg-center bg-no-repeat bg-cover">
-      <Navbar logoType="full-gradient-black" />
+      <Navbar logoType="full-gradient-black" betaType="light" />
       <section className="h-full flex flex-col items-center justify-center gap-5 container">
         <Image
           src="/images/404-image.webp"

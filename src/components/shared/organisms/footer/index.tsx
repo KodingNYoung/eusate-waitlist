@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="py-10 container max-w-[1344px]">
       <div className="border-t border-gray-50 py-20 flex items-start justify-between flex-wrap gap-16">
         <div className="flex flex-col gap-10">
-          <Logo type="full-gradient-black" />
+          <Logo type="full-gradient-black" betaType="light" />
           <Typography
             as="a"
             href="mailto:info@eusate.com"
