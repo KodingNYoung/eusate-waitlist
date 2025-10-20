@@ -40,7 +40,7 @@ export const useValidation = (
         newErrors = field ? { ...newErrors, [field]: "" } : {};
       } else {
         const errors = extractZodErrors(result.error);
-        newErrors = { ...newErrors, ...errors };
+        newErrors = field ? { ...newErrors, ...errors } : errors;
       }
 
       // get the field errors
@@ -63,7 +63,7 @@ export const useValidation = (
     (field: string) => {
       setTouched((curr) => ({ ...curr, [field]: true }));
       //to delay the validation for slow library fields
-      setTimeout(() => validate(field), 1);
+      setTimeout(() => validate(), 1);
     },
     [validate]
   );

@@ -52,7 +52,7 @@ const ApplyForm = () => {
         <Input
           name="email"
           placeholder="Enter your company email address"
-          label="Email addrress"
+          label="Email address"
           isError={!!errors?.email}
           helperText={errors?.email}
           onChange={(e) => {
@@ -65,6 +65,28 @@ const ApplyForm = () => {
           label="What is your company name?"
           isError={!!errors?.organisation_name}
           helperText={errors?.organisation_name}
+          onChange={(e) => {
+            markFieldTouched(e.currentTarget.name);
+          }}
+        />
+        <Input
+          name="organisation_website"
+          placeholder="https://www.example.com"
+          label="Company website"
+          type="url"
+          isError={!!errors?.organisation_website}
+          helperText={errors?.organisation_website}
+          onChange={(e) => {
+            markFieldTouched(e.currentTarget.name);
+          }}
+        />
+        <Input
+          name="organisation_phone"
+          placeholder="Enter your company contect phone number"
+          label="Contact phone number"
+          type="tel"
+          isError={!!errors?.organisation_phone}
+          helperText={errors?.organisation_phone}
           onChange={(e) => {
             markFieldTouched(e.currentTarget.name);
           }}
@@ -144,9 +166,9 @@ const ApplyForm = () => {
                   Thank you! Your response has been submitted.
                 </Typography>
                 <Typography className="text-gray-500 text-regular-sm sm:text-regular-base">
-                  We&apos;ll review your information within 72 hours and send you a
-                  personalized follow-up with next steps. Check your inbox -
-                  we&apos;re excited to show you how EUSATE can transform your
+                  We&apos;ll review your information within 72 hours and send
+                  you a personalized follow-up with next steps. Check your inbox
+                  - we&apos;re excited to show you how EUSATE can transform your
                   customer support.
                 </Typography>
               </div>

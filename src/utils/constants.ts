@@ -2,14 +2,16 @@ import z from "zod";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
-export const EUSATE_SOCIALS ={
+export const EUSATE_SOCIALS = {
   LINKEDIN: "https://www.linkedin.com/company/eusate/",
   INSTAGRAM: "https://www.instagram.com/eusate_ai/",
-  X: "https://x.com/eusate_ai"
-}
+  X: "https://x.com/eusate_ai",
+};
 
 export const EMAIL_REGEX_PATTERNS =
   /^[^@]+@(?!gmail\.com|yahoo\.com|hotmail\.com|outlook\.com|aol\.com|icloud\.com|mail\.com|yandex\.com|zoho\.com|protonmail\.com|gmx\.com|me\.com|live\.com$).+$/i;
+export const PHONE_REGEX_PATTERN =
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/;
 
 export const APPLICATION_FORM_FIELDS: Record<
   string,
@@ -63,8 +65,7 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-willing-to-provide-feedback-during-the-beta-period": {
-    label:
-      "Would you be willing to provide feedback during the beta period?",
+    label: "Would you be willing to provide feedback during the beta period?",
     hasSpecify: false,
     options: [
       "Yes, weekly check-ins",
@@ -104,9 +105,9 @@ export const APPLICATION_FORM_FIELDS: Record<
 export const betaFormSchema = z.object({
   email: z
     .email("Invalid email address")
-    .regex(EMAIL_REGEX_PATTERNS, {
-      message: "Only company mails are allowed",
-    })
+    // .regex(EMAIL_REGEX_PATTERNS, {
+    //   message: "Only company mails are allowed",
+    // })
     .min(1, "Email is a required field"),
   fullname: z
     .string()
@@ -116,6 +117,13 @@ export const betaFormSchema = z.object({
     .string()
     .min(2, "Company name should not be less than 2 characters")
     .min(1, "Company name is a required field"),
+  organisation_website: z
+    .url("Invalid URL format")
+    .min(1, "Company wesbite is a required field"),
+  organisation_phone: z
+    .string()
+    .regex(PHONE_REGEX_PATTERN, { message: "Invalid phone number format" })
+    .min(1, "Company phone is a required field"),
   role: z.string().min(1, "Role is a required field"),
   ...Object.keys(APPLICATION_FORM_FIELDS).reduce(
     (cumm, curr) => ({

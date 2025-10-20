@@ -3,9 +3,23 @@ import { API_BASEURL, APPLICATION_FORM_FIELDS } from "./utils/constants";
 
 export const applyToBeta = async (formdata: FormData) => {
   try {
-    const { email, fullname, organisation_name, role, ...rest } =
-      Object.fromEntries(formdata);
-    const organisation_info = { email, fullname, organisation_name, role };
+    const {
+      email,
+      fullname,
+      organisation_name,
+      organisation_website,
+      organisation_phone,
+      role,
+      ...rest
+    } = Object.fromEntries(formdata);
+    const organisation_info = {
+      email,
+      fullname,
+      organisation_name,
+      organisation_website,
+      organisation_phone,
+      role,
+    };
     const qa_data = Object.entries(rest).map(([key, value]) => ({
       question: APPLICATION_FORM_FIELDS[key].label,
       answer: value,
