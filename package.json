@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@eusate/messenger-sdk": "^0.1.2",
     "motion": "^12.23.12",
     "next": "14.2.31",
     "react": "^18",

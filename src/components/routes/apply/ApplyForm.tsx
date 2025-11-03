@@ -82,7 +82,7 @@ const ApplyForm = () => {
         />
         <Input
           name="organisation_phone"
-          placeholder="Enter your company contect phone number"
+          placeholder="Enter your company contact phone number"
           label="Contact phone number"
           type="tel"
           isError={!!errors?.organisation_phone}
