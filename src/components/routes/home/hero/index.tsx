@@ -156,6 +156,7 @@ const HomeHero = () => {
             src="/images/helpdesk-ticket-screen.webp"
             width={1200}
             height={851}
+            className="w-[auto]"
             alt="helpdesk ticket screen"
           />
         </motion.div>
