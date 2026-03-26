@@ -1,106 +1,45 @@
-import React, { useState } from "react";
-import Logo from "../../atoms/Logo";
-import Link from "next/link";
-import Button from "../../molecules/Button";
-import { ArrowRightIcon, CloseIcon, JamMenu } from "@/assets/icons";
-import { cls } from "@/utils/helpers";
-import { AnimatePresence, motion } from "motion/react";
-import { FC, LogoVariants } from "@/utils/types";
+import styles from "./style.module.css"
+import Link from "next/link"
+import Logo from "../../atoms/Logo"
+import { EXPLORE_LIST } from "./utils"
+import AppDropdown from "../../molecules/Popups/AppDropdown"
+import Typography from "../../atoms/Typography"
+import { ArrowDown, ArrowRight } from "@/assets/icons"
+import Button from "../../molecules/Button"
+import { ROUTES } from "@/utils/constants"
+import { cls } from "@/utils/helpers"
 
-type Props = {
-  logoType?: LogoVariants;
-  betaType?: "light" | "dark";
-};
-const Navbar: FC<Props> = ({ logoType = "full-gradient-white", betaType }) => {
-  const [open, setOpen] = useState(false);
+const Navbar = () => {
   return (
-    <>
-      <header
-        className={cls(
-          "absolute w-full backdrop-blur-[12px] py-6 z-3",
-          open && "pb-0 sm:pb-6"
-        )}
-      >
-        <div className="container max-w-[1344px] flex items-center relative">
-          <div className="w-3/5 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2.5">
-              <Logo type={logoType} betaType={betaType} className="h-7 w-28" />
-            </Link>
-            <nav className="md:flex items-center justify-end gap-8 hidden">
-              <Link
-                href="/#features"
-                className="text-gray-400 text-medium-base"
-              >
-                Features
-              </Link>
-              <Link
-                href="/#benefits"
-                className="text-gray-400 text-medium-base"
-              >
-                Benefits
-              </Link>
-              <Link href="/#roadmap" className="text-gray-400 text-medium-base">
-                Roadmap
-              </Link>
-            </nav>
-          </div>
-          <div className="ml-auto">
-            <Link href="/apply" target="_blank" rel="noreferrer">
-              <Button className="px-4.5 py-3 hidden md:flex" size="lg">
-                Apply to be an Early Tester
-              </Button>
-            </Link>
-            <button
-              onClick={() => setOpen((curr) => !curr)}
-              className="md:hidden size-12 border border-transparent flex items-center justify-center fill-white stroke-white"
-            >
-              {open ? CloseIcon : JamMenu}
-            </button>
-          </div>
+    <div className={cls("fixed flex w-full z-99 justify-center h-[100px] ", styles.navbarBg)}>
+      <div className="flex justify-between items-center w-[70%] ">
+        <div className="flex gap-5">
+          {
+            EXPLORE_LIST.map(({ id, label, items }) =>
+              <AppDropdown
+                key={id}
+                sections={[{ items }]}
+                classNames={{ content: "bg-white rounded-lg" }}
+                menuProps={{ itemClasses: { title: "text-gray-900" } }}
+                triggerBtnProps={{ endContent: <ArrowDown width="16" height="16" color="#858D9D" /> }}
+                triggerEl={<Typography variant="medium-base" className="text-gray-400">{label}</Typography>}
+              />)
+          }
         </div>
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 283, opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="w-full flex flex-col gap-12 overflow-hidden backdrop-blur-[12px] border-b border-[#FFFFFF26] rounded-b-x20 p-5 md:hidden"
-            >
-              <nav className="flex flex-col items-center gap-8">
-                <Link href="/#features" className="text-white text-medium-base">
-                  Features
-                </Link>
-                <Link href="/#benefits" className="text-white text-medium-base">
-                  Benefits
-                </Link>
-                <Link href="/#roadmap" className="text-white text-medium-base">
-                  Roadmap
-                </Link>
-              </nav>
-              <Link
-                href="/apply"
-                target="_blank"
-                rel="noreferrer"
-                className="mx-auto"
-              >
-                <Button
-                  classNames={{
-                    root: "gradient py-4.5 px-7",
-                    label: "text-semibold-sm",
-                  }}
-                  endContent={
-                    <span className="stroke-white">{ArrowRightIcon}</span>
-                  }
-                >
-                  Apply to be an Early Tester
-                </Button>
-              </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-    </>
-  );
-};
+        <Link href="/" className="flex items-center gap-2.5">
+          <Logo type="full-gradient-black" className="h-7 w-28" />
+        </Link>
+        <nav className="flex items-center gap-12">
+          <Link href={ROUTES.PRICING} className="text-gray-400 text-medium-base">Pricing</Link>
+          <span className="text-gray-100">|</span>
+          <div className="flex items-center gap-6">
+            <Link href={ROUTES.LOGIN} className="text-medium-sm text-gray-500">Login</Link>
+            <Button href={ROUTES.SIGNUP} endContent={<ArrowRight color="white" />} className="py-2 px-6">Sign up</Button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  )
+}
 
 export default Navbar;

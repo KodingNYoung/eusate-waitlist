@@ -864,7 +864,7 @@ export const ChevronDown = (
     height="21"
     viewBox="0 0 21 21"
     fill="none"
-    stroke="inherit"
+    stroke="black"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -921,3 +921,45 @@ export const SuccessCheckIcon = (
     />
   </svg>
 );
+
+
+
+
+type IconProps = {
+  width?: string,
+  height?: string,
+  color?: string,
+}
+
+export const ArrowDown = ({ width, height, color }: IconProps) => {
+  return (
+    <svg
+      width={width ?? "21"}
+      height={height ?? "21"}
+      viewBox="0 0 21 21"
+      fill="none"
+      stroke="black"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17.0784 7.95837L11.6451 13.3917C11.0034 14.0334 9.95342 14.0334 9.31175 13.3917L3.87842 7.95837"
+        stroke={color ?? "inherit"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+  )
+}
+
+export const ArrowRight = ({ width, height, color }: IconProps) => {
+  return (
+
+    <svg width={width ?? "20"} height={height ?? "20"} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.0249 4.94141L17.0832 9.99974L12.0249 15.0581" stroke={color ?? "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M2.91675 10H16.9417" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+}

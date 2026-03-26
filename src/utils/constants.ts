@@ -2,6 +2,12 @@ import z from "zod";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
+export const ROUTES = {
+  PRICING: "/pricing",
+  LOGIN: "/login",
+  SIGNUP: "/signup"
+}
+
 export const EUSATE_SOCIALS = {
   LINKEDIN: "https://www.linkedin.com/company/eusate/",
   INSTAGRAM: "https://www.instagram.com/eusate_ai/",
@@ -77,17 +83,17 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-open-to-being-a-case-study-or-reference-customer-if-the-beta-is-successful":
-    {
-      label:
-        "Would you be open to being a case study or reference customer if the beta is successful?",
-      hasSpecify: false,
-      options: [
-        "Yes, definitely",
-        "Possibly, depending on results",
-        "Prefer to remain private",
-        "Need to discuss internally",
-      ],
-    },
+  {
+    label:
+      "Would you be open to being a case study or reference customer if the beta is successful?",
+    hasSpecify: false,
+    options: [
+      "Yes, definitely",
+      "Possibly, depending on results",
+      "Prefer to remain private",
+      "Need to discuss internally",
+    ],
+  },
 
   "whats-your-expected-timeline-for-making-a-purchasing-decision": {
     label: "What's your expected timeline for making a purchasing decision?",

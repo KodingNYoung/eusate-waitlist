@@ -3,7 +3,7 @@ import HomeHero from "@/components/routes/home/hero";
 import Benefits from "@/components/routes/home/Benefits";
 import Roadmap from "@/components/routes/home/Roadmap";
 import Invite from "@/components/routes/home/Invite";
-import Footer from "@/components/shared/organisms/footer";
+import Footer from "@/components/shared/organisms/footer/index__";
 import Navbar from "@/components/shared/organisms/navbar";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 
