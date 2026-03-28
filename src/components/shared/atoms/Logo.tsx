@@ -4,6 +4,8 @@ import Image from "next/image";
 
 type Props = {
   type: LogoVariants;
+  width?: number,
+  height?: number,
   betaType?: "light" | "dark";
 };
 
@@ -18,7 +20,7 @@ const typeProps: { [key in LogoVariants]: string } = {
   "icon-gradient": "/logos/icon-gradient.svg",
 };
 
-const Logo: FC<Props> = ({ type, className }) => {
+const Logo: FC<Props> = ({ type, width, height, className }) => {
   return (
     <div className="flex items-center gap-2.5">
       <Image
@@ -26,8 +28,8 @@ const Logo: FC<Props> = ({ type, className }) => {
         alt={`logo-${type}`}
         className={className}
         priority
-        height={32}
-        width={135}
+        height={width ?? 32}
+        width={height ?? 135}
       />
     </div>
   );

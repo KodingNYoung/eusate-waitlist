@@ -704,8 +704,8 @@ export const CardSlashIcon = (
 );
 export const InstagramIcon = (
   <svg
-    width="32"
-    height="32"
+    width="20"
+    height="20"
     viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -719,8 +719,8 @@ export const InstagramIcon = (
 
 export const LinkedinIcon = (
   <svg
-    width="32"
-    height="32"
+    width="20"
+    height="20"
     viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -805,25 +805,22 @@ export const PinIcon = (
 );
 export const TickCircleIcon = (
   <svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M9.99984 18.3333C14.5832 18.3333 18.3332 14.5833 18.3332 9.99996C18.3332 5.41663 14.5832 1.66663 9.99984 1.66663C5.4165 1.66663 1.6665 5.41663 1.6665 9.99996C1.6665 14.5833 5.4165 18.3333 9.99984 18.3333Z"
-      stroke="#12B76A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+      fill="#FAB55A"
     />
     <path
-      d="M6.4585 10.0001L8.81683 12.3584L13.5418 7.64172"
-      stroke="#12B76A"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M7.75 12.0019L10.58 14.8319L16.25 9.17188"
+      stroke="#101828"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 );
@@ -837,21 +834,21 @@ export const InfoCircleIcon = (
   >
     <path
       d="M9.99984 18.3333C14.5832 18.3333 18.3332 14.5833 18.3332 9.99996C18.3332 5.41663 14.5832 1.66663 9.99984 1.66663C5.4165 1.66663 1.6665 5.41663 1.6665 9.99996C1.6665 14.5833 5.4165 18.3333 9.99984 18.3333Z"
-      stroke="#F04438"
+      stroke="inherit"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M10 6.66663V10.8333"
-      stroke="#F04438"
+      stroke="inherit"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M9.99561 13.3334H10.0031"
-      stroke="#F04438"
+      stroke="inherit"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -922,14 +919,11 @@ export const SuccessCheckIcon = (
   </svg>
 );
 
-
-
-
 type IconProps = {
-  width?: string,
-  height?: string,
-  color?: string,
-}
+  width?: string;
+  height?: string;
+  color?: string;
+};
 
 export const ArrowDown = ({ width, height, color }: IconProps) => {
   return (
@@ -950,16 +944,66 @@ export const ArrowDown = ({ width, height, color }: IconProps) => {
         strokeLinejoin="round"
       />
     </svg>
-
-  )
-}
+  );
+};
 
 export const ArrowRight = ({ width, height, color }: IconProps) => {
   return (
-
-    <svg width={width ?? "20"} height={height ?? "20"} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12.0249 4.94141L17.0832 9.99974L12.0249 15.0581" stroke={color ?? "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M2.91675 10H16.9417" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <svg
+      width={width ?? "20"}
+      height={height ?? "20"}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.0249 4.94141L17.0832 9.99974L12.0249 15.0581"
+        stroke={color ?? "white"}
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M2.91675 10H16.9417"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
-  )
-}
+  );
+};
+
+export const XIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 19"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M12.8631 18.3333L8.23857 11.7418L2.44925 18.3333H0L7.15193 10.1926L0 0H6.28829L10.6468 6.21252L16.1079 0H18.5572L11.7371 7.76373L19.1514 18.3333H12.8631ZM15.5906 16.475H13.9417L3.50696 1.85833H5.15612L9.33529 7.71097L10.058 8.72655L15.5906 16.475Z"
+      fill="inherit"
+    />
+  </svg>
+);
+
+export const YoutubeIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19.8008 3.03516C19.8008 3.03516 19.6055 1.65625 19.0039 1.05078C18.2422 0.253906 17.3906 0.25 17 0.203125C14.2031 -1.11759e-07 10.0039 0 10.0039 0H9.99609C9.99609 0 5.79688 -1.11759e-07 3 0.203125C2.60938 0.25 1.75781 0.253906 0.996094 1.05078C0.394531 1.65625 0.203125 3.03516 0.203125 3.03516C0.203125 3.03516 0 4.65625 0 6.27344V7.78906C0 9.40625 0.199219 11.0273 0.199219 11.0273C0.199219 11.0273 0.394531 12.4063 0.992187 13.0117C1.75391 13.8086 2.75391 13.7813 3.19922 13.8672C4.80078 14.0195 10 14.0664 10 14.0664C10 14.0664 14.2031 14.0586 17 13.8594C17.3906 13.8125 18.2422 13.8086 19.0039 13.0117C19.6055 12.4063 19.8008 11.0273 19.8008 11.0273C19.8008 11.0273 20 9.41016 20 7.78906V6.27344C20 4.65625 19.8008 3.03516 19.8008 3.03516ZM7.93359 9.62891V4.00781L13.3359 6.82812L7.93359 9.62891Z"
+      fill="inherit"
+    />
+  </svg>
+);

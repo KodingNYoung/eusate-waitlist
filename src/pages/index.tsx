@@ -3,7 +3,7 @@ import HomeHero from "@/components/routes/home/hero";
 import Benefits from "@/components/routes/home/Benefits";
 import Roadmap from "@/components/routes/home/Roadmap";
 import Invite from "@/components/routes/home/Invite";
-import Footer from "@/components/shared/organisms/footer/index__";
+import Footer from "@/components/shared/organisms/footer";
 import Navbar from "@/components/shared/organisms/navbar";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 
@@ -17,12 +17,14 @@ export default function Home() {
         jsonLdData={{ type: "homepage" }}
       />
       <Navbar />
-      <HomeHero />
-      <Features />
-      <Benefits />
-      <Roadmap />
-      <Invite />
-      <Footer />
+      <div className="px-4">
+        <HomeHero />
+        <Features />
+        <Benefits />
+        <Roadmap />
+        <Invite />
+        <Footer />
+      </div>
     </div>
   );
 }

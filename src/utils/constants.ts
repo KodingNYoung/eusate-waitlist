@@ -1,12 +1,28 @@
 import z from "zod";
+import {
+  AddOn,
+  CategoryList,
+  CompareCategory,
+  CompareCategoryKey,
+  PricingPlan,
+} from "./types";
+import { ComparePlanCat1, Plan, PublicExtras } from "./enum";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
+
+export const PLAN_COST = {
+  FREE: 0,
+  PRO: 129,
+  BASIC: 29,
+} as const;
 
 export const ROUTES = {
   PRICING: "/pricing",
   LOGIN: "/login",
-  SIGNUP: "/signup"
-}
+  SIGNUP: "/signup",
+  PRIVACY: "/privacy-policy",
+  TERMS: "/terms-and-conditions",
+} as const;
 
 export const EUSATE_SOCIALS = {
   LINKEDIN: "https://www.linkedin.com/company/eusate/",
@@ -83,17 +99,17 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-open-to-being-a-case-study-or-reference-customer-if-the-beta-is-successful":
-  {
-    label:
-      "Would you be open to being a case study or reference customer if the beta is successful?",
-    hasSpecify: false,
-    options: [
-      "Yes, definitely",
-      "Possibly, depending on results",
-      "Prefer to remain private",
-      "Need to discuss internally",
-    ],
-  },
+    {
+      label:
+        "Would you be open to being a case study or reference customer if the beta is successful?",
+      hasSpecify: false,
+      options: [
+        "Yes, definitely",
+        "Possibly, depending on results",
+        "Prefer to remain private",
+        "Need to discuss internally",
+      ],
+    },
 
   "whats-your-expected-timeline-for-making-a-purchasing-decision": {
     label: "What's your expected timeline for making a purchasing decision?",
@@ -142,3 +158,218 @@ export const betaFormSchema = z.object({
 export const waitlistFormSchema = z.object({
   email: z.email("Invalid email address").min(1, "Email is a required field"),
 });
+
+export const PRICING: PricingPlan[] = [
+  {
+    id: 1,
+    key: Plan.FREE,
+    label: "Free Plan",
+    price: PLAN_COST.FREE,
+    features: [
+      "SATE AI agaent with 80% resolution rate",
+      "Unlimited conversations across all channels",
+      "2 human agent seats included",
+      "Core integrations (Email, Live, Chat, Discord, Whatsapp)",
+      "Knowledge Base (up to 2MB documents)",
+      "Developer Space (up to 2 functions)",
+    ],
+    action: () => {},
+  },
+  {
+    id: 2,
+    key: Plan.PRO,
+    label: "Pro Plan",
+    price: PLAN_COST.PRO,
+    recomended: true,
+    features: [
+      "Everthing is Standard",
+      "5 human agent seats included",
+      "Advanced reporting & custom dashboards",
+      "Premium integrations (Whatsapp, Discord, Telegram)",
+      "AI Playground with unlimied scenarios",
+      "Knowleged Base (unlimited documents)",
+      "Priority support with dedicated onboarding",
+      "SLA guarantees (99.9% uptime)",
+    ],
+    action: () => {},
+  },
+  {
+    id: 3,
+    key: Plan.BASIC,
+    label: "Basic Plan",
+    price: PLAN_COST.BASIC,
+    features: [
+      "SATE AI agaent with 80% resolution rate",
+      "Unlimited conversations across all channels",
+      "2 human agent seats included",
+      "Core integrations (Email, Live, Chat, Discord, Whatsapp)",
+      "Knowledge Base (up to 2MB documents)",
+      "Developer Space (up to 2 functions)",
+    ],
+    action: () => {},
+  },
+];
+
+export const CATEGORY_LIST: CategoryList[] = [
+  {
+    id: 1,
+    key: "cat-1",
+    label: "Category",
+    items: [
+      {
+        key: ComparePlanCat1.AI_SUMMARIZE,
+        label: "AI Sumaarize",
+      },
+      {
+        key: ComparePlanCat1.FEATURE,
+        label: "Feature",
+      },
+      {
+        key: ComparePlanCat1.SHARED_INBOX,
+        label: "Shared Inbox",
+      },
+    ],
+  },
+  {
+    id: 2,
+    key: "cat-2",
+    label: "Category",
+    items: [
+      {
+        key: ComparePlanCat1.AI_SUMMARIZE,
+        label: "AI Sumaarize",
+      },
+      {
+        key: ComparePlanCat1.FEATURE,
+        label: "Feature",
+      },
+      {
+        key: ComparePlanCat1.SHARED_INBOX,
+        label: "Shared Inbox",
+      },
+    ],
+  },
+];
+
+export const COMPARE_PRICING_LIST: {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  categories: {
+    key: CompareCategoryKey;
+    features: { [cat in CompareCategory]: boolean | { value: number } };
+  }[];
+  action: () => void;
+}[] = [
+  {
+    id: 1,
+    key: Plan.BASIC,
+    label: "Basic Plan",
+    price: PLAN_COST.BASIC,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 2,
+    key: Plan.PRO,
+    label: "Pro Plan",
+    price: PLAN_COST.PRO,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 3,
+    key: Plan.FREE,
+    label: "Free Plan",
+    price: PLAN_COST.FREE,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        },
+      },
+    ],
+    action: () => {},
+  },
+];
+
+export const ADD_ON_LIST: AddOn[] = [
+  {
+    id: 1,
+    src: PublicExtras.SATE_ICON,
+    title: "Sate tokens",
+    description: "Every AI activity feeds off the sate tokens.",
+    price: 4,
+    size: "per 1,000,000 tokens",
+  },
+  {
+    id: 2,
+    src: PublicExtras.DATABASE_ICON,
+    title: "Knowlege Base Space",
+    description: "Every AI activity feeds off the sate tokens.",
+    price: 4,
+    size: "per MB space",
+  },
+  {
+    id: 3,
+    src: PublicExtras.AGENT_ICON,
+    title: "1 Humber Agent",
+    description: "Every AI activity feeds off the sate tokens.",
+    price: 4,
+    size: "per agent seat",
+  },
+  {
+    id: 1,
+    src: PublicExtras.DEVSPACE_ICONS,
+    title: "Devspace functions",
+    description: "Every AI activity feeds off the sate tokens.",
+    price: 4,
+    size: "per function",
+  },
+];

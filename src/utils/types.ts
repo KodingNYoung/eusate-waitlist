@@ -1,4 +1,5 @@
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
+import { ComparePlanCat1 } from "./enum";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
 
@@ -65,4 +66,45 @@ export type FC<PropsType = unknown> = {
     context?: unknown
   ): ReactElement | null;
   displayName?: string;
+};
+
+export type Plan = "free" | "pro" | "basic";
+export type CompareCategoryKey = "cat-1" | "cat-2";
+export type CompareCategory =
+  (typeof ComparePlanCat1)[keyof typeof ComparePlanCat1];
+export type CompareCategoryData = {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  categories: {
+    key: CompareCategoryKey;
+    features: { [cat in CompareCategory]: boolean | { value: number } };
+  }[];
+  action: () => void;
+};
+
+export type CategoryList = {
+  id: number;
+  key: CompareCategoryKey;
+  label: string;
+  items: { key: CompareCategory; label: string }[];
+};
+export type PricingPlan = {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  features: string[];
+  recomended?: boolean;
+  action: () => void;
+};
+
+export type AddOn = {
+  id: number;
+  src: string;
+  size: string;
+  title: string;
+  description: string;
+  price: number;
 };

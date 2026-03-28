@@ -1,7 +1,7 @@
 .navbarBg {
   background-image: url('/extras/nav-bg.svg');
-  background-size: 100% 100%;
-  background-position: center;
+  background-size: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 

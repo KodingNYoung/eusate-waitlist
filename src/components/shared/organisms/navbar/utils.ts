@@ -16,27 +16,27 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "Knowlodge base",
-        link: "",
+        link: "/",
       },
       {
         key: 2,
         label: "Helpdesk",
-        link: "",
+        link: "/",
       },
       {
         key: 3,
         label: "Sate AI",
-        link: "",
+        link: "/",
       },
       {
         key: 4,
         label: "Devspace",
-        link: "",
+        link: "/",
       },
       {
         key: 5,
         label: "Reports",
-        link: "",
+        link: "/",
       },
     ]
   },
@@ -47,17 +47,17 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "About us",
-        link: ""
+        link: "/"
       },
       {
         key: 2,
         label: "Integrations",
-        link: ""
+        link: "/"
       },
       {
         key: 3,
         label: "Contact us",
-        link: ""
+        link: "/"
       }
     ]
   },
@@ -68,12 +68,12 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "Help center",
-        link: ""
+        link: "/"
       },
       {
         key: 2,
         label: "Blogs",
-        link: ""
+        link: "/"
       }
     ]
   }
