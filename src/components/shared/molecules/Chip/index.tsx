@@ -1,10 +1,16 @@
-import { FC } from "@/utils/types";
+import { FC, TWClassNames } from "@/utils/types";
 import { Chip as ChipBase, ChipProps } from "@heroui/chip";
 
-type Props = ChipProps;
+type Slots = "container" | keyof NonNullable<ChipProps["classNames"]>;
+
+type Props = Omit<ChipProps, "classNames"> & {
+  classNames?: { [slot in Slots]?: TWClassNames },
+}
 const Chip: FC<Props> = ({ children, ...props }) => {
   return (
-    <ChipBase {...props}>{children}</ChipBase>
+    <div className={props.classNames?.container}>
+      <ChipBase {...props}>{children}</ChipBase>
+    </div>
   )
 }
 

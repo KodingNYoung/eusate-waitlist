@@ -1,6 +1,7 @@
 import IntegrationCard from "@/components/routes/integration/IntegrationCard";
 import Typography from "@/components/shared/atoms/Typography";
 import Chip from "@/components/shared/molecules/Chip";
+import Footer from "@/components/shared/organisms/footer";
 import Navbar from "@/components/shared/organisms/navbar";
 import { PublicExtras } from "@/utils/enum";
 
@@ -35,18 +36,19 @@ const Integrations = () => {
   return (
     <div>
       <Navbar />
-      <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full">
-        <div className="container max-w-[80%] py-20 space-y-20">
-          <header className="mx-auto">
-            <Chip className="bg-gold-100">Integrations</Chip>
-            <Typography>We live where your customers live</Typography>
+      <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full px-4">
+        <div className="container flex flex-col items-center justify-center max-w-[80%] py-20 space-y-20 mx-auto">
+          <header className="space-y-8 w-[50%]">
+            <Chip classNames={{ container: "flex justify-center", base: "bg-gold-100" }}>Integrations</Chip>
+            <Typography variant="bold-6xl" className="text-center">We live where your customers live</Typography>
           </header>
-          <main className="flex gap-4">
+          <main className="flex flex-wrap justify-center gap-4">
             {PLATFORMS.map(({ id, ...platform }) => (
               <IntegrationCard key={id} {...platform} />
             ))}
           </main>
         </div>
+        <Footer />
       </div>
     </div>
   );
