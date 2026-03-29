@@ -11,7 +11,7 @@ import { cls } from "@/utils/helpers"
 
 const Navbar = () => {
   return (
-    <div className={cls("fixed flex w-full z-99 justify-center h-[100px] ", styles.navbarBg)}>
+    <div className={cls("fixed flex w-full z-3 justify-center h-[100px] ", styles.navbarBg)}>
       <div className="flex justify-between items-center w-[70%] ">
         <div className="flex gap-5">
           {
@@ -20,7 +20,7 @@ const Navbar = () => {
                 key={id}
                 sections={[{ items }]}
                 classNames={{ content: "bg-white rounded-lg" }}
-                menuProps={{ itemClasses: { title: "text-gray-900" } }}
+                menuProps={{ itemClasses: { title: "text-gray-900 text-regular-xs" } }}
                 triggerBtnProps={{ endContent: <ArrowDown width="16" height="16" color="#858D9D" /> }}
                 triggerEl={<Typography variant="medium-base" className="text-gray-400">{label}</Typography>}
               />)

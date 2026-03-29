@@ -1,3 +1,4 @@
+import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Typography from "@/components/shared/atoms/Typography";
 import Chip from "@/components/shared/molecules/Chip";
 import MetaProps from "@/components/shared/molecules/MetaProps";
@@ -26,7 +27,8 @@ const TermsAndCondition = () => {
         }}
       />
       <Navbar />
-      <div>
+      <div className="relative px-4">
+        <GradientBackground variant="peach" className="w-full absolute -z-1 h-[390px]" />
         <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full">
           <div className="container max-w-[1120px] py-20 space-y-20">
             <header className="flex flex-col items-start gap-8">
@@ -35,7 +37,7 @@ const TermsAndCondition = () => {
                 as="h1"
                 className="text-bold-xl sm:text-bold-6xl text-black mb-4 sm:mb-6"
               >
-                Terms & Conditions
+                Terms {"&"} Conditions
               </Typography>
               <Typography
                 as="span"

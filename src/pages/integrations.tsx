@@ -1,4 +1,5 @@
 import IntegrationCard from "@/components/routes/integration/IntegrationCard";
+import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Typography from "@/components/shared/atoms/Typography";
 import Chip from "@/components/shared/molecules/Chip";
 import Footer from "@/components/shared/organisms/footer";
@@ -36,6 +37,7 @@ const Integrations = () => {
   return (
     <div>
       <Navbar />
+      <GradientBackground variant="yellow" className="absolute w-full mx-4" />
       <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full px-4">
         <div className="container flex flex-col items-center justify-center max-w-[80%] py-20 space-y-20 mx-auto">
           <header className="space-y-8 w-[50%]">

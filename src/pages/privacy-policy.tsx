@@ -1,3 +1,4 @@
+import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Typography from "@/components/shared/atoms/Typography";
 import Chip from "@/components/shared/molecules/Chip";
 import MetaProps from "@/components/shared/molecules/MetaProps";
@@ -25,13 +26,14 @@ const PrivacyPolicy = () => {
         }}
       />
       <Navbar />
-      <div>
-        <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full">
+      <div className="relative">
+        <GradientBackground variant="yellow" className="w-full mx-4 absolute -z-1 h-[390px]" />
+        <div className="pt-[88px] min-h-screen w-full">
           <div className="container max-w-[1120px] py-20 space-y-20">
             <header className="flex flex-col items-start gap-8">
               <Chip className="bg-gold-100 py-3 px-4 text-medium-base flex-none">Legals</Chip>
               <Typography
-                className="text-bold-3xl sm:text-bold-6xl text-black"
+                className="text-bold-3xl sm:text-bold-6xl"
               >
                 Privacy Policy
               </Typography>

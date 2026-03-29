@@ -1,17 +1,17 @@
-import { AddOnCard } from "@/components/routes/pricing/AddonsCard";
-import { CompareGrid } from "@/components/routes/pricing/CompareGrid";
-import { PricingCard } from "@/components/routes/pricing/PricingCard";
-import Typography from "@/components/shared/atoms/Typography";
-import Button from "@/components/shared/molecules/Button";
-import Chip from "@/components/shared/molecules/Chip";
-import Footer from "@/components/shared/organisms/footer";
-import Navbar from "@/components/shared/organisms/navbar";
 import {
   ADD_ON_LIST,
   CATEGORY_LIST,
   COMPARE_PRICING_LIST,
   PRICING,
 } from "@/utils/constants";
+import Chip from "@/components/shared/molecules/Chip";
+import Button from "@/components/shared/molecules/Button";
+import Footer from "@/components/shared/organisms/footer";
+import Navbar from "@/components/shared/organisms/navbar";
+import Typography from "@/components/shared/atoms/Typography";
+import { AddOnCard } from "@/components/routes/pricing/AddonsCard";
+import { CompareGrid } from "@/components/routes/pricing/CompareGrid";
+import { PricingCard } from "@/components/routes/pricing/PricingCard";
 
 const Pricing = () => {
   return (
