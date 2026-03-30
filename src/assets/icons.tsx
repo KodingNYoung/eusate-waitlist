@@ -736,7 +736,7 @@ export const TwitterIcon = (
     width="32"
     height="32"
     viewBox="0 0 32 32"
-    fill="none"
+    fill="inherit"
     xmlns="http://www.w3.org/2000/svg"
   >
     <mask
@@ -752,7 +752,7 @@ export const TwitterIcon = (
     <g mask="url(#mask0_2013_40454)">
       <path
         d="M23.6667 3.9165H27.7563L18.8229 14.1527L29.3334 28.0841H21.1048L14.6553 19.6365L7.28389 28.0841H3.19056L12.7448 17.1317L2.66675 3.91841H11.1048L16.9258 11.6384L23.6667 3.9165ZM22.2287 25.6308H24.4953L9.86675 6.24222H7.43627L22.2287 25.6308Z"
-        fill="#858D9D"
+        fill="inherit"
       />
     </g>
   </svg>
@@ -919,46 +919,37 @@ export const SuccessCheckIcon = (
   </svg>
 );
 
-type IconProps = {
-  width?: string;
-  height?: string;
-  color?: string;
-};
 
-export const ArrowDown = ({ width, height, color }: IconProps) => {
-  return (
-    <svg
-      width={width ?? "21"}
-      height={height ?? "21"}
-      viewBox="0 0 21 21"
-      fill="none"
-      stroke="black"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M17.0784 7.95837L11.6451 13.3917C11.0034 14.0334 9.95342 14.0334 9.31175 13.3917L3.87842 7.95837"
-        stroke={color ?? "inherit"}
-        strokeWidth="1.5"
-        strokeMiterlimit="10"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-};
+export const ArrowDown = (
+  <svg
+    width={21}
+    height={21}
+    viewBox="0 0 21 21"
+    fill="none"
+    stroke="inherit"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.0784 7.95837L11.6451 13.3917C11.0034 14.0334 9.95342 14.0334 9.31175 13.3917L3.87842 7.95837"
+      stroke="inherit"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
-export const ArrowRight = ({ width, height, color }: IconProps) => {
-  return (
+export const ArrowRight =
+  (
     <svg
-      width={width ?? "20"}
-      height={height ?? "20"}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M12.0249 4.94141L17.0832 9.99974L12.0249 15.0581"
-        stroke={color ?? "white"}
+        stroke={"inherit"}
         stroke-width="1.5"
         stroke-miterlimit="10"
         stroke-linecap="round"
@@ -974,7 +965,6 @@ export const ArrowRight = ({ width, height, color }: IconProps) => {
       />
     </svg>
   );
-};
 
 export const XIcon = (
   <svg
@@ -998,7 +988,7 @@ export const YoutubeIcon = (
     width="20"
     height="20"
     viewBox="0 0 20 15"
-    fill="none"
+    fill="inherit"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path

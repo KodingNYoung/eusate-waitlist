@@ -99,17 +99,17 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-open-to-being-a-case-study-or-reference-customer-if-the-beta-is-successful":
-    {
-      label:
-        "Would you be open to being a case study or reference customer if the beta is successful?",
-      hasSpecify: false,
-      options: [
-        "Yes, definitely",
-        "Possibly, depending on results",
-        "Prefer to remain private",
-        "Need to discuss internally",
-      ],
-    },
+  {
+    label:
+      "Would you be open to being a case study or reference customer if the beta is successful?",
+    hasSpecify: false,
+    options: [
+      "Yes, definitely",
+      "Possibly, depending on results",
+      "Prefer to remain private",
+      "Need to discuss internally",
+    ],
+  },
 
   "whats-your-expected-timeline-for-making-a-purchasing-decision": {
     label: "What's your expected timeline for making a purchasing decision?",
@@ -173,7 +173,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => {},
+    action: () => { },
   },
   {
     id: 2,
@@ -191,7 +191,7 @@ export const PRICING: PricingPlan[] = [
       "Priority support with dedicated onboarding",
       "SLA guarantees (99.9% uptime)",
     ],
-    action: () => {},
+    action: () => { },
   },
   {
     id: 3,
@@ -206,7 +206,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => {},
+    action: () => { },
   },
 ];
 
@@ -262,82 +262,82 @@ export const COMPARE_PRICING_LIST: {
   }[];
   action: () => void;
 }[] = [
-  {
-    id: 1,
-    key: Plan.BASIC,
-    label: "Basic Plan",
-    price: PLAN_COST.BASIC,
-    categories: [
-      {
-        key: "cat-1",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+    {
+      id: 1,
+      key: Plan.BASIC,
+      label: "Basic Plan",
+      price: PLAN_COST.BASIC,
+      categories: [
+        {
+          key: "cat-1",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-      {
-        key: "cat-2",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        {
+          key: "cat-2",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-    ],
-    action: () => {},
-  },
-  {
-    id: 2,
-    key: Plan.PRO,
-    label: "Pro Plan",
-    price: PLAN_COST.PRO,
-    categories: [
-      {
-        key: "cat-1",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+      ],
+      action: () => { },
+    },
+    {
+      id: 2,
+      key: Plan.PRO,
+      label: "Pro Plan",
+      price: PLAN_COST.PRO,
+      categories: [
+        {
+          key: "cat-1",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-      {
-        key: "cat-2",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        {
+          key: "cat-2",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-    ],
-    action: () => {},
-  },
-  {
-    id: 3,
-    key: Plan.FREE,
-    label: "Free Plan",
-    price: PLAN_COST.FREE,
-    categories: [
-      {
-        key: "cat-1",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+      ],
+      action: () => { },
+    },
+    {
+      id: 3,
+      key: Plan.FREE,
+      label: "Free Plan",
+      price: PLAN_COST.FREE,
+      categories: [
+        {
+          key: "cat-1",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-      {
-        key: "cat-2",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        {
+          key: "cat-2",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-    ],
-    action: () => {},
-  },
-];
+      ],
+      action: () => { },
+    },
+  ];
 
 export const ADD_ON_LIST: AddOn[] = [
   {
@@ -365,7 +365,7 @@ export const ADD_ON_LIST: AddOn[] = [
     size: "per agent seat",
   },
   {
-    id: 1,
+    id: 4,
     src: PublicExtras.DEVSPACE_ICONS,
     title: "Devspace functions",
     description: "Every AI activity feeds off the sate tokens.",
@@ -373,3 +373,49 @@ export const ADD_ON_LIST: AddOn[] = [
     size: "per function",
   },
 ];
+
+
+export const HELP_CENTER = [
+  {
+    id: 1,
+    key: "getting-started",
+    title: "Getting started",
+    questions: [
+      {
+        id: 1,
+        question: "How long does implementation take?",
+        answer: ""
+      },
+      {
+        id: 2,
+        question: "What happens when SATE can't resolve something?",
+        answer: ""
+      },
+      {
+        id: 3,
+        question: "Do we need technical resource to set up integrations?",
+        answer: ""
+      },
+      {
+        id: 4,
+        question: "What channels does Eusate support?",
+        answer: ""
+      },
+      {
+        id: 5,
+        question: "Can SATE autually take actions or just answer questions?",
+        answer: ""
+      },
+      {
+        id: 6,
+        question: "What's the price model?",
+        answer: ""
+      },
+      {
+        id: 7,
+        question: "How do you ensure data security and compilance?",
+        answer: ""
+      },
+    ]
+  }
+]

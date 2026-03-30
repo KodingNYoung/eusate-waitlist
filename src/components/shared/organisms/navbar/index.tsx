@@ -21,7 +21,7 @@ const Navbar = () => {
                 sections={[{ items }]}
                 classNames={{ content: "bg-white rounded-lg" }}
                 menuProps={{ itemClasses: { title: "text-gray-900 text-regular-xs" } }}
-                triggerBtnProps={{ endContent: <ArrowDown width="16" height="16" color="#858D9D" /> }}
+                triggerBtnProps={{ endContent: <span className="stroke-black" >{ArrowDown}</span> }}
                 triggerEl={<Typography variant="medium-base" className="text-gray-400">{label}</Typography>}
               />)
           }
@@ -34,7 +34,7 @@ const Navbar = () => {
           <span className="text-gray-100">|</span>
           <div className="flex items-center gap-6">
             <Link href={ROUTES.LOGIN} className="text-medium-sm text-gray-500">Login</Link>
-            <Button href={ROUTES.SIGNUP} endContent={<ArrowRight color="white" />} className="py-2 px-6">Sign up</Button>
+            <Button href={ROUTES.SIGNUP} endContent={<span className="stroke-white">{ArrowRight}</span>} className="py-2 px-6">Sign up</Button>
           </div>
         </nav>
       </div>
