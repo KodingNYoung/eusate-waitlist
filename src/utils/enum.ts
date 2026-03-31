@@ -20,3 +20,8 @@ export enum PublicExtras {
   LIVESTREAM_ICON = "/extras/livestream-icon.svg",
   MAIL_ICON = "/extras/mail-icon.svg",
 }
+
+export enum HelpCenterKey {
+  GETTING_STARTED = "getting-started",
+  ACCOUNT_INFORMATION = "account-info"
+}

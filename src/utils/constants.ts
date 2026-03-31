@@ -4,9 +4,10 @@ import {
   CategoryList,
   CompareCategory,
   CompareCategoryKey,
+  HelpCenterTab,
   PricingPlan,
 } from "./types";
-import { ComparePlanCat1, Plan, PublicExtras } from "./enum";
+import { ComparePlanCat1, HelpCenterKey, Plan, PublicExtras } from "./enum";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
@@ -374,48 +375,92 @@ export const ADD_ON_LIST: AddOn[] = [
   },
 ];
 
+export const HELP_CENTER_QUESTIONS =
+{
+  [HelpCenterKey.GETTING_STARTED]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "How long does implementation take?",
+      answer: "It would take about 24hrs"
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What happens when SATE can't resolve something?",
+      answer: ""
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "Do we need technical resource to set up integrations?",
+      answer: ""
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "What channels does Eusate support?",
+      answer: ""
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "Can SATE autually take actions or just answer questions?",
+      answer: ""
+    },
+    {
+      id: 6,
+      key: "q-6",
+      question: "What's the price model?",
+      answer: ""
+    },
+    {
+      id: 7,
+      key: "q-7",
+      question: "How do you ensure data security and compilance?",
+      answer: ""
+    },
+  ],
+  [HelpCenterKey.ACCOUNT_INFORMATION]: []
+}
 
-export const HELP_CENTER = [
+export const HELP_CENTER_TABS: HelpCenterTab[] = [
   {
     id: 1,
-    key: "getting-started",
-    title: "Getting started",
-    questions: [
-      {
-        id: 1,
-        question: "How long does implementation take?",
-        answer: ""
-      },
-      {
-        id: 2,
-        question: "What happens when SATE can't resolve something?",
-        answer: ""
-      },
-      {
-        id: 3,
-        question: "Do we need technical resource to set up integrations?",
-        answer: ""
-      },
-      {
-        id: 4,
-        question: "What channels does Eusate support?",
-        answer: ""
-      },
-      {
-        id: 5,
-        question: "Can SATE autually take actions or just answer questions?",
-        answer: ""
-      },
-      {
-        id: 6,
-        question: "What's the price model?",
-        answer: ""
-      },
-      {
-        id: 7,
-        question: "How do you ensure data security and compilance?",
-        answer: ""
-      },
-    ]
-  }
+    key: HelpCenterKey.GETTING_STARTED,
+    label: "Getting started",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+  },
+  {
+    id: 2,
+    key: HelpCenterKey.ACCOUNT_INFORMATION,
+    label: "Account information",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.ACCOUNT_INFORMATION]
+  },
+  {
+    id: 3,
+    key: HelpCenterKey.ACCOUNT_INFORMATION,
+    label: "Category",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+  },
+  {
+    id: 4,
+    key: HelpCenterKey.ACCOUNT_INFORMATION,
+    label: "Category",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+  },
+  {
+    id: 5,
+    key: HelpCenterKey.ACCOUNT_INFORMATION,
+    label: "Category",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+  },
+  {
+    id: 6,
+    key: HelpCenterKey.ACCOUNT_INFORMATION,
+    label: "Category",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+  },
 ]
+
+

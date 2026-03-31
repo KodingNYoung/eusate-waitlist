@@ -1,6 +1,5 @@
 
-import { FC } from "@/utils/types"
-import { Accordion as AccordionBase, AccordionItem } from "@heroui/accordion"
+import { Accordion as AccordionBase, AccordionItem, AccordionProps } from "@heroui/accordion"
 
 export type AccordionItem = {
   key: string,
@@ -8,10 +7,11 @@ export type AccordionItem = {
   content: string,
 }
 
-type Props = {
-  items: AccordionItem[]
+type Props = Omit<AccordionProps, "children"> & {
+  items: AccordionItem[];
 }
-export const Accordion: FC<Props> = ({ items }) => {
+
+export const Accordion = ({ items }: Props) => {
   return (
     <AccordionBase>
       {

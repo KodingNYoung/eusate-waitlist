@@ -1,19 +1,24 @@
-import { FC } from "@/utils/types"
-import { Tabs } from "@heroui/tabs"
+import { Tab, Tabs, TabsProps } from "@heroui/tabs"
+import { ReactElement } from "react"
 
-type Tab = {
-  key: string,
-  title: string,
-  content: string,
-}
-type Props = {
-  tabs: Tab[]
+type Tab<K, T> = {
+  id: number,
+  key: K,
+  label: string,
+  content: T[]
 }
 
-export const AppTab: FC<Props> = () => {
+type Props<K, T> = Omit<TabsProps, "children"> & {
+  tabs: Tab<K, T>[],
+  children: (content: T[]) => ReactElement;
+}
+
+export const AppTab = <K, T = []>({ children, tabs, ...props }: Props<K, T>) => {
   return (
-    <Tabs>
-
+    <Tabs {...props}>
+      {
+        tabs.map(({ id, content, label }) => <Tab key={id} title={label}>{children(content)}</Tab>)
+      }
     </Tabs>
   )
 }

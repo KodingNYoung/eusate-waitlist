@@ -1,5 +1,5 @@
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
-import { ComparePlanCat1 } from "./enum";
+import { ComparePlanCat1, HelpCenterKey } from "./enum";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
 
@@ -108,3 +108,17 @@ export type AddOn = {
   description: string;
   price: number;
 };
+
+export type HelpCenterTabKeys = "getting-started" | "account-info"
+export type HelpCenterTab = {
+  id: number,
+  key: HelpCenterKey,
+  label: string
+  content: HelpCenterQuestion[];
+}
+export type HelpCenterQuestion = {
+  id: number,
+  key: string,
+  question: string,
+  answer: string,
+}
