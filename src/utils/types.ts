@@ -122,3 +122,4 @@ export type HelpCenterQuestion = {
   question: string,
   answer: string,
 }
+export type SateAiAction = "action-1" | "action-2" | " action-3" | "action-4"

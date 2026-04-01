@@ -464,3 +464,29 @@ export const HELP_CENTER_TABS: HelpCenterTab[] = [
 ]
 
 
+export const SATE_AI_ACTIONS = [
+  {
+    id: 1,
+    key: "action-1",
+    title: "Understand What Customers Actually Mean",
+    description: "SATE understands intent. It analyzes context, asks clarifying questions, and comprehends what customers are actually trying to accomplish. "
+  },
+  {
+    id: 2,
+    key: "action-2",
+    title: "Adapt to Emotional State",
+    description: ""
+  },
+  {
+    id: 3,
+    key: "action-3",
+    title: "Chat and calls with Customers",
+    description: "",
+  },
+  {
+    id: 4,
+    key: "action-4",
+    title: "Actually Solve Problems 🎉",
+    description: ""
+  }
+]

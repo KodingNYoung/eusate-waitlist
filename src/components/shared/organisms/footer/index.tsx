@@ -9,7 +9,7 @@ import { ArrowRightIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[40px] pt-20 px-24">
+    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[40px] pt-20 px-24 mx-4">
       <div className="flex flex-col gap-56">
         <div className="flex justify-between">
           <div className="flex flex-col gap-16 w-[463px]">
