@@ -123,3 +123,24 @@ export type HelpCenterQuestion = {
   answer: string,
 }
 export type SateAiAction = "action-1" | "action-2" | " action-3" | "action-4"
+
+export type Blog = {
+  id: string;
+  imgSrc: string;
+  title: string,
+  summary: string,
+  readingSpan: string,
+  spotlight?: boolean,
+  timestamp: Date,
+  content: {
+    title: string,
+    introduction: string,
+    subheaders:
+    {
+      id: number,
+      title: string
+      content: string
+    }[]
+
+  }
+}
