@@ -3,11 +3,12 @@ import { cls } from "@/utils/helpers";
 import { TWClassNames } from "@/utils/types";
 import React, { ReactNode } from "react";
 
-type Variants = "yellow" | "peach"
+type Variants = "yellow" | "peach" | "gray"
 
 const variantProps: { [variant in Variants]: TWClassNames } = {
   "yellow": "bg-[linear-gradient(180deg,_#F3E5B2_0%,_#FFFFFF_100%)]",
-  "peach": "bg-[linear-gradient(180deg,_#f8cfca_0%,_#FFFFFF_100%)]"
+  "peach": "bg-[linear-gradient(180deg,_#f8cfca_0%,_#FFFFFF_100%)]",
+  "gray": "bg-[linear-gradient(180deg,_#F0F1F3_0%,_#FFFFFF_100%)]"
 }
 type GradientBackgroundProps = {
   variant?: Variants,

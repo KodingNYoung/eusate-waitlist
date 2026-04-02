@@ -23,6 +23,9 @@ export const ROUTES = {
   SIGNUP: "/signup",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
+  SATE_AI: "/sate-ai",
+  INTEGRATIONS: "/integrations",
+  BLOGS: "/blogs"
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -153,7 +156,7 @@ export const betaFormSchema = z.object({
       ...cumm,
       [curr]: z.string().min(1, "This is a required field"),
     }),
-    {}
+    {},
   ),
 });
 export const waitlistFormSchema = z.object({
@@ -375,107 +378,106 @@ export const ADD_ON_LIST: AddOn[] = [
   },
 ];
 
-export const HELP_CENTER_QUESTIONS =
-{
+export const HELP_CENTER_QUESTIONS = {
   [HelpCenterKey.GETTING_STARTED]: [
     {
       id: 1,
       key: "q-1",
       question: "How long does implementation take?",
-      answer: "It would take about 24hrs"
+      answer: "It would take about 24hrs",
     },
     {
       id: 2,
       key: "q-2",
       question: "What happens when SATE can't resolve something?",
-      answer: ""
+      answer: "",
     },
     {
       id: 3,
       key: "q-3",
       question: "Do we need technical resource to set up integrations?",
-      answer: ""
+      answer: "",
     },
     {
       id: 4,
       key: "q-4",
       question: "What channels does Eusate support?",
-      answer: ""
+      answer: "",
     },
     {
       id: 5,
       key: "q-5",
       question: "Can SATE autually take actions or just answer questions?",
-      answer: ""
+      answer: "",
     },
     {
       id: 6,
       key: "q-6",
       question: "What's the price model?",
-      answer: ""
+      answer: "",
     },
     {
       id: 7,
       key: "q-7",
       question: "How do you ensure data security and compilance?",
-      answer: ""
+      answer: "",
     },
   ],
-  [HelpCenterKey.ACCOUNT_INFORMATION]: []
-}
+  [HelpCenterKey.ACCOUNT_INFORMATION]: [],
+};
 
 export const HELP_CENTER_TABS: HelpCenterTab[] = [
   {
     id: 1,
     key: HelpCenterKey.GETTING_STARTED,
     label: "Getting started",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
   },
   {
     id: 2,
     key: HelpCenterKey.ACCOUNT_INFORMATION,
     label: "Account information",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.ACCOUNT_INFORMATION]
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.ACCOUNT_INFORMATION],
   },
   {
     id: 3,
     key: HelpCenterKey.ACCOUNT_INFORMATION,
     label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
   },
   {
     id: 4,
     key: HelpCenterKey.ACCOUNT_INFORMATION,
     label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
   },
   {
     id: 5,
     key: HelpCenterKey.ACCOUNT_INFORMATION,
     label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
   },
   {
     id: 6,
     key: HelpCenterKey.ACCOUNT_INFORMATION,
     label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED]
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
   },
-]
-
+];
 
 export const SATE_AI_ACTIONS = [
   {
     id: 1,
     key: "action-1",
     title: "Understand What Customers Actually Mean",
-    description: "SATE understands intent. It analyzes context, asks clarifying questions, and comprehends what customers are actually trying to accomplish. "
+    description:
+      "SATE understands intent. It analyzes context, asks clarifying questions, and comprehends what customers are actually trying to accomplish. ",
   },
   {
     id: 2,
     key: "action-2",
     title: "Adapt to Emotional State",
-    description: ""
+    description: "",
   },
   {
     id: 3,
@@ -487,6 +489,6 @@ export const SATE_AI_ACTIONS = [
     id: 4,
     key: "action-4",
     title: "Actually Solve Problems 🎉",
-    description: ""
-  }
-]
+    description: "",
+  },
+];

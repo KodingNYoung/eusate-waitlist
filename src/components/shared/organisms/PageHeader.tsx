@@ -5,6 +5,7 @@ import { cls } from "@/utils/helpers";
 
 type Slots = "root" | "chip" | "title" | "description" | "titleContainer";
 type Orientation = "horizontal" | "vertical";
+type Position = "center" | "left";
 
 type Props = {
   chipLabel: string;
@@ -12,6 +13,7 @@ type Props = {
   description?: string;
   titleProps?: TypographyProps;
   className?: TWClassNames;
+  position?: Position;
   orientation?: Orientation;
   descriptionProps?: TypographyProps;
   classNames?: { [slot in Slots]?: TWClassNames };
@@ -23,6 +25,7 @@ export const PageHeader: FC<Props> = ({
   description,
   className,
   classNames,
+  position = "left",
   orientation = "vertical",
   titleProps,
   descriptionProps,
@@ -32,18 +35,19 @@ export const PageHeader: FC<Props> = ({
       className={cls(
         "space-y-2",
         orientation === "horizontal" && "flex justify-between items-end",
+        position === "center" && "flex justify-center",
         classNames?.root,
         className
       )}
     >
       <div className={cls("space-y-8", classNames?.titleContainer)}>
-        <Chip className={cls("bg-gold-100", classNames?.chip)}>
+        <Chip className={cls("bg-gold-100", position === "center" && "flex justify-center", classNames?.chip)}>
           {chipLabel}
         </Chip>
         <Typography
           as="h1"
           variant="bold-6xl"
-          className={classNames?.title}
+          className={cls(position === "center" && "text-center", classNames?.title)}
           {...titleProps}
         >
           {title}
@@ -52,7 +56,7 @@ export const PageHeader: FC<Props> = ({
       <Typography
         as="p"
         variant="regular-xl"
-        className={cls("text-gray-700", classNames?.description)}
+        className={cls("text-gray-700", position === "center" && "text-center", classNames?.description)}
         {...descriptionProps}
       >
         {description}

@@ -1,11 +1,12 @@
-import { ItemType } from "../../molecules/Popups/AppDropdown"
+import { ROUTES } from "@/utils/constants";
+import { ItemType } from "../../molecules/Popups/AppDropdown";
 
 // TYPES
 type ExploreItem = {
-  id: number,
-  label: string,
-  items: ItemType[]
-}
+  id: number;
+  label: string;
+  items: ItemType[];
+};
 
 // CONSTANTS
 export const EXPLORE_LIST: ExploreItem[] = [
@@ -26,7 +27,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 3,
         label: "Sate AI",
-        link: "/",
+        link: ROUTES.SATE_AI,
       },
       {
         key: 4,
@@ -38,7 +39,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
         label: "Reports",
         link: "/",
       },
-    ]
+    ],
   },
   {
     id: 2,
@@ -47,19 +48,19 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "About us",
-        link: "/"
+        link: "/",
       },
       {
         key: 2,
         label: "Integrations",
-        link: "/"
+        link: ROUTES.INTEGRATIONS,
       },
       {
         key: 3,
         label: "Contact us",
-        link: "/"
-      }
-    ]
+        link: "/",
+      },
+    ],
   },
   {
     id: 3,
@@ -68,13 +69,13 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "Help center",
-        link: "/"
+        link: "/",
       },
       {
         key: 2,
         label: "Blogs",
-        link: "/"
-      }
-    ]
-  }
-]
+        link: ROUTES.BLOGS,
+      },
+    ],
+  },
+];

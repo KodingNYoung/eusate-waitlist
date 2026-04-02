@@ -30,21 +30,19 @@ const SateAiPage = () => {
             Build different from every chatbot you&apos;ve tried
           </Typography>
         </section>
-        <section className="bg-gold-50 px-40 py-20">
-          <div>
-            <SateAction
-              header={
-                <PageHeader
-                  classNames={{
-                    titleContainer: "space-y-2",
-                    title: "text-[32px]",
-                  }}
-                  chipLabel="Sate in Action"
-                  title="Sate is actively engaged in various activities"
-                />
-              }
-            />
-          </div>
+        <section className="bg-gold-50 px-40 py-20 flex justify-center">
+          <SateAction
+            header={
+              <PageHeader
+                classNames={{
+                  title: "text-[32px]",
+                  titleContainer: "space-y-2",
+                }}
+                chipLabel="Sate in Action"
+                title="Sate is actively engaged in various activities"
+              />
+            }
+          />
         </section>
       </main>
       <Footer />

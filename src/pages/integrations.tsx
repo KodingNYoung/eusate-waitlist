@@ -38,7 +38,7 @@ const Integrations = () => {
     <div>
       <Navbar />
       <GradientBackground variant="yellow" className="absolute w-full mx-4" />
-      <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full px-4">
+      <main className="pt-[88px] min-h-screen w-full px-4">
         <div className="container flex flex-col items-center justify-center max-w-[80%] py-20 space-y-20 mx-auto">
           <header className="space-y-8 w-[50%]">
             <Chip classNames={{ container: "flex justify-center", base: "bg-gold-100" }}>Integrations</Chip>
@@ -51,7 +51,7 @@ const Integrations = () => {
           </main>
         </div>
         <Footer />
-      </div>
+      </main>
     </div>
   );
 };
