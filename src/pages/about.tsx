@@ -9,7 +9,7 @@ import { BackgroundWatermark } from "@/components/shared/organisms/DecorativeGra
 
 const AboutPage = () => {
   return (
-    <PageTemplate backgroundVariant="yellow">
+    <PageTemplate gradientVariant="yellow">
       <div className="w-full space-y-12 py-12">
         <section className="container space-y-12">
           <PageHeader

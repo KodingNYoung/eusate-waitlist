@@ -9,17 +9,18 @@ import Footer from "./footer";
 type Slots = "body"
 
 type Props = {
-  backgroundVariant?: GradientVariants;
+  gradientVariant?: GradientVariants;
+  hideGradient?: boolean;
   children: ReactElement;
   classNames?: { [slot in Slots]?: TWClassNames };
 }
 
-export const PageTemplate = ({ backgroundVariant, children, classNames }: Props) => {
+export const PageTemplate = ({ gradientVariant, children, classNames, hideGradient = false }: Props) => {
   return (
     <div>
       <Navbar />
-      <GradientBackground variant={backgroundVariant} />
-      <main className={cls("pt-[88px] px-4", classNames?.body)}>
+      {!hideGradient && <GradientBackground variant={gradientVariant} />}
+      <main className={cls("px-4", classNames?.body)}>
         {
           children
         }

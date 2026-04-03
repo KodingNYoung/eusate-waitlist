@@ -26,7 +26,8 @@ export const ROUTES = {
   SATE_AI: "/sate-ai",
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",
-  ABOUT: "/about"
+  ABOUT: "/about",
+  DEVSPACE: "/devspace"
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -494,3 +495,25 @@ export const SATE_AI_ACTIONS = [
   },
 ];
 
+export const DEVSPACE_ACTIONS = [
+  {
+    id: 1,
+    title: "Setup Auth Configuration",
+    description: "Connect Developer Space to your business systems by configuring secure authentication."
+  },
+  {
+    id: 2,
+    title: "Custom Function Creation",
+    description: "Define what actions SATE can perform in your connected systems.",
+  },
+  {
+    id: 3,
+    title: "Test in Playground",
+    description: "Validate your function works correctly before customers interact with it."
+  },
+  {
+    id: 4,
+    title: "Delpy to Live",
+    description: "Activate your function for real customer interations."
+  }
+]

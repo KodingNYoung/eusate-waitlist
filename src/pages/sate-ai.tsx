@@ -9,19 +9,18 @@ const SateAiPage = () => {
     <div>
       <Navbar />
       <main className="mx-4">
-        <header className="bg-[url(/images/sate-ai-bg.webp)] bg-cover h-[750px] p-16 rounded-3xl flex items-end justify-center">
-          <PageHeader
-            chipLabel="Sate Ai"
-            orientation="horizontal"
-            classNames={{
-              root: "w-[80%]",
-              title: "text-white text-bold-5xl w-[70%]",
-              description: "text-white w-[50%]",
-            }}
-            title="AI that understans context. Recognizes emotion. Takes action."
-            description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
-          />
-        </header>
+        <PageHeader
+          chipLabel="Sate Ai"
+          orientation="horizontal"
+          classNames={{
+            container: "bg-[url(/images/sate-ai-bg.webp)] flex items-end justify-center",
+            root: "w-[80%]",
+            title: "text-white text-bold-5xl w-[70%]",
+            description: "text-white w-[50%]",
+          }}
+          title="AI that understans context. Recognizes emotion. Takes action."
+          description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
+        />
         <section className="h-[590px] flex justify-center items-center">
           <Typography
             variant="bold-6xl"

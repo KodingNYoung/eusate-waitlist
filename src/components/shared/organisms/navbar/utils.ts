@@ -32,7 +32,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 4,
         label: "Devspace",
-        link: "/",
+        link: ROUTES.DEVSPACE,
       },
       {
         key: 5,
