@@ -48,7 +48,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "About us",
-        link: "/",
+        link: ROUTES.ABOUT,
       },
       {
         key: 2,

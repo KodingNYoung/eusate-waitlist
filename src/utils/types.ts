@@ -144,3 +144,4 @@ export type Blog = {
 
   }
 }
+export type InternalPath = `/${string}`;

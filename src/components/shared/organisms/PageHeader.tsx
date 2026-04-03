@@ -41,7 +41,7 @@ export const PageHeader: FC<Props> = ({
       )}
     >
       <div className={cls("space-y-8", classNames?.titleContainer)}>
-        <Chip className={cls("bg-gold-100", position === "center" && "flex justify-center", classNames?.chip)}>
+        <Chip className={cls("bg-gold-100 rounded-full", position === "center" && "flex justify-center", classNames?.chip)}>
           {chipLabel}
         </Chip>
         <Typography

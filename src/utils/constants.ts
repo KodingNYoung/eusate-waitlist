@@ -25,7 +25,8 @@ export const ROUTES = {
   TERMS: "/terms-and-conditions",
   SATE_AI: "/sate-ai",
   INTEGRATIONS: "/integrations",
-  BLOGS: "/blogs"
+  BLOGS: "/blogs",
+  ABOUT: "/about"
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -492,3 +493,4 @@ export const SATE_AI_ACTIONS = [
     description: "",
   },
 ];
+
