@@ -9,7 +9,7 @@ type Props = {
 
 export const DevActionCard: FC<Props> = ({ title, description }) => {
   return (
-    <div className="grid p-4 rounded-lg bg-white">
+    <div className="grid items-between p-4 rounded-lg bg-white min-h-[219px]">
       <span>{DevIcon}</span>
       <div className="space-y-4">
         <Typography variant="semibold-lg" className="text-gray-700">{title}</Typography>

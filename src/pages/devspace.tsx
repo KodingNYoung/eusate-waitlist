@@ -5,7 +5,7 @@ import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 const Devspace = () => {
   return (
     <PageTemplate hideGradient>
-      <div className="space-y-12">
+      <div className="relative space-y-12">
         <PageHeader
           chipLabel="Dev Space"
           orientation="horizontal"
@@ -18,6 +18,7 @@ const Devspace = () => {
           title="Connect & Build integrations your way"
           description="Full API access for custom needs. Developer Space gives SATE the power to actually solve problems by connecting directly to your systems and taking real action."
         />
+
         <DevAction />
       </div>
     </PageTemplate>

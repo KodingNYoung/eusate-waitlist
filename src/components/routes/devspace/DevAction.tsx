@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export const DevAction = () => {
   return (
-    <section className="container">
+    <section className="container max-h-[80vh]">
       <div className="grid grid-cols-2 gap-12 items-start">
         <div className="space-y-10">
           <div className="space-y-4">
@@ -20,12 +20,11 @@ export const DevAction = () => {
           </div>
         </div>
 
-        <div className="sticky p-20 w-full">
-          <Image alt="devspace-snapshot" src="/images/devspace-snapshot.webp" fill />
+        <div className="sticky border p-20 w-full h-[529px] max-h-[80vh]">
+          <Image alt="devspace-snapshot" src="/images/devspace-snapshot.webp" fill className="object-contain" />
         </div>
 
       </div>
-
     </section>
   )
 }
