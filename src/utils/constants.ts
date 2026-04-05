@@ -9,6 +9,8 @@ import {
 } from "./types";
 import { ComparePlanCat1, HelpCenterKey, Plan, PublicExtras } from "./enum";
 
+export const MAX_WIDTH = "120px";
+
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
 export const PLAN_COST = {
@@ -27,7 +29,9 @@ export const ROUTES = {
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",
   ABOUT: "/about",
-  DEVSPACE: "/devspace"
+  DEVSPACE: "/devspace",
+  KNOWLEDGE_BASE: "/knowledge-base",
+  HELP_CENTER: "/help-center"
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -515,5 +519,28 @@ export const DEVSPACE_ACTIONS = [
     id: 4,
     title: "Delpy to Live",
     description: "Activate your function for real customer interations."
+  }
+]
+
+export const KB_HIGHLIGHTS = [
+  {
+    id: 1,
+    title: "Elimate Inconsistency",
+    description: "Support teams often provide conflicting answers. Documentation is scattered. The Knowledge Base centralizes support content in one searchable system, ensuring your team accesses consistent information automatically.",
+  },
+  {
+    id: 2,
+    title: "Reduce Training Overhead",
+    description: "New agents need time to learn products and processes. Seasonal spikes cause rushed training and errors. Knowledge Base gives instant access, while SATE handles tier-one questions, making onboarding hours instead of weeks."
+  },
+  {
+    id: 3,
+    title: "Accelerate Product Updates",
+    description: "Product launches require updating documentation, training the team, and ensuring everyone remembers changes. SATE updates your Knowledge Base instantly, keeping customer information current without extra coordination."
+  },
+  {
+    id: 4,
+    title: "Scale Expertise",
+    description: "Your support agent knows every solution. When they're unavailable, customers wait. Knowledge Base captures expertise across your operation. Junior agents access senior knowledge instantly."
   }
 ]
