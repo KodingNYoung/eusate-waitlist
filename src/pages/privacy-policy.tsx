@@ -1,8 +1,11 @@
+import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Typography from "@/components/shared/atoms/Typography";
+import Chip from "@/components/shared/molecules/Chip";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
-import Footer from "@/components/shared/organisms/footer";
+import Footer from "@/components/shared/organisms/footer/index__";
 import Navbar from "@/components/shared/organisms/navbar";
+import { ROUTES } from "@/utils/constants";
 import React from "react";
 
 const PrivacyPolicy = () => {
@@ -11,31 +14,32 @@ const PrivacyPolicy = () => {
       <MetaProps
         title="Privacy Policy - eusate"
         description="Learn how eusate protects your data and customer information. Our privacy policy outlines data collection, usage, and security practices for our platform."
-        path="/privacy-policy"
+        path={ROUTES.PRIVACY}
         jsonLdData={{
           type: "legal",
           data: {
             description:
               "Privacy policy and data handling practices for Eusate platform",
-            path: "/privacy-policy",
+            path: ROUTES.PRIVACY,
             lastModified: "2025-09-01", // Update with your actual last modified date
           },
         }}
       />
       <Navbar />
-      <div className="pt-24 sm:pt-32 bg-[url(/images/benefit-bg.webp),_linear-gradient(#0A0A0A,_#0A0A0A)] bg-center bg-no-repeat bg-cover min-h-screen">
-        <div className="bg-white rounded-t-x20">
-          <div className="container max-w-[1120px] py-20">
-            <header className="mb-10">
+      <div className="relative">
+        <GradientBackground variant="yellow" className="w-full mx-4 absolute -z-1 h-[390px]" />
+        <div className="pt-[88px] min-h-screen w-full">
+          <div className="container max-w-[1120px] py-20 space-y-20">
+            <header className="flex flex-col items-start gap-8">
+              <Chip className="bg-gold-100 py-3 px-4 text-medium-base flex-none">Legals</Chip>
               <Typography
-                as="h1"
-                className="text-bold-xl sm:text-bold-3xl text-black mb-4 sm:mb-6"
+                className="text-bold-3xl sm:text-bold-6xl"
               >
-                Eusate Privacy Policy
+                Privacy Policy
               </Typography>
               <Typography
                 as="span"
-                className="text-regular-sm sm:text-regular-lg text-gray-600"
+                className="text-medium-lg sm:text-medium-lg text-gray-600"
               >
                 Last Updated: Monday, 01 September, 2025
               </Typography>
@@ -65,8 +69,7 @@ const PrivacyPolicy = () => {
               <ol className="list-outside list-[lower-alpha] pl-5 mt-3 space-y-3">
                 <li className="text-medium-base sm:text-medium-lg">
                   <Typography
-                    as="h3"
-                    className="mb-2 text-medium-base sm:text-medium-lg"
+                    className="mb-2 text-semibold-base sm:text-medium-lg"
                   >
                     Information You Provide
                   </Typography>

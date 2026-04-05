@@ -2,7 +2,7 @@ import { cls } from "@/utils/helpers";
 import { FC, TWClassNames, TypographyVariants } from "@/utils/types";
 import { createElement, HTMLProps, ReactNode } from "react";
 
-type Props = HTMLProps<HTMLHeadingElement & HTMLParagraphElement> & {
+export type TypographyProps = HTMLProps<HTMLHeadingElement & HTMLParagraphElement> & {
   variant?: TypographyVariants;
   as?: keyof HTMLElementTagNameMap;
   weight?: 400 | 500 | 600 | 700;
@@ -28,7 +28,7 @@ const getElement = (
   );
 };
 
-const Typography: FC<Props> = ({
+const Typography: FC<TypographyProps> = ({
   as,
   variant = "regular-base",
   weight,

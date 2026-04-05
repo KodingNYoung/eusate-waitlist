@@ -17,12 +17,14 @@ export default function Home() {
         jsonLdData={{ type: "homepage" }}
       />
       <Navbar />
-      <HomeHero />
-      <Features />
-      <Benefits />
-      <Roadmap />
-      <Invite />
-      <Footer />
+      <div className="px-4">
+        <HomeHero />
+        <Features />
+        <Benefits />
+        <Roadmap />
+        <Invite />
+        <Footer />
+      </div>
     </div>
   );
 }

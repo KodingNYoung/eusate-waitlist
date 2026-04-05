@@ -1,75 +1,63 @@
-import React from "react";
-import Logo from "../../atoms/Logo";
-import { InstagramIcon, LinkedinIcon, TwitterIcon } from "@/assets/icons";
 import Link from "next/link";
+import Logo from "../../atoms/Logo";
 import Typography from "../../atoms/Typography";
-import { EUSATE_SOCIALS } from "@/utils/constants";
+import Button from "../../molecules/Button";
+import { ROUTES } from "@/utils/constants";
+import { SOCIAL_LINKS } from "./utils";
+import { EXPLORE_LIST } from "../navbar/utils";
+import { ArrowRightIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <footer className="py-10 container max-w-[1344px]">
-      <div className="border-t border-gray-50 py-20 flex items-start justify-between flex-wrap gap-16">
-        <div className="flex flex-col gap-10">
-          <Logo type="full-gradient-black" betaType="light" />
-          <Typography
-            as="a"
-            href="mailto:info@eusate.com"
-            className="text-medium-lg text-gray-400"
-          >
-            info@eusate.com
-          </Typography>
-          <div className="flex items-center gap-6">
-            <a href={EUSATE_SOCIALS.LINKEDIN} target="_blank" rel="noreferer">
-              {LinkedinIcon}
-            </a>
-            <a href={EUSATE_SOCIALS.X} target="_blank" rel="noreferer">
-              {TwitterIcon}
-            </a>
-            <a href={EUSATE_SOCIALS.INSTAGRAM} target="_blank" rel="noreferer">
-              {InstagramIcon}
-            </a>
+    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[40px] pt-20 px-24 mx-4">
+      <div className="flex flex-col gap-56">
+        <div className="flex justify-between">
+          <div className="flex flex-col gap-16 w-[463px]">
+            <div className="grid gap-8">
+              <Logo type="full-gradient-white" />
+              <Typography variant="bold-3xl" className="text-white">Support that scales with you. Not against you.</Typography>
+            </div>
+            <div className="flex items-center gap-4">
+              {
+                SOCIAL_LINKS.map(({ id, icon, link }) =>
+                  <Button key={id} href={link} variant="tetiary" classNames={{ root: "p-3 border-white/20" }}>
+                    <span className="stroke-gray-400">
+                      {icon}
+                    </span>
+                  </Button>
+                )
+              }
+            </div>
+            <nav className="flex gap-8">
+              <Link href={ROUTES.PRIVACY} className="text-bold-lg text-white-60">Privacy policy</Link>
+              <Link href={ROUTES.TERMS} className="text-bold-lg text-white-60">Terms and Conditions</Link>
+            </nav>
+          </div>
+          <div className="flex justify-between gap-4 w-[576px]">
+            {
+              EXPLORE_LIST.map(({ id, label, items }) => (
+                <div key={id} className="flex flex-col gap-6 ">
+                  <Typography variant="medium-lg" className="text-white/40">{label}</Typography>
+                  <nav className="flex flex-col gap-6 items-start">
+                    {
+                      items.map(({ key, label, link }) => <Link key={key} href={link ?? "/"} className="text-bold-lg text-white/60">{label}</Link>)
+                    }
+                  </nav>
+                </div>
+              ))
+            }
           </div>
         </div>
-        <div className="flex items-start gap-6">
-          <div className="grid gap-6 min-w-40">
-            <Typography as="h5" className="text-semibold-lg text-gray-700">
-              Product
-            </Typography>
-            <div className="flex flex-col items-start gap-5">
-              <Link href="/#features" className="text-medium-lg text-gray-400">
-                Features
-              </Link>
-              <Link href="/#benefits" className="text-medium-lg text-gray-400">
-                Benefits
-              </Link>
-              <Link href="/#roadmap" className="text-medium-lg text-gray-400">
-                Roadmap
-              </Link>
-            </div>
+        <div className="relative w-full">
+          <div className="flex w-full mb-20 justify-center relative z-5">
+            <Button variant="outlined" className="py-4 px-12" endContent={<span className="stroke-gray-900">{ArrowRightIcon}</span>}>Get started today</Button>
           </div>
-          <div className="grid gap-6 min-w-40">
-            <Typography as="h5" className="text-semibold-lg text-gray-700">
-              Legal
-            </Typography>
-            <div className="flex flex-col items-start gap-5">
-              <Link
-                href="/terms-and-condition"
-                className="text-medium-lg text-gray-400"
-              >
-                Terms of use
-              </Link>
-              <Link
-                href="/privacy-policy"
-                className="text-medium-lg text-gray-400"
-              >
-                Privacy policy
-              </Link>
-            </div>
-          </div>
+          <Logo type="full-gradient-white" width={1400} height={1400} className="absolute bottom-0 right-0 z-3 -translate-x-[90px] opacity-20" />
         </div>
       </div>
-    </footer>
-  );
-};
+
+    </div>
+  )
+}
 
 export default Footer;

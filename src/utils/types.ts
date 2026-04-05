@@ -1,4 +1,5 @@
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
+import { ComparePlanCat1, HelpCenterKey } from "./enum";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
 
@@ -66,3 +67,81 @@ export type FC<PropsType = unknown> = {
   ): ReactElement | null;
   displayName?: string;
 };
+
+export type Plan = "free" | "pro" | "basic";
+export type CompareCategoryKey = "cat-1" | "cat-2";
+export type CompareCategory =
+  (typeof ComparePlanCat1)[keyof typeof ComparePlanCat1];
+export type CompareCategoryData = {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  categories: {
+    key: CompareCategoryKey;
+    features: { [cat in CompareCategory]: boolean | { value: number } };
+  }[];
+  action: () => void;
+};
+
+export type CategoryList = {
+  id: number;
+  key: CompareCategoryKey;
+  label: string;
+  items: { key: CompareCategory; label: string }[];
+};
+export type PricingPlan = {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  features: string[];
+  recomended?: boolean;
+  action: () => void;
+};
+
+export type AddOn = {
+  id: number;
+  src: string;
+  size: string;
+  title: string;
+  description: string;
+  price: number;
+};
+
+export type HelpCenterTabKeys = "getting-started" | "account-info"
+export type HelpCenterTab = {
+  id: number,
+  key: HelpCenterKey,
+  label: string
+  content: HelpCenterQuestion[];
+}
+export type HelpCenterQuestion = {
+  id: number,
+  key: string,
+  question: string,
+  answer: string,
+}
+export type SateAiAction = "action-1" | "action-2" | " action-3" | "action-4"
+
+export type Blog = {
+  id: string;
+  imgSrc: string;
+  title: string,
+  summary: string,
+  readingSpan: string,
+  spotlight?: boolean,
+  timestamp: Date,
+  content: {
+    title: string,
+    introduction: string,
+    subheaders:
+    {
+      id: number,
+      title: string
+      content: string
+    }[]
+
+  }
+}
+export type InternalPath = `/${string}`;
