@@ -16,8 +16,8 @@ export const NAV_EXPLORE_LIST: ExploreItem[] = [
     items: [
       {
         key: 1,
-        label: "Knowlodge base",
-        link: "/",
+        label: "Knowledge base",
+        link: ROUTES.KNOWLEDGE_BASE,
       },
       {
         key: 2,
@@ -69,7 +69,7 @@ export const NAV_EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "Help center",
-        link: "/",
+        link: ROUTES.HELP_CENTER,
       },
       {
         key: 2,

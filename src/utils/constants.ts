@@ -9,6 +9,8 @@ import {
 } from "./types";
 import { ComparePlanCat1, HelpCenterKey, Plan, PublicExtras } from "./enum";
 
+export const MAX_WIDTH = "120px";
+
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
 export const PLAN_COST = {
@@ -28,7 +30,9 @@ export const ROUTES = {
   BLOGS: "/blogs",
   ABOUT: "/about",
   DEVSPACE: "/devspace",
-  HELP_DESK: "/help-desk"
+  HELP_DESK: "/help-desk",
+  KNOWLEDGE_BASE: "/knowledge-base",
+  HELP_CENTER: "/help-center",
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -106,17 +110,17 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-open-to-being-a-case-study-or-reference-customer-if-the-beta-is-successful":
-  {
-    label:
-      "Would you be open to being a case study or reference customer if the beta is successful?",
-    hasSpecify: false,
-    options: [
-      "Yes, definitely",
-      "Possibly, depending on results",
-      "Prefer to remain private",
-      "Need to discuss internally",
-    ],
-  },
+    {
+      label:
+        "Would you be open to being a case study or reference customer if the beta is successful?",
+      hasSpecify: false,
+      options: [
+        "Yes, definitely",
+        "Possibly, depending on results",
+        "Prefer to remain private",
+        "Need to discuss internally",
+      ],
+    },
 
   "whats-your-expected-timeline-for-making-a-purchasing-decision": {
     label: "What's your expected timeline for making a purchasing decision?",
@@ -180,7 +184,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => { },
+    action: () => {},
   },
   {
     id: 2,
@@ -198,7 +202,7 @@ export const PRICING: PricingPlan[] = [
       "Priority support with dedicated onboarding",
       "SLA guarantees (99.9% uptime)",
     ],
-    action: () => { },
+    action: () => {},
   },
   {
     id: 3,
@@ -213,7 +217,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => { },
+    action: () => {},
   },
 ];
 
@@ -269,82 +273,82 @@ export const COMPARE_PRICING_LIST: {
   }[];
   action: () => void;
 }[] = [
-    {
-      id: 1,
-      key: Plan.BASIC,
-      label: "Basic Plan",
-      price: PLAN_COST.BASIC,
-      categories: [
-        {
-          key: "cat-1",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+  {
+    id: 1,
+    key: Plan.BASIC,
+    label: "Basic Plan",
+    price: PLAN_COST.BASIC,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-        {
-          key: "cat-2",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-      ],
-      action: () => { },
-    },
-    {
-      id: 2,
-      key: Plan.PRO,
-      label: "Pro Plan",
-      price: PLAN_COST.PRO,
-      categories: [
-        {
-          key: "cat-1",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 2,
+    key: Plan.PRO,
+    label: "Pro Plan",
+    price: PLAN_COST.PRO,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-        {
-          key: "cat-2",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-      ],
-      action: () => { },
-    },
-    {
-      id: 3,
-      key: Plan.FREE,
-      label: "Free Plan",
-      price: PLAN_COST.FREE,
-      categories: [
-        {
-          key: "cat-1",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 3,
+    key: Plan.FREE,
+    label: "Free Plan",
+    price: PLAN_COST.FREE,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-        {
-          key: "cat-2",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-      ],
-      action: () => { },
-    },
-  ];
+      },
+    ],
+    action: () => {},
+  },
+];
 
 export const ADD_ON_LIST: AddOn[] = [
   {
@@ -500,21 +504,51 @@ export const DEVSPACE_ACTIONS = [
   {
     id: 1,
     title: "Setup Auth Configuration",
-    description: "Connect Developer Space to your business systems by configuring secure authentication."
+    description:
+      "Connect Developer Space to your business systems by configuring secure authentication.",
   },
   {
     id: 2,
     title: "Custom Function Creation",
-    description: "Define what actions SATE can perform in your connected systems.",
+    description:
+      "Define what actions SATE can perform in your connected systems.",
   },
   {
     id: 3,
     title: "Test in Playground",
-    description: "Validate your function works correctly before customers interact with it."
+    description:
+      "Validate your function works correctly before customers interact with it.",
   },
   {
     id: 4,
     title: "Delpy to Live",
-    description: "Activate your function for real customer interations."
-  }
-]
+    description: "Activate your function for real customer interations.",
+  },
+];
+
+export const KB_HIGHLIGHTS = [
+  {
+    id: 1,
+    title: "Elimate Inconsistency",
+    description:
+      "Support teams often provide conflicting answers. Documentation is scattered. The Knowledge Base centralizes support content in one searchable system, ensuring your team accesses consistent information automatically.",
+  },
+  {
+    id: 2,
+    title: "Reduce Training Overhead",
+    description:
+      "New agents need time to learn products and processes. Seasonal spikes cause rushed training and errors. Knowledge Base gives instant access, while SATE handles tier-one questions, making onboarding hours instead of weeks.",
+  },
+  {
+    id: 3,
+    title: "Accelerate Product Updates",
+    description:
+      "Product launches require updating documentation, training the team, and ensuring everyone remembers changes. SATE updates your Knowledge Base instantly, keeping customer information current without extra coordination.",
+  },
+  {
+    id: 4,
+    title: "Scale Expertise",
+    description:
+      "Your support agent knows every solution. When they're unavailable, customers wait. Knowledge Base captures expertise across your operation. Junior agents access senior knowledge instantly.",
+  },
+];

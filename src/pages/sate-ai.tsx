@@ -1,13 +1,11 @@
 import { SateAction } from "@/components/routes/sate-ai/SateAction";
 import Typography from "@/components/shared/atoms/Typography";
-import Footer from "@/components/shared/organisms/footer";
-import Navbar from "@/components/shared/organisms/navbar";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
+import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 
 const SateAiPage = () => {
   return (
-    <div>
-      <Navbar />
+    <PageTemplate hideGradient>
       <main className="mx-4">
         <PageHeader
           chipLabel="Sate Ai"
@@ -33,9 +31,10 @@ const SateAiPage = () => {
           <SateAction
             header={
               <PageHeader
+                variant="sub"
                 classNames={{
                   title: "text-[32px]",
-                  titleContainer: "space-y-2",
+                  titleContainer: "space-y-1",
                 }}
                 chipLabel="Sate in Action"
                 title="Sate is actively engaged in various activities"
@@ -44,8 +43,7 @@ const SateAiPage = () => {
           />
         </section>
       </main>
-      <Footer />
-    </div>
+    </PageTemplate>
   );
 };
 
