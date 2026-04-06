@@ -9,7 +9,7 @@ type ExploreItem = {
 };
 
 // CONSTANTS
-export const EXPLORE_LIST: ExploreItem[] = [
+export const NAV_EXPLORE_LIST: ExploreItem[] = [
   {
     id: 1,
     label: "Product",
@@ -22,7 +22,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 2,
         label: "Helpdesk",
-        link: "/",
+        link: ROUTES.HELP_DESK,
       },
       {
         key: 3,

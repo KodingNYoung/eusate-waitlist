@@ -27,7 +27,8 @@ export const ROUTES = {
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",
   ABOUT: "/about",
-  DEVSPACE: "/devspace"
+  DEVSPACE: "/devspace",
+  HELP_DESK: "/help-desk"
 } as const;
 
 export const EUSATE_SOCIALS = {

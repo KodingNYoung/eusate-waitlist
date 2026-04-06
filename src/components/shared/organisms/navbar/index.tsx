@@ -1,7 +1,7 @@
 import styles from "./style.module.css";
 import Link from "next/link";
 import Logo from "../../atoms/Logo";
-import { EXPLORE_LIST } from "./utils";
+import { NAV_EXPLORE_LIST } from "./utils";
 import AppDropdown from "../../molecules/Popups/AppDropdown";
 import Typography from "../../atoms/Typography";
 import { ArrowDown, ArrowRight } from "@/assets/icons";
@@ -19,7 +19,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center w-[70%] ">
         <div className="flex gap-5">
-          {EXPLORE_LIST.map(({ id, label, items }) => (
+          {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
             <AppDropdown
               key={id}
               sections={[{ items }]}

@@ -4,7 +4,7 @@ import Typography from "../../atoms/Typography";
 import Button from "../../molecules/Button";
 import { ROUTES } from "@/utils/constants";
 import { SOCIAL_LINKS } from "./utils";
-import { EXPLORE_LIST } from "../navbar/utils";
+import { NAV_EXPLORE_LIST } from "../navbar/utils";
 import { ArrowRightIcon } from "@/assets/icons";
 
 const Footer = () => {
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-between gap-4 w-[576px]">
             {
-              EXPLORE_LIST.map(({ id, label, items }) => (
+              NAV_EXPLORE_LIST.map(({ id, label, items }) => (
                 <div key={id} className="flex flex-col gap-6 ">
                   <Typography variant="medium-lg" className="text-white/40">{label}</Typography>
                   <nav className="flex flex-col gap-6 items-start">
