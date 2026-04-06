@@ -7,6 +7,7 @@ import {
   HDFeature,
   HelpCenterTab,
   PricingPlan,
+  ReportFeature,
 } from "./types";
 import { ComparePlanCat1, HelpCenterKey, Plan, PublicExtras } from "./enum";
 
@@ -34,6 +35,8 @@ export const ROUTES = {
   HELP_DESK: "/help-desk",
   KNOWLEDGE_BASE: "/knowledge-base",
   HELP_CENTER: "/help-center",
+  REPORTS: "/reports",
+  CONTACT: "/contact",
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -583,4 +586,42 @@ export const HD_FEATURES: HDFeature[] = [
     description: "Customizable response templates for common queries. When agents face a shipping delay, they use /shipping-delay or a macro. The system inserts a response, fills in the order number and tracking link, updates ticket status, and schedules a follow-up—all in one action. For complex cases, agents can customize templates with variables like {{customer_name}} and {{order_id}}.",
     imgSrc: "/images/hd-feature-4.webp"
   },
+]
+
+export const REPORTS_FEATURES: ReportFeature[] = [
+  {
+    id: 1,
+    imgSrc: "/images/reports-hero.webp",
+    title: "Overall Performance Summary Report",
+    color: "#F3E5B2",
+    description: "Snapshot of your support operation. C-suite and leaders need high-level insights. Managers track team performance. Is support improving? Where does volume come from? How efficiently is the team operating? Identify peak periods for coverage. Spot declining metrics early. Understand channel preferences. Recognize top performers."
+  },
+  {
+    id: 2,
+    imgSrc: "/images/report-ft-2.webp",
+    title: "Ticket Resolution Analysis",
+    color: "#F8CFCA",
+    description: "Explore ticket movement from creation to resolution, spotting inefficiencies. Managers optimize workflows, while teams ensure resolution standards. Learn why some tickets delay, where processes fail, and identify issue types needing documentation. Spot escalation patterns and understand complexity factors to improve SLA targets and reduce backlog."
+  },
+  {
+    id: 3,
+    imgSrc: "/images/report-ft-3.webp",
+    title: "AI vs. Human Performance Report",
+    color: "#BEDDFD",
+    description: "Compare AI and human performance to optimize automation and human touch. Measure ROI on AI investment. Balance automation with human support. Calculate cost savings and efficiency gains. Learn how much AI handles, where it struggles, and the cost difference. Identify AI underperformance issues and optimize escalation thresholds."
+  },
+  {
+    id: 4,
+    imgSrc: "/images/report-ft-4.webp",
+    title: "Customer Satisfacton & Sentiment Report",
+    color: "#B6E9D1",
+    description: "Track emotional journey and satisfaction levels with AI recommendations. Teams monitor trends, identify issues, and track retention indicators. Learn if customers are satisfied, what frustrates them, and recurring problems. AI analyzes conversations to highlight improvement opportunities linked to customer interactions."
+  },
+  {
+    id: 5,
+    imgSrc: "/images/report-ft-5.webp",
+    title: "Workload Distribution Report",
+    color: "#F0F1F3",
+    description: "Analyze support volume across channels and time for better resource allocation. Learn where volume concentrates, which channels drive tickets, and if resources match demand. Identify underperforming channels and align resources to improve efficiency and satisfaction."
+  }
 ]

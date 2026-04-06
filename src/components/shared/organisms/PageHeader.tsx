@@ -4,7 +4,14 @@ import Chip from "../molecules/Chip";
 import { cls } from "@/utils/helpers";
 import { ReactElement } from "react";
 
-type Slots = "container" | "wrapper" | "root" | "chip" | "title" | "description" | "titleContainer";
+type Slots =
+  | "container"
+  | "wrapper"
+  | "root"
+  | "chip"
+  | "title"
+  | "description"
+  | "titleContainer";
 type Orientation = "horizontal" | "vertical";
 type Position = "center" | "left";
 type Variant = "header" | "sub";
@@ -39,27 +46,47 @@ export const PageHeader: FC<Props> = ({
   descriptionProps,
 }) => {
   return (
-    <header className={cls("bg-cover rounded-3xl mx-4", variant === "header" && "pt-[88px] p-16 h-[720px] ", classNames?.container)}>
-      <div className={cls("flex container items-center max-w-[1400px]", position === "center" && "flex-col justify-center",
-        classNames?.wrapper)}>
+    <header
+      className={cls(
+        "bg-cover rounded-3xl mx-4",
+        variant === "header" && "pt-[88px] p-16 h-[720px] ",
+        classNames?.container,
+      )}
+    >
+      <div
+        className={cls(
+          "flex container items-center max-w-[1400px]",
+          position === "center" && "flex-col justify-center",
+          classNames?.wrapper,
+        )}
+      >
         <div
           className={cls(
-            "space-y-2",
-            orientation === "horizontal" && "flex justify-between items-end",
-            position === "center" && "flex justify-center",
+            "flex space-y-2",
+            orientation === "horizontal" && "justify-between items-end",
+            position === "center" && "justify-center",
             position === "center" && orientation === "vertical" && "flex-col",
             classNames?.root,
-            className
+            className,
           )}
         >
           <div className={cls("space-y-8", classNames?.titleContainer)}>
-            <Chip className={cls("bg-gold-100 rounded-full", position === "center" && "flex items-start justify-center", classNames?.chip)}>
+            <Chip
+              className={cls(
+                "bg-gold-100 rounded-full",
+                position === "center" && "flex items-start justify-center",
+                classNames?.chip,
+              )}
+            >
               {chipLabel}
             </Chip>
             <Typography
               as="h1"
               variant="bold-6xl"
-              className={cls(position === "center" && "text-center", classNames?.title)}
+              className={cls(
+                position === "center" && "text-center",
+                classNames?.title,
+              )}
               {...titleProps}
             >
               {title}
@@ -69,21 +96,25 @@ export const PageHeader: FC<Props> = ({
             <Typography
               as="p"
               variant="regular-xl"
-              className={cls("text-gray-700", position === "center" && "text-center", classNames?.description)}
+              className={cls(
+                "text-gray-700",
+                position === "center" && "text-center",
+                classNames?.description,
+              )}
               {...descriptionProps}
             >
               {description}
             </Typography>
-            <div className={cls(position === "center" && "flex justify-center")}>
+            <div
+              className={cls(position === "center" && "flex justify-center")}
+            >
               {actionBtn}
             </div>
           </div>
         </div>
 
-
         {extraContent}
       </div>
     </header>
-
   );
 };

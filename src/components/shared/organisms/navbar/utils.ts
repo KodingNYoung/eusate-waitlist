@@ -37,7 +37,7 @@ export const NAV_EXPLORE_LIST: ExploreItem[] = [
       {
         key: 5,
         label: "Reports",
-        link: "/",
+        link: ROUTES.REPORTS,
       },
     ],
   },
@@ -58,7 +58,7 @@ export const NAV_EXPLORE_LIST: ExploreItem[] = [
       {
         key: 3,
         label: "Contact us",
-        link: "/",
+        link: ROUTES.CONTACT,
       },
     ],
   },
