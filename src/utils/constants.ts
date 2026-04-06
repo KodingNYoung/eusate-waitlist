@@ -4,6 +4,7 @@ import {
   CategoryList,
   CompareCategory,
   CompareCategoryKey,
+  HDFeature,
   HelpCenterTab,
   PricingPlan,
 } from "./types";
@@ -110,17 +111,17 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-open-to-being-a-case-study-or-reference-customer-if-the-beta-is-successful":
-    {
-      label:
-        "Would you be open to being a case study or reference customer if the beta is successful?",
-      hasSpecify: false,
-      options: [
-        "Yes, definitely",
-        "Possibly, depending on results",
-        "Prefer to remain private",
-        "Need to discuss internally",
-      ],
-    },
+  {
+    label:
+      "Would you be open to being a case study or reference customer if the beta is successful?",
+    hasSpecify: false,
+    options: [
+      "Yes, definitely",
+      "Possibly, depending on results",
+      "Prefer to remain private",
+      "Need to discuss internally",
+    ],
+  },
 
   "whats-your-expected-timeline-for-making-a-purchasing-decision": {
     label: "What's your expected timeline for making a purchasing decision?",
@@ -184,7 +185,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => {},
+    action: () => { },
   },
   {
     id: 2,
@@ -202,7 +203,7 @@ export const PRICING: PricingPlan[] = [
       "Priority support with dedicated onboarding",
       "SLA guarantees (99.9% uptime)",
     ],
-    action: () => {},
+    action: () => { },
   },
   {
     id: 3,
@@ -217,7 +218,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => {},
+    action: () => { },
   },
 ];
 
@@ -273,82 +274,82 @@ export const COMPARE_PRICING_LIST: {
   }[];
   action: () => void;
 }[] = [
-  {
-    id: 1,
-    key: Plan.BASIC,
-    label: "Basic Plan",
-    price: PLAN_COST.BASIC,
-    categories: [
-      {
-        key: "cat-1",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+    {
+      id: 1,
+      key: Plan.BASIC,
+      label: "Basic Plan",
+      price: PLAN_COST.BASIC,
+      categories: [
+        {
+          key: "cat-1",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-      {
-        key: "cat-2",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        {
+          key: "cat-2",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-    ],
-    action: () => {},
-  },
-  {
-    id: 2,
-    key: Plan.PRO,
-    label: "Pro Plan",
-    price: PLAN_COST.PRO,
-    categories: [
-      {
-        key: "cat-1",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+      ],
+      action: () => { },
+    },
+    {
+      id: 2,
+      key: Plan.PRO,
+      label: "Pro Plan",
+      price: PLAN_COST.PRO,
+      categories: [
+        {
+          key: "cat-1",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-      {
-        key: "cat-2",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        {
+          key: "cat-2",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-    ],
-    action: () => {},
-  },
-  {
-    id: 3,
-    key: Plan.FREE,
-    label: "Free Plan",
-    price: PLAN_COST.FREE,
-    categories: [
-      {
-        key: "cat-1",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+      ],
+      action: () => { },
+    },
+    {
+      id: 3,
+      key: Plan.FREE,
+      label: "Free Plan",
+      price: PLAN_COST.FREE,
+      categories: [
+        {
+          key: "cat-1",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-      {
-        key: "cat-2",
-        features: {
-          [ComparePlanCat1.FEATURE]: true,
-          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
+        {
+          key: "cat-2",
+          features: {
+            [ComparePlanCat1.FEATURE]: true,
+            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+            [ComparePlanCat1.AI_SUMMARIZE]: false,
+          },
         },
-      },
-    ],
-    action: () => {},
-  },
-];
+      ],
+      action: () => { },
+    },
+  ];
 
 export const ADD_ON_LIST: AddOn[] = [
   {
@@ -552,3 +553,34 @@ export const KB_HIGHLIGHTS = [
       "Your support agent knows every solution. When they're unavailable, customers wait. Knowledge Base captures expertise across your operation. Junior agents access senior knowledge instantly.",
   },
 ];
+
+export const HD_FEATURES: HDFeature[] = [
+  {
+    id: 1,
+    highlightTitle: "Unified Conversation",
+    title: "Management",
+    description: "A customer starts on email, follows up on WhatsApp, then tweets publicly. The Helpdesk shows this as one continuous conversation. Full context, complete history, zero switching between platforms. Your team sees the whole picture, always.Context is everything in support. Unified conversations mean no question gets asked twice and no customer repeats themselves.",
+    imgSrc: "/images/hd-feature-1.webp"
+  },
+  {
+    id: 2,
+    highlightTitle: "Real-Time AI Monitoring",
+    title: "& Human Takeover",
+    description: "Get real-time visibility into SATE conversations and calls with your customers. The helpdesk shows active chats with customer and SATE. AI needs verification, but monitoring builds confidence. Agents can take over seamlessly, with full context and history, ensuring a smooth customer experience.",
+    imgSrc: "/images/hd-feature-2.webp"
+  },
+  {
+    id: 3,
+    highlightTitle: "Agent Copilot",
+    title: "with AI Assistance",
+    description: "Real-time AI co-pilot support for agents, not just in complex chats. Copilot analyzes issues, suggests responses, and identifies team members with solutions. Agents retain control with AI assistance. Knowledge should be accessible, not memorized. Copilot provides knowledge base access for all agents.",
+    imgSrc: "/images/hd-feature-3.webp"
+  },
+  {
+    id: 4,
+    highlightTitle: "Save Responses",
+    title: "for consistency",
+    description: "Customizable response templates for common queries. When agents face a shipping delay, they use /shipping-delay or a macro. The system inserts a response, fills in the order number and tracking link, updates ticket status, and schedules a follow-up—all in one action. For complex cases, agents can customize templates with variables like {{customer_name}} and {{order_id}}.",
+    imgSrc: "/images/hd-feature-4.webp"
+  },
+]

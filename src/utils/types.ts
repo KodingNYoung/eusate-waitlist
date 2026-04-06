@@ -145,3 +145,10 @@ export type Blog = {
   }
 }
 export type InternalPath = `/${string}`;
+export type HDFeature = {
+  id: number,
+  highlightTitle: string,
+  title: string,
+  description: string,
+  imgSrc: InternalPath
+}

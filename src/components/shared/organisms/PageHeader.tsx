@@ -40,13 +40,14 @@ export const PageHeader: FC<Props> = ({
 }) => {
   return (
     <header className={cls("bg-cover rounded-3xl mx-4", variant === "header" && "pt-[88px] p-16 h-[720px] ", classNames?.container)}>
-      <div className={cls("flex items-center max-w-[1400px]",
+      <div className={cls("flex container items-center max-w-[1400px]", position === "center" && "flex-col justify-center",
         classNames?.wrapper)}>
         <div
           className={cls(
             "space-y-2",
             orientation === "horizontal" && "flex justify-between items-end",
             position === "center" && "flex justify-center",
+            position === "center" && orientation === "vertical" && "flex-col",
             classNames?.root,
             className
           )}
@@ -73,12 +74,14 @@ export const PageHeader: FC<Props> = ({
             >
               {description}
             </Typography>
-            {actionBtn}
+            <div className={cls(position === "center" && "flex justify-center")}>
+              {actionBtn}
+            </div>
           </div>
         </div>
 
 
-        {position === "left" && extraContent}
+        {extraContent}
       </div>
     </header>
 
