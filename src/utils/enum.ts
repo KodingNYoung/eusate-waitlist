@@ -25,3 +25,11 @@ export enum HelpCenterKey {
   GETTING_STARTED = "getting-started",
   ACCOUNT_INFORMATION = "account-info"
 }
+
+export enum ProductKey {
+  HELP_DESK = "help-desk",
+  KNOWLEDGE_BASE = "knnwledge-base",
+  DEV_SPACE = "dev-space",
+  REPORTS = "reports",
+  AI_PLAYGROUND = "ai-playground"
+}

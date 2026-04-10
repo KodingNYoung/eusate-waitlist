@@ -7,9 +7,11 @@ import {
   HDFeature,
   HelpCenterTab,
   PricingPlan,
+  ProductsTab,
   ReportFeature,
+  Testimonial,
 } from "./types";
-import { ComparePlanCat1, HelpCenterKey, Plan, PublicExtras } from "./enum";
+import { ComparePlanCat1, HelpCenterKey, Plan, ProductKey, PublicExtras } from "./enum";
 
 export const MAX_WIDTH = "120px";
 
@@ -623,5 +625,48 @@ export const REPORTS_FEATURES: ReportFeature[] = [
     title: "Workload Distribution Report",
     color: "#F0F1F3",
     description: "Analyze support volume across channels and time for better resource allocation. Learn where volume concentrates, which channels drive tickets, and if resources match demand. Identify underperforming channels and align resources to improve efficiency and satisfaction."
+  }
+]
+
+export const PRODUCTS_TAB: ProductsTab[] = [
+  {
+    id: 1,
+    key: ProductKey.HELP_DESK,
+    label: "Helpdesk",
+    content: "/images/helpdesk-hero.webp"
+  },
+  {
+    id: 2,
+    key: ProductKey.KNOWLEDGE_BASE,
+    label: "Knowledge base",
+    content: "/images/knowledge-base-product.webp"
+  },
+  {
+    id: 3,
+    key: ProductKey.DEV_SPACE,
+    label: "Dev space",
+    content: "/images/"
+  },
+  {
+    id: 4,
+    key: ProductKey.REPORTS,
+    label: "Reports",
+    content: "/images/"
+  },
+  {
+    id: 5,
+    key: ProductKey.AI_PLAYGROUND,
+    label: "AI Playground",
+    content: "/images/"
+  },
+]
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 1,
+    imgSrc: "/home/images/testimony-1.webp",
+    testimony: "We went from 5 support agents to just 1, and our response times got faster. SATE handles everything from password resets to complex refund scenarios. It's genuinely impressive how human the conversations feel.",
+    name: "Marcus Rodriquez",
+    role: "Co-Founder, LYNT (E-commerce, Series A)"
   }
 ]

@@ -352,6 +352,7 @@ const config: Config = {
         x10: "0.625rem", //10px
         x20: "1.25rem", // 20px
         x40: "2.5rem", // 40px
+        x24: "1.5rem" //24px
       },
       zIndex: {
         1: "1",

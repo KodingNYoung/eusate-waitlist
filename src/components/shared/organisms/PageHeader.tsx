@@ -18,7 +18,7 @@ type Variant = "header" | "sub";
 
 type Props = {
   chipLabel: string;
-  title: string;
+  title: string | ReactElement;
   description?: string;
   titleProps?: TypographyProps;
   className?: TWClassNames;
@@ -28,6 +28,7 @@ type Props = {
   variant?: Variant;
   actionBtn?: ReactElement;
   extraContent?: ReactElement;
+  startContent?: ReactElement;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
@@ -41,6 +42,7 @@ export const PageHeader: FC<Props> = ({
   position = "left",
   orientation = "vertical",
   extraContent,
+  startContent,
   variant = "header",
   titleProps,
   descriptionProps,
@@ -60,6 +62,7 @@ export const PageHeader: FC<Props> = ({
           classNames?.wrapper,
         )}
       >
+        {startContent}
         <div
           className={cls(
             "flex space-y-2",
@@ -80,17 +83,20 @@ export const PageHeader: FC<Props> = ({
             >
               {chipLabel}
             </Chip>
-            <Typography
-              as="h1"
-              variant="bold-6xl"
-              className={cls(
-                position === "center" && "text-center",
-                classNames?.title,
-              )}
-              {...titleProps}
-            >
-              {title}
-            </Typography>
+            {
+              typeof title === "string" ?
+                <Typography
+                  as="h1"
+                  variant="bold-6xl"
+                  className={cls(
+                    position === "center" && "text-center",
+                    classNames?.title,
+                  )}
+                  {...titleProps}
+                >
+                  {title}
+                </Typography> : title
+            }
           </div>
           <div className="space-y-2">
             <Typography
@@ -118,3 +124,50 @@ export const PageHeader: FC<Props> = ({
     </header>
   );
 };
+
+
+
+type SubHeaderProps = {
+  chipLabel: string;
+  title: string;
+  position?: Position;
+  orientation?: Orientation;
+  titleProps?: TypographyProps;
+  cta?: ReactElement;
+  classNames?: { [slot in Slots]?: TWClassNames };
+}
+
+export const SubHeader: FC<SubHeaderProps> = ({ chipLabel, title, cta, titleProps, orientation = "vertical", classNames, position }) => {
+  return (
+    <div className={cls("flex", orientation === "horizontal" ? "flex-row justify-between items-end" : "flex-col", classNames?.container)}>
+      <div className={cls("space-y-8", classNames?.titleContainer)}>
+        <Chip
+          className={cls(
+            "bg-gold-100 rounded-full",
+            position === "center" && "flex items-start justify-center",
+            classNames?.chip,
+          )}
+        >
+          {chipLabel}
+        </Chip>
+        {
+          typeof title === "string" ?
+            <Typography
+              as="h1"
+              variant="bold-3xl"
+              className={cls(
+                position === "center" && "text-center",
+                classNames?.title,
+              )}
+              {...titleProps}
+            >
+              {title}
+            </Typography> : title
+        }
+      </div>
+
+      {cta}
+
+    </div>
+  );
+}

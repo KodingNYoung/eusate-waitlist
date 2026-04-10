@@ -1,3 +1,4 @@
+
 import Typography from "@/components/shared/atoms/Typography";
 import { BlogPost } from "@/utils/dummy";
 import Image from "next/image";

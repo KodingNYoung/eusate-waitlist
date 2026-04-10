@@ -1,5 +1,5 @@
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
-import { ComparePlanCat1, HelpCenterKey } from "./enum";
+import { ComparePlanCat1, HelpCenterKey, ProductKey } from "./enum";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
 
@@ -159,4 +159,17 @@ export type ReportFeature = {
   title: string,
   color: HexColor,
   description: string,
+}
+export type ProductsTab = {
+  id: number,
+  key: ProductKey,
+  label: string,
+  content: InternalPath
+}
+export type Testimonial = {
+  id: number,
+  imgSrc: InternalPath,
+  name: string,
+  testimony: string,
+  role: string,
 }

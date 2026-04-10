@@ -23,3 +23,11 @@ export const getFormdataFromFormRef = (formRef: RefObject<HTMLFormElement>) => {
 
   return form ? new FormData(form) : undefined;
 };
+export const truncateWords = (text: string, maxLength: number): string => {
+  if (text.length <= maxLength) return text;
+
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(" ");
+
+  return truncated.slice(0, lastSpace) + "...";
+}

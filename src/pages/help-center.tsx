@@ -21,7 +21,7 @@ const HelpCenterPage = () => {
             description="Do you hae questons? We'd love to hear from you."
           />
           <div className="flex w-full">
-            <AppTab<HelpCenterKey, HelpCenterQuestion>
+            <AppTab<HelpCenterKey, HelpCenterQuestion[]>
               classNames={{ tab: "w-full" }}
               tabs={HELP_CENTER_TABS}
               aria-label="help-center-tabs"
