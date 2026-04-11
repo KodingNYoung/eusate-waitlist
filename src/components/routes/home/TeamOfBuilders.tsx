@@ -1,13 +1,15 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
+import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTemplate";
 
 const progress = 20;
 
 export const TeamOfBuilders = () => {
   return (
-    <section className="container">
+    <SectionTemplate classNames={{ wrapper: "space-y-12" }}>
       <SubHeader
         chipLabel="Team of builders"
         orientation="horizontal"
@@ -24,11 +26,13 @@ export const TeamOfBuilders = () => {
       />
 
       <div className="flex justify-between">
-        <div>{/* <Image src="" /> */}</div>
-        <div>
+        <div className="relative w-[440px] h-[294px]">
+          <Image src="/home/images/business-men.webp" fill className="object-cover rounded-x40" alt="business-men" />
+        </div>
+        <div className="w-[40%]">
           <Typography
             variant="semibold-3xl"
-            className="bg-clip-text text-transparent"
+            className="bg-clip-text text-transparent leading-[145%] text-gray-200"
             style={{
               backgroundImage: `linear-gradient(to right, black ${progress * 100}%, #ccc ${progress * 100}%)`,
             }}
@@ -48,6 +52,6 @@ export const TeamOfBuilders = () => {
           </Typography>
         </div>
       </div>
-    </section>
+    </SectionTemplate>
   );
 };
