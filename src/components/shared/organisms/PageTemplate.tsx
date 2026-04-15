@@ -20,7 +20,7 @@ export const PageTemplate = ({ gradientVariant, children, classNames, hideGradie
     <div>
       <Navbar />
       {!hideGradient && <GradientBackground variant={gradientVariant} />}
-      <main className={cls("container pt-[88px]", classNames?.body)}>
+      <main className={cls("min-h-screen w-full", classNames?.body)}>
         {
           children
         }

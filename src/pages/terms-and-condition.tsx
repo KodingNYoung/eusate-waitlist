@@ -1,10 +1,8 @@
-import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Typography from "@/components/shared/atoms/Typography";
-import Chip from "@/components/shared/molecules/Chip";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
-import Footer from "@/components/shared/organisms/footer/index__";
-import Navbar from "@/components/shared/organisms/navbar";
+import { PageHeader } from "@/components/shared/organisms/PageHeader";
+import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 import Link from "next/link";
 import React from "react";
 
@@ -26,26 +24,15 @@ const TermsAndCondition = () => {
           },
         }}
       />
-      <Navbar />
-      <div className="relative px-4">
-        <GradientBackground variant="peach" className="w-full absolute -z-1 h-[390px]" />
-        <div className="pt-[88px] bg-gradient-to-r from-gray-500 to-white min-h-screen w-full">
-          <div className="container max-w-[1120px] py-20 space-y-20">
-            <header className="flex flex-col items-start gap-8">
-              <Chip className="bg-red-100 py-3 px-4 text-medium-base">Legals</Chip>
-              <Typography
-                as="h1"
-                className="text-bold-xl sm:text-bold-6xl text-black mb-4 sm:mb-6"
-              >
-                Terms {"&"} Conditions
-              </Typography>
-              <Typography
-                as="span"
-                className="text-regular-sm sm:text-medium-lg text-gray-600"
-              >
-                Last Updated: Monday, 01 September, 2025
-              </Typography>
-            </header>
+
+      <PageTemplate gradientVariant="peach">
+        <div className="container pt-[88px] ">
+          <div className="py-20 space-y-20">
+
+            <PageHeader
+              variant="sub"
+              classNames={{ chip: "bg-red-100" }}
+              chipLabel="Legals" title="Terms & Conditions" description="Last Updated: Monday, 01 Septeber, 2025" />
 
             <PolicySection title="1. Introduction">
               <Typography
@@ -274,10 +261,10 @@ const TermsAndCondition = () => {
                 </Typography>.
               </Typography>
             </PolicySection>
+
           </div>
-          <Footer />
         </div>
-      </div>
+      </PageTemplate>
     </div>
   );
 };

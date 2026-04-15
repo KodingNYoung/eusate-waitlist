@@ -51,7 +51,7 @@ export const PageHeader: FC<Props> = ({
     <header
       className={cls(
         "bg-cover rounded-3xl mx-4",
-        variant === "header" && "p-16 h-[720px] ",
+        variant === "header" ? "p-16 h-[720px] " : "mx-0",
         classNames?.container,
       )}
     >
@@ -59,6 +59,7 @@ export const PageHeader: FC<Props> = ({
         className={cls(
           "flex container items-center max-w-[1400px]",
           position === "center" && "flex-col justify-center",
+          variant === "sub" && "p-0",
           classNames?.wrapper,
         )}
       >
@@ -69,6 +70,7 @@ export const PageHeader: FC<Props> = ({
             orientation === "horizontal" && "justify-between items-end",
             position === "center" && "justify-center",
             position === "center" && orientation === "vertical" && "flex-col",
+            variant === "sub" && "flex-col",
             classNames?.root,
             className,
           )}
@@ -76,9 +78,9 @@ export const PageHeader: FC<Props> = ({
           {/* TITLE */}
           <div className={cls("space-y-8", classNames?.titleContainer)}>
             <Chip
-              classNames={{ container: "flex-none" }}
+              classNames={{ container: "w-fit p-2", }}
               className={cls(
-                "bg-gold-100 rounded-full",
+                "bg-gold-100 rounded-full p",
                 position === "center" && "flex flex-none items-start justify-center",
                 classNames?.chip,
               )}

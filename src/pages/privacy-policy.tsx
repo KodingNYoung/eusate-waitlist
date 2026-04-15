@@ -1,10 +1,10 @@
+import React from "react";
+import { ROUTES } from "@/utils/constants";
 import Typography from "@/components/shared/atoms/Typography";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
-import { ROUTES } from "@/utils/constants";
-import React from "react";
 
 const PrivacyPolicy = () => {
   return (
@@ -24,14 +24,16 @@ const PrivacyPolicy = () => {
         }}
       />
       <PageTemplate gradientVariant="yellow">
-        <div className="min-h-screen w-full">
-          <div className="max-w-[1440px] py-20 space-y-20 ">
-
+        <div className="container pt-[88px]">
+          <div className="py-20 space-y-20">
             <PageHeader
-              classNames={{ wrapper: "p-0", root: "flex-col" }}
-              variant="sub" chipLabel="Legals" title="Privacy Policy" description="
+              variant="sub"
+              chipLabel="Legals"
+              title="Privacy Policy"
+              description="
                   Last Updated: Monday, 01 September, 2025
-                "/>
+                "
+            />
 
             <PolicySection title="1. Introduction">
               <Typography
@@ -56,9 +58,7 @@ const PrivacyPolicy = () => {
               </Typography>
               <ol className="list-outside list-[lower-alpha] pl-5 mt-3 space-y-3">
                 <li className="text-medium-base sm:text-medium-lg">
-                  <Typography
-                    className="mb-2 text-semibold-base sm:text-medium-lg"
-                  >
+                  <Typography className="mb-2 text-semibold-base sm:text-medium-lg">
                     Information You Provide
                   </Typography>
                   <ul className="list-disc list-outside pl-4 space-y-2">
