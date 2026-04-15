@@ -1,10 +1,8 @@
-import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Typography from "@/components/shared/atoms/Typography";
-import Chip from "@/components/shared/molecules/Chip";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
-import Footer from "@/components/shared/organisms/footer/index__";
-import Navbar from "@/components/shared/organisms/navbar";
+import { PageHeader } from "@/components/shared/organisms/PageHeader";
+import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 import { ROUTES } from "@/utils/constants";
 import React from "react";
 
@@ -25,25 +23,15 @@ const PrivacyPolicy = () => {
           },
         }}
       />
-      <Navbar />
-      <div className="relative">
-        <GradientBackground variant="yellow" className="w-full mx-4 absolute -z-1 h-[390px]" />
-        <div className="pt-[88px] min-h-screen w-full">
-          <div className="container max-w-[1120px] py-20 space-y-20">
-            <header className="flex flex-col items-start gap-8">
-              <Chip className="bg-gold-100 py-3 px-4 text-medium-base flex-none">Legals</Chip>
-              <Typography
-                className="text-bold-3xl sm:text-bold-6xl"
-              >
-                Privacy Policy
-              </Typography>
-              <Typography
-                as="span"
-                className="text-medium-lg sm:text-medium-lg text-gray-600"
-              >
-                Last Updated: Monday, 01 September, 2025
-              </Typography>
-            </header>
+      <PageTemplate gradientVariant="yellow">
+        <div className="min-h-screen w-full">
+          <div className="max-w-[1440px] py-20 space-y-20 ">
+
+            <PageHeader
+              classNames={{ wrapper: "p-0", root: "flex-col" }}
+              variant="sub" chipLabel="Legals" title="Privacy Policy" description="
+                  Last Updated: Monday, 01 September, 2025
+                "/>
 
             <PolicySection title="1. Introduction">
               <Typography
@@ -431,9 +419,8 @@ const PrivacyPolicy = () => {
               </Typography>
             </PolicySection>
           </div>
-          <Footer />
         </div>
-      </div>
+      </PageTemplate>
     </div>
   );
 };

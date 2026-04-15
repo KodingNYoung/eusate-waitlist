@@ -4,25 +4,38 @@ import {
   AccordionItem,
   AccordionProps,
 } from "@heroui/accordion";
+import { ReactElement, ReactNode } from "react";
 
 export type AccordionItem = {
   key: string;
   title: string;
-  content: string;
+  content: ReactNode | string;
 };
 
 type Props = Omit<AccordionProps, "children"> & {
+  indicator?: ReactElement,
   items: AccordionItem[];
 };
 
-export const Accordion = ({ items, ...props }: Props) => {
+export const Accordion = ({ items, indicator, ...props }: Props) => {
   return (
     <AccordionBase {...props}>
       {items.map(({ key, title, content }) => (
-        <AccordionItem indicator={<div className="bg-gray-50 rounded-full p-2">{AddIcon}</div>} key={key} aria-label={key} title={title}>
+        <AccordionItem
+          key={key}
+          title={title}
+          aria-label={key}
+          indicator={indicator ?? AddIndicator}
+        >
           {content}
         </AccordionItem>
       ))}
     </AccordionBase>
   );
 };
+
+const AddIndicator = () => {
+  return (
+    <div className="bg-gray-50 rounded-full p-2">{AddIcon}</div>
+  )
+}

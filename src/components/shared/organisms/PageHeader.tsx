@@ -51,7 +51,7 @@ export const PageHeader: FC<Props> = ({
     <header
       className={cls(
         "bg-cover rounded-3xl mx-4",
-        variant === "header" && "pt-[88px] p-16 h-[720px] ",
+        variant === "header" && "p-16 h-[720px] ",
         classNames?.container,
       )}
     >
@@ -73,11 +73,13 @@ export const PageHeader: FC<Props> = ({
             className,
           )}
         >
+          {/* TITLE */}
           <div className={cls("space-y-8", classNames?.titleContainer)}>
             <Chip
+              classNames={{ container: "flex-none" }}
               className={cls(
                 "bg-gold-100 rounded-full",
-                position === "center" && "flex items-start justify-center",
+                position === "center" && "flex flex-none items-start justify-center",
                 classNames?.chip,
               )}
             >
@@ -98,6 +100,8 @@ export const PageHeader: FC<Props> = ({
                 </Typography> : title
             }
           </div>
+
+          {/* DESCRIPTION AND CTA */}
           <div className="space-y-2">
             <Typography
               as="p"
