@@ -27,8 +27,10 @@ const GradientBackground = ({
 }: GradientBackgroundProps) => {
   const gradient = `bg-[linear-gradient(180deg,_${from}_0%,_${to}_100%)]`;
   return (
-    <div className={cls("w-full absolute -z-1 min-h-[394px]", variantProps[variant], gradient, className)}>
-      {children}
+    <div className="relative flex justify-center">
+      <div className={cls("w-full absolute rounded-3xl -z-1 min-h-[394px]", variantProps[variant], gradient, className)}>
+        {children}
+      </div>
     </div>
   );
 };

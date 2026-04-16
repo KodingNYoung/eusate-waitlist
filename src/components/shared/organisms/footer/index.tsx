@@ -78,8 +78,8 @@ const Footer = () => {
           </div>
           <Logo
             type="full-gradient-white"
-            width={1400}
-            height={1400}
+            width={140}
+            height={140}
             className="absolute bottom-0 right-0 z-3 -translate-x-[90px] opacity-20"
           />
         </div>

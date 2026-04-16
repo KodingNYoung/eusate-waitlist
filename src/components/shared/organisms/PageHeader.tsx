@@ -11,7 +11,8 @@ type Slots =
   | "chip"
   | "title"
   | "description"
-  | "titleContainer";
+  | "titleContainer"
+  | "chipContainer";
 type Orientation = "horizontal" | "vertical";
 type Position = "center" | "left";
 type Variant = "header" | "sub";
@@ -26,8 +27,8 @@ type Props = {
   orientation?: Orientation;
   descriptionProps?: TypographyProps;
   variant?: Variant;
-  actionBtn?: ReactElement;
-  extraContent?: ReactElement;
+  cta?: ReactElement;
+  endContent?: ReactElement;
   startContent?: ReactElement;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
@@ -35,13 +36,13 @@ type Props = {
 export const PageHeader: FC<Props> = ({
   chipLabel,
   title,
-  actionBtn,
+  cta,
   description,
   className,
   classNames,
   position = "left",
   orientation = "vertical",
-  extraContent,
+  endContent,
   startContent,
   variant = "header",
   titleProps,
@@ -57,7 +58,7 @@ export const PageHeader: FC<Props> = ({
     >
       <div
         className={cls(
-          "flex container items-center max-w-[1400px]",
+          "flex md:container md:items-center max-w-[1400px]",
           position === "center" && "flex-col justify-center",
           variant === "sub" && "p-0",
           classNames?.wrapper,
@@ -77,39 +78,46 @@ export const PageHeader: FC<Props> = ({
         >
           {/* TITLE */}
           <div className={cls("space-y-8", classNames?.titleContainer)}>
-            <Chip
-              classNames={{ container: "w-fit p-2", }}
+            <div
               className={cls(
-                "bg-gold-100 rounded-full p",
-                position === "center" && "flex flex-none items-start justify-center",
-                classNames?.chip,
+                position === "center" && "flex justify-center",
+                classNames?.chipContainer,
               )}
             >
-              {chipLabel}
-            </Chip>
-            {
-              typeof title === "string" ?
-                <Typography
-                  as="h1"
-                  variant="bold-6xl"
-                  className={cls(
-                    position === "center" && "text-center",
-                    classNames?.title,
-                  )}
-                  {...titleProps}
-                >
-                  {title}
-                </Typography> : title
-            }
+              <Chip
+                classNames={{ container: "w-fit p-2 text-medium-base" }}
+                className={cls(
+                  "bg-gold-100 rounded-full p",
+                  position === "center" && "flex items-start justify-center",
+                  classNames?.chip,
+                )}
+              >
+                {chipLabel}
+              </Chip>
+            </div>
+            {typeof title === "string" ? (
+              <Typography
+                as="h1"
+                className={cls(
+                  "text-bold-4xl md:text-bold-6xl",
+                  position === "center" && "text-center",
+                  classNames?.title,
+                )}
+                {...titleProps}
+              >
+                {title}
+              </Typography>
+            ) : (
+              title
+            )}
           </div>
 
           {/* DESCRIPTION AND CTA */}
           <div className="space-y-2">
             <Typography
               as="p"
-              variant="regular-xl"
               className={cls(
-                "text-gray-700",
+                "md:text-regular-xl text-gray-700",
                 position === "center" && "text-center",
                 classNames?.description,
               )}
@@ -120,44 +128,62 @@ export const PageHeader: FC<Props> = ({
             <div
               className={cls(position === "center" && "flex justify-center")}
             >
-              {actionBtn}
+              {cta}
             </div>
           </div>
         </div>
 
-        {extraContent}
+        {endContent}
       </div>
     </header>
   );
 };
 
-
-
 type SubHeaderProps = {
-  chipLabel: string;
+  chipLabel?: string;
   title: string;
   position?: Position;
+  description: string;
   orientation?: Orientation;
   titleProps?: TypographyProps;
   cta?: ReactElement;
   classNames?: { [slot in Slots]?: TWClassNames };
-}
+};
 
-export const SubHeader: FC<SubHeaderProps> = ({ chipLabel, title, cta, titleProps, orientation = "vertical", classNames, position }) => {
+export const SubHeader: FC<SubHeaderProps> = ({
+  chipLabel,
+  title,
+  cta,
+  titleProps,
+  description,
+  orientation = "vertical",
+  classNames,
+  position,
+}) => {
   return (
-    <div className={cls("flex", orientation === "horizontal" ? "flex-row justify-between items-end" : "flex-col", classNames?.container)}>
-      <div className={cls("space-y-8", classNames?.titleContainer)}>
-        <Chip
-          className={cls(
-            "bg-gold-100 rounded-full",
-            position === "center" && "flex items-start justify-center",
-            classNames?.chip,
+    <div
+      className={cls(
+        "flex",
+        orientation === "horizontal"
+          ? "flex-row justify-between items-end"
+          : "flex-col",
+        classNames?.container,
+      )}
+    >
+      <div className={cls(classNames?.root)}>
+        <div className={cls("space-y-8", classNames?.titleContainer)}>
+          {chipLabel && (
+            <Chip
+              className={cls(
+                "bg-gold-100 rounded-full",
+                position === "center" && "flex items-start justify-center",
+                classNames?.chip,
+              )}
+            >
+              {chipLabel}
+            </Chip>
           )}
-        >
-          {chipLabel}
-        </Chip>
-        {
-          typeof title === "string" ?
+          {typeof title === "string" ? (
             <Typography
               as="h1"
               variant="bold-3xl"
@@ -168,12 +194,17 @@ export const SubHeader: FC<SubHeaderProps> = ({ chipLabel, title, cta, titleProp
               {...titleProps}
             >
               {title}
-            </Typography> : title
-        }
+            </Typography>
+          ) : (
+            title
+          )}
+          <Typography as="p" className={cls(classNames?.description)}>
+            {description}
+          </Typography>
+        </div>
+
+        {cta}
       </div>
-
-      {cta}
-
     </div>
   );
-}
+};

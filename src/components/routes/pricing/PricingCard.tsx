@@ -62,8 +62,7 @@ export const PricingCard: FC<Props> = ({
             <span>{TickCircleIcon}</span>
             <Typography
               data-featured={recomended}
-              variant="medium-lg"
-              className={"data-[featured=true]:text-gray-200 text-gray-700"}
+              className={"data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700"}
             >
               {feature}
             </Typography>
