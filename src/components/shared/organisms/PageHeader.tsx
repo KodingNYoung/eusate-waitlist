@@ -31,6 +31,7 @@ type Props = {
   cta?: ReactElement;
   endContent?: ReactElement;
   startContent?: ReactElement;
+  startTitleContainer?: ReactElement;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
@@ -47,13 +48,16 @@ export const PageHeader: FC<Props> = ({
   startContent,
   variant = "header",
   titleProps,
+  startTitleContainer,
   descriptionProps,
 }) => {
   return (
     <header
       className={cls(
         "bg-cover rounded-3xl",
-        variant === "header" ? "p-16 h-[720px] " : "mx-0",
+        variant === "header"
+          ? "md:p-16 px-6 py-16 h-auto md:h-[720px] "
+          : "mx-0",
         classNames?.container,
       )}
     >
@@ -69,7 +73,8 @@ export const PageHeader: FC<Props> = ({
         <div
           className={cls(
             "flex space-y-2",
-            orientation === "horizontal" && "justify-between items-end",
+            orientation === "horizontal" &&
+              "justify-between flex-col md:flex-row items-end",
             position === "center" && "justify-center",
             position === "center" && orientation === "vertical" && "flex-col",
             variant === "sub" && "flex-col",
@@ -79,6 +84,7 @@ export const PageHeader: FC<Props> = ({
         >
           {/* TITLE */}
           <div className={cls("space-y-8", classNames?.titleContainer)}>
+            {startTitleContainer}
             <div
               className={cls(
                 position === "center" && "flex justify-center",
@@ -166,10 +172,8 @@ export const SubHeader: FC<SubHeaderProps> = ({
   return (
     <div
       className={cls(
-        "flex",
-        orientation === "horizontal"
-          ? "flex-row justify-between items-end"
-          : "flex-col",
+        "flex flex-col",
+        orientation === "horizontal" && "md:flex-row justify-between items-end",
         classNames?.container,
       )}
     >
@@ -201,12 +205,14 @@ export const SubHeader: FC<SubHeaderProps> = ({
           ) : (
             title
           )}
-          <Typography as="p" className={cls(classNames?.description)}>
-            {description}
-          </Typography>
+          {description && (
+            <Typography as="p" className={cls(classNames?.description)}>
+              {description}
+            </Typography>
+          )}
         </div>
 
-        {cta}
+        {cta && cta}
       </div>
     </div>
   );

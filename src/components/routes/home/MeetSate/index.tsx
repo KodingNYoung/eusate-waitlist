@@ -22,8 +22,8 @@ export const MeetSate = () => {
         </header>
         <div className="bg-white/20 rounded-x24 p-6 space-y-4">
           <div className="flex gap-6 flex-wrap justify-center">
-            {SATE_FEATURES.map(({ id, ...feature }) => (
-              <SateFeatureCard key={id} {...feature} />
+            {SATE_FEATURES.map(({ key, ...feature }) => (
+              <SateFeatureCard key={key} {...feature} />
             ))}
           </div>
           <ChatArea />

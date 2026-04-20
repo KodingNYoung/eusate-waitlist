@@ -8,7 +8,7 @@ type PhoneFrameProps = {
 
 export const PhoneFrame = ({ messages }: PhoneFrameProps) => {
   return (
-    <div className="w-[370px] flex-shrink-0 overflow-hidden rounded-lg border-2 border-black bg-black">
+    <div className="md:w-[370px] w-full flex-shrink-0 overflow-hidden rounded-lg border-2 border-black bg-black">
       {/* Header */}
       <div className="flex items-center gap-2 bg-black px-6 pt-4 pb-6">
         <span className="text-lg leading-none text-[#888]">←</span>

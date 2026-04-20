@@ -1,28 +1,44 @@
 import Typography from "@/components/shared/atoms/Typography";
-import { FC } from "@/utils/types";
+import { cls } from "@/utils/helpers";
+import { FC, TWClassNames } from "@/utils/types";
 import { ReactElement } from "react";
+
+type Slots = "base" | "title" | "description";
 
 type Props = {
   color?: string;
   icon: ReactElement;
   title: string;
   description: string;
+  classNames?: { [slot in Slots]?: TWClassNames };
 };
 
 export const SateFeatureCard: FC<Props> = ({
   icon,
   title,
   color = "url(#paint0_linear_228_10568)",
+  classNames,
   description,
 }) => {
   return (
-    <div className="bg-white/15 p-8 grid flex-0 gap-4 rounded-[7px] w-[328px] min-h-[185px]">
+    <div
+      className={cls(
+        "bg-white/15 p-8 grid flex-0 gap-4 rounded-[7px] w-[328px] min-h-[185px]",
+        classNames?.base,
+      )}
+    >
       <div style={{ fill: color }}>{icon}</div>
       <div className="space-y-2">
-        <Typography variant="semibold-lg" className="text-white">
+        <Typography
+          variant="semibold-lg"
+          className={cls("text-white", classNames?.title)}
+        >
           {title}
         </Typography>
-        <Typography variant="regular-sm" className="text-white/70">
+        <Typography
+          variant="regular-sm"
+          className={cls("text-white/70", classNames?.description)}
+        >
           {description}
         </Typography>
       </div>

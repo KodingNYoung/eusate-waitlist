@@ -31,7 +31,7 @@ const Pricing = () => {
           chipLabel="Our Pricing"
           title="Unlock Full Access"
           classNames={{
-            container: "h-auto",
+            container: "md:h-auto",
             root: "flex-col w-full md:w-[60%]",
             wrapper: "md:justify-between flex-col md:flex-row space-y-8",
           }}

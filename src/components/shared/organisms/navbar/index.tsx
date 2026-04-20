@@ -15,7 +15,13 @@ import { ArrowDown, ArrowRight, CloseIcon, JamMenu } from "@/assets/icons";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="fixed w-full z-3 filter drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]">
+    <div
+      data-open={open}
+      className={cls(
+        "relative md:fixed w-full z-3 filter drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
+        "data-[open=true]:fixed",
+      )}
+    >
       <div
         className={cls(
           styles.navbarBg,
@@ -23,7 +29,6 @@ const Navbar = () => {
         )}
       >
         <div className="container flex justify-between items-center w-full md:w-[70%] ">
-
           {/* EXPLORE */}
           <div className="hidden md:flex gap-5 ">
             {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
@@ -61,7 +66,10 @@ const Navbar = () => {
             </Link>
             <span className="text-gray-100">|</span>
             <div className="flex items-center gap-6">
-              <Link href={ROUTES.LOGIN} className="text-medium-sm text-gray-500">
+              <Link
+                href={ROUTES.LOGIN}
+                className="text-medium-sm text-gray-500"
+              >
                 Login
               </Link>
               <Button
@@ -81,18 +89,12 @@ const Navbar = () => {
           >
             {open ? CloseIcon : JamMenu}
           </Button>
-
         </div>
 
         {/* MOBILE NAV */}
-        <AnimatePresence>
-          {
-            open && <MobileNav />
-          }
-        </AnimatePresence>
+        <AnimatePresence>{open && <MobileNav />}</AnimatePresence>
       </div>
     </div>
-
   );
 };
 

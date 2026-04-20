@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { CARDS } from "./const";
 import { PhoneFrame } from "./PhoneFrame";
@@ -21,20 +20,18 @@ export const SateAction = () => {
   };
 
   return (
-    <div className="flex flex-wrap min-h-[460px] items-center justify-between gap-10 p-8 ">
-      {/* Left: heading + cards */}
-      <div className="flex flex-col gap-1">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 items-start">
+      {/* Left column: header + cards */}
+      <div className="order-1 flex flex-col gap-4">
         <SubHeader
           classNames={{
-            container: "w-[60%]",
+            container: "md:w-[60%]",
             title: "text-[32px]",
             titleContainer: "space-y-1",
           }}
           chipLabel="Sate in Action"
           title="Sate is actively engaged in various activities"
         />
-
-        {/* Cards */}
         <div className="flex flex-col gap-4">
           {CARDS.map((card, i) => (
             <CardItem
@@ -50,8 +47,10 @@ export const SateAction = () => {
         </div>
       </div>
 
-      {/* Right: phone mockup */}
-      <PhoneFrame messages={CARDS[current].chat} />
+      {/* Phone: last on mobile, right column on desktop */}
+      <div className="order-3 md:order-2 bg-gold-100 rounded-[14.37px] p-8">
+        <PhoneFrame messages={CARDS[current].chat} />
+      </div>
     </div>
   );
 };
