@@ -41,18 +41,22 @@ export const PageTemplate = ({
 type SectionTemplateProps = {
   header?: ReactElement;
   children: ReactNode;
+  className?: TWClassNames;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
 export const SectionTemplate = ({
   header,
   children,
+  className,
   classNames,
 }: SectionTemplateProps) => {
   return (
-    <section className={cls("container space-y-8", classNames?.base)}>
-      {header}
-      {children}
+    <section className={cls(className, classNames?.base)}>
+      <div className={cls("container space-y-8", classNames?.container)}>
+        {header}
+        {children}
+      </div>
     </section>
   );
 };

@@ -4,7 +4,10 @@ import Typography from "@/components/shared/atoms/Typography";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import PolicySection from "@/components/shared/molecules/PolicySection";
-import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
+import {
+  PageTemplate,
+  SectionTemplate,
+} from "@/components/shared/organisms/PageTemplate";
 
 const TermsAndCondition = () => {
   return (
@@ -28,242 +31,247 @@ const TermsAndCondition = () => {
       <PageTemplate
         gradientVariant="peach"
         classNames={{
-          container: "container pt-[88px]",
+          container: "pt-[88px]",
           wrapper: "py-20 space-y-20",
         }}
       >
         <PageHeader
           variant="sub"
           classNames={{ chip: "bg-red-100" }}
-          chipLabel="Legals" title="Terms & Conditions" description="Last Updated: Monday, 01 Septeber, 2025" />
+          chipLabel="Legals"
+          title="Terms & Conditions"
+          description="Last Updated: Monday, 01 Septeber, 2025"
+        />
 
-        <PolicySection title="1. Introduction">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            Welcome to Eusate, an AI-driven customer support platform
-            (&apos;we&apos;, &apos;us&apos;, &apos;Eusate&apos;). These
-            Terms & Conditions (&apos;Terms&apos;) govern your access to and
-            use of Eusate, including its Early Tester Program with three
-            months of free access, founder support, and no credit card
-            requirement. By applying, registering, or using the service, you
-            agree to these Terms.
-          </Typography>
-        </PolicySection>
+        <SectionTemplate>
+          <PolicySection title="1. Introduction">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              Welcome to Eusate, an AI-driven customer support platform
+              (&apos;we&apos;, &apos;us&apos;, &apos;Eusate&apos;). These Terms
+              & Conditions (&apos;Terms&apos;) govern your access to and use of
+              Eusate, including its Early Tester Program with three months of
+              free access, founder support, and no credit card requirement. By
+              applying, registering, or using the service, you agree to these
+              Terms.
+            </Typography>
+          </PolicySection>
 
-        <PolicySection title="2. Early Tester Program">
-          <ul className="list-disc list-outside pl-4 space-y-2">
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                Eligible users may apply to participate in the Early Tester
-                Program, subject to approval.
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                Approved users receive three (3) months of free access, with
-                no credit card required and direct access to founder
-                support.
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                We reserve the right to modify or cancel the program at any
-                time, and participation does not guarantee continued access
-                beyond the period.
-              </Typography>
-            </li>
-          </ul>
-        </PolicySection>
-
-        <PolicySection title="3. Scope of Service">
-          <Typography
-            as="p"
-            className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            Eusate offers:
-          </Typography>
-          <ul className="list-disc list-outside space-y-2 pl-4">
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                AI automated responses that learn from your business context
-                to provide instant, accurate answers;
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                Dynamic, self-updating smart knowledge base;
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                Developer Space with authentication configuration and
-                customizable functionalities
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                AI Playground to test and refine AI behavior;
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                Advanced analytics tracking customer interactions and
-                support metrics;
-              </Typography>
-            </li>
-            <li>
-              <Typography
-                as="span"
-                className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-              >
-                Continuous learning features to enhance AI performance over
-                time.
-              </Typography>
-            </li>
-          </ul>
-        </PolicySection>
-
-        <PolicySection title="4. Registration & Access">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            Users must provide accurate information during registration. You
-            are responsible for safeguarding your credentials and liable for
-            any account activity.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="5. Acceptable Use">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            You agree not to misuse the platform—for instance by introducing
-            malicious content, harassing others, or attempting unauthorized
-            access. We may suspend or terminate access for misuse.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="6. Intellectual Property">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            All intellectual property rights in Eusate, including AI models,
-            software, documentation, and trademarks, remain our exclusive
-            property. You may not copy, reverse engineer, or redistribute
-            any part of the service.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="7. Privacy & Data">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            Your data privacy is important to us. Any customer data,
-            including tickets, conversation logs, analytics, and support
-            documentation, will be handled in accordance with our{" "}
-            <Link href="/privacy-policy" className="text-info-500">
-              Privacy Policy
-            </Link>
-            . Your data will not be used for external purposes without
-            explicit consent.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="8. Disclaimers & Limitations">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            The Early Access service is provided &apos;as is&apos; and may
-            contain bugs or inaccuracies. We disclaim all warranties,
-            express or implied, regarding reliability, suitability, or
-            non-infringement. Our liability is limited to rectify the
-            service or refund any paid fees, to the extent permitted by law.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="9. Modifications & Termination">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            We may update these Terms or suspend/terminate your access to
-            Eusate at any time, with or without notice—especially after the
-            Early Access phase ends or the service evolves beyond this
-            preview.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="10. Governing Law">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            These Terms are governed by the laws of the Federal Republic of
-            Nigeria. Disputes will be resolved in the courts of that
-            jurisdiction.
-          </Typography>
-        </PolicySection>
-
-        <PolicySection title="11. Contact">
-          <Typography
-            as="p"
-            className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
-          >
-            For any inquiries, feedback, or support, please reach out via
-            <Typography as="p" className="grid text-gray-600 mt-2">
-              <span>Eusate</span>
-              <span>
-                Email:{" "}
-                <a className="text-info-500" href="mailto:info@eusate.com">
-                  {" "}
-                  info@eusate.com
-                </a>
-              </span>
-              <span>
-                Website:{" "}
-                <a
-                  className="text-info-500"
-                  target="_blank"
-                  rel="noreferer nofollow"
-                  href="https://www.eusate.com"
+          <PolicySection title="2. Early Tester Program">
+            <ul className="list-disc list-outside pl-4 space-y-2">
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                 >
-                  www.eusate.com
-                </a>
-              </span>
-            </Typography>.
-          </Typography>
-        </PolicySection>
+                  Eligible users may apply to participate in the Early Tester
+                  Program, subject to approval.
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  Approved users receive three (3) months of free access, with
+                  no credit card required and direct access to founder support.
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  We reserve the right to modify or cancel the program at any
+                  time, and participation does not guarantee continued access
+                  beyond the period.
+                </Typography>
+              </li>
+            </ul>
+          </PolicySection>
+
+          <PolicySection title="3. Scope of Service">
+            <Typography
+              as="p"
+              className="text-gray-600 mb-2 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              Eusate offers:
+            </Typography>
+            <ul className="list-disc list-outside space-y-2 pl-4">
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  AI automated responses that learn from your business context
+                  to provide instant, accurate answers;
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  Dynamic, self-updating smart knowledge base;
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  Developer Space with authentication configuration and
+                  customizable functionalities
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  AI Playground to test and refine AI behavior;
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  Advanced analytics tracking customer interactions and support
+                  metrics;
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  as="span"
+                  className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+                >
+                  Continuous learning features to enhance AI performance over
+                  time.
+                </Typography>
+              </li>
+            </ul>
+          </PolicySection>
+
+          <PolicySection title="4. Registration & Access">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              Users must provide accurate information during registration. You
+              are responsible for safeguarding your credentials and liable for
+              any account activity.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="5. Acceptable Use">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              You agree not to misuse the platform—for instance by introducing
+              malicious content, harassing others, or attempting unauthorized
+              access. We may suspend or terminate access for misuse.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="6. Intellectual Property">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              All intellectual property rights in Eusate, including AI models,
+              software, documentation, and trademarks, remain our exclusive
+              property. You may not copy, reverse engineer, or redistribute any
+              part of the service.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="7. Privacy & Data">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              Your data privacy is important to us. Any customer data, including
+              tickets, conversation logs, analytics, and support documentation,
+              will be handled in accordance with our{" "}
+              <Link href="/privacy-policy" className="text-info-500">
+                Privacy Policy
+              </Link>
+              . Your data will not be used for external purposes without
+              explicit consent.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="8. Disclaimers & Limitations">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              The Early Access service is provided &apos;as is&apos; and may
+              contain bugs or inaccuracies. We disclaim all warranties, express
+              or implied, regarding reliability, suitability, or
+              non-infringement. Our liability is limited to rectify the service
+              or refund any paid fees, to the extent permitted by law.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="9. Modifications & Termination">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              We may update these Terms or suspend/terminate your access to
+              Eusate at any time, with or without notice—especially after the
+              Early Access phase ends or the service evolves beyond this
+              preview.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="10. Governing Law">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              These Terms are governed by the laws of the Federal Republic of
+              Nigeria. Disputes will be resolved in the courts of that
+              jurisdiction.
+            </Typography>
+          </PolicySection>
+
+          <PolicySection title="11. Contact">
+            <Typography
+              as="p"
+              className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
+            >
+              For any inquiries, feedback, or support, please reach out via
+              <Typography as="p" className="grid text-gray-600 mt-2">
+                <span>Eusate</span>
+                <span>
+                  Email:{" "}
+                  <a className="text-info-500" href="mailto:info@eusate.com">
+                    {" "}
+                    info@eusate.com
+                  </a>
+                </span>
+                <span>
+                  Website:{" "}
+                  <a
+                    className="text-info-500"
+                    target="_blank"
+                    rel="noreferer nofollow"
+                    href="https://www.eusate.com"
+                  >
+                    www.eusate.com
+                  </a>
+                </span>
+              </Typography>
+              .
+            </Typography>
+          </PolicySection>
+        </SectionTemplate>
       </PageTemplate>
     </div>
   );

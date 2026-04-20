@@ -12,6 +12,7 @@ type Slots =
   | "title"
   | "description"
   | "titleContainer"
+  | "descriptionContainer"
   | "chipContainer";
 type Orientation = "horizontal" | "vertical";
 type Position = "center" | "left";
@@ -51,7 +52,7 @@ export const PageHeader: FC<Props> = ({
   return (
     <header
       className={cls(
-        "bg-cover rounded-3xl mx-4",
+        "bg-cover rounded-3xl",
         variant === "header" ? "p-16 h-[720px] " : "mx-0",
         classNames?.container,
       )}
@@ -113,7 +114,7 @@ export const PageHeader: FC<Props> = ({
           </div>
 
           {/* DESCRIPTION AND CTA */}
-          <div className="space-y-2">
+          <div className={cls("space-y-2", classNames?.descriptionContainer)}>
             <Typography
               as="p"
               className={cls(
@@ -125,11 +126,13 @@ export const PageHeader: FC<Props> = ({
             >
               {description}
             </Typography>
-            <div
-              className={cls(position === "center" && "flex justify-center")}
-            >
-              {cta}
-            </div>
+            {cta && (
+              <div
+                className={cls(position === "center" && "flex justify-center")}
+              >
+                {cta}
+              </div>
+            )}
           </div>
         </div>
 
@@ -143,7 +146,7 @@ type SubHeaderProps = {
   chipLabel?: string;
   title: string;
   position?: Position;
-  description: string;
+  description?: string;
   orientation?: Orientation;
   titleProps?: TypographyProps;
   cta?: ReactElement;
@@ -175,7 +178,7 @@ export const SubHeader: FC<SubHeaderProps> = ({
           {chipLabel && (
             <Chip
               className={cls(
-                "bg-gold-100 rounded-full",
+                "w-fit bg-gold-100 rounded-full",
                 position === "center" && "flex items-start justify-center",
                 classNames?.chip,
               )}
