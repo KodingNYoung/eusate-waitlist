@@ -15,21 +15,21 @@ export const FormSection = () => {
   });
 
   return (
-    <section className="w-full md:min-w-[520px] space-y-8 bg-black text-white py-6 px-8 rounded-3xl border">
+    <section className="w-full md:max-w-[520px] space-y-8 bg-black text-white py-6 px-4 md:px-8 rounded-3xl">
       <div className="flex items-center gap-4">
-        <span>{SendIcon}</span>
+        <span className="text-warning-300">{SendIcon}</span>
         <Typography variant="medium-lg" className="text-gray-200">
           Send us a message
         </Typography>
       </div>
-      <form className="grid gap-4">
+      <form className="grid gap-2 md:gap-4">
         <Input
           {...register("firstname")}
           name="full-name"
           classNames={{
             input:
               "!bg-gray-900 text-white placeholder:text-gray-500 placeholder:text-medium-sm",
-            inputContainer: "before:hidden",
+            inputContainer: "before:hidden !mt-0 !mb-0",
           }}
           placeholder="Full name"
         />
@@ -38,7 +38,7 @@ export const FormSection = () => {
           name="email"
           classNames={{
             input: "!bg-gray-900 text-white placeholder:text-gray-500",
-            inputContainer: "before:hidden",
+            inputContainer: "before:hidden !mt-0 !mb-0",
           }}
           placeholder="Email address"
         />
@@ -68,7 +68,7 @@ export const FormSection = () => {
           className="py-4"
           classNames={{ label: "text-semibold-base" }}
         >
-          Submit
+          Submit message
         </Button>
       </form>
     </section>

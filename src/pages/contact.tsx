@@ -2,9 +2,9 @@ import {
   PageTemplate,
   SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
+import { SocialLinks } from "@/components/routes/contact/Socials";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { FormSection } from "@/components/routes/contact/FormSection";
-import { SocialLinks } from "@/components/routes/contact/Socials";
 
 const ContactPage = () => {
   return (
@@ -12,7 +12,7 @@ const ContactPage = () => {
       <PageTemplate
         classNames={{
           wrapper:
-            "flex flex-wrap md:container items-center justify-between pt-[100px] md:min-h-screen gap-12",
+            "flex flex-wrap md:container sm: items-center justify-between pt-16 md:pt-[150px] md:min-h-screen gap-12",
         }}
       >
         {/* CONTACT INFO */}
