@@ -56,7 +56,7 @@ export const SectionTemplate = ({
 }: SectionTemplateProps) => {
   return (
     <section className={cls(className, classNames?.base)}>
-      <div className={cls("container space-y-8", classNames?.container)}>
+      <div className={cls("md:container space-y-8", classNames?.container)}>
         {header}
         {children}
       </div>

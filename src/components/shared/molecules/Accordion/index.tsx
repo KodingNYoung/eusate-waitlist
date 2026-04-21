@@ -13,7 +13,7 @@ export type AccordionItem = {
 };
 
 type Props = Omit<AccordionProps, "children"> & {
-  indicator?: ReactElement,
+  indicator?: ReactElement;
   items: AccordionItem[];
 };
 
@@ -35,7 +35,5 @@ export const Accordion = ({ items, indicator, ...props }: Props) => {
 };
 
 const AddIndicator = () => {
-  return (
-    <div className="bg-gray-50 rounded-full p-2">{AddIcon}</div>
-  )
-}
+  return <div className="bg-gray-50 rounded-full p-2">{AddIcon}</div>;
+};

@@ -17,6 +17,13 @@ type Slots =
 type Orientation = "horizontal" | "vertical";
 type Position = "center" | "left";
 type Variant = "header" | "sub";
+export type GradientVariants = "yellow" | "peach" | "gray";
+
+const variantProps: { [variant in GradientVariants]: TWClassNames } = {
+  yellow: "bg-[linear-gradient(180deg,_#F3E5B2_0%,_#FFFFFF_100%)]",
+  peach: "bg-[linear-gradient(180deg,_#f8cfca_0%,_#FFFFFF_100%)]",
+  gray: "bg-[linear-gradient(180deg,_#F0F1F3_0%,_#FFFFFF_100%)]",
+};
 
 type Props = {
   chipLabel: string;
@@ -30,6 +37,7 @@ type Props = {
   variant?: Variant;
   cta?: ReactElement;
   endContent?: ReactElement;
+  gradient?: GradientVariants;
   startContent?: ReactElement;
   startTitleContainer?: ReactElement;
   classNames?: { [slot in Slots]?: TWClassNames };
@@ -43,6 +51,7 @@ export const PageHeader: FC<Props> = ({
   className,
   classNames,
   position = "left",
+  gradient,
   orientation = "vertical",
   endContent,
   startContent,
@@ -55,6 +64,7 @@ export const PageHeader: FC<Props> = ({
     <header
       className={cls(
         "bg-cover rounded-3xl",
+        gradient && variantProps[gradient],
         variant === "header"
           ? "md:p-16 px-6 py-16 h-auto md:h-[720px] "
           : "mx-0",
