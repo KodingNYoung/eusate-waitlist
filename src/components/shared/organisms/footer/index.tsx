@@ -9,9 +9,9 @@ import { ArrowRightIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[40px] pt-20 px-24 mt-20 mx-4">
-      <div className="container flex flex-col gap-56">
-        <div className="flex justify-between">
+    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[20px] md:rounded-[40px] pt-20 px-4 md:px-24 mt-20 mx-2 md:mx-4">
+      <div className="container flex flex-col gap-12 md:gap-56">
+        <div className="flex flex-wrap justify-between gap-16">
           <div className="flex flex-col gap-16 w-[463px]">
             <div className="grid gap-8">
               <Logo type="full-gradient-white" />
@@ -19,7 +19,7 @@ const Footer = () => {
                 Support that scales with you. Not against you.
               </Typography>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-between md:justify-start gap-4">
               {SOCIAL_LINKS.map(({ id, icon, link }) => (
                 <Button
                   key={id}
@@ -34,18 +34,23 @@ const Footer = () => {
             <nav className="flex gap-8">
               <Link
                 href={ROUTES.PRIVACY}
-                className="text-bold-lg text-white-60"
+                className="text-bold-sm md:text-bold-lg text-white-60"
               >
                 Privacy policy
               </Link>
-              <Link href={ROUTES.TERMS} className="text-bold-lg text-white-60">
+              <Link
+                href={ROUTES.TERMS}
+                className="text-bold-sm md:text-bold-lg text-white-60"
+              >
                 Terms and Conditions
               </Link>
             </nav>
           </div>
-          <div className="flex justify-between gap-4 w-[576px]">
+
+          {/* EXPLORE LIST */}
+          <div className="flex flex-wrap justify-between gap-x-8 gap-y-20 w-[576px]">
             {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
-              <div key={id} className="flex flex-col gap-6 ">
+              <div key={id} className="flex  flex-col gap-6 ">
                 <Typography variant="medium-lg" className="text-white/40">
                   {label}
                 </Typography>
@@ -54,7 +59,7 @@ const Footer = () => {
                     <Link
                       key={key}
                       href={link ?? "/"}
-                      className="text-bold-lg text-white/60"
+                      className="text-bold-sm md:text-bold-lg text-white/60"
                     >
                       {label}
                     </Link>
@@ -68,7 +73,7 @@ const Footer = () => {
           <div className="flex w-full mb-20 justify-center relative z-5">
             <Button
               variant="outlined"
-              className="py-4 px-12"
+              className="py-4 border-0 before:hidden px-6 md:px-12 shadow-hard-medium"
               endContent={
                 <span className="stroke-gray-900">{ArrowRightIcon}</span>
               }

@@ -36,7 +36,7 @@ export const PageTemplate = ({
           <div className={cls(classNames?.wrapper)}>{children}</div>
         </div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
