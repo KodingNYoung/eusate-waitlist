@@ -23,7 +23,7 @@ export enum PublicExtras {
 
 export enum HelpCenterKey {
   GETTING_STARTED = "getting-started",
-  ACCOUNT_INFORMATION = "account-info"
+  ACCOUNT_INFORMATION = "account-info",
 }
 
 export enum ProductKey {
@@ -31,5 +31,9 @@ export enum ProductKey {
   KNOWLEDGE_BASE = "knnwledge-base",
   DEV_SPACE = "dev-space",
   REPORTS = "reports",
-  AI_PLAYGROUND = "ai-playground"
+  AI_PLAYGROUND = "ai-playground",
+}
+
+export enum PageQueryKey {
+  PAGE = "page",
 }

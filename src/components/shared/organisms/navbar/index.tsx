@@ -18,7 +18,7 @@ const Navbar = () => {
     <div
       data-open={open}
       className={cls(
-        "relative md:fixed w-full z-3 filter drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
+        "relative md:fixed w-full z-3 filter md:drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
         "data-[open=true]:fixed",
       )}
     >

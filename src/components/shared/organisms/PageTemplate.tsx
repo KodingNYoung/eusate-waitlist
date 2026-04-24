@@ -33,7 +33,7 @@ export const PageTemplate = ({
       >
         {!hideGradient && <GradientBackground variant={gradientVariant} />}
         <div className={cls(classNames?.container)}>
-          <div className={cls(classNames?.wrapper)}>{children}</div>
+          <div className={cls("px-2", classNames?.wrapper)}>{children}</div>
         </div>
       </main>
       <Footer />

@@ -20,6 +20,7 @@ import {
 } from "./enum";
 
 export const MAX_WIDTH = "120px";
+export const MOBILE_WIDTH = "(max-width: 550px)";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
