@@ -62,7 +62,7 @@ export const MeetTeam = () => {
         }}
       />
       <div>
-        <div className="flex flex-wrap items-center w-[60%] gap-8 gap-y-16">
+        <div className="flex flex-wrap justify-center items-center w-full gap-8 gap-y-16">
           {team.map(({ id, ...member }) => (
             <MemberCard key={id} {...member} />
           ))}

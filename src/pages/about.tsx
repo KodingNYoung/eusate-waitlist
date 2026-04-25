@@ -10,18 +10,25 @@ import {
   SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { BackgroundWatermark } from "@/components/shared/organisms/DecorativeGraphic";
+import { useMediaQuery } from "@/utils/hooks";
 
 const AboutPage = () => {
+  const isMobile = useMediaQuery();
   return (
     <PageTemplate
       gradientVariant="yellow"
       classNames={{ wrapper: "md:pt-[100px] w-full space-y-8" }}
     >
       <PageHeader
-        position="center"
-        chipLabel="About us"
         title="Our Story"
-        classNames={{ container: "md:h-auto" }}
+        chipLabel="About us"
+        description="Last updated: 12/12/2026"
+        position={isMobile ? "left" : "center"}
+        classNames={{
+          container: "md:h-auto",
+          root: "flex-col space-y-4",
+          description: "text-medium-sm text-gray-600",
+        }}
       />
 
       <SectionTemplate
@@ -54,7 +61,7 @@ const AboutPage = () => {
 
       <SectionTemplate className="relative overflow-hidden mb-24">
         <BackgroundWatermark imgSrc="/images/about-mission-swatch.webp" />
-        <div className="flex flex-wrap container relative justify-between gap-4 mt-8">
+        <div className="flex flex-wrap container relative md:justify-center lg:justify-between gap-4 mt-8">
           <VisionCard
             icon={TelescopeIcon}
             title="Our Vision"
@@ -68,11 +75,12 @@ We refused to choose. So we built Eusate, a platform that lets teams do both."
 We refused to choose. So we built Eusate, a platform that lets teams do both."
           />
         </div>
-        {/* SWATCH */}
       </SectionTemplate>
 
       <SectionTemplate
-        classNames={{ base: "bg-black p-20 rounded-x24 md:rounded-[40px]" }}
+        classNames={{
+          base: "bg-black py-8 md:p-20 rounded-x24 md:rounded-[40px]",
+        }}
       >
         <MeetTeam />
       </SectionTemplate>

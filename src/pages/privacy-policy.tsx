@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
         gradientVariant="yellow"
         classNames={{
           container: "pt-[88px]",
-          wrapper: "py-20 space-y-20",
+          wrapper: "py-20 space-y-20 px-2",
         }}
       >
         <PageHeader
