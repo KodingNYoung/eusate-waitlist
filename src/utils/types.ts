@@ -1,5 +1,7 @@
+import { z } from "zod";
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
-import { ComparePlanCat1, HelpCenterKey } from "./enum";
+import { ComparePlanCat1, HelpCenterKey, ProductKey } from "./enum";
+import { contactFormSchema } from "./schemas";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
 
@@ -63,7 +65,7 @@ export type LogoVariants =
 export type FC<PropsType = unknown> = {
   (
     props: { className?: TWClassNames } & PropsWithChildren<PropsType>, // These line automatically add `className` and `children` to all component using the `FC` type
-    context?: unknown
+    context?: unknown,
   ): ReactElement | null;
   displayName?: string;
 };
@@ -109,39 +111,66 @@ export type AddOn = {
   price: number;
 };
 
-export type HelpCenterTabKeys = "getting-started" | "account-info"
+export type HelpCenterTabKeys = "getting-started" | "account-info";
 export type HelpCenterTab = {
-  id: number,
-  key: HelpCenterKey,
-  label: string
+  id: number;
+  key: HelpCenterKey;
+  label: string;
   content: HelpCenterQuestion[];
-}
+};
 export type HelpCenterQuestion = {
-  id: number,
-  key: string,
-  question: string,
-  answer: string,
-}
-export type SateAiAction = "action-1" | "action-2" | " action-3" | "action-4"
+  id: number;
+  key: string;
+  question: string;
+  answer: string;
+};
+export type SateAiAction = "action-1" | "action-2" | " action-3" | "action-4";
 
 export type Blog = {
   id: string;
   imgSrc: string;
-  title: string,
-  summary: string,
-  readingSpan: string,
-  spotlight?: boolean,
-  timestamp: Date,
+  title: string;
+  summary: string;
+  readingSpan: string;
+  spotlight?: boolean;
+  timestamp: Date;
   content: {
-    title: string,
-    introduction: string,
-    subheaders:
-    {
-      id: number,
-      title: string
-      content: string
-    }[]
-
-  }
-}
+    title: string;
+    introduction: string;
+    subheaders: {
+      id: number;
+      title: string;
+      content: string;
+    }[];
+  };
+};
 export type InternalPath = `/${string}`;
+export type HexColor = `#${string}`;
+export type HDFeature = {
+  id: number;
+  highlightTitle: string;
+  title: string;
+  description: string;
+  imgSrc: InternalPath;
+};
+export type ReportFeature = {
+  id: number;
+  imgSrc: InternalPath;
+  title: string;
+  color: HexColor;
+  description: string;
+};
+export type ProductsTab = {
+  id: number;
+  key: ProductKey;
+  label: string;
+  content: InternalPath;
+};
+export type Testimonial = {
+  id: number;
+  imgSrc: InternalPath;
+  name: string;
+  testimony: string;
+  role: string;
+};
+export type ContactForm = z.infer<typeof contactFormSchema>;

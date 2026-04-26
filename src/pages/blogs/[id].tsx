@@ -1,21 +1,19 @@
 import { Post } from "@/components/routes/blogs/Post";
-import Navbar from "@/components/shared/organisms/navbar";
 import { BackButton } from "@/components/routes/blogs/BackButton";
-import GradientBackground from "@/components/shared/atoms/GradientBackground";
+import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 
 const BlogPost = () => {
   return (
     <div>
-      <Navbar />
-      <GradientBackground variant="gray" />
-      <main className="pt-[88px]">
-        <div className="container pt-20 space-y-8">
-          <BackButton />
-          <Post />
-        </div>
-      </main>
+      <PageTemplate
+        gradientVariant="gray"
+        classNames={{ wrapper: "md:pt-[100px] pt-20 space-y-8" }}
+      >
+        <BackButton />
+        <Post />
+      </PageTemplate>
     </div>
-  )
-}
+  );
+};
 
 export default BlogPost;

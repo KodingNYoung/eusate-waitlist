@@ -1,4 +1,4 @@
-import { FC, TWClassNames } from "@/utils/types"
+import { FC, InternalPath, TWClassNames } from "@/utils/types"
 import {
   Dropdown,
   DropdownItem,
@@ -20,7 +20,7 @@ export type ItemType = {
   icon?: ReactNode
   className?: TWClassNames
   disabled?: boolean
-  link?: string
+  link?: InternalPath
   action?: () => void
 }
 export type SectionsType = {
@@ -62,7 +62,7 @@ const AppDropdown: FC<Props> = ({
       {...props}
     >
       <DropdownTrigger {...triggerProps}>
-        <Button variant="text" {...triggerBtnProps}>
+        <Button variant="tetiaryText" className="border-0" {...triggerBtnProps}>
           {triggerEl}
         </Button>
       </DropdownTrigger>

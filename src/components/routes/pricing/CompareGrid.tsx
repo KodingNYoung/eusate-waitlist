@@ -12,41 +12,53 @@ type Props = {
 
 export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
   return (
-    <div className="grid grid-cols-4 border border-gray-100 rounded-3xl border-collapse">
-      <header className="border-b">
-        <div className="flex items-end border-b min-h-32 p-2 min-w-64">
-          <Typography variant="bold-xl" className="p-4">
-            {headerTitle}
-          </Typography>
-        </div>
-        {headers.map(({ id, label, items }) => (
-          <CategoryHeader key={id} title={label} items={items} />
-        ))}
-      </header>
-
-      {data.map(({ key, label, price, categories, action }) => (
-        <section key={key} className="border grid">
-          <header className="border-b flex flex-col justify-between min-h-32 p-4">
-            <Chip variant="light">{label}</Chip>
-            <Typography variant="bold-5xl">
-              ${price}
-              <span className="text-semibold-base">/per month</span>
+    <div className="w-full overflow-x-auto">
+      <div className="grid grid-cols-4 border border-gray-100 rounded-3xl min-w-[800px] md:w-full">
+        <header className="items-start border-b">
+          <div className="flex items-end min-h-32 p-2 min-w-64">
+            <Typography variant="bold-xl" className="p-4">
+              {headerTitle}
             </Typography>
-          </header>
+          </div>
           <div className="">
-            {categories.map(({ key, features }) => (
-              <div key={key} className="border-b">
-                {Object.values(features).map((v) => (
-                  <CategoryData key={key} value={v} />
-                ))}
-              </div>
+            {headers.map(({ id, label, items }) => (
+              <CategoryHeader key={id} title={label} items={items} />
             ))}
           </div>
-          <Button className="mx-4 mb-4" onClick={action}>
-            Get started
-          </Button>
-        </section>
-      ))}
+        </header>
+
+        {data.map(({ key, label, price, categories, action }) => (
+          <section key={key} className="grid items-start">
+            <header className="border-l flex flex-col justify-between min-h-32 p-4">
+              <Chip variant="light" className="text-semibold-base">
+                {label}
+              </Chip>
+              <Typography variant="bold-5xl">
+                ${price}
+                <span className="text-semibold-base text-gray-400">
+                  /per month
+                </span>
+              </Typography>
+            </header>
+            <div className="">
+              {categories.map(({ key, features }) => (
+                <div key={key} className="border-t border-l h-[255px]">
+                  <div className="translate-y-[45px]">
+                    {Object.values(features).map((v) => (
+                      <CategoryData key={key} value={v} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="border-l p-4">
+              <Button size="sm" className="py-4 w-full" onClick={action}>
+                Get started
+              </Button>
+            </div>
+          </section>
+        ))}
+      </div>
     </div>
   );
 };
@@ -59,12 +71,12 @@ const CategoryData: FC<CategoryDataProp> = ({ value }) => {
   return (
     <div className="flex items-center justify-center p-4">
       <div>
-        <span className="text-center">
-          {typeof value === "boolean" && value ? TickCircleIcon : "-"}
-        </span>
-        <Typography className="text-center">
-          {typeof value === "object" && value.value}
-        </Typography>
+        {typeof value === "boolean" && (
+          <span className="text-center">{value ? TickCircleIcon : "-"}</span>
+        )}
+        {typeof value === "object" && (
+          <Typography className="text-center">{value.value}</Typography>
+        )}
       </div>
     </div>
   );
@@ -77,11 +89,11 @@ type CategoryHeaderProps = {
 
 const CategoryHeader = ({ title, items }: CategoryHeaderProps) => {
   return (
-    <div className="p-4 space-y-4">
+    <div className="p-4 space-y-4 h-[254px] border-t">
       <Typography variant="bold-lg" className="text-gray-900">
         {title}
       </Typography>
-      <div className="grid gap-4">
+      <div className="grid gap-8">
         {items.map(({ key, label }) => (
           <div key={key} className="flex justify-between w-full">
             <Typography variant="medium-lg" className="text-gray-700">

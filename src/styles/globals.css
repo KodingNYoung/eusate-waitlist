@@ -37,6 +37,10 @@
     @apply w-full max-w-[1248px] mx-auto px-6;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   /* BUTTONS */
   .primary-btn {
     background: linear-gradient(
@@ -47,7 +51,10 @@
     );
     background-size: calc(200% + 2px); /* 2px for the borders */
     background-position: 100%; /* 1px to the left */
-    transition: all 0.5s, --btnColor1 0.5s, --btnColor2 0.5s;
+    transition:
+      all 0.5s,
+      --btnColor1 0.5s,
+      --btnColor2 0.5s;
   }
   .primary-btn.gradient {
     @apply [--btnColor1:#d7ab07] [--btnColor2:#e86555];

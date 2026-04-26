@@ -9,8 +9,8 @@ type Props = {
 };
 const IntegrationCard: FC<Props> = ({ icon, name, description }) => {
   return (
-    <section className="flex align-start justify-center border border-gray-100 rounded-x20 py-6 w-full max-w-[332.67px] h-[255px]">
-      <div className="flex flex-col items-center justify-around w-[83%]">
+    <section className="flex justify-center border border-gray-100 rounded-x20 py-6 w-full max-w-[332.67px] h-[255px]">
+      <div className="flex flex-col items-center justify-around w-[83%] 48">
         <Image width={80} height={80} alt={icon} src={icon} />
         <div className="grid gap-2">
           <Typography variant="semibold-xl" className="text-black text-center">
