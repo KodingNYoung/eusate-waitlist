@@ -73,7 +73,7 @@ export const PageHeader: FC<Props> = ({
     >
       <div
         className={cls(
-          "flex md:container md:items-center max-w-[1400px]",
+          "flex flex-col md:flex-row md:container md:items-center",
           position === "center" && "flex-col justify-center",
           variant === "sub" && "p-0",
           classNames?.wrapper,
@@ -102,7 +102,10 @@ export const PageHeader: FC<Props> = ({
               )}
             >
               <Chip
-                classNames={{ container: "w-fit p-2 text-medium-base" }}
+                classNames={{
+                  container:
+                    "w-fit p-1.5 md:p-2 text-medium-sm md:text-medium-base",
+                }}
                 className={cls(
                   "bg-gold-100 rounded-full p",
                   position === "center" && "flex items-start justify-center",

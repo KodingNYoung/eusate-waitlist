@@ -1,52 +1,87 @@
 import Typography from "@/components/shared/atoms/Typography";
+import { KB_FEATURES } from "@/utils/constants";
 import Image from "next/image";
-
-const features = [
-  {
-    id: 1,
-    title: "Multi-Source Content Integration",
-    description:
-      "Your documentation exists. Knowledge Base adapts to you without forcing migration. Upload documents, paste URLs, or write in the editor. Our system parses and indexes content for AI retrieval. No manual tagging needed, but you can add it. Document uploads (PDF, DOCX, TXT, MD, RTF), URL linking, custom articles, FAQ imports, API connections, and spreadsheet data.",
-  },
-  {
-    id: 2,
-    title: "Semantic Search and Retrieval",
-    description:
-      "AI-powered search understands intent, not just keywords. It ranks contextual relevance based on query intent, supports multi-language search, and recognizes question variations. SATE retrieves relevant information, synthesizes answers, and scores confidence. Low confidence prompts human escalation. Semantic search ensures SATE finds the right answer, regardless of phrasing.",
-  },
-  {
-    id: 3,
-    title: "Content Analytics and Optimization",
-    description:
-      "Control visibility of sensitive information. Tag content with access levels. SATE respects permissions—customers don’t see internal docs, free users miss premium content, and regional restrictions apply. Granular control ensures the right info reaches the right people.",
-  },
-  {
-    id: 4,
-    title: "Granular Access Control",
-    description:
-      "Understand which content performs, identify gaps, and optimize continuously.Every search, every retrieval, and every resolution feeds analytics. The system identifies which articles resolve issues effectively and which queries have no good answers. Optimization recommendations highlight content needing updates or creation.",
-  },
-];
+import { forwardRef, useEffect, useRef, useState } from "react";
 
 export const KBFeatures = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    sectionRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActiveIndex(i);
+          });
+        },
+        { threshold: 0.8, rootMargin: "-30% 0px -40% 0px" },
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
   return (
-    <section className="bg-black p-16 max-h-[720px] overflow-auto rounded-[40px] mx-4">
-      <div className="flex container justify-between ">
-        <Features />
-        <div className="sticky w-[540px] h-[540px]">
-          <Image alt="kb-feature-1" src="/images/kb-feature-1.webp" fill />
+    <section className="bg-black rounded-[40px]">
+      <div className="flex container justify-between items-start">
+        <div className="flex-1 min-w-0 pb-24">
+          {KB_FEATURES.map(({ id, ...feature }) => (
+            <Feature
+              ref={(el) => {
+                sectionRefs.current[id] = el;
+              }}
+              key={id}
+              {...feature}
+            />
+          ))}
+        </div>
+
+        <div className="w-[50%] shrink-0 pt-8 sticky top-[100px] ">
+          <div className="bg-neutral-900 rounded-2xl min-h-[580px] relative overflow-hidden">
+            {KB_FEATURES.map(({ id, panelSrc }) => (
+              <div
+                key={id}
+                ref={(el) => {
+                  panelRefs.current[id] = el;
+                }}
+                className={`absolute inset-7 flex items-center justify-center transition-all duration-500 ${
+                  activeIndex === id
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 translate-y-4 pointer-events-none"
+                }`}
+              >
+                <span className="relative w-[700px] h-[500px]">
+                  <Image alt="kb-feature-1" src={panelSrc} fill />
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-const Features = () => {
-  return (
-    <div className="relative before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gray-800">
-      <div className="space-y-[240px] -translate-x-[8px] pt-36">
-        {features.map(({ id, title, description }) => (
-          <div key={id} className="flex items-start gap-4 max-w-[500px]">
+type FeatureProps = {
+  title: string;
+  description: string;
+};
+
+export const Feature = forwardRef<HTMLDivElement, FeatureProps>(
+  ({ title, description }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className="relative before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gray-800"
+      >
+        <div className="space-y-[240px] -translate-x-[8px] pt-36">
+          <div className="flex items-start gap-4 max-w-[500px]">
             <span className="w-24 h-4 bg-brand-gradient"></span>
             <div className="space-y-8">
               <Typography
@@ -60,8 +95,10 @@ const Features = () => {
               </Typography>
             </div>
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
+
+Feature.displayName = "Feature";

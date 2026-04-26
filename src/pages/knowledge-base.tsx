@@ -1,109 +1,50 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@/assets/icons";
-import { DevActionCard } from "@/components/routes/devspace/DevActionCard";
 import { KBFeatures } from "@/components/routes/knowledge-base/KBFeatures";
-import Typography from "@/components/shared/atoms/Typography";
+import { KBFunctionalities } from "@/components/routes/knowledge-base/KBFunctionalities";
 import Button from "@/components/shared/molecules/Button";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
-import { KB_HIGHLIGHTS } from "@/utils/constants";
-import Image from "next/image";
+import { useMediaQuery } from "@/utils/hooks";
+import { KBFeaturesMobile } from "@/components/routes/knowledge-base/KBFeaturesMobile";
 
 const KnowledgeBasePage = () => {
+  const isMobile = useMediaQuery();
   return (
-    <PageTemplate hideGradient>
-      <div className="space-y-8">
-        <PageHeader
-          classNames={{
-            title: "text-white",
-            description: "text-white leading-[180%]",
-            wrapper: "gap-20",
-            container:
-              "bg-[url(/images/knowledge-base-bg.webp)] flex items-center justify-center",
-          }}
-          chipLabel="Knowledge base"
-          title="The brain behind every conversation."
-          description="Upload once. Answer everywhere. Your knowledge base trains SATE to deliver precise, on-brand responses while keeping your team aligned on every detail."
-          actionBtn={
-            <Button
-              variant="outlined"
-              className="px-12 py-4"
-              endContent={
-                <span className="stroke-black">{ArrowRightIcon}</span>
-              }
-            >
-              Get started
-            </Button>
-          }
-          extraContent={
-            <Image
-              src="/images/kb-hero.webp"
-              width={400}
-              height={400}
-              alt="kb-hero-img"
-            />
-          }
-        />
+    <PageTemplate hideGradient classNames={{ wrapper: "space-y-24" }}>
+      <PageHeader
+        classNames={{
+          title: "text-white",
+          description: "text-white leading-[180%]",
+          descriptionContainer: "space-y-8",
+          root: "flex-col",
+          wrapper: "gap-20",
+          container:
+            "bg-[url(/images/knowledge-base-bg.webp)] md:h-[900px] flex items-center justify-center",
+        }}
+        chipLabel="Knowledge base"
+        title="The brain behind every conversation."
+        description="Upload once. Answer everywhere. Your knowledge base trains SATE to deliver precise, on-brand responses while keeping your team aligned on every detail."
+        cta={
+          <Button
+            size="sm"
+            variant="outlined"
+            className="px-12 py-4"
+            endContent={<span className="stroke-black">{ArrowRightIcon}</span>}
+          >
+            Get started
+          </Button>
+        }
+        endContent={
+          <span className="relative w-full md:w-[600px] h-[500px] md:h-[400px]">
+            <Image src="/images/kb-hero.webp" alt="kb-hero-img" fill />
+          </span>
+        }
+      />
 
-        <section className="container max-w-[1400px] space-y-8">
-          <div className="flex justify-around items-center">
-            <div>
-              <Typography
-                as="h2"
-                variant="bold-3xl"
-                className="bg-[url(/images/kb-text-bg.webp)] bg-cover bg-center bg-clip-text text-transparent"
-              >
-                One source
-              </Typography>
-              <Typography as="span" variant="bold-3xl">
-                of truth
-              </Typography>
-            </div>
-            <div className="bg-gray-50 flex p-[4px] gap-[4px] rounded-lg">
-              {
-                KB_HIGHLIGHTS.slice(0, 2).map(({ id, title, description }) =>
+      <KBFunctionalities />
 
-                  <DevActionCard
-                    key={id}
-                    classNames={{ root: "max-w-[408px]" }}
-                    title={title}
-                    description={description}
-                  />
-                )
-              }
-            </div>
-          </div>
-          <div className="flex items-center justify-around">
-            <div className="bg-gray-50 flex p-[4px] gap-[4px] rounded-lg">
-              {
-                KB_HIGHLIGHTS.slice(2).map(({ id, title, description }) =>
-
-                  <DevActionCard
-                    key={id}
-                    classNames={{ root: "max-w-[408px]" }}
-                    title={title}
-                    description={description}
-                  />
-                )
-              }
-            </div>
-            <div>
-              <Typography
-                as="h2"
-                variant="bold-3xl"
-                className="bg-[url(/images/kb-text-bg.webp)] bg-cover bg-center bg-clip-text text-transparent"
-              >
-                Infinite
-              </Typography>
-              <Typography as="span" variant="bold-3xl">
-                applications.
-              </Typography>
-            </div>
-          </div>
-        </section>
-
-        <KBFeatures />
-
-      </div>
+      {isMobile ? <KBFeaturesMobile /> : <KBFeatures />}
     </PageTemplate>
   );
 };
