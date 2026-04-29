@@ -39,7 +39,7 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
           chipLabel={chipLabel}
           title={title}
         />
-        <div className="flex flex-col h-[420px] overflow-hidden gap-4">
+        <div className="flex flex-col h-full max-h-[440px] md:h-[420px] overflow-hidden gap-4">
           {items.map((card, i) => (
             <ActionCard
               key={i}
@@ -54,14 +54,14 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
         </div>
       </div>
 
-      <div className="order-3 h-full md:order-2 bg-gold-100 rounded-[14.37px] p-8">
+      <div className="order-3 h-full md:order-2 bg-gold-100 rounded-[14.37px] pl-8 pt-8 md:p-8">
         {/* <PhoneFrame messages={CARDS[current].chat} /> */}
-        <div className="relative w-full h-full">
+        <div className="relative w-[500px] md:w-full h-[430px] md:h-full">
           <Image
             alt={chipLabel}
             src={CARDS[current].imgSrc!}
             fill
-            className="object-contain"
+            className="object-cover object-top md:object-contain"
           />
         </div>
       </div>

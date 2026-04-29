@@ -5,6 +5,7 @@ import { ProgressDots } from "./ProgressDots";
 import { TestimonialSection } from "./Quote";
 import { Stats } from "./Stats";
 import { ImageAnimated } from "./ImageSection";
+import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
 
 export const Testimonials = () => {
   const [current, setCurrent] = useState(0);
@@ -48,16 +49,16 @@ export const Testimonials = () => {
   const t = useMemo(() => TESTIMONIALS[current], [current]);
 
   return (
-    <section className="bg-red-100 rounded-x40">
+    <SectionTemplate className="bg-red-100 max-w-screen overflow-hidden rounded-x20 md:rounded-x40">
       <div
         className="container p-8"
         // onMouseEnter={() => setPaused(true)}
         // onMouseLeave={() => setPaused(false)}
       >
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center">
           <ImageAnimated direction={direction} t={t} />
 
-          <div className="flex-1 flex flex-col justify-between p-6 md:p-8">
+          <div className="flex-1 flex flex-col gap-10 justify-between p-6 md:p-8">
             <ProgressDots current={current} progress={progress} goTo={goTo} />
             <TestimonialSection
               current={current}
@@ -70,6 +71,6 @@ export const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionTemplate>
   );
 };

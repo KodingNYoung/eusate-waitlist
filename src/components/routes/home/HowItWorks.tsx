@@ -5,7 +5,7 @@ import { CARDS } from "../sate-ai/SateAction/const";
 
 export const HowItWorks = () => {
   return (
-    <SectionTemplate className="relative overflow-hidden bg-gold-50 px-2 py-8 md:px-40 md:py-20 flex justify-center rounded-x40">
+    <SectionTemplate className="relative overflow-hidden bg-gold-50 px-5 py-12 md:px-40 md:py-20 flex justify-center rounded-x20 md:rounded-x40">
       <BackgroundWatermark imgSrc="/images/about-mission-swatch.webp" />
       <SateAction
         chipLabel="How it works"

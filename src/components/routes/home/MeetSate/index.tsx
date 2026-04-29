@@ -7,16 +7,21 @@ import { SateFeatureCard } from "../../sate-ai/SateFeatureCard";
 
 export const MeetSate = () => {
   return (
-    <section className="bg-[url(/home/images/meet-sate-bg.webp)] bg-contain py-20 rounded-x40">
+    <section className="hidden md:block bg-[url(/home/images/meet-sate-bg.webp)] bg-contain pt-16 pb-20 rounded-x40">
       <div className="container flex flex-col items-center gap-8">
         <header className="flex flex-col items-center space-y-6 w-[50%]">
-          <div className="relative p-4 h-[100px] w-[100px] rounded-full bg-brand-gradient">
-            <Image width={50} height={50} src="/logos/icon-black.webp" alt="" />
+          <div className="flex flex-col items-center relative">
+            <Image
+              width={170}
+              height={170}
+              src="/logos/glow-logo.webp"
+              alt=""
+              className="object-contain spin-slow"
+            />
+            <Typography variant="bold-5xl" className="text-white text-center">
+              Meet Sate. The AI agent that customers love
+            </Typography>
           </div>
-          {/* <GlowingGradientCircle /> */}
-          <Typography variant="bold-5xl" className="text-white text-center">
-            Meet Sate. The AI agent that customers love
-          </Typography>
           <Button size="sm" variant="outlined" className="py-4 px-12">
             Meet Sate
           </Button>

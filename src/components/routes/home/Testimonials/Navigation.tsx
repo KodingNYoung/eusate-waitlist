@@ -11,11 +11,11 @@ type Props = {
 
 export const Navigation: FC<Props> = ({ prev, next }) => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex justify-between md:justify-start items-center gap-4">
       <Button
         variant="text"
         className={cls(
-          "px-4 py-2 transform bg-black/20 stroke-black rotate-180",
+          "px-4 py-2 transform !bg-black/20 stroke-black rotate-180",
         )}
         onClick={prev}
       >

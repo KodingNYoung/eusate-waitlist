@@ -4,62 +4,64 @@ import Button from "@/components/shared/molecules/Button";
 
 export const HomeIntegrations = () => {
   return (
-    <section className="container py-40">
-      <div className="flex relative mx-auto flex-col items-center w-[50%] space-y-4">
-        <div className="absolute left-0 -translate-x-[12rem] -translate-y-[2rem]">
-          <Image
-            width={200}
-            height={200}
-            className="left-0"
-            src="/images/livechat-integration.webp"
-            alt=""
-          />
+    <section className="md:container max-w-screen overflow-hidden py-40">
+      <div className="flex relative mx-auto justify-center items-center py-8 w-full md:w-[50%] space-y-4">
+        <div className="absolute inset-0">
+          <div className="absolute left-0 top-0 -translate-x-[2rem] -translate-y-[9rem] md:-translate-x-[12rem] md:-translate-y-[2rem]">
+            <Image
+              width={200}
+              height={200}
+              className="left-0"
+              src="/images/livechat-integration.webp"
+              alt=""
+            />
+          </div>
+          <div className="absolute right-0 top-0 translate-x-[2rem] -translate-y-[9rem] md:translate-x-[12rem] md:-translate-y-[2rem]">
+            <Image
+              width={200}
+              height={200}
+              className="left-0"
+              src="/images/discord-integration.webp"
+              alt=""
+            />
+          </div>
+          <div className="absolute left-0 bottom-0 translate-y-[9rem] -translate-x-[2rem] md:-translate-x-[12rem] md:translate-y-[2rem]">
+            <Image
+              width={200}
+              height={200}
+              className="left-0"
+              src="/images/whatsapp-integration.webp"
+              alt=""
+            />
+          </div>
+          <div className="absolute right-0 bottom-0 translate-x-[2rem] translate-y-[9rem] md:translate-x-[12rem] md:translate-y-[2rem]">
+            <Image
+              width={200}
+              height={200}
+              className="left-0"
+              src="/images/mail-integration.webp"
+              alt=""
+            />
+          </div>
         </div>
-        <div className="absolute right-0 translate-x-[12rem] -translate-y-[2rem]">
-          <Image
-            width={200}
-            height={200}
-            className="left-0"
-            src="/images/discord-integration.webp"
-            alt=""
-          />
+        <div className="flex flex-col items-center justify-center space-y-4 w-[70%] md:w-full">
+          <Typography
+            className="text-center text-bold-3xl md:text-bold-5xl leading-[120%]"
+            as="h1"
+          >
+            Because Great Support Starts with{" "}
+            <span className="text-gradient">Great Tool</span>
+          </Typography>
+          <Typography
+            className="text-gray-400 text-medium-base text-medium-lg leading-[150%] text-center"
+            as="p"
+          >
+            Eusate connects to the tools and platforms your customers already
+            use. No channel chaos. No context switching. Just seamless support
+            everywhere.
+          </Typography>
+          <Button className="py-2 px-4">View our integrations</Button>
         </div>
-        <div className="absolute left-0 bottom-0 -translate-x-[12rem] translate-y-[2rem]">
-          <Image
-            width={200}
-            height={200}
-            className="left-0"
-            src="/images/whatsapp-integration.webp"
-            alt=""
-          />
-        </div>
-        <div className="absolute right-0 bottom-0 translate-x-[12rem] translate-y-[2rem]">
-          <Image
-            width={200}
-            height={200}
-            className="left-0"
-            src="/images/mail-integration.webp"
-            alt=""
-          />
-        </div>
-        <Typography
-          variant="bold-5xl"
-          className="text-center leading-[120%]"
-          as="h1"
-        >
-          Because Great Support Starts with{" "}
-          <span className="text-gradient">Great Tool</span>
-        </Typography>
-        <Typography
-          variant="medium-lg"
-          className="text-gray-400 leading-[150%] text-center"
-          as="p"
-        >
-          Eusate connects to the tools and platforms your customers already use.
-          No channel chaos. No context switching. Just seamless support
-          everywhere.
-        </Typography>
-        <Button className="py-2 px-4">View our integrations</Button>
       </div>
     </section>
   );

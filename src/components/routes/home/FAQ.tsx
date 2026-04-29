@@ -10,7 +10,7 @@ export const FAQ = () => {
     <SectionTemplate
       classNames={{
         base: "bg-gray-50 flex",
-        wrapper: "flex gap-8 justify-between",
+        wrapper: "flex gap-8 flex-wrap justify-between",
       }}
     >
       <SubHeader

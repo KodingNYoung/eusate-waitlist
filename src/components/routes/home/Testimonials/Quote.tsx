@@ -21,7 +21,7 @@ export const TestimonialSection: FC<Props> = ({
   return (
     <div className="space-y-8">
       <Quote direction={direction} t={t} />
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={t.id + "-content"}
@@ -33,8 +33,12 @@ export const TestimonialSection: FC<Props> = ({
             className="flex-1"
           >
             <div className="">
-              <p className="text-semibold-lg text-sm">{t.name}</p>
-              <p className="text-gray-500 text-xs mt-0.5">{t.role}</p>
+              <p className="text-semibold-sm md:text-semibold-lg text-sm">
+                {t.name}
+              </p>
+              <p className="text-regular-sm md:text-regular-base text-gray-500 text-xs mt-0.5">
+                {t.role}
+              </p>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -61,7 +65,7 @@ export const Quote: FC<QuoteProps> = ({ direction, t }) => {
         exit="exit"
         className="flex-1"
       >
-        <blockquote className="text-bold-2xl leading-[150%]">
+        <blockquote className="text-bold-xl md:text-bold-2xl leading-[150%]">
           &ldquo;{t.testimony}&rdquo;
         </blockquote>
       </motion.div>

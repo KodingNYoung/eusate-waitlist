@@ -220,7 +220,7 @@ export const SubHeader: FC<SubHeaderProps> = ({
       >
         <div
           className={cls(
-            "space-y-8",
+            "space-y-4 md:space-y-8",
             positionVariant[position]?.titleContainer,
             classNames?.titleContainer,
           )}

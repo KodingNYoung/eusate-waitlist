@@ -24,10 +24,10 @@ export const Stats: FC<Props> = ({ direction, t }) => {
             key={s.label}
             className="border-l-4 border-black/5 backdrop-blur px-6 py-3 min-w-[100px]"
           >
-            <p className="text-bold-5xl text-gray-900 leading-none">
+            <p className="text-bold-2xl md:text-bold-5xl text-gray-900 leading-none">
               {s.value}
             </p>
-            <p className="text-medium-xl text-black/30 mt-1 leading-tight">
+            <p className="text-medium-base md:text-medium-xl text-black/30 mt-1 leading-tight">
               {s.label}
             </p>
           </div>

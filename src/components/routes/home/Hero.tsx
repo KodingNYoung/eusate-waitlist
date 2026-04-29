@@ -8,16 +8,17 @@ export const Hero = () => {
   return (
     <ParallaxHero
       chipLabel={
-        <Typography className="flex gap-4 items-center text-medium-lg text-white/80">
+        <Typography className="flex gap-4 items-center text-medium-sm md:text-medium-lg leading-[150%] text-white/80">
           10 Customers <span>{NotEqualIcon}</span> 10X CX team
         </Typography>
       }
       classNames={{
         container:
           "bg-[url(/images/home-bg.webp)] relative md:h-screen flex items-start overflow-hidden",
-        description: "text-white/60 leading-[150%]",
-        descriptionContainer: "space-y-6",
-        chip: "bg-transparent bg-[linear-gradient(90deg,_rgba(215,171,7,0.3)_0%,_rgba(232,101,85,0.3)_100%)] backdrop-blur-3xl text-white",
+        description: "text-white/60 leading-[150%] text-left md:text-center",
+        descriptionContainer: "items-start md:items-center",
+        title: "text-left md:text-center",
+        chip: "bg-transparent bg-[linear-gradient(90deg,_rgba(215,171,7,0.3)_0%,_rgba(232,101,85,0.3)_100%)] backdrop-blur-3xl text-white ",
       }}
       imgSrc="/images/helpdesk-hero.webp"
       startContent={
@@ -44,11 +45,14 @@ export const Hero = () => {
         <div className="space-y-2">
           <Typography
             variant="bold-4xl"
-            className="line-through text-center text-white/40"
+            className="line-through text-bold-2xl md:text-bold-4xl text-left md:text-center text-white/40"
           >
             Stop Responding
           </Typography>
-          <Typography variant="bold-6xl" className="text-white text-center">
+          <Typography
+            variant="bold-6xl"
+            className="text-bold-6xl text-white text-left md:text-center"
+          >
             Start Resolving
           </Typography>
         </div>

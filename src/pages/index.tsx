@@ -13,7 +13,7 @@ import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 
 const Home = () => {
   return (
-    <PageTemplate classNames={{ wrapper: "space-y-16" }}>
+    <PageTemplate>
       <Hero />
       <WeDeliver />
       <HowItWorks />

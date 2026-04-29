@@ -13,8 +13,8 @@ export const Blog = () => {
         chipLabel="Our blog"
         title="Get updateed new & insights"
         classNames={{
-          titleContainer: "w-[45%]",
-          root: "w-full items-end justify-between",
+          titleContainer: "w-full space-y-4 md:w-[45%]",
+          root: "w-full !md:flex-row !flex-col space-y-6 items-start md:items-end justify-between",
         }}
         cta={
           <Button

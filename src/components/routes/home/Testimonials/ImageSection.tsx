@@ -18,19 +18,13 @@ export const ImageAnimated: FC<Props> = ({ direction, t }) => {
         animate="center"
         exit="exit"
       >
-        <div className="relative w-[395px] object-cover h-[540px]">
+        <div className="relative w-full md:w-[395px] h-[540px]">
           <Image
-            src={t.imgSrc}
             fill
+            src={t.imgSrc}
             alt={t.company}
-            className="object-cover rounded-[24px]"
+            className="object-cover object-top rounded-[24px]"
           />
-        </div>
-        {/* Company overlay */}
-        <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1">
-          <span className="text-white font-bold text-sm tracking-wider">
-            {t.company}
-          </span>
         </div>
       </motion.div>
     </AnimatePresence>

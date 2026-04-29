@@ -22,7 +22,7 @@ export const WeDeliverCardTemplate: FC<Props> = ({
   return (
     <div
       className={cls(
-        "flex justify-center min-w-[349px] h-[320px] overflow-hidden rounded-[24px] px-4 py-8",
+        "flex justify-center w-full md:w-[349px] h-[320px] overflow-hidden rounded-[24px] px-4 py-8",
         classNames?.root,
       )}
     >

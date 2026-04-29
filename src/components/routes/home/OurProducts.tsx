@@ -10,7 +10,7 @@ import { SubHeader } from "@/components/shared/organisms/PageHeader";
 
 export const OurProducts = () => {
   return (
-    <section className="bg-black py-20 mx-4 rounded-x40">
+    <section className="hidden md:block bg-black py-20 rounded-x40">
       <div className="container space-y-16">
         <SubHeader
           chipLabel="Our Products"
@@ -39,7 +39,7 @@ export const OurProducts = () => {
             classNames={{
               base: "justify-center",
               tab: cls(
-                "text-white/40 stroke-white/40 border-white py-4",
+                "text-white/40 stroke-white/40 border-white py-4 w-full",
                 "data-[selected=true]:text-white data-[selected=true]:border-b-2 data-[selected=true]:stroke-white",
               ),
             }}

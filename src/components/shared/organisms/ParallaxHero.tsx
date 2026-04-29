@@ -50,10 +50,15 @@ export const ParallaxHero: FC<Props> = ({
 
   return (
     <header ref={headerRef} className={cls("sticky", classNames?.base)}>
-      <div className={cls("pt-24  bg-cover", classNames?.container)}>
+      <div
+        className={cls(
+          "md:pt-24 px-[17px] md:px-0 rounded-[16px] md:rounded-none bg-cover h-[676px] md:h-screen",
+          classNames?.container,
+        )}
+      >
         <div
           className={cls(
-            "md:container flex flex-col items-center ",
+            "md:container flex flex-col items-center space-y-8",
             classNames?.wrapper,
           )}
         >
@@ -66,20 +71,23 @@ export const ParallaxHero: FC<Props> = ({
               y: textY,
             }}
             className={cls(
-              "relative z-2 flex flex-col gap-y-6 py-16 w-[50%]",
+              "relative z-2 flex flex-col gap-y-6 pt-8 md:py-16 w-full md:w-[50%]",
               classNames?.root,
             )}
           >
             <div
-              className={cls("flex justify-center", classNames?.chipContainer)}
+              className={cls(
+                "flex justify-start md:justify-center",
+                classNames?.chipContainer,
+              )}
             >
               <Chip
                 classNames={{
                   container:
-                    "w-fit p-1.5 md:p-2 text-medium-sm md:text-medium-base",
+                    "w-fit px-3 py-1 md:px-3 md:py text-medium-sm md:text-medium-base",
                 }}
                 className={cls(
-                  "bg-gold-100 rounded-full p flex items-start justify-center",
+                  "bg-gold-100 rounded-full flex items-start",
                   classNames?.chip,
                 )}
               >
@@ -102,14 +110,14 @@ export const ParallaxHero: FC<Props> = ({
               )}
               <div
                 className={cls(
-                  "flex flex-col items-center gap-y-6",
+                  "flex flex-col items-start md:items-center gap-y-6",
                   classNames?.descriptionContainer,
                 )}
               >
                 <Typography
                   as="p"
                   className={cls(
-                    "md:text-regular-xl text-gray-700 text-center leading-[180%] text-white",
+                    "text-medium-base md:text-regular-xl text-gray-700 leading-[180%] text-white",
                     classNames?.description,
                   )}
                 >
@@ -122,13 +130,13 @@ export const ParallaxHero: FC<Props> = ({
 
           <motion.div
             style={{ y: imageY }}
-            className="relative z-3 w-full mx-auto w-full h-[900px]"
+            className="relative z-3 w-full mx-auto w-full h-[500px] md:h-[900px]"
           >
             <Image
               src={imgSrc}
               fill
               alt="parallax-img"
-              className="object-cover"
+              className="object-cover object-left"
             />
           </motion.div>
         </div>

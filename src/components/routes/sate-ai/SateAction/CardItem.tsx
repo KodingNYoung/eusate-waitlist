@@ -25,7 +25,7 @@ export const ActionCard = ({
     <motion.div
       data-active={isActive}
       className={cls(
-        "cursor-pointer rounded-2xl transition-colors duration-300 w-[437px] overflow-hidden",
+        "cursor-pointer rounded-2xl transition-colors duration-300 w-full md:w-[437px] overflow-hidden",
         "data-[active=true]:bg-white data-[active=true]:shadow-soft-xsmall",
       )}
     >
