@@ -14,7 +14,10 @@ export const BackgroundWatermark: FC<BackgroundWatermarkProps> = ({
 }) => {
   return (
     <div
-      className={cls("w-full h-full absolute inset-0", classNames?.container)}
+      className={cls(
+        "w-full h-full absolute inset-0 opacity-50",
+        classNames?.container,
+      )}
     >
       <Image alt="swatch" src={imgSrc} fill />
     </div>

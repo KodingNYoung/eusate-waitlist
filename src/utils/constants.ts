@@ -18,6 +18,12 @@ import {
   ProductKey,
   PublicExtras,
 } from "./enum";
+import {
+  CodeLinearIcon,
+  KeyFeatureIcon,
+  LogoIcon,
+  ReportIcon,
+} from "@/assets/icons";
 
 export const MAX_WIDTH = "120px";
 export const MOBILE_WIDTH = "(max-width: 550px)";
@@ -650,30 +656,35 @@ export const REPORTS_FEATURES: ReportFeature[] = [
 export const PRODUCTS_TAB: ProductsTab[] = [
   {
     id: 1,
+    icon: KeyFeatureIcon,
     key: ProductKey.HELP_DESK,
     label: "Helpdesk",
     content: "/images/helpdesk-hero.webp",
   },
   {
     id: 2,
+    icon: KeyFeatureIcon,
     key: ProductKey.KNOWLEDGE_BASE,
     label: "Knowledge base",
     content: "/images/knowledge-base-product.webp",
   },
   {
     id: 3,
+    icon: CodeLinearIcon,
     key: ProductKey.DEV_SPACE,
     label: "Dev space",
     content: "/images/",
   },
   {
     id: 4,
+    icon: ReportIcon,
     key: ProductKey.REPORTS,
     label: "Reports",
     content: "/images/",
   },
   {
     id: 5,
+    icon: LogoIcon,
     key: ProductKey.AI_PLAYGROUND,
     label: "AI Playground",
     content: "/images/",
@@ -687,7 +698,64 @@ export const TESTIMONIALS: Testimonial[] = [
     testimony:
       "We went from 5 support agents to just 1, and our response times got faster. SATE handles everything from password resets to complex refund scenarios. It's genuinely impressive how human the conversations feel.",
     name: "Marcus Rodriquez",
-    role: "Co-Founder, LYNT (E-commerce, Series A)",
+    role: "Co-Founder, ",
+    company: "LYNT (E-commerce, Series A)",
+    stats: [
+      { value: "80%", label: "drop cx team hires" },
+      { value: "20%", label: "saved on hiring costs" },
+    ],
+  },
+  {
+    id: 2,
+    testimony:
+      "SATE transformed our customer support overnight. We used to dread Monday mornings — now our inbox practically handles itself. The AI understands context in a way that genuinely shocked our team.",
+    name: "Priya Nair",
+    role: "Head of CX, Bloom (DTC Beauty, Seed)",
+    company: "bloom",
+    stats: [
+      { value: "3×", label: "faster resolution time" },
+      { value: "94%", label: "customer satisfaction" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+  {
+    id: 3,
+    testimony:
+      "I was skeptical at first — how could AI replace the nuanced judgment of our top agents? Six months in, SATE handles 90% of tickets and our agents focus only on edge cases. It's been revelatory.",
+    name: "Jordan Lee",
+    role: "VP Operations, Stackly (B2B SaaS, Series B)",
+    company: "stackly",
+    stats: [
+      { value: "90%", label: "tickets auto-resolved" },
+      { value: "40%", label: "cost reduction" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+  {
+    id: 4,
+    testimony:
+      "The onboarding was seamless and the results were immediate. Within the first week, SATE was already resolving complex billing disputes without escalation. Our team actually feels less stressed now.",
+    name: "Amara Osei",
+    role: "Founder, Kora (Fintech, Pre-Seed)",
+    company: "kora",
+    stats: [
+      { value: "65%", label: "fewer escalations" },
+      { value: "2 days", label: "to full deployment" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+  {
+    id: 5,
+    testimony:
+      "We operate in 12 countries. SATE handles multilingual support flawlessly. Our CSAT scores went from 3.8 to 4.7 in under two months. I genuinely cannot imagine going back to our old setup.",
+    name: "Thomas Becker",
+    role: "CEO, Wandr (Travel, Series A)",
+    company: "wandr",
+    stats: [
+      { value: "12", label: "languages supported" },
+      { value: "4.7★", label: "avg. CSAT score" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
   },
 ];
 

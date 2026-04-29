@@ -25,8 +25,19 @@ const variantProps: { [variant in GradientVariants]: TWClassNames } = {
   gray: "bg-[linear-gradient(180deg,_#F0F1F3_0%,_#FFFFFF_100%)]",
 };
 
+const positionVariant: {
+  [p in Position]?: { [slot in Slots]?: TWClassNames };
+} = {
+  center: {
+    root: "flex-col justify-center",
+    chip: "flex items-start justify-center",
+    chipContainer: "flex justify-center",
+    titleContainer: "self-center",
+  },
+};
+
 type Props = {
-  chipLabel: string;
+  chipLabel: string | ReactElement;
   title: string | ReactElement;
   description?: string;
   titleProps?: TypographyProps;
@@ -173,7 +184,7 @@ PageHeader.displayName = "PageHeader";
 
 type SubHeaderProps = {
   chipLabel?: string;
-  title: string;
+  title: string | ReactElement;
   position?: Position;
   description?: string;
   orientation?: Orientation;
@@ -190,28 +201,51 @@ export const SubHeader: FC<SubHeaderProps> = ({
   description,
   orientation = "vertical",
   classNames,
-  position,
+  position = "left",
 }) => {
   return (
     <div
       className={cls(
-        "flex flex-col",
+        "flex flex-col w-full",
         orientation === "horizontal" && "md:flex-row justify-between items-end",
         classNames?.container,
       )}
     >
-      <div className={cls(classNames?.root)}>
-        <div className={cls("space-y-8", classNames?.titleContainer)}>
+      <div
+        className={cls(
+          "flex space-y-2",
+          positionVariant[position]?.root,
+          classNames?.root,
+        )}
+      >
+        <div
+          className={cls(
+            "space-y-8",
+            positionVariant[position]?.titleContainer,
+            classNames?.titleContainer,
+          )}
+        >
           {chipLabel && (
-            <Chip
+            <div
               className={cls(
-                "w-fit bg-gold-100 rounded-full",
-                position === "center" && "flex items-start justify-center",
-                classNames?.chip,
+                positionVariant[position]?.chipContainer,
+                classNames?.chipContainer,
               )}
             >
-              {chipLabel}
-            </Chip>
+              <Chip
+                classNames={{
+                  container:
+                    "w-fit p-1.5 md:p-2 text-medium-sm md:text-medium-base",
+                }}
+                className={cls(
+                  "w-fit bg-gold-100 rounded-full",
+                  positionVariant[position]?.chip,
+                  classNames?.chip,
+                )}
+              >
+                {chipLabel}
+              </Chip>
+            </div>
           )}
           {typeof title === "string" ? (
             <Typography

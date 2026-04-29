@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 type Tab<K, T> = {
   id: number;
   key: K;
+  icon?: ReactElement;
   label: string;
   content: T;
 };
@@ -24,12 +25,12 @@ export const AppTab = <K, T = []>({
 }: Props<K, T>) => {
   return (
     <Tabs {...props}>
-      {tabs.map(({ id, content, label }) => (
+      {tabs.map(({ id, icon, content, label }) => (
         <Tab
           key={id}
           title={
-            <div className="space-x-3 w-full">
-              {startContent}
+            <div className="flex items-center gap-x-3 w-full">
+              {icon || startContent}
               {label}
               {endContent}
             </div>

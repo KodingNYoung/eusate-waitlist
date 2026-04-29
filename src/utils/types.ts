@@ -162,6 +162,7 @@ export type ReportFeature = {
 };
 export type ProductsTab = {
   id: number;
+  icon: ReactElement;
   key: ProductKey;
   label: string;
   content: InternalPath;
@@ -171,6 +172,11 @@ export type Testimonial = {
   imgSrc: InternalPath;
   name: string;
   testimony: string;
+  company: string;
   role: string;
+  stats: {
+    value: string;
+    label: string;
+  }[];
 };
 export type ContactForm = z.infer<typeof contactFormSchema>;

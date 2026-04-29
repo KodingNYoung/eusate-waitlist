@@ -222,6 +222,9 @@ const config: Config = {
       "2xl": "1536px",
     },
     extend: {
+      animation: {
+        "spin-slow": "spin 12s linear infinite",
+      },
       padding: {
         0: "0rem", // 0px
         0.25: "0.063rem", // 1px
@@ -291,6 +294,7 @@ const config: Config = {
         12: "3rem", // 48px
         16: "4rem", // 64px
         20: "5rem", // 80px
+        22: "5.5rem", // 88px
         24: "6rem", // 96px
         32: "8rem", // 128px
         40: "10rem", // 160px
@@ -316,6 +320,7 @@ const config: Config = {
         12: "3rem", // 48px
         16: "4rem", // 64px
         20: "5rem", // 80px
+        22: "5.5rem", // 88px
         24: "6rem", // 96px
         32: "8rem", // 128px
         40: "10rem", // 160px
@@ -352,7 +357,7 @@ const config: Config = {
         x10: "0.625rem", //10px
         x20: "1.25rem", // 20px
         x40: "2.5rem", // 40px
-        x24: "1.5rem" //24px
+        x24: "1.5rem", //24px
       },
       zIndex: {
         1: "1",

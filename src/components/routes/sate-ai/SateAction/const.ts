@@ -4,6 +4,7 @@ export const CARDS: Card[] = [
   {
     num: "01",
     title: "Understand What Customers Actually Mean",
+    imgSrc: "/sate-ai/images/help-pop-out.webp",
     desc: "SATE understands intent. It analyzes context, asks clarifying questions, and comprehends what customers are actually trying to accomplish.",
     chat: [
       {
@@ -20,6 +21,7 @@ export const CARDS: Card[] = [
   {
     num: "02",
     title: "Adapt to Emotional State",
+    imgSrc: "/sate-ai/images/help-pop-out.webp",
     desc: "SATE reads emotional cues and adjusts its tone — staying calm, empathetic, and supportive when customers need it most.",
     chat: [
       {
@@ -39,6 +41,7 @@ export const CARDS: Card[] = [
   {
     num: "03",
     title: "Chat and Calls with Customers",
+    imgSrc: "/sate-ai/images/help-pop-out.webp",
     desc: "SATE handles both text and voice conversations, routing to the right channel and escalating to a human agent seamlessly when needed.",
     chat: [
       {
@@ -57,6 +60,7 @@ export const CARDS: Card[] = [
     num: "04",
     title: "Actually Solve Problems",
     desc: "SATE goes beyond answering questions — it takes action, processes requests, and resolves issues end-to-end without unnecessary hand-offs.",
+    imgSrc: "/sate-ai/images/help-pop-out.webp",
     chat: [
       {
         from: "ai",

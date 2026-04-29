@@ -38,17 +38,23 @@ export const BlogCard: FC<Props> = ({
     <Link
       href={"/blogs/" + id}
       className={cls(
-        "border group border-gray-50 w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl p-4 space-y-4 shadow-soft-xxsmall",
+        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 shadow-soft-xxsmall",
         spotlight && spotlightVariant?.container,
+        variant === "page" && "border border-gray-50 p-4",
       )}
     >
-      <div className={cls("relative")}>
+      <div
+        className={cls(
+          "relative w-[333px]",
+
+          variant === "page" ? "h-[293px]" : "h-[223px]",
+        )}
+      >
         <Image
           src={imgSrc ?? "/images/business-men.webp"}
-          width={330}
-          height={variant === "page" ? 293 : 223}
+          fill
           alt={title + "-img"}
-          className={cls("w-full h-64 rounded-2xl object-cover")}
+          className={cls("rounded-2xl w-[333px] object-cover")}
         />
         <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-2xl">
           <Typography className="text-white flex items-center gap-2 opacity-0 group-hover:opacity-100 transition">

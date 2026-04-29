@@ -1,6 +1,7 @@
 import { Blog } from "@/components/routes/home/Blog";
 import { FAQ } from "@/components/routes/home/FAQ";
 import { Hero } from "@/components/routes/home/Hero";
+import { HowItWorks } from "@/components/routes/home/HowItWorks";
 import { HomeIntegrations } from "@/components/routes/home/Integrations";
 import { MeetSate } from "@/components/routes/home/MeetSate";
 import { OurProducts } from "@/components/routes/home/OurProducts";
@@ -12,19 +13,18 @@ import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 
 const Home = () => {
   return (
-    <PageTemplate>
-      <div className="space-y-16">
-        <Hero />
-        <WeDeliver />
-        <TeamOfBuilders />
-        <OurProducts />
-        <HomeIntegrations />
-        <MeetSate />
-        <Pricing />
-        <Testimonials />
-        <Blog />
-        <FAQ />
-      </div>
+    <PageTemplate classNames={{ wrapper: "space-y-16" }}>
+      <Hero />
+      <WeDeliver />
+      <HowItWorks />
+      <TeamOfBuilders />
+      <OurProducts />
+      <HomeIntegrations />
+      <MeetSate />
+      <Pricing />
+      <Testimonials />
+      <Blog />
+      <FAQ />
     </PageTemplate>
   );
 };

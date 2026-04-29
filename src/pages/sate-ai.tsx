@@ -3,15 +3,15 @@ import {
   SATE_FEATURES_B,
   SateFeature,
 } from "@/components/routes/sate-ai/utils";
-import { SateAction } from "@/components/routes/sate-ai/SateAction/index_";
+import { SateAction } from "@/components/routes/sate-ai/SateAction";
 import { SateFeatureCard } from "@/components/routes/sate-ai/SateFeatureCard";
 import { ScrollCards } from "@/components/shared/organisms/animata/cards/card-reveal";
-import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import {
   PageTemplate,
   SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
+import { CARDS } from "@/components/routes/sate-ai/SateAction/const";
 
 const SateAiPage = () => {
   return (
@@ -109,7 +109,11 @@ const SateAiPage = () => {
       </section>
 
       <SectionTemplate className="bg-gold-50 px-2 py-8 md:px-40 md:py-20 flex justify-center">
-        <SateAction />
+        <SateAction
+          chipLabel="Sate in Action"
+          title="Sate in actively engaged in various activities."
+          items={CARDS}
+        />
       </SectionTemplate>
     </PageTemplate>
   );

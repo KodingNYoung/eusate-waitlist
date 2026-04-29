@@ -1,44 +1,61 @@
 "use client";
-
 import { cls } from "@/utils/helpers";
 import { TWClassNames } from "@/utils/types";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ReactNode, useRef } from "react";
 
-type Slots = "container" | "text";
+type Slots = "container" | "text" | "paragraph";
 
 type Props = {
-  text: string;
+  text: string | string[];
   children?: ReactNode;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
 export const ScrollReveal = ({ text, classNames }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 100%", "end 40%"],
   });
 
-  const letters = text.split("");
+  // Normalize to array
+  const paragraphs = Array.isArray(text) ? text : [text];
+
+  // Pre-split all paragraphs so we know the total letter count
+  const splitParagraphs = paragraphs.map((p) => p.split(""));
+  const totalLetters = splitParagraphs.reduce((sum, p) => sum + p.length, 0);
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <div
         ref={ref}
-        className={cls("sticky flex flex-wrap", classNames?.container)}
+        className={cls("sticky space-y-16", classNames?.container)}
       >
-        {letters.map((char, i) => (
-          <Letter
-            key={i}
-            char={char}
-            index={i}
-            total={letters.length}
-            progress={scrollYProgress}
-            classNames={{ text: classNames?.text }}
-          />
-        ))}
+        {splitParagraphs.map((letters, pIndex) => {
+          // Calculate the offset of this paragraph's first letter in the global sequence
+          const offset = splitParagraphs
+            .slice(0, pIndex)
+            .reduce((sum, p) => sum + p.length, 0);
+
+          return (
+            <p
+              key={pIndex}
+              className={cls("flex flex-wrap", classNames?.paragraph)}
+            >
+              {letters.map((char, i) => (
+                <Letter
+                  key={i}
+                  char={char}
+                  index={offset + i}
+                  total={totalLetters}
+                  progress={scrollYProgress}
+                  classNames={{ text: classNames?.text }}
+                />
+              ))}
+            </p>
+          );
+        })}
       </div>
     </div>
   );
@@ -55,7 +72,6 @@ type LetterProps = {
 const Letter = ({ char, index, total, progress, classNames }: LetterProps) => {
   const start = index / total;
   const end = start + 1 / total;
-
   const opacity = useTransform(progress, [start, end], [0.3, 1]);
 
   return (

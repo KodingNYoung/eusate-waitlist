@@ -12,15 +12,22 @@ export const Blog = () => {
         orientation="horizontal"
         chipLabel="Our blog"
         title="Get updateed new & insights"
+        classNames={{
+          titleContainer: "w-[45%]",
+          root: "w-full items-end justify-between",
+        }}
         cta={
-          <Button size="sm" className="px-6 py-3" endContent={<span className="stroke-white">{ArrowRightIcon}</span>}>
+          <Button
+            size="sm"
+            className="px-6 py-3"
+            endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
+          >
             Read our blogs
           </Button>
         }
       />
-
-      <div className="flex gap-8">
-        {BlogPost.map(
+      <div className="flex flex-wrap justify-between gap-8">
+        {BlogPost?.slice(0, 3)?.map(
           ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
             <BlogCard
               variant="inline"

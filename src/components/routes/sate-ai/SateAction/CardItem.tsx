@@ -13,7 +13,7 @@ type CardItemProps = {
   onComplete: () => void;
 };
 
-export const CardItem = ({
+export const ActionCard = ({
   card: { num, title, desc },
   index,
   isActive,
@@ -25,7 +25,7 @@ export const CardItem = ({
     <motion.div
       data-active={isActive}
       className={cls(
-        "cursor-pointer rounded-2xl transition-colors duration-300 min-w-[230px] overflow-hidden",
+        "cursor-pointer rounded-2xl transition-colors duration-300 w-[437px] overflow-hidden",
         "data-[active=true]:bg-white data-[active=true]:shadow-soft-xsmall",
       )}
     >
