@@ -5,7 +5,7 @@ import Button from "@/components/shared/molecules/Button";
 export const HomeIntegrations = () => {
   return (
     <section className="md:container max-w-screen overflow-hidden py-40">
-      <div className="flex relative mx-auto justify-center items-center py-8 w-full md:w-[50%] space-y-4">
+      <div className="flex relative mx-auto justify-center items-center py-88 w-full md:w-[50%] space-y-4">
         <div className="absolute inset-0">
           <div className="absolute left-0 top-0 -translate-x-[2rem] -translate-y-[9rem] md:-translate-x-[12rem] md:-translate-y-[2rem]">
             <Image

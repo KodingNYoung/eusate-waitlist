@@ -10,7 +10,12 @@ import Button from "../../molecules/Button";
 import { AnimatePresence } from "framer-motion";
 import Typography from "../../atoms/Typography";
 import AppDropdown from "../../molecules/Popups/AppDropdown";
-import { ArrowDown, ArrowRight, CloseIcon, JamMenu } from "@/assets/icons";
+import {
+  ArrowDown,
+  ArrowRight,
+  CloseIcon,
+  HamburgerMenu,
+} from "@/assets/icons";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,7 +45,9 @@ const Navbar = () => {
                   itemClasses: { title: "text-gray-900 text-regular-xs" },
                 }}
                 triggerBtnProps={{
-                  endContent: <span className="stroke-black">{ArrowDown}</span>,
+                  endContent: (
+                    <span className="stroke-gray-400">{ArrowDown}</span>
+                  ),
                 }}
                 triggerEl={
                   <Typography variant="medium-base" className="text-gray-400">
@@ -84,10 +91,11 @@ const Navbar = () => {
 
           {/* HAMBURGER */}
           <Button
+            variant="text"
             onClick={() => setOpen((curr) => !curr)}
-            className="md:hidden size-12 border border-transparent flex items-center justify-center fill-white stroke-white"
+            className="md:hidden size-12 border border-transparent flex items-center justify-center fill-black stroke-black"
           >
-            {open ? CloseIcon : JamMenu}
+            {open ? CloseIcon : HamburgerMenu}
           </Button>
         </div>
 

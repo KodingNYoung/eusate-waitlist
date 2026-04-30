@@ -12,15 +12,11 @@ import {
   SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { CARDS } from "@/components/routes/sate-ai/SateAction/const";
+import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
 
 const SateAiPage = () => {
   return (
-    <PageTemplate
-      hideGradient
-      classNames={{
-        wrapper: "space-y-20",
-      }}
-    >
+    <PageTemplate hideGradient>
       <PageHeader
         chipLabel="Sate Ai"
         orientation="horizontal"
@@ -47,34 +43,22 @@ const SateAiPage = () => {
         description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
       />
 
-      {/* <SectionTemplate */}
-      {/*   classNames={{ */}
-      {/*     base: "h-[590px] relative flex justify-center items-center", */}
-      {/*   }} */}
-      {/* > */}
-      {/*   <ScrollReveal */}
-      {/*     text="Build different from every chatbot you've tried" */}
-      {/*     classNames={{ */}
-      {/*       container: "flex justify-center w-[45%]", */}
-      {/*       text: "text-bold-6xl text-center", */}
-      {/*     }} */}
-      {/*   /> */}
-      {/* </SectionTemplate> */}
-
-      <section className="relative md:h-[100vh]">
+      <section className="relative h-full md:h-[70vh]">
         {/* TEXT */}
-        {/* <div className="h-screen flex items-center justify-center z-10"> */}
-        {/*   <ScrollReveal */}
-        {/*     text="Build different from every chatbot you've tried" */}
-        {/*     classNames={{ */}
-        {/*       container: "flex justify-center w-[45%]", */}
-        {/*       text: "text-bold-6xl text-center", */}
-        {/*     }} */}
-        {/*   /> */}
-        {/* </div> */}
+        <div className="flex items-center h-full w-full mx-auto justify-center z-2">
+          <ScrollReveal
+            shouldFade
+            text="Build different from every chatbot you've tried"
+            classNames={{
+              base: "w-full flex items-center justify-center",
+              container: "w-full md:w-[30%]",
+              paragraph: "text-bold-6xl justify-center text-center",
+            }}
+          />
+        </div>
 
         {/* CARDS */}
-        <div className="md:sticky md:top-0 md:h-[100vh] flex items-center overflow-hidden z-0">
+        <div className="hidden md:flex absolute inset-0 overflow-hidden z-3">
           <ScrollCards<SateFeature> items={SATE_FEATURES_B}>
             {(items) =>
               items.map(({ key, ...item }) => (
@@ -83,8 +67,8 @@ const SateAiPage = () => {
                   {...item}
                   color=""
                   classNames={{
-                    title: "text-black/100",
-                    description: "text-black/50",
+                    title: "!text-black/100",
+                    description: "!text-black/50",
                     base: "border-2 border-gray-50",
                   }}
                 />
@@ -92,6 +76,8 @@ const SateAiPage = () => {
             }
           </ScrollCards>
         </div>
+
+        {/* MOBILE VIEW */}
         <div className="md:hidden flex justify-center flex-col gap-4">
           {SATE_FEATURES_B.map(({ key, ...item }) => (
             <SateFeatureCard
@@ -99,8 +85,8 @@ const SateAiPage = () => {
               {...item}
               color=""
               classNames={{
-                title: "text-black/100",
-                description: "text-black/50",
+                title: "!text-black/100",
+                description: "!text-black/50",
                 base: "border-2 border-gray-50",
               }}
             />

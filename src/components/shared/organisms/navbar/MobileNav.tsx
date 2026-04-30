@@ -7,6 +7,7 @@ import { InternalPath } from "@/utils/types";
 import Typography from "../../atoms/Typography";
 import { Accordion } from "../../molecules/Accordion";
 import { ArrowDown, ArrowRightIcon } from "@/assets/icons";
+import { cls } from "@/utils/helpers";
 
 export const MobileNav = () => {
   return (
@@ -16,10 +17,13 @@ export const MobileNav = () => {
       exit={{ height: 0, opacity: 0 }}
       className="w-full fixed translate-y-[88px] flex flex-col gap-12 overflow-auto bg-white p-5 md:hidden"
     >
-      <nav className="flex flex-col gap-2">
+      <nav className="flex flex-col gap-4">
         <Accordion
           variant="splitted"
-          itemClasses={{ title: "text-semibold-base text-left data-[open=true]:uppercase" }}
+          itemClasses={{
+            base: cls("group md:hidden px-0"),
+            title: "text-semibold-base text-left data-[open=true]:uppercase",
+          }}
           indicator={<span className="stroke-gray-400">{ArrowDown}</span>}
           items={NAV_EXPLORE_LIST.map(({ id, label, items }) => ({
             key: id.toString(),
@@ -29,7 +33,7 @@ export const MobileNav = () => {
             )),
           }))}
         />
-        <div className="grid gap-6 px-6">
+        <div className="grid gap-10 px-2">
           <Link
             href={ROUTES.PRICING}
             target="_blank"
@@ -38,18 +42,19 @@ export const MobileNav = () => {
           >
             Pricing
           </Link>
-          <Link href={"/"} target="_blank" rel="noreferrer" className="text-semibold-base">
+          <Link
+            href={"/"}
+            target="_blank"
+            rel="noreferrer"
+            className="text-semibold-base"
+          >
             Docs
           </Link>
         </div>
       </nav>
 
       <div className="grid gap-6 w-full">
-        <Link
-          href="/apply"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <Link href="/apply" target="_blank" rel="noreferrer">
           <Button
             variant="tetiaryText"
             classNames={{
@@ -60,11 +65,7 @@ export const MobileNav = () => {
             Login
           </Button>
         </Link>
-        <Link
-          href="/apply"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <Link href="/apply" target="_blank" rel="noreferrer">
           <Button
             classNames={{
               root: "w-full py-4",

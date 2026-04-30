@@ -32,7 +32,7 @@ const TermsAndCondition = () => {
         gradientVariant="peach"
         classNames={{
           container: "pt-[88px]",
-          wrapper: "py-20 space-y-20",
+          wrapper: "md:py-24 space-y-20 px-5",
         }}
       >
         <PageHeader
@@ -261,7 +261,7 @@ const TermsAndCondition = () => {
                   <a
                     className="text-info-500"
                     target="_blank"
-                    rel="noreferer nofollow"
+                    rel="noreferer nofollow noopener"
                     href="https://www.eusate.com"
                   >
                     www.eusate.com

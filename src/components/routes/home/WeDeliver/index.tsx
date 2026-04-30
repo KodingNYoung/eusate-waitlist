@@ -13,10 +13,10 @@ export const WeDeliver = () => {
         title="Your team and your customers both deserve the top-quality"
         classNames={{ titleContainer: "w-full md:w-[50%]" }}
       />
-      <div className="flex flex-wrap justify-center md:justify-between gap-4 border">
+      <div className="flex flex-wrap justify-center md:justify-between gap-4">
         <ResolutionRate />
-        {/* <CSATScore /> */}
-        {/* <ROIFounders /> */}
+        <CSATScore />
+        <ROIFounders />
       </div>
     </SectionTemplate>
   );

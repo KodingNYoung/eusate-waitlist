@@ -48,13 +48,16 @@ const Integrations = () => {
           chipLabel="Integrations"
           title="We live where your customers live"
           classNames={{
-            container: "px-2 h-auto",
+            container: "px-2 md:h-auto",
             wrapper: "w-full md:w-[80%]",
             chipContainer: "justify-start",
           }}
         />
         <SectionTemplate>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div
+            // className="flex flex-wrap justify-center gap-8"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {PLATFORMS.map(({ id, ...platform }) => (
               <IntegrationCard key={id} {...platform} />
             ))}
