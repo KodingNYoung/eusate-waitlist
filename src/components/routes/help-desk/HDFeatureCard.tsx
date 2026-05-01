@@ -35,8 +35,8 @@ export const HDFeatureCard: FC<Props> = ({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className={cls(
-        "flex justify-between items-center",
-        id % 2 ? "flex-row" : "flex-row-reverse",
+        "flex flex-wrap justify-center md:justify-between gap-y-10 items-center",
+        id % 2 ? "flex-row" : "md:flex-row-reverse",
       )}
     >
       <motion.div variants={fadeUpVariants} className="">
@@ -45,11 +45,15 @@ export const HDFeatureCard: FC<Props> = ({
             <Typography
               as="h2"
               variant="bold-3xl"
-              className="bg-[url(/images/kb-text-bg.webp)] bg-cover bg-center bg-clip-text text-transparent"
+              className="bg-[url(/images/kb-text-bg.webp)] bg-cover bg-center bg-clip-text text-transparent text-bold-2xl md:text-bold-3xl"
             >
               {highlightTitle}
             </Typography>
-            <Typography as="h2" variant="bold-3xl">
+            <Typography
+              as="h2"
+              variant="bold-3xl"
+              className="text-bold-2xl md:text-bold-3xl"
+            >
               {title}
             </Typography>
           </AnimatedBlock>
@@ -72,13 +76,16 @@ export const HDFeatureCard: FC<Props> = ({
         )}
       >
         <AnimatedBlock>
-          <div className="relative w-[1200px] h-[900px] object-bottom">
-            <Image
-              src={imgSrc}
-              alt={highlightTitle}
-              fill
-              className={cls(id % 2 === 0 && "object-[right_2%]")}
-            />
+          <div
+            className={cls(
+              "relative w-[1200px] h-[900px] object-cover object-bottom",
+              cls(
+                id % 2 === 0 &&
+                  "object-[right_bottom] pb-8 -translate-x-[calc(100%_-_550px_+_32px)] -translate-y-[calc(900px_-_550px_+_92px)]",
+              ),
+            )}
+          >
+            <Image src={imgSrc} alt={highlightTitle} fill />
           </div>
         </AnimatedBlock>
       </motion.div>

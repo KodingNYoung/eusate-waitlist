@@ -14,9 +14,10 @@ export const Hero = () => {
       }
       classNames={{
         container:
-          "bg-[url(/images/home-bg.webp)] relative md:h-screen flex items-start overflow-hidden",
+          "bg-[url(/images/home-bg.webp)] relative md:h-[90vh] flex items-start overflow-hidden",
         description: "text-white/60 leading-[150%] text-left md:text-center",
         descriptionContainer: "items-start md:items-center",
+        wrapper: "md:pt-6",
         title: "text-left md:text-center",
         chip: "bg-transparent bg-[linear-gradient(90deg,_rgba(215,171,7,0.3)_0%,_rgba(232,101,85,0.3)_100%)] backdrop-blur-3xl text-white ",
       }}
@@ -35,7 +36,8 @@ export const Hero = () => {
       }
       cta={
         <Button
-          className="bg-brand-gradient px-12 py-4"
+          size="sm"
+          className="bg-brand-gradient px-12 py-2.5 md:py-4 !w-auto md:w-full"
           endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
         >
           Sign up

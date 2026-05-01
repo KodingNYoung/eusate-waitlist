@@ -4,20 +4,32 @@ import { TWClassNames } from "@/utils/types";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ReactNode, useRef } from "react";
 
+type OffsetUnit = `${number}%`;
+type ScrollOffset = `start ${OffsetUnit}` | `end ${OffsetUnit}`;
+type Offset = { start?: OffsetUnit; end?: OffsetUnit };
 type Slots = "base" | "container" | "text" | "paragraph";
 
 type Props = {
+  offset?: Offset;
   text: string | string[];
   shouldFade?: boolean;
   children?: ReactNode;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
-export const ScrollReveal = ({ text, classNames, shouldFade }: Props) => {
+export const ScrollReveal = ({
+  text,
+  classNames,
+  shouldFade,
+  offset,
+}: Props) => {
+  const start: ScrollOffset = `start ${offset?.start ?? "100%"}`;
+  const end: ScrollOffset = `end ${offset?.end ?? "40%"}`;
+
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 100%", "end 40%"],
+    offset: [start, end],
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.4, 0.8, 1], [1, 1, 0, 0]);

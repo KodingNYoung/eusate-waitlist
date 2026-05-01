@@ -29,7 +29,7 @@ export const Post = () => {
       </Typography>
       <Typography
         as="p"
-        className="text-regular-base md:text-regular-xl text-gray-700"
+        className="text-regular-base md:text-regular-xl text-gray-700 leading-[180%]"
       >
         {post.content.introduction}
       </Typography>
@@ -42,7 +42,7 @@ export const Post = () => {
             </Typography>
             <Typography
               as="p"
-              className="text-regular-base md:text-regular-xl text-gray-700"
+              className="text-regular-base md:text-regular-xl text-gray-700 leading-[180%]"
             >
               {content}
             </Typography>

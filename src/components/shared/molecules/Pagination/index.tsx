@@ -48,14 +48,14 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
       if (value === PaginationItemType.PREV) {
         return (
           <Button
-            variant="tetiary"
+            variant="text"
             onClick={_onPrevious}
             className={cls(
               className,
-              "rounded-full w-12 h-12 rotate-180",
+              "rounded-full w-12 h-12 rotate-180 ",
               currentPage === 1
-                ? "bg-gray-100 stroke-gray-400"
-                : "bg-black stroke-white",
+                ? "!bg-gray-100 !stroke-gray-400"
+                : "!bg-black !stroke-white",
             )}
           >
             <span>{ArrowRightIcon}</span>
@@ -65,14 +65,14 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
       if (value === PaginationItemType.NEXT) {
         return (
           <Button
-            variant="tetiary"
+            variant="text"
             onClick={_onNext}
             className={cls(
               className,
-              "rounded-full w-12 h-12",
+              "rounded-full w-12 h-12 ",
               currentPage === total
-                ? "bg-gray-100 stroke-gray-400"
-                : "bg-black stroke-white hover:bg-black",
+                ? "!bg-gray-100 !stroke-gray-400"
+                : "!bg-black !stroke-white !hover:bg-black",
             )}
           >
             <span>{ArrowRightIcon}</span>
@@ -114,7 +114,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
     [currentPage],
   );
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full pt-4 md:pt-20">
       <Pagination
         showControls
         size="lg"
@@ -123,7 +123,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
         total={total}
         page={page}
         onChange={onChange}
-        siblings={isMobile ? 0 : 1} // pages shown on each side of current
+        siblings={isMobile ? 0 : 1}
         boundaries={isMobile ? 1 : 1}
         classNames={{
           cursor:

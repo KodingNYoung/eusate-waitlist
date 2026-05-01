@@ -12,17 +12,19 @@ const ContactPage = () => {
       <PageTemplate
         classNames={{
           wrapper:
-            "flex flex-wrap md:container sm: items-center justify-between pt-16 md:pt-[150px] md:min-h-screen gap-12",
+            "flex flex-wrap md:container sm: justify-between px-5 pt-20 md:pt-[196px] gap-12",
         }}
       >
         {/* CONTACT INFO */}
-        <SectionTemplate className="space-y-24">
+        <SectionTemplate classNames={{ container: "space-y-10 md:space-y-20" }}>
           <SubHeader
             chipLabel="Contact us"
             title="Get in touch."
             description="Do you have questions? We'd love to hear from you"
             classNames={{
               title: "md:text-bold-6xl",
+              root: "flex-col space-y-4",
+              titleContainer: "md:space-y-10",
               description: "md:text-regular-xl",
             }}
           />

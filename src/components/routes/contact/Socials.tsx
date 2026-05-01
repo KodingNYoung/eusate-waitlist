@@ -6,7 +6,7 @@ import { SOCIAL_LINKS } from "@/components/shared/organisms/footer/utils";
 export const SocialLinks = () => {
   return (
     <div className="space-y-10">
-      <div className="space-y-4">
+      <div className="space-y-10">
         <div className="flex items-center gap-x-4">
           <span>{SmsIcon}</span>
           <Typography variant="semibold-lg">Email:</Typography>

@@ -22,17 +22,18 @@ const HelpCenterPage = () => {
           classNames={{ container: "md:h-auto", root: "flex-col gap-8" }}
         />
         <SectionTemplate>
-          <div className="flex w-full">
+          <div className="flex w-full hidden md:flex">
             {/* FOR DESKTOP */}
             <AppTab<HelpCenterKey, HelpCenterQuestion[]>
               classNames={{
                 panel: "flex-1 w-full",
-                tabWrapper: "hidden md:flex w-full",
+                tabWrapper: "flex w-full",
                 cursor: "w-0",
                 tab: cls(
-                  "w-full justify-start py-3 border-[#F79009] !text-gray-400 text-medium-lg rounded-[8px]",
+                  "w-full justify-start py-3 !text-gray-400 text-medium-lg rounded-[8px]",
+                  "before:content-[''] before:absolute before:left-0 before:top-[20%] before:h-[60%] before:bg-[#F79009]",
                   "data-[selected=true]:bg-gold-50 data-[selected=true]:!text-black data-[selected=true]:text-semibold-lg",
-                  "data-[selected=true]:border-l-2",
+                  "data-[selected=true]:before:w-[2.75px]",
                 ),
                 tabList: "w-full w-[300px] space-y-4",
               }}
@@ -60,7 +61,7 @@ const HelpCenterPage = () => {
           </div>
 
           {/* FOR MOBILE */}
-          <div className="border broder-gray-50 p-2 rounded-x24">
+          <div className="md:hidden border broder-gray-50 p-2 rounded-x24">
             <Accordion
               indicator={
                 <span
@@ -73,12 +74,13 @@ const HelpCenterPage = () => {
                 </span>
               }
               itemClasses={{
-                base: cls("group md:hidden px-0"),
-                heading: cls(
-                  "py-2 px-4 rounded-[18px] border-[#F79009]",
-                  "data-[open=true]:border-l-4 ",
+                base: cls("group px-0"),
+                heading: "relative overflow-hidden py-2 px-4 rounded-[18px] ",
+                trigger: cls(
+                  "justify-between",
+                  "before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:bg-[#F79009]",
+                  "data-[open=true]:before:w-[2.75px]",
                 ),
-                trigger: "justify-between",
                 titleWrapper: "flex-0",
                 title: "text-semibold-lg",
               }}

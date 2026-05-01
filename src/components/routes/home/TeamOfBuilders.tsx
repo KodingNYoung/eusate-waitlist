@@ -4,6 +4,8 @@ import Button from "@/components/shared/molecules/Button";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTemplate";
 import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
+import Link from "next/link";
+import { ROUTES } from "@/utils/constants";
 
 export const TeamOfBuilders = () => {
   return (
@@ -16,16 +18,20 @@ export const TeamOfBuilders = () => {
         title="Built by founders who lived the problem."
         classNames={{
           titleContainer: "w-full space-y-4 md:w-[45%]",
-          root: "w-full !md:flex-row !flex-col space-y-6 items-start md:items-end justify-between",
+          root: "w-full flex flex-col md:flex-row space-y-6 md:space-y-0 items-start md:items-end md:justify-between",
         }}
         cta={
-          <Button
-            size="sm"
-            className="py-2.5 px-4.5 md:px-6 md:py-4"
-            endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
-          >
-            Read about us
-          </Button>
+          <Link href={ROUTES.ABOUT}>
+            <Button
+              size="sm"
+              className="py-2.5 px-4.5 md:px-6 md:py-4"
+              endContent={
+                <span className="stroke-white">{ArrowRightIcon}</span>
+              }
+            >
+              Read about us
+            </Button>
+          </Link>
         }
       />
 
@@ -40,6 +46,7 @@ export const TeamOfBuilders = () => {
         </div>
         <div className="w-full md:w-[40%]">
           <ScrollReveal
+            offset={{ start: "70%" }}
             classNames={{
               text: "text-semibold-xl md:text-semibold-3xl leading-[145%]",
             }}

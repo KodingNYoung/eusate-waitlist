@@ -19,7 +19,7 @@ export const KBFeatures = () => {
             if (entry.isIntersecting) setActiveIndex(i);
           });
         },
-        { threshold: 0.8, rootMargin: "-30% 0px -40% 0px" },
+        { threshold: 1, rootMargin: "-10% 0px -40% 0px" },
       );
       obs.observe(el);
       observers.push(obs);

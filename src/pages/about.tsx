@@ -11,13 +11,14 @@ import {
 } from "@/components/shared/organisms/PageTemplate";
 import { BackgroundWatermark } from "@/components/shared/organisms/DecorativeGraphic";
 import { useMediaQuery } from "@/utils/hooks";
+import { GridImageMobile } from "@/components/routes/about/GridImageMobile";
 
 const AboutPage = () => {
   const isMobile = useMediaQuery();
   return (
     <PageTemplate
       gradientVariant="yellow"
-      classNames={{ wrapper: "md:pt-[100px] w-full space-y-8" }}
+      classNames={{ wrapper: "md:pt-[100px] w-full" }}
     >
       <PageHeader
         title="Our Story"
@@ -25,16 +26,16 @@ const AboutPage = () => {
         description="Last updated: 12/12/2026"
         position={isMobile ? "left" : "center"}
         classNames={{
-          container: "md:h-auto",
+          container: "md:h-auto !py-0 mt-24 mb-20",
           root: "flex-col space-y-4",
-          description: "text-medium-sm text-gray-600",
+          description: "md:hidden text-medium-sm text-gray-600",
         }}
       />
 
       <SectionTemplate
         classNames={{
           container: cls(
-            "md:container w-full flex flex-col items-center gap-y-4 md:gap-y-16 md:mb-48",
+            "md:container w-full flex flex-col items-center gap-y-4 md:gap-y-20 md:mb-40",
           ),
         }}
       >
@@ -57,6 +58,9 @@ const AboutPage = () => {
             this problem intimately because we lived it.
           </Typography>
         </div>
+
+        {/* FOR MOBILE ONLY */}
+        <GridImageMobile />
       </SectionTemplate>
 
       <SectionTemplate className="relative overflow-hidden mb-24">

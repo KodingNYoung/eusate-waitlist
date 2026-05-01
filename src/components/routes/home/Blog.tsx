@@ -4,6 +4,8 @@ import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { BlogPost } from "@/utils/dummy";
 import { BlogCard } from "../blogs/BlogCard";
 import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTemplate";
+import Link from "next/link";
+import { ROUTES } from "@/utils/constants";
 
 export const Blog = () => {
   return (
@@ -17,13 +19,17 @@ export const Blog = () => {
           root: "w-full !md:flex-row !flex-col space-y-6 items-start md:items-end justify-between",
         }}
         cta={
-          <Button
-            size="sm"
-            className="px-6 py-3"
-            endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
-          >
-            Read our blogs
-          </Button>
+          <Link href={ROUTES.BLOGS}>
+            <Button
+              size="sm"
+              className="px-6 py-3"
+              endContent={
+                <span className="stroke-white">{ArrowRightIcon}</span>
+              }
+            >
+              Read our blogs
+            </Button>
+          </Link>
         }
       />
       <div className="flex flex-wrap justify-between gap-8">

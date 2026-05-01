@@ -43,7 +43,7 @@ export const ResolutionRate = () => {
   return (
     <WeDeliverCardTemplate
       classNames={{
-        root: "bg-black",
+        root: "bg-black bg-[url(/home/images/ai-ticket.webp)] bg-cover",
         description: "text-white/60",
         score: "text-white",
       }}
@@ -52,36 +52,38 @@ export const ResolutionRate = () => {
       unit="%"
       graph={
         <div className="relative">
-          <GridLines
-            plot={
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                // viewport={{ once: true }}
-                className="flex items-end gap-2"
-              >
-                {bars.map(({ id, height }) =>
-                  id === bars.length ? (
-                    <HighlightedBar key={id} height={height} />
-                  ) : (
-                    <motion.div
-                      key={id}
-                      variants={barVariants}
-                      style={{
-                        height,
-                        transformOrigin: "bottom",
-                      }}
-                      className="bg-white/30 rounded-[8px] w-[30.57px]"
-                    />
-                  ),
-                )}
-              </motion.div>
-            }
-          />
+          <GridLines plot={<BarGraph />} />
         </div>
       }
     />
+  );
+};
+
+const BarGraph = () => {
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      // viewport={{ once: true }}
+      className="flex items-end gap-2"
+    >
+      {bars.map(({ id, height }) =>
+        id === bars.length ? (
+          <HighlightedBar key={id} height={height} />
+        ) : (
+          <motion.div
+            key={id}
+            variants={barVariants}
+            style={{
+              height,
+              transformOrigin: "bottom",
+            }}
+            className="bg-white/30 rounded-[8px] w-[30.57px]"
+          />
+        ),
+      )}
+    </motion.div>
   );
 };
 

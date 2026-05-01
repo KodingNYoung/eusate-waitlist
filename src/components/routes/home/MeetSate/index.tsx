@@ -10,14 +10,16 @@ export const MeetSate = () => {
     <section className="hidden md:block bg-[url(/home/images/meet-sate-bg.webp)] bg-contain pt-16 pb-20 rounded-x40">
       <div className="container flex flex-col items-center gap-8">
         <header className="flex flex-col items-center space-y-6 w-[50%]">
-          <div className="flex flex-col items-center relative">
-            <Image
-              width={170}
-              height={170}
-              src="/logos/glow-logo.webp"
-              alt=""
-              className="object-contain spin-slow"
-            />
+          <div className="flex flex-col gap-4 items-center relative">
+            <div>
+              <Image
+                width={120}
+                height={120}
+                src="/logos/glow-logo.webp"
+                alt=""
+                className="object-contain animate-spin-slow"
+              />
+            </div>
             <Typography variant="bold-5xl" className="text-white text-center">
               Meet Sate. The AI agent that customers love
             </Typography>
@@ -29,7 +31,7 @@ export const MeetSate = () => {
         <div className="md:container bg-white/20 rounded-x24 py-6 px-2 space-y-4">
           <div className="flex gap-6 flex-wrap justify-center">
             {SATE_FEATURES.map(({ key, ...feature }) => (
-              <SateFeatureCard key={key} {...feature} />
+              <SateFeatureCard className="bg-white/20" key={key} {...feature} />
             ))}
           </div>
           <ChatArea />

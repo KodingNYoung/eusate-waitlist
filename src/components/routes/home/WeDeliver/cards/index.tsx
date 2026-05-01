@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import { cls } from "@/utils/helpers";
 import { FC, TWClassNames } from "@/utils/types";
 import Typography from "@/components/shared/atoms/Typography";
+import { motion } from "motion/react";
 
 type Slots = "root" | "description" | "score";
 type Props = {
@@ -20,7 +21,10 @@ export const WeDeliverCardTemplate: FC<Props> = ({
   classNames,
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
       className={cls(
         "flex justify-center w-full md:w-[349px] h-[320px] overflow-hidden rounded-[24px] px-4 py-8",
         classNames?.root,
@@ -34,13 +38,15 @@ export const WeDeliverCardTemplate: FC<Props> = ({
           >
             {description}
           </Typography>
-          <div className={cls("text-bold-6xl", classNames?.score)}>
+          <div
+            className={cls("text-bold-4xl md:text-bold-6xl", classNames?.score)}
+          >
             {score}
             {unit}
           </div>
         </div>
-        <div className="w-full">{graph}</div>
+        <div className="w-full relative">{graph}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };

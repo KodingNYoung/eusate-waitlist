@@ -13,6 +13,7 @@ type Slots =
   | "root"
   | "chip"
   | "title"
+  | "img"
   | "description"
   | "titleContainer"
   | "descriptionContainer"
@@ -52,13 +53,13 @@ export const ParallaxHero: FC<Props> = ({
     <header ref={headerRef} className={cls("sticky", classNames?.base)}>
       <div
         className={cls(
-          "md:pt-24 px-[17px] md:px-0 rounded-[16px] md:rounded-none bg-cover h-[676px] md:h-screen",
+          "md:pt-[100px] px-[17px] md:px-0 rounded-[16px] md:rounded-none bg-cover h-[80vh] md:h-[90vh]",
           classNames?.container,
         )}
       >
         <div
           className={cls(
-            "md:container flex flex-col items-center space-y-8",
+            "md:container flex flex-col items-center space-y-10 md:space-y-20 pt-20 md:pt-24",
             classNames?.wrapper,
           )}
         >
@@ -71,7 +72,7 @@ export const ParallaxHero: FC<Props> = ({
               y: textY,
             }}
             className={cls(
-              "relative z-2 flex flex-col gap-y-6 pt-8 md:py-16 w-full md:w-[50%]",
+              "relative z-2 flex flex-col gap-y-6  w-full md:w-[50%]",
               classNames?.root,
             )}
           >
@@ -117,7 +118,7 @@ export const ParallaxHero: FC<Props> = ({
                 <Typography
                   as="p"
                   className={cls(
-                    "text-medium-base md:text-regular-xl text-gray-700 leading-[180%] text-white",
+                    "text-medium-base md:text-regular-xl text-left md:text-center text-gray-700 leading-[180%] text-white",
                     classNames?.description,
                   )}
                 >
@@ -136,7 +137,7 @@ export const ParallaxHero: FC<Props> = ({
               src={imgSrc}
               fill
               alt="parallax-img"
-              className="object-cover object-left"
+              className={cls("object-cover object-left", classNames?.img)}
             />
           </motion.div>
         </div>

@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/assets/icons";
 
-type Slots = "container";
+type Slots = "container" | "img" | "imgContainer";
 type Variant = "inline" | "page";
 
 type Props = {
@@ -22,6 +22,10 @@ type Props = {
 
 const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
   container: cls("w-full min-w-full h-[351px]"),
+  img: cls("data-[spotlight=true]:w-full"),
+  imgContainer: cls(
+    "data-[spotlight=true]:h-[352px] data-[spotlight=true]:w-full",
+  ),
 };
 
 export const BlogCard: FC<Props> = ({
@@ -44,17 +48,19 @@ export const BlogCard: FC<Props> = ({
       )}
     >
       <div
+        data-spotlight={spotlight}
         className={cls(
-          "relative w-[333px]",
-
-          variant === "page" ? "h-[293px]" : "h-[223px]",
+          "relative w-full",
+          variant === "page" ? "h-[202px]" : "h-[223px]",
+          spotlightVariant.imgContainer,
         )}
       >
         <Image
-          src={imgSrc ?? "/images/business-men.webp"}
           fill
+          data-spotlight={spotlight}
+          src={imgSrc ?? "/images/business-men.webp"}
           alt={title + "-img"}
-          className={cls("rounded-2xl w-[333px] object-cover")}
+          className={cls("rounded-2xl object-cover", spotlightVariant?.img)}
         />
         <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-2xl">
           <Typography className="text-white flex items-center gap-2 opacity-0 group-hover:opacity-100 transition">

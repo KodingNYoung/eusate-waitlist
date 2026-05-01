@@ -10,6 +10,7 @@ type Props = {
   icon: ReactElement;
   title: string;
   description: string;
+  className?: TWClassNames;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
@@ -17,6 +18,7 @@ export const SateFeatureCard: FC<Props> = ({
   icon,
   title,
   color = "url(#paint0_linear_228_10568)",
+  className,
   classNames,
   description,
 }) => {
@@ -24,6 +26,7 @@ export const SateFeatureCard: FC<Props> = ({
     <div
       className={cls(
         "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-[328px] min-h-[185px]",
+        className,
         classNames?.base,
       )}
     >

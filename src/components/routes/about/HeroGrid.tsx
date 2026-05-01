@@ -11,7 +11,7 @@ export default function GridLayout() {
   return (
     <div className="container grid grid-cols-1 md:grid-cols-5 gap-4 p-4 md:h-[500px]">
       {/* Left column */}
-      <div className="flex flex-row md:flex-col gap-4 h-48 md:h-auto">
+      <div className="hidden md:flex flex-row md:flex-col gap-4 h-48 md:h-auto">
         <div className="bg-black text-white rounded-3xl flex items-end p-8 relative h-full w-full">
           <div className="z-10">
             <Typography as="h2" variant="bold-3xl">
@@ -60,7 +60,7 @@ export default function GridLayout() {
 
       {/* Right column */}
       <div className="flex flex-row md:flex-col md:col-span-2 gap-4 h-48 md:h-auto">
-        <div className="relative h-full w-full">
+        <div className="hidden md:block relative h-full w-full">
           <Image
             src="/images/eusate-team.webp"
             alt="startup"
@@ -79,7 +79,17 @@ export default function GridLayout() {
               </Typography>
             </div>
           </div>
-          <div className="relative h-full w-full">
+          <div className="md:hidden bg-black text-white rounded-3xl flex items-end p-8 relative h-full w-full">
+            <div className="z-10">
+              <Typography as="h2" variant="bold-3xl">
+                10+
+              </Typography>
+              <Typography as="p" variant="medium-lg" className="text-white/70">
+                Businesses
+              </Typography>
+            </div>
+          </div>
+          <div className="hidden md:block relative h-full w-full">
             <Image
               src="/images/hand-to-hand.webp"
               alt="success"

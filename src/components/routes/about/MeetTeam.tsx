@@ -87,7 +87,7 @@ const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
         <Typography variant="medium-3xl" className="text-white">
           {name}
         </Typography>
-        <Typography variant="regular-xl" className="text-white/50">
+        <Typography variant="medium-xl" className="text-white/50">
           {role}
         </Typography>
       </div>

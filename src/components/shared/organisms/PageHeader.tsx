@@ -262,6 +262,8 @@ export const SubHeader: FC<SubHeaderProps> = ({
           ) : (
             title
           )}
+        </div>
+        <div className={cls(classNames?.descriptionContainer)}>
           {description && (
             <Typography as="p" className={cls(classNames?.description)}>
               {description}

@@ -1,7 +1,7 @@
 import Input from "@/components/shared/molecules/Input";
 import AppDropdown from "@/components/shared/molecules/Popups/AppDropdown";
 import AutoResizingTextarea from "@/components/shared/atoms/AutoResizingTextarea";
-import { ArrowDown, SendIcon } from "@/assets/icons";
+import { ArrowDown, SendYellowIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import { useForm } from "react-hook-form";
@@ -17,7 +17,7 @@ export const FormSection = () => {
   return (
     <section className="w-full md:max-w-[520px] space-y-8 bg-black text-white py-6 px-4 md:px-8 rounded-3xl">
       <div className="flex items-center gap-4">
-        <span className="text-warning-300">{SendIcon}</span>
+        <span>{SendYellowIcon}</span>
         <Typography variant="medium-lg" className="text-gray-200">
           Send us a message
         </Typography>
@@ -48,6 +48,7 @@ export const FormSection = () => {
               Reason
             </Typography>
           }
+          classNames={{ content: "bg-white rounded-lg w-full" }}
           triggerBtnProps={{
             endContent: <span className="stroke-gray-500">{ArrowDown}</span>,
             className: "flex justify-between p-4 !bg-gray-900",
@@ -64,6 +65,7 @@ export const FormSection = () => {
           placeholder="Type your message"
         />
         <Button
+          size="sm"
           variant="outlined"
           className="py-4"
           classNames={{ label: "text-semibold-base" }}

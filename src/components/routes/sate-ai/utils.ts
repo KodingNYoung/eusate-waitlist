@@ -1,10 +1,14 @@
 import {
+  AiPlaygroundGradIcon,
   AiPlaygroundIcon,
   CopilotBrandGradientIcon,
   CopilotIcon,
   CustomerTemperamentIcon,
+  CustomerTemperantGradIcon,
   GapAnalysisIcon,
   GapBrandGradIcon,
+  HumanAgentGradIcon,
+  TicketBrandGradIcon,
   TicketContextIcon,
 } from "@/assets/icons";
 import { ReactElement } from "react";
@@ -100,7 +104,7 @@ export const SATE_FEATURES_B = [
   {
     id: 3,
     key: "ai-playground",
-    icon: AiPlaygroundIcon,
+    icon: AiPlaygroundGradIcon,
     title: "AI playground",
     description:
       "Create custom content directly in our built-in text editor or import using links.",
@@ -108,7 +112,7 @@ export const SATE_FEATURES_B = [
   {
     id: 4,
     key: "ticket-context",
-    icon: TicketContextIcon,
+    icon: TicketBrandGradIcon,
     title: "Ticket Context",
     description:
       "Create custom content directly in our built-in text editor or import using links.",
@@ -116,7 +120,7 @@ export const SATE_FEATURES_B = [
   {
     id: 5,
     key: "customer-temperament",
-    icon: CustomerTemperamentIcon,
+    icon: CustomerTemperantGradIcon,
     title: "Customer Temperament",
     description:
       "Create custom content directly in our built-in text editor or import using links.",
@@ -124,7 +128,7 @@ export const SATE_FEATURES_B = [
   {
     id: 6,
     key: "human-agent-handoff",
-    icon: CustomerTemperamentIcon,
+    icon: HumanAgentGradIcon,
     title: "Human Agent Handoff",
     description:
       "Create custom content directly in our built-in text editor or import using links.",

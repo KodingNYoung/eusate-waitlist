@@ -19,7 +19,7 @@ const BlogPage = () => {
         gradientVariant="gray"
         classNames={{ wrapper: "md:pt-[100px] px-3 md:px-0" }}
       >
-        <header className="md:container flex flex-col items-center justify-center w-full md:w-[40%] py-8">
+        <header className="md:container flex flex-col items-center justify-center w-full lg:w-[60%] 2xl:w-[50%] py-8">
           <PageHeader
             position="center"
             chipLabel="Our Blogs"
@@ -35,7 +35,8 @@ const BlogPage = () => {
             startComponent={<span>{SearchIcon}</span>}
           />
         </header>
-        <SectionTemplate className="flex flex-col justify-center gap-y-20">
+
+        <SectionTemplate className="flex flex-col justify-center md:py-20 gap-y-20">
           {/* SPOTLIGHT */}
           <BlogCard
             spotlight
@@ -62,7 +63,7 @@ const BlogPage = () => {
               ),
             )}
           </div>
-          <div className="mt-8">
+          <div className="mt-10">
             <AppPagination
               page={1}
               total={10}
