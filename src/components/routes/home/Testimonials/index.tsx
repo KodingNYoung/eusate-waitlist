@@ -51,11 +51,24 @@ export const Testimonials = () => {
   return (
     <SectionTemplate className="bg-red-100 max-w-screen overflow-hidden rounded-x20 md:rounded-x40 py-20">
       <div className="flex flex-wrap gap-x-20 justify-center items-center md:justify-between">
-        <ImageAnimated direction={direction} t={t} />
+        <div className="space-y-6">
+          <ProgressDots
+            className="md:hidden justify-center"
+            current={current}
+            progress={progress}
+            goTo={goTo}
+          />
+          <ImageAnimated direction={direction} t={t} />
+        </div>
 
         <div className="flex-1 flex flex-col gap-y-[55px] justify-between p-6 md:p-8">
-          <div className="space-y-8">
-            <ProgressDots current={current} progress={progress} goTo={goTo} />
+          <div className="md:space-y-8">
+            <ProgressDots
+              className="hidden md:block"
+              current={current}
+              progress={progress}
+              goTo={goTo}
+            />
             <TestimonialSection
               current={current}
               t={t}

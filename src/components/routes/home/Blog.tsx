@@ -16,10 +16,10 @@ export const Blog = () => {
         title="Get updateed new & insights"
         classNames={{
           titleContainer: "w-full space-y-4 md:w-[45%]",
-          root: "w-full flex flex-col md:flex-row space-y-6 md:space-y-0 items-start md:items-end md:justify-between",
+          root: "w-full flex flex-col md:flex-row space-y-0 md:space-y-0 items-start md:items-end md:justify-between",
         }}
         cta={
-          <Link href={ROUTES.BLOGS}>
+          <Link href={ROUTES.BLOGS} className="hidden md:block">
             <Button
               size="sm"
               className="px-6 py-3"
@@ -48,6 +48,14 @@ export const Blog = () => {
           ),
         )}
       </div>
+
+      <Button
+        size="sm"
+        className="px-6 py-3 md:hidden w-full"
+        endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
+      >
+        Read our blogs
+      </Button>
     </SectionTemplate>
   );
 };

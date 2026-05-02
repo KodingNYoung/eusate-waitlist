@@ -1,18 +1,25 @@
 import { TESTIMONIALS } from "@/utils/constants";
 import { Direction } from "./utils";
-import { FC } from "@/utils/types";
+import { FC, TWClassNames } from "@/utils/types";
 import { motion } from "motion/react";
 import Button from "@/components/shared/molecules/Button";
+import { cls } from "@/utils/helpers";
 
 type Props = {
   current: number;
   progress: number;
   goTo: (idx: number, dir: Direction) => void;
+  className?: TWClassNames;
 };
 
-export const ProgressDots: FC<Props> = ({ goTo, current, progress }) => {
+export const ProgressDots: FC<Props> = ({
+  goTo,
+  current,
+  progress,
+  className,
+}) => {
   return (
-    <div className="flex gap-2">
+    <div className={cls("flex gap-2", className)}>
       {TESTIMONIALS.map((_, i) => (
         <Button
           key={i}

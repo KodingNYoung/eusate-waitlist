@@ -3877,3 +3877,54 @@ export const HumanAgentGradIcon = (
     </defs>
   </svg>
 );
+
+export const ArrowRightGradIcon = (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.8223 4.44727L15.3748 8.99977L10.8223 13.5523"
+      stroke="url(#paint0_linear_2294_8704)"
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M2.625 9H15.2475"
+      stroke="url(#paint1_linear_2294_8704)"
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2294_8704"
+        x1="10.8223"
+        y1="8.99977"
+        x2="15.3748"
+        y2="8.99977"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#D7AB07" />
+        <stop offset="1" stop-color="#E86555" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_2294_8704"
+        x1="2.625"
+        y1="9.5"
+        x2="15.2475"
+        y2="9.5"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#D7AB07" />
+        <stop offset="1" stop-color="#E86555" />
+      </linearGradient>
+    </defs>
+  </svg>
+);

@@ -18,8 +18,13 @@ export const ImageAnimated: FC<Props> = ({ direction, t }) => {
         animate="center"
         exit="exit"
       >
-        <div className="relative w-full md:w-[395px] h-[540px] object-cover object-top rounded-[24px]">
-          <Image fill src={t.imgSrc} alt={t.company} className="" />
+        <div className="relative w-[90vw] md:w-[395px] h-[540px]">
+          <Image
+            fill
+            src={t.imgSrc}
+            alt={t.company}
+            className="object-cover z-3 rounded-x24"
+          />
         </div>
       </motion.div>
     </AnimatePresence>

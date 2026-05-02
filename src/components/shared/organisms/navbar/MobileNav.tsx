@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ROUTES } from "@/utils/constants";
+import { cls } from "@/utils/helpers";
 import { NAV_EXPLORE_LIST } from "./utils";
+import { ROUTES } from "@/utils/constants";
 import Button from "../../molecules/Button";
 import { InternalPath } from "@/utils/types";
 import Typography from "../../atoms/Typography";
 import { Accordion } from "../../molecules/Accordion";
-import { ArrowDown, ArrowRightIcon } from "@/assets/icons";
-import { cls } from "@/utils/helpers";
+import { ArrowDown, ArrowRightGradIcon } from "@/assets/icons";
 
 export const MobileNav = () => {
   return (
@@ -92,7 +92,7 @@ const NavItem = ({ label, link }: NavItemProps) => {
       className="flex justify-between border-b border-gray-50 py-4"
     >
       <Typography variant="regular-xs">{label}</Typography>
-      <span className="stroke-gradient">{ArrowRightIcon}</span>
+      <span className="">{ArrowRightGradIcon}</span>
     </Link>
   );
 };
