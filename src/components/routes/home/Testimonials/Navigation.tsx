@@ -14,9 +14,7 @@ export const Navigation: FC<Props> = ({ prev, next }) => {
     <div className="flex justify-between md:justify-start items-center gap-4">
       <Button
         variant="text"
-        className={cls(
-          "px-4 py-2 transform !bg-black/20 stroke-black rotate-180",
-        )}
+        className={cls("px-4 py-2 !bg-black/10 stroke-black/20 rotate-180")}
         onClick={prev}
       >
         {ArrowRightIcon}

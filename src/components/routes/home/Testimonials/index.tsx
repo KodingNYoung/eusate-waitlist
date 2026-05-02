@@ -8,10 +8,10 @@ import { ImageAnimated } from "./ImageSection";
 import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
 
 export const Testimonials = () => {
+  const [paused] = useState(false);
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
   const [direction, setDirection] = useState<Direction>(1);
-  const [paused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const testimonialLength = useMemo(() => TESTIMONIALS.length, []);
@@ -49,16 +49,12 @@ export const Testimonials = () => {
   const t = useMemo(() => TESTIMONIALS[current], [current]);
 
   return (
-    <SectionTemplate className="bg-red-100 max-w-screen overflow-hidden rounded-x20 md:rounded-x40">
-      <div
-        className="container p-8"
-        // onMouseEnter={() => setPaused(true)}
-        // onMouseLeave={() => setPaused(false)}
-      >
-        <div className="flex flex-wrap justify-center">
-          <ImageAnimated direction={direction} t={t} />
+    <SectionTemplate className="bg-red-100 max-w-screen overflow-hidden rounded-x20 md:rounded-x40 py-20">
+      <div className="flex flex-wrap gap-x-20 justify-center items-center md:justify-between">
+        <ImageAnimated direction={direction} t={t} />
 
-          <div className="flex-1 flex flex-col gap-10 justify-between p-6 md:p-8">
+        <div className="flex-1 flex flex-col gap-y-[55px] justify-between p-6 md:p-8">
+          <div className="space-y-8">
             <ProgressDots current={current} progress={progress} goTo={goTo} />
             <TestimonialSection
               current={current}
@@ -67,8 +63,8 @@ export const Testimonials = () => {
               prev={prev}
               next={next}
             />
-            <Stats t={t} direction={direction} />
           </div>
+          <Stats t={t} direction={direction} />
         </div>
       </div>
     </SectionTemplate>

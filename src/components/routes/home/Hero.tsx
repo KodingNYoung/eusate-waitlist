@@ -17,7 +17,7 @@ export const Hero = () => {
           "bg-[url(/images/home-bg.webp)] relative md:h-[90vh] flex items-start overflow-hidden",
         description: "text-white/60 leading-[150%] text-left md:text-center",
         descriptionContainer: "items-start md:items-center",
-        wrapper: "md:pt-6",
+        wrapper: "md:pt-6 pt-0",
         title: "text-left md:text-center",
         chip: "bg-transparent bg-[linear-gradient(90deg,_rgba(215,171,7,0.3)_0%,_rgba(232,101,85,0.3)_100%)] backdrop-blur-3xl text-white ",
       }}
@@ -37,7 +37,7 @@ export const Hero = () => {
       cta={
         <Button
           size="sm"
-          className="bg-brand-gradient px-12 py-2.5 md:py-4 !w-auto md:w-full"
+          className="bg-brand-gradient px-12 py-2.5 md:py-4 w-full md:w-auto"
           endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
         >
           Sign up

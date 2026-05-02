@@ -43,7 +43,7 @@ export const ResolutionRate = () => {
   return (
     <WeDeliverCardTemplate
       classNames={{
-        root: "bg-black bg-[url(/home/images/ai-ticket.webp)] bg-cover",
+        root: "bg-black bg-[url(/home/images/ai-ticket-bg.webp)] bg-cover",
         description: "text-white/60",
         score: "text-white",
       }}

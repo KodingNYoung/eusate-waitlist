@@ -9,8 +9,8 @@ export const FAQ = () => {
   return (
     <SectionTemplate
       classNames={{
-        base: "bg-gray-50 flex",
-        wrapper: "flex gap-8 flex-wrap justify-between",
+        base: "bg-gray-50 rounded-x40",
+        wrapper: "flex gap-8 flex-wrap md:flex-nowrap justify-between",
       }}
     >
       <SubHeader

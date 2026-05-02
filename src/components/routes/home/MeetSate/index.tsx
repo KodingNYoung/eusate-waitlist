@@ -10,15 +10,23 @@ export const MeetSate = () => {
     <section className="hidden md:block bg-[url(/home/images/meet-sate-bg.webp)] bg-contain pt-16 pb-20 rounded-x40">
       <div className="container flex flex-col items-center gap-8">
         <header className="flex flex-col items-center space-y-6 w-[50%]">
-          <div className="flex flex-col gap-4 items-center relative">
-            <div>
+          <div className="flex flex-col items-center relative">
+            <div className="relative">
               <Image
-                width={120}
-                height={120}
-                src="/logos/glow-logo.webp"
+                width={53}
+                height={41}
+                src="/logos/icon-white.svg"
                 alt=""
-                className="object-contain animate-spin-slow"
+                className="absolute z-2 object-contain inset-0 translate-x-[calc(65px-26.5px)] translate-y-[calc(65px-20.5px)]"
               />
+              <div className="object-cover z-1 w-[130px] h-[130px] relative top-0 left-0 animate-spin-slow">
+                <Image
+                  src="/home/images/glow-ball.webp"
+                  fill
+                  alt=""
+                  className=""
+                />
+              </div>
             </div>
             <Typography variant="bold-5xl" className="text-white text-center">
               Meet Sate. The AI agent that customers love

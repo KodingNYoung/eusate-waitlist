@@ -7,17 +7,21 @@ import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
 
 export const Pricing = () => {
   return (
-    <SectionTemplate className="space-y-8 py-12 px-5">
-      <SubHeader
-        position="center"
-        chipLabel="Our Pricing"
-        title="Enterprise results. Startup pricing"
-      />
-      <div className="flex justify-center">
-        <div className="flex flex-wrap gap-3 items-center">
-          {PRICING.map(({ key, ...pricing }) => (
-            <PricingCard key={key} {...pricing} />
-          ))}
+    <SectionTemplate
+      classNames={{ base: "py-20 px-5", container: "md:space-y-20" }}
+    >
+      <div className="space-y-20">
+        <SubHeader
+          position="center"
+          chipLabel="Our Pricing"
+          title="Enterprise results. Startup pricing"
+        />
+        <div className="flex justify-center">
+          <div className="flex flex-wrap gap-3 items-center">
+            {PRICING.map(({ key, ...pricing }) => (
+              <PricingCard key={key} {...pricing} />
+            ))}
+          </div>
         </div>
       </div>
       <Button

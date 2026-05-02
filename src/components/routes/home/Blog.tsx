@@ -9,14 +9,14 @@ import { ROUTES } from "@/utils/constants";
 
 export const Blog = () => {
   return (
-    <SectionTemplate classNames={{ wrapper: "space-y-12" }}>
+    <SectionTemplate classNames={{ base: "py-20", wrapper: "space-y-20" }}>
       <SubHeader
         orientation="horizontal"
         chipLabel="Our blog"
         title="Get updateed new & insights"
         classNames={{
           titleContainer: "w-full space-y-4 md:w-[45%]",
-          root: "w-full !md:flex-row !flex-col space-y-6 items-start md:items-end justify-between",
+          root: "w-full flex flex-col md:flex-row space-y-6 md:space-y-0 items-start md:items-end md:justify-between",
         }}
         cta={
           <Link href={ROUTES.BLOGS}>

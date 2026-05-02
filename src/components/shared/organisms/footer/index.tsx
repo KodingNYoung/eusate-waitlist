@@ -21,14 +21,17 @@ const Footer = () => {
             </div>
             <div className="flex items-center justify-between md:justify-start gap-4">
               {SOCIAL_LINKS.map(({ id, icon, link }) => (
-                <Button
-                  key={id}
-                  href={link}
-                  variant="tetiary"
-                  classNames={{ root: "p-3 border-white/20" }}
-                >
-                  <span className="stroke-gray-400">{icon}</span>
-                </Button>
+                <Link key={id} href={link}>
+                  <Button
+                    href={link}
+                    variant="tetiary"
+                    classNames={{ root: "p-3 border-white/20" }}
+                  >
+                    <span className="stroke-gray-400 fill-[#98A2B3]">
+                      {icon}
+                    </span>
+                  </Button>
+                </Link>
               ))}
             </div>
             <nav className="flex gap-8">

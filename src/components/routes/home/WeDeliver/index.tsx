@@ -6,7 +6,7 @@ import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
 
 export const WeDeliver = () => {
   return (
-    <SectionTemplate className="space-y-20 py-12 md:py-20">
+    <SectionTemplate className="space-y-20 px-5 py-12 md:py-20">
       <SubHeader
         position="center"
         chipLabel="We deliver"
