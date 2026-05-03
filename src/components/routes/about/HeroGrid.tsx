@@ -1,13 +1,7 @@
-import { PlayIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
-import Button from "@/components/shared/molecules/Button";
 import Image from "next/image";
-import { useState } from "react";
-import ReactPlayer from "react-player";
 
 export default function GridLayout() {
-  const [playVideo, setPlayVideo] = useState(true);
-
   return (
     <div className="container grid grid-cols-1 md:grid-cols-5 gap-4 p-4 md:h-[500px]">
       {/* Left column */}
@@ -34,27 +28,26 @@ export default function GridLayout() {
 
       {/* Middle large video */}
       <div className="md:col-span-2 relative group rounded-3xl overflow-hidden">
-        <div className="cursor-pointer absolute z-2 inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        {/* <div className="cursor-pointer absolute z-2 inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <Button
             onClick={() => setPlayVideo((state) => !state)}
             className="bg-black/70 text-white w-18 h-18 flex items-center justify-center p-6 rounded-full"
           >
             {PlayIcon}
           </Button>
-        </div>
-        <div style={{ position: "relative", paddingTop: "56.25%" }}>
-          <ReactPlayer
-            src="https://www.youtube.com/watch?v=SbYXkOAoZpI"
-            playing={playVideo}
-            config={{
-              youtube: {
-                playerVars: { controls: 0, modestbranding: 1, rel: 0 },
-              } as any,
-            }}
+        </div> */}
+        <div className="w-full h-full" style={{ position: "relative" }}>
+          <iframe
             width="100%"
             height="100%"
-            style={{ position: "absolute", top: 0, left: 0 }}
-          />
+            src="https://www.youtube.com/embed/SbYXkOAoZpI?si=C6a-4jup7cIQ5HH5"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
         </div>
       </div>
 
