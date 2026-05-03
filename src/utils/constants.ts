@@ -4,10 +4,29 @@ import {
   CategoryList,
   CompareCategory,
   CompareCategoryKey,
+  HDFeature,
   HelpCenterTab,
   PricingPlan,
+  ProductsTab,
+  ReportFeature,
+  Testimonial,
 } from "./types";
-import { ComparePlanCat1, HelpCenterKey, Plan, PublicExtras } from "./enum";
+import {
+  ComparePlanCat1,
+  HelpCenterKey,
+  Plan,
+  ProductKey,
+  PublicExtras,
+} from "./enum";
+import {
+  CodeLinearIcon,
+  KeyFeatureIcon,
+  LogoIcon,
+  ReportIcon,
+} from "@/assets/icons";
+
+export const MAX_WIDTH = "120px";
+export const MOBILE_WIDTH = "(max-width: 550px)";
 
 export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
@@ -22,12 +41,17 @@ export const ROUTES = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   PRIVACY: "/privacy-policy",
-  TERMS: "/terms-and-conditions",
+  TERMS: "/terms-and-condition",
   SATE_AI: "/sate-ai",
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",
   ABOUT: "/about",
-  DEVSPACE: "/devspace"
+  DEVSPACE: "/devspace",
+  HELP_DESK: "/help-desk",
+  KNOWLEDGE_BASE: "/knowledge-base",
+  HELP_CENTER: "/help-center",
+  REPORTS: "/reports",
+  CONTACT: "/contact",
 } as const;
 
 export const EUSATE_SOCIALS = {
@@ -105,17 +129,17 @@ export const APPLICATION_FORM_FIELDS: Record<
   },
 
   "would-you-be-open-to-being-a-case-study-or-reference-customer-if-the-beta-is-successful":
-  {
-    label:
-      "Would you be open to being a case study or reference customer if the beta is successful?",
-    hasSpecify: false,
-    options: [
-      "Yes, definitely",
-      "Possibly, depending on results",
-      "Prefer to remain private",
-      "Need to discuss internally",
-    ],
-  },
+    {
+      label:
+        "Would you be open to being a case study or reference customer if the beta is successful?",
+      hasSpecify: false,
+      options: [
+        "Yes, definitely",
+        "Possibly, depending on results",
+        "Prefer to remain private",
+        "Need to discuss internally",
+      ],
+    },
 
   "whats-your-expected-timeline-for-making-a-purchasing-decision": {
     label: "What's your expected timeline for making a purchasing decision?",
@@ -179,7 +203,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => { },
+    action: () => {},
   },
   {
     id: 2,
@@ -197,7 +221,7 @@ export const PRICING: PricingPlan[] = [
       "Priority support with dedicated onboarding",
       "SLA guarantees (99.9% uptime)",
     ],
-    action: () => { },
+    action: () => {},
   },
   {
     id: 3,
@@ -212,7 +236,7 @@ export const PRICING: PricingPlan[] = [
       "Knowledge Base (up to 2MB documents)",
       "Developer Space (up to 2 functions)",
     ],
-    action: () => { },
+    action: () => {},
   },
 ];
 
@@ -268,82 +292,82 @@ export const COMPARE_PRICING_LIST: {
   }[];
   action: () => void;
 }[] = [
-    {
-      id: 1,
-      key: Plan.BASIC,
-      label: "Basic Plan",
-      price: PLAN_COST.BASIC,
-      categories: [
-        {
-          key: "cat-1",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+  {
+    id: 1,
+    key: Plan.BASIC,
+    label: "Basic Plan",
+    price: PLAN_COST.BASIC,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-        {
-          key: "cat-2",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-      ],
-      action: () => { },
-    },
-    {
-      id: 2,
-      key: Plan.PRO,
-      label: "Pro Plan",
-      price: PLAN_COST.PRO,
-      categories: [
-        {
-          key: "cat-1",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 2,
+    key: Plan.PRO,
+    label: "Pro Plan",
+    price: PLAN_COST.PRO,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-        {
-          key: "cat-2",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-      ],
-      action: () => { },
-    },
-    {
-      id: 3,
-      key: Plan.FREE,
-      label: "Free Plan",
-      price: PLAN_COST.FREE,
-      categories: [
-        {
-          key: "cat-1",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 3,
+    key: Plan.FREE,
+    label: "Free Plan",
+    price: PLAN_COST.FREE,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-        {
-          key: "cat-2",
-          features: {
-            [ComparePlanCat1.FEATURE]: true,
-            [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
-            [ComparePlanCat1.AI_SUMMARIZE]: false,
-          },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.SHARED_INBOX]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: false,
         },
-      ],
-      action: () => { },
-    },
-  ];
+      },
+    ],
+    action: () => {},
+  },
+];
 
 export const ADD_ON_LIST: AddOn[] = [
   {
@@ -479,19 +503,22 @@ export const SATE_AI_ACTIONS = [
     id: 2,
     key: "action-2",
     title: "Adapt to Emotional State",
-    description: "",
+    description:
+      "SATE detects sentiment and adapts style, offering empathy to frustration and clear steps to confusion.",
   },
   {
     id: 3,
     key: "action-3",
     title: "Chat and calls with Customers",
-    description: "",
+    description:
+      "Chatbots treat messages as isolated inputs, causing customers to repeat themselves. SATE keeps full conversation memory so that’s avoided.",
   },
   {
     id: 4,
     key: "action-4",
     title: "Actually Solve Problems 🎉",
-    description: "",
+    description:
+      "Traditional AI provides info, but SATE acts in your systems; checking inventory, tracking orders, performing business actions, etc. Customers get solutions, not just info.",
   },
 ];
 
@@ -499,21 +526,266 @@ export const DEVSPACE_ACTIONS = [
   {
     id: 1,
     title: "Setup Auth Configuration",
-    description: "Connect Developer Space to your business systems by configuring secure authentication."
+    description:
+      "Connect Developer Space to your business systems by configuring secure authentication.",
   },
   {
     id: 2,
     title: "Custom Function Creation",
-    description: "Define what actions SATE can perform in your connected systems.",
+    description:
+      "Define what actions SATE can perform in your connected systems.",
   },
   {
     id: 3,
     title: "Test in Playground",
-    description: "Validate your function works correctly before customers interact with it."
+    description:
+      "Validate your function works correctly before customers interact with it.",
   },
   {
     id: 4,
     title: "Delpy to Live",
-    description: "Activate your function for real customer interations."
-  }
-]
+    description: "Activate your function for real customer interations.",
+  },
+];
+
+export const KB_HIGHLIGHTS = [
+  {
+    id: 1,
+    title: "Elimate Inconsistency",
+    description:
+      "Support teams often provide conflicting answers. Documentation is scattered. The Knowledge Base centralizes support content in one searchable system, ensuring your team accesses consistent information automatically.",
+  },
+  {
+    id: 2,
+    title: "Reduce Training Overhead",
+    description:
+      "New agents need time to learn products and processes. Seasonal spikes cause rushed training and errors. Knowledge Base gives instant access, while SATE handles tier-one questions, making onboarding hours instead of weeks.",
+  },
+  {
+    id: 3,
+    title: "Accelerate Product Updates",
+    description:
+      "Product launches require updating documentation, training the team, and ensuring everyone remembers changes. SATE updates your Knowledge Base instantly, keeping customer information current without extra coordination.",
+  },
+  {
+    id: 4,
+    title: "Scale Expertise",
+    description:
+      "Your support agent knows every solution. When they're unavailable, customers wait. Knowledge Base captures expertise across your operation. Junior agents access senior knowledge instantly.",
+  },
+];
+
+export const HD_FEATURES: HDFeature[] = [
+  {
+    id: 1,
+    highlightTitle: "Unified Conversation",
+    title: "Management",
+    description:
+      "A customer starts on email, follows up on WhatsApp, then tweets publicly. The Helpdesk shows this as one continuous conversation. Full context, complete history, zero switching between platforms. Your team sees the whole picture, always.Context is everything in support. Unified conversations mean no question gets asked twice and no customer repeats themselves.",
+    imgSrc: "/images/hd-feature-1.webp",
+  },
+  {
+    id: 2,
+    highlightTitle: "Real-Time AI Monitoring",
+    title: "& Human Takeover",
+    description:
+      "Get real-time visibility into SATE conversations and calls with your customers. The helpdesk shows active chats with customer and SATE. AI needs verification, but monitoring builds confidence. Agents can take over seamlessly, with full context and history, ensuring a smooth customer experience.",
+    imgSrc: "/images/hd-feature-2.webp",
+  },
+  {
+    id: 3,
+    highlightTitle: "Agent Copilot",
+    title: "with AI Assistance",
+    description:
+      "Real-time AI co-pilot support for agents, not just in complex chats. Copilot analyzes issues, suggests responses, and identifies team members with solutions. Agents retain control with AI assistance. Knowledge should be accessible, not memorized. Copilot provides knowledge base access for all agents.",
+    imgSrc: "/images/hd-feature-3.webp",
+  },
+  {
+    id: 4,
+    highlightTitle: "Save Responses",
+    title: "for consistency",
+    description:
+      "Customizable response templates for common queries. When agents face a shipping delay, they use /shipping-delay or a macro. The system inserts a response, fills in the order number and tracking link, updates ticket status, and schedules a follow-up—all in one action. For complex cases, agents can customize templates with variables like {{customer_name}} and {{order_id}}.",
+    imgSrc: "/images/hd-feature-4.webp",
+  },
+];
+
+export const REPORTS_FEATURES: ReportFeature[] = [
+  {
+    id: 1,
+    imgSrc: "/images/reports-hero.webp",
+    title: "Overall Performance Summary Report",
+    color: "#F3E5B2",
+    description:
+      "Snapshot of your support operation. C-suite and leaders need high-level insights. Managers track team performance. Is support improving? Where does volume come from? How efficiently is the team operating? Identify peak periods for coverage. Spot declining metrics early. Understand channel preferences. Recognize top performers.",
+  },
+  {
+    id: 2,
+    imgSrc: "/images/report-ft-2.webp",
+    title: "Ticket Resolution Analysis",
+    color: "#F8CFCA",
+    description:
+      "Explore ticket movement from creation to resolution, spotting inefficiencies. Managers optimize workflows, while teams ensure resolution standards. Learn why some tickets delay, where processes fail, and identify issue types needing documentation. Spot escalation patterns and understand complexity factors to improve SLA targets and reduce backlog.",
+  },
+  {
+    id: 3,
+    imgSrc: "/images/report-ft-3.webp",
+    title: "AI vs. Human Performance Report",
+    color: "#BEDDFD",
+    description:
+      "Compare AI and human performance to optimize automation and human touch. Measure ROI on AI investment. Balance automation with human support. Calculate cost savings and efficiency gains. Learn how much AI handles, where it struggles, and the cost difference. Identify AI underperformance issues and optimize escalation thresholds.",
+  },
+  {
+    id: 4,
+    imgSrc: "/images/report-ft-4.webp",
+    title: "Customer Satisfacton & Sentiment Report",
+    color: "#B6E9D1",
+    description:
+      "Track emotional journey and satisfaction levels with AI recommendations. Teams monitor trends, identify issues, and track retention indicators. Learn if customers are satisfied, what frustrates them, and recurring problems. AI analyzes conversations to highlight improvement opportunities linked to customer interactions.",
+  },
+  {
+    id: 5,
+    imgSrc: "/images/report-ft-5.webp",
+    title: "Workload Distribution Report",
+    color: "#F0F1F3",
+    description:
+      "Analyze support volume across channels and time for better resource allocation. Learn where volume concentrates, which channels drive tickets, and if resources match demand. Identify underperforming channels and align resources to improve efficiency and satisfaction.",
+  },
+];
+
+export const PRODUCTS_TAB: ProductsTab[] = [
+  {
+    id: 1,
+    icon: KeyFeatureIcon,
+    key: ProductKey.HELP_DESK,
+    label: "Helpdesk",
+    content: "/images/helpdesk-hero.webp",
+  },
+  {
+    id: 2,
+    icon: KeyFeatureIcon,
+    key: ProductKey.KNOWLEDGE_BASE,
+    label: "Knowledge base",
+    content: "/images/knowledge-base-product.webp",
+  },
+  {
+    id: 3,
+    icon: CodeLinearIcon,
+    key: ProductKey.DEV_SPACE,
+    label: "Dev space",
+    content: "/images/",
+  },
+  {
+    id: 4,
+    icon: ReportIcon,
+    key: ProductKey.REPORTS,
+    label: "Reports",
+    content: "/images/",
+  },
+  {
+    id: 5,
+    icon: LogoIcon,
+    key: ProductKey.AI_PLAYGROUND,
+    label: "AI Playground",
+    content: "/images/",
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 1,
+    imgSrc: "/home/images/testimony-1.webp",
+    testimony:
+      "We went from 5 support agents to just 1, and our response times got faster. SATE handles everything from password resets to complex refund scenarios. It's genuinely impressive how human the conversations feel.",
+    name: "Marcus Rodriquez",
+    role: "Co-Founder, ",
+    company: "LYNT (E-commerce, Series A)",
+    stats: [
+      { value: "80%", label: "drop cx team hires" },
+      { value: "20%", label: "saved on hiring costs" },
+    ],
+  },
+  {
+    id: 2,
+    testimony:
+      "SATE transformed our customer support overnight. We used to dread Monday mornings — now our inbox practically handles itself. The AI understands context in a way that genuinely shocked our team.",
+    name: "Priya Nair",
+    role: "Head of CX, Bloom (DTC Beauty, Seed)",
+    company: "bloom",
+    stats: [
+      { value: "3×", label: "faster resolution time" },
+      { value: "94%", label: "customer satisfaction" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+  {
+    id: 3,
+    testimony:
+      "I was skeptical at first — how could AI replace the nuanced judgment of our top agents? Six months in, SATE handles 90% of tickets and our agents focus only on edge cases. It's been revelatory.",
+    name: "Jordan Lee",
+    role: "VP Operations, Stackly (B2B SaaS, Series B)",
+    company: "stackly",
+    stats: [
+      { value: "90%", label: "tickets auto-resolved" },
+      { value: "40%", label: "cost reduction" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+  {
+    id: 4,
+    testimony:
+      "The onboarding was seamless and the results were immediate. Within the first week, SATE was already resolving complex billing disputes without escalation. Our team actually feels less stressed now.",
+    name: "Amara Osei",
+    role: "Founder, Kora (Fintech, Pre-Seed)",
+    company: "kora",
+    stats: [
+      { value: "65%", label: "fewer escalations" },
+      { value: "2 days", label: "to full deployment" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+  {
+    id: 5,
+    testimony:
+      "We operate in 12 countries. SATE handles multilingual support flawlessly. Our CSAT scores went from 3.8 to 4.7 in under two months. I genuinely cannot imagine going back to our old setup.",
+    name: "Thomas Becker",
+    role: "CEO, Wandr (Travel, Series A)",
+    company: "wandr",
+    stats: [
+      { value: "12", label: "languages supported" },
+      { value: "4.7★", label: "avg. CSAT score" },
+    ],
+    imgSrc: "/home/images/testimony-1.webp",
+  },
+];
+
+export const KB_FEATURES = [
+  {
+    id: 1,
+    title: "Multi-Source Content Integration",
+    description:
+      "Your documentation exists. Knowledge Base adapts to you without forcing migration. Upload documents, paste URLs, or write in the editor. Our system parses and indexes content for AI retrieval. No manual tagging needed, but you can add it. Document uploads (PDF, DOCX, TXT, MD, RTF), URL linking, custom articles, FAQ imports, API connections, and spreadsheet data.",
+    panelSrc: "/images/kb-feature-1.webp",
+  },
+  {
+    id: 2,
+    title: "Semantic Search and Retrieval",
+    description:
+      "AI-powered search understands intent, not just keywords. It ranks contextual relevance based on query intent, supports multi-language search, and recognizes question variations. SATE retrieves relevant information, synthesizes answers, and scores confidence. Low confidence prompts human escalation. Semantic search ensures SATE finds the right answer, regardless of phrasing.",
+    panelSrc: "/images/kb-feature-2.webp",
+  },
+  {
+    id: 3,
+    title: "Content Analytics and Optimization",
+    description:
+      "Control visibility of sensitive information. Tag content with access levels. SATE respects permissions—customers don’t see internal docs, free users miss premium content, and regional restrictions apply. Granular control ensures the right info reaches the right people.",
+    panelSrc: "/images/kb-feature-3.webp",
+  },
+  {
+    id: 4,
+    title: "Granular Access Control",
+    description:
+      "Understand which content performs, identify gaps, and optimize continuously.Every search, every retrieval, and every resolution feeds analytics. The system identifies which articles resolve issues effectively and which queries have no good answers. Optimization recommendations highlight content needing updates or creation.",
+    panelSrc: "/images/kb-feature-4.webp",
+  },
+];

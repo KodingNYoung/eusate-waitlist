@@ -1,10 +1,10 @@
-import { FC } from "@/utils/types"
-import { Textarea, TextAreaProps } from "@heroui/input"
-import React from "react"
+import { FC } from "@/utils/types";
+import { Textarea, TextAreaProps } from "@heroui/input";
+import React from "react";
 
 type Props = Omit<TextAreaProps, "onChange"> & {
-  onChange?: (value: string) => void
-}
+  onChange?: (value: string) => void;
+};
 
 const AutoResizingTextarea: FC<Props> = ({
   onChange,
@@ -16,7 +16,7 @@ const AutoResizingTextarea: FC<Props> = ({
       classNames={{
         ...classNames,
         inputWrapper: [
-          "bg-white data-[hover=true]:bg-white group-data-[focus=true]:bg-white rounded-x20 transition-colors duration-500 !p-0",
+          "bg-white data-[hover=true]:bg-white group-data-[focus=true]:bg-white group-data-[focus=true]:border-0 rounded-x20 transition-colors duration-500 !p-0",
           classNames?.inputWrapper,
         ],
         innerWrapper: ["", classNames?.innerWrapper],
@@ -30,7 +30,7 @@ const AutoResizingTextarea: FC<Props> = ({
       onValueChange={onChange}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default AutoResizingTextarea
+export default AutoResizingTextarea;

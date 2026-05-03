@@ -18,23 +18,30 @@ export const AddOnCard: FC<Props> = ({
   size,
 }) => {
   return (
-    <div className="border flex justify-between border-gray-200 rounded-3xl px-6 py-8">
-      <div className="flex gap-8">
-        <div className="bg-gold-50 flex items-center justify-center rounded-full px-5">
+    <div className="border flex flex-wrap gap-8 justify-between border-gray-200 rounded-3xl px-6 py-8">
+      <div className="flex flex-wrap gap-4 md:gap-8">
+        <div className="bg-gold-50 flex items-center w-[68px] h-[68px] justify-center rounded-full px-5">
           <Image src={src} width={30} height={30} alt="sate-token-icon" />
         </div>
         <div className="space-y-3">
-          <Typography as="h3" variant="bold-2xl">
+          <Typography as="h3" className="text-bold-base md:bold-2xl">
             {title}
           </Typography>
-          <Typography as="p" variant="semibold-base" className="text-gray-400">
+          <Typography
+            as="p"
+            className="text-gray-400 text-semibold-sm md:text-semibold-base"
+          >
             {description}
           </Typography>
         </div>
       </div>
-      <div className="flex gap-2">
-        <Typography variant="semibold-3xl">${price}</Typography>
-        <span className="text-bold-base text-gray-400">{size}</span>
+      <div className="flex items-center gap-2">
+        <Typography className="text-semibold-xl md:text-semibold-3xl">
+          ${price}
+        </Typography>
+        <span className="text-bold-sm md:text-bold-base text-gray-400">
+          {size}
+        </span>
       </div>
     </div>
   );

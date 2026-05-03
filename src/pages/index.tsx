@@ -1,30 +1,32 @@
-import Features from "@/components/routes/home/Features";
-import HomeHero from "@/components/routes/home/hero";
-import Benefits from "@/components/routes/home/Benefits";
-import Roadmap from "@/components/routes/home/Roadmap";
-import Invite from "@/components/routes/home/Invite";
-import Footer from "@/components/shared/organisms/footer";
-import Navbar from "@/components/shared/organisms/navbar";
-import MetaProps from "@/components/shared/molecules/MetaProps";
+import { Blog } from "@/components/routes/home/Blog";
+import { FAQ } from "@/components/routes/home/FAQ";
+import { Hero } from "@/components/routes/home/Hero";
+import { HowItWorks } from "@/components/routes/home/HowItWorks";
+import { HomeIntegrations } from "@/components/routes/home/Integrations";
+import { MeetSate } from "@/components/routes/home/MeetSate";
+import { OurProducts } from "@/components/routes/home/OurProducts";
+import { Pricing } from "@/components/routes/home/Pricing";
+import { TeamOfBuilders } from "@/components/routes/home/TeamOfBuilders";
+import { Testimonials } from "@/components/routes/home/Testimonials";
+import { WeDeliver } from "@/components/routes/home/WeDeliver";
+import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="bg-white">
-      <MetaProps
-        title="eusate - Customer Support for Fast-Growing Businesses and Startups"
-        description="Transform your customer support with SATE. Reduce support costs by 50-70% while scaling. Built specifically for fast-growing businesses and startups."
-        path="/"
-        jsonLdData={{ type: "homepage" }}
-      />
-      <Navbar />
-      <div className="px-4">
-        <HomeHero />
-        <Features />
-        <Benefits />
-        <Roadmap />
-        <Invite />
-        <Footer />
-      </div>
-    </div>
+    <PageTemplate>
+      <Hero />
+      <WeDeliver />
+      <HowItWorks />
+      <TeamOfBuilders />
+      <OurProducts />
+      <HomeIntegrations />
+      <MeetSate />
+      <Pricing />
+      <Testimonials />
+      <Blog />
+      <FAQ />
+    </PageTemplate>
   );
-}
+};
+
+export default Home;

@@ -9,20 +9,20 @@ type ExploreItem = {
 };
 
 // CONSTANTS
-export const EXPLORE_LIST: ExploreItem[] = [
+export const NAV_EXPLORE_LIST: ExploreItem[] = [
   {
     id: 1,
     label: "Product",
     items: [
       {
         key: 1,
-        label: "Knowlodge base",
-        link: "/",
+        label: "Knowledge base",
+        link: ROUTES.KNOWLEDGE_BASE,
       },
       {
         key: 2,
         label: "Helpdesk",
-        link: "/",
+        link: ROUTES.HELP_DESK,
       },
       {
         key: 3,
@@ -37,7 +37,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 5,
         label: "Reports",
-        link: "/",
+        link: ROUTES.REPORTS,
       },
     ],
   },
@@ -58,7 +58,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 3,
         label: "Contact us",
-        link: "/",
+        link: ROUTES.CONTACT,
       },
     ],
   },
@@ -69,7 +69,7 @@ export const EXPLORE_LIST: ExploreItem[] = [
       {
         key: 1,
         label: "Help center",
-        link: "/",
+        link: ROUTES.HELP_CENTER,
       },
       {
         key: 2,

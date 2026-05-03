@@ -1,10 +1,10 @@
-import IntegrationCard from "@/components/routes/integration/IntegrationCard";
-import GradientBackground from "@/components/shared/atoms/GradientBackground";
-import Typography from "@/components/shared/atoms/Typography";
-import Chip from "@/components/shared/molecules/Chip";
-import Footer from "@/components/shared/organisms/footer";
-import Navbar from "@/components/shared/organisms/navbar";
 import { PublicExtras } from "@/utils/enum";
+import IntegrationCard from "@/components/routes/integration/IntegrationCard";
+import {
+  PageTemplate,
+  SectionTemplate,
+} from "@/components/shared/organisms/PageTemplate";
+import { PageHeader } from "@/components/shared/organisms/PageHeader";
 
 const PLATFORMS = [
   {
@@ -36,22 +36,34 @@ const PLATFORMS = [
 const Integrations = () => {
   return (
     <div>
-      <Navbar />
-      <GradientBackground variant="yellow" className="absolute w-full mx-4" />
-      <main className="pt-[88px] min-h-screen w-full px-4">
-        <div className="container flex flex-col items-center justify-center max-w-[80%] py-20 space-y-20 mx-auto">
-          <header className="space-y-8 w-[50%]">
-            <Chip classNames={{ container: "flex justify-center", base: "bg-gold-100" }}>Integrations</Chip>
-            <Typography variant="bold-6xl" className="text-center">We live where your customers live</Typography>
-          </header>
-          <main className="flex flex-wrap justify-center gap-4">
+      <PageTemplate
+        gradientVariant="yellow"
+        classNames={{
+          container: "pt-[88px]",
+          wrapper: "container md:py-12 space-y-12",
+        }}
+      >
+        <PageHeader
+          position="center"
+          chipLabel="Integrations"
+          title="We live where your customers live"
+          classNames={{
+            container: "px-2 md:h-auto",
+            wrapper: "w-full md:w-[80%]",
+            chipContainer: "justify-start",
+          }}
+        />
+        <SectionTemplate>
+          <div
+            // className="flex flex-wrap justify-center gap-8"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {PLATFORMS.map(({ id, ...platform }) => (
               <IntegrationCard key={id} {...platform} />
             ))}
-          </main>
-        </div>
-        <Footer />
-      </main>
+          </div>
+        </SectionTemplate>
+      </PageTemplate>
     </div>
   );
 };

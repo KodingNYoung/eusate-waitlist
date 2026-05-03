@@ -1,32 +1,42 @@
+import {
+  PageTemplate,
+  SectionTemplate,
+} from "@/components/shared/organisms/PageTemplate";
+import { BlogPost } from "@/utils/dummy";
 import { SearchIcon } from "@/assets/icons";
 import { BlogCard } from "@/components/routes/blogs/BlogCard";
-import GradientBackground from "@/components/shared/atoms/GradientBackground";
 import Input from "@/components/shared/molecules/Input";
-import Navbar from "@/components/shared/organisms/navbar";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
-import { BlogPost } from "@/utils/dummy";
+import AppPagination from "@/components/shared/molecules/Pagination";
+import { useQueryParams } from "@/utils/hooks";
+import { PageQueryKey } from "@/utils/enum";
 
 const BlogPage = () => {
+  const { set } = useQueryParams();
   return (
     <div>
-      <Navbar />
-      <GradientBackground variant="gray" className="absolute" />
-      <main className="pt-[88px] flex flex-col items-center">
-        <header className="container flex flex-col gap-4 items-center w-full max-w-[1080px] py-20">
+      <PageTemplate
+        gradientVariant="gray"
+        classNames={{ wrapper: "md:pt-[100px] px-3 md:px-0" }}
+      >
+        <header className="md:container flex flex-col items-center justify-center w-full lg:w-[60%] 2xl:w-[50%] py-8">
           <PageHeader
             position="center"
             chipLabel="Our Blogs"
             title="Get news & insights from us."
+            classNames={{ container: "md:h-auto" }}
           />
           <Input
             name="search"
             type="search"
             placeholder="Search blogs"
             className="flex-1 w-full"
+            classNames={{ root: "w-full border-none" }}
             startComponent={<span>{SearchIcon}</span>}
           />
         </header>
-        <section className="space-y-20">
+
+        <SectionTemplate className="flex flex-col justify-center md:py-20 gap-y-20">
           {/* SPOTLIGHT */}
           <BlogCard
             spotlight
@@ -38,7 +48,7 @@ const BlogPage = () => {
             timestamp={BlogPost[0].timestamp}
           />
 
-          <div className="flex gap-8">
+          <div className="flex w-full justify-start md:justify-between flex-wrap gap-8">
             {BlogPost.map(
               ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                 <BlogCard
@@ -53,9 +63,15 @@ const BlogPage = () => {
               ),
             )}
           </div>
-          <div></div>
-        </section>
-      </main>
+          <div className="mt-10">
+            <AppPagination
+              page={1}
+              total={10}
+              onChange={(page) => set(PageQueryKey.PAGE, page)}
+            />
+          </div>
+        </SectionTemplate>
+      </PageTemplate>
     </div>
   );
 };

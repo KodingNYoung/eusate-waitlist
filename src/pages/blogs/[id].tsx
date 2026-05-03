@@ -1,21 +1,24 @@
+import {
+  PageTemplate,
+  SectionTemplate,
+} from "@/components/shared/organisms/PageTemplate";
 import { Post } from "@/components/routes/blogs/Post";
-import Navbar from "@/components/shared/organisms/navbar";
 import { BackButton } from "@/components/routes/blogs/BackButton";
-import GradientBackground from "@/components/shared/atoms/GradientBackground";
 
 const BlogPost = () => {
   return (
     <div>
-      <Navbar />
-      <GradientBackground variant="gray" />
-      <main className="pt-[88px]">
-        <div className="container pt-20 space-y-8">
+      <PageTemplate
+        gradientVariant="gray"
+        classNames={{ wrapper: "md:pt-[100px] " }}
+      >
+        <SectionTemplate className="py-24 px-5">
           <BackButton />
           <Post />
-        </div>
-      </main>
+        </SectionTemplate>
+      </PageTemplate>
     </div>
-  )
-}
+  );
+};
 
 export default BlogPost;
