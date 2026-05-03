@@ -5,10 +5,12 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <script
+          id="gtag"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-M7Y5L4KS2D"
         />
         <script
+          id="gtag-script"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

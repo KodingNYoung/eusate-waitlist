@@ -4,13 +4,13 @@ import AutoResizingTextarea from "@/components/shared/atoms/AutoResizingTextarea
 import { ArrowDown, SendYellowIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema } from "@/utils/schemas";
 import { ContactForm } from "@/utils/types";
 
 export const FormSection = () => {
-  const { register } = useForm<ContactForm>({
+  const { register, control } = useForm<ContactForm>({
     resolver: zodResolver(contactFormSchema),
   });
 
@@ -54,15 +54,22 @@ export const FormSection = () => {
             className: "flex justify-between p-4 !bg-gray-900",
           }}
         />
-        <AutoResizingTextarea
-          {...register("message")}
-          maxRows={30}
-          minRows={10}
-          classNames={{
-            inputWrapper: "!bg-gray-900",
-            input: "text-white !text-regular-sm placeholder:text-gray-500",
-          }}
-          placeholder="Type your message"
+        <Controller
+          name="message"
+          control={control}
+          render={({ field }) => (
+            <AutoResizingTextarea
+              onChange={field.onChange}
+              value={field.value}
+              maxRows={30}
+              minRows={10}
+              classNames={{
+                inputWrapper: "!bg-gray-900",
+                input: "text-white !text-regular-sm placeholder:text-gray-500",
+              }}
+              placeholder="Type your message"
+            />
+          )}
         />
         <Button
           size="sm"
