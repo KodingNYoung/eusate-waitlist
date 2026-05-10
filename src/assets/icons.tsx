@@ -869,7 +869,7 @@ export const ChevronDown = (
     height="21"
     viewBox="0 0 21 21"
     fill="none"
-    stroke="black"
+    stroke="inherit"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -892,7 +892,7 @@ export const Tickcon = (
   >
     <path
       d="M20 6L9 17L4 12"
-      stroke="black"
+      stroke="inherit"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3926,5 +3926,62 @@ export const ArrowRightGradIcon = (
         <stop offset="1" stop-color="#E86555" />
       </linearGradient>
     </defs>
+  </svg>
+);
+
+export const LinkIcon = (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M21.9998 2L13.7998 10.2"
+      stroke="#101828"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M13 6.16992V10.9999H17.83"
+      stroke="#101828"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M2 12.9805V15.0005C2 20.0005 4 22.0005 9 22.0005H15C20 22.0005 22 20.0005 22 15.0005V13.0005"
+      stroke="#101828"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M11 2H9C4 2 2 4 2 9"
+      stroke="#101828"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+export const ArrowUpRightIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#6b6b6b"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+  >
+    <path d="M7 7h10v10" />
+    <path d="M7 17 17 7" />
   </svg>
 );

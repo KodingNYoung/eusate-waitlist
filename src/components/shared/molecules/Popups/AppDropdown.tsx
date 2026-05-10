@@ -1,4 +1,4 @@
-import { FC, InternalPath, TWClassNames } from "@/utils/types"
+import { FC, InternalPath, TWClassNames } from "@/utils/types";
 import {
   Dropdown,
   DropdownItem,
@@ -9,34 +9,34 @@ import {
   DropdownSectionProps,
   DropdownTrigger,
   DropdownTriggerProps,
-} from "@heroui/dropdown"
-import React, { ReactElement, ReactNode } from "react"
-import { cls } from "@/utils/helpers"
-import Button, { ButtonProps } from "../Button"
+} from "@heroui/dropdown";
+import React, { ReactElement, ReactNode } from "react";
+import { cls } from "@/utils/helpers";
+import Button, { ButtonProps } from "../Button";
 
 export type ItemType = {
-  key: number | string
-  label: string
-  icon?: ReactNode
-  className?: TWClassNames
-  disabled?: boolean
-  link?: InternalPath
-  action?: () => void
-}
+  key: number | string;
+  label: string;
+  icon?: ReactNode;
+  className?: TWClassNames;
+  disabled?: boolean;
+  link?: InternalPath;
+  action?: () => void;
+};
 export type SectionsType = {
-  items: ItemType[]
-  props?: Omit<DropdownSectionProps, "children">
-  key?: string | number
-}[]
+  items: ItemType[];
+  props?: Omit<DropdownSectionProps, "children">;
+  key?: string | number;
+};
 
 type Props = Omit<DropdownProps, "children"> & {
-  triggerEl: ReactElement
-  sections?: SectionsType
-  triggerProps?: DropdownTriggerProps
-  triggerBtnProps?: ButtonProps
-  menuProps?: Omit<DropdownMenuProps, "children">
-  sectionProps?: Omit<DropdownSectionProps, "children">
-}
+  triggerEl: ReactElement;
+  sections?: SectionsType[];
+  triggerProps?: DropdownTriggerProps;
+  triggerBtnProps?: ButtonProps;
+  menuProps?: Omit<DropdownMenuProps, "children">;
+  sectionProps?: Omit<DropdownSectionProps, "children">;
+};
 
 const AppDropdown: FC<Props> = ({
   triggerEl,
@@ -69,44 +69,42 @@ const AppDropdown: FC<Props> = ({
       <DropdownMenu variant="light" classNames={{ base: "p-0" }} {...menuProps}>
         {sections
           ? sections.map(({ items, props, key }, id) => {
-            return (
-              <DropdownSection
-                key={key || id}
-                classNames={{ base: "mb-0", divider: "bg-gray-50 mt-0" }}
-                {...sectionProps}
-                {...props}
-              >
-                {items.map((item) => {
-                  return (
-                    <DropdownItem
-                      key={item.key}
-                      startContent={
-                        item.icon
-                      }
-                      onPress={item.action}
-                      href={item.link}
-                      className={cls("p-3 gap-3 group/item", item.className)}
-                      classNames={{
-                        ...menuProps?.itemClasses,
-                        title: [
-                          "text-[12px] text-gray-600",
-                          item.className,
-                          menuProps?.itemClasses?.title,
-                        ],
-                      }}
-                      textValue={item.label}
-                    >
-                      {item.label}
-                    </DropdownItem>
-                  )
-                })}
-              </DropdownSection>
-            )
-          })
+              return (
+                <DropdownSection
+                  key={key || id}
+                  classNames={{ base: "mb-0", divider: "bg-gray-50 mt-0" }}
+                  {...sectionProps}
+                  {...props}
+                >
+                  {items.map((item) => {
+                    return (
+                      <DropdownItem
+                        key={item.key}
+                        startContent={item.icon}
+                        onPress={item.action}
+                        href={item.link}
+                        className={cls("p-3 gap-3 group/item", item.className)}
+                        classNames={{
+                          ...menuProps?.itemClasses,
+                          title: [
+                            "text-[12px] text-gray-600",
+                            item.className,
+                            menuProps?.itemClasses?.title,
+                          ],
+                        }}
+                        textValue={item.label}
+                      >
+                        {item.label}
+                      </DropdownItem>
+                    );
+                  })}
+                </DropdownSection>
+              );
+            })
           : null}
       </DropdownMenu>
     </Dropdown>
-  )
-}
+  );
+};
 
-export default AppDropdown
+export default AppDropdown;

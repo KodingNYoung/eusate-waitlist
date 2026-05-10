@@ -5,8 +5,8 @@ import MetaProps from "@/components/shared/molecules/MetaProps";
 import PolicySection from "@/components/shared/molecules/PolicySection";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 
 const PrivacyPolicy = () => {
@@ -29,8 +29,7 @@ const PrivacyPolicy = () => {
       <PageTemplate
         gradientVariant="yellow"
         classNames={{
-          container: "pt-[88px]",
-          wrapper: "md:py-24 space-y-20 px-5",
+          wrapper: "pt-20 pb-12 md:pt-24 md:pb-40 space-y-20 px-5",
         }}
       >
         <PageHeader
@@ -42,7 +41,7 @@ const PrivacyPolicy = () => {
                 "
         />
 
-        <SectionTemplate>
+        <PageSection>
           <PolicySection title="1. Introduction">
             <Typography
               as="p"
@@ -423,7 +422,7 @@ const PrivacyPolicy = () => {
               </span>
             </Typography>
           </PolicySection>
-        </SectionTemplate>
+        </PageSection>
       </PageTemplate>
     </div>
   );

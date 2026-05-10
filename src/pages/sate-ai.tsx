@@ -8,51 +8,62 @@ import { SateFeatureCard } from "@/components/routes/sate-ai/SateFeatureCard";
 import { ScrollCards } from "@/components/shared/organisms/animata/cards/card-reveal";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { CARDS } from "@/components/routes/sate-ai/SateAction/const";
 import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
+import { PageHero } from "@/components/shared/organisms/PageHero";
+import { useMediaQuery } from "@/utils/hooks";
 
 const SateAiPage = () => {
+  const isMobile = useMediaQuery();
   return (
-    <PageTemplate hideGradient>
-      <PageHeader
-        chipLabel="Sate Ai"
-        orientation="horizontal"
-        startTitleContainer={
-          <div className="relative">
-            <Image
-              alt="glowing-ball-img"
-              src="/sate-ai/images/glowing-ball.webp"
-              width={70}
-              height={70}
-            />
-          </div>
-        }
+    <PageTemplate classNames={{ wrapper: "grid gap-[50px]" }}>
+      <PageHero
         classNames={{
-          container:
-            "bg-[url(/images/sate-ai-bg.webp)] flex items-end justify-center mx-0 pt-[100px]",
-          root: "flex justify-between gap-8",
-          titleContainer: "md:w-[60%]",
-          title: "text-white text-bold-3xl md:text-bold-5xl ",
-          descriptionContainer: "md:w-[40%]",
-          description: "text-white/70",
+          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[62vh] md:h-[85vh] flex items-start pb-12 md:pb-20 justify-center mx-0",
+          container: "h-full flex items-end",
+          wrapper: "px-5 ",
         }}
-        title="AI that understands context. Recognizes emotion. Takes action."
-        description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
-      />
+      >
+        <PageHeader
+          chipLabel="Sate Ai"
+          orientation="horizontal"
+          startTitleContainer={
+            <div className="relative">
+              <Image
+                alt="glowing-ball-img"
+                src="/sate-ai/images/glowing-ball.webp"
+                width={70}
+                height={70}
+              />
+            </div>
+          }
+          classNames={{
+            root: "flex justify-between gap-10",
+            titleContainer: "md:w-[60%]",
+            title: "text-white text-bold-3xl md:text-bold-5xl",
+            descriptionContainer: "md:w-[40%]",
+            description: "text-white/70 leading-[150%]",
+          }}
+          title="AI that understands context. Recognizes emotion. Takes action."
+          description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
+        />
+      </PageHero>
 
-      <section className="relative h-full md:h-[70vh]">
+      <section className="relative h-full md:h-[60vh] w-full px-5 py-10 space-y-10 md:space-y-0">
         {/* TEXT */}
-        <div className="flex items-center h-full w-full mx-auto justify-center z-2">
+        <div className="flex items-center w-full justify-center z-2">
           <ScrollReveal
-            shouldFade
+            speed={2}
+            shouldFade={!isMobile}
             text="Build different from every chatbot you've tried"
             classNames={{
+              container: "w-full md:w-[40%]",
               base: "w-full flex items-center justify-center",
-              container: "w-full md:w-[30%]",
-              paragraph: "text-bold-6xl justify-center text-center",
+              paragraph:
+                "text-bold-3xl md:text-bold-6xl md:justify-center md:text-center",
             }}
           />
         </div>
@@ -65,7 +76,6 @@ const SateAiPage = () => {
                 <SateFeatureCard
                   key={key}
                   {...item}
-                  color=""
                   classNames={{
                     title: "!text-black/100",
                     description: "!text-black/50",
@@ -78,12 +88,11 @@ const SateAiPage = () => {
         </div>
 
         {/* MOBILE VIEW */}
-        <div className="md:hidden flex justify-center flex-col gap-4">
+        <div className="md:hidden flex justify-center flex-col gap-4 px-[8.5px]">
           {SATE_FEATURES_B.map(({ key, ...item }) => (
             <SateFeatureCard
               key={key}
               {...item}
-              color=""
               classNames={{
                 title: "!text-black/100",
                 description: "!text-black/50",
@@ -94,13 +103,13 @@ const SateAiPage = () => {
         </div>
       </section>
 
-      <SectionTemplate className="bg-gold-50 px-2 py-8 md:px-40 md:py-20 flex justify-center">
+      <PageSection className="bg-gold-50 px-5 py-12 md:px-40 md:py-20 flex justify-center">
         <SateAction
           chipLabel="Sate in Action"
           title="Sate in actively engaged in various activities."
           items={CARDS}
         />
-      </SectionTemplate>
+      </PageSection>
     </PageTemplate>
   );
 };

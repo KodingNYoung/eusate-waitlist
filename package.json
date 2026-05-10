@@ -17,6 +17,7 @@
     "@heroui/pagination": "^2.2.27",
     "@heroui/progress": "^2.2.25",
     "@heroui/react": "^3.0.1",
+    "@heroui/select": "^2.4.33",
     "@heroui/tabs": "^2.2.29",
     "@hookform/resolvers": "^5.2.2",
     "dayjs": "^1.11.20",

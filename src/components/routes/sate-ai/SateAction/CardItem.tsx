@@ -25,7 +25,7 @@ export const ActionCard = ({
     <motion.div
       data-active={isActive}
       className={cls(
-        "cursor-pointer rounded-2xl transition-colors duration-300 w-full md:w-[437px] overflow-hidden",
+        "cursor-pointer rounded-2xl transition-colors duration-300 w-full lg:w-[437px] overflow-hidden",
         "data-[active=true]:bg-white data-[active=true]:shadow-soft-xsmall",
       )}
     >
@@ -78,7 +78,9 @@ export const ActionCard = ({
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <p className="ml-11 mt-2 leading-[1.55] text-[#666]">{desc}</p>
+              <Typography className="ml-11 mt-4 leading-[125%] text-gray-500">
+                {desc}
+              </Typography>
             </motion.div>
           )}
         </AnimatePresence>

@@ -5,8 +5,8 @@ import MetaProps from "@/components/shared/molecules/MetaProps";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import PolicySection from "@/components/shared/molecules/PolicySection";
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 
 const TermsAndCondition = () => {
@@ -31,8 +31,7 @@ const TermsAndCondition = () => {
       <PageTemplate
         gradientVariant="peach"
         classNames={{
-          container: "pt-[88px]",
-          wrapper: "md:py-24 space-y-20 px-5",
+          wrapper: "pt-20 pb-12 md:pt-24 md:pb-40 space-y-20 px-5",
         }}
       >
         <PageHeader
@@ -43,7 +42,7 @@ const TermsAndCondition = () => {
           description="Last Updated: Monday, 01 Septeber, 2025"
         />
 
-        <SectionTemplate>
+        <PageSection>
           <PolicySection title="1. Introduction">
             <Typography
               as="p"
@@ -271,7 +270,7 @@ const TermsAndCondition = () => {
               .
             </Typography>
           </PolicySection>
-        </SectionTemplate>
+        </PageSection>
       </PageTemplate>
     </div>
   );

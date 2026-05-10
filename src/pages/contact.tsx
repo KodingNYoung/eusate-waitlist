@@ -1,6 +1,6 @@
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { SocialLinks } from "@/components/routes/contact/Socials";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
@@ -12,11 +12,11 @@ const ContactPage = () => {
       <PageTemplate
         classNames={{
           wrapper:
-            "flex flex-wrap md:container sm: justify-between px-5 pt-20 md:pt-[196px] gap-12",
+            "flex flex-wrap md:container sm: justify-between px-5 pt-20 md:pt-[196px] gap-10",
         }}
       >
         {/* CONTACT INFO */}
-        <SectionTemplate classNames={{ container: "space-y-10 md:space-y-20" }}>
+        <PageSection classNames={{ container: "space-y-10 md:space-y-20" }}>
           <SubHeader
             chipLabel="Contact us"
             title="Get in touch."
@@ -25,11 +25,11 @@ const ContactPage = () => {
               title: "md:text-bold-6xl",
               root: "flex-col space-y-4",
               titleContainer: "md:space-y-10",
-              description: "md:text-regular-xl",
+              description: "md:text-regular-xl text-gray-700",
             }}
           />
           <SocialLinks />
-        </SectionTemplate>
+        </PageSection>
 
         {/* MESSAGE FORM */}
         <FormSection />

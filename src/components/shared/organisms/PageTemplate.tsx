@@ -63,3 +63,21 @@ export const SectionTemplate = ({
     </section>
   );
 };
+
+export const PageSection = ({
+  header,
+  children,
+  className,
+  classNames,
+}: SectionTemplateProps) => {
+  return (
+    <section
+      className={cls("rouded-x24 md:rounded-x40", className, classNames?.base)}
+    >
+      <div className={cls("md:container space-y-8", classNames?.container)}>
+        {header && header}
+        {children}
+      </div>
+    </section>
+  );
+};

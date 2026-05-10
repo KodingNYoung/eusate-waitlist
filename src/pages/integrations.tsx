@@ -1,10 +1,11 @@
 import { PublicExtras } from "@/utils/enum";
 import IntegrationCard from "@/components/routes/integration/IntegrationCard";
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
+import { PageHero } from "@/components/shared/organisms/PageHero";
 
 const PLATFORMS = [
   {
@@ -37,32 +38,34 @@ const Integrations = () => {
   return (
     <div>
       <PageTemplate
-        gradientVariant="yellow"
         classNames={{
-          container: "pt-[88px]",
-          wrapper: "container md:py-12 space-y-12",
+          wrapper: "px-5 grid gap-y-12 md:gap-y-20 ",
         }}
       >
-        <PageHeader
-          position="center"
-          chipLabel="Integrations"
-          title="We live where your customers live"
+        <PageHero
           classNames={{
-            container: "px-2 md:h-auto",
-            wrapper: "w-full md:w-[80%]",
-            chipContainer: "justify-start",
+            container: "md:pt-24 pt-20",
           }}
-        />
-        <SectionTemplate>
-          <div
-            // className="flex flex-wrap justify-center gap-8"
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
+        >
+          <PageHeader
+            position="center"
+            chipLabel="Integrations"
+            title="We live where your customers live"
+            classNames={{
+              container: "md:h-auto",
+              titleContainer:
+                "gap-y-6 md:gap-y-10 justify-items-start md:justify-items-center",
+              title: "w-full md:w-[80%] !text-left md:!text-center",
+            }}
+          />
+        </PageHero>
+        <PageSection>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PLATFORMS.map(({ id, ...platform }) => (
               <IntegrationCard key={id} {...platform} />
             ))}
           </div>
-        </SectionTemplate>
+        </PageSection>
       </PageTemplate>
     </div>
   );

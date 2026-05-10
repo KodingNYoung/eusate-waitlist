@@ -409,47 +409,509 @@ export const HELP_CENTER_QUESTIONS = {
     {
       id: 1,
       key: "q-1",
-      question: "How long does implementation take?",
-      answer: "It would take about 24hrs",
+      question: "What is EUSATE?",
+      answer: `
+EUSATE is a B2B customer support service company that provides AI-powered customer support solutions to businesses across all sectors. We operate as an AI-first company, meaning artificial intelligence — specifically our AI system called SATE — is at the core of our service delivery. We take full ownership of your customer support operations so you can focus on running your business.
+      `,
     },
     {
       id: 2,
       key: "q-2",
-      question: "What happens when SATE can't resolve something?",
-      answer: "",
+      question: "What is SATE?",
+      answer: `
+SATE is EUSATE's proprietary AI customer support agent. It acts as your first line of intelligent support — it attempts to resolve all customer issues before escalating to a human agent. SATE isn't just another chatbot; it can process refunds, track shipments, update account settings, check inventory, and more — not just send a link to your FAQ.
+      `,
     },
     {
       id: 3,
       key: "q-3",
-      question: "Do we need technical resource to set up integrations?",
-      answer: "",
+      question: "Who is EUSATE built for?",
+      answer: `
+EUSATE is built for startups and SMBs that need enterprise-grade customer support without the complexity or heavy price tag. We focus on the unique needs of lean teams, giving startups and SMEs the same powerful tools as enterprises. We are sector-agnostic, serving any business that requires customer support.
+      `,
     },
     {
       id: 4,
       key: "q-4",
-      question: "What channels does Eusate support?",
-      answer: "",
+      question: "How quickly can I get started?",
+      answer: `
+EUSATE is designed for a fast time-to-value. Integration typically takes hours, not weeks, with an impact on support efficiency from day one. Most customers are live and handling customers within 2-3 weeks following a structured implementation journey: Week 1 for integration and setup, Weeks 2-3 for beta testing and refinement, and Week 4+ for full launch.
+      `,
     },
     {
       id: 5,
       key: "q-5",
-      question: "Can SATE autually take actions or just answer questions?",
-      answer: "",
+      question: "What does the implementation journey look like?",
+      answer: `
+Phase 1 (Week 1): Set up API/SDK with your existing endpoints, configure Developer Space tools, upload initial knowledge base content, and test SATE in the playground environment. Phase 2 (Weeks 2-3): Deploy to a small user group, monitor real-time interactions, refine AI responses and escalation rules, and train your team on helpdesk features. Phase 3 (Week 4+): Roll out to all customers, enable all channel integrations, implement advanced analytics, and establish a regular optimization cadence.
+      `,
     },
     {
       id: 6,
       key: "q-6",
-      question: "What's the price model?",
-      answer: "",
+      question: "How do I access EUSATE?",
+      answer: `
+You can access the EUSATE platform through the web application at app.eusate.com. From the dashboard you can manage your knowledge base, configure DevSpace, monitor the helpdesk in real-time, run playground tests, and access analytics. Technical integration with your systems is done via the SDK or API.
+      `,
+    },
+  ],
+
+  [HelpCenterKey.SATE_AI_CAPABILITIES]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What can SATE actually do for my customers?",
+      answer: `
+SATE handles a wide range of customer support tasks autonomously. It can answer product and service questions, process refunds, track orders, update account information, check inventory, manage billing inquiries, handle subscription changes, and more — all without human intervention. For example, when a customer asks 'Where is my order?', SATE can access your order management system, retrieve the status, and provide a comprehensive update including expected delivery date.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "Does SATE replace my human support agents entirely?",
+      answer: `
+No. EUSATE is about the right AI-human balance, not replacing humans entirely. SATE handles everything first and attempts to resolve all customer issues, but escalates intelligently when human intervention is needed. Human agents get a seamless handoff, full conversation context, and an Agent Copilot powered by AI to help them resolve escalated tickets faster.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "How does SATE know about my business?",
+      answer: `
+SATE learns your business through the Knowledge Base. You can upload your documentation, link your websites and blogs, and write custom articles. SATE is trained on your specific context, documentation, and processes — it finds the right answer, not just the right article.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "What channels does SATE support?",
+      answer: `
+SATE operates across multiple communication channels including web chat (embedded widgets), email, WhatsApp, Discord, Slack, Twitter/X, Facebook, Instagram, LinkedIn, and mobile applications. You can meet your customers wherever they are with consistent support across all touchpoints.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "How does SATE handle escalations?",
+      answer: `
+Escalation rules are configurable — you decide when human intervention is needed. SATE uses priority intelligence to automatically prioritize tickets based on issue complexity. When a conversation is escalated, agents can perform a seamless takeover, picking up exactly where SATE left off with full conversation history and customer context available.
+      `,
+    },
+    {
+      id: 6,
+      key: "q-6",
+      question: "Can SATE detect customer sentiment?",
+      answer: `
+Yes. SATE includes sentiment tracking that monitors customer mood throughout interactions. This helps surface frustrated or upset customers early so agents can intervene proactively. The helpdesk provides real-time sentiment visibility across all ongoing conversations.
+      `,
     },
     {
       id: 7,
       key: "q-7",
-      question: "How do you ensure data security and compilance?",
-      answer: "",
+      question: "What happens if SATE encounters a bug or widespread issue?",
+      answer: `
+SATE proactively detects potential system bugs when customer interaction patterns indicate a widespread issue. It automatically reports these to your designated channels — Slack, Discord, or Google Sheets — so your engineering team can be alerted without delay.
+      `,
     },
   ],
-  [HelpCenterKey.ACCOUNT_INFORMATION]: [],
+
+  [HelpCenterKey.KNOWLEDGE_BASE_MANAGEMENT]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What is the Knowledge Base?",
+      answer: `
+The Knowledge Base is where SATE gets its intelligence about your business. It supports multi-source training — you can upload documents, link websites and blogs, and write custom articles directly in the platform. It keeps content dynamic and fresh as your product evolves, and uses smart retrieval so SATE finds the right answer, not just the right article.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What types of content can I add to the Knowledge Base?",
+      answer: `
+You can add content from multiple sources: upload documents directly, link websites and blogs via URL (including RSS feed integration for automatic blog post inclusion), and create custom articles using the built-in rich text editor. The editor supports headers, lists, tables, media embeds, and collaborative editing with version history.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "Does the Knowledge Base stay up to date automatically?",
+      answer: `
+Yes. The system supports Content Freshness Tracking, which monitors web content for updates and changes. RSS Feed Integration automatically incorporates new blog posts. You can also use the built-in review reminders and version history to ensure content stays accurate and current as your product evolves.
+      `,
+    },
+  ],
+  [HelpCenterKey.DEVSPACE]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What is DevSpace?",
+      answer: `
+DevSpace enables SATE to go beyond knowledge base responses by executing custom functions that interact with your infrastructure. Instead of escalating complex requests to humans, SATE can perform actions directly through your APIs — like processing a refund, tracking an order, or updating account settings. It is the feature that connects SATE to your systems so it can actually solve problems, not just provide answers.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "Do I need to be a developer to use DevSpace?",
+      answer: `
+No. DevSpace is designed with a No-Code Setup so you can configure complex integrations without technical overhead. It includes a visual workflow builder with a drag-and-drop interface, pre-built connectors to popular business platforms, and integration templates for common scenarios like e-commerce, CRM, and financial systems.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "What kinds of functions can I build in DevSpace?",
+      answer: `
+You can create any HTTP endpoint that SATE can call to perform an action. Common examples include: get_order (retrieve order details), process_refund (initiate a refund), track_shipment (get delivery updates), update_account (modify customer account settings), check_inventory (verify product availability), and manage_subscription (handle subscription changes and cancellations). If you can describe the action, DevSpace can be configured to execute it.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "How does DevSpace authenticate with my APIs?",
+      answer: `
+DevSpace supports multiple authentication methods including OAuth 2.0, API Key Management (with secure storage and rotation), Token-Based Authentication, and Certificate-Based Security (SSL/TLS). You configure how SATE authenticates with your protected endpoints once, and it handles the rest going forward.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "What API types does DevSpace support?",
+      answer: `
+DevSpace supports REST APIs (with full HTTP method support), GraphQL for efficient data querying, Webhooks for real-time event-driven integrations, SOAP services for legacy system support, and Custom Protocol Support for proprietary communication protocols.
+      `,
+    },
+    {
+      id: 6,
+      key: "q-6",
+      question: "Can I walk through a real example of how DevSpace works?",
+      answer: `
+Yes. Consider a refund request: (1) A customer requests a refund through your support channel. (2) SATE calls your get_order function to verify the order exists and check refund eligibility. (3) SATE checks business rules via your API for refund timeframes and conditions. (4) SATE calls process_refund to initiate the refund through your payment processor. (5) The customer gets an immediate confirmation without any human involvement.
+      `,
+    },
+    {
+      id: 7,
+      key: "q-7",
+      question: "How is data kept secure in DevSpace?",
+      answer: `
+DevSpace implements end-to-end encryption for all data transmission, granular Access Control Management for different integration functions, comprehensive Audit Logging of all activities and data access, and configurable Data Residency Compliance. It also supports GDPR compliance tools, PCI DSS compatibility, HIPAA support where applicable, and SOC 2 compliance.
+      `,
+    },
+  ],
+
+  [HelpCenterKey.HELPDESK]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What is the Helpdesk?",
+      answer: `
+The Helpdesk is EUSATE's real-time monitoring and ticket management platform. It gives you full visibility and control over all customer interactions — both SATE-handled and human-agent-handled. You can watch SATE interact with customers live, jump into conversations instantly, track customer sentiment, and manage your team's workload from a single interface.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "Can I watch SATE talking to customers in real time?",
+      answer: `
+Yes. The Helpdesk includes Live Streaming — you can watch SATE interact with customers in real time. You can monitor multiple conversations simultaneously and see a real-time overlay of customer information, the actions SATE is taking, and the full conversation history.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "What happens if I need to take over a conversation from SATE?",
+      answer: `
+You can perform an Instant Takeover at any time — the transition from SATE to a human agent is seamless and the customer experience remains uninterrupted. The agent gets the full conversation context, customer information, and history the moment they take over.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "How does ticket prioritization work?",
+      answer: `
+The Helpdesk uses Priority Intelligence to automatically prioritize tickets based on issue complexity, customer value, and business impact. Tickets are intelligently categorized and routed to the appropriate agents based on expertise and availability. SLA tracking and escalation are handled automatically.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "What is Agent Copilot?",
+      answer: `
+Agent Copilot is an AI assistance feature for human agents handling escalated tickets. It helps agents resolve issues faster by providing relevant suggestions, surfacing knowledge base content, and offering context from the customer's interaction history — so agents spend less time searching and more time resolving.
+      `,
+    },
+    {
+      id: 6,
+      key: "q-6",
+      question: "What ticket views are available in the Helpdesk?",
+      answer: `
+The Helpdesk provides several views including All Tickets, Assigned to Me, AI Tickets (handled by SATE), and Ongoing Calls. You can filter by Priority, Assignee, Date Created, Last Updated, and Temperament (customer sentiment/mood). Each ticket shows its current status — Open, Taken, Resolved & Closed.
+      `,
+    },
+    {
+      id: 7,
+      key: "q-7",
+      question:
+        "Can I see all tickets SATE is handling separately from human tickets?",
+      answer: `
+Yes. There is a dedicated AI Tickets tab in the Helpdesk so you can track exactly what SATE is handling at any point. This makes it easy to monitor AI performance, catch issues early, and understand the distribution of work between SATE and your human agents.
+      `,
+    },
+  ],
+
+  [HelpCenterKey.AI_PLAYGROUND]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What is the AI Playground?",
+      answer: `
+The AI Playground is a safe testing environment where you can test and optimize SATE's responses before they ever reach your customers. You can try edge cases, refine SATE's personality to match your brand, and run continuous improvement tests without any customer impact.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What kinds of scenarios can I test in the Playground?",
+      answer: `
+You can test across a wide range of scenario categories: Routine Inquiries (standard product/service/policy questions), Complex Problem-Solving (multi-step issues), Emotional Situations (frustrated or upset customer interactions), Edge Cases (unusual or unexpected requests), Technical Support (troubleshooting scenarios), and Sales and Upselling (product recommendation opportunities).
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "What testing methodologies are available?",
+      answer: `
+The Playground supports Conversation Simulation (realistic customer conversation simulations), Stress Testing (high-volume interaction testing), Regression Testing (verifying that improvements don't break existing functionality), A/B Response Testing (comparing different response approaches for similar scenarios), and Multi-Turn Conversation Testing (extended conversation testing for complex issues).
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "How do I tune SATE's tone and personality?",
+      answer: `
+Within the Playground, you can refine SATE's personality to match your brand voice. There are tools for Response Tuning that adjust tone, empathy, and communication style, as well as Brand Voice Calibration to ensure SATE's responses align with your brand guidelines and competitive messaging.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "Can I benchmark SATE's performance?",
+      answer: `
+Yes. The Playground includes Benchmark Categories covering Response Time Analysis, Resolution Rate Tracking, Customer Satisfaction Correlation, Escalation Rate Optimization, and Efficiency Metrics. You can set performance goals, track trends over time, and compare against industry standards.
+      `,
+    },
+  ],
+  [HelpCenterKey.ANALYTICS_REPORTING]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What analytics does EUSATE provide?",
+      answer: `
+EUSATE provides a comprehensive two-mode reporting system. Dashboard Mode gives C-suite executives brief, visual, interactive real-time insights accessible through the web app. Report Mode gives C-suite executives and Operations Managers detailed, downloadable, comprehensive reports with in-depth technical analysis.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What types of reports are available?",
+      answer: `
+Three main report types are available: (1) Overall Performance Summary Report — covers ticket volume and resolution metrics, average resolution times, agent productivity scores, customer satisfaction metrics, and channel distribution analysis. (2) Agent Performance Report — covers individual agent resolution times, productivity analysis, and resolution rate comparisons. (3) Operational Efficiency Report — covers escalation rates, SATE vs. agent resolution analysis, workload reduction metrics, and takeover statistics.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "Does EUSATE offer trend analysis?",
+      answer: `
+Yes. The Trend Analysis Engine analyzes current and comparison periods (previous 3-5 equivalent periods) and quarterly context. It calculates trend direction and strength, performs volatility analysis and anomaly detection, identifies cross-metric correlations, and generates narrative insights for business decision-making. Reports are on-demand — clients select the duration and request when needed.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "What key performance indicators does EUSATE track?",
+      answer: `
+EUSATE tracks the following KPIs: AI Resolution Rate (percentage of tickets SATE resolves without human intervention), Response Time (average time to first response and resolution), Customer Satisfaction (CSAT) scores, Escalation Rate (percentage of conversations needing human agents), Cost Per Ticket, and Agent Productivity scores.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "Are reports downloadable?",
+      answer: `
+Yes. Reports generated in Report Mode are available in downloadable format, designed to be executive-ready documentation with an Executive Summary, AI Trend Analysis, Analytic Approach methodology, and full data appendix.
+      `,
+    },
+  ],
+
+  [HelpCenterKey.INTEGRATIONS_CHANNELS]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "What communication channels can EUSATE integrate with?",
+      answer: `
+EUSATE supports integration with Discord, WhatsApp, Twitter/X, Facebook, Instagram, LinkedIn, Slack, email, and web chat widgets. Channel support is available as a paid integration — users pay to integrate EUSATE with their support channels for ticket routing.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "How does WhatsApp Business integration work?",
+      answer: `
+EUSATE uses the full WhatsApp Business API integration. It supports rich media (images, documents, interactive messages), template message management for common support scenarios, group chat management, and end-to-end encrypted communication that respects WhatsApp's security standards.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "What does the Discord integration support?",
+      answer: `
+Discord integration includes server integration for community-based businesses, Discord bot functionality for automated responses, voice channel support for real-time audio support, role-based access management integrated with Discord's permissions system, and community management tools.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question:
+        "Can EUSATE maintain context when a customer switches channels?",
+      answer: `
+Yes. EUSATE's Cross-Channel Continuity ensures customers can switch channels without losing conversation context. Unified customer profiles maintain complete interaction history across all channels, and the system learns and respects customer channel preferences over time.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question: "Does EUSATE integrate with CRM and e-commerce platforms?",
+      answer: `
+Yes. Through DevSpace, EUSATE integrates with CRM systems (for accessing customer account details, purchase history, communication preferences, and loyalty status), e-commerce platforms (for order status, shipment tracking, inventory verification, and return initiation), and financial systems (for payment processing, billing inquiries, refund processing, and subscription management).
+      `,
+    },
+  ],
+
+  [HelpCenterKey.PRICING]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "How does EUSATE pricing work?",
+      answer: `
+EUSATE uses three revenue streams: (1) Subscription Model — users pay for Standard or Pro plans to access core product features, giving them predictable costs as they scale. (2) Pay As You Go — users can purchase extra services, agents, tokens, or extra knowledge base space on demand for scalable usage-based revenue. (3) Integrations — users pay to integrate EUSATE with their support channels like WhatsApp, Discord, Twitter, and Telegram for ticket routing.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What ROI can I expect from EUSATE?",
+      answer: `
+Based on industry data, EUSATE clients typically see a $3.50 return for every $1 invested in AI customer support, a 50-70% reduction in support costs, 30-50% faster resolution times, and a payback period of 6-9 months. SATE can handle up to 80% of routine queries automatically, allowing you to reduce a support team from 5+ agents to 1-2 people while providing 24/7 support without additional staffing costs.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "Is EUSATE affordable for early-stage startups?",
+      answer: `
+Yes. EUSATE delivers enterprise-grade AI support at startup-friendly pricing, reducing support expenses by up to 70% as you scale. It is built by people who understand startup constraints, priced for early-stage company budgets, with a feature set designed for rapid scaling needs.
+      `,
+    },
+  ],
+
+  [HelpCenterKey.SECURITY_COMPLIANCE]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "How does EUSATE protect my data?",
+      answer: `
+EUSATE uses end-to-end encryption for all data transmission using industry-standard protocols. DevSpace includes comprehensive audit logging of all integration activities, granular access control management, configurable data residency compliance for regulatory requirements, and regular security audits and vulnerability testing.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What compliance standards does EUSATE support?",
+      answer: `
+EUSATE supports GDPR compliance tools (built-in features for data protection regulation), PCI DSS compatibility (secure handling of payment card information), HIPAA support (healthcare data protection capabilities where applicable), SOC 2 compliance (security and availability controls), and custom compliance frameworks for specific industry requirements.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question:
+        "Is EUSATE suitable for healthcare or financial services businesses?",
+      answer: `
+Yes. EUSATE has industry-specific solutions in development including HIPAA-compliant features with enhanced security for healthcare data, medical terminology integration, financial regulation compliance features, and advanced security for financial data protection. Custom compliance frameworks can also be configured for your sector's specific requirements.
+      `,
+    },
+  ],
+  [HelpCenterKey.SDK_API]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "How do I integrate EUSATE with my product?",
+      answer: `
+EUSATE provides an SDK for seamless integration with client systems. The typical flow is: (1) Set up API/SDK with your existing endpoints. (2) Configure Developer Space tools and authentication. (3) Upload initial knowledge base content. (4) Test SATE in the playground environment before going live.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "What integration methods are available?",
+      answer: `
+EUSATE supports SDK integration (for seamless embedding into your product), API Integration (for custom workflows and server-to-server communication), and Discord Integration (for community-based support channels). Full API reference documentation is available at docs.eusate.com.
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "Does EUSATE have an API reference?",
+      answer: `
+Yes. The API Reference is available in the DevSpace section of the documentation at docs.eusate.com/modules/devspace/api-reference. It covers callback endpoints, authentication configuration, and function definitions for all DevSpace integrations.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "What is the DevSpace callback endpoint used for?",
+      answer: `
+The callback endpoint is how EUSATE sends results back to your system after SATE executes a function. When SATE calls one of your DevSpace functions (e.g., process_refund), your server performs the action and returns the result to EUSATE via the callback. This enables real-time, two-way communication between SATE and your infrastructure.
+      `,
+    },
+  ],
+
+  [HelpCenterKey.SUPPORT_CONTACT]: [
+    {
+      id: 1,
+      key: "q-1",
+      question: "How do I contact EUSATE?",
+      answer: `
+You can reach EUSATE at: Email: info@eusate.com | Partnership inquiries: partnership@eusate.com | Phone: +234 81 6670 0905 | Website: https://eusate.com/ | Location: Akure, Nigeria.
+      `,
+    },
+    {
+      id: 2,
+      key: "q-2",
+      question: "Where can I find EUSATE's developer documentation?",
+      answer: `
+Full developer documentation is available at docs.eusate.com. It covers DevSpace (authentication configuration, function creation, API reference), and Helpdesk (SDK integration, API integration, Discord integration).
+      `,
+    },
+    {
+      id: 3,
+      key: "q-3",
+      question: "Where can I access the EUSATE platform?",
+      answer: `
+The EUSATE platform dashboard is available at app.eusate.com. From there you can access all modules including the Knowledge Base, DevSpace, Helpdesk, AI Playground, and Analytics.
+      `,
+    },
+    {
+      id: 4,
+      key: "q-4",
+      question: "Does EUSATE have a social media presence?",
+      answer: `
+Yes. You can follow EUSATE on X (Twitter) at @eusate_ai, LinkedIn at linkedin.com/company/eusate, and Instagram at @eusate_ai.
+      `,
+    },
+  ],
 };
 
 export const HELP_CENTER_TABS: HelpCenterTab[] = [
@@ -461,33 +923,69 @@ export const HELP_CENTER_TABS: HelpCenterTab[] = [
   },
   {
     id: 2,
-    key: HelpCenterKey.ACCOUNT_INFORMATION,
-    label: "Account information",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.ACCOUNT_INFORMATION],
+    key: HelpCenterKey.SATE_AI_CAPABILITIES,
+    label: "SATE & AI Capabilities",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.SATE_AI_CAPABILITIES],
   },
   {
     id: 3,
-    key: HelpCenterKey.ACCOUNT_INFORMATION,
-    label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
+    key: HelpCenterKey.KNOWLEDGE_BASE_MANAGEMENT,
+    label: "Knowledge Base Management",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.KNOWLEDGE_BASE_MANAGEMENT],
   },
   {
     id: 4,
-    key: HelpCenterKey.ACCOUNT_INFORMATION,
-    label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
+    key: HelpCenterKey.DEVSPACE,
+    label: "DevSpace (Developer Space)",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.DEVSPACE],
   },
   {
     id: 5,
-    key: HelpCenterKey.ACCOUNT_INFORMATION,
-    label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
+    key: HelpCenterKey.HELPDESK,
+    label: "Helpdesk & Real-Time Monitoring",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.HELPDESK],
   },
   {
     id: 6,
-    key: HelpCenterKey.ACCOUNT_INFORMATION,
-    label: "Category",
-    content: HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED],
+    key: HelpCenterKey.AI_PLAYGROUND,
+    label: "AI Playground",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.AI_PLAYGROUND],
+  },
+  {
+    id: 7,
+    key: HelpCenterKey.ANALYTICS_REPORTING,
+    label: "Analytics & Reporting",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.ANALYTICS_REPORTING],
+  },
+  {
+    id: 8,
+    key: HelpCenterKey.INTEGRATIONS_CHANNELS,
+    label: "Integrations & Channels",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.INTEGRATIONS_CHANNELS],
+  },
+  {
+    id: 9,
+    key: HelpCenterKey.PRICING,
+    label: "Pricing & Plans",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.PRICING],
+  },
+  {
+    id: 10,
+    key: HelpCenterKey.SECURITY_COMPLIANCE,
+    label: "Security & Compliance",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.SECURITY_COMPLIANCE],
+  },
+  {
+    id: 11,
+    key: HelpCenterKey.SDK_API,
+    label: "SDK & API Integration (Technical)",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.SDK_API],
+  },
+  {
+    id: 12,
+    key: HelpCenterKey.SUPPORT_CONTACT,
+    label: "Support & Contact",
+    content: HELP_CENTER_QUESTIONS[HelpCenterKey.SUPPORT_CONTACT],
   },
 ];
 

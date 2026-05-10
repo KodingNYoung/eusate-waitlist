@@ -6,7 +6,6 @@ import { ReactElement } from "react";
 type Slots = "base" | "title" | "description";
 
 type Props = {
-  color?: string;
   icon: ReactElement;
   title: string;
   description: string;
@@ -17,7 +16,6 @@ type Props = {
 export const SateFeatureCard: FC<Props> = ({
   icon,
   title,
-  color = "url(#paint0_linear_228_10568)",
   className,
   classNames,
   description,
@@ -25,12 +23,12 @@ export const SateFeatureCard: FC<Props> = ({
   return (
     <div
       className={cls(
-        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-[328px] min-h-[185px]",
+        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-full md:w-[328px] min-h-[185px]",
         className,
         classNames?.base,
       )}
     >
-      <div style={{ fill: color }}>{icon}</div>
+      <div className="">{icon}</div>
       <div className="space-y-2">
         <Typography
           variant="semibold-lg"

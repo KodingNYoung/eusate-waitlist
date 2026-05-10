@@ -58,7 +58,7 @@ export const CARDS: Card[] = [
   },
   {
     num: "04",
-    title: "Actually Solve Problems",
+    title: "Actually Solve Problems 🎉",
     desc: "SATE goes beyond answering questions — it takes action, processes requests, and resolves issues end-to-end without unnecessary hand-offs.",
     imgSrc: "/sate-ai/images/help-pop-out.webp",
     chat: [

@@ -1,3 +1,9 @@
+import {
+  ArrowDown,
+  ArrowRight,
+  CloseIcon,
+  HamburgerMenu,
+} from "@/assets/icons";
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "../../atoms/Logo";
@@ -10,12 +16,6 @@ import Button from "../../molecules/Button";
 import { AnimatePresence } from "framer-motion";
 import Typography from "../../atoms/Typography";
 import AppDropdown from "../../molecules/Popups/AppDropdown";
-import {
-  ArrowDown,
-  ArrowRight,
-  CloseIcon,
-  HamburgerMenu,
-} from "@/assets/icons";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
       <div
         className={cls(
           styles.navbarBg,
-          "flex bg-white w-full z-3 justify-around h-[100px] shadow-3xl",
+          "flex bg-white w-full z-3 max-h-[80px] md:max-h-[88px] justify-around shadow-3xl",
         )}
       >
         <div className="container flex justify-between items-center w-full md:w-[70%] ">

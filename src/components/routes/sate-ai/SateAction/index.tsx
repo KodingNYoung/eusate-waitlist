@@ -3,9 +3,9 @@ import { useState } from "react";
 import { CARDS } from "./const";
 import { ActionCard } from "./CardItem";
 import Image from "next/image";
-import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { Card } from "./types";
 import { FC } from "@/utils/types";
+import { SubHeader } from "@/components/shared/organisms/PageHeader";
 
 type Props = {
   title: string;
@@ -28,35 +28,32 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
   };
 
   return (
-    <div className="relative overflow-hidden grid grid-cols-1 gap-4 md:grid-cols-2 items-start">
-      <div className="order-1 flex flex-col gap-4">
-        <SubHeader
-          classNames={{
-            container: "md:w-[60%]",
-            title: "text-[32px]",
-            titleContainer: "space-y-1",
-          }}
-          chipLabel={chipLabel}
-          title={title}
-        />
-        <div className="flex flex-col h-full max-h-[440px] md:h-[420px] overflow-hidden gap-4">
-          {items.map((card, i) => (
-            <ActionCard
-              key={i}
-              card={card}
-              index={i}
-              isActive={i === current}
-              timerKey={timerKey}
-              onClick={() => jumpTo(i)}
-              onComplete={advance}
-            />
-          ))}
-        </div>
+    <div className="relative overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-1 xl:grid-rows-[auto_auto_1fr] xl:grid-cols-2 grid-flow-row xl:grid-flow-col gap-[52px] ">
+      <SubHeader
+        classNames={{
+          container: "md:w-[80%] self-start order-1",
+          title: "text-[32px] leading-[120%]",
+        }}
+        chipLabel={chipLabel}
+        title={title}
+      />
+      <div className="flex flex-col order-3 md:order-2 h-full max-h-[440px] md:h-[420px] overflow-hidden gap-4">
+        {items.map((card, i) => (
+          <ActionCard
+            key={i}
+            card={card}
+            index={i}
+            isActive={i === current}
+            timerKey={timerKey}
+            onClick={() => jumpTo(i)}
+            onComplete={advance}
+          />
+        ))}
       </div>
 
-      <div className="order-3 h-full md:order-2 bg-gold-100 rounded-[14.37px] pl-8 pt-8 md:p-8">
+      <div className="order-2 row-span-2 w-full h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 pl-8 pt-8 md:p-2">
         {/* <PhoneFrame messages={CARDS[current].chat} /> */}
-        <div className="relative w-[500px] md:w-full h-[430px] md:h-full">
+        <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]">
           <Image
             alt={chipLabel}
             src={CARDS[current].imgSrc!}

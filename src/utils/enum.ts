@@ -23,7 +23,17 @@ export enum PublicExtras {
 
 export enum HelpCenterKey {
   GETTING_STARTED = "getting-started",
-  ACCOUNT_INFORMATION = "account-info",
+  SATE_AI_CAPABILITIES = "sate-ai-capabilities",
+  KNOWLEDGE_BASE_MANAGEMENT = "knowledge-base-management",
+  DEVSPACE = "devspace",
+  HELPDESK = "help-desk",
+  AI_PLAYGROUND = "ai-playground",
+  ANALYTICS_REPORTING = "analytics-reporting",
+  INTEGRATIONS_CHANNELS = "integrations-channels",
+  PRICING = "pricing",
+  SECURITY_COMPLIANCE = "security-compliance",
+  SDK_API = "sdk-api",
+  SUPPORT_CONTACT = "support-contact",
 }
 
 export enum ProductKey {

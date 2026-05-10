@@ -13,6 +13,7 @@ type Props = {
   offset?: Offset;
   text: string | string[];
   shouldFade?: boolean;
+  speed?: number;
   children?: ReactNode;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
@@ -20,6 +21,7 @@ type Props = {
 export const ScrollReveal = ({
   text,
   classNames,
+  speed,
   shouldFade,
   offset,
 }: Props) => {
@@ -27,6 +29,7 @@ export const ScrollReveal = ({
   const end: ScrollOffset = `end ${offset?.end ?? "40%"}`;
 
   const ref = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: [start, end],
@@ -37,9 +40,17 @@ export const ScrollReveal = ({
   // Normalize to array
   const paragraphs = Array.isArray(text) ? text : [text];
 
-  // Pre-split all paragraphs so we know the total letter count
-  const splitParagraphs = paragraphs.map((p) => p.split(""));
-  const totalLetters = splitParagraphs.reduce((sum, p) => sum + p.length, 0);
+  // Split into words -> letters
+  const splitParagraphs = paragraphs.map((p) =>
+    p.split(" ").map((word) => word.split("")),
+  );
+
+  // Count total letters
+  const totalLetters = splitParagraphs.reduce(
+    (sum, words) =>
+      sum + words.reduce((wSum, letters) => wSum + letters.length, 0),
+    0,
+  );
 
   return (
     <div className={cls("relative", classNames?.base)}>
@@ -47,11 +58,16 @@ export const ScrollReveal = ({
         ref={ref}
         className={cls("sticky space-y-16", classNames?.container)}
       >
-        {splitParagraphs.map((letters, pIndex) => {
-          // Calculate the offset of this paragraph's first letter in the global sequence
-          const offset = splitParagraphs
-            .slice(0, pIndex)
-            .reduce((sum, p) => sum + p.length, 0);
+        {splitParagraphs.map((words, pIndex) => {
+          let runningIndex = 0;
+
+          // calculate offset for previous paragraphs
+          for (let i = 0; i < pIndex; i++) {
+            runningIndex += splitParagraphs[i].reduce(
+              (sum, letters) => sum + letters.length,
+              0,
+            );
+          }
 
           return (
             <motion.p
@@ -59,16 +75,29 @@ export const ScrollReveal = ({
               style={{ opacity: shouldFade ? opacity : 1 }}
               className={cls("flex flex-wrap", classNames?.paragraph)}
             >
-              {letters.map((char, i) => (
-                <Letter
-                  key={i}
-                  char={char}
-                  index={offset + i}
-                  total={totalLetters}
-                  progress={scrollYProgress}
-                  classNames={{ text: classNames?.text }}
-                />
-              ))}
+              {words.map((letters, wIndex) => {
+                return (
+                  <span key={wIndex} className="flex whitespace-nowrap">
+                    {letters.map((char, i) => {
+                      const index = runningIndex++;
+
+                      return (
+                        <Letter
+                          key={i}
+                          char={char}
+                          index={index}
+                          total={totalLetters}
+                          progress={scrollYProgress}
+                          speed={speed ?? 1}
+                          classNames={{ text: classNames?.text }}
+                        />
+                      );
+                    })}
+                    {/* space between words */}
+                    <span>&nbsp;</span>
+                  </span>
+                );
+              })}
             </motion.p>
           );
         })}
@@ -82,17 +111,27 @@ type LetterProps = {
   index: number;
   total: number;
   progress: MotionValue<number>;
+  speed: number;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
-const Letter = ({ char, index, total, progress, classNames }: LetterProps) => {
+const Letter = ({
+  char,
+  index,
+  total,
+  progress,
+  speed,
+  classNames,
+}: LetterProps) => {
   const start = index / total;
-  const end = start + 1 / total;
+  const duration = 1 / total / speed;
+  const end = start + duration;
+
   const opacity = useTransform(progress, [start, end], [0.3, 1]);
 
   return (
-    <motion.span style={{ opacity }} className={cls("", classNames?.text)}>
-      {char === " " ? "\u00A0" : char}
+    <motion.span style={{ opacity }} className={cls(classNames?.text)}>
+      {char}
     </motion.span>
   );
 };

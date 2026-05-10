@@ -8,17 +8,30 @@ import { ChevronDown, CloseIcon, Tickcon } from "@/assets/icons";
 import Input from "../Input";
 
 type Item = { key: string; label: ReactNode };
-type Slots = "root" | "label" | "trigger" | "placeholder" | "helperText";
+type MenuSlots = "root" | "item";
+type Slots =
+  | "root"
+  | "label"
+  | "trigger"
+  | "placeholder"
+  | "helperText"
+  | "icon";
 type Props = {
   name: string;
   options: Item[];
-  label: string;
+  label?: string;
   isError?: boolean;
   isSuccess?: boolean;
-  classNames?: { [slot in Slots]?: TWClassNames };
+  classNames?: { [slot in Slots]?: TWClassNames } & {
+    ["menu"]?: { [mSlot in MenuSlots]?: TWClassNames };
+  };
   placeholder?: string;
   onChange?: (value?: string) => void;
   helperText?: string;
+};
+
+type MenuProps = {
+  classNames?: { [slot in MenuSlots]?: TWClassNames };
 };
 
 const Select: FC<Props> = ({
@@ -57,47 +70,59 @@ const Select: FC<Props> = ({
     }
   };
 
-  const menu = (
-    <div
-      className={cls(
-        "relative shadow-soft-medium border border-gray-50 rounded-xl bg-white p-1 grid overflow-auto max-h-52"
-      )}
-    >
-      {options.map((option, idx) => {
-        return (
-          <button
-            type="button"
-            key={idx}
-            onClick={() => {
-              handleSelectChange(option);
-              setOpen(false);
-            }}
-            className="p-3 text-medium-sm text-left fill-black text-black flex items-center justify-between [&_svg]:size-4"
-          >
-            {option?.label} {option.key === selectedValue?.key ? Tickcon : null}
-          </button>
-        );
-      })}
-    </div>
-  );
+  const Menu: FC<MenuProps> = ({ classNames }) => {
+    return (
+      <div
+        className={cls(
+          "relative shadow-soft-medium rounded-xl bg-white p-1 grid overflow-auto max-h-52",
+          classNames?.root,
+        )}
+      >
+        {options.map((option, idx) => {
+          return (
+            <button
+              type="button"
+              key={idx}
+              onClick={() => {
+                handleSelectChange(option);
+                setOpen(false);
+              }}
+              className={cls(
+                "p-3 text-medium-sm text-left fill-black text-black flex items-center justify-between [&_svg]:size-4",
+                classNames?.item,
+              )}
+            >
+              {option?.label}{" "}
+              {option.key === selectedValue?.key ? (
+                <span className="stroke-white">{Tickcon} </span>
+              ) : null}
+            </button>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className="relative text-input-group">
-      <Typography
-        variant="semibold-sm"
-        className={cls("text-gray-500 px-2", classNames?.label)}
-      >
-        {label}
-      </Typography>
+      {label && (
+        <Typography
+          variant="semibold-sm"
+          className={cls("text-gray-500 px-2", classNames?.label)}
+        >
+          {label}
+        </Typography>
+      )}
       <div className="relative">
         <input name={name} value={selectedValue?.key || ""} hidden readOnly />
         <button
           type="button"
           className={cls(
-            "mt-1 mb-1.5 rounded-[100px] relative w-full",
-            "before:absolute before:-inset-[1px] before:z-0 before:size-[calc(100%_+_2px)] before:bg-[linear-gradient(90deg,_var(--inputColor1),_var(--inputColor2))] before:rounded-[inherit] before:transition-[all,_--inputColor1,_--inputColor2] before:duration-300",
+            " rounded-[100px] relative w-full",
+            "before:absolute before:bg-white focus:before:-inset-[1px] before:z-0 focus:before:size-[calc(100%_+_2px)] before:rounded-[inherit] before:duration-300",
+            // "before:bg-[linear-gradient(90deg,_var(--inputColor1),_var(--inputColor2))]  before:transition-[all,_--inputColor1,_--inputColor2] ",
             classNames?.trigger,
-            style.textInputContainer
+            style.textInputContainer,
           )}
           data-open={open}
           data-error={isError}
@@ -109,11 +134,15 @@ const Select: FC<Props> = ({
             data-selected={!!selectedValue?.key}
             className={cls(
               "w-full h-full bg-white relative z-1 rounded-[inherit] text-regular-sm text-gray-400 flex items-center justify-between px-4 py-4.5 gap-2",
-              "data-[selected=true]:text-gray-900",
-              classNames?.placeholder
+              "data-[selected=true]:text-gray-100",
+              classNames?.placeholder,
             )}
           >
-            {selectedValue?.label || placeholder || "Select an option"}{" "}
+            {selectedValue?.label || (
+              <Typography className="text-gray-500 text-medium-sm">
+                {placeholder || "Select an option"}
+              </Typography>
+            )}
             {selectedValue && (
               <p
                 onClick={(e) => {
@@ -128,7 +157,8 @@ const Select: FC<Props> = ({
             <span
               className={cls(
                 "stroke-gray-900 block transition-transform",
-                open ? "rotate-180" : "rotate-0"
+                open ? "rotate-180" : "rotate-0",
+                classNames?.icon,
               )}
             >
               {ChevronDown}
@@ -139,18 +169,18 @@ const Select: FC<Props> = ({
           <div
             className={cls(
               "absolute w-full z-2",
-              shouldOpenAbove ? "bottom-full" : "top-full"
+              shouldOpenAbove ? "bottom-full" : "top-full",
             )}
           >
             <div
               className="fixed top-0 left-0 w-full h-full"
               onClick={() => setOpen(false)}
             />
-            {menu}
+            <Menu classNames={{ ...classNames?.menu }} />
           </div>
         )}
         <div className="opacity absolute -left-[10000px]" ref={menuRef}>
-          {menu}
+          <Menu />
         </div>
       </div>
       {selectedValue?.key === "Other" ? (

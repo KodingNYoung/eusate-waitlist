@@ -25,7 +25,7 @@ const variantProps: { [variant in GradientVariants]: TWClassNames } = {
   gray: "bg-[linear-gradient(180deg,_#F0F1F3_0%,_#FFFFFF_100%)]",
 };
 
-const positionVariant: {
+const positionVariantSubHeader: {
   [p in Position]?: { [slot in Slots]?: TWClassNames };
 } = {
   center: {
@@ -33,6 +33,7 @@ const positionVariant: {
     chip: "flex items-start justify-center",
     chipContainer: "flex justify-center",
     titleContainer: "self-center",
+    title: "text-center",
   },
 };
 
@@ -79,11 +80,7 @@ export const PageHeader = forwardRef<HTMLDivElement, Props>(
       <header
         ref={ref}
         className={cls(
-          "bg-cover rounded-3xl",
           gradient && variantProps[gradient],
-          variant === "header"
-            ? "md:p-16 px-6 py-16 h-auto md:h-[720px] "
-            : "mx-0",
           classNames?.container,
         )}
       >
@@ -98,7 +95,7 @@ export const PageHeader = forwardRef<HTMLDivElement, Props>(
           {startContent}
           <div
             className={cls(
-              "flex space-y-2",
+              "flex",
               orientation === "horizontal" &&
                 "justify-between flex-col md:flex-row items-end",
               position === "center" && "justify-center",
@@ -109,7 +106,7 @@ export const PageHeader = forwardRef<HTMLDivElement, Props>(
             )}
           >
             {/* TITLE */}
-            <div className={cls("space-y-8", classNames?.titleContainer)}>
+            <div className={cls("grid gap-y-8", classNames?.titleContainer)}>
               {startTitleContainer}
               <div
                 className={cls(
@@ -214,21 +211,21 @@ export const SubHeader: FC<SubHeaderProps> = ({
       <div
         className={cls(
           "flex space-y-2",
-          positionVariant[position]?.root,
+          positionVariantSubHeader[position]?.root,
           classNames?.root,
         )}
       >
         <div
           className={cls(
-            "space-y-4 md:space-y-8",
-            positionVariant[position]?.titleContainer,
+            "grid gap-y-4 md:gap-y-4",
+            positionVariantSubHeader[position]?.titleContainer,
             classNames?.titleContainer,
           )}
         >
           {chipLabel && (
             <div
               className={cls(
-                positionVariant[position]?.chipContainer,
+                positionVariantSubHeader[position]?.chipContainer,
                 classNames?.chipContainer,
               )}
             >
@@ -239,7 +236,7 @@ export const SubHeader: FC<SubHeaderProps> = ({
                 }}
                 className={cls(
                   "w-fit bg-gold-100 rounded-full",
-                  positionVariant[position]?.chip,
+                  positionVariantSubHeader[position]?.chip,
                   classNames?.chip,
                 )}
               >
