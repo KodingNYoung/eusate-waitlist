@@ -21,7 +21,7 @@ type Props = {
 };
 
 const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
-  container: cls("w-full min-w-full h-[351px]"),
+  container: cls("data-[spotlight=true]:w-full"),
   img: cls("data-[spotlight=true]:w-full"),
   imgContainer: cls(
     "data-[spotlight=true]:h-[352px] data-[spotlight=true]:w-full",
@@ -40,10 +40,11 @@ export const BlogCard: FC<Props> = ({
 }) => {
   return (
     <Link
+      data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
         "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 shadow-soft-xxsmall",
-        spotlight && spotlightVariant?.container,
+        spotlightVariant?.container,
         variant === "page" && "border border-gray-50 p-4",
       )}
     >

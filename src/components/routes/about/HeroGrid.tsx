@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function GridLayout() {
   return (
-    <div className="container grid grid-cols-1 md:grid-cols-5 gap-4 p-4 md:h-[500px]">
+    <div className="container grid grid-cols-1 md:grid-cols-5 gap-4 px-4 md:h-[500px]">
       {/* Left column */}
       <div className="hidden md:flex flex-row md:flex-col gap-4 h-48 md:h-auto">
         <div className="bg-black text-white rounded-3xl flex items-end p-8 relative h-full w-full">
@@ -36,7 +36,10 @@ export default function GridLayout() {
             {PlayIcon}
           </Button>
         </div> */}
-        <div className="w-full h-full" style={{ position: "relative" }}>
+        <div
+          className="w-full h-[240px] md:h-full"
+          style={{ position: "relative" }}
+        >
           <iframe
             width="100%"
             height="100%"
@@ -55,9 +58,9 @@ export default function GridLayout() {
       <div className="flex flex-row md:flex-col md:col-span-2 gap-4 h-48 md:h-auto">
         <div className="hidden md:block relative h-full w-full">
           <Image
-            src="/images/eusate-team.webp"
-            alt="startup"
             fill
+            alt="startup"
+            src="/images/eusate-team.webp"
             className="rounded-3xl object-cover"
           />
         </div>

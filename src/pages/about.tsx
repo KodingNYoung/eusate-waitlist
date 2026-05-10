@@ -6,36 +6,36 @@ import Typography from "@/components/shared/atoms/Typography";
 import { VisionCard } from "@/components/routes/about/VisionCard";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { BackgroundWatermark } from "@/components/shared/organisms/DecorativeGraphic";
 import { useMediaQuery } from "@/utils/hooks";
 import { GridImageMobile } from "@/components/routes/about/GridImageMobile";
+import { PageHero } from "@/components/shared/organisms/PageHero";
 
 const AboutPage = () => {
   const isMobile = useMediaQuery();
   return (
-    <PageTemplate
-      gradientVariant="yellow"
-      classNames={{ wrapper: "md:pt-[100px] w-full" }}
-    >
-      <PageHeader
-        title="Our Story"
-        chipLabel="About us"
-        description="Last updated: 12/12/2026"
-        position={isMobile ? "left" : "center"}
-        classNames={{
-          container: "md:h-auto !py-0 mt-24 mb-20",
-          root: "flex-col space-y-4",
-          description: "md:hidden text-medium-sm text-gray-600",
-        }}
-      />
+    <PageTemplate gradientVariant="yellow" classNames={{ wrapper: "w-full" }}>
+      <PageHero classNames={{ wrapper: "px-5" }}>
+        <PageHeader
+          title="Our Story"
+          chipLabel="About us"
+          description="Last updated: 12/12/2026"
+          position={isMobile ? "left" : "center"}
+          classNames={{
+            container: "md:h-auto !py-0 mt-20 md:mt-24 mb-12 md:mb-20",
+            root: "flex-col space-y-4",
+            description: "md:hidden text-medium-sm text-gray-600",
+          }}
+        />
+      </PageHero>
 
-      <SectionTemplate
+      <PageSection
         classNames={{
           container: cls(
-            "md:container w-full flex flex-col items-center gap-y-4 md:gap-y-20 md:mb-40",
+            "w-full !flex !flex-col items-center gap-y-4 md:gap-y-20 md:mb-40",
           ),
         }}
       >
@@ -61,9 +61,9 @@ const AboutPage = () => {
 
         {/* FOR MOBILE ONLY */}
         <GridImageMobile />
-      </SectionTemplate>
+      </PageSection>
 
-      <SectionTemplate className="relative overflow-hidden mb-24">
+      <PageSection className="relative overflow-hidden mb-24">
         <BackgroundWatermark imgSrc="/images/about-mission-swatch.webp" />
         <div className="flex flex-wrap container relative md:justify-center lg:justify-between gap-4 mt-8">
           <VisionCard
@@ -79,15 +79,15 @@ We refused to choose. So we built Eusate, a platform that lets teams do both."
 We refused to choose. So we built Eusate, a platform that lets teams do both."
           />
         </div>
-      </SectionTemplate>
+      </PageSection>
 
-      <SectionTemplate
+      <PageSection
         classNames={{
           base: "bg-black py-8 md:p-20 rounded-x24 md:rounded-[40px]",
         }}
       >
         <MeetTeam />
-      </SectionTemplate>
+      </PageSection>
     </PageTemplate>
   );
 };

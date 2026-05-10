@@ -15,35 +15,35 @@ const team: Member[] = [
     id: 1,
     imgSrc: "/images/founder-david.webp",
     name: "Daramola David",
-    role: "CEO, CO-Found, AI & ML",
+    role: "CEO, AI & ML",
   },
   {
     id: 2,
     imgSrc: "/images/founder-nath.webp",
     name: "Natheniel Peter Lucky",
-    role: "CO-Founder, Mobile Engineer",
+    role: "Mobile Engineer",
   },
   {
     id: 3,
     imgSrc: "/images/founder-young.webp",
     name: "Adabambo Abiodum",
-    role: "CO-Founder, CFO",
+    role: "CFO",
   },
   {
     id: 4,
     imgSrc: "/images/founder-daniel.webp",
     name: "Adebowale Daniel",
-    role: "CO-Founder, CTO",
+    role: "CTO",
   },
   {
     id: 5,
     imgSrc: "/images/founder-patrick.webp",
     name: "Adanini Patrick",
-    role: "CO-Founder, Product Lead",
+    role: "Product Lead",
   },
   {
     id: 6,
-    imgSrc: "/images/daramola-daniel.webp",
+    imgSrc: "/about/images/daramola-daniel.webp",
     name: "Daramola Daniel",
     role: "Creative Designer & Video Editor",
   },
@@ -61,8 +61,8 @@ export const MeetTeam = () => {
           titleContainer: "flex flex-col items-center ",
         }}
       />
-      <div>
-        <div className="flex flex-wrap justify-center items-center w-full gap-8 gap-y-16">
+      <div className="">
+        <div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
           {team.map(({ id, ...member }) => (
             <MemberCard key={id} {...member} />
           ))}
@@ -74,13 +74,13 @@ export const MeetTeam = () => {
 
 const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
   return (
-    <div className="relative flex flex-col gap-4 group">
-      <div className="relative min-w-[333px] min-h-[320px] self-start">
+    <div className="relative flex flex-col gap-4 group w-full max-w-[329px]">
+      <div className="relative w-full md:w-[333px] h-[320px] self-start rounded-x24 overflow-hidden">
         <Image
           alt={name}
           src={imgSrc}
           fill
-          className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+          className="object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-300"
         />
       </div>
       <div>

@@ -9,7 +9,7 @@ type Props = {
 
 export const VisionCard: FC<Props> = ({ icon, title, content }) => {
   return (
-    <div className="bg-[linear-gradient(to_bottom,#FBF7E6_0%,transparent_30%,transparent_70%,#FBF7E6_100%)] px-4 py-8 min-h-[610px] w-full md:w-[520px] grid rounded-x20">
+    <div className="bg-[linear-gradient(to_bottom,#FBF7E6_0%,transparent_30%,transparent_70%,#FBF7E6_100%)] px-4 py-8 min-h-[610px] w-full xl:w-[520px] grid rounded-x20">
       <div className="bg-[linear-gradient(to_bottom,#FFFFFF_0%,#FFFFFF_70%,transparent_100%)] h-full px-4 py-12 flex justify-center rounded-x20">
         <div className="w-full md:w-[80%] grid gap-4">
           <div className="grid gap-4">

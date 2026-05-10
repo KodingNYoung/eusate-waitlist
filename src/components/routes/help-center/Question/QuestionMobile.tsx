@@ -5,7 +5,7 @@ import { ArrowDown } from "@/assets/icons";
 
 export const QuestionMobile = () => {
   return (
-    <div className="md:hidden border broder-gray-50 p-2 rounded-x24">
+    <div className="md:hidden border broder-gray-50 py-2 rounded-x24 mt-[50px] mx-3">
       <Accordion
         indicator={
           <span
@@ -26,7 +26,7 @@ export const QuestionMobile = () => {
             "data-[open=true]:before:w-[2.75px]",
           ),
           titleWrapper: "flex-0",
-          title: "text-semibold-lg",
+          title: "text-semibold-lg text-left",
         }}
         variant="splitted"
         items={HELP_CENTER_TABS.map(({ key, label, content }) => ({

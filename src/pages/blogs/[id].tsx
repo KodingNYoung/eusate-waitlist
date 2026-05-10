@@ -1,6 +1,6 @@
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 import { Post } from "@/components/routes/blogs/Post";
 import { BackButton } from "@/components/routes/blogs/BackButton";
@@ -12,10 +12,12 @@ const BlogPost = () => {
         gradientVariant="gray"
         classNames={{ wrapper: "md:pt-[100px] " }}
       >
-        <SectionTemplate className="py-24 px-5">
+        <PageSection
+          classNames={{ base: "py-20 md:py-24 px-5", container: "gap-y-10" }}
+        >
           <BackButton />
           <Post />
-        </SectionTemplate>
+        </PageSection>
       </PageTemplate>
     </div>
   );

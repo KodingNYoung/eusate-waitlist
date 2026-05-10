@@ -114,7 +114,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
     [currentPage],
   );
   return (
-    <div className="flex justify-center w-full pt-4 md:pt-20">
+    <div className="flex justify-center w-full pt-4 md:pt-6">
       <Pagination
         showControls
         size="lg"

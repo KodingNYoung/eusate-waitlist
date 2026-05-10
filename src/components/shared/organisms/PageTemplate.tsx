@@ -74,7 +74,7 @@ export const PageSection = ({
     <section
       className={cls("rouded-x24 md:rounded-x40", className, classNames?.base)}
     >
-      <div className={cls("md:container space-y-8", classNames?.container)}>
+      <div className={cls("md:container grid gap-y-8", classNames?.container)}>
         {header && header}
         {children}
       </div>

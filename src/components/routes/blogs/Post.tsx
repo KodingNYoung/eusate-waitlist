@@ -14,7 +14,7 @@ export const Post = () => {
   );
 
   return post ? (
-    <div className="space-y-8">
+    <div className="grid gap-y-8">
       <div className="relative w-full h-[400px]">
         <Image
           src={post.imgSrc}
