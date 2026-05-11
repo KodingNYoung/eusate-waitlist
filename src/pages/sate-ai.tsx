@@ -24,7 +24,7 @@ const SateAiPage = () => {
         classNames={{
           base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[62vh] md:h-[85vh] flex items-start pb-12 md:pb-20 justify-center mx-0",
           container: "h-full flex items-end",
-          wrapper: "px-5 ",
+          wrapper: "px-5",
         }}
       >
         <PageHeader

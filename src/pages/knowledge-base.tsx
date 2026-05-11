@@ -5,66 +5,71 @@ import { KBFunctionalities } from "@/components/routes/knowledge-base/KBFunction
 import Button from "@/components/shared/molecules/Button";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
-import { useMediaQuery } from "@/utils/hooks";
-import { KBFeaturesMobile } from "@/components/routes/knowledge-base/KBFeaturesMobile";
 import { BorderGradient } from "@/components/shared/organisms/BorderGradient";
+import { PageHero } from "@/components/shared/organisms/PageHero";
 
 const KnowledgeBasePage = () => {
-  const isMobile = useMediaQuery();
   return (
     <PageTemplate
       hideGradient
       classNames={{ wrapper: "space-y-12 md:space-y-24" }}
     >
-      <PageHeader
+      <PageHero
         classNames={{
-          title: "text-white",
-          titleContainer: "!space-y-10",
-          description: "text-white leading-[180%]",
-          descriptionContainer: "space-y-[46px]",
-          root: "flex-col gap-y-6 md:gap-y-[46px]",
-          wrapper: "gap-20",
-          container:
-            "bg-[url(/images/knowledge-base-bg.webp)] md:h-[90vh] flex items-end justify-center",
+          base: "bg-[url(/images/knowledge-base-bg.webp)] bg-center h-full md:h-[800px] flex items-start justify-center pb-12 md:pb-20 pt-20 px-5",
+          container: "flex items-end h-full",
         }}
-        chipLabel="Knowledge base"
-        title="The brain behind every conversation."
-        description="Upload once. Answer everywhere. Your knowledge base trains SATE to deliver precise, on-brand responses while keeping your team aligned on every detail."
-        cta={
-          <BorderGradient>
-            <Button
-              size="sm"
-              variant="outlined"
-              className="px-12 py-4 "
-              endContent={
-                <span className="stroke-black">{ArrowRightIcon}</span>
-              }
-            >
-              Get started
-            </Button>
-          </BorderGradient>
-        }
-        endContent={
-          <span className="relative w-full object-cover object-right md:w-full h-[660px] md:h-[60vh]">
-            <Image
-              src="/images/kb-hero.webp"
-              className="hidden md:block"
-              alt="kb-hero-img "
-              fill
-            />
-            <Image
-              src="/kb/images/kb-mobile-bg.webp"
-              className="md:hidden"
-              alt="kb-hero-img "
-              fill
-            />
-          </span>
-        }
-      />
-
+      >
+        <PageHeader
+          classNames={{
+            title: "text-white",
+            titleContainer: "gap-y-10 ",
+            description: "text-white leading-[180%]",
+            descriptionContainer: "space-y-[46px]",
+            root: "flex-col gap-y-6 md:gap-y-[46px] py-10 md:py-0",
+            wrapper: "gap-x-12 !flex-col md:!flex-row",
+          }}
+          chipLabel="Knowledge base"
+          title="The brain behind every conversation."
+          description="Upload once. Answer everywhere. Your knowledge base trains SATE to deliver precise, on-brand responses while keeping your team aligned on every detail."
+          cta={
+            <BorderGradient>
+              <Button
+                size="sm"
+                variant="outlined"
+                className="px-12 py-4 "
+                endContent={
+                  <span className="stroke-black">{ArrowRightIcon}</span>
+                }
+              >
+                Get started
+              </Button>
+            </BorderGradient>
+          }
+          endContent={
+            <div className="relative w-full h-full">
+              <div className="hidden lg:flex relative w-[520px] h-[560px]">
+                <Image
+                  fill
+                  src="/images/kb-hero.webp"
+                  className="object-contain object-center"
+                  alt="kb-hero-img "
+                />
+              </div>
+              <div className="md:hidden relative w-full h-[calc(660px_+_100vw_-_337px)]">
+                <Image
+                  fill
+                  src="/kb/images/kb-mobile-bg.webp"
+                  className="object-contain object-top"
+                  alt="kb-hero-img"
+                />
+              </div>
+            </div>
+          }
+        />
+      </PageHero>
       <KBFunctionalities />
-
-      {isMobile ? <KBFeaturesMobile /> : <KBFeatures />}
+      <KBFeatures />
     </PageTemplate>
   );
 };

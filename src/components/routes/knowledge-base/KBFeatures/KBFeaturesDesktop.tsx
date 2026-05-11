@@ -3,7 +3,7 @@ import { KB_FEATURES } from "@/utils/constants";
 import Image from "next/image";
 import { forwardRef, useEffect, useRef, useState } from "react";
 
-export const KBFeatures = () => {
+export const KBFeaturesDesktop = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -19,7 +19,7 @@ export const KBFeatures = () => {
             if (entry.isIntersecting) setActiveIndex(i);
           });
         },
-        { threshold: 1, rootMargin: "-10% 0px -40% 0px" },
+        { threshold: 1, rootMargin: "-10% 0px -35% 0px" },
       );
       obs.observe(el);
       observers.push(obs);
@@ -28,7 +28,7 @@ export const KBFeatures = () => {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
   return (
-    <section className="bg-black rounded-[40px]">
+    <section className="hidden md:block bg-black rounded-[40px]">
       <div className="flex container justify-between items-start">
         <div className="flex-1 min-w-0 pb-24">
           {KB_FEATURES.map(({ id, ...feature }) => (
@@ -42,7 +42,7 @@ export const KBFeatures = () => {
           ))}
         </div>
 
-        <div className="w-[50%] shrink-0 pt-8 sticky top-[100px] ">
+        <div className="w-[50%] shrink-0 pt-8 sticky top-[68px] ">
           <div className="bg-neutral-900 rounded-2xl min-h-[580px] relative overflow-hidden">
             {KB_FEATURES.map(({ id, panelSrc }) => (
               <div

@@ -53,13 +53,13 @@ export const ParallaxHero: FC<Props> = ({
     <header ref={headerRef} className={cls("sticky", classNames?.base)}>
       <div
         className={cls(
-          "md:pt-[100px] px-[17px] md:px-0 rounded-[16px] md:rounded-none bg-cover h-[80vh] md:h-[90vh]",
+          "md:pt-[100px] px-[17px] md:px-0 rounded-[16px] md:rounded-none bg-cover h-[80vh] md:h-[90vh] space-y-10 md:space-y-20",
           classNames?.container,
         )}
       >
         <div
           className={cls(
-            "md:container flex flex-col items-center space-y-10 md:space-y-20 pt-20 md:pt-24",
+            "md:container flex flex-col items-center  pt-20 md:pt-24",
             classNames?.wrapper,
           )}
         >
@@ -128,19 +128,18 @@ export const ParallaxHero: FC<Props> = ({
               </div>
             </div>
           </motion.div>
-
-          <motion.div
-            style={{ y: imageY }}
-            className="relative z-3 w-full mx-auto w-full h-[500px] md:h-[900px]"
-          >
-            <Image
-              src={imgSrc}
-              fill
-              alt="parallax-img"
-              className={cls("object-cover object-left", classNames?.img)}
-            />
-          </motion.div>
         </div>
+        <motion.div
+          style={{ y: imageY }}
+          className="relative z-3 w-full max-w-[1440px] mx-auto w-full h-[500px] md:h-[900px]"
+        >
+          <Image
+            src={imgSrc}
+            fill
+            alt="parallax-img"
+            className={cls("object-cover object-top", classNames?.img)}
+          />
+        </motion.div>
       </div>
     </header>
   );

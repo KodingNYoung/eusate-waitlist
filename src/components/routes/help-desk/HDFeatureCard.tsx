@@ -18,6 +18,8 @@ type Props = {
   imgSrc: InternalPath;
 };
 
+const secondGroup = [2, 3];
+
 export const HDFeatureCard: FC<Props> = ({
   id,
   title,
@@ -35,7 +37,7 @@ export const HDFeatureCard: FC<Props> = ({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className={cls(
-        "flex flex-wrap justify-center md:justify-between gap-y-10 items-center",
+        "flex flex-wrap justify-center lg:justify-between gap-y-10 items-center",
         id % 2 ? "flex-row" : "md:flex-row-reverse",
       )}
     >
@@ -71,22 +73,44 @@ export const HDFeatureCard: FC<Props> = ({
 
       <motion.div
         className={cls(
-          "relative overflow-hidden border-4 rounded-3xl border-gray-50 w-[550px] h-[500px]",
-          id % 2 ? "pt-8 pl-8" : "pb-8 pr-8",
+          "relative overflow-hidden border-4 rounded-3xl border-gray-50 w-full md:w-[504px] h-[508px]",
+          secondGroup.includes(id)
+            ? "pb-8 pr-8"
+            : id === 1
+              ? "pt-8 pl-8"
+              : "pl-8 pb-8",
         )}
       >
         <AnimatedBlock>
-          <div
-            className={cls(
-              "relative w-[1200px] h-[900px] object-cover object-bottom",
-              cls(
-                id % 2 === 0 &&
-                  "object-[right_bottom] pb-8 -translate-x-[calc(100%_-_550px_+_32px)] -translate-y-[calc(900px_-_550px_+_92px)]",
-              ),
-            )}
-          >
-            <Image src={imgSrc} alt={highlightTitle} fill />
-          </div>
+          {id === 4 ? (
+            <div className="w-full h-full overflow-hidden border-8 border-[#F3F4F5] -translate-y-[calc(600px_-_550px_+_92px)]">
+              <div className="relative w-[800px] h-[600px] -translate-x-[6rem]">
+                <Image
+                  src={imgSrc}
+                  alt={highlightTitle}
+                  fill
+                  className="object-contain object-bottom"
+                />
+              </div>
+            </div>
+          ) : (
+            <div
+              className={cls(
+                "relative w-[1200px] h-[900px] object-cover object-bottom",
+                cls(
+                  secondGroup.includes(id) &&
+                    "object-[right_bottom] pb-8 -translate-x-[calc(100%_-_550px_+_32px)] -translate-y-[calc(900px_-_550px_+_92px)]",
+                ),
+              )}
+            >
+              <Image
+                src={imgSrc}
+                alt={highlightTitle}
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
         </AnimatedBlock>
       </motion.div>
     </motion.div>

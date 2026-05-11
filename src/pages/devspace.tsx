@@ -1,5 +1,6 @@
 import { DevAction } from "@/components/routes/devspace/DevAction";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
+import { PageHero } from "@/components/shared/organisms/PageHero";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 
 const Devspace = () => {
@@ -7,25 +8,31 @@ const Devspace = () => {
     <PageTemplate
       hideGradient
       classNames={{
-        base: "overflow-visible",
+        base: "md:!px-0",
         wrapper: "relative md:space-y-24",
       }}
     >
-      <PageHeader
-        chipLabel="Dev Space"
-        orientation="horizontal"
+      <PageHero
         classNames={{
-          container:
-            "bg-[url(/images/devspace-bg.webp)] bg-right md:bg-center flex items-end justify-center !h-[80vh]",
-          root: "w-full !space-y-10 ",
-          title:
-            "text-white text-bold-4xl md:text-bold-5xl w-full md:w-[70%] leading-[120%]",
-          description: "text-white",
-          descriptionContainer: "w-full md:w-[50%]",
+          base: "bg-[url(/images/devspace-bg.webp)] bg-right md:bg-center flex justify-center !h-[80vh] pb-12 md:pb-20 md:mx-4 px-5",
+          container: "flex items-end h-full",
         }}
-        title="Connect & Build integrations your way"
-        description="Full API access for custom needs. Developer Space gives SATE the power to actually solve problems by connecting directly to your systems and taking real action."
-      />
+      >
+        <PageHeader
+          chipLabel="Dev Space"
+          orientation="horizontal"
+          classNames={{
+            container: "",
+            root: "w-full gap-x-20 gap-y-10",
+            title:
+              "text-white text-bold-4xl md:text-bold-5xl w-full leading-[120%]",
+            description: "text-white",
+            descriptionContainer: "w-full ",
+          }}
+          title="Connect & Build integrations your way"
+          description="Full API access for custom needs. Developer Space gives SATE the power to actually solve problems by connecting directly to your systems and taking real action."
+        />
+      </PageHero>
 
       <DevAction />
     </PageTemplate>

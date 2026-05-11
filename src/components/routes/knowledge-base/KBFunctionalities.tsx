@@ -1,11 +1,12 @@
 import Typography from "@/components/shared/atoms/Typography";
 import { KB_HIGHLIGHTS } from "@/utils/constants";
 import { DevActionCard } from "../devspace/DevActionCard";
+import { PageSection } from "@/components/shared/organisms/PageTemplate";
 
 export const KBFunctionalities = () => {
   return (
-    <section className="container max-w-[1400px] space-y-24">
-      <div className="flex flex-wrap justify-start gap-4 md:justify-around items-center">
+    <PageSection classNames={{ base: "px-5", container: "grid gap-y-22" }}>
+      <div className="flex flex-wrap justify-start gap-y-10 md:justify-around items-center">
         <div>
           <Typography
             as="h2"
@@ -22,19 +23,19 @@ export const KBFunctionalities = () => {
           {KB_HIGHLIGHTS.slice(0, 2).map(({ id, title, description }) => (
             <DevActionCard
               key={id}
-              classNames={{ root: "max-w-[408px]" }}
+              classNames={{ root: "md:max-w-[408px] max-w-full" }}
               title={title}
               description={description}
             />
           ))}
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-start gap-4 md:justify-around">
+      <div className="flex flex-wrap items-center justify-start gap-y-10 md:justify-around">
         <div className="bg-gray-50 order-2 md:order-1 flex flex-wrap p-[4px] gap-[4px] rounded-lg">
           {KB_HIGHLIGHTS.slice(2).map(({ id, title, description }) => (
             <DevActionCard
               key={id}
-              classNames={{ root: "max-w-[408px]" }}
+              classNames={{ root: "md:max-w-[408px] max-w-full" }}
               title={title}
               description={description}
             />
@@ -53,6 +54,6 @@ export const KBFunctionalities = () => {
           </Typography>
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 };

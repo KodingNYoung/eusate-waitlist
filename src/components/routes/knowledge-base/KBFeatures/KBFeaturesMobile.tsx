@@ -14,7 +14,7 @@ export const KBFeaturesMobile = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   return (
-    <section className="bg-black rounded-[20px] py-16 pl-8 space-y-10">
+    <section className="md:hidden bg-black rounded-[20px] py-16 pl-8 space-y-10">
       <Swiper
         onBeforeInit={(swiper) => {
           // @ts-expect-error: Clearing type error
@@ -34,9 +34,14 @@ export const KBFeaturesMobile = () => {
       >
         {KB_FEATURES.map(({ id, panelSrc, title, description }) => (
           <SwiperSlide key={id}>
-            <div className="flex flex-col gap-4">
-              <span className="relative w-full h-[300px]">
-                <Image alt={title} src={panelSrc} width={300} height={400} />
+            <div className="flex flex-col gap-y-10">
+              <span className="relative w-[92%] h-[calc(323px_+_90vw_-_337px)] ">
+                <Image
+                  alt={title}
+                  src={panelSrc}
+                  fill
+                  className="object-cover rounded-[14.37px]"
+                />
               </span>
               <Feature title={title} description={description} />
             </div>
@@ -66,13 +71,6 @@ export const KBFeaturesMobile = () => {
     </section>
   );
 };
-
-// const Control = ({prevRef, nextRef}: {prevRef: RefObject<HTMLButtonElement | null>, nextRef: HTMLButtonElement | null}) => {
-//   return (
-//   );
-// };
-
-// Control.displayName = "Control";
 
 type FeatureProps = {
   title: string;
