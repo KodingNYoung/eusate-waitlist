@@ -46,11 +46,12 @@ export const ROUTES = {
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",
   ABOUT: "/about",
-  DEVSPACE: "/devspace",
-  HELP_DESK: "/help-desk",
+  DEVSPACE: "/dev-space",
+  HELP_DESK: "/helpdesk",
   KNOWLEDGE_BASE: "/knowledge-base",
   HELP_CENTER: "/help-center",
   REPORTS: "/reports",
+  PLAYGROUND: "/playground",
   CONTACT: "/contact",
 } as const;
 
@@ -195,6 +196,7 @@ export const PRICING: PricingPlan[] = [
     key: Plan.FREE,
     label: "Free Plan",
     price: PLAN_COST.FREE,
+    redirect: "/signup",
     features: [
       "SATE AI agaent with 80% resolution rate",
       "Unlimited conversations across all channels",
@@ -210,6 +212,7 @@ export const PRICING: PricingPlan[] = [
     key: Plan.PRO,
     label: "Pro Plan",
     price: PLAN_COST.PRO,
+    redirect: "/signup",
     recomended: true,
     features: [
       "Everthing is Standard",
@@ -227,6 +230,7 @@ export const PRICING: PricingPlan[] = [
     id: 3,
     key: Plan.BASIC,
     label: "Basic Plan",
+    redirect: "/signup",
     price: PLAN_COST.BASIC,
     features: [
       "SATE AI agaent with 80% resolution rate",
@@ -1157,6 +1161,7 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     icon: KeyFeatureIcon,
     key: ProductKey.HELP_DESK,
     label: "Helpdesk",
+    link: ROUTES.HELP_DESK,
     content: "/images/helpdesk-hero.webp",
   },
   {
@@ -1164,28 +1169,32 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     icon: KeyFeatureIcon,
     key: ProductKey.KNOWLEDGE_BASE,
     label: "Knowledge base",
-    content: "/images/knowledge-base-product.webp",
+    link: ROUTES.KNOWLEDGE_BASE,
+    content: "/images/helpdesk-hero.webp",
   },
   {
     id: 3,
     icon: CodeLinearIcon,
     key: ProductKey.DEV_SPACE,
+    link: ROUTES.DEVSPACE,
     label: "Dev space",
-    content: "/images/",
+    content: "/images/helpdesk-hero.webp",
   },
   {
     id: 4,
     icon: ReportIcon,
     key: ProductKey.REPORTS,
+    link: ROUTES.REPORTS,
     label: "Reports",
-    content: "/images/",
+    content: "/images/helpdesk-hero.webp",
   },
   {
     id: 5,
     icon: LogoIcon,
     key: ProductKey.AI_PLAYGROUND,
+    link: ROUTES.PLAYGROUND,
     label: "AI Playground",
-    content: "/images/",
+    content: "/images/helpdesk-hero.webp",
   },
 ];
 

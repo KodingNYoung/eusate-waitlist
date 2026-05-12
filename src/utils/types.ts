@@ -97,6 +97,7 @@ export type PricingPlan = {
   key: Plan;
   label: string;
   price: number;
+  redirect: InternalPath;
   features: string[];
   recomended?: boolean;
   action: () => void;
@@ -165,6 +166,7 @@ export type ProductsTab = {
   icon: ReactElement;
   key: ProductKey;
   label: string;
+  link: InternalPath;
   content: InternalPath;
 };
 export type Testimonial = {

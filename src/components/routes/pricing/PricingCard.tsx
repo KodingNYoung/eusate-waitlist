@@ -3,11 +3,13 @@ import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Chip from "@/components/shared/molecules/Chip";
 import { cls } from "@/utils/helpers";
-import { FC } from "@/utils/types";
+import { FC, InternalPath } from "@/utils/types";
+import Link from "next/link";
 
 type Props = {
   label: string;
   price: number;
+  redirect: InternalPath;
   features: string[];
   recomended?: boolean;
 };
@@ -16,6 +18,7 @@ export const PricingCard: FC<Props> = ({
   label,
   price,
   features,
+  redirect,
   recomended,
 }) => {
   return (
@@ -42,7 +45,7 @@ export const PricingCard: FC<Props> = ({
             base: cls(
               "text-semibold-base",
               "data-[featured=true]:text-white/60",
-            )
+            ),
           }}
         >
           {label}
@@ -62,16 +65,20 @@ export const PricingCard: FC<Props> = ({
             <span>{TickCircleIcon}</span>
             <Typography
               data-featured={recomended}
-              className={"data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700"}
+              className={
+                "data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700"
+              }
             >
               {feature}
             </Typography>
           </div>
         ))}
       </div>
-      <Button className="py-3" variant={recomended ? "outlined" : "primary"}>
-        {recomended ? "Get started" : "Select plan"}
-      </Button>
+      <Link href={process.env.NEXT_PUBLIC_BASE_URL + redirect}>
+        <Button className="py-3" variant={recomended ? "outlined" : "primary"}>
+          {recomended ? "Get started" : "Select plan"}
+        </Button>
+      </Link>
     </div>
   );
 };

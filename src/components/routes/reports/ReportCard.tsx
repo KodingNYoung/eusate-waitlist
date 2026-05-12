@@ -52,7 +52,7 @@ export const ReportCard: FC<Props> = ({
         <div
           style={{ backgroundColor: color }}
           className={cls(
-            "py-8 relative container overflow-hidden px-6 md:px-16 flex sm:flex-wrap md:flex-nowrap gap-8 items-center rounded-[16px] md:rounded-x40 h-full md:h-[500px]",
+            "py-6 md:py-8 relative container overflow-hidden px-6 md:px-16 flex flex-col md:flex-row gap-8 items-start md:items-center rounded-[16px] md:rounded-x40 h-full md:h-[500px]",
           )}
         >
           <div className="w-full md:w-[500px] flex-none space-y-6 md:space-y-12">
@@ -71,9 +71,9 @@ export const ReportCard: FC<Props> = ({
               {description}
             </Typography>
           </div>
-          <div className="relative flex-none w-[1200px] h-[400px]">
-            <div className="relative w-[700px] h-[700px] object-bottom">
-              <Image src={imgSrc} fill alt={title} />
+          <div className="relative w-[1200px] h-[500px]">
+            <div className="relative w-[700px] h-[700px]">
+              <Image src={imgSrc} fill alt={title} className="object-bottom" />
             </div>
           </div>
         </div>

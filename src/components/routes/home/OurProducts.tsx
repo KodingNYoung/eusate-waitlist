@@ -2,13 +2,24 @@ import Image from "next/image";
 import { cls } from "@/utils/helpers";
 import { ProductKey } from "@/utils/enum";
 import { InternalPath } from "@/utils/types";
-import { PRODUCTS_TAB } from "@/utils/constants";
+import { PRODUCTS_TAB, ROUTES } from "@/utils/constants";
 import { ArrowRightIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { AppTab } from "@/components/shared/molecules/Tabs";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
+import { useCallback, useState } from "react";
+import Link from "next/link";
 
 export const OurProducts = () => {
+  const [currentLink, setCurrentLink] = useState<InternalPath>(
+    ROUTES.HELP_DESK,
+  );
+
+  const onSelectionChange = useCallback((key: React.Key) => {
+    const product = PRODUCTS_TAB.find((product) => product.id === Number(key));
+    setCurrentLink(product?.link || ROUTES.HELP_DESK);
+  }, []);
+
   return (
     <section className="hidden md:block bg-black py-20 rounded-x40">
       <div className="container space-y-16">
@@ -22,19 +33,22 @@ export const OurProducts = () => {
             root: "w-full items-end justify-between",
           }}
           cta={
-            <Button
-              className="bg-brand-gradient px-8 py-2"
-              endContent={
-                <span className="stroke-white">{ArrowRightIcon}</span>
-              }
-            >
-              Try it now
-            </Button>
+            <Link href={process.env.NEXT_PUBLIC_BASE_URL + currentLink}>
+              <Button
+                className="bg-brand-gradient px-8 py-2"
+                endContent={
+                  <span className="stroke-white">{ArrowRightIcon}</span>
+                }
+              >
+                Try it now
+              </Button>
+            </Link>
           }
         />
         <div className="bg-white/20 rounded-[20px] py-6 p-4 flex flex-col">
           <AppTab<ProductKey, InternalPath>
             tabs={PRODUCTS_TAB}
+            onSelectionChange={onSelectionChange}
             variant="underlined"
             classNames={{
               base: "justify-center",

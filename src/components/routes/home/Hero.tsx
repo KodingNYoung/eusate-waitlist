@@ -3,6 +3,7 @@ import { ArrowRightIcon, NotEqualIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import { ParallaxHero } from "@/components/shared/organisms/ParallaxHero";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -14,10 +15,10 @@ export const Hero = () => {
       }
       classNames={{
         container:
-          "bg-[url(/images/home-bg.webp)] relative md:h-[90vh] flex items-start overflow-hidden",
+          "bg-[url(/images/home-bg.webp)] relative md:h-[840px] flex items-start overflow-hidden",
         description: "text-white/60 leading-[150%] text-left md:text-center",
         descriptionContainer: "items-start md:items-center",
-        wrapper: "md:pt-6 !pt-0",
+        wrapper: "md:pt-[23px] pt-6 gap-y-10",
         title: "text-left md:text-center",
         chip: "bg-transparent bg-[linear-gradient(90deg,_rgba(215,171,7,0.3)_0%,_rgba(232,101,85,0.3)_100%)] backdrop-blur-3xl text-white ",
       }}
@@ -35,13 +36,15 @@ export const Hero = () => {
         </div>
       }
       cta={
-        <Button
-          size="sm"
-          className="bg-brand-gradient px-12 py-2.5 md:py-4 w-full md:w-auto"
-          endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
-        >
-          Sign up
-        </Button>
+        <Link href={process.env.NEXT_PUBLIC_BASE_URL + "/signup"}>
+          <Button
+            size="sm"
+            className="bg-brand-gradient px-12 py-2.5 md:py-4 w-full md:w-auto"
+            endContent={<span className="stroke-white">{ArrowRightIcon}</span>}
+          >
+            Sign up
+          </Button>
+        </Link>
       }
       title={
         <div className="space-y-2">

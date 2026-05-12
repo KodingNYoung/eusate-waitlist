@@ -61,7 +61,6 @@ export const ScrollReveal = ({
         {splitParagraphs.map((words, pIndex) => {
           let runningIndex = 0;
 
-          // calculate offset for previous paragraphs
           for (let i = 0; i < pIndex; i++) {
             runningIndex += splitParagraphs[i].reduce(
               (sum, letters) => sum + letters.length,
@@ -73,11 +72,11 @@ export const ScrollReveal = ({
             <motion.p
               key={pIndex}
               style={{ opacity: shouldFade ? opacity : 1 }}
-              className={cls("flex flex-wrap", classNames?.paragraph)}
+              className={cls("leading-[1.8] flex-wrap", classNames?.paragraph)}
             >
               {words.map((letters, wIndex) => {
                 return (
-                  <span key={wIndex} className="flex whitespace-nowrap">
+                  <span key={wIndex} className="inline-block whitespace-nowrap">
                     {letters.map((char, i) => {
                       const index = runningIndex++;
 
@@ -94,7 +93,7 @@ export const ScrollReveal = ({
                       );
                     })}
                     {/* space between words */}
-                    <span>&nbsp;</span>
+                    <span>&nbsp;&nbsp;&nbsp;</span>
                   </span>
                 );
               })}
@@ -130,7 +129,10 @@ const Letter = ({
   const opacity = useTransform(progress, [start, end], [0.3, 1]);
 
   return (
-    <motion.span style={{ opacity }} className={cls(classNames?.text)}>
+    <motion.span
+      style={{ opacity }}
+      className={cls("inline-block", classNames?.text)}
+    >
       {char}
     </motion.span>
   );

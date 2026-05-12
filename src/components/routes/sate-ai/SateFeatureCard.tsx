@@ -23,7 +23,7 @@ export const SateFeatureCard: FC<Props> = ({
   return (
     <div
       className={cls(
-        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-full md:w-[328px] min-h-[185px]",
+        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-full lg:w-[328px] min-h-[185px]",
         className,
         classNames?.base,
       )}

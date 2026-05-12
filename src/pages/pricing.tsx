@@ -13,8 +13,8 @@ import {
   SubHeader,
 } from "@/components/shared/organisms/PageHeader";
 import {
+  PageSection,
   PageTemplate,
-  SectionTemplate,
 } from "@/components/shared/organisms/PageTemplate";
 
 const Pricing = () => {
@@ -45,17 +45,17 @@ const Pricing = () => {
 
         {/* PRICING */}
 
-        <SectionTemplate classNames={{ base: "flex justify-center" }}>
+        <PageSection classNames={{ base: "flex justify-center" }}>
           <div className="flex flex-wrap gap-3 items-center justify-center">
             {PRICING.map(({ key, ...pricing }) => (
               <PricingCard key={key} {...pricing} />
             ))}
           </div>
-        </SectionTemplate>
+        </PageSection>
 
         {/* COMPARE PLANS */}
 
-        <SectionTemplate
+        <PageSection
           classNames={{ base: "flex flex-col items-center space-y-20" }}
           header={
             <SubHeader
@@ -76,11 +76,11 @@ const Pricing = () => {
             headers={CATEGORY_LIST}
             data={COMPARE_PRICING_LIST}
           />
-        </SectionTemplate>
+        </PageSection>
 
         {/* ADD ONs */}
 
-        <SectionTemplate
+        <PageSection
           header={
             <SubHeader
               classNames={{
@@ -99,7 +99,7 @@ const Pricing = () => {
               <AddOnCard key={id} {...addOn} />
             ))}
           </div>
-        </SectionTemplate>
+        </PageSection>
       </PageTemplate>
     </div>
   );

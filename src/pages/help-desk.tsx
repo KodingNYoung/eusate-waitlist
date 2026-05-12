@@ -22,6 +22,7 @@ const HelpDeskPage = () => {
           chipContainer: "justify-center",
           description: "text-center",
           descriptionContainer: "items-center",
+          wrapper: "gap-y-20",
           container:
             "bg-[url(/images/helpdesk-bg.webp)] bg-center h-[80vh] md:h-[90vh] ",
         }}

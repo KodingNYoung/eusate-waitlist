@@ -9,7 +9,7 @@ import {
   GapBrandGradIcon,
   HumanAgentGradIcon,
   TicketBrandGradIcon,
-  TicketContextIcon,
+  TicketCtxIcon,
 } from "@/assets/icons";
 import { ReactElement } from "react";
 
@@ -53,7 +53,7 @@ export const SATE_FEATURES: SateFeature[] = [
   {
     id: 4,
     key: "ticket-context",
-    icon: TicketContextIcon,
+    icon: TicketCtxIcon,
     title: "Ticket Context",
     description:
       "Create custom content directly in our built-in text editor or import using links.",

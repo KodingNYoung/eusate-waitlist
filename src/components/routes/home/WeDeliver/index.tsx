@@ -2,11 +2,13 @@ import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { ResolutionRate } from "./cards/ResolutionRate";
 import { CSATScore } from "./cards/CSATScore";
 import { ROIFounders } from "./cards/ROIFounders";
-import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
+import { PageSection } from "@/components/shared/organisms/PageTemplate";
 
 export const WeDeliver = () => {
   return (
-    <SectionTemplate className="space-y-20 px-5 py-12 md:py-20">
+    <PageSection
+      classNames={{ base: "px-5 py-12 md:py-20", container: "!gap-y-20 " }}
+    >
       <SubHeader
         position="center"
         chipLabel="We deliver"
@@ -18,6 +20,6 @@ export const WeDeliver = () => {
         <CSATScore />
         <ROIFounders />
       </div>
-    </SectionTemplate>
+    </PageSection>
   );
 };
