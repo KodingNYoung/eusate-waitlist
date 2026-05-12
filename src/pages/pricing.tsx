@@ -23,7 +23,7 @@ const Pricing = () => {
       <PageTemplate
         gradientVariant="yellow"
         classNames={{
-          container: "pt-[88px]",
+          container: "pt-[88px] px-5",
           wrapper: "md:py-20 space-y-20",
         }}
       >
@@ -32,8 +32,9 @@ const Pricing = () => {
           title="Unlock Full Access"
           classNames={{
             container: "md:h-auto",
-            root: "flex-col w-full md:w-[60%]",
-            wrapper: "md:justify-between flex-col md:flex-row space-y-8",
+            root: "flex-col w-full md:w-[60%] gap-y-4",
+            wrapper:
+              "md:justify-between flex-col md:flex-row md:items-end space-y-8",
           }}
           endContent={
             <Button size="sm" className="py-4.5 px-3">
@@ -56,21 +57,23 @@ const Pricing = () => {
         {/* COMPARE PLANS */}
 
         <PageSection
-          classNames={{ base: "flex flex-col items-center space-y-20" }}
-          header={
-            <SubHeader
-              position="center"
-              classNames={{
-                container: "space-y-4",
-                title: "text-bold-3xl md:text-bold-6xl text-center",
-                description: "md:text-regular-xl text-center",
-              }}
-              title="Compare our plans"
-              description="We charge by value delivered, not vanity metrics. Transparent
-              plans. No hidden fees. Cancel anytime."
-            />
-          }
+          classNames={{
+            base: "flex flex-col items-center md:py-20",
+            container: "!gap-y-20",
+          }}
         >
+          <SubHeader
+            position="center"
+            classNames={{
+              container: "space-y-4",
+              title: "text-bold-3xl md:text-bold-6xl text-center",
+              description: "md:text-regular-xl text-center md:w-[70%] mx-auto",
+              root: "flex-col gap-4 items-center ",
+            }}
+            title="Compare our plans"
+            description="We charge by value delivered, not vanity metrics. Transparent
+              plans. No hidden fees. Cancel anytime."
+          />
           <CompareGrid
             headerTitle="Plan Features"
             headers={CATEGORY_LIST}
@@ -84,6 +87,7 @@ const Pricing = () => {
           header={
             <SubHeader
               classNames={{
+                root: "flex-col gap-4",
                 title:
                   "text-bold-3xl md:text-bold-6xl text-center md:text-left",
                 description:

@@ -29,7 +29,7 @@ export const FAQ = () => {
           trigger: "justify-between text-gray-700",
           titleWrapper: "flex-0",
           title: "text-left text-semibold-lg",
-          base: "bg-white rounded-x24 px-6 flex-1",
+          base: "bg-white rounded-x24 px-4 flex-1",
         }}
         items={HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED].map(
           (faq) => ({

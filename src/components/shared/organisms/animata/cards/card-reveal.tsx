@@ -21,7 +21,7 @@ export const ScrollCards = <T,>({ items, children }: Props<T>) => {
   return (
     <section
       ref={ref}
-      className="hidden h-[60vh] md:flex justify-center items-center w-full"
+      className="hidden h-[50vh] md:flex justify-center items-center w-full"
     >
       <div className="w-full overflow-hidden flex items-center justify-center h-full">
         <motion.div style={{ x }} className="flex gap-6">

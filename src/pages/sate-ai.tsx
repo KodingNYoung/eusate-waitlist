@@ -22,7 +22,7 @@ const SateAiPage = () => {
     <PageTemplate classNames={{ wrapper: "grid gap-[50px]" }}>
       <PageHero
         classNames={{
-          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[62vh] md:h-[85vh] flex items-start pb-12 md:pb-20 justify-center mx-0",
+          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[62vh] md:h-[700px] flex items-start pb-12 md:pb-20 justify-center mx-0",
           container: "h-full flex items-end",
           wrapper: "px-5",
         }}
@@ -52,7 +52,7 @@ const SateAiPage = () => {
         />
       </PageHero>
 
-      <section className="relative h-full md:h-[60vh] w-full px-5 py-10 space-y-10 md:space-y-0">
+      <section className="relative h-full md:h-[60vh] w-full px-5 md:pt-20 space-y-10 md:space-y-0">
         {/* TEXT */}
         <div className="flex items-center w-full justify-center z-2">
           <ScrollReveal

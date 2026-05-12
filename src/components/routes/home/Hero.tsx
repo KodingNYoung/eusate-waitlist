@@ -38,7 +38,7 @@ export const Hero = () => {
       cta={
         <Link
           href={process.env.NEXT_PUBLIC_BASE_URL + "/signup"}
-          className="w-full"
+          className="w-full md:w-fit"
         >
           <Button
             size="sm"

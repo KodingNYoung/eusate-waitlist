@@ -9,8 +9,12 @@ type ProgressBarProps = {
 
 export const ProgressBar = ({ active, onComplete }: ProgressBarProps) => {
   const [width, setWidth] = useState(0);
+
   const startRef = useRef<number | null>(null);
   const rafRef = useRef<number>(0);
+  const completeRef = useRef(onComplete);
+
+  completeRef.current = onComplete;
 
   useEffect(() => {
     if (!active) {
@@ -22,18 +26,22 @@ export const ProgressBar = ({ active, onComplete }: ProgressBarProps) => {
 
     const tick = (ts: number) => {
       if (!startRef.current) startRef.current = ts;
+
       const pct = Math.min(((ts - startRef.current) / DURATION) * 100, 100);
+
       setWidth(pct);
+
       if (pct < 100) {
         rafRef.current = requestAnimationFrame(tick);
       } else {
-        onComplete();
+        completeRef.current();
       }
     };
 
     rafRef.current = requestAnimationFrame(tick);
+
     return () => cancelAnimationFrame(rafRef.current);
-  }, [active, onComplete]);
+  }, [active]);
 
   if (!active) return null;
 

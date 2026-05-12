@@ -30,12 +30,12 @@ const Navbar = () => {
       <div
         className={cls(
           styles.navbarBg,
-          "flex bg-white w-full z-3 max-h-[80px] md:max-h-[88px] justify-around shadow-3xl",
+          "flex bg-white w-full z-3 h-[80px] max-h-[80px] md:max-h-[88px] justify-around shadow-3xl",
         )}
       >
         <div className="container flex justify-between items-center w-full md:w-[70%] ">
           {/* EXPLORE */}
-          <div className="hidden md:flex gap-5 ">
+          <div className="hidden xl:flex gap-5 ">
             {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
               <AppDropdown
                 key={id}
@@ -64,7 +64,7 @@ const Navbar = () => {
           </Link>
 
           {/* CTA */}
-          <nav className="hidden md:flex items-center gap-12">
+          <nav className="hidden xl:flex items-center gap-12">
             <Link
               href={ROUTES.PRICING}
               className="text-gray-400 text-medium-base"
@@ -74,13 +74,13 @@ const Navbar = () => {
             <span className="text-gray-100">|</span>
             <div className="flex items-center gap-6">
               <Link
-                href={ROUTES.LOGIN}
+                href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.LOGIN}
                 className="text-medium-sm text-gray-500"
               >
                 Login
               </Link>
               <Button
-                href={ROUTES.SIGNUP}
+                href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}
                 endContent={<span className="stroke-white">{ArrowRight}</span>}
                 className="py-2 px-6"
               >
@@ -93,7 +93,7 @@ const Navbar = () => {
           <Button
             variant="text"
             onClick={() => setOpen((curr) => !curr)}
-            className="md:hidden size-12 border border-transparent flex items-center justify-center fill-black stroke-black"
+            className="xl:hidden size-12 border border-transparent flex items-center justify-center fill-black stroke-black"
           >
             {open ? CloseIcon : HamburgerMenu}
           </Button>

@@ -15,7 +15,7 @@ export const MobileNav = () => {
       initial={{ height: 0, opacity: 0 }}
       animate={{ height: 900, opacity: 1 }}
       exit={{ height: 0, opacity: 0 }}
-      className="w-full fixed translate-y-[80px] flex flex-col gap-12 overflow-auto bg-white p-5 md:hidden"
+      className="w-full fixed translate-y-[80px] flex flex-col gap-12 overflow-auto bg-white p-5"
     >
       <nav className="flex flex-col gap-4">
         <Accordion

@@ -19,18 +19,13 @@ export const ProgressDots: FC<Props> = ({
   className,
 }) => {
   return (
-    <div
-      className={cls(
-        "grid grid-flow-col auto-cols-fr gap-4 w-full border",
-        className,
-      )}
-    >
+    <div className={cls("flex gap-2", className)}>
       {TESTIMONIALS.map((_, i) => (
-        <div
+        <Button
           key={i}
+          variant="tetiaryText"
           onClick={() => goTo(i, i > current ? 1 : -1)}
-          // className="relative h-[8px] flex-1 w-[48px] bg-black/20 rounded-full overflow-hidden transition-all duration-300 focus:outline-none "
-          className="relative h-[8px] w-[58px]"
+          className="relative h-[8px] w-[57px] bg-black/20 rounded-full overflow-hidden transition-all duration-300 focus:outline-none "
           aria-label={`Go to testimonial ${i + 1}`}
         >
           {i === current && (
@@ -45,7 +40,7 @@ export const ProgressDots: FC<Props> = ({
           {i < current && (
             <div className="absolute inset-0 rounded-full bg-black" />
           )}
-        </div>
+        </Button>
       ))}
     </div>
   );

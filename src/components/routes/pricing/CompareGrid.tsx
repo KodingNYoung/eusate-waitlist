@@ -14,7 +14,7 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
   return (
     <div className="w-full overflow-x-auto">
       <div className="grid grid-cols-4 border border-gray-100 rounded-3xl min-w-[800px] md:w-full">
-        <header className="items-start border-b">
+        <header className="items-start -b">
           <div className="flex items-end min-h-32 p-2 min-w-64">
             <Typography variant="bold-xl" className="p-4">
               {headerTitle}

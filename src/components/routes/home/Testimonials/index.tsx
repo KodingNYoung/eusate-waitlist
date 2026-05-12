@@ -64,7 +64,7 @@ export const Testimonials = () => {
         <div className="flex-1 flex flex-col gap-y-[55px] justify-between p-6 md:p-8">
           <div className="md:space-y-8">
             <ProgressDots
-              className="hidden md:block"
+              className="hidden md:flex"
               current={current}
               progress={progress}
               goTo={goTo}

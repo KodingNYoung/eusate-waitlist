@@ -72,7 +72,10 @@ export const ScrollReveal = ({
             <motion.p
               key={pIndex}
               style={{ opacity: shouldFade ? opacity : 1 }}
-              className={cls("leading-[1.8] flex-wrap", classNames?.paragraph)}
+              className={cls(
+                "md:leading-[1.8] flex-wrap",
+                classNames?.paragraph,
+              )}
             >
               {words.map((letters, wIndex) => {
                 return (

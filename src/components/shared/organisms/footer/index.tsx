@@ -62,7 +62,7 @@ const Footer = () => {
                     <Link
                       key={key}
                       href={link ?? "/"}
-                      className="text-bold-sm md:text-bold-lg text-white/60"
+                      className="text-bold-sm md:text-bold-lg text-white/60 hover:text-white"
                     >
                       {label}
                     </Link>
