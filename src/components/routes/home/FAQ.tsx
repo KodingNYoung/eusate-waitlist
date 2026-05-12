@@ -10,7 +10,7 @@ export const FAQ = () => {
     <SectionTemplate
       classNames={{
         base: "bg-gray-50 rounded-x40",
-        wrapper: "flex gap-8 flex-wrap md:flex-nowrap justify-between",
+        wrapper: "flex gap-y-10 flex-wrap md:flex-nowrap justify-between",
       }}
     >
       <SubHeader
@@ -25,11 +25,12 @@ export const FAQ = () => {
       />
       <Accordion
         variant="splitted"
+        className="border-2 border-black bg-black gap-6 px-0"
         itemClasses={{
           trigger: "justify-between text-gray-700",
           titleWrapper: "flex-0",
           title: "text-left text-semibold-lg",
-          base: "bg-white rounded-x24 px-4 flex-1",
+          base: "bg-white rounded-x24 px-3 flex-1 w-full -translate-x-[4px]",
         }}
         items={HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED].map(
           (faq) => ({

@@ -28,46 +28,47 @@ export const CardDispMobile: FC<Props> = ({
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   return (
-    <div className="flex flex-col md:hidden">
-      <Swiper
-        centeredSlides
-        onBeforeInit={(swiper) => {
-          // @ts-expect-error: Clearing type error
-          swiper.params.navigation.prevEl = prevRef.current;
-          // @ts-expect-error: Clearing type error
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        className="mySwiper"
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        mousewheel
-        spaceBetween={0}
-        modules={[Autoplay, Navigation]}
-      >
-        {items.map((card, i) => (
-          <SwiperSlide key={card.num}>
-            <div className="border w-[50%]">
-              <ActionCard
-                key={i}
-                card={card}
-                index={i}
-                isActive={i === current}
-                timerKey={timerKey}
-                onClick={() => jumpTo(i)}
-                onComplete={advance}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <div className="flex justify-between md:justify-start items-center gap-4 pr-8">
+    <div className="w-full flex flex-col gap-4">
+      <div className="flex h-[159px] w-full">
+        <Swiper
+          centeredSlides
+          onBeforeInit={(swiper) => {
+            // @ts-expect-error: Clearing type error
+            swiper.params.navigation.prevEl = prevRef.current;
+            // @ts-expect-error: Clearing type error
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          className="mySwiper"
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: true,
+          }}
+          mousewheel
+          spaceBetween={0}
+          modules={[Autoplay, Navigation]}
+        >
+          {items.map((card, i) => (
+            <SwiperSlide key={card.num}>
+              <div className="w-full">
+                <ActionCard
+                  key={i}
+                  card={card}
+                  index={i}
+                  isActive={i === current}
+                  timerKey={timerKey}
+                  onClick={() => jumpTo(i)}
+                  onComplete={advance}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="flex w-full h-full justify-between items-center">
         <Button
           ref={prevRef}
           variant="text"
@@ -80,7 +81,7 @@ export const CardDispMobile: FC<Props> = ({
         <Button
           ref={nextRef}
           variant="text"
-          className={cls("px-4 py-2 bg-white/5 stroke-white")}
+          className={cls("px-4 py-2 !bg-black stroke-white")}
         >
           {ArrowRightIcon}
         </Button>

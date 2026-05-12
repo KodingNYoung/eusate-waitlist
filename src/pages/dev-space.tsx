@@ -14,7 +14,7 @@ const Devspace = () => {
     >
       <PageHero
         classNames={{
-          base: "bg-[url(/images/devspace-bg.webp)] bg-right md:bg-center flex justify-center !h-[80vh] pb-12 md:pb-20 md:mx-4 px-5",
+          base: "bg-[url(/images/devspace-bg.webp)] bg-right md:bg-center flex justify-center !h-[80vh] md:h-[600px] pb-12 md:pb-20 md:mx-4 px-5",
           container: "flex items-end h-full",
         }}
       >

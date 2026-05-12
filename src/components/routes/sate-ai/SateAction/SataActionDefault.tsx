@@ -5,8 +5,6 @@ import Image from "next/image";
 import { Card } from "./types";
 import { FC } from "@/utils/types";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
-import { CardDispMobile } from "./CardDispMobile";
-import { useMediaQuery } from "@/utils/hooks";
 
 type Props = {
   title: string;
@@ -15,7 +13,6 @@ type Props = {
 };
 
 export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
-  const isMobile = useMediaQuery();
   const [current, setCurrent] = useState(0);
   const [timerKey, setTimerKey] = useState(0);
 
@@ -33,7 +30,7 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
     <div className="relative overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-1 xl:grid-rows-[auto_auto_1fr] xl:grid-cols-2 grid-flow-row xl:grid-flow-col gap-[52px] ">
       <SubHeader
         classNames={{
-          container: "md:w-[80%] w-full self-start order-1",
+          container: "md:w-[80%] self-start order-1",
           title: "text-[32px] leading-[120%]",
         }}
         chipLabel={chipLabel}
@@ -42,29 +39,19 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
 
       {/* CARDS  */}
       <div className="order-3 md:order-2">
-        {isMobile ? (
-          <CardDispMobile
-            items={items}
-            current={current}
-            timerKey={timerKey}
-            jumpTo={jumpTo}
-            advance={advance}
-          />
-        ) : (
-          <div className="hidden md:flex flex-col  h-[400px] max-h-[440px] md:h-[420px] overflow-hidden gap-4">
-            {items.map((card, i) => (
-              <ActionCard
-                key={i}
-                card={card}
-                index={i}
-                isActive={i === current}
-                timerKey={timerKey}
-                onClick={() => jumpTo(i)}
-                onComplete={advance}
-              />
-            ))}
-          </div>
-        )}
+        <div className="flex flex-col  h-full max-h-[540px] md:h-[420px] overflow-hidden gap-4">
+          {items.map((card, i) => (
+            <ActionCard
+              key={i}
+              card={card}
+              index={i}
+              isActive={i === current}
+              timerKey={timerKey}
+              onClick={() => jumpTo(i)}
+              onComplete={advance}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="order-2 row-span-2 w-full h-[323px] md:h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 p-8 md:p-2">

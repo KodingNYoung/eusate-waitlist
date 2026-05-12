@@ -3,7 +3,7 @@ import {
   SATE_FEATURES_B,
   SateFeature,
 } from "@/components/routes/sate-ai/utils";
-import { SateAction } from "@/components/routes/sate-ai/SateAction";
+import { SateAction } from "@/components/routes/sate-ai/SateAction/SataActionDefault";
 import { SateFeatureCard } from "@/components/routes/sate-ai/SateFeatureCard";
 import { ScrollCards } from "@/components/shared/organisms/animata/cards/card-reveal";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
@@ -22,7 +22,7 @@ const SateAiPage = () => {
     <PageTemplate classNames={{ wrapper: "grid gap-[50px]" }}>
       <PageHero
         classNames={{
-          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[62vh] md:h-[700px] flex items-start pb-12 md:pb-20 justify-center mx-0",
+          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[72vh] md:h-[700px] flex items-start pb-12 md:pb-20 justify-center mx-0",
           container: "h-full flex items-end",
           wrapper: "px-5",
         }}

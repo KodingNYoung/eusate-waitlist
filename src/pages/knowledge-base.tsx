@@ -7,6 +7,8 @@ import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 import { BorderGradient } from "@/components/shared/organisms/BorderGradient";
 import { PageHero } from "@/components/shared/organisms/PageHero";
+import { ROUTES } from "@/utils/constants";
+import Link from "next/link";
 
 const KnowledgeBasePage = () => {
   return (
@@ -23,7 +25,7 @@ const KnowledgeBasePage = () => {
         <PageHeader
           classNames={{
             title: "text-white",
-            titleContainer: "gap-y-10 ",
+            titleContainer: "gap-y-10",
             description: "text-white leading-[180%]",
             descriptionContainer: "space-y-[46px]",
             root: "flex-col gap-y-6 md:gap-y-[46px] py-10 md:py-0",
@@ -34,16 +36,20 @@ const KnowledgeBasePage = () => {
           description="Upload once. Answer everywhere. Your knowledge base trains SATE to deliver precise, on-brand responses while keeping your team aligned on every detail."
           cta={
             <BorderGradient>
-              <Button
-                size="sm"
-                variant="outlined"
-                className="px-12 py-4 "
-                endContent={
-                  <span className="stroke-black">{ArrowRightIcon}</span>
-                }
+              <Link
+                href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.KNOWLEDGE_BASE}
               >
-                Get started
-              </Button>
+                <Button
+                  size="sm"
+                  variant="outlined"
+                  className="px-12 py-4 "
+                  endContent={
+                    <span className="stroke-black">{ArrowRightIcon}</span>
+                  }
+                >
+                  Get started
+                </Button>
+              </Link>
             </BorderGradient>
           }
           endContent={
