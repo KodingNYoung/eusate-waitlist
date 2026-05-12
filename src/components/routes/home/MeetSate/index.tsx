@@ -9,7 +9,7 @@ import { ROUTES } from "@/utils/constants";
 
 export const MeetSate = () => {
   return (
-    <section className="hidden md:block bg-[url(/home/images/meet-sate-bg.webp)] bg-no-repeat bg-cover pt-16 pb-20 rounded-x40">
+    <section className="hidden md:block bg-[url(/home/images/meet-sate-bg.webp)] bg-no-repeat bg-cover bg-bottom pt-16 pb-20 rounded-x40">
       <div className="container flex flex-col items-center gap-[56px]">
         <header className="flex flex-col items-center space-y-6 w-[90%] lg:w-[50%]">
           <div className="flex flex-col items-center relative">

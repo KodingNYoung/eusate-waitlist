@@ -43,7 +43,7 @@ export const PageTemplate = ({
 
 type SectionTemplateProps = {
   id?: string;
-  color: HexColor;
+  color?: HexColor;
   header?: ReactElement;
   children: ReactNode;
   className?: TWClassNames;
@@ -78,13 +78,19 @@ export const SectionTemplate = ({
 
 export const PageSection = ({
   header,
+  color,
   children,
   className,
   classNames,
 }: SectionTemplateProps) => {
   return (
     <section
-      className={cls("rouded-x24 md:rounded-x40", className, classNames?.base)}
+      style={{ backgroundColor: color }}
+      className={cls(
+        "transition-colors duration-300 rouded-x24 md:rounded-x40",
+        className,
+        classNames?.base,
+      )}
     >
       <div className={cls("md:container grid gap-y-8", classNames?.container)}>
         {header && header}
