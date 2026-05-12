@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Logo from "../../atoms/Logo";
 import Typography from "../../atoms/Typography";
 import Button from "../../molecules/Button";
@@ -10,7 +11,7 @@ import { ArrowRightIcon } from "@/assets/icons";
 const Footer = () => {
   return (
     <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[20px] md:rounded-[40px] pt-20 px-4 md:px-24 mt-20 mx-2 md:mx-4">
-      <div className="container flex flex-col gap-12 md:gap-56">
+      <div className="relative container flex flex-col gap-12 md:gap-56">
         <div className="flex flex-wrap justify-between gap-16">
           <div className="flex flex-col gap-16 w-[463px]">
             <div className="grid gap-8">
@@ -75,6 +76,7 @@ const Footer = () => {
         <div className="relative w-full">
           <div className="flex w-full mb-20 justify-center relative z-5">
             <Button
+              size="sm"
               variant="outlined"
               className="py-4 border-0 before:hidden px-6 md:px-12 shadow-hard-medium"
               endContent={
@@ -84,12 +86,9 @@ const Footer = () => {
               Get started today
             </Button>
           </div>
-          <Logo
-            type="full-gradient-white"
-            width={140}
-            height={140}
-            className="absolute bottom-0 right-0 z-3 -translate-x-[90px] opacity-20"
-          />
+        </div>
+        <div className="absolute bottom-0 z-3 opacity-10 w-full h-[20rem]">
+          <Image src="/logos/full-gradient-white.svg" fill alt="footer-img" />
         </div>
       </div>
     </div>

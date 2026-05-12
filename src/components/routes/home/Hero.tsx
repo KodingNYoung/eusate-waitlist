@@ -15,7 +15,7 @@ export const Hero = () => {
       }
       classNames={{
         container:
-          "bg-[url(/images/home-bg.webp)] relative md:h-[840px] flex items-start overflow-hidden",
+          "bg-[url(/images/home-bg.webp)] relative md:!h-[840px] flex items-start overflow-hidden",
         description: "text-white/60 leading-[150%] text-left md:text-center",
         descriptionContainer: "items-start md:items-center",
         wrapper: "md:pt-[23px] pt-6 gap-y-10",
