@@ -1,8 +1,6 @@
 import { cls } from "@/utils/helpers";
 import { PRICING } from "@/utils/constants";
-import { ArrowRightIcon } from "@/assets/icons";
 import { PricingCard } from "../pricing/PricingCard";
-import Button from "@/components/shared/molecules/Button";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
 
@@ -28,19 +26,12 @@ export const Pricing = () => {
                   id === 3 && "order-2 md:order-3",
                 )}
               >
-                <PricingCard {...pricing} />
+                <PricingCard showCompare {...pricing} />
               </div>
             ))}
           </div>
         </div>
       </div>
-      <Button
-        variant="tetiary"
-        className="text-gray-600 w-full p-4"
-        endContent={<span className="stroke-gray-600">{ArrowRightIcon}</span>}
-      >
-        Compare plans
-      </Button>
     </SectionTemplate>
   );
 };

@@ -25,7 +25,7 @@ export const FAQ = () => {
       />
       <Accordion
         variant="splitted"
-        className="border-2 border-black bg-black gap-6 px-0"
+        className="px-0"
         itemClasses={{
           trigger: "justify-between text-gray-700",
           titleWrapper: "flex-0",

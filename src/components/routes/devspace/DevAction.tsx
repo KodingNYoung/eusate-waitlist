@@ -21,7 +21,7 @@ export const DevAction = () => {
               variant="regular-xl"
               className="text-regular-sm md:regular-xl"
             >
-              Conncect Sate via APIs to your business platforms to perform
+              Connect Sate via APIs to your business platforms to perform
               actions
             </Typography>
           </div>

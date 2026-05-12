@@ -73,8 +73,9 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="relative w-full">
-          <div className="flex w-full mb-20 justify-center relative z-5">
+
+        <div className="flex w-full mb-20 justify-center relative z-5 pt-10 md:pt-0">
+          <Link href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}>
             <Button
               size="sm"
               variant="outlined"
@@ -85,7 +86,7 @@ const Footer = () => {
             >
               Get started today
             </Button>
-          </div>
+          </Link>
         </div>
         <div className="absolute bottom-0 z-3 opacity-10 w-full h-[20rem]">
           <Image src="/logos/full-gradient-white.svg" fill alt="footer-img" />

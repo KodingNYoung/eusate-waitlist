@@ -1,7 +1,8 @@
-import { TickCircleIcon } from "@/assets/icons";
+import { ArrowRightIcon, TickCircleIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Chip from "@/components/shared/molecules/Chip";
+import { ROUTES } from "@/utils/constants";
 import { cls } from "@/utils/helpers";
 import { FC, InternalPath } from "@/utils/types";
 import Link from "next/link";
@@ -9,6 +10,7 @@ import Link from "next/link";
 type Props = {
   label: string;
   price: number;
+  showCompare?: boolean;
   redirect: InternalPath;
   features: string[];
   recomended?: boolean;
@@ -20,6 +22,7 @@ export const PricingCard: FC<Props> = ({
   features,
   redirect,
   recomended,
+  showCompare,
 }) => {
   return (
     <div
@@ -74,14 +77,32 @@ export const PricingCard: FC<Props> = ({
           </div>
         ))}
       </div>
-      <Link href={process.env.NEXT_PUBLIC_BASE_URL + redirect}>
-        <Button
-          className="py-3 w-full"
-          variant={recomended ? "outlined" : "primary"}
-        >
-          {recomended ? "Get started" : "Select plan"}
-        </Button>
-      </Link>
+      <div className="grid gap-4">
+        <Link href={process.env.NEXT_PUBLIC_BASE_URL + redirect}>
+          <Button
+            className="py-3 w-full"
+            variant={recomended ? "outlined" : "primary"}
+          >
+            {recomended ? "Get started" : "Select plan"}
+          </Button>
+        </Link>
+        {showCompare && (
+          <Link href={ROUTES.PRICING + "#cp"} scroll>
+            <Button
+              variant="tetiary"
+              data-featured={recomended}
+              className="group text-gray-600 w-full p-4 data-[featured=true]:text-white data-[featured=true]:hover:!bg-transparent"
+              endContent={
+                <span className="stroke-gray-600 group-data-[featured=true]:stroke-white">
+                  {ArrowRightIcon}
+                </span>
+              }
+            >
+              Compare plans
+            </Button>
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

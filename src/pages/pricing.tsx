@@ -57,6 +57,7 @@ const Pricing = () => {
         {/* COMPARE PLANS */}
 
         <PageSection
+          id="#cp"
           classNames={{
             base: "flex flex-col items-center md:py-20",
             container: "!gap-y-20",

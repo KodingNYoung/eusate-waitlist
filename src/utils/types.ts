@@ -173,6 +173,7 @@ export type Testimonial = {
   id: number;
   imgSrc: InternalPath;
   name: string;
+  theme: HexColor;
   testimony: string;
   company: string;
   role: string;

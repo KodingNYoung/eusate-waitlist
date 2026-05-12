@@ -79,13 +79,16 @@ const Navbar = () => {
               >
                 Login
               </Link>
-              <Button
-                href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}
-                endContent={<span className="stroke-white">{ArrowRight}</span>}
-                className="py-2 px-6"
-              >
-                Sign up
-              </Button>
+              <Link href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}>
+                <Button
+                  endContent={
+                    <span className="stroke-white">{ArrowRight}</span>
+                  }
+                  className="py-2 px-6"
+                >
+                  Sign up
+                </Button>
+              </Link>
             </div>
           </nav>
 

@@ -1045,7 +1045,7 @@ export const DEVSPACE_ACTIONS = [
   },
   {
     id: 4,
-    title: "Delpy to Live",
+    title: "Deploy to Live",
     description: "Activate your function for real customer interations.",
   },
 ];
@@ -1202,6 +1202,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     imgSrc: "/home/images/testimony-1.webp",
+    theme: "#F8CFCA",
     testimony:
       "We went from 5 support agents to just 1, and our response times got faster. SATE handles everything from password resets to complex refund scenarios. It's genuinely impressive how human the conversations feel.",
     name: "Marcus Rodriquez",
@@ -1217,6 +1218,7 @@ export const TESTIMONIALS: Testimonial[] = [
     testimony:
       "SATE transformed our customer support overnight. We used to dread Monday mornings — now our inbox practically handles itself. The AI understands context in a way that genuinely shocked our team.",
     name: "Priya Nair",
+    theme: "#F3E5B2",
     role: "Head of CX, Bloom (DTC Beauty, Seed)",
     company: "bloom",
     stats: [
@@ -1230,6 +1232,7 @@ export const TESTIMONIALS: Testimonial[] = [
     testimony:
       "I was skeptical at first — how could AI replace the nuanced judgment of our top agents? Six months in, SATE handles 90% of tickets and our agents focus only on edge cases. It's been revelatory.",
     name: "Jordan Lee",
+    theme: "#BEDDFD",
     role: "VP Operations, Stackly (B2B SaaS, Series B)",
     company: "stackly",
     stats: [
@@ -1243,24 +1246,12 @@ export const TESTIMONIALS: Testimonial[] = [
     testimony:
       "The onboarding was seamless and the results were immediate. Within the first week, SATE was already resolving complex billing disputes without escalation. Our team actually feels less stressed now.",
     name: "Amara Osei",
+    theme: "#B6E9D1",
     role: "Founder, Kora (Fintech, Pre-Seed)",
     company: "kora",
     stats: [
       { value: "65%", label: "fewer escalations" },
       { value: "2 days", label: "to full deployment" },
-    ],
-    imgSrc: "/home/images/testimony-1.webp",
-  },
-  {
-    id: 5,
-    testimony:
-      "We operate in 12 countries. SATE handles multilingual support flawlessly. Our CSAT scores went from 3.8 to 4.7 in under two months. I genuinely cannot imagine going back to our old setup.",
-    name: "Thomas Becker",
-    role: "CEO, Wandr (Travel, Series A)",
-    company: "wandr",
-    stats: [
-      { value: "12", label: "languages supported" },
-      { value: "4.7★", label: "avg. CSAT score" },
     ],
     imgSrc: "/home/images/testimony-1.webp",
   },

@@ -3,7 +3,7 @@ import GradientBackground, {
 } from "@/components/shared/atoms/GradientBackground";
 import Navbar from "@/components/shared/organisms/navbar";
 import { cls } from "@/utils/helpers";
-import { TWClassNames } from "@/utils/types";
+import { HexColor, TWClassNames } from "@/utils/types";
 import { ReactElement, ReactNode } from "react";
 import Footer from "./footer";
 
@@ -42,6 +42,8 @@ export const PageTemplate = ({
 };
 
 type SectionTemplateProps = {
+  id?: string;
+  color: HexColor;
   header?: ReactElement;
   children: ReactNode;
   className?: TWClassNames;
@@ -49,13 +51,23 @@ type SectionTemplateProps = {
 };
 
 export const SectionTemplate = ({
+  id,
+  color,
   header,
   children,
   className,
   classNames,
 }: SectionTemplateProps) => {
   return (
-    <section className={cls(className, classNames?.base)}>
+    <section
+      style={{ backgroundColor: color }}
+      id={id}
+      className={cls(
+        "transition-colors duration-300",
+        className,
+        classNames?.base,
+      )}
+    >
       <div className={cls("md:container space-y-8", classNames?.container)}>
         {header}
         {children}

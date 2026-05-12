@@ -49,7 +49,10 @@ export const Testimonials = () => {
   const t = useMemo(() => TESTIMONIALS[current], [current]);
 
   return (
-    <SectionTemplate className="bg-red-100 max-w-screen overflow-hidden rounded-x20 md:rounded-x40 py-20">
+    <SectionTemplate
+      color={t.theme}
+      className="max-w-screen overflow-hidden rounded-x20 md:rounded-x40 py-20"
+    >
       <div className="flex flex-wrap gap-x-20 justify-center items-center md:justify-between">
         <div className="space-y-6">
           <ProgressDots
