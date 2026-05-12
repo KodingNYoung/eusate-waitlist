@@ -43,9 +43,9 @@ export const BlogCard: FC<Props> = ({
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
-        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 shadow-soft-xxsmall",
+        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 ",
         spotlightVariant?.container,
-        variant === "page" && "border border-gray-50 p-4",
+        variant === "page" && "border border-gray-50 p-4 shadow-soft-xxsmall",
       )}
     >
       <div

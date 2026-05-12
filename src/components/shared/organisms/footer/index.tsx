@@ -26,7 +26,9 @@ const Footer = () => {
                   <Button
                     href={link}
                     variant="tetiary"
-                    classNames={{ root: "p-3 border-white/20" }}
+                    classNames={{
+                      root: "p-3 border-white/20 hover:!bg-white/15",
+                    }}
                   >
                     <span className="stroke-gray-400 fill-[#98A2B3]">
                       {icon}
