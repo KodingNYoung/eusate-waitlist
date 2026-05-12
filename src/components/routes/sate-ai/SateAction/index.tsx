@@ -51,14 +51,15 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
         ))}
       </div>
 
-      <div className="order-2 row-span-2 w-full h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 pl-8 pt-8 md:p-2">
+      <div className="order-2 row-span-2 w-full h-[323px] md:h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 p-8 md:p-2">
         {/* <PhoneFrame messages={CARDS[current].chat} /> */}
-        <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]">
+        {/* <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]"> */}
+        <div className="relative w-full h-full">
           <Image
             alt={chipLabel}
-            src={CARDS[current].imgSrc!}
+            src={items[current].imgSrc!}
             fill
-            className="object-cover object-top md:object-contain"
+            className="object-contain object-top aspect-[1/2] md:object-contain"
           />
         </div>
       </div>

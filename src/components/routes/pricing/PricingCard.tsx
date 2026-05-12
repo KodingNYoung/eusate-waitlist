@@ -75,7 +75,10 @@ export const PricingCard: FC<Props> = ({
         ))}
       </div>
       <Link href={process.env.NEXT_PUBLIC_BASE_URL + redirect}>
-        <Button className="py-3" variant={recomended ? "outlined" : "primary"}>
+        <Button
+          className="py-3 w-full"
+          variant={recomended ? "outlined" : "primary"}
+        >
           {recomended ? "Get started" : "Select plan"}
         </Button>
       </Link>

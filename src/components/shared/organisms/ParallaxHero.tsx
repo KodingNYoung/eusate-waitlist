@@ -5,6 +5,7 @@ import Typography from "../atoms/Typography";
 import { cls } from "@/utils/helpers";
 import Chip from "../molecules/Chip";
 import Image from "next/image";
+import { useMediaQuery } from "@/utils/hooks";
 
 type Slots =
   | "base"
@@ -39,15 +40,36 @@ export const ParallaxHero: FC<Props> = ({
   classNames,
 }) => {
   const headerRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = useMediaQuery();
   const { scrollYProgress } = useScroll({
     target: headerRef,
     offset: ["start start", "end start"],
   });
 
-  const textScale = useTransform(scrollYProgress, [0, 1], [1, 0.82]);
-  const textOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.45], [0, -40]);
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -620]);
+  const textScale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [1, 1] : [1, 0.82],
+  );
+
+  const textOpacity = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [1, 1] : [1, 0],
+  );
+
+  const textY = useTransform(
+    scrollYProgress,
+    [0, 0.45],
+    isMobile ? [0, 0] : [0, -40],
+  );
+
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, -620],
+  );
 
   return (
     <header ref={headerRef} className={cls("sticky", classNames?.base)}>

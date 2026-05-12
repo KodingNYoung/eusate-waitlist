@@ -1,7 +1,7 @@
 import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
 import { SateAction } from "../sate-ai/SateAction";
 import { BackgroundWatermark } from "@/components/shared/organisms/DecorativeGraphic";
-import { CARDS } from "../sate-ai/SateAction/const";
+import { HOME_CARDS } from "../sate-ai/SateAction/const";
 
 export const HowItWorks = () => {
   return (
@@ -10,7 +10,7 @@ export const HowItWorks = () => {
       <SateAction
         chipLabel="How it works"
         title="Support that starts working today."
-        items={CARDS}
+        items={HOME_CARDS}
       />
     </SectionTemplate>
   );

@@ -1,10 +1,10 @@
-import { SubHeader } from "@/components/shared/organisms/PageHeader";
+import { cls } from "@/utils/helpers";
 import { PRICING } from "@/utils/constants";
+import { ArrowRightIcon } from "@/assets/icons";
 import { PricingCard } from "../pricing/PricingCard";
 import Button from "@/components/shared/molecules/Button";
-import { ArrowRightIcon } from "@/assets/icons";
+import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
-import { cls } from "@/utils/helpers";
 
 export const Pricing = () => {
   return (
@@ -18,7 +18,7 @@ export const Pricing = () => {
           title="Enterprise results. Startup pricing"
         />
         <div className="flex justify-center">
-          <div className="flex flex-wrap gap-3 items-center">
+          <div className="flex flex-wrap gap-3 justify-center items-center">
             {PRICING.map(({ key, id, ...pricing }) => (
               <div
                 key={key}

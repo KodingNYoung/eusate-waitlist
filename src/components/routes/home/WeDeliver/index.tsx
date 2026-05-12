@@ -7,7 +7,10 @@ import { PageSection } from "@/components/shared/organisms/PageTemplate";
 export const WeDeliver = () => {
   return (
     <PageSection
-      classNames={{ base: "px-5 py-12 md:py-20", container: "!gap-y-20 " }}
+      classNames={{
+        base: "px-5 py-12 md:py-20",
+        container: "gap-y-10 md:!gap-y-20 ",
+      }}
     >
       <SubHeader
         position="center"

@@ -36,7 +36,10 @@ export const Hero = () => {
         </div>
       }
       cta={
-        <Link href={process.env.NEXT_PUBLIC_BASE_URL + "/signup"}>
+        <Link
+          href={process.env.NEXT_PUBLIC_BASE_URL + "/signup"}
+          className="w-full"
+        >
           <Button
             size="sm"
             className="bg-brand-gradient px-12 py-2.5 md:py-4 w-full md:w-auto"

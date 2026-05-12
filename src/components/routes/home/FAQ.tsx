@@ -15,6 +15,7 @@ export const FAQ = () => {
     >
       <SubHeader
         chipLabel="Our FAQs"
+        classNames={{ container: "md:sticky md:top-[120px] h-[120px]" }}
         title={
           <Typography className="leading-[120%]" variant="bold-3xl">
             Questions?
