@@ -32,7 +32,7 @@ export const Blog = () => {
           </Link>
         }
       />
-      <div className="flex flex-wrap justify-center xl:justify-between gap-8">
+      <div className="flex flex-wrap justify-center md:justify-around xl:justify-between gap-8">
         {BlogPost?.slice(0, 3)?.map(
           ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
             <BlogCard

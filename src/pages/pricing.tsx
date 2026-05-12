@@ -16,6 +16,7 @@ import {
   PageSection,
   PageTemplate,
 } from "@/components/shared/organisms/PageTemplate";
+import Link from "next/link";
 
 const Pricing = () => {
   return (
@@ -37,9 +38,11 @@ const Pricing = () => {
               "md:justify-between flex-col md:flex-row md:items-end space-y-8",
           }}
           endContent={
-            <Button size="sm" className="py-4.5 px-3">
-              Compare our plans
-            </Button>
+            <Link href="#cp">
+              <Button size="sm" className="py-4.5 px-3">
+                Compare our plans
+              </Button>
+            </Link>
           }
           description="We charge by value delivered, not vanity metrics. Transparent plans. No hidden fees. Cancel anytime."
         />
@@ -57,7 +60,7 @@ const Pricing = () => {
         {/* COMPARE PLANS */}
 
         <PageSection
-          id="#cp"
+          id="cp"
           classNames={{
             base: "flex flex-col items-center md:py-20",
             container: "!gap-y-20",

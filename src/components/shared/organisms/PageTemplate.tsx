@@ -77,6 +77,7 @@ export const SectionTemplate = ({
 };
 
 export const PageSection = ({
+  id,
   header,
   color,
   children,
@@ -85,6 +86,7 @@ export const PageSection = ({
 }: SectionTemplateProps) => {
   return (
     <section
+      id={id}
       style={{ backgroundColor: color }}
       className={cls(
         "transition-colors duration-300 rouded-x24 md:rounded-x40",

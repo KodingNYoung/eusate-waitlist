@@ -28,7 +28,7 @@ export const BlogFeed = () => {
           />
         </div>
 
-        <div className="flex w-full justify-start md:justify-between flex-wrap gap-8">
+        <div className="flex w-full justify-center md:justify-around xl:justify-between flex-wrap gap-8">
           {BlogPost.map(
             ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
               <BlogCard
