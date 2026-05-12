@@ -11,6 +11,6 @@ export type Card = {
   num: string;
   title: string;
   desc: string;
-  imgSrc?: InternalPath;
+  imgSrc: InternalPath;
   chat: ChatMessage[];
 };

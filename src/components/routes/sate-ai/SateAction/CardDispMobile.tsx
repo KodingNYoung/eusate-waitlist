@@ -1,12 +1,12 @@
-import { FC } from "@/utils/types";
-import { Autoplay, Navigation } from "swiper/modules";
 import { Card } from "./types";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
-import { ActionCard } from "./CardItem";
-import Button from "@/components/shared/molecules/Button";
+import { FC } from "@/utils/types";
 import { cls } from "@/utils/helpers";
+import { ActionCard } from "./CardItem";
 import { ArrowRightIcon } from "@/assets/icons";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Button from "@/components/shared/molecules/Button";
 
 import "swiper/css";
 
@@ -14,19 +14,21 @@ type Props = {
   items: Card[];
   current: number;
   timerKey: number;
-  jumpTo: (i: number) => void;
+  setCurrent: (c: number) => void;
   advance: () => void;
+  jumpTo: (i: number) => void;
 };
 
 export const CardDispMobile: FC<Props> = ({
   items,
   current,
   timerKey,
-  jumpTo,
+  setCurrent,
   advance,
 }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+
   return (
     <div className="w-full flex flex-col gap-4">
       <div className="flex h-[159px] w-full">
@@ -60,7 +62,6 @@ export const CardDispMobile: FC<Props> = ({
                   index={i}
                   isActive={i === current}
                   timerKey={timerKey}
-                  onClick={() => jumpTo(i)}
                   onComplete={advance}
                 />
               </div>
@@ -70,6 +71,7 @@ export const CardDispMobile: FC<Props> = ({
       </div>
       <div className="flex w-full h-full justify-between items-center">
         <Button
+          onClick={() => setCurrent(current > 0 ? current - 1 : current)}
           ref={prevRef}
           variant="text"
           className={cls(
@@ -81,6 +83,7 @@ export const CardDispMobile: FC<Props> = ({
         <Button
           ref={nextRef}
           variant="text"
+          onClick={() => setCurrent(current < 3 ? current + 1 : current)}
           className={cls("px-4 py-2 !bg-black stroke-white")}
         >
           {ArrowRightIcon}

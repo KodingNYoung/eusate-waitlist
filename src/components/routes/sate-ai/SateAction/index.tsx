@@ -10,8 +10,8 @@ import { useMediaQuery } from "@/utils/hooks";
 
 type Props = {
   title: string;
-  chipLabel: string;
   items: Card[];
+  chipLabel: string;
 };
 
 export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
@@ -30,7 +30,7 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-1 xl:grid-rows-[auto_auto_1fr] xl:grid-cols-2 grid-flow-row xl:grid-flow-col gap-[52px] ">
+    <div className="relative overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-1 xl:grid-rows-[auto_auto_1fr] xl:grid-cols-2 grid-flow-row xl:grid-flow-col gap-[52px]">
       <SubHeader
         classNames={{
           container: "md:w-[80%] w-full self-start order-1",
@@ -45,13 +45,14 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
         {isMobile ? (
           <CardDispMobile
             items={items}
-            current={current}
-            timerKey={timerKey}
             jumpTo={jumpTo}
+            current={current}
             advance={advance}
+            timerKey={timerKey}
+            setCurrent={setCurrent}
           />
         ) : (
-          <div className="hidden md:flex flex-col  h-[400px] max-h-[440px] md:h-[420px] overflow-hidden gap-4">
+          <div className="hidden md:flex flex-col h-[400px] max-h-[440px] md:h-[420px] overflow-hidden gap-4">
             {items.map((card, i) => (
               <ActionCard
                 key={i}
@@ -73,7 +74,7 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
         <div className="relative w-full md:scale-75 h-full">
           <Image
             alt={chipLabel}
-            src={items[current].imgSrc!}
+            src={items[current].imgSrc}
             fill
             className="object-contain object-top"
           />

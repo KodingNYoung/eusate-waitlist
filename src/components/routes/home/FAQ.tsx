@@ -24,8 +24,8 @@ export const FAQ = () => {
         }
       />
       <Accordion
-        variant="splitted"
         className="px-0"
+        variant="splitted"
         itemClasses={{
           trigger: "justify-between text-gray-700",
           titleWrapper: "flex-0",

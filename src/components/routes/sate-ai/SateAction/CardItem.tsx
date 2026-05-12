@@ -9,7 +9,7 @@ type CardItemProps = {
   index: number;
   isActive: boolean;
   timerKey: number;
-  onClick: () => void;
+  onClick?: () => void;
   onComplete: () => void;
 };
 
