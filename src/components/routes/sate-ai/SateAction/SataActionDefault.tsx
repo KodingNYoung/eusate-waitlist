@@ -27,8 +27,6 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
     setTimerKey((k) => k + 1);
   }, []);
 
-  console.log(current);
-
   return (
     <div className="relative overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-1 xl:grid-rows-[auto_auto_1fr] xl:grid-cols-2 grid-flow-row xl:grid-flow-col gap-[52px] ">
       <SubHeader
