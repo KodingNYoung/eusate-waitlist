@@ -1,5 +1,5 @@
 import { Card } from "./types";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FC } from "@/utils/types";
 import { cls } from "@/utils/helpers";
 import { ActionCard } from "./CardItem";
@@ -8,26 +8,27 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "@/components/shared/molecules/Button";
 
+const DURATION = 4000;
+
 import "swiper/css";
+import { Swiper as SwiperTypes } from "swiper/types";
+import { ProgressBar } from "./ProgressBarMb";
 
 type Props = {
   items: Card[];
-  current: number;
-  timerKey: number;
-  setCurrent: (c: number) => void;
-  advance: () => void;
-  jumpTo: (i: number) => void;
 };
 
-export const CardDispMobile: FC<Props> = ({
-  items,
-  current,
-  timerKey,
-  setCurrent,
-  advance,
-}) => {
+export const CardDispMobile: FC<Props> = ({ items }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+
+  const [current, setCurrent] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  const onAutoplayTimeLeft = (s: SwiperTypes, progress: number) => {
+    setCurrent(s.activeIndex);
+    setProgress(progress);
+  };
 
   return (
     <div className="w-full flex flex-col gap-4">
@@ -44,10 +45,11 @@ export const CardDispMobile: FC<Props> = ({
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
+          onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper"
           autoplay={{
-            delay: 4000,
-            disableOnInteraction: true,
+            delay: DURATION,
+            disableOnInteraction: false,
           }}
           mousewheel
           spaceBetween={0}
@@ -59,10 +61,10 @@ export const CardDispMobile: FC<Props> = ({
                 <ActionCard
                   key={i}
                   card={card}
-                  index={i}
                   isActive={i === current}
-                  timerKey={timerKey}
-                  onComplete={advance}
+                  progressBar={
+                    <ProgressBar active={i === current} progress={progress} duration={DURATION}/>
+                  }
                 />
               </div>
             </SwiperSlide>
@@ -71,7 +73,6 @@ export const CardDispMobile: FC<Props> = ({
       </div>
       <div className="flex w-full h-full justify-between items-center">
         <Button
-          onClick={() => setCurrent(current > 0 ? current - 1 : current)}
           ref={prevRef}
           variant="text"
           className={cls(
@@ -83,7 +84,6 @@ export const CardDispMobile: FC<Props> = ({
         <Button
           ref={nextRef}
           variant="text"
-          onClick={() => setCurrent(current < 3 ? current + 1 : current)}
           className={cls("px-4 py-2 !bg-black stroke-white")}
         >
           {ArrowRightIcon}

@@ -1,25 +1,21 @@
 import { AnimatePresence, motion } from "motion/react";
 import { Card } from "./types";
-import { ProgressBar } from "./ProgressBar";
 import Typography from "@/components/shared/atoms/Typography";
 import { cls } from "@/utils/helpers";
+import { ReactElement } from "react";
 
 type CardItemProps = {
   card: Card;
-  index: number;
   isActive: boolean;
-  timerKey: number;
   onClick?: () => void;
-  onComplete: () => void;
+  progressBar: ReactElement;
 };
 
 export const ActionCard = ({
   card: { num, title, desc },
-  index,
   isActive,
-  timerKey,
   onClick,
-  onComplete,
+  progressBar,
 }: CardItemProps) => {
   return (
     <motion.div
@@ -30,11 +26,12 @@ export const ActionCard = ({
       )}
     >
       {/* Progress bar */}
-      <ProgressBar
-        key={`${index}-${timerKey}`}
-        active={isActive}
-        onComplete={onComplete}
-      />
+      {/* <ProgressBar */}
+      {/*   key={`${index}-${timerKey}`} */}
+      {/*   active={isActive} */}
+      {/*   onComplete={onComplete} */}
+      {/* /> */}
+      {progressBar}
       <motion.div
         onClick={onClick}
         data-active={isActive}
