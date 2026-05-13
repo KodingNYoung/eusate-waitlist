@@ -56,14 +56,13 @@ const SateAiPage = () => {
         {/* TEXT */}
         <div className="flex items-center w-full justify-center z-2">
           <ScrollReveal
-            speed={2}
             shouldFade={!isMobile}
             text="Build different from every chatbot you've tried"
             classNames={{
               container: "w-full md:w-[40%]",
               base: "w-full flex items-center justify-center",
               paragraph:
-                "text-bold-3xl md:text-bold-6xl md:justify-center md:text-center",
+                "text-bold-3xl md:text-bold-6xl md:justify-center md:text-center leading-[180%]",
             }}
           />
         </div>

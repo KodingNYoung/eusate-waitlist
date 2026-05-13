@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Card } from "./types";
 import { FC } from "@/utils/types";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
+import { ProgressBar } from "./ProgressBar";
 
 type Props = {
   title: string;
@@ -44,11 +45,15 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
             <ActionCard
               key={i}
               card={card}
-              index={i}
               isActive={i === current}
-              timerKey={timerKey}
               onClick={() => jumpTo(i)}
-              onComplete={advance}
+              progressBar={
+                <ProgressBar
+                  key={`${i}-${timerKey}`}
+                  active={i === current}
+                  onComplete={advance}
+                />
+              }
             />
           ))}
         </div>
