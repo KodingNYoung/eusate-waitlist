@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Card } from "./types";
 import { FC } from "@/utils/types";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
+import { ProgressBar } from "./ProgressBar";
 
 type Props = {
   title: string;
@@ -26,6 +27,8 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
     setTimerKey((k) => k + 1);
   }, []);
 
+  console.log(current);
+
   return (
     <div className="relative overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-1 xl:grid-rows-[auto_auto_1fr] xl:grid-cols-2 grid-flow-row xl:grid-flow-col gap-[52px] ">
       <SubHeader
@@ -44,11 +47,15 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
             <ActionCard
               key={i}
               card={card}
-              index={i}
               isActive={i === current}
-              timerKey={timerKey}
               onClick={() => jumpTo(i)}
-              onComplete={advance}
+              progressBar={
+                <ProgressBar
+                  key={`${i}-${timerKey}`}
+                  active={i === current}
+                  onComplete={advance}
+                />
+              }
             />
           ))}
         </div>

@@ -51,7 +51,9 @@ const BlogPage = () => {
             name="search"
             type="search"
             placeholder="Search blogs"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setSearch(e.target.value)
+            }
             className="flex-1 w-full"
             classNames={{ root: "w-full border-none" }}
             startComponent={<span>{SearchIcon}</span>}

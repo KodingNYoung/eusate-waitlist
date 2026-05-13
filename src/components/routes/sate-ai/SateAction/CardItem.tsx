@@ -25,12 +25,6 @@ export const ActionCard = ({
         "data-[active=true]:bg-white data-[active=true]:shadow-soft-xsmall",
       )}
     >
-      {/* Progress bar */}
-      {/* <ProgressBar */}
-      {/*   key={`${index}-${timerKey}`} */}
-      {/*   active={isActive} */}
-      {/*   onComplete={onComplete} */}
-      {/* /> */}
       {progressBar}
       <motion.div
         onClick={onClick}
