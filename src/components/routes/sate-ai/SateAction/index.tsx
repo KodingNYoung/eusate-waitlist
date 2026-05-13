@@ -1,12 +1,12 @@
 "use client";
 import { useCallback, useState } from "react";
-import { ActionCard } from "./CardItem";
 import Image from "next/image";
 import { Card } from "./types";
 import { FC } from "@/utils/types";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { CardDispMobile } from "./CardDispMobile";
 import { useMediaQuery } from "@/utils/hooks";
+import { CardDispDesktop } from "./CardDispDesktop";
 
 type Props = {
   title: string;
@@ -43,32 +43,19 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
       {/* CARDS  */}
       <div className="order-3 md:order-2">
         {isMobile ? (
-          <CardDispMobile
+          <CardDispMobile items={items} />
+        ) : (
+          <CardDispDesktop
             items={items}
+            timerKey={timerKey}
+            advance={advance}
             jumpTo={jumpTo}
             current={current}
-            advance={advance}
-            timerKey={timerKey}
-            setCurrent={setCurrent}
           />
-        ) : (
-          <div className="hidden md:flex flex-col h-[400px] max-h-[440px] md:h-[420px] overflow-hidden gap-4">
-            {items.map((card, i) => (
-              <ActionCard
-                key={i}
-                card={card}
-                index={i}
-                isActive={i === current}
-                timerKey={timerKey}
-                onClick={() => jumpTo(i)}
-                onComplete={advance}
-              />
-            ))}
-          </div>
         )}
       </div>
 
-      <div className="order-2 row-span-2 w-full h-[323px]  xl:h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 p-8 md:p-2">
+      <div className="hidden md:flex order-2 row-span-2 w-full h-[323px]  xl:h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 p-8 md:p-2">
         {/* <PhoneFrame messages={CARDS[current].chat} /> */}
         {/* <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]"> */}
         <div className="relative w-full md:scale-75 h-full">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card } from "./types";
 import { useRef, useState } from "react";
 import { FC } from "@/utils/types";
@@ -31,63 +32,82 @@ export const CardDispMobile: FC<Props> = ({ items }) => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4">
-      <div className="flex h-[159px] w-full">
-        <Swiper
-          centeredSlides
-          onBeforeInit={(swiper) => {
-            // @ts-expect-error: Clearing type error
-            swiper.params.navigation.prevEl = prevRef.current;
-            // @ts-expect-error: Clearing type error
-            swiper.params.navigation.nextEl = nextRef.current;
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onAutoplayTimeLeft={onAutoplayTimeLeft}
-          className="mySwiper"
-          autoplay={{
-            delay: DURATION,
-            disableOnInteraction: false,
-          }}
-          mousewheel
-          spaceBetween={0}
-          modules={[Autoplay, Navigation]}
-        >
-          {items.map((card, i) => (
-            <SwiperSlide key={card.num}>
-              <div className="w-full">
-                <ActionCard
-                  key={i}
-                  card={card}
-                  isActive={i === current}
-                  progressBar={
-                    <ProgressBar active={i === current} progress={progress} duration={DURATION}/>
-                  }
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div className="relative overflow-hidden grid grid-rows-[auto_1fr] grid-cols-1 grid-flow-row gap-[52px]">
+      <div className="w-full h-[323px]  xl:h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 p-8 md:p-2">
+        {/* <PhoneFrame messages={CARDS[current].chat} /> */}
+        {/* <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]"> */}
+        <div className="relative w-full md:scale-75 h-full">
+          <Image
+            alt={"alt-img"}
+            src={items[current].imgSrc}
+            fill
+            className="object-contain object-top"
+          />
+        </div>
       </div>
-      <div className="flex w-full h-full justify-between items-center">
-        <Button
-          ref={prevRef}
-          variant="text"
-          className={cls(
-            "px-4 py-2 transform !bg-white/20 stroke-gray-300 rotate-180",
-          )}
-        >
-          {ArrowRightIcon}
-        </Button>
-        <Button
-          ref={nextRef}
-          variant="text"
-          className={cls("px-4 py-2 !bg-black stroke-white")}
-        >
-          {ArrowRightIcon}
-        </Button>
+
+      <div className="w-full flex flex-col gap-4">
+        <div className="flex w-full">
+          <Swiper
+            centeredSlides
+            onBeforeInit={(swiper) => {
+              // @ts-expect-error: Clearing type error
+              swiper.params.navigation.prevEl = prevRef.current;
+              // @ts-expect-error: Clearing type error
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            className="mySwiper"
+            autoplay={{
+              delay: DURATION,
+              disableOnInteraction: false,
+            }}
+            mousewheel
+            spaceBetween={0}
+            modules={[Autoplay, Navigation]}
+          >
+            {items.map((card, i) => (
+              <SwiperSlide key={card.num}>
+                <div className="w-full h-[195px]">
+                  <ActionCard
+                    key={i}
+                    card={card}
+                    isActive={i === current}
+                    progressBar={
+                      <ProgressBar
+                        active={i === current}
+                        progress={progress}
+                        duration={DURATION}
+                      />
+                    }
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="flex w-full h-full justify-between items-center">
+          <Button
+            ref={prevRef}
+            variant="text"
+            className={cls(
+              "px-4 py-2 transform !bg-white/20 stroke-gray-300 rotate-180",
+            )}
+          >
+            {ArrowRightIcon}
+          </Button>
+          <Button
+            ref={nextRef}
+            variant="text"
+            className={cls("px-4 py-2 !bg-black stroke-white")}
+          >
+            {ArrowRightIcon}
+          </Button>
+        </div>
       </div>
     </div>
   );
