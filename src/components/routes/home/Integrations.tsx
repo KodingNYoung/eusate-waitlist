@@ -46,7 +46,7 @@ export const HomeIntegrations = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-y-6 w-[70%] md:w-full">
+        <div className="relative z-2 flex flex-col items-center justify-center gap-y-6 w-[70%] md:w-full">
           <Typography
             className="text-center text-bold-3xl md:text-bold-5xl leading-[120%]"
             as="h1"
@@ -63,7 +63,7 @@ export const HomeIntegrations = () => {
             everywhere.
           </Typography>
           <Link href={ROUTES.INTEGRATIONS}>
-            <Button className="py-2 px-4">View our integrations</Button>
+            <Button className="py-4 px-10">View our integrations</Button>
           </Link>
         </div>
       </div>

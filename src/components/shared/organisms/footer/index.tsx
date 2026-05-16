@@ -10,7 +10,7 @@ import { ArrowRightIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[20px] md:rounded-[40px] pt-20 px-4 md:px-24 mt-20 mx-2 md:mx-4">
+    <div className="bg-[url(/images/footer-bg.png)] relative bg-cover bg-no-repeat bg-bottom rounded-[20px] md:rounded-[40px] pt-20 px-4 md:px-24 mt-3 mx-2 md:mx-4">
       <div className="relative container flex flex-col gap-12 md:gap-56">
         <div className="flex flex-wrap justify-between gap-16">
           <div className="flex flex-col gap-16 w-[463px]">
@@ -37,7 +37,7 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-            <nav className="flex gap-8">
+            <nav className="flex gap-8 justify-between md:justify-start">
               <Link
                 href={ROUTES.PRIVACY}
                 className="text-bold-sm md:text-bold-lg text-white-60"

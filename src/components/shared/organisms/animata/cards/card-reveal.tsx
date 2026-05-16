@@ -13,15 +13,15 @@ export const ScrollCards = <T,>({ items, children }: Props<T>) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start center", "end start"],
+    offset: ["start end", "end center"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["90%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["100%", "-10%"]);
 
   return (
     <section
       ref={ref}
-      className="hidden h-[50vh] md:flex justify-center items-center w-full"
+      className="hidden h-[380px] md:flex justify-center items-center w-full"
     >
       <div className="w-full overflow-hidden flex items-center justify-center h-full">
         <motion.div style={{ x }} className="flex gap-6">

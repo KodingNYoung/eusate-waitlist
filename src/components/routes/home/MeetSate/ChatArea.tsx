@@ -14,7 +14,12 @@ export const ChatArea = () => {
         <div className="pointer-events-none absolute left-4 top-4 z-10 w-full">
           <TypingText
             className="text-gray-300 text-medium-lg"
-            text="Ask Eusate AI anything..."
+            text={[
+              "Ask Eusate AI anything...",
+              "Why can’t I withdraw ₦5000 from my NGN account?",
+              "When will my order be delivered?",
+              "Can I get a refund on my purchase?",
+            ]}
           />
         </div>
       )}
@@ -28,7 +33,6 @@ export const ChatArea = () => {
             "text-white !text-medium-lg placeholder:text-gray-500 focus:border-0",
         }}
         placeholder=""
-        // placeholder="Ask Eusate AI anything..."
       ></AutoResizingTextarea>
       <div className="flex justify-between items-center p-2">
         <div className="flex items-center gap-4">
@@ -44,7 +48,7 @@ export const ChatArea = () => {
             <Button
               size="sm"
               variant="tetiaryText"
-              className="text-medium-base text-white hover:text-white"
+              className="!bg-transparent text-medium-base text-white hover:!text-white focus:text-white"
               startContent={<span>{SettingsIcon}</span>}
             >
               Set preferences
@@ -62,7 +66,7 @@ export const ChatArea = () => {
             <Button
               size="sm"
               variant="tetiaryText"
-              className="text-medium-base text-white hover:text-white"
+              className="text-medium-base text-white hover:!text-white focus:text-white"
               startContent={<span>{SettingsIcon}</span>}
             >
               Clear
@@ -78,7 +82,7 @@ export const ChatArea = () => {
           borderWidth={1}
           borderColor="bg-[linear-gradient(140deg,_rgba(194,_194,_194,_0.6)_9.8%,_rgba(194,_194,_194,_0)_39.18%),_linear-gradient(154.19deg,_rgba(204,_204,_204,_0)_70.34%,_rgba(194,_194,_194,_0.6)_94.92%)]"
         >
-          <Button className="p-4" variant="tetiaryText">
+          <Button size="sm" className="p-4" variant="tetiaryText">
             <span>{SendIcon}</span>
           </Button>
         </GradientBorder>

@@ -15,66 +15,62 @@ export const MobileNav = () => {
       initial={{ height: 0, opacity: 0 }}
       animate={{ height: 900, opacity: 1 }}
       exit={{ height: 0, opacity: 0 }}
-      className="w-full fixed translate-y-[80px] flex flex-col gap-12 overflow-auto bg-white p-5"
+      className="w-full h-0 flex xl:hidden fixed inset-0 translate-y-[80px] justify-center bg-white p-5 z-2"
     >
-      <nav className="flex flex-col gap-4">
-        <Accordion
-          variant="splitted"
-          itemClasses={{
-            base: cls("group md:hidden px-0"),
-            title: "text-semibold-base text-left data-[open=true]:uppercase",
-          }}
-          indicator={<span className="stroke-gray-400">{ArrowDown}</span>}
-          items={NAV_EXPLORE_LIST.map(({ id, label, items }) => ({
-            key: id.toString(),
-            title: label,
-            content: items.map(({ key, label, link }) => (
-              <NavItem key={key} label={label} link={link ?? "/"} />
-            )),
-          }))}
-        />
-        <div className="grid gap-10 px-2">
-          <Link
-            href={ROUTES.PRICING}
-            target="_blank"
-            rel="noreferrer"
-            className="text-semibold-base"
-          >
-            Pricing
+      <div className="flex flex-col gap-12 md:container md:max-w-[800px] w-full">
+        <nav className="flex flex-col gap-4">
+          <Accordion
+            variant="splitted"
+            itemClasses={{
+              base: cls("group px-0"),
+              title: "text-semibold-base text-left data-[open=true]:uppercase",
+            }}
+            indicator={<span className="stroke-gray-400">{ArrowDown}</span>}
+            items={NAV_EXPLORE_LIST.map(({ id, label, items }) => ({
+              key: id.toString(),
+              title: label,
+              content: items.map(({ key, label, link }) => (
+                <NavItem key={key} label={label} link={link ?? "/"} />
+              )),
+            }))}
+          />
+          <div className="grid gap-10 px-2">
+            <Link
+              href={ROUTES.PRICING}
+              rel="noreferrer"
+              className="text-semibold-base"
+            >
+              Pricing
+            </Link>
+            <Link href={"/"} rel="noreferrer" className="text-semibold-base">
+              Docs
+            </Link>
+          </div>
+        </nav>
+
+        <div className="grid gap-6 w-full">
+          <Link href="/apply" target="_blank" rel="noreferrer">
+            <Button
+              variant="tetiaryText"
+              classNames={{
+                root: "w-full py-4",
+                label: "text-medium-sm text-gray-500",
+              }}
+            >
+              Login
+            </Button>
           </Link>
-          <Link
-            href={"/"}
-            target="_blank"
-            rel="noreferrer"
-            className="text-semibold-base"
-          >
-            Docs
+          <Link href="/apply" target="_blank" rel="noreferrer">
+            <Button
+              classNames={{
+                root: "w-full py-4",
+                label: "text-medium-sm",
+              }}
+            >
+              Sign up
+            </Button>
           </Link>
         </div>
-      </nav>
-
-      <div className="grid gap-6 w-full">
-        <Link href="/apply" target="_blank" rel="noreferrer">
-          <Button
-            variant="tetiaryText"
-            classNames={{
-              root: "w-full py-4",
-              label: "text-medium-sm text-gray-500",
-            }}
-          >
-            Login
-          </Button>
-        </Link>
-        <Link href="/apply" target="_blank" rel="noreferrer">
-          <Button
-            classNames={{
-              root: "w-full py-4",
-              label: "text-medium-sm",
-            }}
-          >
-            Sign up
-          </Button>
-        </Link>
       </div>
     </motion.div>
   );

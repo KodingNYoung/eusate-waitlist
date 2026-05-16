@@ -52,17 +52,18 @@ const SateAiPage = () => {
         />
       </PageHero>
 
-      <section className="relative h-full md:h-[60vh] w-full px-5 md:pt-20 space-y-10 md:space-y-0">
+      <section className="relative h-full md:h-[380px] flex flex-col  items-center w-full px-5 md:py-20 space-y-10 md:space-y-0">
         {/* TEXT */}
         <div className="flex items-center w-full justify-center z-2">
           <ScrollReveal
+            speed={12}
             shouldFade={!isMobile}
             text="Build different from every chatbot you've tried"
             classNames={{
-              container: "w-full md:w-[40%]",
+              container: "w-full xl:w-[40%]",
               base: "w-full flex items-center justify-center",
               paragraph:
-                "text-bold-3xl md:text-bold-6xl md:justify-center md:text-center leading-[180%]",
+                "text-bold-3xl lg:text-bold-6xl md:justify-center md:text-center md:leading-[180%]",
             }}
           />
         </div>

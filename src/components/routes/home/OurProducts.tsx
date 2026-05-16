@@ -9,6 +9,7 @@ import { AppTab } from "@/components/shared/molecules/Tabs";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { useCallback, useState } from "react";
 import Link from "next/link";
+import { GradientIcon } from "@/components/shared/atoms/Icon";
 
 export const OurProducts = () => {
   const [currentLink, setCurrentLink] = useState<InternalPath>(
@@ -66,13 +67,15 @@ export const OurProducts = () => {
           </AppTab>
         </div>
         <div className="flex justify-center">
-          <Button
-            variant="outlined"
-            className="px-8 py-4"
-            endContent={<span className="stroke-black">{ArrowRightIcon}</span>}
-          >
-            Learn more
-          </Button>
+          <Link href={currentLink}>
+            <Button
+              variant="outlined"
+              className="px-8 py-4 group"
+              endContent={<GradientIcon>{ArrowRightIcon}</GradientIcon>}
+            >
+              Learn more
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

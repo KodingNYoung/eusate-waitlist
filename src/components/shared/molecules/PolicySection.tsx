@@ -8,7 +8,7 @@ type Props = {
 
 const PolicySection: FC<Props> = ({ children, title }) => {
   return (
-    <section className="mb-10">
+    <section className="">
       <Typography as="h2" className="text-semibold-lg sm:text-semibold-xl mb-4">
         {title}
       </Typography>

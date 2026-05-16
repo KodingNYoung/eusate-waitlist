@@ -6,6 +6,7 @@ import {
 } from "@/components/shared/organisms/PageTemplate";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageHero } from "@/components/shared/organisms/PageHero";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
 const PLATFORMS = [
   {
@@ -39,7 +40,7 @@ const Integrations = () => {
     <div>
       <PageTemplate
         classNames={{
-          wrapper: "px-5 grid gap-y-12 md:gap-y-20 ",
+          wrapper: "px-5 grid gap-y-12 md:gap-y-20 pb-20",
         }}
       >
         <PageHero
@@ -47,22 +48,26 @@ const Integrations = () => {
             container: "md:pt-24 pt-20",
           }}
         >
-          <PageHeader
-            position="center"
-            chipLabel="Integrations"
-            title="We live where your customers live"
-            classNames={{
-              container: "md:h-auto",
-              titleContainer:
-                "gap-y-6 md:gap-y-10 justify-items-start md:justify-items-center",
-              title: "w-full md:w-[80%] !text-left md:!text-center",
-            }}
-          />
+          <AnimatedBlock>
+            <PageHeader
+              position="center"
+              chipLabel="Integrations"
+              title="We live where your customers live"
+              classNames={{
+                container: "md:h-auto",
+                titleContainer:
+                  "gap-y-6 md:gap-y-10 justify-items-start md:justify-items-center",
+                title: "w-full md:w-[80%] !text-left md:!text-center",
+              }}
+            />
+          </AnimatedBlock>
         </PageHero>
         <PageSection>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PLATFORMS.map(({ id, ...platform }) => (
-              <IntegrationCard key={id} {...platform} />
+              <AnimatedBlock key={id} delay={id / 10}>
+                <IntegrationCard {...platform} />
+              </AnimatedBlock>
             ))}
           </div>
         </PageSection>

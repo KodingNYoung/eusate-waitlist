@@ -3,6 +3,7 @@ import Typography from "@/components/shared/atoms/Typography";
 import { InfoCircleIcon, TickCircleIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { CategoryList, CompareCategoryData, FC } from "@/utils/types";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
 type Props = {
   headerTitle: string;
@@ -15,8 +16,11 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
     <div className="w-full overflow-x-auto">
       <div className="grid grid-cols-4 border border-gray-100 rounded-3xl min-w-[800px] md:w-full">
         <header className="items-start -b">
-          <div className="flex items-end min-h-32 p-2 min-w-64">
-            <Typography variant="bold-xl" className="p-4">
+          <div className="flex items-end h-[168px] p-2 min-w-64">
+            <Typography
+              variant="bold-xl"
+              className="p-4 text-bold-base md:text-bold-xl"
+            >
               {headerTitle}
             </Typography>
           </div>
@@ -29,11 +33,17 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
 
         {data.map(({ key, label, price, categories, action }) => (
           <section key={key} className="grid items-start">
-            <header className="border-l flex flex-col justify-between min-h-32 p-4">
-              <Chip variant="light" className="text-semibold-base">
+            <header className="border-l flex flex-col justify-between h-[168px] p-4">
+              <Chip
+                variant="light"
+                className="text-semibold-sm md:text-semibold-base"
+              >
                 {label}
               </Chip>
-              <Typography variant="bold-5xl">
+              <Typography
+                variant="bold-5xl"
+                className="flex flex-wrap items-end text-bold-4xl md:text-bold-5xl"
+              >
                 ${price}
                 <span className="text-semibold-base text-gray-400">
                   /per month
@@ -42,13 +52,15 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
             </header>
             <div className="">
               {categories.map(({ key, features }) => (
-                <div key={key} className="border-t border-l h-[255px]">
-                  <div className="translate-y-[45px]">
-                    {Object.values(features).map((v) => (
-                      <CategoryData key={key} value={v} />
-                    ))}
+                <AnimatedBlock key={key}>
+                  <div key={key} className="border-t border-l h-[255px]">
+                    <div className="translate-y-[45px]">
+                      {Object.values(features).map((v) => (
+                        <CategoryData key={key} value={v} />
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </AnimatedBlock>
               ))}
             </div>
             <div className="border-l p-4">
@@ -90,13 +102,19 @@ type CategoryHeaderProps = {
 const CategoryHeader = ({ title, items }: CategoryHeaderProps) => {
   return (
     <div className="p-4 space-y-4 h-[254px] border-t">
-      <Typography variant="bold-lg" className="text-gray-900">
+      <Typography
+        variant="bold-lg"
+        className="text-gray-900 text-bold-base md:text-bold-lg"
+      >
         {title}
       </Typography>
       <div className="grid gap-8">
         {items.map(({ key, label }) => (
           <div key={key} className="flex justify-between w-full">
-            <Typography variant="medium-lg" className="text-gray-700">
+            <Typography
+              variant="medium-lg"
+              className="text-gray-700 text-medium-sm md:text-medium-lg"
+            >
               {label}
             </Typography>
             <span className="stroke-gray-300">{InfoCircleIcon}</span>

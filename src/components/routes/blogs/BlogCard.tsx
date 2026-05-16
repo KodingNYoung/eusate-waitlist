@@ -18,6 +18,7 @@ type Props = {
   readingSpan: string;
   spotlight?: boolean;
   timestamp: Date;
+  classNames?: { [slot in Slots]?: TWClassNames };
 };
 
 const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
@@ -35,6 +36,7 @@ export const BlogCard: FC<Props> = ({
   imgSrc,
   variant = "page",
   readingSpan,
+  classNames,
   spotlight,
   timestamp,
 }) => {
@@ -43,9 +45,10 @@ export const BlogCard: FC<Props> = ({
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
-        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 ",
+        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6",
         spotlightVariant?.container,
         variant === "page" && "border border-gray-50 p-4 shadow-soft-xxsmall",
+        classNames?.container,
       )}
     >
       <div

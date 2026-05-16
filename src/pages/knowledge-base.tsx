@@ -18,7 +18,7 @@ const KnowledgeBasePage = () => {
     >
       <PageHero
         classNames={{
-          base: "bg-[url(/images/knowledge-base-bg.webp)] bg-center h-full md:h-[800px] flex items-start justify-center pb-12 md:pb-20 pt-20 px-5",
+          base: "bg-[url(/images/knowledge-base-bg.webp)] bg-center h-full md:h-[800px] flex items-start justify-center md:pb-20 pt-20 px-5",
           container: "flex items-end h-full",
         }}
       >

@@ -8,6 +8,7 @@ import {
   PageSection,
   PageTemplate,
 } from "@/components/shared/organisms/PageTemplate";
+import { PageHero } from "@/components/shared/organisms/PageHero";
 
 const TermsAndCondition = () => {
   return (
@@ -31,18 +32,20 @@ const TermsAndCondition = () => {
       <PageTemplate
         gradientVariant="peach"
         classNames={{
-          wrapper: "pt-20 pb-12 md:pt-24 md:pb-40 space-y-20 px-5",
+          wrapper: "pt-20 pb-10 md:pt-24 md:pb-40 space-y-20 px-5",
         }}
       >
-        <PageHeader
-          variant="sub"
-          classNames={{ chip: "bg-red-100" }}
-          chipLabel="Legals"
-          title="Terms & Conditions"
-          description="Last Updated: Monday, 01 Septeber, 2025"
-        />
+        <PageHero>
+          <PageHeader
+            variant="sub"
+            chipLabel="Legals"
+            title="Terms & Conditions"
+            description="Last Updated: Monday, 01 Septeber, 2025"
+            classNames={{ chip: "bg-red-100", root: "gap-y-4 md:gap-y-8" }}
+          />
+        </PageHero>
 
-        <PageSection>
+        <PageSection classNames={{ container: "!gap-y-10" }}>
           <PolicySection title="1. Introduction">
             <Typography
               as="p"
@@ -246,7 +249,7 @@ const TermsAndCondition = () => {
               className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
             >
               For any inquiries, feedback, or support, please reach out via
-              <Typography as="p" className="grid text-gray-600 mt-2">
+              <Typography as="div" className="grid text-gray-600 mt-2">
                 <span>Eusate</span>
                 <span>
                   Email:{" "}
@@ -260,7 +263,7 @@ const TermsAndCondition = () => {
                   <a
                     className="text-info-500"
                     target="_blank"
-                    rel="noreferer nofollow noopener"
+                    rel="noreferrer nofollow noopener"
                     href="https://www.eusate.com"
                   >
                     www.eusate.com

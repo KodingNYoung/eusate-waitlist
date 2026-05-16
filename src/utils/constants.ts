@@ -39,7 +39,7 @@ export const PLAN_COST = {
 export const ROUTES = {
   PRICING: "/pricing",
   LOGIN: "/login",
-  SIGNUP: "/signup",
+  SIGNUP: "/sign-up",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-condition",
   SATE_AI: "/sate-ai",

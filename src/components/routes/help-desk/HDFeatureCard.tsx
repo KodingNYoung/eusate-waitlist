@@ -96,10 +96,10 @@ export const HDFeatureCard: FC<Props> = ({
           ) : (
             <div
               className={cls(
-                "relative w-[1200px] h-[900px] object-cover object-bottom",
+                "relative w-[800px] h-[600px] md:w-[1200px] md:h-[900px] object-cover object-bottom",
                 cls(
                   secondGroup.includes(id) &&
-                    "object-[right_bottom] pb-8 -translate-x-[calc(100%_-_550px_+_92px)] -translate-y-[calc(900px_-_550px_+_92px)]",
+                    "object-[right_bottom] pb-8 -translate-x-[calc(100%_-_550px_+_212px)] md:-translate-x-[calc(100%_-_550px_+_92px)] -translate-y-[calc(600px_-_550px_+_92px)] md:-translate-y-[calc(900px_-_550px_+_92px)]",
                 ),
               )}
             >

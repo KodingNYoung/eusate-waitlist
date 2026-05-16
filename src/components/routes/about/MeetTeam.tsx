@@ -15,7 +15,7 @@ const team: Member[] = [
     id: 1,
     imgSrc: "/images/founder-david.webp",
     name: "Daramola David",
-    role: "CEO, AI & ML",
+    role: "AI & ML Engineer",
   },
   {
     id: 2,
@@ -27,13 +27,13 @@ const team: Member[] = [
     id: 3,
     imgSrc: "/images/founder-young.webp",
     name: "Adabambo Abiodum",
-    role: "CFO",
+    role: "Frontend Engineer",
   },
   {
     id: 4,
     imgSrc: "/images/founder-daniel.webp",
     name: "Adebowale Daniel",
-    role: "CTO",
+    role: "Backend Engineer",
   },
   {
     id: 5,

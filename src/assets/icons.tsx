@@ -348,6 +348,20 @@ export const ArrowRightIcon = (
     stroke="inherit"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <defs>
+      <linearGradient
+        id="stroke-gradient"
+        x1="0%"
+        y1="0%"
+        x2="100%"
+        y2="0%"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0%" stopColor="#E86555" />
+        <stop offset="50%" stopColor="#D7AB07" />
+        <stop offset="100%" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
     <path
       d="M12.5249 4.94165L17.5832 9.99998L12.5249 15.0583"
       stroke="inherit"
@@ -2324,38 +2338,40 @@ export const CopilotBrandGradientIcon = (
   >
     <path
       d="M46.666 0.583008C57.3895 0.583008 66.083 9.27647 66.083 20C66.083 30.7235 57.3895 39.417 46.666 39.417C35.9425 39.417 27.249 30.7235 27.249 20C27.249 9.27647 35.9425 0.583008 46.666 0.583008Z"
-      stroke="url(#paint0_linear_2001_11070)"
-      stroke-width="1.16667"
+      stroke="url(#copilot-grad-0)"
+      // stroke="#D7AB07"
+      strokeWidth="1.16667"
     />
     <circle
       cx="20"
       cy="20"
       r="19.4167"
-      stroke="url(#paint1_linear_2001_11070)"
-      stroke-width="1.16667"
+      stroke="url(#copilot-grad-1)"
+      // stroke="#E86555"
+      strokeWidth="1.16667"
     />
     <defs>
       <linearGradient
-        id="paint0_linear_2001_11070"
+        id="copilot-grad-0"
         x1="26.666"
         y1="20"
         x2="66.666"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint1_linear_2001_11070"
+        id="copilot-grad-1"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -2371,460 +2387,460 @@ export const GapBrandGradIcon = (
   >
     <path
       d="M0.813845 11.3888C0.962535 10.9286 1.131 10.4756 1.31873 10.0313L10.0313 1.31873C10.4756 1.131 10.9286 0.962533 11.3888 0.813844L0.813845 11.3888Z"
-      fill="url(#paint0_linear_2001_11080)"
+      fill="url(#gap-grad-0)"
     />
     <path
       d="M0.253088 13.6548C0.316414 13.2924 0.391435 12.9331 0.477938 12.5773L12.5773 0.477937C12.9331 0.391434 13.2924 0.316414 13.6548 0.253088L0.253088 13.6548Z"
-      fill="url(#paint1_linear_2001_11080)"
+      fill="url(#gap-grad-1)"
     />
     <path
       d="M0.0291139 15.5842C0.0473791 15.2716 0.0741939 14.9605 0.109431 14.6512L14.6512 0.109431C14.9605 0.074193 15.2716 0.0473798 15.5842 0.0291138L0.0291139 15.5842Z"
-      fill="url(#paint2_linear_2001_11080)"
+      fill="url(#gap-grad-2)"
     />
     <path
       d="M0.0150967 17.3034C0.00925413 17.1639 0.00509969 17.0243 0.0026472 16.8845C0.000193084 16.7446 -0.000551771 16.6049 0.00040044 16.4655L16.4655 0.000400302C16.6049 -0.000551909 16.7446 0.000193759 16.8845 0.00264706C17.0243 0.00509955 17.1639 0.00925318 17.3034 0.0150957L0.0150967 17.3034Z"
-      fill="url(#paint3_linear_2001_11080)"
+      fill="url(#gap-grad-3)"
     />
     <path
       d="M0.152452 18.8715C0.118407 18.6166 0.0899895 18.3607 0.0672739 18.104L18.104 0.0672721C18.3607 0.0899878 18.6166 0.118408 18.8715 0.152452L0.152452 18.8715Z"
-      fill="url(#paint4_linear_2001_11080)"
+      fill="url(#gap-grad-4)"
     />
     <path
       d="M0.408602 20.3207C0.356572 20.0847 0.309401 19.8476 0.267152 19.6095L19.6095 0.26715C19.8476 0.3094 20.0847 0.356572 20.3207 0.408601L0.408602 20.3207Z"
-      fill="url(#paint5_linear_2001_11080)"
+      fill="url(#gap-grad-5)"
     />
     <path
       d="M0.763167 21.6713C0.695974 21.4512 0.63308 21.2299 0.574539 21.0073L21.0073 0.574538C21.2299 0.633079 21.4512 0.695972 21.6713 0.763165L0.763167 21.6713Z"
-      fill="url(#paint6_linear_2001_11080)"
+      fill="url(#gap-grad-6)"
     />
     <path
       d="M1.20264 22.9373C1.12219 22.731 1.04562 22.5233 0.972971 22.3143L22.3143 0.97297C22.5233 1.04562 22.731 1.12219 22.9373 1.20264L1.20264 22.9373Z"
-      fill="url(#paint7_linear_2001_11080)"
+      fill="url(#gap-grad-7)"
     />
     <path
       d="M1.71753 24.1277C1.62517 23.9338 1.53635 23.7384 1.45112 23.5415L23.5415 1.45112C23.7384 1.53635 23.9338 1.62517 24.1277 1.71753L1.71753 24.1277Z"
-      fill="url(#paint8_linear_2001_11080)"
+      fill="url(#gap-grad-8)"
     />
     <path
       d="M2.30119 25.2493C2.19786 25.0668 2.09781 24.8825 2.00109 24.6968L24.6968 2.00109C24.8825 2.09781 25.0668 2.19786 25.2493 2.30119L2.30119 25.2493Z"
-      fill="url(#paint9_linear_2001_11080)"
+      fill="url(#gap-grad-9)"
     />
     <path
       d="M2.94894 26.3069C2.83531 26.135 2.72476 25.9613 2.6173 25.7859L25.7859 2.6173C25.9613 2.72476 26.135 2.83531 26.3069 2.94894L2.94894 26.3069Z"
-      fill="url(#paint10_linear_2001_11080)"
+      fill="url(#gap-grad-10)"
     />
     <path
       d="M3.65737 27.3037C3.53391 27.1419 3.41334 26.9782 3.2957 26.8127L26.8127 3.2957C26.9782 3.41334 27.1419 3.53391 27.3037 3.65737L3.65737 27.3037Z"
-      fill="url(#paint11_linear_2001_11080)"
+      fill="url(#gap-grad-11)"
     />
     <path
       d="M4.42441 28.2421C4.29142 28.0901 4.16117 27.9361 4.03369 27.7802L27.7802 4.03369C27.9361 4.16117 28.0901 4.29142 28.2421 4.42441L4.42441 28.2421Z"
-      fill="url(#paint12_linear_2001_11080)"
+      fill="url(#gap-grad-12)"
     />
     <path
       d="M5.24867 29.1232C5.10629 28.9808 4.96654 28.8363 4.82944 28.6897L28.6897 4.82944C28.8363 4.96654 28.9808 5.10629 29.1232 5.24868L5.24867 29.1232Z"
-      fill="url(#paint13_linear_2001_11080)"
+      fill="url(#gap-grad-13)"
     />
     <path
       d="M8.35652 2.14083L2.14083 8.35652C2.86497 7.07108 3.76357 5.88112 4.82235 4.82235C5.88112 3.76357 7.07108 2.86497 8.35652 2.14083Z"
-      fill="url(#paint14_linear_2001_11080)"
+      fill="url(#gap-grad-14)"
     />
     <path
       d="M30.4538 28.6093C30.3052 29.0696 30.1367 29.5225 29.949 29.9669L21.2364 38.6794C20.7921 38.8672 20.3391 39.0356 19.8789 39.1843L30.4538 28.6093Z"
-      fill="url(#paint15_linear_2001_11080)"
+      fill="url(#gap-grad-15)"
     />
     <path
       d="M31.0146 26.3433C30.9513 26.7057 30.8763 27.0651 30.7898 27.4208L18.6904 39.5202C18.3346 39.6067 17.9752 39.6817 17.6129 39.7451L31.0146 26.3433Z"
-      fill="url(#paint16_linear_2001_11080)"
+      fill="url(#gap-grad-16)"
     />
     <path
       d="M31.2386 24.414C31.2203 24.7265 31.1935 25.0376 31.1583 25.3469L16.6165 39.8887C16.3072 39.924 15.9961 39.9508 15.6835 39.969L31.2386 24.414Z"
-      fill="url(#paint17_linear_2001_11080)"
+      fill="url(#gap-grad-17)"
     />
     <path
       d="M31.2526 22.6947C31.2584 22.8342 31.2626 22.9739 31.265 23.1137C31.2675 23.2536 31.2682 23.3933 31.2673 23.5327L14.8022 39.9978C14.6628 39.9987 14.5231 39.998 14.3832 39.9955C14.2434 39.9931 14.1038 39.9889 13.9643 39.9831L31.2526 22.6947Z"
-      fill="url(#paint18_linear_2001_11080)"
+      fill="url(#gap-grad-18)"
     />
     <path
       d="M31.1152 21.1267C31.1493 21.3816 31.1777 21.6375 31.2004 21.8941L13.1637 39.9309C12.907 39.9082 12.6511 39.8798 12.3962 39.8457L31.1152 21.1267Z"
-      fill="url(#paint19_linear_2001_11080)"
+      fill="url(#gap-grad-19)"
     />
     <path
       d="M30.8591 19.6775C30.9111 19.9135 30.9583 20.1506 31.0005 20.3887L11.6582 39.731C11.4201 39.6888 11.183 39.6416 10.947 39.5896L30.8591 19.6775Z"
-      fill="url(#paint20_linear_2001_11080)"
+      fill="url(#gap-grad-20)"
     />
     <path
       d="M30.5045 18.3268C30.5717 18.5469 30.6346 18.7683 30.6932 18.9909L10.2604 39.4236C10.0378 39.3651 9.81645 39.3022 9.59636 39.235L30.5045 18.3268Z"
-      fill="url(#paint21_linear_2001_11080)"
+      fill="url(#gap-grad-21)"
     />
     <path
       d="M30.0651 17.0609C30.1455 17.2672 30.2221 17.4749 30.2947 17.6839L8.95341 39.0252C8.74439 38.9525 8.53668 38.876 8.33041 38.7955L30.0651 17.0609Z"
-      fill="url(#paint22_linear_2001_11080)"
+      fill="url(#gap-grad-22)"
     />
     <path
       d="M29.5502 15.8705C29.6425 16.0644 29.7313 16.2598 29.8166 16.4567L7.72624 38.547C7.52934 38.4618 7.33389 38.373 7.13999 38.2806L29.5502 15.8705Z"
-      fill="url(#paint23_linear_2001_11080)"
+      fill="url(#gap-grad-23)"
     />
     <path
       d="M28.9665 14.7488C29.0698 14.9314 29.1699 15.1156 29.2666 15.3014L6.57094 37.9971C6.38515 37.9003 6.20094 37.8003 6.01838 37.697L28.9665 14.7488Z"
-      fill="url(#paint24_linear_2001_11080)"
+      fill="url(#gap-grad-24)"
     />
     <path
       d="M28.3188 13.6912C28.4324 13.8632 28.5429 14.0369 28.6504 14.2122L5.48178 37.3809C5.30639 37.2734 5.13269 37.1628 4.96075 37.0492L28.3188 13.6912Z"
-      fill="url(#paint25_linear_2001_11080)"
+      fill="url(#gap-grad-25)"
     />
     <path
       d="M27.6103 12.6944C27.7338 12.8562 27.8543 13.0199 27.972 13.1854L4.45495 36.7025C4.28946 36.5848 4.12576 36.4642 3.96395 36.3408L27.6103 12.6944Z"
-      fill="url(#paint26_linear_2001_11080)"
+      fill="url(#gap-grad-26)"
     />
     <path
       d="M26.8433 11.7561C26.9763 11.9081 27.1065 12.0621 27.234 12.218L3.48753 35.9645C3.33161 35.837 3.1776 35.7067 3.02559 35.5737L26.8433 11.7561Z"
-      fill="url(#paint27_linear_2001_11080)"
+      fill="url(#gap-grad-27)"
     />
     <path
       d="M2.57795 35.1687C2.43141 35.0316 2.28691 34.8919 2.14453 34.7495L26.019 10.875C26.1614 11.0174 26.3012 11.1619 26.4383 11.3084L2.57795 35.1687Z"
-      fill="url(#paint28_linear_2001_11080)"
+      fill="url(#gap-grad-28)"
     />
     <path
       d="M22.9112 37.8573L29.1269 31.6416C28.4027 32.9271 27.5041 34.117 26.4453 35.1758C25.3866 36.2346 24.1966 37.1332 22.9112 37.8573Z"
-      fill="url(#paint29_linear_2001_11080)"
+      fill="url(#gap-grad-29)"
     />
     <defs>
       <linearGradient
-        id="paint0_linear_2001_11080"
+        id="gap-grad-0"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint1_linear_2001_11080"
+        id="gap-grad-1"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint2_linear_2001_11080"
+        id="gap-grad-2"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint3_linear_2001_11080"
+        id="gap-grad-3"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint4_linear_2001_11080"
+        id="gap-grad-4"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint5_linear_2001_11080"
+        id="gap-grad-5"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint6_linear_2001_11080"
+        id="gap-grad-6"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint7_linear_2001_11080"
+        id="gap-grad-7"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint8_linear_2001_11080"
+        id="gap-grad-8"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint9_linear_2001_11080"
+        id="gap-grad-9"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint10_linear_2001_11080"
+        id="gap-grad-10"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint11_linear_2001_11080"
+        id="gap-grad-11"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint12_linear_2001_11080"
+        id="gap-grad-12"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint13_linear_2001_11080"
+        id="gap-grad-13"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint14_linear_2001_11080"
+        id="gap-grad-14"
         x1="0"
         y1="14.5616"
         x2="29.1232"
         y2="14.5616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint15_linear_2001_11080"
+        id="gap-grad-15"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint16_linear_2001_11080"
+        id="gap-grad-16"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint17_linear_2001_11080"
+        id="gap-grad-17"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint18_linear_2001_11080"
+        id="gap-grad-18"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint19_linear_2001_11080"
+        id="gap-grad-19"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint20_linear_2001_11080"
+        id="gap-grad-20"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint21_linear_2001_11080"
+        id="gap-grad-21"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint22_linear_2001_11080"
+        id="gap-grad-22"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint23_linear_2001_11080"
+        id="gap-grad-23"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint24_linear_2001_11080"
+        id="gap-grad-24"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint25_linear_2001_11080"
+        id="gap-grad-25"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint26_linear_2001_11080"
+        id="gap-grad-26"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint27_linear_2001_11080"
+        id="gap-grad-27"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint28_linear_2001_11080"
+        id="gap-grad-28"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint29_linear_2001_11080"
+        id="gap-grad-29"
         x1="2.14453"
         y1="25.4366"
         x2="31.2677"
         y2="25.4366"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
 );
 
-export const AiPlaygroundBrandGradIcon = (
+export const AiPlaygroundGradIcon = (
   <svg
     width="35"
     height="40"
@@ -2834,186 +2850,186 @@ export const AiPlaygroundBrandGradIcon = (
   >
     <path
       d="M20.6494 18.1504V21.624L17.333 23.4873L14.0176 21.624V18.1504L17.333 16.2861L20.6494 18.1504Z"
-      stroke="url(#paint0_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-0)"
+      strokeWidth="0.5"
     />
     <path
       d="M24.3701 16.0684V24.0107L17.2852 28.0225L10.2969 24.0127V16.0674L17.2852 11.9844L24.3701 16.0684Z"
-      stroke="url(#paint1_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-1)"
+      strokeWidth="0.5"
     />
     <path
       d="M27.6904 14.1182V25.6221L17.334 31.4053L6.97656 25.6221V14.1182L17.333 8.28613L27.6904 14.1182Z"
-      stroke="url(#paint2_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-2)"
+      strokeWidth="0.5"
     />
     <path
       d="M10.2012 15.9922L6.94535 14.1217"
-      stroke="url(#paint3_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-3)"
+      strokeWidth="0.5"
     />
     <path
       d="M24.4512 16L27.7981 14.0772"
-      stroke="url(#paint4_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-4)"
+      strokeWidth="0.5"
     />
     <path
       d="M17.334 28.0859L17.334 31.4445"
-      stroke="url(#paint5_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-5)"
+      strokeWidth="0.5"
     />
     <path
       d="M17.334 35.5391L17.334 39.6929"
-      stroke="url(#paint6_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-6)"
+      strokeWidth="0.5"
     />
     <path
       d="M30.9785 12.25L34.5444 10.2014"
-      stroke="url(#paint7_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-7)"
+      strokeWidth="0.5"
     />
     <path
       d="M3.69141 12.25L0.125514 10.2014"
-      stroke="url(#paint8_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-8)"
+      strokeWidth="0.5"
     />
     <path
       d="M30.9141 12.2959V27.6973L17.334 35.4014L3.75488 27.6973V12.2959L17.334 4.5918L30.9141 12.2959Z"
-      stroke="url(#paint9_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-9)"
+      strokeWidth="0.5"
     />
     <path
       d="M34.4043 10.2324V29.8545L17.334 39.7109L0.263672 29.8545V10.2334L17.334 0.289062L34.4043 10.2324Z"
-      stroke="url(#paint10_linear_2001_11100)"
-      stroke-width="0.5"
+      stroke="url(#ai-grad-10)"
+      strokeWidth="0.5"
     />
     <defs>
       <linearGradient
-        id="paint0_linear_2001_11100"
+        id="ai-grad-0"
         x1="13.7676"
         y1="19.8873"
         x2="20.8994"
         y2="19.8873"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint1_linear_2001_11100"
+        id="ai-grad-1"
         x1="10.0469"
         y1="20.003"
         x2="24.6205"
         y2="20.003"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint2_linear_2001_11100"
+        id="ai-grad-2"
         x1="6.72656"
         y1="19.8462"
         x2="27.9408"
         y2="19.8462"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint3_linear_2001_11100"
+        id="ai-grad-3"
         x1="10.4531"
         y1="15.5603"
         x2="7.20999"
         y2="13.6681"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint4_linear_2001_11100"
+        id="ai-grad-4"
         x1="24.1992"
         y1="15.5681"
         x2="27.5331"
         y2="13.623"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint5_linear_2001_11100"
+        id="ai-grad-5"
         x1="16.834"
         y1="28.0859"
         x2="16.834"
         y2="31.4445"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint6_linear_2001_11100"
+        id="ai-grad-6"
         x1="16.834"
         y1="35.5391"
         x2="16.834"
         y2="39.6929"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint7_linear_2001_11100"
+        id="ai-grad-7"
         x1="30.7265"
         y1="11.8181"
         x2="34.2786"
         y2="9.74576"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint8_linear_2001_11100"
+        id="ai-grad-8"
         x1="3.94337"
         y1="11.8181"
         x2="0.391361"
         y2="9.74576"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint9_linear_2001_11100"
+        id="ai-grad-9"
         x1="1.36523"
         y1="19.997"
         x2="33.3032"
         y2="19.997"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint10_linear_2001_11100"
+        id="ai-grad-10"
         x1="0.0136719"
         y1="20"
         x2="34.6547"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
 );
 
-export const TicketBrandGradIcon = (
+export const TicketBrandGradIcon = () => (
   <svg
     width="35"
     height="40"
@@ -3022,28 +3038,28 @@ export const TicketBrandGradIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.8764 0L-0.000743866 10.0013V28.755L16.8668 40L34.373 29.9964V9.99806L16.8764 0ZM33.7592 20.4356V10.705L27.0072 14.5633L27.0072 24.4145L33.7592 20.4356ZM33.7592 21.1481V29.6402L27.0072 33.4985V25.1269L33.7592 21.1481ZM26.3934 25.4887V33.8493L17.1862 39.1106V30.9144L26.3934 25.4887ZM16.5723 30.9111V39.066L7.67198 33.1324V25.472L16.5723 30.9111ZM7.67198 24.7526L16.5723 30.1918V20.1721L7.7187 14.9255L7.67198 14.9536L7.67198 24.7526ZM7.05816 25.0969V32.7232L0.613075 28.4264V21.1582L7.05816 25.0969ZM0.613075 20.4389L7.05816 24.3775L7.05816 14.606L7.11847 14.5698L0.613075 10.7148V20.4389ZM17.1862 30.2019L26.3934 24.7762L26.3934 14.9141L17.1862 20.1754V30.2019ZM26.005 14.429L16.882 19.6422L8.31698 14.5666L17.0627 9.31915L26.005 14.429ZM16.4516 8.96997L7.71675 14.2109L0.90818 10.1762L9.57483 5.04038L16.4516 8.96997ZM10.1822 4.68047L17.0551 8.60786L23.7126 4.61336L16.882 0.710174L10.1822 4.68047ZM24.3237 4.96254L17.6662 8.95705L26.6236 14.0756L33.4475 10.1762L24.3237 4.96254Z"
-      fill="url(#paint0_linear_2001_11121)"
+      fill="url(#ticket-grad-0)"
     />
     <defs>
       <linearGradient
-        id="paint0_linear_2001_11121"
+        id="ticket-grad-0"
         x1="34.373"
         y1="20"
         x2="-0.000743866"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
 );
 
-export const TemperateBrandGradIcon = (
+export const TemperateBrandGradIcon = () => (
   <svg
     width="40"
     height="40"
@@ -3053,144 +3069,142 @@ export const TemperateBrandGradIcon = (
   >
     <path
       d="M19.2105 8.42105V0H20.7895V8.42105H19.2105Z"
-      fill="url(#paint0_linear_2001_11129)"
+      fill="url(#temp-grad-0)"
     />
     <path
       d="M18.0941 19.2105L12.7429 13.8593L13.8593 12.7428L19.2105 18.094V10.5263H20.7895V18.094L26.1407 12.7428L27.2571 13.8593L21.9059 19.2105H29.4737V20.7895H21.906L27.2572 26.1406L26.1407 27.2571L20.7895 21.9059V29.4737H19.2105V21.9059L13.8593 27.2571L12.7428 26.1406L18.094 20.7895H10.5263V19.2105H18.0941Z"
-      fill="url(#paint1_linear_2001_11129)"
+      fill="url(#temp-grad-1)"
     />
-    <path
-      d="M0 19.2105H8.42105V20.7895H0V19.2105Z"
-      fill="url(#paint2_linear_2001_11129)"
-    />
+    <path d="M0 19.2105H8.42105V20.7895H0V19.2105Z" fill="url(#temp-grad-2)" />
     <path
       d="M31.5789 19.2105H40V20.7895H31.5789V19.2105Z"
-      fill="url(#paint3_linear_2001_11129)"
+      fill="url(#temp-grad-3)"
     />
     <path
       d="M19.2105 31.5789V40H20.7895V31.5789H19.2105Z"
-      fill="url(#paint4_linear_2001_11129)"
+      fill="url(#temp-grad-4)"
     />
     <path
       d="M11.2542 27.6293L5.29962 33.5839L6.4161 34.7003L12.3707 28.7458L11.2542 27.6293Z"
-      fill="url(#paint5_linear_2001_11129)"
+      fill="url(#temp-grad-5)"
     />
     <path
       d="M27.6293 11.2542L33.5839 5.29959L34.7004 6.41607L28.7458 12.3707L27.6293 11.2542Z"
-      fill="url(#paint6_linear_2001_11129)"
+      fill="url(#temp-grad-6)"
     />
     <path
       d="M28.7458 27.6293L34.7004 33.5839L33.5839 34.7003L27.6293 28.7458L28.7458 27.6293Z"
-      fill="url(#paint7_linear_2001_11129)"
+      fill="url(#temp-grad-7)"
     />
     <path
       d="M12.3707 11.2542L6.41611 5.29959L5.29963 6.41607L11.2542 12.3707L12.3707 11.2542Z"
-      fill="url(#paint8_linear_2001_11129)"
+      fill="url(#temp-grad-8)"
     />
     <defs>
       <linearGradient
-        id="paint0_linear_2001_11129"
+        id="temp-grad-0"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint1_linear_2001_11129"
+        id="temp-grad-1"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint2_linear_2001_11129"
+        id="temp-grad-2"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint3_linear_2001_11129"
+        id="temp-grad-3"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint4_linear_2001_11129"
+        id="temp-grad-4"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint5_linear_2001_11129"
+        id="temp-grad-5"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint6_linear_2001_11129"
+        id="temp-grad-6"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint7_linear_2001_11129"
+        id="temp-grad-7"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint8_linear_2001_11129"
+        id="temp-grad-8"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
 );
-export const HandoffBrandGradIcon = (
+
+export const HandoffBrandGradIcon = () => (
   <svg
     width="40"
     height="40"
@@ -3203,127 +3217,109 @@ export const HandoffBrandGradIcon = (
       y="0.5"
       width="39"
       height="39"
-      stroke="url(#paint0_linear_2001_11137)"
+      stroke="url(#handoff-grad-0)"
     />
-    <rect
-      x="3"
-      y="3"
-      width="34"
-      height="34"
-      stroke="url(#paint1_linear_2001_11137)"
-    />
+    <rect x="3" y="3" width="34" height="34" stroke="url(#handoff-grad-1)" />
     <rect
       x="5.5"
       y="5.5"
       width="29"
       height="29"
-      stroke="url(#paint2_linear_2001_11137)"
+      stroke="url(#handoff-grad-2)"
     />
-    <rect
-      x="8"
-      y="8"
-      width="24"
-      height="24"
-      stroke="url(#paint3_linear_2001_11137)"
-    />
+    <rect x="8" y="8" width="24" height="24" stroke="url(#handoff-grad-3)" />
     <rect
       x="10.5"
       y="10.5"
       width="19"
       height="19"
-      stroke="url(#paint4_linear_2001_11137)"
+      stroke="url(#handoff-grad-4)"
     />
-    <rect
-      x="13"
-      y="13"
-      width="14"
-      height="14"
-      stroke="url(#paint5_linear_2001_11137)"
-    />
+    <rect x="13" y="13" width="14" height="14" stroke="url(#handoff-grad-5)" />
     <rect
       x="15.5"
       y="15.5"
       width="9"
       height="9"
-      stroke="url(#paint6_linear_2001_11137)"
+      stroke="url(#handoff-grad-6)"
     />
     <defs>
       <linearGradient
-        id="paint0_linear_2001_11137"
+        id="handoff-grad-0"
         x1="0"
         y1="20"
         x2="40"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint1_linear_2001_11137"
+        id="handoff-grad-1"
         x1="2.5"
         y1="20"
         x2="37.5"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint2_linear_2001_11137"
+        id="handoff-grad-2"
         x1="5"
         y1="20"
         x2="35"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint3_linear_2001_11137"
+        id="handoff-grad-3"
         x1="7.5"
         y1="20"
         x2="32.5"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint4_linear_2001_11137"
+        id="handoff-grad-4"
         x1="10"
         y1="20"
         x2="30"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint5_linear_2001_11137"
+        id="handoff-grad-5"
         x1="12.5"
         y1="20"
         x2="27.5"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
-        id="paint6_linear_2001_11137"
+        id="handoff-grad-6"
         x1="15"
         y1="20"
         x2="25"
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -3495,99 +3491,6 @@ export const HamburgerMenu = (
       stroke-width="1.5"
       stroke-linecap="round"
     />
-  </svg>
-);
-
-export const AiPlaygroundGradIcon = (
-  <svg
-    width="35"
-    height="40"
-    viewBox="0 0 35 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M17.334 35.5391L17.334 39.6929"
-      stroke="url(#paint0_linear_2001_11108)"
-      stroke-width="0.5"
-    />
-    <path
-      d="M30.9785 12.25L34.5444 10.2014"
-      stroke="url(#paint1_linear_2001_11108)"
-      stroke-width="0.5"
-    />
-    <path
-      d="M3.69141 12.25L0.125514 10.2014"
-      stroke="url(#paint2_linear_2001_11108)"
-      stroke-width="0.5"
-    />
-    <path
-      d="M30.9141 12.2959V27.6973L17.334 35.4014L3.75488 27.6973V12.2959L17.334 4.5918L30.9141 12.2959Z"
-      stroke="url(#paint3_linear_2001_11108)"
-      stroke-width="0.5"
-    />
-    <path
-      d="M34.4043 10.2324V29.8545L17.334 39.7109L0.263672 29.8545V10.2334L17.334 0.289062L34.4043 10.2324Z"
-      stroke="url(#paint4_linear_2001_11108)"
-      stroke-width="0.5"
-    />
-    <defs>
-      <linearGradient
-        id="paint0_linear_2001_11108"
-        x1="16.834"
-        y1="35.5391"
-        x2="16.834"
-        y2="39.6929"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
-      </linearGradient>
-      <linearGradient
-        id="paint1_linear_2001_11108"
-        x1="30.7265"
-        y1="11.8181"
-        x2="34.2786"
-        y2="9.74576"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
-      </linearGradient>
-      <linearGradient
-        id="paint2_linear_2001_11108"
-        x1="3.94337"
-        y1="11.8181"
-        x2="0.391361"
-        y2="9.74576"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
-      </linearGradient>
-      <linearGradient
-        id="paint3_linear_2001_11108"
-        x1="1.36523"
-        y1="19.997"
-        x2="33.3032"
-        y2="19.997"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
-      </linearGradient>
-      <linearGradient
-        id="paint4_linear_2001_11108"
-        x1="0.0136719"
-        y1="20"
-        x2="34.6547"
-        y2="20"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
-      </linearGradient>
-    </defs>
   </svg>
 );
 
