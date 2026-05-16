@@ -14,10 +14,7 @@ import { useMediaQuery } from "@/utils/hooks";
 import { GridImageMobile } from "@/components/routes/about/GridImageMobile";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
-import {
-  fadeVariants,
-  staggerContainer,
-} from "@/components/shared/organisms/AnimatedBlock/variants";
+import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 const AboutPage = () => {
   const isMobile = useMediaQuery();
@@ -42,60 +39,54 @@ const AboutPage = () => {
         </AnimatedBlock>
       </PageHero>
 
-      <AnimatedBlock variants={staggerContainer}>
-        <PageSection
-          classNames={{
-            container: cls(
-              "w-full !flex !flex-col items-center gap-y-4 md:gap-y-20 md:mb-40",
-            ),
-          }}
-        >
+      <PageSection
+        classNames={{
+          container: cls(
+            "w-full !flex !flex-col items-center gap-y-4 md:gap-y-20 md:mb-40",
+          ),
+        }}
+      >
+        <AnimatedBlock variants={fadeVariants}>
           <GridLayout />
+        </AnimatedBlock>
 
-          <AnimatedBlock>
-            <div className="container w-full md:w-[80%] space-y-8">
-              <Typography className="text-medium-base md:text-regular-xl md:text-center text-gray-700 leading-[180%]">
-                {" "}
-                Engineers, support veterans, AI researchers, we&apos;ve been in
-                your shoes. We&apos;re not a faceless enterprise vendor.
-                We&apos;re founders serving founders.Every startup hits the same
-                wall: grow support or grow product. Pick one. We refused to
-                choose. So we built Eusate, a platform that lets teams do
-                both.{" "}
-              </Typography>{" "}
-              <Typography className="text-medium-base md:text-regular-xl md:text-center text-gray-700 leading-[180%]">
-                {" "}
-                We&apos;re based in Akure, Nigeria, building for the global
-                startup community. Our team has scaled support operations,
-                shipped AI products, and felt the pain of 2am customer
-                emergencies. We know this problem intimately because we lived
-                it.
-              </Typography>
-            </div>
-          </AnimatedBlock>
+        <AnimatedBlock variants={fadeVariants} delay={0.2}>
+          <div className="container w-full md:w-[80%] space-y-8">
+            <Typography className="text-medium-base md:text-regular-xl md:text-center text-gray-700 leading-[180%]">
+              Engineers, support veterans, AI researchers, we&apos;ve been in
+              your shoes. We&apos;re not a faceless enterprise vendor.
+              We&apos;re founders serving founders. Every startup hits the same
+              wall: grow support or grow product. Pick one. We refused to
+              choose. So we built Eusate, a platform that lets teams do both.
+            </Typography>
+            <Typography className="text-medium-base md:text-regular-xl md:text-center text-gray-700 leading-[180%]">
+              We&apos;re based in Akure, Nigeria, building for the global
+              startup community. Our team has scaled support operations, shipped
+              AI products, and felt the pain of 2am customer emergencies. We
+              know this problem intimately because we lived it.
+            </Typography>
+          </div>
+        </AnimatedBlock>
 
-          {/* FOR MOBILE ONLY */}
-          <GridImageMobile />
-        </PageSection>
-      </AnimatedBlock>
+        {/* FOR MOBILE ONLY */}
+        <GridImageMobile />
+      </PageSection>
 
       <PageSection className="relative overflow-hidden mb-24">
         <BackgroundWatermark imgSrc="/images/about-mission-swatch.webp" />
         <div className="flex flex-wrap container relative md:justify-center lg:justify-between gap-4 mt-8">
-          <AnimatedBlock variants={fadeVariants}>
+          <AnimatedBlock variants={fadeVariants} duration={2}>
             <VisionCard
               icon={TelescopeIcon}
               title="Our Vision"
-              content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders.Every startup hits the same wall: grow support or grow product. Pick one.
-We refused to choose. So we built Eusate, a platform that lets teams do both."
+              content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
             />
           </AnimatedBlock>
-          <AnimatedBlock variants={fadeVariants} delay={0.4}>
+          <AnimatedBlock variants={fadeVariants} delay={0.4} duration={2}>
             <VisionCard
               icon={MissionIcon}
               title="Our Mission"
-              content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders.Every startup hits the same wall: grow support or grow product. Pick one.
-We refused to choose. So we built Eusate, a platform that lets teams do both."
+              content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
             />
           </AnimatedBlock>
         </div>

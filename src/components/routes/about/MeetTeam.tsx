@@ -1,8 +1,5 @@
 import Typography from "@/components/shared/atoms/Typography";
-import {
-  AnimatedBlock,
-  defaultTransition,
-} from "@/components/shared/organisms/AnimatedBlock";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import {
   fadeUpVariants,
   staggerContainer,
@@ -67,25 +64,25 @@ export const MeetTeam = () => {
         title="Meet the team"
         classNames={{
           title: "text-4xl md:text-bold-6xl text-white",
-          titleContainer: "flex flex-col items-center ",
+          titleContainer: "flex flex-col items-center",
         }}
       />
       <AnimatedBlock variants={staggerContainer}>
-        <div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
+        <motion.div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
           {team.map(({ id, ...member }) => (
-            <MemberCard key={id} id={id} {...member} />
+            <MemberCard key={id} {...member} />
           ))}
-        </div>
+        </motion.div>
       </AnimatedBlock>
     </div>
   );
 };
 
-const MemberCard = ({ id, imgSrc, role, name }: Member) => {
+const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
   return (
     <motion.div
       variants={fadeUpVariants}
-      transition={{ ...defaultTransition, delay: id / 10 }}
+      transition={{ duration: 2 }}
       className="relative flex flex-col gap-4 group w-full max-w-[329px]"
     >
       <div className="relative w-full md:w-[333px] h-[320px] self-start rounded-x24 overflow-hidden">
