@@ -21,7 +21,7 @@ export const FormSection = () => {
   return (
     <motion.section
       variants={fadeUpVariants}
-      transition={{ ...defaultTransition, delay: 0.3, duration: 2 }}
+      transition={{ ...defaultTransition, delay: 0.3, duration: 1.2 }}
       className="w-full md:max-w-[520px] grid gap-y-4 md:gap-y-6 bg-black text-white py-6 px-4 md:px-8 rounded-3xl"
     >
       <div className="flex items-center gap-4">

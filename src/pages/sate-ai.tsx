@@ -16,6 +16,7 @@ import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { useMediaQuery } from "@/utils/hooks";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 const SateAiPage = () => {
   const isMobile = useMediaQuery();
@@ -28,7 +29,7 @@ const SateAiPage = () => {
           wrapper: "px-5",
         }}
       >
-        <AnimatedBlock duration={2}>
+        <AnimatedBlock variants={fadeVariants} duration={2}>
           <PageHeader
             chipLabel="Sate Ai"
             orientation="horizontal"

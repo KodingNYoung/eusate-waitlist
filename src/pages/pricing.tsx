@@ -19,11 +19,9 @@ import {
 import Link from "next/link";
 import { cls } from "@/utils/helpers";
 import { PageHero } from "@/components/shared/organisms/PageHero";
-import {
-  AnimatedBlock,
-  staggerContainer,
-} from "@/components/shared/organisms/AnimatedBlock";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { motion } from "motion/react";
+import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 const Pricing = () => {
   return (

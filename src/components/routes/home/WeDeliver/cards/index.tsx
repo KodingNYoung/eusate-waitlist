@@ -26,11 +26,11 @@ export const WeDeliverCardTemplate: FC<Props> = ({
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
       className={cls(
-        "flex justify-center w-full md:w-[349px] h-[320px] overflow-hidden rounded-[24px] px-4 py-8",
+        "flex justify-center w-full md:w-[349px] h-[320px] overflow-hidden rounded-[24px] px-6 py-8",
         classNames?.root,
       )}
     >
-      <div className="space-y-2">
+      <div className="space-y-2 w-full">
         <div className="space-y-4">
           <Typography
             variant="semibold-base"
@@ -45,7 +45,7 @@ export const WeDeliverCardTemplate: FC<Props> = ({
             {unit}
           </div>
         </div>
-        <div className="w-full relative">{graph}</div>
+        <div className="w-full mx-auto relative">{graph}</div>
       </div>
     </motion.div>
   );

@@ -26,7 +26,7 @@ export const AnimatedBlock = ({
   className?: string;
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "50px 0px", once: true });
+  const isInView = useInView(ref, { margin: "0px 0px", once: false });
 
   return (
     <motion.div

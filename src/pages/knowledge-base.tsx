@@ -11,6 +11,7 @@ import { ROUTES } from "@/utils/constants";
 import Link from "next/link";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { GradientIcon } from "@/components/shared/atoms/Icon";
 
 const KnowledgeBasePage = () => {
   return (
@@ -47,10 +48,8 @@ const KnowledgeBasePage = () => {
                   <Button
                     size="sm"
                     variant="outlined"
-                    className="px-12 py-4 "
-                    endContent={
-                      <span className="stroke-black">{ArrowRightIcon}</span>
-                    }
+                    className="px-12 py-4 group"
+                    endContent={<GradientIcon>{ArrowRightIcon}</GradientIcon>}
                   >
                     Get started
                   </Button>

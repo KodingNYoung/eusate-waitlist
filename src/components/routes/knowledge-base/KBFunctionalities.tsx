@@ -13,7 +13,7 @@ export const KBFunctionalities = () => {
   return (
     <AnimatedBlock variants={staggerContainer}>
       <PageSection classNames={{ base: "px-5", container: "grid gap-y-22" }}>
-        <AnimatedBlock variants={fadeLeftVariants} duration={2}>
+        <AnimatedBlock variants={fadeLeftVariants} delay={0.5} duration={2}>
           <div className="flex flex-wrap justify-start gap-y-10 md:justify-around items-center">
             <div>
               <Typography

@@ -115,7 +115,7 @@ export const PageSection = ({
       id={id}
       style={{ backgroundColor: color }}
       className={cls(
-        "transition-colors duration-300 rouded-x24 md:rounded-x40",
+        "transition-colors duration-300 rounded-x24 md:rounded-x40",
         className,
         classNames?.base,
       )}

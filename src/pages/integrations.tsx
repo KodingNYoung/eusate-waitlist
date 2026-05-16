@@ -65,7 +65,7 @@ const Integrations = () => {
         <PageSection>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PLATFORMS.map(({ id, ...platform }) => (
-              <AnimatedBlock key={id} delay={id / 10}>
+              <AnimatedBlock key={id} delay={id / 10} duration={2}>
                 <IntegrationCard {...platform} />
               </AnimatedBlock>
             ))}

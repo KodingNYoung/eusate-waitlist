@@ -51,7 +51,7 @@ export const ResolutionRate = () => {
       score={<Counter className="text-bold-6xl" targetValue={80} />}
       unit="%"
       graph={
-        <div className="relative">
+        <div className="relative w-full">
           <GridLines plot={<BarGraph />} />
         </div>
       }
@@ -66,7 +66,7 @@ const BarGraph = () => {
       initial="hidden"
       whileInView="show"
       // viewport={{ once: true }}
-      className="flex items-end gap-2"
+      className="flex justify-center items-end gap-4 w-full"
     >
       {bars.map(({ id, height }) =>
         id === bars.length ? (

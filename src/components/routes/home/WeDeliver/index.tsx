@@ -26,15 +26,9 @@ export const WeDeliver = () => {
         variants={staggerContainer}
         className="flex flex-wrap justify-center xl:justify-between gap-4"
       >
-        <AnimatedBlock>
-          <ResolutionRate />
-        </AnimatedBlock>
-        <AnimatedBlock delay={0.3}>
-          <CSATScore />
-        </AnimatedBlock>
-        <AnimatedBlock delay={0.7}>
-          <ROIFounders />
-        </AnimatedBlock>
+        <ResolutionRate />
+        <CSATScore />
+        <ROIFounders />
       </AnimatedBlock>
     </PageSection>
   );

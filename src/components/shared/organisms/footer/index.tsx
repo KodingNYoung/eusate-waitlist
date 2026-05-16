@@ -4,9 +4,9 @@ import Logo from "../../atoms/Logo";
 import Typography from "../../atoms/Typography";
 import Button from "../../molecules/Button";
 import { ROUTES } from "@/utils/constants";
-import { SOCIAL_LINKS } from "./utils";
 import { NAV_EXPLORE_LIST } from "../navbar/utils";
 import { ArrowRightIcon } from "@/assets/icons";
+import { SocialTerms } from "./SocialTerms";
 
 const Footer = () => {
   return (
@@ -20,41 +20,13 @@ const Footer = () => {
                 Support that scales with you. Not against you.
               </Typography>
             </div>
-            <div className="flex items-center justify-between md:justify-start gap-4">
-              {SOCIAL_LINKS.map(({ id, icon, link }) => (
-                <Link key={id} href={link}>
-                  <Button
-                    href={link}
-                    variant="tetiary"
-                    classNames={{
-                      root: "p-3 border-white/20 hover:!bg-white/15",
-                    }}
-                  >
-                    <span className="stroke-gray-400 fill-[#98A2B3]">
-                      {icon}
-                    </span>
-                  </Button>
-                </Link>
-              ))}
+            <div className="hidden md:block">
+              <SocialTerms />
             </div>
-            <nav className="flex gap-8 justify-between md:justify-start">
-              <Link
-                href={ROUTES.PRIVACY}
-                className="text-bold-sm md:text-bold-lg text-white-60"
-              >
-                Privacy policy
-              </Link>
-              <Link
-                href={ROUTES.TERMS}
-                className="text-bold-sm md:text-bold-lg text-white-60"
-              >
-                Terms and Conditions
-              </Link>
-            </nav>
           </div>
 
           {/* EXPLORE LIST */}
-          <div className="flex flex-wrap justify-between gap-x-8 gap-y-20 w-[576px]">
+          <div className="flex flex-wrap justify-between gap-x-12 gap-y-20 w-[576px]">
             {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
               <div key={id} className="flex  flex-col gap-6 ">
                 <Typography variant="medium-lg" className="text-white/40">
@@ -73,6 +45,10 @@ const Footer = () => {
                 </nav>
               </div>
             ))}
+          </div>
+
+          <div className="flex md:hidden w-full">
+            <SocialTerms />
           </div>
         </div>
 
