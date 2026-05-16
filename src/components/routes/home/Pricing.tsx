@@ -8,7 +8,9 @@ import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/varian
 
 export const Pricing = () => {
   return (
-    <PageSection classNames={{ base: "py-20 px-5", container: "md:!gap-y-20" }}>
+    <PageSection
+      classNames={{ base: "py-20 px-5", container: "md:!gap-y-20 pb-20" }}
+    >
       <AnimatedBlock variants={fadeVariants}>
         <SubHeader
           position="center"

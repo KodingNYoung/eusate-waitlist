@@ -7,6 +7,8 @@ import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTem
 import Link from "next/link";
 import { ROUTES } from "@/utils/constants";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { motion } from "motion/react";
 
 export const Blog = () => {
   return (
@@ -33,9 +35,9 @@ export const Blog = () => {
           </Link>
         }
       />
-      <AnimatedBlock>
-        <div className="flex justify-center w-full">
-          <div className="flex flex-wrap justify-start xl:justify-between gap-8 w-auto">
+      <div className="flex justify-center w-full">
+        <AnimatedBlock variants={staggerContainer}>
+          <motion.div className="flex flex-wrap justify-start xl:justify-between gap-8 w-auto">
             {BlogPost?.slice(0, 3)?.map(
               ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                 <BlogCard
@@ -51,9 +53,9 @@ export const Blog = () => {
                 />
               ),
             )}
-          </div>
-        </div>
-      </AnimatedBlock>
+          </motion.div>
+        </AnimatedBlock>
+      </div>
 
       <Button
         size="sm"
