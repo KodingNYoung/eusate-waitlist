@@ -7,6 +7,7 @@ import { ParallaxHero } from "@/components/shared/organisms/ParallaxHero";
 import { BorderGradient } from "@/components/shared/organisms/BorderGradient";
 import Typography from "@/components/shared/atoms/Typography";
 import Link from "next/link";
+import { GradientIcon } from "@/components/shared/atoms/Icon";
 
 const HelpDeskPage = () => {
   return (
@@ -34,10 +35,8 @@ const HelpDeskPage = () => {
               <Button
                 size="sm"
                 variant="outlined"
-                className="px-4 md:px-12 py-4"
-                endContent={
-                  <span className="stroke-black">{ArrowRightIcon}</span>
-                }
+                className="px-4 md:px-12 py-4 group"
+                endContent={<GradientIcon>{ArrowRightIcon}</GradientIcon>}
               >
                 Get started
               </Button>

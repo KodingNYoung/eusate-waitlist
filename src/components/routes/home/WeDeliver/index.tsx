@@ -3,6 +3,8 @@ import { ResolutionRate } from "./cards/ResolutionRate";
 import { CSATScore } from "./cards/CSATScore";
 import { ROIFounders } from "./cards/ROIFounders";
 import { PageSection } from "@/components/shared/organisms/PageTemplate";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 export const WeDeliver = () => {
   return (
@@ -12,17 +14,28 @@ export const WeDeliver = () => {
         container: "gap-y-10 md:!gap-y-20 ",
       }}
     >
-      <SubHeader
-        position="center"
-        chipLabel="We deliver"
-        title="Your team and your customers both deserve the top-quality"
-        classNames={{ titleContainer: "w-full md:w-[50%]" }}
-      />
-      <div className="flex flex-wrap justify-center xl:justify-between gap-4">
-        <ResolutionRate />
-        <CSATScore />
-        <ROIFounders />
-      </div>
+      <AnimatedBlock>
+        <SubHeader
+          position="center"
+          chipLabel="We deliver"
+          title="Your team and your customers both deserve the top-quality"
+          classNames={{ titleContainer: "w-full md:w-[50%]" }}
+        />
+      </AnimatedBlock>
+      <AnimatedBlock
+        variants={staggerContainer}
+        className="flex flex-wrap justify-center xl:justify-between gap-4"
+      >
+        <AnimatedBlock>
+          <ResolutionRate />
+        </AnimatedBlock>
+        <AnimatedBlock delay={0.3}>
+          <CSATScore />
+        </AnimatedBlock>
+        <AnimatedBlock delay={0.7}>
+          <ROIFounders />
+        </AnimatedBlock>
+      </AnimatedBlock>
     </PageSection>
   );
 };

@@ -5,10 +5,8 @@ import {
 import { SocialLinks } from "@/components/routes/contact/Socials";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { FormSection } from "@/components/routes/contact/FormSection";
-import {
-  AnimatedBlock,
-  staggerContainer,
-} from "@/components/shared/organisms/AnimatedBlock";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 const ContactPage = () => {
   return (

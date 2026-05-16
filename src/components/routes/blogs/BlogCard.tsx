@@ -3,14 +3,17 @@ import { FC, TWClassNames } from "@/utils/types";
 import Typography from "../../shared/atoms/Typography";
 import Image from "next/image";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { ArrowRightIcon } from "@/assets/icons";
+import { motion } from "motion/react";
+import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
 
 type Slots = "container" | "img" | "imgContainer";
 type Variant = "inline" | "page";
 
 type Props = {
   id: string;
+  idx?: number;
   variant?: Variant;
   imgSrc: string;
   title: string;
@@ -31,6 +34,7 @@ const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
 
 export const BlogCard: FC<Props> = ({
   id,
+  idx,
   title,
   summary,
   imgSrc,
@@ -41,7 +45,9 @@ export const BlogCard: FC<Props> = ({
   timestamp,
 }) => {
   return (
-    <Link
+    <motion.a
+      variants={fadeUpVariants}
+      transition={{ ...defaultTransition, delay: idx ? idx / 10 : 0 }}
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
@@ -109,6 +115,6 @@ export const BlogCard: FC<Props> = ({
           {dayjs(timestamp).format("MMM DD, YYYY")}
         </Typography>
       </div>
-    </Link>
+    </motion.a>
   );
 };

@@ -6,6 +6,7 @@ import { BlogCard } from "../blogs/BlogCard";
 import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTemplate";
 import Link from "next/link";
 import { ROUTES } from "@/utils/constants";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
 export const Blog = () => {
   return (
@@ -32,25 +33,27 @@ export const Blog = () => {
           </Link>
         }
       />
-      <div className="flex justify-center w-full">
-        <div className="flex flex-wrap justify-start 2xl:justify-between gap-8 w-auto">
-          {BlogPost?.slice(0, 3)?.map(
-            ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
-              <BlogCard
-                variant="inline"
-                classNames={{ container: "self-start items-start " }}
-                key={id}
-                id={id}
-                imgSrc={imgSrc}
-                title={title}
-                summary={summary}
-                readingSpan={readingSpan}
-                timestamp={timestamp}
-              />
-            ),
-          )}
+      <AnimatedBlock>
+        <div className="flex justify-center w-full">
+          <div className="flex flex-wrap justify-start xl:justify-between gap-8 w-auto">
+            {BlogPost?.slice(0, 3)?.map(
+              ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
+                <BlogCard
+                  variant="inline"
+                  classNames={{ container: "self-start items-start " }}
+                  key={id}
+                  id={id}
+                  imgSrc={imgSrc}
+                  title={title}
+                  summary={summary}
+                  readingSpan={readingSpan}
+                  timestamp={timestamp}
+                />
+              ),
+            )}
+          </div>
         </div>
-      </div>
+      </AnimatedBlock>
 
       <Button
         size="sm"

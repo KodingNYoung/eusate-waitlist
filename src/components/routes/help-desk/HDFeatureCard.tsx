@@ -5,10 +5,10 @@ import Typography from "@/components/shared/atoms/Typography";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  AnimatedBlock,
   fadeUpVariants,
   staggerContainer,
-} from "@/components/shared/organisms/AnimatedBlock";
+} from "@/components/shared/organisms/AnimatedBlock/variants";
+import { AnimatedBlock } from "../../shared/organisms/AnimatedBlock";
 
 type Props = {
   id: number;

@@ -10,10 +10,8 @@ import { ContactForm } from "@/utils/types";
 import { REASON_OPTIONS } from "./utils";
 import Select from "@/components/shared/molecules/Select";
 import { motion } from "motion/react";
-import {
-  defaultTransition,
-  fadeUpVariants,
-} from "@/components/shared/organisms/AnimatedBlock";
+import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
 
 export const FormSection = () => {
   const { register, control } = useForm<ContactForm>({

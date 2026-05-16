@@ -6,12 +6,13 @@ import { SATE_FEATURES } from "../../sate-ai/utils";
 import { SateFeatureCard } from "../../sate-ai/SateFeatureCard";
 import Link from "next/link";
 import { ROUTES } from "@/utils/constants";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
 export const MeetSate = () => {
   return (
     <section className="hidden md:block bg-[url(/home/images/meet-sate-bg.webp)] bg-no-repeat bg-cover bg-bottom pt-16 pb-20 rounded-x40">
       <div className="container flex flex-col items-center gap-[56px]">
-        <header className="flex flex-col items-center space-y-6 w-[90%] lg:w-[50%]">
+        <AnimatedBlock className="flex flex-col items-center space-y-6 w-[90%] lg:w-[50%]">
           <div className="flex flex-col items-center relative">
             <div className="relative">
               <Image
@@ -42,11 +43,13 @@ export const MeetSate = () => {
               Meet Sate
             </Button>
           </Link>
-        </header>
+        </AnimatedBlock>
         <div className="md:container bg-white/20 rounded-x24 py-6 px-2 space-y-4">
           <div className="flex gap-6 flex-wrap justify-center">
-            {SATE_FEATURES.map(({ key, ...feature }) => (
-              <SateFeatureCard className="bg-white/20" key={key} {...feature} />
+            {SATE_FEATURES.map(({ key, id, ...feature }) => (
+              <AnimatedBlock key={key} delay={id / 10}>
+                <SateFeatureCard className="bg-white/20" {...feature} />
+              </AnimatedBlock>
             ))}
           </div>
           <ChatArea />

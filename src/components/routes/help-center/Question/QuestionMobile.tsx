@@ -39,7 +39,7 @@ export const QuestionMobile = () => {
                 trigger: "justify-between text-gray-700",
                 titleWrapper: "flex-0",
                 title: "text-semibold-sm text-left",
-                base: "border border-gray-50 py rounded-x24",
+                base: "px-[8px] border border-gray-50 py rounded-x24",
               }}
               items={content.map(({ key, question, answer }) => ({
                 key,

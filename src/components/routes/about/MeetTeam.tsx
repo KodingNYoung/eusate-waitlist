@@ -1,6 +1,15 @@
 import Typography from "@/components/shared/atoms/Typography";
+import {
+  AnimatedBlock,
+  defaultTransition,
+} from "@/components/shared/organisms/AnimatedBlock";
+import {
+  fadeUpVariants,
+  staggerContainer,
+} from "@/components/shared/organisms/AnimatedBlock/variants";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { InternalPath } from "@/utils/types";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 type Member = {
@@ -61,20 +70,24 @@ export const MeetTeam = () => {
           titleContainer: "flex flex-col items-center ",
         }}
       />
-      <div className="">
+      <AnimatedBlock variants={staggerContainer}>
         <div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
           {team.map(({ id, ...member }) => (
-            <MemberCard key={id} {...member} />
+            <MemberCard key={id} id={id} {...member} />
           ))}
         </div>
-      </div>
+      </AnimatedBlock>
     </div>
   );
 };
 
-const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
+const MemberCard = ({ id, imgSrc, role, name }: Member) => {
   return (
-    <div className="relative flex flex-col gap-4 group w-full max-w-[329px]">
+    <motion.div
+      variants={fadeUpVariants}
+      transition={{ ...defaultTransition, delay: id / 10 }}
+      className="relative flex flex-col gap-4 group w-full max-w-[329px]"
+    >
       <div className="relative w-full md:w-[333px] h-[320px] self-start rounded-x24 overflow-hidden">
         <Image
           alt={name}
@@ -91,6 +104,6 @@ const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
           {role}
         </Typography>
       </div>
-    </div>
+    </motion.div>
   );
 };

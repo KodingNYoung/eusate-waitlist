@@ -1,9 +1,16 @@
 import Typography from "@/components/shared/atoms/Typography";
+import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
+import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 export default function GridLayout() {
   return (
-    <div className="container grid grid-cols-1 md:grid-cols-5 gap-4 px-4 md:h-[500px]">
+    <motion.div
+      variants={fadeUpVariants}
+      transition={defaultTransition}
+      className="container grid grid-cols-1 md:grid-cols-5 gap-4 px-4 md:h-[500px]"
+    >
       {/* Left column */}
       <div className="hidden md:flex flex-row md:flex-col gap-4 h-48 md:h-auto">
         <div className="bg-black text-white rounded-3xl flex items-end p-8 relative h-full w-full">
@@ -95,6 +102,6 @@ export default function GridLayout() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
