@@ -15,6 +15,7 @@ import { CARDS } from "@/components/routes/sate-ai/SateAction/const";
 import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { useMediaQuery } from "@/utils/hooks";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
 const SateAiPage = () => {
   const isMobile = useMediaQuery();
@@ -27,29 +28,31 @@ const SateAiPage = () => {
           wrapper: "px-5",
         }}
       >
-        <PageHeader
-          chipLabel="Sate Ai"
-          orientation="horizontal"
-          startTitleContainer={
-            <div className="relative">
-              <Image
-                alt="glowing-ball-img"
-                src="/sate-ai/images/glowing-ball.webp"
-                width={70}
-                height={70}
-              />
-            </div>
-          }
-          classNames={{
-            root: "flex justify-between gap-10",
-            titleContainer: "md:w-[60%]",
-            title: "text-white text-bold-3xl md:text-bold-5xl",
-            descriptionContainer: "md:w-[40%]",
-            description: "text-white/70 leading-[150%]",
-          }}
-          title="AI that understands context. Recognizes emotion. Takes action."
-          description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
-        />
+        <AnimatedBlock duration={2}>
+          <PageHeader
+            chipLabel="Sate Ai"
+            orientation="horizontal"
+            startTitleContainer={
+              <div className="relative">
+                <Image
+                  alt="glowing-ball-img"
+                  src="/sate-ai/images/glowing-ball.webp"
+                  width={70}
+                  height={70}
+                />
+              </div>
+            }
+            classNames={{
+              root: "flex justify-between gap-10",
+              titleContainer: "md:w-[60%]",
+              title: "text-white text-bold-3xl md:text-bold-5xl",
+              descriptionContainer: "md:w-[40%]",
+              description: "text-white/70 leading-[150%]",
+            }}
+            title="AI that understands context. Recognizes emotion. Takes action."
+            description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
+          />
+        </AnimatedBlock>
       </PageHero>
 
       <section className="relative h-full md:h-[380px] flex flex-col  items-center w-full px-5 md:py-20 space-y-10 md:space-y-0">

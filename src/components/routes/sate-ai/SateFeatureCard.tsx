@@ -1,12 +1,14 @@
+import Image from "next/image";
 import Typography from "@/components/shared/atoms/Typography";
 import { cls } from "@/utils/helpers";
-import { FC, TWClassNames } from "@/utils/types";
+import { FC, InternalPath, TWClassNames } from "@/utils/types";
 import { ReactElement } from "react";
 
 type Slots = "base" | "title" | "description";
 
 type Props = {
-  icon: ReactElement;
+  icon?: ReactElement;
+  src?: InternalPath;
   title: string;
   description: string;
   className?: TWClassNames;
@@ -14,6 +16,7 @@ type Props = {
 };
 
 export const SateFeatureCard: FC<Props> = ({
+  src,
   icon,
   title,
   className,
@@ -28,7 +31,14 @@ export const SateFeatureCard: FC<Props> = ({
         classNames?.base,
       )}
     >
-      <div className="flex items-center">{icon}</div>
+      <div className="flex items-center">
+        {icon && icon}
+        {src && (
+          <div className="relative w-[40px] h-[40px]">
+            <Image src={src} fill alt={title} />
+          </div>
+        )}
+      </div>
       <div className="space-y-2">
         <Typography
           variant="semibold-lg"

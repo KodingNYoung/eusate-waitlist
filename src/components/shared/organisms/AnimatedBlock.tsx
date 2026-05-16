@@ -1,9 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-import type { Variants } from "framer-motion";
+import type { Transition, Variants } from "framer-motion";
 
 // const easing = [0.22, 1, 0.36, 1] as const;
+
+export const defaultTransition: Transition = {
+  ease: [0.22, 1, 0.36, 1],
+  delay: 0,
+  duration: 0.6,
+};
 
 export const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -28,7 +34,7 @@ export const AnimatedBlock = ({
   duration = 0.65,
   variants = fadeUpVariants,
   ease = [0.22, 1, 0.36, 1],
-  className = "",
+  className,
 }: {
   children: React.ReactNode;
   variants?: Variants;

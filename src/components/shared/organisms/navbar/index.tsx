@@ -23,7 +23,7 @@ const Navbar = () => {
     <div
       data-open={open}
       className={cls(
-        "fixed inset-0 h-[80px] md:h-[88px] w-full z-2 md:drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
+        "fixed inset-0 h-[80px] md:h-[88px] w-full z-50 md:drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
         "data-[open=true]:fixed",
       )}
     >

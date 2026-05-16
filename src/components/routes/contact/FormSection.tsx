@@ -9,6 +9,11 @@ import { contactFormSchema } from "@/utils/schemas";
 import { ContactForm } from "@/utils/types";
 import { REASON_OPTIONS } from "./utils";
 import Select from "@/components/shared/molecules/Select";
+import { motion } from "motion/react";
+import {
+  defaultTransition,
+  fadeUpVariants,
+} from "@/components/shared/organisms/AnimatedBlock";
 
 export const FormSection = () => {
   const { register, control } = useForm<ContactForm>({
@@ -16,7 +21,11 @@ export const FormSection = () => {
   });
 
   return (
-    <section className="w-full md:max-w-[520px] grid gap-y-4 md:gap-y-6 bg-black text-white py-6 px-4 md:px-8 rounded-3xl">
+    <motion.section
+      variants={fadeUpVariants}
+      transition={{ ...defaultTransition, delay: 0.3, duration: 2 }}
+      className="w-full md:max-w-[520px] grid gap-y-4 md:gap-y-6 bg-black text-white py-6 px-4 md:px-8 rounded-3xl"
+    >
       <div className="flex items-center gap-4">
         <span>{SendYellowIcon}</span>
         <Typography variant="medium-lg" className="text-gray-200">
@@ -80,6 +89,6 @@ export const FormSection = () => {
           Submit message
         </Button>
       </form>
-    </section>
+    </motion.section>
   );
 };

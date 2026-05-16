@@ -2328,7 +2328,7 @@ export const AddIcon = (
   </svg>
 );
 
-export const CopilotBrandGradientIcon = (
+export const CopilotBrandGradientIcon = () => (
   <svg
     width="67"
     height="40"
@@ -2347,6 +2347,7 @@ export const CopilotBrandGradientIcon = (
       cy="20"
       r="19.4167"
       stroke="url(#copilot-grad-1)"
+      // stroke="#D7AB07"
       // stroke="#E86555"
       strokeWidth="1.16667"
     />
@@ -2377,7 +2378,7 @@ export const CopilotBrandGradientIcon = (
   </svg>
 );
 
-export const GapBrandGradIcon = (
+export const GapBrandGradIcon = () => (
   <svg
     width="32"
     height="40"
@@ -2840,7 +2841,7 @@ export const GapBrandGradIcon = (
   </svg>
 );
 
-export const AiPlaygroundGradIcon = (
+export const AiPlaygroundGradIcon = () => (
   <svg
     width="35"
     height="40"
@@ -3524,7 +3525,7 @@ export const TicketContextGradIcon = (
   </svg>
 );
 
-export const CustomerTemperantGradIcon = (
+export const CustomerTemperantGradIcon = () => (
   <svg
     width="40"
     height="40"
@@ -3672,7 +3673,7 @@ export const CustomerTemperantGradIcon = (
   </svg>
 );
 
-export const HumanAgentGradIcon = (
+export const HumanAgentGradIcon = () => (
   <svg
     width="40"
     height="40"

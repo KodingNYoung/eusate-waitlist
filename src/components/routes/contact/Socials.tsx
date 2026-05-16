@@ -7,12 +7,13 @@ import {
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import { SOCIAL_LINKS } from "@/components/shared/organisms/footer/utils";
+import Link from "next/link";
 
 export const SocialLinks = () => {
   return (
     <div className="space-y-10">
       <div className="space-y-10">
-        <div className="flex group items-center gap-x-4 hover:underline p cursor-pointer">
+        <div className="flex w-fit group items-center gap-x-4 hover:underline p cursor-pointer">
           <span>{SmsIcon}</span>
           <Typography
             variant="semibold-lg"
@@ -20,28 +21,34 @@ export const SocialLinks = () => {
           >
             Email:
           </Typography>
-          <div className="flex gap-1.5">
+          <Link
+            href="mailto:info@eusate.com"
+            className="flex items-center gap-1.5"
+          >
             <span className="text-medium-base text-gray-700">
               info@eusate.com
             </span>
-            <span className="transform-gpu group-hover:[transform:rotate(25deg)] group-hover:translate-x-4 transition-all duration-300 stroke-gray-300">
+            <span className="transform-gpu hidden group-hover:block transition-all duration-300 stroke-gray-300">
               {ArrowUpRightIcon}
             </span>
-          </div>
+          </Link>
         </div>
-        <div className="flex group items-center gap-x-4 hover:underline p cursor-pointer">
+        <div className="flex w-fit group items-center gap-x-4 hover:underline p cursor-pointer">
           <span>{PhoneIcon}</span>
           <Typography variant="semibold-lg" className="text-gray-700">
             Tele:
           </Typography>
-          <div className="flex gap-1.5">
+          <Link
+            href="tel:+23490432761840"
+            className="flex items-center gap-1.5"
+          >
             <span className="text-medium-base text-gray-700">
               +23490432761840
             </span>
-            <span className="transform-gpu group-hover:[transform:rotate(25deg)] group-hover:translate-x-4 transition-all duration-300 stroke-gray-300">
+            <span className="transform-gpu hidden group-hover:block transition-all duration-300 stroke-gray-300">
               {ArrowUpRightIcon}
             </span>
-          </div>
+          </Link>
         </div>
         <div className="flex items-center gap-4">
           <span>{LocationIcon}</span>
