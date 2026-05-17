@@ -23,11 +23,37 @@ export const PageTemplate = ({
   hideGradient = false,
 }: Props) => {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
+      <svg width="0" height="0" style={{ position: "absolute" }}>
+        <defs>
+          <linearGradient
+            id="copilot-grad-0"
+            x1="26.666"
+            y1="20"
+            x2="66.666"
+            y2="20"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D7AB07" />
+            <stop offset="1" stopColor="#E86555" />
+          </linearGradient>
+          <linearGradient
+            id="copilot-grad-1"
+            x1="0"
+            y1="20"
+            x2="40"
+            y2="20"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D7AB07" />
+            <stop offset="1" stopColor="#E86555" />
+          </linearGradient>
+        </defs>
+      </svg>
       <main
         className={cls(
-          "relative min-h-screen w-full px-2 md:px-4",
+          "relative min-h-screen w-full px-2 md:px-4 mt-[80px] md:mt-[0px]",
           classNames?.base,
         )}
       >
@@ -89,7 +115,7 @@ export const PageSection = ({
       id={id}
       style={{ backgroundColor: color }}
       className={cls(
-        "transition-colors duration-300 rouded-x24 md:rounded-x40",
+        "transition-colors duration-300 rounded-x24 md:rounded-x40",
         className,
         classNames?.base,
       )}

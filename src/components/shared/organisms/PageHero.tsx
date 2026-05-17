@@ -13,7 +13,7 @@ export const PageHero = forwardRef<HTMLDivElement, Props>(
       <div
         ref={ref}
         className={cls(
-          "md:pt-[88px] bg-cover rounded-x24 md:rounded-x40",
+          "xl:pt-[88px] bg-cover rounded-x24 md:rounded-x40",
           classNames?.base,
         )}
       >

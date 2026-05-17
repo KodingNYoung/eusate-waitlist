@@ -28,7 +28,7 @@ export const PricingCard: FC<Props> = ({
     <div
       data-featured={recomended}
       className={cls(
-        "rounded-3xl grid gap-5 p-4 max-w-[392px] bg-gold-50",
+        "rounded-3xl grid gap-[10px] p-6 w-full max-w-full md:max-w-[382px] bg-gold-50",
         "data-[featured=true]:bg-black",
       )}
     >
@@ -56,20 +56,20 @@ export const PricingCard: FC<Props> = ({
         <Typography
           data-featured={recomended}
           variant="bold-5xl"
-          className={"data-[featured=true]:text-white"}
+          className="flex flex-wrap items-end data-[featured=true]:text-white"
         >
           ${price}
           <span className="text-semibold-base">/per month</span>
         </Typography>
       </header>
-      <div className="grid gap-6">
+      <div className="grid gap-6 py-6">
         {features.map((feature, id) => (
           <div key={id} className="flex gap-3">
             <span>{TickCircleIcon}</span>
             <Typography
               data-featured={recomended}
               className={
-                "data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700"
+                "data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700 leading-[150%]"
               }
             >
               {feature}

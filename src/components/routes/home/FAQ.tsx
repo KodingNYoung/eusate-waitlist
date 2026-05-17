@@ -1,5 +1,7 @@
 import Typography from "@/components/shared/atoms/Typography";
 import { Accordion } from "@/components/shared/molecules/Accordion";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTemplate";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { HELP_CENTER_QUESTIONS } from "@/utils/constants";
@@ -23,23 +25,25 @@ export const FAQ = () => {
           </Typography>
         }
       />
-      <Accordion
-        className="px-0"
-        variant="splitted"
-        itemClasses={{
-          trigger: "justify-between text-gray-700",
-          titleWrapper: "flex-0",
-          title: "text-left text-semibold-lg",
-          base: "bg-white rounded-x24 px-3 flex-1 w-full -translate-x-[4px]",
-        }}
-        items={HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED].map(
-          (faq) => ({
-            key: faq.key,
-            title: faq.question,
-            content: faq.answer,
-          }),
-        )}
-      />
+      <AnimatedBlock variants={fadeVariants} className="w-full">
+        <Accordion
+          className="px-0"
+          variant="splitted"
+          itemClasses={{
+            trigger: "justify-between text-gray-700",
+            titleWrapper: "flex-0",
+            title: "text-left text-semibold-lg",
+            base: "bg-white rounded-x24 px-3 flex-1 w-full -translate-x-[4px]",
+          }}
+          items={HELP_CENTER_QUESTIONS[HelpCenterKey.GETTING_STARTED].map(
+            (faq) => ({
+              key: faq.key,
+              title: faq.question,
+              content: faq.answer,
+            }),
+          )}
+        />
+      </AnimatedBlock>
     </SectionTemplate>
   );
 };

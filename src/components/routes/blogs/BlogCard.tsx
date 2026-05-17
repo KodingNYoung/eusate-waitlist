@@ -3,14 +3,17 @@ import { FC, TWClassNames } from "@/utils/types";
 import Typography from "../../shared/atoms/Typography";
 import Image from "next/image";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { ArrowRightIcon } from "@/assets/icons";
+import { motion } from "motion/react";
+import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
 
 type Slots = "container" | "img" | "imgContainer";
 type Variant = "inline" | "page";
 
 type Props = {
   id: string;
+  idx?: number;
   variant?: Variant;
   imgSrc: string;
   title: string;
@@ -18,6 +21,7 @@ type Props = {
   readingSpan: string;
   spotlight?: boolean;
   timestamp: Date;
+  classNames?: { [slot in Slots]?: TWClassNames };
 };
 
 const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
@@ -30,22 +34,27 @@ const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
 
 export const BlogCard: FC<Props> = ({
   id,
+  idx,
   title,
   summary,
   imgSrc,
   variant = "page",
   readingSpan,
+  classNames,
   spotlight,
   timestamp,
 }) => {
   return (
-    <Link
+    <motion.a
+      variants={fadeUpVariants}
+      transition={{ ...defaultTransition, delay: idx ? idx / 10 : 0 }}
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
-        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 ",
+        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6",
         spotlightVariant?.container,
         variant === "page" && "border border-gray-50 p-4 shadow-soft-xxsmall",
+        classNames?.container,
       )}
     >
       <div
@@ -106,6 +115,6 @@ export const BlogCard: FC<Props> = ({
           {dayjs(timestamp).format("MMM DD, YYYY")}
         </Typography>
       </div>
-    </Link>
+    </motion.a>
   );
 };

@@ -23,7 +23,7 @@ export const ReportCard: FC<Props> = ({
 }) => {
   const isMobile = useMediaQuery();
 
-  const CARD_TOP_OFFSET = useMemo(() => (isMobile ? 10 : 140), [isMobile]);
+  const CARD_TOP_OFFSET = useMemo(() => (isMobile ? 100 : 140), [isMobile]);
   const CARD_STACK_MULTIPLIER = useMemo(() => (isMobile ? 86 : 16), [isMobile]);
 
   const idx = useMemo(() => id - 1, [id]);

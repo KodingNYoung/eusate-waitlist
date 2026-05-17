@@ -6,6 +6,8 @@ import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTem
 import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
 import Link from "next/link";
 import { ROUTES } from "@/utils/constants";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 export const TeamOfBuilders = () => {
   return (
@@ -36,14 +38,16 @@ export const TeamOfBuilders = () => {
       />
 
       <div className="flex flex-wrap justify-between gap-10">
-        <div className="relative md:sticky md:top-[110px] w-[440px] h-[294px]">
-          <Image
-            src="/home/images/business-men.webp"
-            fill
-            className="object-cover rounded-x40"
-            alt="business-men"
-          />
-        </div>
+        <AnimatedBlock variants={fadeVariants}>
+          <div className="relative md:sticky md:top-[110px] w-[440px] h-[294px]">
+            <Image
+              src="/home/images/business-men.webp"
+              fill
+              className="object-cover rounded-x40"
+              alt="business-men"
+            />
+          </div>
+        </AnimatedBlock>
         <div className="w-full md:w-[40%]">
           <ScrollReveal
             offset={{ start: "70%" }}

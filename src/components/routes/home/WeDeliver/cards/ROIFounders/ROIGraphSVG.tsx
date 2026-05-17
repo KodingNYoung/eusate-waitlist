@@ -103,7 +103,7 @@ function PulseRing({
 export const ROIGraphSVG = () => {
   const controls = useAnimation();
   const ref = useRef<SVGSVGElement>(null);
-  const inView = useInView(ref, { margin: "-60px" });
+  const inView = useInView(ref, { margin: "-80px" });
 
   useEffect(() => {
     if (inView) controls.start("visible");
@@ -113,7 +113,7 @@ export const ROIGraphSVG = () => {
   const dashX = 84;
 
   return (
-    <div className="relative w-full pb-8 -translate-y-[30px]">
+    <div className="relative w-full pb-8 -translate-y-[80px]">
       <svg
         ref={ref}
         viewBox="0 0 100 60"

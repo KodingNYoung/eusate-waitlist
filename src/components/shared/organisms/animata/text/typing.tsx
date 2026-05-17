@@ -3,78 +3,30 @@ import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { cls } from "@/utils/helpers";
 
 interface TypingTextProps {
-  /**
-   * Text to type
-   */
-  text: string;
-
-  /**
-   * Delay between typing each character or word (smooth mode) in milliseconds
-   * @default 32
-   */
+  text: string[];
   delay?: number;
-
-  /**
-   * If true, the text will be erased after typing and then typed again.
-   */
-  repeat?: boolean;
-
-  /**
-   * Custom cursor to show at the end of the text.
-   * Applies only when `smooth` is false.
-   */
-  cursor?: ReactNode;
-
-  /**
-   * Additional classes to apply to the container
-   */
-  className?: string;
-
-  /**
-   * If true, the container will grow to fit the text as it types
-   */
-  grow?: boolean;
-
-  /**
-   * Number of characters to keep always visible
-   */
-  alwaysVisibleCount?: number;
-
-  /**
-   * If true, the typing effect will be smooth instead of typing one character at a time.
-   * Looks better for multiple words.
-   */
-  smooth?: boolean;
-
-  /**
-   * Time to wait before starting the next cycle of typing
-   * Applies only when `repeat` is true.
-   *
-   * @default 1000
-   *
-   */
+  eraseDelay?: number;
   waitTime?: number;
-
-  /**
-   * Callback function to be called when the typing is complete
-   */
+  cursor?: ReactNode;
+  className?: string;
+  grow?: boolean;
+  alwaysVisibleCount?: number;
+  smooth?: boolean;
   onComplete?: () => void;
-
-  /**
-   * If true, the cursor will be hidden after typing is complete
-   * @default false
-   */
   hideCursorOnComplete?: boolean;
 }
 
 function Blinker() {
   const [show, setShow] = useState(true);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setShow((prev) => !prev);
     }, 500);
+
     return () => clearInterval(interval);
   }, []);
+
   return <span className={show ? "" : "opacity-0"}>|</span>;
 }
 
@@ -89,20 +41,18 @@ function SmoothEffect({
 }) {
   return (
     <div className="flex flex-wrap whitespace-pre">
-      {words.map((word, wordIndex) => {
-        return (
-          <span
-            key={wordIndex}
-            className={cls("transition-opacity duration-300 ease-in-out", {
-              "opacity-100": wordIndex < index,
-              "opacity-0": wordIndex >= index + alwaysVisibleCount,
-            })}
-          >
-            {word}
-            {wordIndex < words.length && <span>&nbsp;</span>}
-          </span>
-        );
-      })}
+      {words.map((word, wordIndex) => (
+        <span
+          key={wordIndex}
+          className={cls("transition-opacity duration-300 ease-in-out", {
+            "opacity-100": wordIndex < index,
+            "opacity-0": wordIndex >= index + alwaysVisibleCount,
+          })}
+        >
+          {word}
+          {wordIndex < words.length && <span>&nbsp;</span>}
+        </span>
+      ))}
     </div>
   );
 }
@@ -120,15 +70,10 @@ function NormalEffect({
     <>
       {text.slice(
         0,
-        Math.max(index, Math.min(text.length, alwaysVisibleCount ?? 1)),
+        Math.max(index, Math.min(text.length, alwaysVisibleCount)),
       )}
     </>
   );
-}
-
-enum TypingDirection {
-  Forward = 1,
-  Backward = -1,
 }
 
 function CursorWrapper({
@@ -141,10 +86,12 @@ function CursorWrapper({
   children: ReactNode;
 }) {
   const [on, setOn] = useState(true);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setOn((prev) => !prev);
     }, 100);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -155,11 +102,16 @@ function CursorWrapper({
   return children;
 }
 
+enum Direction {
+  Forward = "forward",
+  Backward = "backward",
+}
+
 function Type({
   text,
-  repeat,
   cursor,
-  delay,
+  delay = 32,
+  eraseDelay = 20,
   grow,
   className,
   alwaysVisibleCount,
@@ -167,70 +119,79 @@ function Type({
   waitTime = 1000,
   onComplete,
   hideCursorOnComplete,
-}: TypingTextProps) {
+}: {
+  text: string;
+  cursor?: ReactNode;
+  delay?: number;
+  eraseDelay?: number;
+  grow?: boolean;
+  className?: string;
+  alwaysVisibleCount?: number;
+  smooth?: boolean;
+  waitTime?: number;
+  onComplete?: () => void;
+  hideCursorOnComplete?: boolean;
+}) {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState<TypingDirection>(
-    TypingDirection.Forward,
-  );
+  const [direction, setDirection] = useState(Direction.Forward);
   const [isComplete, setIsComplete] = useState(false);
 
   const words = useMemo(() => text.split(/\s+/), [text]);
+
   const total = smooth ? words.length : text.length;
 
   useEffect(() => {
-    // eslint-disable-next-line prefer-const
-    let interval: NodeJS.Timeout;
+    setIndex(0);
+    setDirection(Direction.Forward);
+    setIsComplete(false);
+  }, [text]);
 
-    const startTyping = () => {
-      setIndex((prevDir) => {
-        if (
-          direction === TypingDirection.Backward &&
-          prevDir === TypingDirection.Forward
-        ) {
-          clearInterval(interval);
-        } else if (
-          direction === TypingDirection.Forward &&
-          prevDir === total - 1
-        ) {
-          clearInterval(interval);
+  useEffect(() => {
+    const currentDelay = direction === Direction.Forward ? delay : eraseDelay;
+
+    const interval = setInterval(() => {
+      setIndex((prev) => {
+        if (direction === Direction.Forward) {
+          if (prev >= total) {
+            clearInterval(interval);
+
+            setTimeout(() => {
+              setDirection(Direction.Backward);
+            }, waitTime);
+
+            return prev;
+          }
+
+          return prev + 1;
         }
-        return prevDir + direction;
+
+        if (prev <= 0) {
+          clearInterval(interval);
+
+          onComplete?.();
+
+          return 0;
+        }
+
+        return prev - 1;
       });
-    };
+    }, currentDelay);
 
-    interval = setInterval(startTyping, delay);
     return () => clearInterval(interval);
-  }, [total, direction, delay]);
+  }, [direction, delay, eraseDelay, total, waitTime, onComplete]);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    if (index >= total && repeat) {
-      timeout = setTimeout(() => {
-        setDirection(-1);
-      }, waitTime);
-    }
-
-    if (index <= 0 && repeat) {
-      timeout = setTimeout(() => {
-        setDirection(1);
-      }, waitTime);
-    }
-    return () => clearTimeout(timeout);
-  }, [index, total, repeat, waitTime]);
-
-  useEffect(() => {
-    if (index === total && !repeat) {
+    if (index >= total) {
       setIsComplete(true);
-      onComplete?.();
     }
-  }, [index, total, repeat, onComplete]);
+  }, [index, total]);
 
-  const waitingNextCycle = index === total || index === 0;
+  const waiting = index >= total;
 
   return (
     <div className={cls("relative font-mono", className)}>
       {!grow && <div className="invisible">{text}</div>}
+
       <div
         className={cls({
           "absolute inset-0 h-full w-full": !grow,
@@ -249,8 +210,9 @@ function Type({
             alwaysVisibleCount={alwaysVisibleCount ?? 1}
           />
         )}
+
         <CursorWrapper
-          waiting={waitingNextCycle}
+          waiting={waiting}
           visible={Boolean(
             !smooth && cursor && (!hideCursorOnComplete || !isComplete),
           )}
@@ -264,30 +226,40 @@ function Type({
 
 export default function TypingText({
   text,
-  repeat = true,
   cursor = <Blinker />,
   delay = 32,
+  eraseDelay = 20,
   className,
   grow = false,
   alwaysVisibleCount = 1,
   smooth = false,
-  waitTime,
+  waitTime = 1000,
   onComplete,
   hideCursorOnComplete = false,
 }: TypingTextProps) {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  const currentText = text[currentTextIndex];
+
+  const handleComplete = () => {
+    setCurrentTextIndex((prev) => (prev + 1) % text.length);
+
+    onComplete?.();
+  };
+
   return (
     <Type
-      key={text}
-      delay={delay ?? 32}
-      waitTime={waitTime ?? 1000}
+      key={currentText}
+      text={currentText}
+      delay={delay}
+      eraseDelay={eraseDelay}
+      waitTime={waitTime}
       grow={grow}
-      repeat={repeat}
-      text={text}
       cursor={cursor}
       className={className}
       smooth={smooth}
       alwaysVisibleCount={alwaysVisibleCount}
-      onComplete={onComplete}
+      onComplete={handleComplete}
       hideCursorOnComplete={hideCursorOnComplete}
     />
   );

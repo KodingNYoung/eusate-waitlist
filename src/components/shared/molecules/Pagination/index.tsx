@@ -52,7 +52,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
             onClick={_onPrevious}
             className={cls(
               className,
-              "rounded-full w-12 h-12 rotate-180 ",
+              "rounded-full !w-12 !h-12 rotate-180 ",
               currentPage === 1
                 ? "!bg-gray-100 !stroke-gray-400"
                 : "!bg-black !stroke-white",
@@ -69,7 +69,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
             onClick={_onNext}
             className={cls(
               className,
-              "rounded-full w-12 h-12 ",
+              "rounded-full !w-12 !h-12 ",
               currentPage === total
                 ? "!bg-gray-100 !stroke-gray-400"
                 : "!bg-black !stroke-white !hover:bg-black",
@@ -85,7 +85,10 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
           <Button
             variant="tetiary"
             onClick={_onPrevious}
-            className={cls(className, "rounded-full stroke-gray-400 w-12 h-12")}
+            className={cls(
+              className,
+              "rounded-full stroke-gray-400 !w-12 !h-12",
+            )}
           >
             ...
           </Button>
@@ -99,7 +102,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
           data-active={isActive}
           className={cls(
             className,
-            "!text-gray-500 text-bold-base border border-[#DFE3E8] rounded-full w-12 h-12",
+            "!text-gray-500 text-bold-base border border-[#DFE3E8] rounded-full leading-[150%] !w-12 !h-12",
             "data-[active=true]:!text-gold-600 data-[active=true]:border-gold-600",
           )}
           onClick={() => {

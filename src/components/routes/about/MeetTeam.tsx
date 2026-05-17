@@ -1,6 +1,12 @@
 import Typography from "@/components/shared/atoms/Typography";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import {
+  fadeUpVariants,
+  staggerContainer,
+} from "@/components/shared/organisms/AnimatedBlock/variants";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { InternalPath } from "@/utils/types";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 type Member = {
@@ -15,7 +21,7 @@ const team: Member[] = [
     id: 1,
     imgSrc: "/images/founder-david.webp",
     name: "Daramola David",
-    role: "CEO, AI & ML",
+    role: "AI & ML Engineer",
   },
   {
     id: 2,
@@ -27,13 +33,13 @@ const team: Member[] = [
     id: 3,
     imgSrc: "/images/founder-young.webp",
     name: "Adabambo Abiodum",
-    role: "CFO",
+    role: "Frontend Engineer",
   },
   {
     id: 4,
     imgSrc: "/images/founder-daniel.webp",
     name: "Adebowale Daniel",
-    role: "CTO",
+    role: "Backend Engineer",
   },
   {
     id: 5,
@@ -58,23 +64,27 @@ export const MeetTeam = () => {
         title="Meet the team"
         classNames={{
           title: "text-4xl md:text-bold-6xl text-white",
-          titleContainer: "flex flex-col items-center ",
+          titleContainer: "flex flex-col items-center",
         }}
       />
-      <div className="">
-        <div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
+      <AnimatedBlock variants={staggerContainer}>
+        <motion.div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
           {team.map(({ id, ...member }) => (
             <MemberCard key={id} {...member} />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </AnimatedBlock>
     </div>
   );
 };
 
 const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
   return (
-    <div className="relative flex flex-col gap-4 group w-full max-w-[329px]">
+    <motion.div
+      variants={fadeUpVariants}
+      transition={{ duration: 2 }}
+      className="relative flex flex-col gap-4 group w-full max-w-[329px]"
+    >
       <div className="relative w-full md:w-[333px] h-[320px] self-start rounded-x24 overflow-hidden">
         <Image
           alt={name}
@@ -91,6 +101,6 @@ const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
           {role}
         </Typography>
       </div>
-    </div>
+    </motion.div>
   );
 };

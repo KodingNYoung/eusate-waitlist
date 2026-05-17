@@ -15,6 +15,8 @@ import { CARDS } from "@/components/routes/sate-ai/SateAction/const";
 import { ScrollReveal } from "@/components/shared/organisms/animata/text/scroll-reveal";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { useMediaQuery } from "@/utils/hooks";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 const SateAiPage = () => {
   const isMobile = useMediaQuery();
@@ -27,42 +29,45 @@ const SateAiPage = () => {
           wrapper: "px-5",
         }}
       >
-        <PageHeader
-          chipLabel="Sate Ai"
-          orientation="horizontal"
-          startTitleContainer={
-            <div className="relative">
-              <Image
-                alt="glowing-ball-img"
-                src="/sate-ai/images/glowing-ball.webp"
-                width={70}
-                height={70}
-              />
-            </div>
-          }
-          classNames={{
-            root: "flex justify-between gap-10",
-            titleContainer: "md:w-[60%]",
-            title: "text-white text-bold-3xl md:text-bold-5xl",
-            descriptionContainer: "md:w-[40%]",
-            description: "text-white/70 leading-[150%]",
-          }}
-          title="AI that understands context. Recognizes emotion. Takes action."
-          description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
-        />
+        <AnimatedBlock variants={fadeVariants} duration={2}>
+          <PageHeader
+            chipLabel="Sate Ai"
+            orientation="horizontal"
+            startTitleContainer={
+              <div className="relative">
+                <Image
+                  alt="glowing-ball-img"
+                  src="/sate-ai/images/glowing-ball.webp"
+                  width={70}
+                  height={70}
+                />
+              </div>
+            }
+            classNames={{
+              root: "flex justify-between gap-10",
+              titleContainer: "md:w-[60%]",
+              title: "text-white text-bold-3xl md:text-bold-5xl",
+              descriptionContainer: "md:w-[40%]",
+              description: "text-white/70 leading-[150%]",
+            }}
+            title="AI that understands context. Recognizes emotion. Takes action."
+            description="More than a chatbot, SATE understands complex questions and resolves issues effectively. It handles 80% of support queries with emotional intelligence, making conversations feel natural."
+          />
+        </AnimatedBlock>
       </PageHero>
 
-      <section className="relative h-full md:h-[60vh] w-full px-5 md:pt-20 space-y-10 md:space-y-0">
+      <section className="relative h-full md:h-[380px] flex flex-col  items-center w-full px-5 md:py-20 space-y-10 md:space-y-0">
         {/* TEXT */}
         <div className="flex items-center w-full justify-center z-2">
           <ScrollReveal
+            speed={12}
             shouldFade={!isMobile}
             text="Build different from every chatbot you've tried"
             classNames={{
-              container: "w-full md:w-[40%]",
+              container: "w-full xl:w-[40%]",
               base: "w-full flex items-center justify-center",
               paragraph:
-                "text-bold-3xl md:text-bold-6xl md:justify-center md:text-center leading-[180%]",
+                "text-bold-3xl lg:text-bold-6xl md:justify-center md:text-center md:leading-[180%]",
             }}
           />
         </div>

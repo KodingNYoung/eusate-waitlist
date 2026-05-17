@@ -39,7 +39,7 @@ export const PLAN_COST = {
 export const ROUTES = {
   PRICING: "/pricing",
   LOGIN: "/login",
-  SIGNUP: "/signup",
+  SIGNUP: "/sign-up",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-condition",
   SATE_AI: "/sate-ai",
@@ -1162,7 +1162,7 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     key: ProductKey.HELP_DESK,
     label: "Helpdesk",
     link: ROUTES.HELP_DESK,
-    content: "/images/helpdesk-hero.webp",
+    content: "/home/images/helpdesk.webp",
   },
   {
     id: 2,
@@ -1170,7 +1170,7 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     key: ProductKey.KNOWLEDGE_BASE,
     label: "Knowledge base",
     link: ROUTES.KNOWLEDGE_BASE,
-    content: "/images/helpdesk-hero.webp",
+    content: "/home/images/knowledge-base.webp",
   },
   {
     id: 3,
@@ -1178,7 +1178,7 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     key: ProductKey.DEV_SPACE,
     link: ROUTES.DEVSPACE,
     label: "Dev space",
-    content: "/images/helpdesk-hero.webp",
+    content: "/home/images/devspace.webp",
   },
   {
     id: 4,
@@ -1186,7 +1186,7 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     key: ProductKey.REPORTS,
     link: ROUTES.REPORTS,
     label: "Reports",
-    content: "/images/helpdesk-hero.webp",
+    content: "/home/images/reports.webp",
   },
   {
     id: 5,
@@ -1194,7 +1194,7 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     key: ProductKey.AI_PLAYGROUND,
     link: ROUTES.PLAYGROUND,
     label: "AI Playground",
-    content: "/images/helpdesk-hero.webp",
+    content: "/home/images/ai-playground.webp",
   },
 ];
 

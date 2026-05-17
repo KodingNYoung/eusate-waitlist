@@ -8,6 +8,7 @@ import {
   PageSection,
   PageTemplate,
 } from "@/components/shared/organisms/PageTemplate";
+import { PageHero } from "@/components/shared/organisms/PageHero";
 
 const PrivacyPolicy = () => {
   return (
@@ -32,14 +33,17 @@ const PrivacyPolicy = () => {
           wrapper: "pt-20 pb-12 md:pt-24 md:pb-40 space-y-20 px-5",
         }}
       >
-        <PageHeader
-          variant="sub"
-          chipLabel="Legals"
-          title="Privacy Policy"
-          description="
+        <PageHero>
+          <PageHeader
+            variant="sub"
+            chipLabel="Legals"
+            title="Privacy Policy"
+            classNames={{ root: "gap-y-4 md:gap-y-8" }}
+            description="
                   Last Updated: Monday, 01 September, 2025
                 "
-        />
+          />
+        </PageHero>
 
         <PageSection>
           <PolicySection title="1. Introduction">

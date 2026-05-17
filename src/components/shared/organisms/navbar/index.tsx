@@ -23,14 +23,14 @@ const Navbar = () => {
     <div
       data-open={open}
       className={cls(
-        "relative md:fixed w-full z-50 filter md:drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
+        "fixed inset-0 h-[80px] md:h-[88px] w-full z-50 md:drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
         "data-[open=true]:fixed",
       )}
     >
       <div
         className={cls(
           styles.navbarBg,
-          "flex bg-white w-full z-3 h-[80px] max-h-[80px] md:max-h-[88px] justify-around shadow-3xl",
+          "flex relative bg-white w-full z-3 h-[80px] max-h-[80px] md:max-h-[88px] justify-around shadow-3xl",
         )}
       >
         <div className="container flex justify-between items-center w-full md:w-[70%] ">
@@ -101,10 +101,9 @@ const Navbar = () => {
             {open ? CloseIcon : HamburgerMenu}
           </Button>
         </div>
-
-        {/* MOBILE NAV */}
-        <AnimatePresence>{open && <MobileNav />}</AnimatePresence>
       </div>
+      {/* MOBILE NAV */}
+      <AnimatePresence>{open && <MobileNav />}</AnimatePresence>
     </div>
   );
 };

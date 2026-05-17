@@ -3,12 +3,18 @@ import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Link from "next/link";
 import { ROUTES } from "@/utils/constants";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { blurVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 export const HomeIntegrations = () => {
   return (
     <section className="md:container max-w-screen overflow-hidden py-[250px]">
       <div className="flex relative mx-auto justify-center items-center py-88 w-full md:w-[50%] space-y-4">
-        <div className="absolute inset-0">
+        <AnimatedBlock
+          variants={blurVariants}
+          duration={1}
+          className="absolute inset-0"
+        >
           <div className="absolute left-0 top-0 -translate-x-[2rem] -translate-y-[9rem] md:-translate-x-[12rem] md:-translate-y-[2rem]">
             <Image
               width={200}
@@ -45,8 +51,8 @@ export const HomeIntegrations = () => {
               alt=""
             />
           </div>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-y-6 w-[70%] md:w-full">
+        </AnimatedBlock>
+        <div className="relative z-2 flex flex-col items-center justify-center gap-y-6 w-[70%] md:w-full">
           <Typography
             className="text-center text-bold-3xl md:text-bold-5xl leading-[120%]"
             as="h1"
@@ -63,7 +69,7 @@ export const HomeIntegrations = () => {
             everywhere.
           </Typography>
           <Link href={ROUTES.INTEGRATIONS}>
-            <Button className="py-2 px-4">View our integrations</Button>
+            <Button className="py-4 px-10">View our integrations</Button>
           </Link>
         </div>
       </div>

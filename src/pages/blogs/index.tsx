@@ -11,6 +11,8 @@ import { BlogCard } from "@/components/routes/blogs/BlogCard";
 import { BlogFeed } from "@/components/routes/blogs/BlogFeed";
 import Typography from "@/components/shared/atoms/Typography";
 import { PageHero } from "@/components/shared/organisms/PageHero";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 const BlogPage = () => {
   const [search, setSearch] = useState("");
@@ -28,35 +30,39 @@ const BlogPage = () => {
       <PageTemplate
         gradientVariant="gray"
         classNames={{
-          wrapper: "grid gap-y-8 md:gap-y-20 mt-20 md:mt-24",
+          wrapper: "grid gap-y-8 md:gap-y-20 mt-20 md:mt-24 pb-20",
         }}
       >
-        <PageHero
-          classNames={{
-            container: "flex items-center justify-center w-full",
-            wrapper: "w-full flex flex-col gap-y-8 lg:w-[60%] 2xl:w-[50%] px-5",
-          }}
-        >
-          <PageHeader
-            position="center"
-            chipLabel="Our Blogs"
-            title="Get news & insights from us."
+        <AnimatedBlock variants={fadeVariants}>
+          <PageHero
             classNames={{
-              container: "md:h-auto",
-              titleContainer: "gap-y-10 justify-center",
-              title: "w-full md:w-[80%] text-center md:mx-auto leading-[120%]",
+              container: "flex items-center justify-center w-full",
+              wrapper:
+                "w-full flex flex-col gap-y-8 lg:w-[60%] 2xl:w-[50%] px-5",
             }}
-          />
-          <Input
-            name="search"
-            type="search"
-            placeholder="Search blogs"
-            onChange={(e) => setSearch(e.currentTarget.value)}
-            className="flex-1 w-full"
-            classNames={{ root: "w-full border-none" }}
-            startComponent={<span>{SearchIcon}</span>}
-          />
-        </PageHero>
+          >
+            <PageHeader
+              position="center"
+              chipLabel="Our Blogs"
+              title="Get news & insights from us."
+              classNames={{
+                container: "md:h-auto",
+                titleContainer: "gap-y-10 justify-center",
+                title:
+                  "w-full md:w-[80%] text-center md:mx-auto leading-[120%]",
+              }}
+            />
+            <Input
+              name="search"
+              type="search"
+              placeholder="Search blogs"
+              onChange={(e) => setSearch(e.currentTarget.value)}
+              className="flex-1 w-full"
+              classNames={{ root: "w-full border-none" }}
+              startComponent={<span>{SearchIcon}</span>}
+            />
+          </PageHero>
+        </AnimatedBlock>
 
         <PageSection classNames={{ wrapper: "px-5" }}>
           {search.length ? (
