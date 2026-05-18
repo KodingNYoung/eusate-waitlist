@@ -76,6 +76,7 @@ export const CardDispMobile: FC<Props> = ({ items }) => {
                   <ActionCard
                     key={i}
                     card={card}
+                    animateHeight={false}
                     isActive={i === current}
                     progressBar={
                       <ProgressBar
@@ -94,6 +95,7 @@ export const CardDispMobile: FC<Props> = ({ items }) => {
           <Button
             ref={prevRef}
             variant="text"
+            aria-label="previous-button"
             className={cls(
               "px-4 py-2 transform !bg-white/20 stroke-gray-300 rotate-180",
             )}
@@ -102,6 +104,7 @@ export const CardDispMobile: FC<Props> = ({ items }) => {
           </Button>
           <Button
             ref={nextRef}
+            aria-label="next-button"
             variant="text"
             className={cls("px-4 py-2 !bg-black stroke-white")}
           >

@@ -46,7 +46,7 @@ const AboutPage = () => {
           ),
         }}
       >
-        <AnimatedBlock variants={fadeVariants}>
+        <AnimatedBlock variants={fadeVariants} className="w-full">
           <GridLayout />
         </AnimatedBlock>
 
@@ -94,7 +94,7 @@ const AboutPage = () => {
 
       <PageSection
         classNames={{
-          base: "bg-black py-8 md:p-20 rounded-x24 md:rounded-[40px]",
+          base: "bg-black py-8 md:py-20 rounded-x24 md:rounded-[40px]",
         }}
       >
         <MeetTeam />

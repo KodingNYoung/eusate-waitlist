@@ -17,14 +17,16 @@ import { PageHero } from "@/components/shared/organisms/PageHero";
 import { useMediaQuery } from "@/utils/hooks";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { useRef } from "react";
 
 const SateAiPage = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery();
   return (
     <PageTemplate classNames={{ wrapper: "grid gap-[50px]" }}>
       <PageHero
         classNames={{
-          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right h-[72vh] md:h-[700px] flex items-start pb-12 md:pb-20 justify-center mx-0",
+          base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right pt-20 md:pt-0 md:h-[700px] flex items-start pb-12 md:pb-20 justify-center mx-0",
           container: "h-full flex items-end",
           wrapper: "px-5",
         }}
@@ -36,6 +38,7 @@ const SateAiPage = () => {
             startTitleContainer={
               <div className="relative">
                 <Image
+                  priority
                   alt="glowing-ball-img"
                   src="/sate-ai/images/glowing-ball.webp"
                   width={70}
@@ -45,9 +48,9 @@ const SateAiPage = () => {
             }
             classNames={{
               root: "flex justify-between gap-10",
-              titleContainer: "md:w-[60%]",
+              titleContainer: "w-full md:w-[60%]",
               title: "text-white text-bold-3xl md:text-bold-5xl",
-              descriptionContainer: "md:w-[40%]",
+              descriptionContainer: "w-full md:w-[40%]",
               description: "text-white/70 leading-[150%]",
             }}
             title="AI that understands context. Recognizes emotion. Takes action."
@@ -56,7 +59,10 @@ const SateAiPage = () => {
         </AnimatedBlock>
       </PageHero>
 
-      <section className="relative h-full md:h-[380px] flex flex-col  items-center w-full px-5 md:py-20 space-y-10 md:space-y-0">
+      <section
+        ref={containerRef}
+        className="relative h-full md:h-[380px] flex flex-col  items-center w-full px-5 md:py-20 space-y-10 md:space-y-0"
+      >
         {/* TEXT */}
         <div className="flex items-center w-full justify-center z-2">
           <ScrollReveal
@@ -73,11 +79,15 @@ const SateAiPage = () => {
         </div>
 
         {/* CARDS */}
-        <div className="hidden md:flex absolute inset-0 overflow-hidden z-3">
-          <ScrollCards<SateFeature> items={SATE_FEATURES_B}>
+        <div className="hidden md:flex absolute inset-0 overflow-hidden z-3 ">
+          <ScrollCards<SateFeature>
+            items={SATE_FEATURES_B}
+            scrollTargetRef={containerRef}
+          >
             {(items) =>
               items.map(({ key, ...item }) => (
                 <SateFeatureCard
+                  animate={false}
                   key={key}
                   {...item}
                   classNames={{

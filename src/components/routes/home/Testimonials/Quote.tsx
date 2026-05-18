@@ -36,7 +36,7 @@ export const TestimonialSection: FC<Props> = ({
               <p className="text-semibold-sm md:text-semibold-lg text-sm">
                 {t.name}
               </p>
-              <p className="text-regular-sm md:text-regular-base text-gray-500 text-xs mt-0.5">
+              <p className="text-regular-sm md:text-regular-base text-black/60 text-xs mt-0.5">
                 {t.role}
               </p>
             </div>

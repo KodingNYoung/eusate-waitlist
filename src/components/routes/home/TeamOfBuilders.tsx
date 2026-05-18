@@ -37,16 +37,17 @@ export const TeamOfBuilders = () => {
         }
       />
 
-      <div className="flex flex-wrap justify-between gap-10">
-        <AnimatedBlock variants={fadeVariants}>
-          <div className="relative md:sticky md:top-[110px] w-[440px] h-[294px]">
-            <Image
-              src="/home/images/business-men.webp"
-              fill
-              className="object-cover rounded-x40"
-              alt="business-men"
-            />
-          </div>
+      <div className="flex flex-wrap justify-between gap-10 w-full">
+        <AnimatedBlock
+          variants={fadeVariants}
+          className="relative md:sticky md:top-[110px] w-full md:w-[440px] h-[294px]"
+        >
+          <Image
+            src="/about/images/about-img-2.webp"
+            fill
+            className="object-cover rounded-x40"
+            alt="business-men"
+          />
         </AnimatedBlock>
         <div className="w-full md:w-[40%]">
           <ScrollReveal

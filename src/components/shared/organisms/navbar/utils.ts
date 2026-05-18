@@ -1,15 +1,27 @@
 import { ROUTES } from "@/utils/constants";
-import { ItemType } from "../../molecules/Popups/AppDropdown";
+import { ReactNode } from "react";
+import { InternalPath, TWClassNames } from "@/utils/types";
 
 // TYPES
-type ExploreItem = {
+type Explore = {
   id: number;
   label: string;
-  items: ItemType[];
+  items: ExploreItem[];
+};
+
+type ExploreItem = {
+  key: number | string;
+  label: string;
+  icon?: ReactNode;
+  className?: TWClassNames;
+  disabled?: boolean;
+  use?: "footer" | "nav" | "footer-nav"; // default = "footer-nav"
+  link?: InternalPath;
+  action?: () => void;
 };
 
 // CONSTANTS
-export const NAV_EXPLORE_LIST: ExploreItem[] = [
+export const NAV_EXPLORE_LIST: Explore[] = [
   {
     id: 1,
     label: "Product",
@@ -52,11 +64,17 @@ export const NAV_EXPLORE_LIST: ExploreItem[] = [
       },
       {
         key: 2,
+        label: "Pricing",
+        use: "footer",
+        link: ROUTES.PRICING,
+      },
+      {
+        key: 3,
         label: "Integrations",
         link: ROUTES.INTEGRATIONS,
       },
       {
-        key: 3,
+        key: 4,
         label: "Contact us",
         link: ROUTES.CONTACT,
       },
@@ -73,6 +91,11 @@ export const NAV_EXPLORE_LIST: ExploreItem[] = [
       },
       {
         key: 2,
+        label: "Documentation",
+        link: ROUTES.DOCUMENTATION,
+      },
+      {
+        key: 3,
         label: "Blogs",
         link: ROUTES.BLOGS,
       },

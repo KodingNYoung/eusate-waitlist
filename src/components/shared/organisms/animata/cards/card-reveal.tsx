@@ -1,33 +1,54 @@
 "use client";
-
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef, useEffect, useState, RefObject } from "react";
 
 type Props<T> = {
   items: T[];
   children: (items: T[]) => ReactNode;
+  scrollTargetRef?: RefObject<HTMLDivElement>;
 };
 
-export const ScrollCards = <T,>({ items, children }: Props<T>) => {
-  const ref = useRef<HTMLDivElement>(null);
+export const ScrollCards = <T,>({
+  items,
+  children,
+  scrollTargetRef,
+}: Props<T>) => {
+  const innerRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [startX, setStartX] = useState("100%");
+  const [endX, setEndX] = useState("-10%");
+
+  const target = scrollTargetRef ?? wrapperRef;
 
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end center"],
+    target,
+    offset: ["start end", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["100%", "-10%"]);
+  useEffect(() => {
+    const calculate = () => {
+      const containerWidth = wrapperRef.current?.offsetWidth ?? 0;
+      const innerWidth = innerRef.current?.scrollWidth ?? 0;
+      const offset = containerWidth - innerWidth;
+      setStartX(`${containerWidth}px`);
+      setEndX(`${offset}px`);
+    };
+
+    calculate();
+    window.addEventListener("resize", calculate);
+    return () => window.removeEventListener("resize", calculate);
+  }, [items]);
+
+  const x = useTransform(scrollYProgress, [0, 0.65], [startX, endX]);
 
   return (
-    <section
-      ref={ref}
-      className="hidden h-[380px] md:flex justify-center items-center w-full"
+    <div
+      ref={wrapperRef}
+      className="hidden md:flex w-full overflow-hidden items-center h-full"
     >
-      <div className="w-full overflow-hidden flex items-center justify-center h-full">
-        <motion.div style={{ x }} className="flex gap-6">
-          {children(items)}
-        </motion.div>
-      </div>
-    </section>
+      <motion.div ref={innerRef} style={{ x }} className="flex gap-6">
+        {children(items)}
+      </motion.div>
+    </div>
   );
 };

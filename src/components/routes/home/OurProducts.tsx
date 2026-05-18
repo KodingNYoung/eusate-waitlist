@@ -36,7 +36,11 @@ export const OurProducts = () => {
             root: "w-full items-end justify-between",
           }}
           cta={
-            <Link href={process.env.NEXT_PUBLIC_BASE_URL + currentLink}>
+            <Link
+              aria-label={currentLink}
+              rel="noreferrer"
+              href={process.env.NEXT_PUBLIC_BASE_URL + currentLink}
+            >
               <Button
                 className="bg-brand-gradient px-8 py-2"
                 endContent={

@@ -43,7 +43,7 @@ const Pricing = () => {
                 "md:justify-between flex-col md:flex-row md:items-end space-y-8",
             }}
             endContent={
-              <Link href="#cp">
+              <Link href="#cp" aria-label="compare-section">
                 <Button size="sm" className="py-[15px] px-[18px]">
                   Compare our plans
                 </Button>

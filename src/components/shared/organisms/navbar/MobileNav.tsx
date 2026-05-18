@@ -36,6 +36,7 @@ export const MobileNav = () => {
           />
           <div className="grid gap-10 px-2">
             <Link
+              aria-label="pricing-link"
               href={ROUTES.PRICING}
               rel="noreferrer"
               className="text-semibold-base"
@@ -85,6 +86,7 @@ const NavItem = ({ label, link }: NavItemProps) => {
   return (
     <Link
       href={link}
+      aria-label={label}
       className="flex justify-between border-b border-gray-50 py-4"
     >
       <Typography variant="regular-xs">{label}</Typography>

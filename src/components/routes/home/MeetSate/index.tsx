@@ -44,13 +44,18 @@ export const MeetSate = () => {
             </Button>
           </Link>
         </AnimatedBlock>
-        <div className="md:container bg-white/20 rounded-x24 py-6 px-2 space-y-4">
-          <div className="flex gap-6 flex-wrap justify-center">
-            {SATE_FEATURES.map(({ key, id, ...feature }) => (
-              <AnimatedBlock key={key} delay={id / 10}>
-                <SateFeatureCard className="bg-white/20" {...feature} />
-              </AnimatedBlock>
-            ))}
+        <div className="bg-white/20 rounded-x24 pb-2 px-2 grid gap-y-3">
+          <div className="py-8">
+            <div className="flex gap-5 flex-wrap items-stretch justify-center">
+              {SATE_FEATURES.map(({ key, id, ...feature }) => (
+                <SateFeatureCard
+                  key={key}
+                  id={id}
+                  className="bg-white/20"
+                  {...feature}
+                />
+              ))}
+            </div>
           </div>
           <ChatArea />
         </div>

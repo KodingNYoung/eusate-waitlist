@@ -6,6 +6,7 @@ import { ReactElement } from "react";
 
 type CardItemProps = {
   card: Card;
+  animateHeight?: boolean;
   isActive: boolean;
   onClick?: () => void;
   progressBar: ReactElement;
@@ -15,6 +16,7 @@ export const ActionCard = ({
   card: { num, title, desc },
   isActive,
   onClick,
+  animateHeight = true,
   progressBar,
 }: CardItemProps) => {
   return (
@@ -63,9 +65,9 @@ export const ActionCard = ({
           {isActive && (
             <motion.div
               key="desc"
-              initial={{ height: 0, opacity: 0 }}
+              initial={{ height: animateHeight ? 0 : "auto", opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
+              exit={{ height: animateHeight ? 0 : "auto", opacity: 0 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className="overflow-hidden"
             >

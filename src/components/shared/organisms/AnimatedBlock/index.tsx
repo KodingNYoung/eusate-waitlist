@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import type { Transition, Variants } from "framer-motion";
 import { fadeUpVariants } from "./variants";
+import { cls } from "@/utils/helpers";
 
 export const defaultTransition: Transition = {
   ease: [0.22, 1, 0.36, 1],
@@ -10,6 +11,7 @@ export const defaultTransition: Transition = {
 };
 
 export const AnimatedBlock = ({
+  animate = true,
   children,
   delay = 0,
   duration = 1.4,
@@ -19,6 +21,7 @@ export const AnimatedBlock = ({
   once = true,
   amount = 0.1,
 }: {
+  animate?: boolean;
   children: React.ReactNode;
   variants?: Variants;
   ease?: [number, number, number, number];
@@ -38,11 +41,11 @@ export const AnimatedBlock = ({
   return (
     <motion.div
       ref={ref}
-      variants={variants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      variants={animate ? variants : undefined}
+      initial={animate ? "hidden" : false}
+      animate={animate ? (isInView ? "visible" : "hidden") : undefined}
       transition={{ ...defaultTransition, duration, ease, delay }}
-      className={className}
+      className={cls("w-full", className)}
     >
       {children}
     </motion.div>

@@ -26,14 +26,14 @@ export const ChatArea = () => {
       <AutoResizingTextarea
         maxRows={3}
         minRows={10}
+        aria-label="ask-eusate"
         onChange={(value) => setValue(value)}
         classNames={{
           inputWrapper: "!bg-white/15",
           input:
             "text-white !text-medium-lg placeholder:text-gray-500 focus:border-0",
         }}
-        placeholder=""
-      ></AutoResizingTextarea>
+      />
       <div className="flex justify-between items-center p-2">
         <div className="flex items-center gap-4">
           <GradientBorder
@@ -48,7 +48,7 @@ export const ChatArea = () => {
             <Button
               size="sm"
               variant="tetiaryText"
-              className="!bg-transparent text-medium-base text-white hover:!text-white focus:text-white"
+              className="!bg-transparent text-medium-base text-white hover:!text-white focus:text-white cursor-auto"
               startContent={<span>{SettingsIcon}</span>}
             >
               Set preferences
@@ -66,7 +66,7 @@ export const ChatArea = () => {
             <Button
               size="sm"
               variant="tetiaryText"
-              className="text-medium-base text-white hover:!text-white focus:text-white"
+              className="text-medium-base text-white hover:!text-white focus:text-white cursor-auto"
               startContent={<span>{SettingsIcon}</span>}
             >
               Clear
@@ -82,7 +82,12 @@ export const ChatArea = () => {
           borderWidth={1}
           borderColor="bg-[linear-gradient(140deg,_rgba(194,_194,_194,_0.6)_9.8%,_rgba(194,_194,_194,_0)_39.18%),_linear-gradient(154.19deg,_rgba(204,_204,_204,_0)_70.34%,_rgba(194,_194,_194,_0.6)_94.92%)]"
         >
-          <Button size="sm" className="p-4" variant="tetiaryText">
+          <Button
+            size="sm"
+            className="p-4"
+            variant="tetiaryText"
+            aria-label="send-btn"
+          >
             <span>{SendIcon}</span>
           </Button>
         </GradientBorder>

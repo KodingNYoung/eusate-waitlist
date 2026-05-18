@@ -36,26 +36,29 @@ const Navbar = () => {
         <div className="container flex justify-between items-center w-full md:w-[70%] ">
           {/* EXPLORE */}
           <div className="hidden xl:flex gap-5 ">
-            {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
-              <AppDropdown
-                key={id}
-                sections={[{ items }]}
-                classNames={{ content: "bg-white rounded-lg" }}
-                menuProps={{
-                  itemClasses: { title: "text-gray-900 text-regular-xs" },
-                }}
-                triggerBtnProps={{
-                  endContent: (
-                    <span className="stroke-gray-400">{ArrowDown}</span>
-                  ),
-                }}
-                triggerEl={
-                  <Typography variant="medium-base" className="text-gray-400">
-                    {label}
-                  </Typography>
-                }
-              />
-            ))}
+            {NAV_EXPLORE_LIST.map(({ id, label, items: items_ }) => {
+              const items = items_.filter((item) => item.use !== "footer");
+              return (
+                <AppDropdown
+                  key={id}
+                  sections={[{ items }]}
+                  classNames={{ content: "bg-white rounded-lg" }}
+                  menuProps={{
+                    itemClasses: { title: "text-gray-900 text-regular-xs" },
+                  }}
+                  triggerBtnProps={{
+                    endContent: (
+                      <span className="stroke-gray-400">{ArrowDown}</span>
+                    ),
+                  }}
+                  triggerEl={
+                    <Typography variant="medium-base" className="text-gray-400">
+                      {label}
+                    </Typography>
+                  }
+                />
+              );
+            })}
           </div>
 
           {/* LOGO */}

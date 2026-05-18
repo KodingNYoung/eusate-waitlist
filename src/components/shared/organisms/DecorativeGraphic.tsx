@@ -19,7 +19,7 @@ export const BackgroundWatermark: FC<BackgroundWatermarkProps> = ({
         classNames?.container,
       )}
     >
-      <Image alt="swatch" src={imgSrc} fill />
+      <Image priority alt="swatch" src={imgSrc} fill />
     </div>
   );
 };

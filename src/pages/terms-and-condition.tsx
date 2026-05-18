@@ -199,7 +199,11 @@ const TermsAndCondition = () => {
               Your data privacy is important to us. Any customer data, including
               tickets, conversation logs, analytics, and support documentation,
               will be handled in accordance with our{" "}
-              <Link href="/privacy-policy" className="text-info-500">
+              <Link
+                aria-label="privacy-policy"
+                href="/privacy-policy"
+                className="text-info-500"
+              >
                 Privacy Policy
               </Link>
               . Your data will not be used for external purposes without
