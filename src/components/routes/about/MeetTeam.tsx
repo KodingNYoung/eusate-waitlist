@@ -20,7 +20,7 @@ const team: Member[] = [
   {
     id: 1,
     imgSrc: "/images/founder-david.webp",
-    name: "Daramola David",
+    name: "Daramola Damifogo",
     role: "AI & ML Engineer",
   },
   {
@@ -53,6 +53,12 @@ const team: Member[] = [
     name: "Daramola Daniel",
     role: "Creative Designer & Video Editor",
   },
+  {
+    id: 7,
+    imgSrc: "/about/images/ayotomi.webp",
+    name: "Ayotomi Odusina",
+    role: "Marketer",
+  },
 ];
 
 export const MeetTeam = () => {
@@ -68,7 +74,8 @@ export const MeetTeam = () => {
         }}
       />
       <AnimatedBlock variants={staggerContainer}>
-        <motion.div className="flex flex-wrap justify-center px-6 items-center w-full gap-8 gap-y-10 md:gap-y-16">
+        {/* <motion.div className="flex flex-wrap justify-center px-6 items-center w-full gap-x-8 gap-y-10 md:gap-y-16"> */}
+        <motion.div className="grid grid-cols-1 md:grid-cols-[auto_auto] lg:grid-cols-[auto_auto_auto] w-full gap-x-8 gap-y-10 md:gap-y-16">
           {team.map(({ id, ...member }) => (
             <MemberCard key={id} {...member} />
           ))}
@@ -85,8 +92,9 @@ const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
       transition={{ duration: 2 }}
       className="relative flex flex-col gap-4 group w-full max-w-[329px]"
     >
-      <div className="relative w-full md:w-[333px] h-[320px] self-start rounded-x24 overflow-hidden">
+      <div className="relative w-full h-[320px] self-start rounded-x24 overflow-hidden">
         <Image
+          priority
           alt={name}
           src={imgSrc}
           fill

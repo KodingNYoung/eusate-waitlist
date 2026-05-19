@@ -64,6 +64,7 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
         {/* <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]"> */}
         <div className="relative w-full md:scale-75 h-full">
           <Image
+            priority
             alt={chipLabel}
             src={items[current].imgSrc!}
             fill

@@ -3,30 +3,37 @@ import Typography from "@/components/shared/atoms/Typography";
 import { cls } from "@/utils/helpers";
 import { FC, InternalPath, TWClassNames } from "@/utils/types";
 import { ReactElement } from "react";
+import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
 type Slots = "base" | "title" | "description";
 
 type Props = {
+  id?: number;
   icon?: ReactElement;
   src?: InternalPath;
   title: string;
+  animate?: boolean;
   description: string;
   className?: TWClassNames;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
 export const SateFeatureCard: FC<Props> = ({
+  id,
   src,
   icon,
   title,
+  animate = true,
   className,
   classNames,
   description,
 }) => {
   return (
-    <div
+    <AnimatedBlock
+      animate={animate}
+      delay={id ? id / 10 : 0}
       className={cls(
-        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-full md:w-[328px] min-h-[185px]",
+        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-full md:w-[328px] h-auto",
         className,
         classNames?.base,
       )}
@@ -53,6 +60,6 @@ export const SateFeatureCard: FC<Props> = ({
           {description}
         </Typography>
       </div>
-    </div>
+    </AnimatedBlock>
   );
 };

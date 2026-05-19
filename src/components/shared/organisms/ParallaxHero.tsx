@@ -156,6 +156,7 @@ export const ParallaxHero: FC<Props> = ({
             className="relative z-3 w-full aspect-[4/3] "
           >
             <Image
+              priority
               src={imgSrc}
               fill
               alt="parallax-img"

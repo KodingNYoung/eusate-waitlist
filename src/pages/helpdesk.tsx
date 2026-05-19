@@ -31,7 +31,11 @@ const HelpDeskPage = () => {
         description="Support across email, live chat, social, and monitors AI performance and intervene from one interface."
         cta={
           <BorderGradient>
-            <Link href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.HELP_DESK}>
+            <Link
+              aria-label="help-desk-link"
+              rel="noreferrer"
+              href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.HELP_DESK}
+            >
               <Button
                 size="sm"
                 variant="outlined"

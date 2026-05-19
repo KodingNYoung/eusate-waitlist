@@ -24,7 +24,7 @@ export default function GridLayout() {
     <motion.div
       variants={fadeUpVariants}
       transition={defaultTransition}
-      className="container grid grid-cols-1 md:grid-cols-5 gap-4 px-4 md:h-[456px]"
+      className="md:container w-full grid grid-cols-1 md:grid-cols-5 gap-4 px-4 md:h-[456px]"
     >
       {/* Left column */}
       <div className="hidden md:flex flex-row md:flex-col gap-4 h-48 md:h-auto">
@@ -40,6 +40,7 @@ export default function GridLayout() {
         </div>
         <div className="relative h-full w-full">
           <Image
+            priority
             src="/about/images/about-img-1.webp"
             alt="team"
             fill
@@ -49,7 +50,7 @@ export default function GridLayout() {
       </div>
 
       {/* Middle large video */}
-      <div className="md:col-span-2 relative group rounded-3xl overflow-hidden">
+      <div className="md:col-span-2 relative group rounded-3xl overflow-hidden w-full">
         <div className="cursor-pointer absolute z-2 inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <Button
             onClick={toggle}
@@ -95,6 +96,7 @@ export default function GridLayout() {
       <div className="flex flex-row md:flex-col md:col-span-2 gap-4 h-48 md:h-auto">
         <div className="hidden md:block relative h-full w-full">
           <Image
+            priority
             fill
             alt="startup"
             src="/about/images/about-img-2.webp"
@@ -128,6 +130,7 @@ export default function GridLayout() {
           </div>
           <div className="hidden md:block relative h-full w-full overflow-hidden rounded-3xl">
             <Image
+              priority
               fill
               src="/about/images/about-img-3.webp"
               alt="success"

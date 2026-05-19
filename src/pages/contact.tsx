@@ -15,12 +15,16 @@ const ContactPage = () => {
         <PageTemplate
           classNames={{
             wrapper:
-              "flex flex-wrap md:container sm: justify-between px-5 pt-20 md:pt-[196px] gap-10",
+              "flex flex-wrap md:container sm: justify-between px-5 pt-20 md:pt-[196px] gap-10 pb-[50px]",
           }}
         >
           {/* CONTACT INFO */}
-          <AnimatedBlock duration={2}>
-            <PageSection classNames={{ container: "space-y-10 md:space-y-20" }}>
+          <AnimatedBlock duration={2} className="w-full md:w-auto">
+            <PageSection
+              classNames={{
+                container: "space-y-10 md:space-y-20",
+              }}
+            >
               <SubHeader
                 chipLabel="Contact us"
                 title="Get in touch."

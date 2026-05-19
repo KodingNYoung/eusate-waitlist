@@ -22,7 +22,7 @@ const Reports = () => {
       <PageHero
         ref={headerRef}
         classNames={{
-          base: "overflow-hidden bg-[url(/images/reports-bg.webp)] flex justify-center items-end h-[70vh] md:h-[800px] !px-5 !py-12",
+          base: "overflow-hidden bg-[url(/images/reports-bg.webp)] flex justify-center items-end h-[669px] md:h-[800px] !px-5 !py-12",
         }}
       >
         <PageHeader
@@ -45,7 +45,12 @@ const Reports = () => {
                 style={{ y: imageY }}
                 className="container relative w-[1400px] h-[1200px]"
               >
-                <Image alt="" fill src="/images/reports-hero.webp" />
+                <Image
+                  priority
+                  alt="report-hero"
+                  fill
+                  src="/images/reports-hero.webp"
+                />
               </motion.div>
             </div>
           }

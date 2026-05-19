@@ -42,6 +42,7 @@ export const ROUTES = {
   SIGNUP: "/sign-up",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-condition",
+  DOCUMENTATION: "/documentation",
   SATE_AI: "/sate-ai",
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",

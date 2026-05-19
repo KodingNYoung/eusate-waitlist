@@ -61,6 +61,7 @@ const KnowledgeBasePage = () => {
                 <div className="hidden lg:flex relative w-[520px] h-[560px]">
                   <Image
                     fill
+                    priority
                     src="/images/kb-hero.webp"
                     className="object-contain object-center"
                     alt="kb-hero-img "
@@ -69,6 +70,7 @@ const KnowledgeBasePage = () => {
                 <div className="md:hidden relative w-full h-[calc(660px_+_100vw_-_337px)]">
                   <Image
                     fill
+                    priority
                     src="/kb/images/kb-mobile-bg.webp"
                     className="object-contain object-top"
                     alt="kb-hero-img"
