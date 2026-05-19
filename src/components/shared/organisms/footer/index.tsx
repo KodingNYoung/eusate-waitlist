@@ -4,7 +4,7 @@ import Logo from "../../atoms/Logo";
 import Typography from "../../atoms/Typography";
 import Button from "../../molecules/Button";
 import { ROUTES } from "@/utils/constants";
-import { NAV_EXPLORE_LIST } from "../navbar/utils";
+import { FOOTER_EXPLORE_LIST } from "../navbar/utils";
 import { ArrowRightIcon } from "@/assets/icons";
 import { SocialTerms } from "./SocialTerms";
 import { GradientIcon } from "../../atoms/Icon";
@@ -28,7 +28,7 @@ const Footer = () => {
 
           {/* EXPLORE LIST */}
           <div className="flex flex-wrap justify-between gap-x-12 gap-y-20 w-[576px]">
-            {NAV_EXPLORE_LIST.map(({ id, label, items }) => (
+            {FOOTER_EXPLORE_LIST.map(({ id, label, items }) => (
               <div key={id} className="flex  flex-col gap-6 md:gap-10 ">
                 <Typography variant="medium-lg" className="text-white/40">
                   {label}
