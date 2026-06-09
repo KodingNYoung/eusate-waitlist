@@ -56,8 +56,6 @@ export const SateAction: FC<Props> = ({ title, chipLabel, items }) => {
       </div>
 
       <div className="hidden md:flex order-2 row-span-2 w-full h-[323px]  xl:h-full flex justify-center items-center md:order-3 bg-gold-100 rounded-x24 p-8 md:p-2">
-        {/* <PhoneFrame messages={CARDS[current].chat} /> */}
-        {/* <div className="relative w-[500px] md:min-w-[326px] h-[430px] md:h-[540px]"> */}
         <div className="relative w-full md:scale-75 h-full">
           <Image
             alt={chipLabel}
