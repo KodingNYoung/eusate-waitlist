@@ -5,9 +5,9 @@ import { fadeUpVariants } from "./variants";
 import { cls } from "@/utils/helpers";
 
 export const defaultTransition: Transition = {
-  ease: [0.22, 1, 0.36, 1],
   delay: 0,
-  duration: 1.4,
+  duration: 3,
+  ease: [0.22, 1, 0.36, 1],
 };
 
 export const AnimatedBlock = ({

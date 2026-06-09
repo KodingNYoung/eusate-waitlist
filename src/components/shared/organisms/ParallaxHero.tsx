@@ -72,7 +72,7 @@ export const ParallaxHero: FC<Props> = ({
   );
 
   return (
-    <header ref={headerRef} className={cls("sticky", classNames?.base)}>
+    <header ref={headerRef} className={cls(classNames?.base)}>
       <div
         className={cls(
           "md:pt-[88px] px-[17px] md:px-0 rounded-[16px] md:rounded-none bg-cover h-[80vh] md:h-[90vh] space-y-10 md:space-y-20",

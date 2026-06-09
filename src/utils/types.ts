@@ -70,7 +70,7 @@ export type FC<PropsType = unknown> = {
   displayName?: string;
 };
 
-export type Plan = "free" | "pro" | "basic";
+export type Plan = "free" | "pro" | "basic" | "medium";
 export type CompareCategoryKey = "cat-1" | "cat-2";
 export type CompareCategory =
   (typeof ComparePlanCat1)[keyof typeof ComparePlanCat1];
@@ -183,3 +183,10 @@ export type Testimonial = {
   }[];
 };
 export type ContactForm = z.infer<typeof contactFormSchema>;
+export type IntegrationPricing = {
+  id: number;
+  name: string;
+  icon: InternalPath;
+  description: string;
+  price: number;
+};

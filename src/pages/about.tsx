@@ -75,20 +75,17 @@ const AboutPage = () => {
       <PageSection className="relative overflow-hidden mb-24">
         <BackgroundWatermark imgSrc="/images/about-mission-swatch.webp" />
         <div className="flex flex-wrap container relative md:justify-center lg:justify-between gap-4 mt-8">
-          <AnimatedBlock variants={fadeVariants} duration={2}>
-            <VisionCard
-              icon={TelescopeIcon}
-              title="Our Vision"
-              content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
-            />
-          </AnimatedBlock>
-          <AnimatedBlock variants={fadeVariants} delay={0.4} duration={2}>
-            <VisionCard
-              icon={MissionIcon}
-              title="Our Mission"
-              content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
-            />
-          </AnimatedBlock>
+          <VisionCard
+            icon={TelescopeIcon}
+            title="Our Vision"
+            content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
+          />
+          <VisionCard
+            icon={MissionIcon}
+            title="Our Mission"
+            animationDelay={2}
+            content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
+          />
         </div>
       </PageSection>
 
