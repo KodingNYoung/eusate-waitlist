@@ -2,6 +2,7 @@ export enum Plan {
   FREE = "free",
   PRO = "pro",
   BASIC = "basic",
+  MEDIUM = "medium",
 }
 
 export enum ComparePlanCat1 {

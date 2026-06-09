@@ -24,9 +24,10 @@ export const Pricing = () => {
             <div
               key={key}
               className={cls(
-                id === 1 && "order-3 md:order-1",
+                id === 1 && "order-4 md:order-1",
                 id === 2 && "order-1 md:order-2",
                 id === 3 && "order-2 md:order-3",
+                id === 4 && "order-3 md:order-4",
               )}
             >
               <AnimatedBlock delay={id / 10}>

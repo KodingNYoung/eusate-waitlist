@@ -3,6 +3,7 @@ import {
   ADD_ON_LIST,
   CATEGORY_LIST,
   COMPARE_PRICING_LIST,
+  INTEGRATIONS_PRICING,
 } from "@/utils/constants";
 import Button from "@/components/shared/molecules/Button";
 import { AddOnCard } from "@/components/routes/pricing/AddonsCard";
@@ -22,6 +23,7 @@ import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { motion } from "motion/react";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { IntegrationPricingCard } from "@/components/routes/pricing/IntegrationPricingCard";
 
 const Pricing = () => {
   return (
@@ -64,9 +66,10 @@ const Pricing = () => {
               <div
                 key={key}
                 className={cls(
-                  id === 1 && "order-3 md:order-1",
+                  id === 1 && "order-4 md:order-1",
                   id === 2 && "order-1 md:order-2",
                   id === 3 && "order-2 md:order-3",
+                  id === 4 && "order-3 md:order-4",
                 )}
               >
                 <AnimatedBlock duration={1} delay={id / 10} key={key}>
@@ -107,6 +110,36 @@ const Pricing = () => {
             headers={CATEGORY_LIST}
             data={COMPARE_PRICING_LIST}
           />
+        </PageSection>
+
+        {/* INTEGRATIONS */}
+        <PageSection
+          classNames={{
+            container: "gap-y-10",
+          }}
+          header={
+            <AnimatedBlock>
+              <SubHeader
+                classNames={{
+                  root: "flex-col gap-4",
+                  title:
+                    "text-bold-3xl md:text-bold-6xl text-center md:text-left",
+                  description:
+                    "md:text-regular-xl md:text-left text-center text-gray-700",
+                }}
+                title="Integrations"
+                description="Incorporate applications into your workspace at competitive rates to enhance your workflow."
+              />
+            </AnimatedBlock>
+          }
+        >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {INTEGRATIONS_PRICING.map(({ id, ...platform }) => (
+              <AnimatedBlock key={id} delay={id / 10} duration={2}>
+                <IntegrationPricingCard {...platform} />
+              </AnimatedBlock>
+            ))}
+          </div>
         </PageSection>
 
         {/* ADD ONs */}

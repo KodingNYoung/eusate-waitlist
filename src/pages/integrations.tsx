@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 
-const PLATFORMS = [
+export const PLATFORMS = [
   {
     id: 1,
     name: "WhatsApp",

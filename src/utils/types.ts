@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
-import { ComparePlanCat1, HelpCenterKey, ProductKey } from "./enum";
+import { ComparePlanCat1, HelpCenterKey, Plan, ProductKey } from "./enum";
 import { contactFormSchema } from "./schemas";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
@@ -70,7 +70,6 @@ export type FC<PropsType = unknown> = {
   displayName?: string;
 };
 
-export type Plan = "free" | "pro" | "basic";
 export type CompareCategoryKey = "cat-1" | "cat-2";
 export type CompareCategory =
   (typeof ComparePlanCat1)[keyof typeof ComparePlanCat1];
@@ -112,7 +111,6 @@ export type AddOn = {
   price: number;
 };
 
-export type HelpCenterTabKeys = "getting-started" | "account-info";
 export type HelpCenterTab = {
   id: number;
   key: HelpCenterKey;
@@ -125,7 +123,6 @@ export type HelpCenterQuestion = {
   question: string;
   answer: string;
 };
-export type SateAiAction = "action-1" | "action-2" | " action-3" | "action-4";
 
 export type Blog = {
   id: string;
@@ -183,3 +180,10 @@ export type Testimonial = {
   }[];
 };
 export type ContactForm = z.infer<typeof contactFormSchema>;
+export type IntegrationPricing = {
+  id: number;
+  name: string;
+  icon: InternalPath;
+  description: string;
+  price: number;
+};
