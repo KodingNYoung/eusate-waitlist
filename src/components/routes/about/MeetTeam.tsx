@@ -75,7 +75,7 @@ export const MeetTeam = () => {
       />
       <AnimatedBlock variants={staggerContainer}>
         {/* <motion.div className="flex flex-wrap justify-center px-6 items-center w-full gap-x-8 gap-y-10 md:gap-y-16"> */}
-        <motion.div className="grid grid-cols-1 md:grid-cols-[auto_auto] lg:grid-cols-[auto_auto_auto] w-full gap-x-8 gap-y-10 md:gap-y-16">
+        <motion.div className="grid grid-cols-1 justify-items-center md:grid-cols-[auto_auto] lg:grid-cols-[auto_auto_auto] w-full gap-x-8 gap-y-10 md:gap-y-16">
           {team.map(({ id, ...member }) => (
             <MemberCard key={id} {...member} />
           ))}

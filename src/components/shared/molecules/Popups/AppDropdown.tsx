@@ -1,4 +1,4 @@
-import { FC, InternalPath, TWClassNames } from "@/utils/types";
+import { FC, TWClassNames } from "@/utils/types";
 import {
   Dropdown,
   DropdownItem,
@@ -20,7 +20,7 @@ export type ItemType = {
   icon?: ReactNode;
   className?: TWClassNames;
   disabled?: boolean;
-  link?: InternalPath;
+  link?: string;
   action?: () => void;
 };
 export type SectionsType = {

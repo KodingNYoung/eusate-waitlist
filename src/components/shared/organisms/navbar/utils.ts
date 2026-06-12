@@ -1,6 +1,6 @@
-import { ROUTES } from "@/utils/constants";
 import { ReactNode } from "react";
-import { InternalPath, TWClassNames } from "@/utils/types";
+import { ROUTES } from "@/utils/constants";
+import { TWClassNames } from "@/utils/types";
 
 // TYPES
 type Explore = {
@@ -15,8 +15,9 @@ type ExploreItem = {
   icon?: ReactNode;
   className?: TWClassNames;
   disabled?: boolean;
+  redirect?: boolean;
   use?: "footer" | "nav" | "footer-nav"; // default = "footer-nav"
-  link?: InternalPath;
+  link?: string;
   action?: () => void;
 };
 
@@ -163,7 +164,8 @@ export const FOOTER_EXPLORE_LIST: Explore[] = [
       {
         key: 2,
         label: "Documentation",
-        link: ROUTES.DOCUMENTATION,
+        redirect: true,
+        link: "https://docs.eusate.com/modules/devspace/introduction",
       },
       {
         key: 3,

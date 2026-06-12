@@ -4,7 +4,6 @@ import { cls } from "@/utils/helpers";
 import { NAV_EXPLORE_LIST } from "./utils";
 import { ROUTES } from "@/utils/constants";
 import Button from "../../molecules/Button";
-import { InternalPath } from "@/utils/types";
 import Typography from "../../atoms/Typography";
 import { Accordion } from "../../molecules/Accordion";
 import { ArrowDown, ArrowRightGradIcon } from "@/assets/icons";
@@ -79,7 +78,7 @@ export const MobileNav = () => {
 
 type NavItemProps = {
   label: string;
-  link: InternalPath;
+  link: string;
 };
 
 const NavItem = ({ label, link }: NavItemProps) => {
