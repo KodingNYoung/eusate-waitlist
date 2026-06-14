@@ -118,6 +118,7 @@ const Pricing = () => {
         </PageSection>
 
         {/* INTEGRATIONS */}
+
         <PageSection
           classNames={{
             container: "gap-y-10",

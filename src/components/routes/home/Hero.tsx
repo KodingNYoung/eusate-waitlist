@@ -4,6 +4,7 @@ import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import { ParallaxHero } from "@/components/shared/organisms/ParallaxHero";
 import Link from "next/link";
+import { ROUTES } from "@/utils/constants";
 
 export const Hero = () => {
   return (
@@ -37,7 +38,7 @@ export const Hero = () => {
       }
       cta={
         <Link
-          href={process.env.NEXT_PUBLIC_BASE_URL + "/signup"}
+          href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}
           className="w-full md:w-fit"
         >
           <Button

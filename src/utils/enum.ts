@@ -7,8 +7,9 @@ export enum Plan {
 
 export enum ComparePlanCat1 {
   FEATURE = "feature",
-  SHARED_INBOX = "shared-inbox",
+  SHARED_INBOX_1 = "shared-inbox-1",
   AI_SUMMARIZE = "ai-summarize",
+  SHARED_INBOX_2 = "shared-inbox-2",
 }
 
 export enum PublicExtras {
