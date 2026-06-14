@@ -49,7 +49,7 @@ const HelpDeskPage = () => {
         }
         imgSrc="/images/helpdesk-hero.webp"
       />
-      <section className="bg-white relative z-2 pt-20 -translate-y-[3vh] rounded-x20 md:rounded-x40">
+      <section className="bg-white relative z-3 pt-20 -translate-y-[3vh] rounded-x20 md:rounded-x40">
         <div className="container space-y-24">
           {HD_FEATURES.map((feature) => (
             <HDFeatureCard key={feature.id} {...feature} />

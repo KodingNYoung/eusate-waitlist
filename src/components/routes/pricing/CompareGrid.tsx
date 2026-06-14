@@ -4,6 +4,7 @@ import { InfoCircleIcon, TickCircleIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { CategoryList, CompareCategoryData, FC } from "@/utils/types";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { ComparePlanCat1 } from "@/utils/enum";
 
 type Props = {
   headerTitle: string;
@@ -53,7 +54,7 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
             <div className="">
               {categories.map(({ key, features }) => (
                 <AnimatedBlock key={key}>
-                  <div key={key} className="border-t border-l h-[255px]">
+                  <div key={key} className="border-t border-l h-[284px]">
                     <div className="translate-y-[45px]">
                       {Object.values(features).map((v) => (
                         <CategoryData key={key} value={v} />
@@ -101,7 +102,7 @@ type CategoryHeaderProps = {
 
 const CategoryHeader = ({ title, items }: CategoryHeaderProps) => {
   return (
-    <div className="p-4 space-y-4 h-[254px] border-t">
+    <div className="p-4 space-y-4 h-[284px] border-t">
       <Typography
         variant="bold-lg"
         className="text-gray-900 text-bold-base md:text-bold-lg"
@@ -117,7 +118,9 @@ const CategoryHeader = ({ title, items }: CategoryHeaderProps) => {
             >
               {label}
             </Typography>
-            <span className="stroke-gray-300">{InfoCircleIcon}</span>
+            {key !== ComparePlanCat1.SHARED_INBOX_2 && (
+              <span className="stroke-gray-300">{InfoCircleIcon}</span>
+            )}
           </div>
         ))}
       </div>

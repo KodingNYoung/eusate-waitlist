@@ -34,10 +34,12 @@ const Footer = () => {
                   {label}
                 </Typography>
                 <nav className="flex flex-col gap-6 md:gap-10 items-start">
-                  {items.map(({ key, label, link }) => (
+                  {items.map(({ key, label, link, redirect }) => (
                     <Link
                       key={key}
                       href={link ?? "/"}
+                      target={redirect ? "_blank" : undefined}
+                      rel="noopener noreferrer"
                       className="text-bold-sm md:text-bold-lg text-white/60 hover:text-white"
                     >
                       {label}
