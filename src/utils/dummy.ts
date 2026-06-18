@@ -24,7 +24,7 @@ export const BlogPost: Blog[] = [
           id: 2,
           title: "Sub-heading",
           content:
-            "With SATE, global support is not just a dream; it's a reality. Whether your customers are in Tokyo, Paris, or São Paulo, they can communicate effortlessly. This innovative approach ensures that every customer feels understood and valued, regardless of their native language. Say goodbye to the frustration of miscommunication and hello to seamless conversations that enhance customer satisfaction. Join the future of customer support with SATE, where language is no longer a barrier but a bridge to better service.",
+            "with sate, global support is not just a dream; it's a reality. Whether your customers are in Tokyo, Paris, or São Paulo, they can communicate effortlessly. This innovative approach ensures that every customer feels understood and valued, regardless of their native language. Say goodbye to the frustration of miscommunication and hello to seamless conversations that enhance customer satisfaction. Join the future of customer support with SATE, where language is no longer a barrier but a bridge to better service.",
         },
         {
           id: 3,

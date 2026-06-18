@@ -1,6 +1,7 @@
 import z from "zod";
 import {
   AddOn,
+  Blog,
   CategoryList,
   CompareCategory,
   CompareCategoryKey,
@@ -1372,5 +1373,151 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
       "Integrate our live chat widget on customer-facing interfaces to turn customer conversations into manageable tickets.",
     icon: "/pricing/images/chat-icon.webp",
     price: 0,
+  },
+];
+
+export const BLOG_POST: Blog[] = [
+  {
+    id: "3f1a2b4e-8d5c-4f6b-9a7e-2c1d8b9f0e6a",
+    imgSrc: "/images/business-men.webp", // Placeholder path for the image
+    title: "10 Signs Your Business Has Outgrown Its Customer Support System",
+    summary:
+      "Growth has a way of exposing cracks in your customer service. Learn the 10 warning signs that your current support system is holding your business back—and how to fix it before your customers notice.",
+    readingSpan: "5 min read",
+    spotlight: true,
+    timestamp: new Date("2026-06-18"),
+    content: {
+      title: "10 Signs Your Business Has Outgrown Its Customer Support System",
+      introduction:
+        "Your customer support system probably worked perfectly when you had your first 100 customers. Maybe it even worked when you had 1,000, but growth has a way of exposing cracks that didn't exist before. The spreadsheets become messy. The inbox becomes overwhelming. Response times start slipping. Customers begin following up on messages you've already answered. And suddenly, what once felt manageable now feels like chaos.\n\nHere's the thing: most businesses don't realize they've outgrown their customer support system until customers start noticing. If you're wondering whether your current setup is holding your business back, here are 10 signs it's time to upgrade.",
+      subheaders: [
+        {
+          id: 1,
+          title: "1. Your Team Answers the Same Questions Every Day",
+          content:
+            "How do I reset my password?\nWhere is my order?\nHow do I update my account information?\n\nIf your support team spends most of its day answering repetitive questions, you're not running an efficient customer support operation, you're running a human-powered FAQ page.\n\nAs your business grows, repetitive support requests grow with it. The problem isn't that customers are asking questions. The problem is that your team is spending valuable time answering questions that could be resolved automatically.\n\nModern AI customer support tools can handle these common inquiries instantly, allowing your team to focus on complex issues that genuinely require human attention.",
+        },
+        {
+          id: 2,
+          title:
+            "2. Customer Conversations Are Scattered Across Multiple Platforms",
+          content:
+            "A customer sends a message on WhatsApp, then follows up via email, and opens a live chat conversation. Now three different team members are handling the same issue. Sound familiar?\n\nOne of the clearest signs you've outgrown your customer service platform is when conversations live in multiple places with no unified view.\n\nWithout omnichannel customer support, agents waste time switching between tools, customers repeat themselves, and important context gets lost. Your customers don't think in channels. Your support system shouldn't either.",
+        },
+        {
+          id: 3,
+          title: "3. Response Times Keep Getting Longer",
+          content:
+            "Growth is exciting. But if every new customer automatically increases your response times, your support system isn't scaling.\n\nCustomers today expect quick responses. Whether they're reaching out through live chat, email, WhatsApp, or social media, long wait times create frustration and damage trust.\n\nIf your average response time keeps increasing despite adding more team members, the problem may not be your team. It may be your system.",
+        },
+        {
+          id: 4,
+          title: "4. Support Stops When Your Team Logs Off",
+          content:
+            "Customers don't only have problems between 9 AM and 5 PM. They have questions during weekends, holidays, and late nights.\n\nIf your customer support system becomes unavailable the moment your team goes offline, you're creating gaps in the customer experience.\n\nBusinesses that provide 24/7 customer support gain a significant competitive advantage because customers get help when they need it, not when it's convenient for the business.",
+        },
+        {
+          id: 5,
+          title: "5. Your Team Is Constantly Overwhelmed",
+          content:
+            "Support agents shouldn't spend their entire day putting out fires. If your team feels perpetually behind, struggles to clear ticket backlogs, or constantly complains about workload, it may be a sign that your support operation has reached its limit.\n\nMany businesses respond by hiring more agents, but throwing more people at a broken process rarely solves the underlying problem. The right customer support software should reduce workload, not simply redistribute it.",
+        },
+        {
+          id: 6,
+          title: "6. Customers Have to Repeat Themselves",
+          content:
+            "Few things frustrate customers more than explaining the same issue multiple times. Unfortunately, this happens often when support conversations are disconnected across channels and departments.\n\nWhen agents lack visibility into previous interactions, customers are forced to repeat information, leading to poor customer experiences and lower satisfaction scores.\n\nA modern customer support platform should provide a complete view of every interaction, regardless of where the conversation started.",
+        },
+        {
+          id: 7,
+          title: "7. You Can't Measure Support Performance",
+          content:
+            "How long does it take your team to respond?\nHow many issues are resolved on first contact?\nWhich channels generate the highest ticket volume?\n\nIf you don't know the answers, you're flying blind. Businesses that rely on outdated support systems often lack the reporting and analytics needed to improve operations.\n\nWhat gets measured gets improved. Without data, improving customer support becomes guesswork.",
+        },
+        {
+          id: 8,
+          title: "8. Important Messages Are Falling Through the Cracks",
+          content:
+            "Every growing business has experienced it. An email gets missed, a WhatsApp message goes unanswered, a support ticket remains unresolved for days.\n\nWhile occasional mistakes happen, frequent missed conversations are usually a symptom of a system that can no longer keep up with demand, and every missed message carries a cost. Sometimes it's a complaint, sometimes it's a lost customer, sometimes it's both.",
+        },
+        {
+          id: 9,
+          title: "9. You're Hiring More Agents Just to Keep Up",
+          content:
+            "Hiring support staff isn't inherently bad. But if your solution to every increase in customer volume is adding more agents, you may be treating the symptom rather than the cause.\n\nThe most scalable businesses don't simply increase headcount. They improve efficiency. AI-powered customer support allows businesses to handle significantly higher volumes without increasing support costs at the same rate. Growth shouldn't automatically require a larger support team.",
+        },
+        {
+          id: 10,
+          title: "10. Your Support System Is Slowing Down Business Growth",
+          content:
+            "This is the biggest sign of all. When customer support becomes a bottleneck, it starts affecting the entire business. Sales opportunities are missed, customer satisfaction drops, retention suffers, operational costs increase, and growth becomes harder than it should be.\n\nAt that point, the issue isn't customer support anymore, it's business performance.",
+        },
+        {
+          id: 11,
+          title: "The Future of Customer Support",
+          content:
+            "Customer expectations aren't slowing down. If anything, they're increasing. Customers want fast answers, seamless experiences, and support that's available whenever they need it.\n\nBusinesses that continue relying on outdated support processes will find it increasingly difficult to keep up. Businesses that embrace AI-powered customer support, omnichannel communication, and intelligent automation will be positioned to scale without sacrificing customer experience.\n\nThe question isn't whether your business will outgrow its current support system. The question is whether you'll recognize the signs before your customers do.",
+        },
+        {
+          id: 12,
+          title: "Ready to Modernize Your Customer Support?",
+          content:
+            "Eusate helps businesses unify customer conversations, automate repetitive support requests, and deliver exceptional customer experiences across WhatsApp, Email, Live Chat, Discord, and more.",
+        },
+      ],
+    },
+  },
+  {
+    id: "can-ai-replace-customer-support-teams",
+    imgSrc: "/images/business-men.webp",
+    title: "Can AI Replace Customer Support Teams?",
+    summary:
+      "The short answer is no, but the real future is much more interesting. Discover why the ultimate customer service strategy isn't humans vs. AI—it's humans and AI working together.",
+    readingSpan: "4 min read",
+    spotlight: false,
+    timestamp: new Date("2026-06-18"),
+    content: {
+      title: "Can AI Replace Customer Support Teams?",
+      introduction:
+        "Short answer? No. At least, not entirely.\n\nArtificial intelligence has become one of the most transformative technologies in modern business. From content creation and workflow automation to data analysis and virtual assistants, AI is changing how organizations operate. Few functions, however, have been impacted as significantly as customer support.\n\nAs businesses look for ways to improve efficiency, reduce costs, and deliver faster service, one question keeps coming up: Can AI replace customer support teams?\n\nThe answer is both simple and nuanced.\n\nModern AI customer support systems can answer questions instantly, handle thousands of conversations simultaneously, provide 24/7 support, and automate tasks that once required entire teams. It's easy to understand why many believe AI could eventually replace human support agents.\n\nHowever, customer support is about more than answering questions. It involves solving problems, building trust, managing emotions, and creating positive customer experiences. These are areas where humans continue to play an essential role.\n\nThe future of customer support is not a competition between humans and AI. It is a collaboration between the two.",
+      subheaders: [
+        {
+          id: 1,
+          title: "Why Many People Believe AI Will Replace Customer Support",
+          content:
+            "AI has become incredibly effective at handling routine support tasks. It can answer frequently asked questions, route tickets to the right department, retrieve information from company knowledge bases, and resolve common customer issues in seconds.\n\nFor businesses, the appeal is obvious. Faster response times, lower operational costs, and the ability to support customers around the clock make AI an attractive investment.\n\nBut the assumption that customer support teams will disappear altogether overlooks an important reality: not all customer interactions are created equal.",
+        },
+        {
+          id: 2,
+          title: "Where AI Excels",
+          content:
+            "To understand AI's role in customer support, it helps to look at the types of issues customers encounter every day.\n\nA customer forgets their password and needs help regaining access to their account. Another wants to track an order. A prospective customer asks about pricing or product features. These are common, repetitive, information-driven requests that AI can handle quickly and accurately.\n\nIn situations like these, customers are not necessarily looking for a human conversation. They simply want a fast and reliable answer. This is where AI delivers tremendous value. It eliminates repetitive work, reduces response times, and allows support teams to operate more efficiently.",
+        },
+        {
+          id: 3,
+          title: "Where Humans Still Matter",
+          content:
+            "Now consider a different scenario.\n\nA customer has been locked out of their account after a suspected security breach. A major client is threatening to cancel their contract after a service failure. A business-critical shipment has gone missing. Or a frustrated customer simply needs reassurance after a poor experience.\n\nThese situations require far more than information. They require judgment, empathy, context, and problem-solving. Customers want someone who understands the bigger picture, can make decisions, and can navigate situations that don't follow a predefined script.\n\nIn these moments, customer support becomes less about processes and more about people. This is where the argument that AI will completely replace customer support teams begins to fall apart.",
+        },
+        {
+          id: 4,
+          title: "The Real Future: AI + Humans",
+          content:
+            "Many businesses are asking the wrong question. Instead of asking whether AI can replace their support team, they should be asking how AI can make their support team more effective.\n\nThe most successful support organizations use AI to handle routine, high-volume interactions while allowing human agents to focus on complex issues, customer relationships, and strategic problem-solving.\n\nImagine a support operation where customers receive instant responses around the clock, repetitive questions are handled automatically, and support agents spend their time solving meaningful problems rather than answering the same questions all day. In that environment, AI is not a replacement. It is an enhancement.",
+        },
+        {
+          id: 5,
+          title: "Final Thoughts",
+          content:
+            "So, can AI replace customer support teams? No. But it can transform them.\n\nBusinesses that view AI as a replacement strategy often risk creating impersonal and frustrating customer experiences. Businesses that use AI to empower their teams, however, can deliver faster, smarter, and more scalable support without sacrificing the human touch customers value.\n\nThe goal should not be fewer humans. The goal should be enabling humans to do their best work by allowing AI to handle the tasks that never needed human intervention in the first place.",
+        },
+        {
+          id: 6,
+          title: "The Future of Support Starts Here",
+          content:
+            "At Eusate, we believe great customer support is powered by both technology and people. Our AI-first platform helps businesses automate repetitive conversations, provide instant responses, and scale support operations while ensuring human agents remain involved where they matter most.\n\nBut speed alone isn't enough. Great support also requires understanding, context, and empathy.\n\nThat's why Sate, the AI powering Eusate, is designed to communicate naturally, understand customer intent, and deliver support experiences that feel thoughtful and human, not robotic or scripted. While AI can never replace genuine human connection, it can be built to understand customers better, respond more intelligently, and know when a human touch is needed.\n\nBecause the future of customer support isn't humans versus AI. It's humans and AI working together to create faster, smarter, and more empathetic customer experiences.",
+        },
+      ],
+    },
   },
 ];

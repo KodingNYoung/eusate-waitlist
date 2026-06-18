@@ -8,7 +8,7 @@ export const SocialTerms = () => {
     <div className="grid gap-16 w-full">
       <div className="flex items-center justify-between md:justify-start gap-4 w-full">
         {SOCIAL_LINKS.map(({ id, icon, link }) => (
-          <Link key={id} href={link}>
+          <Link target="_blank" key={id} href={link}>
             <Button
               href={link}
               variant="tetiary"

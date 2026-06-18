@@ -6,20 +6,20 @@ import { SearchIcon } from "@/assets/icons";
 import Input from "@/components/shared/molecules/Input";
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { useMemo, useState } from "react";
-import { BlogPost } from "@/utils/dummy";
 import { BlogCard } from "@/components/routes/blogs/BlogCard";
 import { BlogFeed } from "@/components/routes/blogs/BlogFeed";
 import Typography from "@/components/shared/atoms/Typography";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { BLOG_POST } from "@/utils/constants";
 
 const BlogPage = () => {
   const [search, setSearch] = useState("");
 
   const searchedBlogs = useMemo(
     () =>
-      BlogPost.filter((blog) =>
+      BLOG_POST.filter((blog) =>
         blog.title.toLowerCase().includes(search.toLowerCase()),
       ),
     [search],
