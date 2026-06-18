@@ -83,7 +83,7 @@ export const BlogCard: FC<Props> = ({
         as="h4"
         className="text-bold-xl data-[spotlight=true]:text-bold-2xl"
       >
-        {title}
+        {truncateWords(title, 55)}
       </Typography>
       <Typography
         as="p"

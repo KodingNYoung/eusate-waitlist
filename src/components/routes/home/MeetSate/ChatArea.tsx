@@ -48,7 +48,7 @@ export const ChatArea = () => {
             <Button
               size="sm"
               variant="tetiaryText"
-              className="!bg-transparent text-medium-base text-white hover:!text-white focus:text-white cursor-default"
+              className="!bg-transparent text-medium-base text-white hover:!text-white focus:text-white !cursor-default"
               startContent={<span>{SettingsIcon}</span>}
             >
               Set preferences
@@ -66,7 +66,7 @@ export const ChatArea = () => {
             <Button
               size="sm"
               variant="tetiaryText"
-              className="text-medium-base text-white hover:!text-white focus:text-white cursor-default"
+              className="text-medium-base text-white hover:!text-white focus:text-white !cursor-default"
               startContent={<span>{SettingsIcon}</span>}
             >
               Clear

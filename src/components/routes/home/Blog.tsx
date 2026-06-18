@@ -1,11 +1,10 @@
 import { ArrowRightIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
-import { BlogPost } from "@/utils/dummy";
 import { BlogCard } from "../blogs/BlogCard";
 import { SectionTemplate } from "@/components/shared/organisms/navbar/SectionTemplate";
 import Link from "next/link";
-import { ROUTES } from "@/utils/constants";
+import { BLOG_POST, ROUTES } from "@/utils/constants";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { motion } from "motion/react";
@@ -37,8 +36,8 @@ export const Blog = () => {
       />
       <div className="flex justify-center w-full">
         <AnimatedBlock variants={staggerContainer}>
-          <motion.div className="flex flex-wrap justify-start xl:justify-between gap-8 w-auto">
-            {BlogPost?.slice(0, 3)?.map(
+          <motion.div className="flex flex-wrap justify-start xl:justify-between gap-8 w-fit">
+            {BLOG_POST?.slice(0, 3)?.map(
               ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                 <BlogCard
                   variant="inline"

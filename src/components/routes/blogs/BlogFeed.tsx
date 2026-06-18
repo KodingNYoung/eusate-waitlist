@@ -1,4 +1,3 @@
-import { BlogPost } from "@/utils/dummy";
 import { BlogCard } from "@/components/routes/blogs/BlogCard";
 import AppPagination from "@/components/shared/molecules/Pagination";
 import { PageQueryKey } from "@/utils/enum";
@@ -6,6 +5,7 @@ import { PageSection } from "@/components/shared/organisms/PageTemplate";
 import { useQueryParams } from "@/utils/hooks";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
+import { BLOG_POST } from "@/utils/constants";
 
 export const BlogFeed = () => {
   const { set } = useQueryParams();
@@ -22,19 +22,19 @@ export const BlogFeed = () => {
           <div className="flex w-full">
             <BlogCard
               spotlight
-              id={BlogPost[0].id}
-              imgSrc={BlogPost[0].imgSrc}
-              title={BlogPost[0].title}
-              summary={BlogPost[0].summary}
-              readingSpan={BlogPost[0].readingSpan}
-              timestamp={BlogPost[0].timestamp}
+              id={BLOG_POST[0].id}
+              imgSrc={BLOG_POST[0].imgSrc}
+              title={BLOG_POST[0].title}
+              summary={BLOG_POST[0].summary}
+              readingSpan={BLOG_POST[0].readingSpan}
+              timestamp={BLOG_POST[0].timestamp}
             />
           </div>
         </AnimatedBlock>
 
         <AnimatedBlock variants={staggerContainer}>
-          <div className="flex w-full justify-center md:justify-around xl:justify-between flex-wrap gap-8">
-            {BlogPost.map(
+          <div className="flex w-fit justify-center md:justify-around xl:justify-between flex-wrap gap-8">
+            {BLOG_POST.map(
               ({ id, imgSrc, title, summary, readingSpan, timestamp }, idx) => (
                 <BlogCard
                   key={id}

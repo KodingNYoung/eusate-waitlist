@@ -13,25 +13,29 @@ export const PLATFORMS = [
     id: 1,
     name: "WhatsApp",
     icon: PublicExtras.WHATSAPP_ICON,
-    description: "A brief description of this integration",
+    description:
+      "Setup a whatsapp number to pull converstaions as tickets from your customers",
   },
   {
     id: 2,
     name: "Discord",
     icon: PublicExtras.DISCORD_ICON,
-    description: "A brief description of this integration",
+    description:
+      "Connect a Discord account to capture conversations as support tickets from your community members",
   },
   {
     id: 3,
     name: "Email",
     icon: PublicExtras.MAIL_ICON,
-    description: "A brief description of this integration",
+    description:
+      "Set up an email address to receive customer conversations as support tickets.",
   },
   {
     id: 4,
     name: "Live chat",
     icon: PublicExtras.LIVESTREAM_ICON,
-    description: "A brief description of this integration",
+    description:
+      "Integrate our live chat widget on customer-facing interfaces to turn customer conversations into manageable tickets.",
   },
 ];
 

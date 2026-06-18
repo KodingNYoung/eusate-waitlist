@@ -1,5 +1,5 @@
 import Typography from "@/components/shared/atoms/Typography";
-import { BlogPost } from "@/utils/dummy";
+import { BLOG_POST } from "@/utils/constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
@@ -9,7 +9,7 @@ export const Post = () => {
   const { id } = router.query;
 
   const post = useMemo(
-    () => BlogPost.find((blog) => id && blog.id === id),
+    () => BLOG_POST.find((blog) => id && blog.id === id),
     [id],
   );
 
