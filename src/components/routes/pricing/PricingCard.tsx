@@ -1,4 +1,8 @@
-import { ArrowRightIcon, TickCircleIcon } from "@/assets/icons";
+import {
+  ArrowRightIcon,
+  CloseCircleIcon,
+  TickCircleIcon,
+} from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Chip from "@/components/shared/molecules/Chip";
@@ -12,7 +16,7 @@ type Props = {
   price: number;
   showCompare?: boolean;
   redirect: InternalPath;
-  features: string[];
+  features: { text: string; checked: boolean }[];
   recomended?: boolean;
 };
 
@@ -63,16 +67,16 @@ export const PricingCard: FC<Props> = ({
         </Typography>
       </header>
       <div className="grid gap-6 py-6">
-        {features.map((feature, id) => (
+        {features.map(({ text, checked }, id) => (
           <div key={id} className="flex gap-3">
-            <span>{TickCircleIcon}</span>
+            <span>{checked ? TickCircleIcon : CloseCircleIcon}</span>
             <Typography
               data-featured={recomended}
               className={
                 "data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700 leading-[150%]"
               }
             >
-              {feature}
+              {text}
             </Typography>
           </div>
         ))}

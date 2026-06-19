@@ -1,5 +1,4 @@
 import Input from "@/components/shared/molecules/Input";
-import AutoResizingTextarea from "@/components/shared/atoms/AutoResizingTextarea";
 import { SendYellowIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
@@ -12,11 +11,48 @@ import Select from "@/components/shared/molecules/Select";
 import { motion } from "motion/react";
 import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
+import { toast } from "react-toastify";
+import AutoResizingTextarea from "@/components/shared/atoms/AutoResizingTextarea";
 
 export const FormSection = () => {
-  const { register, control } = useForm<ContactForm>({
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactForm>({
     resolver: zodResolver(contactFormSchema),
   });
+
+  const onSubmit = async (data: ContactForm) => {
+    const payload = {
+      full_name: data.firstname,
+      email: data.email,
+      reason: data.reason,
+      message: data.message,
+    };
+    try {
+      const res = await fetch(
+        "https://api.dev.eusate.com/api/v1/website/contact-us/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        },
+      );
+      const result = await res.json();
+      if (res.ok && result?.success) {
+        reset();
+        toast.success("Thanks for reaching out we'd get back to you.");
+      } else {
+        console.log(result);
+        toast.error("Sorry. Something went wrong");
+      }
+    } catch (_) {
+      toast.error("An error occured. Please try again.");
+      console.error(_);
+    }
+  };
 
   return (
     <motion.section
@@ -30,61 +66,109 @@ export const FormSection = () => {
           Send us a message
         </Typography>
       </div>
-      <form className="grid gap-4 md:gap-6">
-        <Input
-          {...register("firstname")}
-          name="full-name"
-          classNames={{
-            input:
-              "!bg-gray-900 text-white placeholder:text-gray-500 placeholder:text-medium-sm",
-            inputContainer: "before:hidden !mt-0 !mb-0",
-          }}
-          placeholder="Full name"
+      <form className="grid gap-4 md:gap-6" onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="firstname"
+          control={control}
+          render={({ field }) => (
+            <Input
+              name="firstname"
+              value={field.value}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              classNames={{
+                input:
+                  "!bg-gray-900 text-white placeholder:text-gray-500 placeholder:text-medium-sm",
+                inputContainer: "before:hidden !mt-0 !mb-0",
+                helperText: "text-red-400",
+              }}
+              placeholder="Full name"
+              isError={!!errors.firstname?.message}
+              helperText={errors.firstname?.message}
+            />
+          )}
         />
-        <Input
-          {...register("email")}
+        <Controller
           name="email"
-          classNames={{
-            input: "!bg-gray-900 text-white placeholder:text-gray-500",
-            inputContainer: "before:hidden !mt-0 !mb-0",
-          }}
-          placeholder="Email address"
+          control={control}
+          render={({ field }) => (
+            <Input
+              name="email"
+              value={field.value}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              classNames={{
+                input: "!bg-gray-900 text-white placeholder:text-gray-500",
+                inputContainer: "before:hidden !mt-0 !mb-0",
+                helperText: "text-red-400",
+              }}
+              placeholder="Email address"
+              isError={!!errors.email?.message}
+              helperText={errors.firstname?.message}
+            />
+          )}
         />
-        <Select
+        <Controller
           name="reason"
-          placeholder="Reason"
-          options={REASON_OPTIONS}
-          classNames={{
-            trigger: "!bg-gray-500",
-            placeholder: "!bg-gray-900 text-white",
-            icon: "!stroke-gray-500",
-            menu: { root: "!bg-gray-700", item: "text-gray-100" },
-          }}
+          control={control}
+          render={({ field }) => (
+            <Select
+              name="reason"
+              placeholder="Reason"
+              options={REASON_OPTIONS}
+              onChange={(e) => field.onChange(e as string)}
+              classNames={{
+                root: "!bg-gray-900",
+                placeholder: "text-white !bg-gray-900",
+                icon: "!stroke-gray-500",
+                menu: { root: "!bg-gray-700", item: "text-gray-100" },
+                helperText: "text-red-500",
+              }}
+              helperText={errors.firstname?.message}
+            />
+          )}
         />
+        {errors.reason?.message && (
+          <Typography variant="regular-sm" className="text-red-400">
+            {errors.reason.message}
+          </Typography>
+        )}
+
         <Controller
           name="message"
           control={control}
           render={({ field }) => (
-            <AutoResizingTextarea
-              onChange={field.onChange}
-              value={field.value}
-              maxRows={30}
-              minRows={10}
-              classNames={{
-                inputWrapper: "!bg-gray-900",
-                input: "text-white !text-regular-sm placeholder:text-gray-500",
-              }}
-              placeholder="Type your message"
-            />
+            <div className="grid gap-y-2">
+              <AutoResizingTextarea
+                onChange={field.onChange}
+                value={field.value}
+                maxRows={30}
+                minRows={10}
+                classNames={{
+                  inputWrapper: "!bg-gray-900 rounded-full",
+                  input:
+                    "text-white !text-regular-sm placeholder:text-gray-500",
+                }}
+                placeholder="Type your message"
+              />
+              {errors.message?.message && (
+                <Typography className="text-red-500 text-[12px]">
+                  {errors.message.message}
+                </Typography>
+              )}
+            </div>
           )}
         />
+
         <Button
+          type="submit"
           size="sm"
           variant="outlined"
           className="py-4"
           classNames={{ label: "text-semibold-base" }}
+          loading={isSubmitting}
         >
-          Submit message
+          {isSubmitting ? "Sending..." : "Submit message"}
         </Button>
       </form>
     </motion.section>

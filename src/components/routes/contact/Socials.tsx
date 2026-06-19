@@ -66,14 +66,15 @@ export const SocialLinks = () => {
       {/* SOCIAL LINK */}
       <div className="flex justify-between md:justify-start gap-4">
         {SOCIAL_LINKS.map(({ id, icon, link }) => (
-          <Button
-            key={id}
-            href={link}
-            variant="tetiary"
-            classNames={{ root: "p-3 bg-gray-50" }}
-          >
-            <span className="stroke-gray-30 fill-[#98A2B3]">{icon}</span>
-          </Button>
+          <Link key={id} href={link} target="_blank">
+            <Button
+              href={link}
+              variant="tetiary"
+              classNames={{ root: "p-3 bg-gray-50" }}
+            >
+              <span className="stroke-gray-30 fill-[#98A2B3]">{icon}</span>
+            </Button>
+          </Link>
         ))}
       </div>
     </div>
