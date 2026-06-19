@@ -7,6 +7,8 @@ import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { BLOG_POST } from "@/utils/constants";
 
+const MIN_BLOG_FOR_PAGINATION = 6;
+
 export const BlogFeed = () => {
   const { set } = useQueryParams();
   return (
@@ -52,11 +54,13 @@ export const BlogFeed = () => {
         </AnimatedBlock>
       </div>
 
-      <AppPagination
-        page={1}
-        total={10}
-        onChange={(page) => set(PageQueryKey.PAGE, page)}
-      />
+      {BLOG_POST.length > MIN_BLOG_FOR_PAGINATION && (
+        <AppPagination
+          page={1}
+          total={10}
+          onChange={(page) => set(PageQueryKey.PAGE, page)}
+        />
+      )}
     </PageSection>
   );
 };

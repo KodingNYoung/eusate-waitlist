@@ -97,7 +97,10 @@ export type PricingPlan = {
   label: string;
   price: number;
   redirect: InternalPath;
-  features: string[];
+  features: {
+    text: string;
+    checked: boolean;
+  }[];
   recomended?: boolean;
   action: () => void;
 };
