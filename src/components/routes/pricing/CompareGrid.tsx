@@ -1,9 +1,9 @@
 import Chip from "@/components/shared/molecules/Chip";
 import Typography from "@/components/shared/atoms/Typography";
-import { InfoCircleIcon, TickCircleIcon } from "@/assets/icons";
+import { TickCircleIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { CategoryList, CompareCategoryData, FC } from "@/utils/types";
-import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { motion } from "framer-motion";
 import { ComparePlanCat1 } from "@/utils/enum";
 
 type Props = {
@@ -13,117 +13,140 @@ type Props = {
 };
 
 export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
+  const plans = data.map((plan) => ({
+    ...plan,
+    categoryMap: new Map(plan.categories.map((c) => [c.key, c])),
+  }));
+
   return (
     <div className="w-full overflow-x-auto">
-      <div className="grid grid-cols-4 border border-gray-100 rounded-3xl min-w-[800px] md:w-full">
-        <header className="items-start -b">
-          <div className="flex items-end h-[168px] p-2 min-w-64">
-            <Typography
-              variant="bold-xl"
-              className="p-4 text-bold-base md:text-bold-xl"
-            >
-              {headerTitle}
-            </Typography>
-          </div>
-          <div className="">
-            {headers.map(({ id, label, items }) => (
-              <CategoryHeader key={id} title={label} items={items} />
-            ))}
-          </div>
-        </header>
-
-        {data.map(({ key, label, price, categories, action }) => (
-          <section key={key} className="grid items-start">
-            <header className="border-l flex flex-col justify-between h-[168px] p-4">
-              <Chip
-                variant="light"
-                className="text-semibold-sm md:text-semibold-base"
-              >
-                {label}
-              </Chip>
+      <table className="w-full min-w-[800px] border-separate border-spacing-0 overflow-hidden rounded-3xl border border-gray-100">
+        <thead>
+          <tr>
+            <th className="pb-[10px] text-left align-bottom min-w-[231px]">
               <Typography
-                variant="bold-5xl"
-                className="flex flex-wrap items-end text-bold-4xl md:text-bold-5xl"
+                variant="bold-xl"
+                className="text-bold-base md:text-bold-xl p-8 "
               >
-                ${price}
-                <span className="text-semibold-base text-gray-400">
-                  /per month
-                </span>
+                {headerTitle}
               </Typography>
-            </header>
-            <div className="">
-              {categories.map(({ key, features }) => (
-                <AnimatedBlock key={key}>
-                  <div key={key} className="border-t border-l h-[284px]">
-                    <div className="translate-y-[45px]">
-                      {Object.values(features).map((v) => (
-                        <CategoryData key={key} value={v} />
-                      ))}
-                    </div>
+            </th>
+            {data.map(({ key, label, price }) => (
+              <th
+                key={key}
+                scope="col"
+                className="border-l pt-6 pb-[10px] text-left align-top min-w-[241px]"
+              >
+                <div className="flex flex-col gap-[10px]">
+                  <div className="px-8">
+                    <Chip
+                      variant="light"
+                      classNames={{
+                        container: "w-full",
+                        content: "text-semibold-sm md:text-semibold-base",
+                      }}
+                    >
+                      {label}
+                    </Chip>
                   </div>
-                </AnimatedBlock>
-              ))}
-            </div>
-            <div className="border-l p-4">
-              <Button size="sm" className="py-4 w-full" onClick={action}>
-                Get started
-              </Button>
-            </div>
-          </section>
+                  <Typography
+                    variant="bold-5xl"
+                    className="flex p-8 flex-wrap items-end text-bold-4xl md:text-bold-5xl"
+                  >
+                    ${price}
+                    <span className="text-semibold-base text-gray-400">
+                      /per month
+                    </span>
+                  </Typography>
+                </div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+
+        {headers.map(({ id, key: categoryKey, label, items }) => (
+          <motion.tbody
+            key={id}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {items.map(({ key: itemKey, label: itemLabel }) => (
+              <tr key={itemKey}>
+                {itemKey === ComparePlanCat1.HEADER ? (
+                  <th
+                    // colSpan={1 + data.length}
+                    scope="row"
+                    className="border-t p-6 text-left"
+                  >
+                    <Typography
+                      variant="bold-lg"
+                      className="text-gray-900 text-bold-base md:text-bold-lg"
+                    >
+                      {label}
+                    </Typography>
+                  </th>
+                ) : (
+                  <th scope="row" className="p-6 text-left font-normal">
+                    <div className="flex items-center justify-between gap-2">
+                      <Typography
+                        variant="medium-lg"
+                        className="text-gray-700 text-medium-sm md:text-medium-lg"
+                      >
+                        {itemLabel}
+                      </Typography>
+                    </div>
+                  </th>
+                )}
+
+                {plans.map(({ key: planKey, categoryMap }) => (
+                  <td
+                    key={planKey}
+                    className={`border-l p-4 text-center ${
+                      itemKey === ComparePlanCat1.HEADER ? "border-t" : ""
+                    }`}
+                  >
+                    <CategoryValue
+                      value={categoryMap.get(categoryKey)?.features[itemKey]}
+                    />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </motion.tbody>
         ))}
-      </div>
+
+        <tfoot>
+          <tr>
+            <td className="p-4" />
+            {data.map(({ key, action }) => (
+              <td key={key} className="border-l p-4">
+                <Button size="sm" className="py-4 w-full" onClick={action}>
+                  Get started
+                </Button>
+              </td>
+            ))}
+          </tr>
+        </tfoot>
+      </table>
     </div>
   );
 };
 
-type CategoryDataProp = {
-  value: boolean | { value: number };
+type CategoryValueProp = {
+  value: boolean | { details: string | null } | undefined;
 };
 
-const CategoryData: FC<CategoryDataProp> = ({ value }) => {
-  return (
-    <div className="flex items-center justify-center p-4">
-      <div>
-        {typeof value === "boolean" && (
-          <span className="text-center">{value ? TickCircleIcon : "-"}</span>
-        )}
-        {typeof value === "object" && (
-          <Typography className="text-center">{value.value}</Typography>
-        )}
-      </div>
-    </div>
-  );
-};
-
-type CategoryHeaderProps = {
-  title: string;
-  items: CategoryList["items"];
-};
-
-const CategoryHeader = ({ title, items }: CategoryHeaderProps) => {
-  return (
-    <div className="p-4 space-y-4 h-[284px] border-t">
-      <Typography
-        variant="bold-lg"
-        className="text-gray-900 text-bold-base md:text-bold-lg"
-      >
-        {title}
-      </Typography>
-      <div className="grid gap-8">
-        {items.map(({ key, label }) => (
-          <div key={key} className="flex justify-between w-full">
-            <Typography
-              variant="medium-lg"
-              className="text-gray-700 text-medium-sm md:text-medium-lg"
-            >
-              {label}
-            </Typography>
-            {key !== ComparePlanCat1.SHARED_INBOX_2 && (
-              <span className="stroke-gray-300">{InfoCircleIcon}</span>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+const CategoryValue: FC<CategoryValueProp> = ({ value }) => {
+  if (typeof value === "boolean") {
+    return (
+      <span className="flex justify-center mx-auto text-center w-full">
+        {value ? TickCircleIcon : "-"}
+      </span>
+    );
+  }
+  if (typeof value === "object" && value !== null) {
+    return <Typography className="text-center">{value.details}</Typography>;
+  }
+  return <span className="block text-center text-gray-300">-</span>;
 };

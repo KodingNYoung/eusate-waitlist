@@ -3,8 +3,7 @@ import {
   AddOn,
   Blog,
   CategoryList,
-  CompareCategory,
-  CompareCategoryKey,
+  CompareCategoryData,
   HDFeature,
   HelpCenterTab,
   IntegrationPricing,
@@ -17,6 +16,7 @@ import {
   ComparePlanCat1,
   HelpCenterKey,
   Plan,
+  PlanLabel,
   ProductKey,
   PublicExtras,
 } from "./enum";
@@ -34,9 +34,9 @@ export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
 
 export const PLAN_COST = {
   FREE: 0,
-  PRO: 49.99,
-  MEDIUM: 14.99,
   BASIC: 4.99,
+  PREMIUM: 14.99,
+  PRO: 49.99,
 } as const;
 
 export const ROUTES = {
@@ -198,7 +198,7 @@ export const PRICING: PricingPlan[] = [
   {
     id: 1,
     key: Plan.FREE,
-    label: "Free Plan",
+    label: PlanLabel.FREE,
     price: PLAN_COST.FREE,
     redirect: "/signup",
     features: [
@@ -219,7 +219,7 @@ export const PRICING: PricingPlan[] = [
   {
     id: 2,
     key: Plan.BASIC,
-    label: "Basic Plan",
+    label: PlanLabel.BASIC,
     price: PLAN_COST.BASIC,
     redirect: "/signup",
     features: [
@@ -240,9 +240,9 @@ export const PRICING: PricingPlan[] = [
 
   {
     id: 3,
-    key: Plan.MEDIUM,
-    label: "Medium Plan",
-    price: PLAN_COST.MEDIUM,
+    key: Plan.PREMINUM,
+    label: PlanLabel.PREMINUM,
+    price: PLAN_COST.PREMIUM,
     redirect: "/signup",
     features: [
       { text: "Chat SDK", checked: true },
@@ -263,7 +263,7 @@ export const PRICING: PricingPlan[] = [
   {
     id: 4,
     key: Plan.PRO,
-    label: "Pro Plan",
+    label: PlanLabel.PRO,
     price: PLAN_COST.PRO,
     redirect: "/signup",
     recomended: true,
@@ -288,84 +288,140 @@ export const CATEGORY_LIST: CategoryList[] = [
   {
     id: 1,
     key: "cat-1",
-    label: "Category",
+    label: "Platform Essentials",
     items: [
       {
+        key: ComparePlanCat1.HEADER,
+        label: "Platform Essentials",
+      },
+      {
         key: ComparePlanCat1.FEATURE,
-        label: "Feature",
+        label: "Knowledge Base Storage",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_1,
-        label: "Shared Inbox",
+        label: "Chat SDK",
       },
       {
         key: ComparePlanCat1.AI_SUMMARIZE,
-        label: "AI Sumaarize",
-      },
-      {
-        key: ComparePlanCat1.SHARED_INBOX_2,
-        label: "Shared Inbox",
+        label: "Playground",
       },
     ],
   },
   {
     id: 2,
     key: "cat-2",
-    label: "Category",
+    label: "Team & Workflow",
     items: [
       {
+        key: ComparePlanCat1.HEADER,
+        label: "Team & Workflow",
+      },
+      {
         key: ComparePlanCat1.FEATURE,
-        label: "Feature",
+        label: "Human Agent Seats",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_1,
-        label: "Shared Inbox",
+        label: "Saved Responses",
       },
       {
         key: ComparePlanCat1.AI_SUMMARIZE,
-        label: "AI Sumaarize",
+        label: "AI Chat Monitoring",
+      },
+      // {
+      //   key: ComparePlanCat1.SHARED_INBOX_2,
+      //   label: "Shared Inbox",
+      // },
+    ],
+  },
+  {
+    id: 3,
+    key: "cat-3",
+    label: "AI & Automation",
+    items: [
+      {
+        key: ComparePlanCat1.HEADER,
+        label: "AI & Automation",
+      },
+      {
+        key: ComparePlanCat1.FEATURE,
+        label: "AI Tokens",
+      },
+      {
+        key: ComparePlanCat1.SHARED_INBOX_1,
+        label: "Copilot Support",
+      },
+      {
+        key: ComparePlanCat1.AI_SUMMARIZE,
+        label: "AI Call",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_2,
-        label: "Shared Inbox",
+        label: "Devspace Functions",
+      },
+    ],
+  },
+  {
+    id: 4,
+    key: "cat-4",
+    label: "Flexibility",
+    items: [
+      {
+        key: ComparePlanCat1.HEADER,
+        label: "Flexibility",
+      },
+      {
+        key: ComparePlanCat1.FEATURE,
+        label: "Add-ons",
       },
     ],
   },
 ];
 
-export const COMPARE_PRICING_LIST: {
-  id: number;
-  key: Plan;
-  label: string;
-  price: number;
-  categories: {
-    key: CompareCategoryKey;
-    features: { [cat in CompareCategory]: boolean | { value: number } };
-  }[];
-  action: () => void;
-}[] = [
+export const COMPARE_PRICING_LIST: CompareCategoryData[] = [
   {
     id: 1,
     key: Plan.FREE,
-    label: "Free Plan",
+    label: PlanLabel.FREE,
     price: PLAN_COST.FREE,
     categories: [
       {
         key: "cat-1",
         features: {
-          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "512KB" },
           [ComparePlanCat1.SHARED_INBOX_1]: false,
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
-          [ComparePlanCat1.SHARED_INBOX_2]: { value: 50 },
+          [ComparePlanCat1.AI_SUMMARIZE]: { details: "Full Access" },
+          // [ComparePlanCat1.SHARED_INBOX_2]: { details: null },
         },
       },
       {
         key: "cat-2",
         features: {
-          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: false,
+          [ComparePlanCat1.AI_SUMMARIZE]: true,
+          // [ComparePlanCat1.SHARED_INBOX_2]: { details: null },
+        },
+      },
+      {
+        key: "cat-3",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "50K" },
+          [ComparePlanCat1.SHARED_INBOX_1]: { details: "0 msgs/ticket" },
           [ComparePlanCat1.AI_SUMMARIZE]: false,
-          [ComparePlanCat1.SHARED_INBOX_2]: { value: 50 },
+          [ComparePlanCat1.SHARED_INBOX_2]: { details: "0" },
+          // [ComparePlanCat1.SHARED_INBOX_3]: { details: null},
+        },
+      },
+      {
+        key: "cat-4",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "Disallowed" },
         },
       },
     ],
@@ -374,25 +430,87 @@ export const COMPARE_PRICING_LIST: {
   {
     id: 2,
     key: Plan.BASIC,
-    label: "Basic Plan",
+    label: PlanLabel.BASIC,
     price: PLAN_COST.BASIC,
     categories: [
       {
         key: "cat-1",
         features: {
-          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "2MB" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
-          [ComparePlanCat1.AI_SUMMARIZE]: false,
-          [ComparePlanCat1.SHARED_INBOX_2]: { value: 150 },
+          [ComparePlanCat1.AI_SUMMARIZE]: { details: "Full Access" },
         },
       },
       {
         key: "cat-2",
         features: {
-          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
+          [ComparePlanCat1.AI_SUMMARIZE]: true,
+        },
+      },
+      {
+        key: "cat-3",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "200K" },
+          [ComparePlanCat1.SHARED_INBOX_1]: { details: "5 msgs/ticket" },
           [ComparePlanCat1.AI_SUMMARIZE]: false,
-          [ComparePlanCat1.SHARED_INBOX_2]: { value: 150 },
+          [ComparePlanCat1.SHARED_INBOX_2]: { details: "5" },
+          [ComparePlanCat1.SHARED_INBOX_3]: { details: "0" },
+        },
+      },
+      {
+        key: "cat-4",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "Allowed" },
+        },
+      },
+    ],
+    action: () => {},
+  },
+  {
+    id: 3,
+    key: Plan.PREMINUM,
+    label: PlanLabel.PREMINUM,
+    price: PLAN_COST.PREMIUM,
+    categories: [
+      {
+        key: "cat-1",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "5MB" },
+          [ComparePlanCat1.SHARED_INBOX_1]: true,
+          [ComparePlanCat1.AI_SUMMARIZE]: { details: "Full Access" },
+        },
+      },
+      {
+        key: "cat-2",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
+          [ComparePlanCat1.SHARED_INBOX_1]: true,
+          [ComparePlanCat1.AI_SUMMARIZE]: true,
+        },
+      },
+      {
+        key: "cat-3",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "1M" },
+          [ComparePlanCat1.SHARED_INBOX_1]: { details: "20 msgs/ticket" },
+          [ComparePlanCat1.AI_SUMMARIZE]: { details: "5 min/session" },
+          [ComparePlanCat1.SHARED_INBOX_2]: { details: "10" },
+        },
+      },
+      {
+        key: "cat-4",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "Allowed" },
         },
       },
     ],
@@ -407,19 +525,36 @@ export const COMPARE_PRICING_LIST: {
       {
         key: "cat-1",
         features: {
-          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "20MB" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
-          [ComparePlanCat1.AI_SUMMARIZE]: true,
-          [ComparePlanCat1.SHARED_INBOX_2]: { value: 500 },
+          [ComparePlanCat1.AI_SUMMARIZE]: { details: "Full Access" },
         },
       },
       {
         key: "cat-2",
         features: {
-          [ComparePlanCat1.FEATURE]: true,
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
           [ComparePlanCat1.AI_SUMMARIZE]: true,
-          [ComparePlanCat1.SHARED_INBOX_2]: { value: 500 },
+        },
+      },
+      {
+        key: "cat-3",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "10M" },
+          [ComparePlanCat1.SHARED_INBOX_1]: { details: "Unlimited" },
+          [ComparePlanCat1.AI_SUMMARIZE]: { details: "5 min/session" },
+          [ComparePlanCat1.SHARED_INBOX_2]: { details: "20" },
+        },
+      },
+      {
+        key: "cat-4",
+        features: {
+          [ComparePlanCat1.HEADER]: { details: null },
+          [ComparePlanCat1.FEATURE]: { details: "Allowed" },
         },
       },
     ],

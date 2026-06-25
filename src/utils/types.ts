@@ -70,7 +70,7 @@ export type FC<PropsType = unknown> = {
   displayName?: string;
 };
 
-export type CompareCategoryKey = "cat-1" | "cat-2";
+export type CompareCategoryKey = "cat-1" | "cat-2" | "cat-3" | "cat-4";
 export type CompareCategory =
   (typeof ComparePlanCat1)[keyof typeof ComparePlanCat1];
 export type CompareCategoryData = {
@@ -80,7 +80,9 @@ export type CompareCategoryData = {
   price: number;
   categories: {
     key: CompareCategoryKey;
-    features: { [cat in CompareCategory]: boolean | { value: number } };
+    features: {
+      [cat in CompareCategory]?: boolean | { details: string | null };
+    };
   }[];
   action: () => void;
 };
