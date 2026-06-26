@@ -2,14 +2,23 @@ export enum Plan {
   FREE = "free",
   PRO = "pro",
   BASIC = "basic",
-  MEDIUM = "medium",
+  PREMINUM = "premium",
+}
+
+export enum PlanLabel {
+  FREE = "Free",
+  PRO = "Pro",
+  BASIC = "Basic",
+  PREMINUM = "Premium",
 }
 
 export enum ComparePlanCat1 {
+  HEADER = "header",
   FEATURE = "feature",
   SHARED_INBOX_1 = "shared-inbox-1",
   AI_SUMMARIZE = "ai-summarize",
   SHARED_INBOX_2 = "shared-inbox-2",
+  SHARED_INBOX_3 = "shared-inbox-3",
 }
 
 export enum PublicExtras {
