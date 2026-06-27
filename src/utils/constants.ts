@@ -1482,7 +1482,7 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 export const BLOG_POST: Blog[] = [
   {
     id: "3f1a2b4e-8d5c-4f6b-9a7e-2c1d8b9f0e6a",
-    imgSrc: "/images/business-men.webp", // Placeholder path for the image
+    imgSrc: "/blogs/10-signs.webp", // Placeholder path for the image
     title: "10 Signs Your Business Has Outgrown Its Customer Support System",
     summary:
       "Growth has a way of exposing cracks in your customer service. Learn the 10 warning signs that your current support system is holding your business back—and how to fix it before your customers notice.",
@@ -1572,7 +1572,7 @@ export const BLOG_POST: Blog[] = [
   },
   {
     id: "can-ai-replace-customer-support-teams",
-    imgSrc: "/images/business-men.webp",
+    imgSrc: "/blogs/can-ai-replace.webp",
     title: "Can AI Replace Customer Support Teams?",
     summary:
       "The short answer is no, but the real future is much more interesting. Discover why the ultimate customer service strategy isn't humans vs. AI—it's humans and AI working together.",
