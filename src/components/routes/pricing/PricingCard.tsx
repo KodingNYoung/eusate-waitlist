@@ -6,7 +6,7 @@ import {
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
 import Chip from "@/components/shared/molecules/Chip";
-import { ROUTES } from "@/utils/constants";
+import { CURRENCY_SYMBOLS, FE_URL, ROUTES } from "@/utils/constants";
 import { cls } from "@/utils/helpers";
 import { FC, InternalPath } from "@/utils/types";
 import Link from "next/link";
@@ -18,6 +18,8 @@ type Props = {
   redirect: InternalPath;
   features: { text: string; checked: boolean }[];
   recomended?: boolean;
+  convert?: (amount: number) => number;
+  symbol?: string;
 };
 
 export const PricingCard: FC<Props> = ({
@@ -27,6 +29,8 @@ export const PricingCard: FC<Props> = ({
   redirect,
   recomended,
   showCompare,
+  convert,
+  symbol,
 }) => {
   return (
     <div
@@ -59,11 +63,12 @@ export const PricingCard: FC<Props> = ({
         </Chip>
         <Typography
           data-featured={recomended}
-          variant="bold-5xl"
-          className="flex flex-wrap items-end data-[featured=true]:text-white"
+          variant="bold-4xl"
+          className="flex flex-col items-start data-[featured=true]:text-white"
         >
-          ${price}
-          <span className="text-semibold-base text-white-400">/per month</span>
+          {symbol || CURRENCY_SYMBOLS.USD}
+          {(convert ? convert(price) : price).toLocaleString("en-US")}
+          <span className="text-semibold-base text-white-400">per month</span>
         </Typography>
       </header>
       <div className="grid gap-6 py-6">
@@ -82,7 +87,7 @@ export const PricingCard: FC<Props> = ({
         ))}
       </div>
       <div className="grid gap-4">
-        <Link href={process.env.NEXT_PUBLIC_BASE_URL + redirect}>
+        <Link href={FE_URL + redirect}>
           <Button
             className="py-3 w-full"
             variant={recomended ? "outlined" : "primary"}

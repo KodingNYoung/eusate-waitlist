@@ -5,13 +5,13 @@ import { imageVariants } from "./utils";
 
 type Props = {
   direction: -1 | 1;
-  t: Testimonial;
+  testimonial: Testimonial;
 };
-export const ImageAnimated: FC<Props> = ({ direction, t }) => {
+export const ImageAnimated: FC<Props> = ({ direction, testimonial }) => {
   return (
     <AnimatePresence mode="wait" custom={direction}>
       <motion.div
-        key={t.id + "-img"}
+        key={testimonial.id + "-img"}
         custom={direction}
         variants={imageVariants}
         initial="enter"
@@ -21,8 +21,8 @@ export const ImageAnimated: FC<Props> = ({ direction, t }) => {
         <div className="relative w-[90vw] md:w-[395px] h-[540px]">
           <Image
             fill
-            src={t.imgSrc}
-            alt={t.company}
+            src={testimonial.imgSrc}
+            alt={testimonial.company}
             className="object-cover z-3 rounded-x24"
           />
         </div>

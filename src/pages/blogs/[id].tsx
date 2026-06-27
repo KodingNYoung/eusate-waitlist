@@ -16,7 +16,10 @@ const BlogPost = () => {
       >
         <AnimatedBlock variants={fadeVariants} duration={2}>
           <PageSection
-            classNames={{ base: "py-20 md:py-24 px-5", container: "gap-y-10" }}
+            classNames={{
+              base: "py-20 md:py-24 px-5",
+              container: "gap-y-10 !max-w-[1080px]",
+            }}
           >
             <BackButton />
             <Post />

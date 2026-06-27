@@ -10,10 +10,10 @@ import {
   PricingPlan,
   ProductsTab,
   ReportFeature,
-  Testimonial,
 } from "./types";
 import {
   ComparePlanCat1,
+  Currency,
   HelpCenterKey,
   Plan,
   PlanLabel,
@@ -24,13 +24,15 @@ import {
   CodeLinearIcon,
   KeyFeatureIcon,
   LogoIcon,
-  ReportIcon,
+  // ReportIcon,
 } from "@/assets/icons";
 
 export const MAX_WIDTH = "120px";
 export const MOBILE_WIDTH = "(max-width: 550px)";
 
-export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL;
+export const API_BASEURL = process.env.NEXT_PUBLIC_BACKEND_ENDPOINT_URL ?? "";
+export const FE_URL = process.env.NEXT_PUBLIC_FE_URL ?? "";
+export const EUSATE_API_KEY = process.env.NEXT_PUBLIC_EUSATE_API_KEY ?? "";
 
 export const PLAN_COST = {
   FREE: 0,
@@ -58,6 +60,11 @@ export const ROUTES = {
   PLAYGROUND: "/playground",
   CONTACT: "/contact",
 } as const;
+
+export const CURRENCY_SYMBOLS: Record<Currency, string> = {
+  [Currency.USD]: "$",
+  [Currency.NGN]: "₦",
+};
 
 export const EUSATE_SOCIALS = {
   LINKEDIN: "https://www.linkedin.com/company/eusate/",
@@ -200,7 +207,7 @@ export const PRICING: PricingPlan[] = [
     key: Plan.FREE,
     label: PlanLabel.FREE,
     price: PLAN_COST.FREE,
-    redirect: "/signup",
+    redirect: "/sign-up",
     features: [
       { text: "Chat SDK", checked: true },
       { text: "Playground access", checked: true },
@@ -221,7 +228,7 @@ export const PRICING: PricingPlan[] = [
     key: Plan.BASIC,
     label: PlanLabel.BASIC,
     price: PLAN_COST.BASIC,
-    redirect: "/signup",
+    redirect: "/sign-up",
     features: [
       { text: "Chat SDK", checked: true },
       { text: "Playground access", checked: true },
@@ -243,7 +250,7 @@ export const PRICING: PricingPlan[] = [
     key: Plan.PREMINUM,
     label: PlanLabel.PREMINUM,
     price: PLAN_COST.PREMIUM,
-    redirect: "/signup",
+    redirect: "/sign-up",
     features: [
       { text: "Chat SDK", checked: true },
       { text: "Playground access", checked: true },
@@ -265,7 +272,7 @@ export const PRICING: PricingPlan[] = [
     key: Plan.PRO,
     label: PlanLabel.PRO,
     price: PLAN_COST.PRO,
-    redirect: "/signup",
+    redirect: "/sign-up",
     recomended: true,
     features: [
       { text: "Chat SDK", checked: true },
@@ -297,14 +304,20 @@ export const CATEGORY_LIST: CategoryList[] = [
       {
         key: ComparePlanCat1.FEATURE,
         label: "Knowledge Base Storage",
+        tooltip:
+          "Space to store your docs, FAQs, and files so your AI can pull accurate answers from them.",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_1,
         label: "Chat SDK",
+        tooltip:
+          "A code toolkit for embedding the Eusate chat widget on your own website or app.",
       },
       {
         key: ComparePlanCat1.AI_SUMMARIZE,
         label: "Playground",
+        tooltip:
+          "A private space to test and fine-tune your AI assistant before it goes live for customers.",
       },
     ],
   },
@@ -320,19 +333,21 @@ export const CATEGORY_LIST: CategoryList[] = [
       {
         key: ComparePlanCat1.FEATURE,
         label: "Human Agent Seats",
+        tooltip:
+          "Number of teammates who can log in and chat with customers directly.",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_1,
         label: "Saved Responses",
+        tooltip:
+          "Ready-made replies your team can drop into a chat instead of retyping the same answer.",
       },
       {
         key: ComparePlanCat1.AI_SUMMARIZE,
         label: "AI Chat Monitoring",
+        tooltip:
+          "Your human agents can watch AI conversations live and step in at any time.",
       },
-      // {
-      //   key: ComparePlanCat1.SHARED_INBOX_2,
-      //   label: "Shared Inbox",
-      // },
     ],
   },
   {
@@ -347,18 +362,26 @@ export const CATEGORY_LIST: CategoryList[] = [
       {
         key: ComparePlanCat1.FEATURE,
         label: "AI Tokens",
+        tooltip:
+          "The 'fuel' your AI uses to read and respond to messages — longer conversations use more tokens.",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_1,
         label: "Copilot Support",
+        tooltip:
+          "AI-suggested replies your agents can use while chatting, capped at this many messages per ticket.",
       },
       {
         key: ComparePlanCat1.AI_SUMMARIZE,
         label: "AI Call",
+        tooltip:
+          "Lets your AI assistant handle live voice calls, up to 5 minutes per session.",
       },
       {
         key: ComparePlanCat1.SHARED_INBOX_2,
         label: "Devspace Functions",
+        tooltip:
+          "Custom functions you can write to connect Eusate to your own tools and automate workflows.",
       },
     ],
   },
@@ -374,6 +397,8 @@ export const CATEGORY_LIST: CategoryList[] = [
       {
         key: ComparePlanCat1.FEATURE,
         label: "Add-ons",
+        tooltip:
+          "Whether you can buy extra storage, seats, tokens, or functions beyond your plan's limits.",
       },
     ],
   },
@@ -569,7 +594,7 @@ export const ADD_ON_LIST: AddOn[] = [
     title: "Sate tokens",
     description: "Every AI activity feeds off the sate tokens.",
     price: 4,
-    size: "per 1 million S8 tokens",
+    size: "per 1M S8 tokens",
   },
   {
     id: 2,
@@ -1369,14 +1394,14 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     label: "Dev space",
     content: "/home/images/devspace.webp",
   },
-  {
-    id: 4,
-    icon: ReportIcon,
-    key: ProductKey.REPORTS,
-    link: ROUTES.REPORTS,
-    label: "Reports",
-    content: "/home/images/reports.webp",
-  },
+  // {
+  //   id: 4,
+  //   icon: ReportIcon,
+  //   key: ProductKey.REPORTS,
+  //   link: ROUTES.REPORTS,
+  //   label: "Reports",
+  //   content: "/home/images/reports.webp",
+  // },
   {
     id: 5,
     icon: LogoIcon,
@@ -1384,65 +1409,6 @@ export const PRODUCTS_TAB: ProductsTab[] = [
     link: ROUTES.PLAYGROUND,
     label: "AI Playground",
     content: "/home/images/ai-playground.webp",
-  },
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 1,
-    imgSrc: "/home/images/testimony-1.webp",
-    theme: "#F8CFCA",
-    testimony:
-      "We went from 5 support agents to just 1, and our response times got faster. SATE handles everything from password resets to complex refund scenarios. It's genuinely impressive how human the conversations feel.",
-    name: "Marcus Rodriquez",
-    role: "Co-Founder, ",
-    company: "LYNT (E-commerce, Series A)",
-    stats: [
-      { value: "80%", label: "drop cx team hires" },
-      { value: "20%", label: "saved on hiring costs" },
-    ],
-  },
-  {
-    id: 2,
-    testimony:
-      "SATE transformed our customer support overnight. We used to dread Monday mornings — now our inbox practically handles itself. The AI understands context in a way that genuinely shocked our team.",
-    name: "Priya Nair",
-    theme: "#F3E5B2",
-    role: "Head of CX, Bloom (DTC Beauty, Seed)",
-    company: "bloom",
-    stats: [
-      { value: "3×", label: "faster resolution time" },
-      { value: "94%", label: "customer satisfaction" },
-    ],
-    imgSrc: "/home/images/testimony-1.webp",
-  },
-  {
-    id: 3,
-    testimony:
-      "I was skeptical at first — how could AI replace the nuanced judgment of our top agents? Six months in, SATE handles 90% of tickets and our agents focus only on edge cases. It's been revelatory.",
-    name: "Jordan Lee",
-    theme: "#BEDDFD",
-    role: "VP Operations, Stackly (B2B SaaS, Series B)",
-    company: "stackly",
-    stats: [
-      { value: "90%", label: "tickets auto-resolved" },
-      { value: "40%", label: "cost reduction" },
-    ],
-    imgSrc: "/home/images/testimony-1.webp",
-  },
-  {
-    id: 4,
-    testimony:
-      "The onboarding was seamless and the results were immediate. Within the first week, SATE was already resolving complex billing disputes without escalation. Our team actually feels less stressed now.",
-    name: "Amara Osei",
-    theme: "#B6E9D1",
-    role: "Founder, Kora (Fintech, Pre-Seed)",
-    company: "kora",
-    stats: [
-      { value: "65%", label: "fewer escalations" },
-      { value: "2 days", label: "to full deployment" },
-    ],
-    imgSrc: "/home/images/testimony-1.webp",
   },
 ];
 

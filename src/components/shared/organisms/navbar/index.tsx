@@ -10,7 +10,7 @@ import Logo from "../../atoms/Logo";
 import { cls } from "@/utils/helpers";
 import styles from "./style.module.css";
 import { MobileNav } from "./MobileNav";
-import { ROUTES } from "@/utils/constants";
+import { FE_URL, ROUTES } from "@/utils/constants";
 import { NAV_EXPLORE_LIST } from "./utils";
 import Button from "../../molecules/Button";
 import { AnimatePresence } from "framer-motion";
@@ -77,12 +77,12 @@ const Navbar = () => {
             <span className="text-gray-100">|</span>
             <div className="flex items-center gap-6">
               <Link
-                href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.LOGIN}
+                href={FE_URL + ROUTES.LOGIN}
                 className="text-medium-sm text-gray-500"
               >
                 Login
               </Link>
-              <Link href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}>
+              <Link href={FE_URL + ROUTES.SIGNUP}>
                 <Button
                   endContent={
                     <span className="stroke-white">{ArrowRight}</span>

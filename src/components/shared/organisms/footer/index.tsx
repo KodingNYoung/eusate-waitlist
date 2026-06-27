@@ -3,7 +3,7 @@ import Image from "next/image";
 import Logo from "../../atoms/Logo";
 import Typography from "../../atoms/Typography";
 import Button from "../../molecules/Button";
-import { ROUTES } from "@/utils/constants";
+import { FE_URL, ROUTES } from "@/utils/constants";
 import { FOOTER_EXPLORE_LIST } from "../navbar/utils";
 import { ArrowRightIcon } from "@/assets/icons";
 import { SocialTerms } from "./SocialTerms";
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="flex w-full mb-20 justify-center relative z-5 pt-10 md:pt-0">
-          <Link href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.SIGNUP}>
+          <Link href={FE_URL + ROUTES.SIGNUP}>
             <Button
               size="sm"
               variant="outlined"

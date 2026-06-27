@@ -840,9 +840,9 @@ export const TickCircleIcon = (
     <path
       d="M7.75 12.0019L10.58 14.8319L16.25 9.17188"
       stroke="#101828"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -929,14 +929,14 @@ export const SuccessCheckIcon = (
       height="56"
       rx="28"
       stroke="#E7F8F0"
-      stroke-width="10"
+      strokeWidth="10"
     />
     <path
       d="M45.1449 32.4267V33.5C45.1434 36.0158 44.3288 38.4638 42.8224 40.4788C41.3161 42.4938 39.1987 43.9679 36.7861 44.6812C34.3735 45.3945 31.795 45.3089 29.4351 44.437C27.0752 43.5652 25.0603 41.9538 23.691 39.8433C22.3217 37.7327 21.6713 35.2361 21.8368 32.7257C22.0023 30.2153 22.9749 27.8257 24.6095 25.9133C26.2441 24.0008 28.4531 22.668 30.9071 22.1135C33.361 21.5591 35.9285 21.8127 38.2265 22.8367M45.1449 24.1667L33.4782 35.845L29.9782 32.345"
       stroke="#12B76A"
-      stroke-width="2.33333"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2.33333"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -966,18 +966,18 @@ export const ArrowRight = (
     <path
       d="M12.0249 4.94141L17.0832 9.99974L12.0249 15.0581"
       stroke={"inherit"}
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M2.91675 10H16.9417"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -991,8 +991,8 @@ export const XIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M12.8631 18.3333L8.23857 11.7418L2.44925 18.3333H0L7.15193 10.1926L0 0H6.28829L10.6468 6.21252L16.1079 0H18.5572L11.7371 7.76374L19.1514 18.3333H12.8631ZM15.5906 16.475H13.9417L3.50696 1.85833H5.15612L9.33529 7.71097L10.058 8.72655L15.5906 16.475Z"
       fill="#98A2B3"
     />
@@ -1051,9 +1051,9 @@ export const SendYellowIcon = (
     <path
       d="M10.1094 13.6525L13.6894 10.0625"
       stroke="#101828"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -1069,12 +1069,12 @@ export const LocationIcon = (
     <path
       d="M9.99844 11.1922C11.4344 11.1922 12.5984 10.0281 12.5984 8.59219C12.5984 7.15625 11.4344 5.99219 9.99844 5.99219C8.5625 5.99219 7.39844 7.15625 7.39844 8.59219C7.39844 10.0281 8.5625 11.1922 9.99844 11.1922Z"
       stroke="#F79009"
-      stroke-width="1.5"
+      strokeWidth="1.5"
     />
     <path
       d="M3.0148 7.0724C4.65646 -0.144269 15.3481 -0.135935 16.9815 7.08073C17.9398 11.3141 15.3065 14.8974 12.9981 17.1141C11.3231 18.7307 8.67313 18.7307 6.9898 17.1141C4.6898 14.8974 2.05646 11.3057 3.0148 7.0724Z"
       stroke="#F79009"
-      stroke-width="1.5"
+      strokeWidth="1.5"
     />
   </svg>
 );
@@ -1090,18 +1090,18 @@ export const SmsIcon = (
     <path
       d="M14.1641 17.0807H5.83073C3.33073 17.0807 1.66406 15.8307 1.66406 12.9141V7.08073C1.66406 4.16406 3.33073 2.91406 5.83073 2.91406H14.1641C16.6641 2.91406 18.3307 4.16406 18.3307 7.08073V12.9141C18.3307 15.8307 16.6641 17.0807 14.1641 17.0807Z"
       stroke="#F79009"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M14.1693 7.5L11.5609 9.58333C10.7026 10.2667 9.29427 10.2667 8.43593 9.58333L5.83594 7.5"
       stroke="#F79009"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -1117,8 +1117,8 @@ export const PhoneIcon = (
     <path
       d="M18.3057 15.2724C18.3057 15.5724 18.2391 15.8807 18.0974 16.1807C17.9557 16.4807 17.7724 16.7641 17.5307 17.0307C17.1224 17.4807 16.6724 17.8057 16.1641 18.0141C15.6641 18.2224 15.1224 18.3307 14.5391 18.3307C13.6891 18.3307 12.7807 18.1307 11.8224 17.7224C10.8641 17.3141 9.90573 16.7641 8.95573 16.0724C7.9974 15.3724 7.08906 14.5974 6.2224 13.7391C5.36406 12.8724 4.58906 11.9641 3.8974 11.0141C3.21406 10.0641 2.66406 9.11406 2.26406 8.1724C1.86406 7.2224 1.66406 6.31406 1.66406 5.4474C1.66406 4.88073 1.76406 4.33906 1.96406 3.83906C2.16406 3.33073 2.48073 2.86406 2.9224 2.4474C3.45573 1.9224 4.03906 1.66406 4.65573 1.66406C4.88906 1.66406 5.1224 1.71406 5.33073 1.81406C5.5474 1.91406 5.73906 2.06406 5.88906 2.28073L7.8224 5.00573C7.9724 5.21406 8.08073 5.40573 8.15573 5.58906C8.23073 5.76406 8.2724 5.93906 8.2724 6.0974C8.2724 6.2974 8.21406 6.4974 8.0974 6.68906C7.98906 6.88073 7.83073 7.08073 7.63073 7.28073L6.9974 7.93906C6.90573 8.03073 6.86406 8.13906 6.86406 8.2724C6.86406 8.33906 6.8724 8.3974 6.88906 8.46406C6.91406 8.53073 6.93906 8.58073 6.95573 8.63073C7.10573 8.90573 7.36406 9.26406 7.73073 9.6974C8.10573 10.1307 8.50573 10.5724 8.93906 11.0141C9.38906 11.4557 9.8224 11.8641 10.2641 12.2391C10.6974 12.6057 11.0557 12.8557 11.3391 13.0057C11.3807 13.0224 11.4307 13.0474 11.4891 13.0724C11.5557 13.0974 11.6224 13.1057 11.6974 13.1057C11.8391 13.1057 11.9474 13.0557 12.0391 12.9641L12.6724 12.3391C12.8807 12.1307 13.0807 11.9724 13.2724 11.8724C13.4641 11.7557 13.6557 11.6974 13.8641 11.6974C14.0224 11.6974 14.1891 11.7307 14.3724 11.8057C14.5557 11.8807 14.7474 11.9891 14.9557 12.1307L17.7141 14.0891C17.9307 14.2391 18.0807 14.4141 18.1724 14.6224C18.2557 14.8307 18.3057 15.0391 18.3057 15.2724Z"
       stroke="#F79009"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
     />
   </svg>
 );
@@ -1134,16 +1134,16 @@ export const SearchIcon = (
     <path
       d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
       stroke="#48505E"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M22 22L20 20"
       stroke="#48505E"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -1170,8 +1170,8 @@ export const TelescopeIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M35.5991 6.59434C36.4931 6.08834 37.0351 5.78434 37.4531 5.61434C37.5702 5.56318 37.6931 5.52625 37.8191 5.50434C37.8409 5.50069 37.8632 5.50069 37.8851 5.50434C37.8931 5.50434 37.9051 5.50834 37.9391 5.53434C38.0339 5.6142 38.1191 5.7048 38.1931 5.80434C38.4671 6.15434 38.7811 6.68034 39.2971 7.55834L41.3951 11.1303C41.9111 12.0103 42.2171 12.5383 42.3871 12.9463C42.4671 13.1323 42.4891 13.2383 42.4971 13.2883L42.4991 13.3223V13.3263L42.4971 13.3303L42.4751 13.3623C42.3937 13.456 42.3018 13.5399 42.2011 13.6123C41.8411 13.8823 41.3051 14.1923 40.4111 14.6983L32.9411 18.9383C32.0951 19.4183 31.5911 19.7003 31.2011 19.8583C31.0988 19.9044 30.9913 19.9379 30.8811 19.9583H30.8511L30.8451 19.9563L30.8271 19.9423C30.7415 19.8698 30.6649 19.7872 30.5991 19.6963C30.3391 19.3663 30.0431 18.8683 29.5511 18.0303L27.3111 14.2163C26.8051 13.3563 26.5071 12.8383 26.3391 12.4403C26.2877 12.3283 26.2514 12.2099 26.2311 12.0883V12.0823L26.2351 12.0783L26.2391 12.0723L26.2471 12.0603C26.3224 11.972 26.4084 11.8934 26.5031 11.8263C26.8471 11.5663 27.3631 11.2683 28.2331 10.7763L35.5991 6.59434ZM38.6491 2.60234C37.7931 2.37634 37.0171 2.55634 36.3291 2.83434C35.7031 3.08634 34.9871 3.49434 34.1971 3.94034L26.6731 8.21234C25.9111 8.64434 25.2111 9.04034 24.6871 9.44034C24.1131 9.87634 23.5671 10.4483 23.3371 11.2943L16.3771 15.2443L16.2971 15.2883C15.5371 15.7223 14.8371 16.1183 14.3111 16.5183C13.7371 16.9543 13.1911 17.5263 12.9611 18.3743L6.10706 22.2643L6.02706 22.3083C5.23906 22.7563 4.52306 23.1643 3.98706 23.5703C3.39706 24.0163 2.84106 24.5963 2.60706 25.4583C2.37106 26.3223 2.55906 27.1023 2.84306 27.7843C3.10306 28.4023 3.51706 29.1083 3.97106 29.8843L4.06306 30.0403C4.51906 30.8143 4.93306 31.5203 5.34906 32.0503C5.80506 32.6303 6.39306 33.1703 7.25106 33.3983C8.10906 33.6263 8.88506 33.4443 9.57106 33.1683C10.1991 32.9143 10.9151 32.5083 11.7031 32.0603L18.6131 28.1403L18.6511 28.1483C19.4851 28.3723 20.2411 28.1983 20.8991 27.9323C20.9951 27.8937 21.0917 27.8523 21.1891 27.8083L14.6191 43.4183C14.5369 43.6008 14.4921 43.7978 14.4872 43.9978C14.4824 44.1978 14.5176 44.3968 14.5908 44.583C14.664 44.7692 14.7737 44.9389 14.9135 45.0821C15.0532 45.2252 15.2202 45.339 15.4046 45.4166C15.589 45.4943 15.7871 45.5343 15.9872 45.5342C16.1872 45.5342 16.3853 45.4941 16.5696 45.4164C16.754 45.3386 16.9209 45.2248 17.0606 45.0816C17.2003 44.9383 17.31 44.7686 17.3831 44.5823L24.0031 28.8663L30.6191 44.5823C30.6922 44.7686 30.8018 44.9383 30.9415 45.0816C31.0812 45.2248 31.2481 45.3386 31.4325 45.4164C31.6168 45.4941 31.8149 45.5342 32.015 45.5342C32.215 45.5343 32.4131 45.4943 32.5975 45.4166C32.7819 45.339 32.9489 45.2252 33.0887 45.0821C33.2284 44.9389 33.3381 44.7692 33.4113 44.583C33.4845 44.3968 33.5197 44.1978 33.5149 43.9978C33.51 43.7978 33.4652 43.6008 33.3831 43.4183L25.7471 25.2803L30.0371 22.8463L30.0771 22.8563C30.9111 23.0803 31.6671 22.9063 32.3251 22.6403C32.9231 22.4003 33.6051 22.0123 34.3451 21.5903L41.9731 17.2623C42.7611 16.8163 43.4791 16.4083 44.0151 16.0023C44.6031 15.5563 45.1591 14.9763 45.3951 14.1143C45.6311 13.2503 45.4431 12.4683 45.1571 11.7883C44.8971 11.1683 44.4831 10.4623 44.0291 9.68834L41.8831 6.04034L41.8371 5.96034C41.3831 5.18634 40.9691 4.48034 40.5531 3.95234C40.0951 3.36834 39.5091 2.82834 38.6491 2.60234ZM7.58706 24.8743L13.5811 21.4703C13.7931 21.8683 14.0411 22.2903 14.3031 22.7343L14.3491 22.8143L15.5851 24.9183C15.8171 25.3103 16.0371 25.6863 16.2531 26.0283L10.3011 29.4083C9.40906 29.9123 8.86706 30.2163 8.44706 30.3863C8.33062 30.438 8.20842 30.4756 8.08306 30.4983C8.03706 30.5023 8.02306 30.4983 8.01706 30.4983C8.00906 30.4943 7.99506 30.4923 7.96106 30.4663C7.86692 30.3864 7.78236 30.2958 7.70906 30.1963C7.43306 29.8463 7.12106 29.3203 6.60506 28.4423C6.08906 27.5623 5.78106 27.0343 5.61106 26.6263C5.55986 26.5175 5.52289 26.4026 5.50106 26.2843V26.2423L5.52306 26.2103C5.60502 26.1165 5.69765 26.0326 5.79906 25.9603C6.15706 25.6883 6.69306 25.3803 7.58706 24.8743ZM23.9571 14.3923L17.8571 17.8523C16.9891 18.3463 16.4731 18.6443 16.1291 18.9043C16.0283 18.976 15.9375 19.0608 15.8591 19.1563L15.8571 19.1603V19.1883C15.8792 19.3024 15.9155 19.4132 15.9651 19.5183C16.1311 19.9183 16.4311 20.4323 16.9371 21.2943L18.1271 23.3223C18.6191 24.1623 18.9171 24.6583 19.1751 24.9883C19.2462 25.0853 19.3296 25.1727 19.4231 25.2483L19.4271 25.2503H19.4551C19.566 25.2301 19.6741 25.1965 19.7771 25.1503C20.1671 24.9923 20.6711 24.7103 21.5171 24.2303L23.0651 23.3503L24.5731 22.4963L27.6751 20.7363C27.4479 20.3695 27.2258 19.9994 27.0091 19.6263L24.6791 15.6583C24.4303 15.241 24.1896 14.8189 23.9571 14.3923Z"
       fill="black"
     />
@@ -1186,8 +1186,8 @@ export const MissionIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.935 3.7515C17.4819 2.3986 18.503 1.29137 19.8073 0.637032C21.1116 -0.0173012 22.6097 -0.173877 24.0211 0.196612C25.4325 0.5671 26.6606 1.43926 27.4753 2.64984C28.2901 3.86042 28.6358 5.32644 28.4477 6.7735C28.2596 8.22056 27.5505 9.54947 26.4533 10.5115C25.3561 11.4735 23.9459 12.0027 22.4867 12C21.0274 11.9973 19.6192 11.4629 18.5255 10.4968C17.4319 9.53077 16.7278 8.19925 16.545 6.7515H7.5C6.30653 6.7515 5.16193 7.2256 4.31802 8.06952C3.47411 8.91343 3 10.058 3 11.2515C3 12.445 3.47411 13.5896 4.31802 14.4335C5.16193 15.2774 6.30653 15.7515 7.5 15.7515H28.5C30.4891 15.7515 32.3968 16.5417 33.8033 17.9482C35.2098 19.3547 36 21.2624 36 23.2515C36 25.2406 35.2098 27.1483 33.8033 28.5548C32.3968 29.9613 30.4891 30.7515 28.5 30.7515H11.955C11.7722 32.1992 11.0681 33.5308 9.97447 34.4968C8.88081 35.4629 7.47257 35.9973 6.01334 36C4.5541 36.0027 3.1439 35.4735 2.04668 34.5115C0.949457 33.5495 0.240432 32.2206 0.0523138 30.7735C-0.135804 29.3264 0.20988 27.8604 1.02466 26.6498C1.83945 25.4393 3.06747 24.5671 4.4789 24.1966C5.89032 23.8261 7.38838 23.9827 8.69269 24.637C9.997 25.2914 11.0181 26.3986 11.565 27.7515H28.5C29.6935 27.7515 30.8381 27.2774 31.682 26.4335C32.5259 25.5896 33 24.445 33 23.2515C33 22.058 32.5259 20.9134 31.682 20.0695C30.8381 19.2256 29.6935 18.7515 28.5 18.7515H7.5C5.51088 18.7515 3.60322 17.9613 2.1967 16.5548C0.790176 15.1483 0 13.2406 0 11.2515C0 9.26238 0.790176 7.35472 2.1967 5.9482C3.60322 4.54168 5.51088 3.7515 7.5 3.7515H16.935Z"
       fill="black"
     />
@@ -1202,8 +1202,8 @@ export const DevIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.8764 0L-0.000743866 10.0013V28.755L16.8668 40L34.373 29.9964V9.99806L16.8764 0ZM33.7592 20.4356V10.705L27.0072 14.5633L27.0072 24.4145L33.7592 20.4356ZM33.7592 21.1481V29.6402L27.0072 33.4985V25.1269L33.7592 21.1481ZM26.3934 25.4887V33.8493L17.1862 39.1106V30.9144L26.3934 25.4887ZM16.5723 30.9111V39.066L7.67198 33.1324V25.472L16.5723 30.9111ZM7.67198 24.7526L16.5723 30.1918V20.1721L7.7187 14.9255L7.67198 14.9536L7.67198 24.7526ZM7.05816 25.0969V32.7232L0.613075 28.4264V21.1582L7.05816 25.0969ZM0.613075 20.4389L7.05816 24.3775L7.05816 14.606L7.11847 14.5698L0.613075 10.7148V20.4389ZM17.1862 30.2019L26.3934 24.7762L26.3934 14.9141L17.1862 20.1754V30.2019ZM26.005 14.429L16.882 19.6422L8.31698 14.5666L17.0627 9.31915L26.005 14.429ZM16.4516 8.96997L7.71675 14.2109L0.90818 10.1762L9.57483 5.04038L16.4516 8.96997ZM10.1822 4.68047L17.0551 8.60786L23.7126 4.61336L16.882 0.710174L10.1822 4.68047ZM24.3237 4.96254L17.6662 8.95705L26.6236 14.0756L33.4475 10.1762L24.3237 4.96254Z"
       fill="url(#paint0_linear_464_35223)"
     />
@@ -1216,8 +1216,8 @@ export const DevIcon = (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -1233,7 +1233,7 @@ export const NotEqualIcon = (
     <path
       d="M11.1875 5L5.35156 10H15V11H4.1875L0.828125 13.8828L0.171875 13.1172L2.64844 11H0V10H3.8125L9.64844 5H0V4H10.8125L14.1719 1.11719L14.8281 1.88281L12.3516 4H15V5H11.1875Z"
       fill="white"
-      fill-opacity="0.8"
+      fillOpacity="0.8"
     />
   </svg>
 );
@@ -1300,7 +1300,7 @@ export const CopilotIcon = (
     <path
       d="M46.666 0.583008C57.3895 0.583008 66.083 9.27647 66.083 20C66.083 30.7235 57.3895 39.417 46.666 39.417C35.9425 39.417 27.249 30.7235 27.249 20C27.249 9.27647 35.9425 0.583008 46.666 0.583008Z"
       stroke="url(#paint0_linear_228_10524)"
-      stroke-width="1.16667"
+      strokeWidth="1.16667"
     />
     <g filter="url(#filter0_d_228_10524)">
       <circle
@@ -1308,7 +1308,7 @@ export const CopilotIcon = (
         cy="20"
         r="19.4167"
         stroke="url(#paint1_linear_228_10524)"
-        stroke-width="1.16667"
+        strokeWidth="1.16667"
         shape-rendering="crispEdges"
       />
     </g>
@@ -1322,7 +1322,7 @@ export const CopilotIcon = (
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1356,8 +1356,8 @@ export const CopilotIcon = (
         y2="41.1111"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_228_10524"
@@ -1367,8 +1367,8 @@ export const CopilotIcon = (
         y2="47.2222"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -1510,8 +1510,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_228_10536"
@@ -1521,8 +1521,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_228_10536"
@@ -1532,8 +1532,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_228_10536"
@@ -1543,8 +1543,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_228_10536"
@@ -1554,8 +1554,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_228_10536"
@@ -1565,8 +1565,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_228_10536"
@@ -1576,8 +1576,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint7_linear_228_10536"
@@ -1587,8 +1587,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint8_linear_228_10536"
@@ -1598,8 +1598,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint9_linear_228_10536"
@@ -1609,8 +1609,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint10_linear_228_10536"
@@ -1620,8 +1620,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint11_linear_228_10536"
@@ -1631,8 +1631,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint12_linear_228_10536"
@@ -1642,8 +1642,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint13_linear_228_10536"
@@ -1653,8 +1653,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint14_linear_228_10536"
@@ -1664,8 +1664,8 @@ export const GapAnalysisIcon = (
         y2="18.031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint15_linear_228_10536"
@@ -1675,8 +1675,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint16_linear_228_10536"
@@ -1686,8 +1686,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint17_linear_228_10536"
@@ -1697,8 +1697,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint18_linear_228_10536"
@@ -1708,8 +1708,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint19_linear_228_10536"
@@ -1719,8 +1719,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint20_linear_228_10536"
@@ -1730,8 +1730,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint21_linear_228_10536"
@@ -1741,8 +1741,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint22_linear_228_10536"
@@ -1752,8 +1752,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint23_linear_228_10536"
@@ -1763,8 +1763,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint24_linear_228_10536"
@@ -1774,8 +1774,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint25_linear_228_10536"
@@ -1785,8 +1785,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint26_linear_228_10536"
@@ -1796,8 +1796,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint27_linear_228_10536"
@@ -1807,8 +1807,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint28_linear_228_10536"
@@ -1818,8 +1818,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint29_linear_228_10536"
@@ -1829,8 +1829,8 @@ export const GapAnalysisIcon = (
         y2="21.9672"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.9" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" stopOpacity="0.9" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -1846,57 +1846,57 @@ export const AiPlaygroundIcon = (
     <path
       d="M20.6494 18.1504V21.624L17.333 23.4873L14.0176 21.624V18.1504L17.333 16.2861L20.6494 18.1504Z"
       stroke="white"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M24.3701 16.0645V24.0068L17.2852 28.0186L10.2969 24.0088V16.0635L17.2852 11.9805L24.3701 16.0645Z"
       stroke="url(#paint0_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M27.6904 14.1182V25.6221L17.334 31.4053L6.97656 25.6221V14.1182L17.333 8.28613L27.6904 14.1182Z"
       stroke="url(#paint1_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M10.2012 15.9922L6.94535 14.1217"
       stroke="url(#paint2_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M24.4512 16L27.7981 14.0772"
       stroke="url(#paint3_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M17.334 28.082L17.334 31.4406"
       stroke="url(#paint4_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M17.334 35.5391L17.334 39.6929"
       stroke="url(#paint5_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M30.9785 12.25L34.5444 10.2014"
       stroke="url(#paint6_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M3.69141 12.25L0.125514 10.2014"
       stroke="url(#paint7_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M30.9141 12.2998V27.7012L17.334 35.4053L3.75488 27.7012V12.2998L17.334 4.5957L30.9141 12.2998Z"
       stroke="url(#paint8_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <path
       d="M34.4043 10.2324V29.8545L17.334 39.7109L0.263672 29.8545V10.2334L17.334 0.289062L34.4043 10.2324Z"
       stroke="url(#paint9_linear_228_10546)"
-      stroke-width="0.5"
+      strokeWidth="0.5"
     />
     <defs>
       <linearGradient
@@ -1907,8 +1907,8 @@ export const AiPlaygroundIcon = (
         y2="28.3068"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_228_10546"
@@ -1918,8 +1918,8 @@ export const AiPlaygroundIcon = (
         y2="31.6923"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_228_10546"
@@ -1929,8 +1929,8 @@ export const AiPlaygroundIcon = (
         y2="14.1899"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_228_10546"
@@ -1940,8 +1940,8 @@ export const AiPlaygroundIcon = (
         y2="14.1715"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_228_10546"
@@ -1951,8 +1951,8 @@ export const AiPlaygroundIcon = (
         y2="29.7613"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_228_10546"
@@ -1962,8 +1962,8 @@ export const AiPlaygroundIcon = (
         y2="37.616"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_228_10546"
@@ -1973,8 +1973,8 @@ export const AiPlaygroundIcon = (
         y2="10.3586"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint7_linear_228_10546"
@@ -1984,8 +1984,8 @@ export const AiPlaygroundIcon = (
         y2="10.3586"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint8_linear_228_10546"
@@ -1995,8 +1995,8 @@ export const AiPlaygroundIcon = (
         y2="35.6932"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
       <linearGradient
         id="paint9_linear_228_10546"
@@ -2006,8 +2006,8 @@ export const AiPlaygroundIcon = (
         y2="40"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="#999999" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="#999999" />
       </linearGradient>
     </defs>
   </svg>
@@ -2021,8 +2021,8 @@ export const TicketContextIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.8764 0L-0.000743866 10.0013V28.755L16.8668 40L34.373 29.9964V9.99806L16.8764 0ZM33.7592 20.4356V10.705L27.0072 14.5633L27.0072 24.4145L33.7592 20.4356ZM33.7592 21.1481V29.6402L27.0072 33.4985V25.1269L33.7592 21.1481ZM26.3934 25.4887V33.8493L17.1862 39.1106V30.9144L26.3934 25.4887ZM16.5723 30.9111V39.066L7.67198 33.1324V25.472L16.5723 30.9111ZM7.67198 24.7526L16.5723 30.1918V20.1721L7.7187 14.9255L7.67198 14.9536L7.67198 24.7526ZM7.05816 25.0969V32.7232L0.613075 28.4264V21.1582L7.05816 25.0969ZM0.613075 20.4389L7.05816 24.3775L7.05816 14.606L7.11847 14.5698L0.613075 10.7148V20.4389ZM17.1862 30.2019L26.3934 24.7762L26.3934 14.9141L17.1862 20.1754V30.2019ZM26.005 14.429L16.882 19.6422L8.31698 14.5666L17.0627 9.31915L26.005 14.429ZM16.4516 8.96997L7.71675 14.2109L0.90818 10.1762L9.57483 5.04038L16.4516 8.96997ZM10.1822 4.68047L17.0551 8.60786L23.7126 4.61336L16.882 0.710174L10.1822 4.68047ZM24.3237 4.96254L17.6662 8.95705L26.6236 14.0756L33.4475 10.1762L24.3237 4.96254Z"
       fill="inherit"
     />
@@ -2035,8 +2035,8 @@ export const TicketContextIcon = (
         y2="31.0623"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.360577" stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop offset="0.360577" stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -2051,8 +2051,8 @@ export const TicketCtxIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.8764 0L-0.000743866 10.0013V28.755L16.8668 40L34.373 29.9964V9.99806L16.8764 0ZM33.7592 20.4356V10.705L27.0072 14.5633L27.0072 24.4145L33.7592 20.4356ZM33.7592 21.1481V29.6402L27.0072 33.4985V25.1269L33.7592 21.1481ZM26.3934 25.4887V33.8493L17.1862 39.1106V30.9144L26.3934 25.4887ZM16.5723 30.9111V39.066L7.67198 33.1324V25.472L16.5723 30.9111ZM7.67198 24.7526L16.5723 30.1918V20.1721L7.7187 14.9255L7.67198 14.9536L7.67198 24.7526ZM7.05816 25.0969V32.7232L0.613075 28.4264V21.1582L7.05816 25.0969ZM0.613075 20.4389L7.05816 24.3775L7.05816 14.606L7.11847 14.5698L0.613075 10.7148V20.4389ZM17.1862 30.2019L26.3934 24.7762L26.3934 14.9141L17.1862 20.1754V30.2019ZM26.005 14.429L16.882 19.6422L8.31698 14.5666L17.0627 9.31915L26.005 14.429ZM16.4516 8.96997L7.71675 14.2109L0.90818 10.1762L9.57483 5.04038L16.4516 8.96997ZM10.1822 4.68047L17.0551 8.60786L23.7126 4.61336L16.882 0.710174L10.1822 4.68047ZM24.3237 4.96254L17.6662 8.95705L26.6236 14.0756L33.4475 10.1762L24.3237 4.96254Z"
       fill="url(#paint0_linear_228_10568)"
     />
@@ -2065,8 +2065,8 @@ export const TicketCtxIcon = (
         y2="31.0623"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.360577" stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop offset="0.360577" stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -2125,8 +2125,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_228_10576"
@@ -2136,8 +2136,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_228_10576"
@@ -2147,8 +2147,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_228_10576"
@@ -2158,8 +2158,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_228_10576"
@@ -2169,8 +2169,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_228_10576"
@@ -2180,8 +2180,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_228_10576"
@@ -2191,8 +2191,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint7_linear_228_10576"
@@ -2202,8 +2202,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
       <linearGradient
         id="paint8_linear_228_10576"
@@ -2213,8 +2213,8 @@ export const CustomerTemperamentIcon = (
         y2="40.2632"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0.06" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.06" />
       </linearGradient>
     </defs>
   </svg>
@@ -2232,50 +2232,50 @@ export const SettingsIcon = (
     <path
       d="M18.334 14.582H13.334"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M4.99935 14.582H1.66602"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.33268 11.6667C9.94351 11.6667 11.2493 12.9725 11.2493 14.5833C11.2493 16.1942 9.94351 17.5 8.33268 17.5C6.72185 17.5 5.41602 16.1942 5.41602 14.5833C5.41602 12.9725 6.72185 11.6667 8.33268 11.6667Z"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M18.3333 5.41797H15"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M6.66602 5.41797H1.66602"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M11.6667 2.4987C13.2775 2.4987 14.5833 3.80453 14.5833 5.41536C14.5833 7.0262 13.2775 8.33203 11.6667 8.33203C10.0558 8.33203 8.75 7.0262 8.75 5.41536C8.75 3.80453 10.0558 2.4987 11.6667 2.4987Z"
       stroke="white"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -2290,16 +2290,16 @@ export const BrushIcon = (
     <path
       d="M2.41667 17.4141H12.4167C13.3333 17.4141 14.0833 16.6641 14.0833 15.7474V12.1474H0.75V15.7474C0.75 16.6641 1.5 17.4141 2.41667 17.4141Z"
       stroke="white"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M0.75 12.1484V9.18177C0.75 8.28177 1.23336 7.44845 2.02502 7.00679L4.49166 5.61513C5.01666 5.32347 5.34168 4.76509 5.34168 4.16509V2.41511C5.34168 1.49844 6.09168 0.748444 7.00834 0.748444H7.84168C8.75834 0.748444 9.50834 1.49844 9.50834 2.41511V4.16509C9.50834 4.76509 9.83336 5.32347 10.3584 5.61513L12.825 7.00679C13.6083 7.44845 14.1 8.28177 14.1 9.18177V12.1484H0.75Z"
       stroke="white"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -2314,16 +2314,16 @@ export const AddIcon = (
     <path
       d="M6 12H18"
       stroke="#0A0A0A"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M12 18V6"
       stroke="#0A0A0A"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -3352,23 +3352,23 @@ export const KeyFeatureIcon = (
     <path
       d="M8.36027 1.87505L12.1516 3.55867C13.2441 4.04063 13.2441 4.83746 12.1516 5.31941L8.36027 7.00303C7.92973 7.19581 7.22286 7.19581 6.79232 7.00303L3.00096 5.31941C1.90853 4.83746 1.90853 4.04063 3.00096 3.55867L6.79232 1.87505C7.22286 1.68227 7.92973 1.68227 8.36027 1.87505Z"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M1.92773 7.07031C1.92773 7.6101 2.33257 8.23342 2.82738 8.45191L7.19065 10.3926C7.52481 10.5404 7.90394 10.5404 8.23167 10.3926L12.5949 8.45191C13.0898 8.23342 13.4946 7.6101 13.4946 7.07031"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M1.92773 10.2812C1.92773 10.8789 2.28117 11.4187 2.82738 11.6628L7.19065 13.6035C7.52481 13.7513 7.90394 13.7513 8.23167 13.6035L12.5949 11.6628C13.1412 11.4187 13.4946 10.8789 13.4946 10.2812"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -3399,30 +3399,30 @@ export const CodeLinearIcon = (
     <path
       d="M5.78273 8.35547C5.35861 8.56753 5.00518 8.8824 4.74171 9.27439C4.59391 9.4993 4.59391 9.78205 4.74171 10.007C5.00518 10.3989 5.35861 10.7138 5.78273 10.9259"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M9.77344 8.35547C10.1976 8.56753 10.551 8.8824 10.8145 9.27439C10.9623 9.4993 10.9623 9.78205 10.8145 10.007C10.551 10.3989 10.1976 10.7138 9.77344 10.9259"
       stroke="white"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M5.78338 14.1372H9.639C12.852 14.1372 14.1372 12.852 14.1372 9.639V5.78338C14.1372 2.57036 12.852 1.28516 9.639 1.28516H5.78338C2.57036 1.28516 1.28516 2.57036 1.28516 5.78338V9.639C1.28516 12.852 2.57036 14.1372 5.78338 14.1372Z"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M1.43359 5.14705L13.7844 5.14062"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -3438,30 +3438,30 @@ export const ReportIcon = (
     <path
       d="M1.92773 14.1367H13.4946"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M3.59849 5.38672H2.57034C2.21691 5.38672 1.92773 5.67589 1.92773 6.02932V11.5686C1.92773 11.922 2.21691 12.2112 2.57034 12.2112H3.59849C3.95192 12.2112 4.24109 11.922 4.24109 11.5686V6.02932C4.24109 5.67589 3.95192 5.38672 3.59849 5.38672Z"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M8.22544 3.33594H7.19729C6.84386 3.33594 6.55469 3.62511 6.55469 3.97854V11.5677C6.55469 11.9211 6.84386 12.2103 7.19729 12.2103H8.22544C8.57887 12.2103 8.86804 11.9211 8.86804 11.5677V3.97854C8.86804 3.62511 8.57887 3.33594 8.22544 3.33594Z"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M12.8524 1.28516H11.8242C11.4708 1.28516 11.1816 1.57433 11.1816 1.92776V11.5668C11.1816 11.9202 11.4708 12.2094 11.8242 12.2094H12.8524C13.2058 12.2094 13.495 11.9202 13.495 11.5668V1.92776C13.495 1.57433 13.2058 1.28516 12.8524 1.28516Z"
       stroke="inherit"
-      stroke-width="1.15669"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.15669"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -3477,20 +3477,20 @@ export const HamburgerMenu = (
     <path
       d="M3 7H21"
       stroke="#0B0709"
-      stroke-width="1.5"
-      stroke-linecap="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
     />
     <path
       d="M3 12H21"
       stroke="#0B0709"
-      stroke-width="1.5"
-      stroke-linecap="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
     />
     <path
       d="M3 17H21"
       stroke="#0B0709"
-      stroke-width="1.5"
-      stroke-linecap="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
     />
   </svg>
 );
@@ -3504,8 +3504,8 @@ export const TicketContextGradIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16.8764 0L-0.000743866 10.0013V28.755L16.8668 40L34.373 29.9964V9.99806L16.8764 0ZM33.7592 20.4356V10.705L27.0072 14.5633L27.0072 24.4145L33.7592 20.4356ZM33.7592 21.1481V29.6402L27.0072 33.4985V25.1269L33.7592 21.1481ZM26.3934 25.4887V33.8493L17.1862 39.1106V30.9144L26.3934 25.4887ZM16.5723 30.9111V39.066L7.67198 33.1324V25.472L16.5723 30.9111ZM7.67198 24.7526L16.5723 30.1918V20.1721L7.7187 14.9255L7.67198 14.9536L7.67198 24.7526ZM7.05816 25.0969V32.7232L0.613075 28.4264V21.1582L7.05816 25.0969ZM0.613075 20.4389L7.05816 24.3775L7.05816 14.606L7.11847 14.5698L0.613075 10.7148V20.4389ZM17.1862 30.2019L26.3934 24.7762L26.3934 14.9141L17.1862 20.1754V30.2019ZM26.005 14.429L16.882 19.6422L8.31698 14.5666L17.0627 9.31915L26.005 14.429ZM16.4516 8.96997L7.71675 14.2109L0.90818 10.1762L9.57483 5.04038L16.4516 8.96997ZM10.1822 4.68047L17.0551 8.60786L23.7126 4.61336L16.882 0.710174L10.1822 4.68047ZM24.3237 4.96254L17.6662 8.95705L26.6236 14.0756L33.4475 10.1762L24.3237 4.96254Z"
       fill="url(#paint0_linear_2001_11121)"
     />
@@ -3518,8 +3518,8 @@ export const TicketContextGradIcon = (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -3578,8 +3578,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_2001_11129"
@@ -3589,8 +3589,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_2001_11129"
@@ -3600,8 +3600,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_2001_11129"
@@ -3611,8 +3611,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_2001_11129"
@@ -3622,8 +3622,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_2001_11129"
@@ -3633,8 +3633,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_2001_11129"
@@ -3644,8 +3644,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint7_linear_2001_11129"
@@ -3655,8 +3655,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint8_linear_2001_11129"
@@ -3666,8 +3666,8 @@ export const CustomerTemperantGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -3739,8 +3739,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_2001_11137"
@@ -3750,8 +3750,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_2001_11137"
@@ -3761,8 +3761,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_2001_11137"
@@ -3772,8 +3772,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_2001_11137"
@@ -3783,8 +3783,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_2001_11137"
@@ -3794,8 +3794,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_2001_11137"
@@ -3805,8 +3805,8 @@ export const HumanAgentGradIcon = () => (
         y2="20"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -3823,18 +3823,18 @@ export const ArrowRightGradIcon = (
     <path
       d="M10.8223 4.44727L15.3748 8.99977L10.8223 13.5523"
       stroke="url(#paint0_linear_2294_8704)"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M2.625 9H15.2475"
       stroke="url(#paint1_linear_2294_8704)"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <defs>
       <linearGradient
@@ -3845,8 +3845,8 @@ export const ArrowRightGradIcon = (
         y2="8.99977"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_2294_8704"
@@ -3856,8 +3856,8 @@ export const ArrowRightGradIcon = (
         y2="9.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#D7AB07" />
-        <stop offset="1" stop-color="#E86555" />
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
       </linearGradient>
     </defs>
   </svg>
@@ -3874,30 +3874,30 @@ export const LinkIcon = (
     <path
       d="M21.9998 2L13.7998 10.2"
       stroke="#101828"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M13 6.16992V10.9999H17.83"
       stroke="#101828"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M2 12.9805V15.0005C2 20.0005 4 22.0005 9 22.0005H15C20 22.0005 22 20.0005 22 15.0005V13.0005"
       stroke="#101828"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M11 2H9C4 2 2 4 2 9"
       stroke="#101828"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -3910,9 +3910,9 @@ export const ArrowUpRightIcon = (
     viewBox="0 0 24 24"
     fill="none"
     stroke="#6b6b6b"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
   >
     <path d="M7 7h10v10" />
@@ -3935,13 +3935,143 @@ export const CloseCircleIcon = (
     <path
       d="M9.16992 14.8319L14.8299 9.17188"
       stroke="#101828"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.8299 14.8319L9.16992 9.17188"
+      stroke="#101828"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const USFlagIcon = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_6457_95290)">
+      <path
+        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M11.4775 12.0015H23.9993C23.9993 10.9185 23.8549 9.8692 23.5859 8.87109H11.4775V12.0015Z"
+        fill="#D80027"
+      />
+      <path
+        d="M11.4775 5.73983H22.238C21.5034 4.54114 20.5642 3.48162 19.4691 2.60938H11.4775V5.73983Z"
+        fill="#D80027"
+      />
+      <path
+        d="M12.0001 24.0032C14.8243 24.0032 17.4201 23.0271 19.4699 21.3945H4.53027C6.58012 23.0271 9.17591 24.0032 12.0001 24.0032Z"
+        fill="#D80027"
+      />
+      <path
+        d="M1.76098 18.2594H22.2384C22.8281 17.2971 23.2855 16.2452 23.5863 15.1289H0.413086C0.713883 16.2452 1.17124 17.2971 1.76098 18.2594Z"
+        fill="#D80027"
+      />
+      <path
+        d="M5.55863 1.87397H6.65217L5.63498 2.61295L6.02353 3.80869L5.00639 3.0697L3.98925 3.80869L4.32487 2.7757C3.42928 3.52172 2.64431 4.39575 1.99744 5.36963H2.34783L1.70034 5.84002C1.59947 6.0083 1.50272 6.17925 1.41 6.35273L1.71919 7.30434L1.14234 6.88523C0.998953 7.18903 0.867797 7.49967 0.749906 7.81678L1.09055 8.86528H2.34783L1.33064 9.60427L1.71919 10.8L0.702047 10.061L0.0927656 10.5037C0.0317812 10.9939 0 11.4932 0 12H12C12 5.37262 12 4.59131 12 0C9.62944 0 7.41961 0.687656 5.55863 1.87397ZM6.02353 10.8L5.00639 10.061L3.98925 10.8L4.3778 9.60427L3.36061 8.86528H4.61789L5.00639 7.66955L5.39489 8.86528H6.65217L5.63498 9.60427L6.02353 10.8ZM5.63498 6.10861L6.02353 7.30434L5.00639 6.56536L3.98925 7.30434L4.3778 6.10861L3.36061 5.36963H4.61789L5.00639 4.17389L5.39489 5.36963H6.65217L5.63498 6.10861ZM10.3279 10.8L9.31073 10.061L8.29359 10.8L8.68214 9.60427L7.66495 8.86528H8.92223L9.31073 7.66955L9.69923 8.86528H10.9565L9.93933 9.60427L10.3279 10.8ZM9.93933 6.10861L10.3279 7.30434L9.31073 6.56536L8.29359 7.30434L8.68214 6.10861L7.66495 5.36963H8.92223L9.31073 4.17389L9.69923 5.36963H10.9565L9.93933 6.10861ZM9.93933 2.61295L10.3279 3.80869L9.31073 3.0697L8.29359 3.80869L8.68214 2.61295L7.66495 1.87397H8.92223L9.31073 0.678234L9.69923 1.87397H10.9565L9.93933 2.61295Z"
+        fill="#0052B4"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_6457_95290">
+        <rect width="24" height="24" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+export const NGFlagIcon = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_6457_95293)">
+      <path
+        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M0 11.9997C0 17.1593 3.2565 21.5578 7.82611 23.2533V0.746094C3.2565 2.44156 0 6.84013 0 11.9997Z"
+        fill="#6DA544"
+      />
+      <path
+        d="M23.9999 11.9997C23.9999 6.84013 20.7434 2.44156 16.1738 0.746094V23.2534C20.7434 21.5578 23.9999 17.1593 23.9999 11.9997Z"
+        fill="#6DA544"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_6457_95293">
+        <rect width="24" height="24" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+export const MutedIcon = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2 10.1595V14.1595C2 16.1595 3 17.1595 5 17.1595H6.43C6.8 17.1595 7.17 17.2695 7.49 17.4595L10.41 19.2895C12.93 20.8695 15 19.7195 15 16.7495V7.56946C15 4.58946 12.93 3.44946 10.41 5.02946L7.49 6.85946C7.17 7.04946 6.8 7.15946 6.43 7.15946H5C3 7.15946 2 8.15946 2 10.1595Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M22 14.1195L18.04 10.1595"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21.96 10.1995L18 14.1595"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const SpeakerIcon = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2 10V14C2 16 3 17 5 17H6.43C6.8 17 7.17 17.11 7.49 17.3L10.41 19.13C12.93 20.71 15 19.56 15 16.59V7.41C15 4.43 12.93 3.29 10.41 4.87L7.49 6.7C7.17 6.89 6.8 7 6.43 7H5C3 7 2 8 2 10Z"
+      stroke="currentColor"
+      stroke-width="1.5"
+    />
+    <path
+      d="M18 8C19.78 10.37 19.78 13.63 18 16"
+      stroke="currentColor"
       stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
     <path
-      d="M14.8299 14.8319L9.16992 9.17188"
-      stroke="#101828"
+      d="M19.8301 5.5C22.7201 9.35 22.7201 14.65 19.8301 18.5"
+      stroke="currentColor"
       stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"

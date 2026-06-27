@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cls } from "@/utils/helpers";
 import { ProductKey } from "@/utils/enum";
 import { InternalPath } from "@/utils/types";
-import { PRODUCTS_TAB, ROUTES } from "@/utils/constants";
+import { FE_URL, PRODUCTS_TAB, ROUTES } from "@/utils/constants";
 import { ArrowRightIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { AppTab } from "@/components/shared/molecules/Tabs";
@@ -39,7 +39,7 @@ export const OurProducts = () => {
             <Link
               aria-label={currentLink}
               rel="noreferrer"
-              href={process.env.NEXT_PUBLIC_BASE_URL + currentLink}
+              href={FE_URL + currentLink}
             >
               <Button
                 className="bg-brand-gradient px-8 py-2"

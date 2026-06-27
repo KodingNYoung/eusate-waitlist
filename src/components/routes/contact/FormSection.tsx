@@ -13,6 +13,7 @@ import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/vari
 import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
 import { toast } from "react-toastify";
 import AutoResizingTextarea from "@/components/shared/atoms/AutoResizingTextarea";
+import { sendMessage } from "@/actions";
 
 export const FormSection = () => {
   const {
@@ -25,32 +26,13 @@ export const FormSection = () => {
   });
 
   const onSubmit = async (data: ContactForm) => {
-    const payload = {
-      full_name: data.firstname,
-      email: data.email,
-      reason: data.reason,
-      message: data.message,
-    };
-    try {
-      const res = await fetch(
-        "https://api.dev.eusate.com/api/v1/website/contact-us/",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        },
-      );
-      const result = await res.json();
-      if (res.ok && result?.success) {
-        reset();
-        toast.success("Thanks for reaching out we'd get back to you.");
-      } else {
-        console.log(result);
-        toast.error("Sorry. Something went wrong");
-      }
-    } catch (_) {
-      toast.error("An error occured. Please try again.");
-      console.error(_);
+    const res = await sendMessage(data);
+    if (res?.success) {
+      reset();
+      toast.success("Thanks for reaching out we'd get back to you.");
+    } else {
+      console.log(res);
+      toast.error("Sorry. Something went wrong");
     }
   };
 

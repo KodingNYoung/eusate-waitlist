@@ -1,6 +1,12 @@
 import { z } from "zod";
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
-import { ComparePlanCat1, HelpCenterKey, Plan, ProductKey } from "./enum";
+import {
+  ComparePlanCat1,
+  Currency,
+  HelpCenterKey,
+  Plan,
+  ProductKey,
+} from "./enum";
 import { contactFormSchema } from "./schemas";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
@@ -91,7 +97,7 @@ export type CategoryList = {
   id: number;
   key: CompareCategoryKey;
   label: string;
-  items: { key: CompareCategory; label: string }[];
+  items: { key: CompareCategory; label: string; tooltip?: string }[];
 };
 export type PricingPlan = {
   id: number;
@@ -175,14 +181,10 @@ export type Testimonial = {
   id: number;
   imgSrc: InternalPath;
   name: string;
-  theme: HexColor;
+  color: TWClassNames;
   testimony: string;
   company: string;
   role: string;
-  stats: {
-    value: string;
-    label: string;
-  }[];
 };
 export type ContactForm = z.infer<typeof contactFormSchema>;
 export type IntegrationPricing = {
@@ -191,4 +193,9 @@ export type IntegrationPricing = {
   icon: InternalPath;
   description: string;
   price: number;
+};
+export type CurrencyRate = {
+  from: Currency;
+  to: Currency;
+  rate: number;
 };

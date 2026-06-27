@@ -53,3 +53,7 @@ export const truncateWords = (text: string, maxLength: number): string => {
 
   return truncated.slice(0, lastSpace) + "...";
 };
+export const round = (num: number, dp: number = 2) => {
+  const multiplier = Math.pow(10, dp || 0);
+  return Math.round((Number(num) + Number.EPSILON) * multiplier) / multiplier;
+};

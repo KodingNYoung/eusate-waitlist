@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@eusate/messenger-sdk": "^0.2.5",
+    "@eusate/messenger-sdk": "^0.2.7",
     "@heroui/accordion": "^2.2.29",
     "@heroui/chip": "^2.2.25",
     "@heroui/dropdown": "^2.3.32",
@@ -19,6 +19,7 @@
     "@heroui/react": "^3.0.1",
     "@heroui/select": "^2.4.33",
     "@heroui/tabs": "^2.2.29",
+    "@heroui/tooltip": "^2.2.29",
     "@hookform/resolvers": "^5.2.2",
     "dayjs": "^1.11.20",
     "framer-motion": "^12.38.0",

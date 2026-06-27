@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
-import { HD_FEATURES, ROUTES } from "@/utils/constants";
+import { FE_URL, HD_FEATURES, ROUTES } from "@/utils/constants";
 import { HDFeatureCard } from "@/components/routes/help-desk/HDFeatureCard";
 import { ParallaxHero } from "@/components/shared/organisms/ParallaxHero";
 import { BorderGradient } from "@/components/shared/organisms/BorderGradient";
@@ -34,7 +34,7 @@ const HelpDeskPage = () => {
             <Link
               aria-label="help-desk-link"
               rel="noreferrer"
-              href={process.env.NEXT_PUBLIC_BASE_URL + ROUTES.HELP_DESK}
+              href={FE_URL + ROUTES.HELP_DESK}
             >
               <Button
                 size="sm"

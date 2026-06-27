@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
 import { BorderGradient } from "@/components/shared/organisms/BorderGradient";
 import { PageHero } from "@/components/shared/organisms/PageHero";
-import { ROUTES } from "@/utils/constants";
+import { FE_URL, ROUTES } from "@/utils/constants";
 import Link from "next/link";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
@@ -40,11 +40,7 @@ const KnowledgeBasePage = () => {
             description="Upload once. Answer everywhere. Your knowledge base trains SATE to deliver precise, on-brand responses while keeping your team aligned on every detail."
             cta={
               <BorderGradient>
-                <Link
-                  href={
-                    process.env.NEXT_PUBLIC_BASE_URL + ROUTES.KNOWLEDGE_BASE
-                  }
-                >
+                <Link href={FE_URL + ROUTES.KNOWLEDGE_BASE}>
                   <Button
                     size="sm"
                     variant="outlined"

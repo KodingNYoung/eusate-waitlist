@@ -1,6 +1,5 @@
-import { PlayIcon } from "@/assets/icons";
+import { MutedIcon, SpeakerIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
-import Button from "@/components/shared/molecules/Button";
 import { defaultTransition } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeUpVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { motion } from "motion/react";
@@ -9,16 +8,9 @@ import { useRef, useState } from "react";
 
 export default function GridLayout() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
+  const [muted, setMuted] = useState(true);
 
-  const toggle = () => {
-    if (playing) {
-      videoRef.current?.pause();
-    } else {
-      videoRef.current?.play();
-    }
-    setPlaying(!playing);
-  };
+  const toggleMuted = () => setMuted((curr) => !curr);
 
   return (
     <motion.div
@@ -51,30 +43,12 @@ export default function GridLayout() {
 
       {/* Middle large video */}
       <div className="md:col-span-2 relative group rounded-3xl overflow-hidden w-full">
-        <div className="cursor-pointer absolute z-2 inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <Button
-            onClick={toggle}
-            className="bg-black/70 text-white w-18 h-18 flex items-center justify-center p-6 rounded-full"
-          >
-            {PlayIcon}
-          </Button>
-        </div>
-        {/* <div */}
-        {/*   className="w-full h-[240px] md:h-full" */}
-        {/*   style={{ position: "relative" }} */}
-        {/* > */}
-        {/*   <iframe */}
-        {/*     width="100%" */}
-        {/*     height="100%" */}
-        {/*     src="/about/video/20260315_165514.mp4" */}
-        {/*     title="YouTube video player" */}
-        {/*     frameBorder="0" */}
-        {/*     allow="autoplay; encrypted-media" */}
-        {/*     referrerPolicy="strict-origin-when-cross-origin" */}
-        {/*     allowFullScreen */}
-        {/*     className="w-full h-full" */}
-        {/*   ></iframe> */}
-        {/* </div> */}
+        <button
+          onClick={toggleMuted}
+          className="bg-black/70 text-white w-7 h-7 p-1.5 flex items-center justify-center rounded-full absolute right-2.5 top-2.5 z-1"
+        >
+          {muted ? MutedIcon : SpeakerIcon}
+        </button>
         <div
           className="w-full h-[240px] md:h-full"
           style={{ position: "relative" }}
@@ -82,12 +56,12 @@ export default function GridLayout() {
           <video
             ref={videoRef}
             autoPlay
-            muted
+            muted={muted}
             loop
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/about/video/20260315_165514.mp4" type="video/mp4" />
+            <source src="/about/video/introduction.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

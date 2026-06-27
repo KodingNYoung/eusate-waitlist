@@ -49,7 +49,7 @@ export const TeamOfBuilders = () => {
             alt="business-men"
           />
         </AnimatedBlock>
-        <div className="w-full md:w-[40%]">
+        <div className="w-full md:max-w-[519px]">
           <ScrollReveal
             offset={{ start: "70%" }}
             classNames={{

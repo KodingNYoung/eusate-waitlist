@@ -47,11 +47,11 @@ export const NAV_EXPLORE_LIST: Explore[] = [
         label: "Devspace",
         link: ROUTES.DEVSPACE,
       },
-      {
-        key: 5,
-        label: "Reports",
-        link: ROUTES.REPORTS,
-      },
+      // {
+      //   key: 5,
+      //   label: "Reports",
+      //   link: ROUTES.REPORTS,
+      // },
     ],
   },
   {
@@ -118,11 +118,11 @@ export const FOOTER_EXPLORE_LIST: Explore[] = [
         label: "Devspace",
         link: ROUTES.DEVSPACE,
       },
-      {
-        key: 5,
-        label: "Reports",
-        link: ROUTES.REPORTS,
-      },
+      // {
+      //   key: 5,
+      //   label: "Reports",
+      //   link: ROUTES.REPORTS,
+      // },
     ],
   },
   {

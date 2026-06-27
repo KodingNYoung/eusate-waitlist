@@ -223,26 +223,14 @@ export const SubHeader: FC<SubHeaderProps> = ({
           )}
         >
           {chipLabel && (
-            <div
-              className={cls(
-                positionVariantSubHeader[position]?.chipContainer,
-                classNames?.chipContainer,
-              )}
+            <Chip
+              classNames={{
+                content:
+                  "text-medium-sm md:text-medium-base px-4 py-2 block bg-gold-100 rounded-full",
+              }}
             >
-              <Chip
-                classNames={{
-                  container:
-                    "w-fit p-1.5 md:p-2 text-medium-sm md:text-medium-base",
-                }}
-                className={cls(
-                  "w-fit bg-gold-100 rounded-full",
-                  positionVariantSubHeader[position]?.chip,
-                  classNames?.chip,
-                )}
-              >
-                {chipLabel}
-              </Chip>
-            </div>
+              {chipLabel}
+            </Chip>
           )}
           {typeof title === "string" ? (
             <Typography

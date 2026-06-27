@@ -1,18 +1,27 @@
 import Chip from "@/components/shared/molecules/Chip";
 import Typography from "@/components/shared/atoms/Typography";
-import { TickCircleIcon } from "@/assets/icons";
+import { InfoCircleIcon, TickCircleIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
 import { CategoryList, CompareCategoryData, FC } from "@/utils/types";
 import { motion } from "framer-motion";
 import { ComparePlanCat1 } from "@/utils/enum";
+import { Tooltip } from "@heroui/tooltip";
 
 type Props = {
   headerTitle: string;
   headers: CategoryList[];
   data: CompareCategoryData[];
+  convert: (amount: number) => number;
+  symbol: string;
 };
 
-export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
+export const CompareGrid: FC<Props> = ({
+  headerTitle,
+  headers,
+  data,
+  convert,
+  symbol,
+}) => {
   const plans = data.map((plan) => ({
     ...plan,
     categoryMap: new Map(plan.categories.map((c) => [c.key, c])),
@@ -50,12 +59,13 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
                     </Chip>
                   </div>
                   <Typography
-                    variant="bold-5xl"
-                    className="flex p-8 flex-wrap items-end text-bold-4xl md:text-bold-5xl"
+                    variant="bold-4xl"
+                    className="flex p-8 flex-col items-start text-bold-4xl md:text-bold-5xl"
                   >
-                    ${price}
+                    {symbol}
+                    {convert(price).toLocaleString("en-US")}
                     <span className="text-semibold-base text-gray-400">
-                      /per month
+                      per month
                     </span>
                   </Typography>
                 </div>
@@ -71,7 +81,7 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {items.map(({ key: itemKey, label: itemLabel }) => (
+            {items.map(({ key: itemKey, label: itemLabel, tooltip }) => (
               <tr key={itemKey}>
                 {itemKey === ComparePlanCat1.HEADER ? (
                   <th
@@ -88,13 +98,36 @@ export const CompareGrid: FC<Props> = ({ headerTitle, headers, data }) => {
                   </th>
                 ) : (
                   <th scope="row" className="p-6 text-left font-normal">
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-4">
                       <Typography
                         variant="medium-lg"
                         className="text-gray-700 text-medium-sm md:text-medium-lg"
                       >
                         {itemLabel}
                       </Typography>
+                      <Tooltip
+                        showArrow
+                        crossOffset={-10}
+                        placement="right-start"
+                        content={
+                          <Typography
+                            as="span"
+                            className="text-gray-500 text-regular-sm"
+                          >
+                            {tooltip}
+                          </Typography>
+                        }
+                        classNames={{
+                          base: "shadow-[0px_12px_24px_6px_#0000001F] rounded-lg",
+                          arrow: "bg-white border",
+                          content:
+                            "text-medium-base bg-white max-w-[210px] border border-gray-100 p-3 rounded-[inherit]",
+                        }}
+                      >
+                        <div className="stroke-gray-300 rotate-180">
+                          {InfoCircleIcon}
+                        </div>
+                      </Tooltip>
                     </div>
                   </th>
                 )}

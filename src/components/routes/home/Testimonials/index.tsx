@@ -1,11 +1,12 @@
-import { TESTIMONIALS } from "@/utils/constants";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Direction, DURATION, TICK } from "./utils";
 import { ProgressDots } from "./ProgressDots";
 import { TestimonialSection } from "./Quote";
-import { Stats } from "./Stats";
 import { ImageAnimated } from "./ImageSection";
 import { SectionTemplate } from "@/components/shared/organisms/PageTemplate";
+import { TESTIMONIALS } from "@/constants/home";
+
+const testimonialLength = TESTIMONIALS.length;
 
 export const Testimonials = () => {
   const [paused] = useState(false);
@@ -13,8 +14,6 @@ export const Testimonials = () => {
   const [progress, setProgress] = useState(0);
   const [direction, setDirection] = useState<Direction>(1);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const testimonialLength = useMemo(() => TESTIMONIALS.length, []);
 
   const goTo = useCallback((idx: number, dir: Direction = 1) => {
     setDirection(dir);
@@ -28,7 +27,7 @@ export const Testimonials = () => {
 
   const prev = useCallback(() => {
     goTo((current - 1 + testimonialLength) % testimonialLength, -1);
-  }, [current, goTo, testimonialLength]);
+  }, [current, goTo]);
 
   useEffect(() => {
     if (paused) return;
@@ -46,11 +45,11 @@ export const Testimonials = () => {
     };
   }, [paused, next, current]);
 
-  const t = useMemo(() => TESTIMONIALS[current], [current]);
+  const testimonial = useMemo(() => TESTIMONIALS[current], [current]);
 
   return (
     <SectionTemplate
-      color={t.theme}
+      color={testimonial.color}
       className="max-w-screen overflow-hidden rounded-x20 md:rounded-x40 py-20"
     >
       <div className="flex flex-wrap gap-x-20 justify-center items-center md:justify-between">
@@ -61,7 +60,7 @@ export const Testimonials = () => {
             progress={progress}
             goTo={goTo}
           />
-          <ImageAnimated direction={direction} t={t} />
+          <ImageAnimated direction={direction} testimonial={testimonial} />
         </div>
 
         <div className="flex-1 flex flex-col gap-y-[55px] justify-between p-6 md:p-8">
@@ -74,13 +73,12 @@ export const Testimonials = () => {
             />
             <TestimonialSection
               current={current}
-              t={t}
+              testimonial={testimonial}
               direction={direction}
               prev={prev}
               next={next}
             />
           </div>
-          <Stats t={t} direction={direction} />
         </div>
       </div>
     </SectionTemplate>

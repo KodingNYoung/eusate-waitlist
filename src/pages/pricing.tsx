@@ -24,8 +24,12 @@ import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { motion } from "motion/react";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { IntegrationPricingCard } from "@/components/routes/pricing/IntegrationPricingCard";
+import { useCurrencyToggle } from "@/utils/hooks";
+import CurrencyToggle from "@/components/shared/molecules/CurrencyToggle";
 
 const Pricing = () => {
+  const { currency, setCurrency, convert, symbol } = useCurrencyToggle();
+
   return (
     <div>
       <PageTemplate
@@ -34,7 +38,10 @@ const Pricing = () => {
           wrapper: "grid gap-y-12 md:gap-y-20 px-5",
         }}
       >
-        <PageHero classNames={{ container: "pt-20" }}>
+        <PageHero>
+          <div className="flex items-center justify-center mt-2.5 mb-8">
+            <CurrencyToggle currency={currency} onChange={setCurrency} />
+          </div>
           <PageHeader
             chipLabel="Our Pricing"
             title="Unlock Full Access"
@@ -54,9 +61,7 @@ const Pricing = () => {
             description="We charge by value delivered, not vanity metrics. Transparent plans. No hidden fees. Cancel anytime."
           />
         </PageHero>
-
         {/* PRICING */}
-
         <PageSection
           classNames={{
             base: "flex justify-center",
@@ -78,15 +83,18 @@ const Pricing = () => {
                 )}
               >
                 <AnimatedBlock delay={id / 10}>
-                  <PricingCard showCompare {...pricing} />
+                  <PricingCard
+                    convert={convert}
+                    symbol={symbol}
+                    showCompare
+                    {...pricing}
+                  />
                 </AnimatedBlock>
               </div>
             ))}
           </motion.div>
         </PageSection>
-
         {/* COMPARE PLANS */}
-
         <PageSection
           id="cp"
           classNames={{
@@ -111,14 +119,14 @@ const Pricing = () => {
           </AnimatedBlock>
 
           <CompareGrid
+            convert={convert}
+            symbol={symbol}
             headerTitle="Plan Features"
             headers={CATEGORY_LIST}
             data={COMPARE_PRICING_LIST}
           />
         </PageSection>
-
         {/* INTEGRATIONS */}
-
         <PageSection
           classNames={{
             container: "gap-y-10",
@@ -142,14 +150,16 @@ const Pricing = () => {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {INTEGRATIONS_PRICING.map(({ id, ...platform }) => (
               <AnimatedBlock key={id} delay={id / 10} duration={2}>
-                <IntegrationPricingCard {...platform} />
+                <IntegrationPricingCard
+                  convert={convert}
+                  symbol={symbol}
+                  {...platform}
+                />
               </AnimatedBlock>
             ))}
           </div>
         </PageSection>
-
         {/* ADD ONs */}
-
         <PageSection
           classNames={{ container: "pt-[56px] md:pt-[0px] pb-20" }}
           header={
@@ -171,7 +181,12 @@ const Pricing = () => {
           <div className="grid gap-y-6">
             {ADD_ON_LIST.map(({ id, ...addOn }) => (
               <AnimatedBlock key={id} delay={id / 10}>
-                <AddOnCard key={id} {...addOn} />
+                <AddOnCard
+                  convert={convert}
+                  symbol={symbol}
+                  key={id}
+                  {...addOn}
+                />
               </AnimatedBlock>
             ))}
           </div>

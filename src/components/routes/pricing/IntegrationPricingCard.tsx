@@ -2,13 +2,18 @@ import Image from "next/image";
 import Typography from "@/components/shared/atoms/Typography";
 import { FC, IntegrationPricing } from "@/utils/types";
 
-type Props = Omit<IntegrationPricing, "id">;
+type Props = Omit<IntegrationPricing, "id"> & {
+  convert: (amount: number) => number;
+  symbol: string;
+};
 
 export const IntegrationPricingCard: FC<Props> = ({
   name,
   icon,
   description,
   price,
+  convert,
+  symbol,
 }) => {
   return (
     <div className="border-[1px] flex flex-col items-center gap-y-10 border-gray-100 p-8 rounded-x24">
@@ -30,7 +35,8 @@ export const IntegrationPricingCard: FC<Props> = ({
         </div>
       </div>
       <Typography variant="semibold-3xl" className="text-black">
-        ${price}
+        {symbol}
+        {convert(price).toLocaleString("en-US")}
       </Typography>
     </div>
   );

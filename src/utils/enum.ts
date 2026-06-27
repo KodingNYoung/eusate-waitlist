@@ -58,3 +58,7 @@ export enum ProductKey {
 export enum PageQueryKey {
   PAGE = "page",
 }
+export enum Currency {
+  USD = "USD",
+  NGN = "NGN",
+}

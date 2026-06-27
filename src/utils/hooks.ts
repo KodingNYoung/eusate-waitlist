@@ -6,10 +6,13 @@ import {
   useRef,
   useState,
 } from "react";
-import { extractZodErrors, getFormdataFromFormRef } from "./helpers";
+import { extractZodErrors, getFormdataFromFormRef, round } from "./helpers";
 import { ZodObject } from "zod";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { MOBILE_WIDTH } from "./constants";
+import { CURRENCY_SYMBOLS, MOBILE_WIDTH } from "./constants";
+import { Currency } from "./enum";
+import { CurrencyRate } from "./types";
+import { getCurrencyRate } from "@/actions";
 
 type BatchParams = {
   key: string;
@@ -186,4 +189,34 @@ export const useMediaQuery = (query: string = MOBILE_WIDTH): boolean => {
   }, [query]);
 
   return matches;
+};
+
+export const useCurrencyToggle = () => {
+  const [currency, setCurrency] = useState<Currency>(Currency.USD);
+
+  const [loading, setLoading] = useState(false);
+  const [rate, setRate] = useState<CurrencyRate>();
+
+  const convert = useCallback(
+    (amount: number) =>
+      currency === Currency.USD ? amount : round(amount * (rate?.rate ?? 0)),
+    [currency, rate?.rate],
+  );
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      const response = await getCurrencyRate();
+      setRate(response?.data);
+      setLoading(false);
+    })();
+  }, []);
+
+  return {
+    currency,
+    loading,
+    setCurrency,
+    convert,
+    symbol: CURRENCY_SYMBOLS[currency],
+  };
 };

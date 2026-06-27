@@ -8,6 +8,8 @@ type Props = {
   description: string;
   price: number;
   size: string;
+  convert: (amount: number) => number;
+  symbol: string;
 };
 
 export const AddOnCard: FC<Props> = ({
@@ -16,6 +18,8 @@ export const AddOnCard: FC<Props> = ({
   description,
   price,
   size,
+  convert,
+  symbol,
 }) => {
   return (
     <div className="border flex flex-wrap gap-12 md:gap-8 justify-between border-gray-200 rounded-3xl px-6 py-4">
@@ -43,7 +47,8 @@ export const AddOnCard: FC<Props> = ({
       </div>
       <div className="flex items-center gap-2">
         <Typography className="text-semibold-xl md:text-semibold-3xl">
-          ${price}
+          {symbol}
+          {convert(price).toLocaleString("en-US")}
         </Typography>
         <span className="text-bold-sm md:text-bold-base text-gray-400">
           {size}
