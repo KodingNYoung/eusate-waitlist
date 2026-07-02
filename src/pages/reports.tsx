@@ -6,6 +6,7 @@ import { ReportCard } from "@/components/routes/reports/ReportCard";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { PageHero } from "@/components/shared/organisms/PageHero";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const Reports = () => {
   const containerRef = useRef(null);
@@ -19,6 +20,12 @@ const Reports = () => {
 
   return (
     <PageTemplate classNames={{ wrapper: "md:space-y-24" }}>
+      <MetaProps
+        title="Reports & Analytics | Eusate"
+        description="Track support performance with Eusate's reporting tools. Get clear insights into response times, resolution rates, and customer satisfaction."
+        path="/reports"
+        jsonLdData={{ type: "software" }}
+      />
       <PageHero
         ref={headerRef}
         classNames={{

@@ -26,13 +26,13 @@ const team: Member[] = [
   {
     id: 2,
     imgSrc: "/images/founder-nath.webp",
-    name: "Natheniel Peter Lucky",
+    name: "Nathaniel Peter Lucky",
     role: "Mobile Engineer",
   },
   {
     id: 3,
     imgSrc: "/images/founder-young.webp",
-    name: "Adabambo Abiodum",
+    name: "Adebambo Abiodum",
     role: "Frontend Engineer",
   },
   {

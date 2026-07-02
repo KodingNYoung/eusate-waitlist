@@ -47,7 +47,6 @@ export const ROUTES = {
   SIGNUP: "/sign-up",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-condition",
-  DOCUMENTATION: "/documentation",
   SATE_AI: "/sate-ai",
   INTEGRATIONS: "/integrations",
   BLOGS: "/blogs",
@@ -217,8 +216,9 @@ export const PRICING: PricingPlan[] = [
       { text: "512 KB knowledge base", checked: true },
       { text: "No copilot messages", checked: false },
       { text: "No saved responses", checked: false },
-      { text: "No AI call", checked: false },
+      { text: "No devspace functions", checked: false },
       { text: "No add-ons", checked: false },
+      { text: "No AI voice call", checked: false },
     ],
     action: () => {},
   },
@@ -240,7 +240,7 @@ export const PRICING: PricingPlan[] = [
       { text: "Saved responses", checked: true },
       { text: "5 Devspace functions", checked: true },
       { text: "Add-ons", checked: true },
-      { text: "No AI calls", checked: false },
+      { text: "No AI voice call", checked: false },
     ],
     action: () => {},
   },
@@ -261,7 +261,7 @@ export const PRICING: PricingPlan[] = [
       { text: "20 copilot messages", checked: true },
       { text: "Saved responses", checked: true },
       { text: "10 Devspace functions", checked: true },
-      { text: "AI call (5 mins per session)", checked: true },
+      { text: "AI voice call (5 mins per session)", checked: true },
       { text: "Add-ons", checked: true },
     ],
     action: () => {},
@@ -284,7 +284,7 @@ export const PRICING: PricingPlan[] = [
       { text: "Unlimited copilot messages", checked: true },
       { text: "Saved responses", checked: true },
       { text: "20 Devspace functions", checked: true },
-      { text: "AI call (5 mins per session)", checked: true },
+      { text: "AI voice call (5 mins per session)", checked: true },
       { text: "Add-ons", checked: true },
     ],
     action: () => {},
@@ -416,19 +416,17 @@ export const COMPARE_PRICING_LIST: CompareCategoryData[] = [
         features: {
           [ComparePlanCat1.HEADER]: { details: null },
           [ComparePlanCat1.FEATURE]: { details: "512KB" },
-          [ComparePlanCat1.SHARED_INBOX_1]: false,
+          [ComparePlanCat1.SHARED_INBOX_1]: true,
           [ComparePlanCat1.AI_SUMMARIZE]: { details: "Full Access" },
-          // [ComparePlanCat1.SHARED_INBOX_2]: { details: null },
         },
       },
       {
         key: "cat-2",
         features: {
           [ComparePlanCat1.HEADER]: { details: null },
-          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
+          [ComparePlanCat1.FEATURE]: { details: "1 agent seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: false,
           [ComparePlanCat1.AI_SUMMARIZE]: true,
-          // [ComparePlanCat1.SHARED_INBOX_2]: { details: null },
         },
       },
       {
@@ -439,7 +437,6 @@ export const COMPARE_PRICING_LIST: CompareCategoryData[] = [
           [ComparePlanCat1.SHARED_INBOX_1]: { details: "0 msgs/ticket" },
           [ComparePlanCat1.AI_SUMMARIZE]: false,
           [ComparePlanCat1.SHARED_INBOX_2]: { details: "0" },
-          // [ComparePlanCat1.SHARED_INBOX_3]: { details: null},
         },
       },
       {
@@ -471,7 +468,7 @@ export const COMPARE_PRICING_LIST: CompareCategoryData[] = [
         key: "cat-2",
         features: {
           [ComparePlanCat1.HEADER]: { details: null },
-          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
+          [ComparePlanCat1.FEATURE]: { details: "1 agent seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
           [ComparePlanCat1.AI_SUMMARIZE]: true,
         },
@@ -516,7 +513,7 @@ export const COMPARE_PRICING_LIST: CompareCategoryData[] = [
         key: "cat-2",
         features: {
           [ComparePlanCat1.HEADER]: { details: null },
-          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
+          [ComparePlanCat1.FEATURE]: { details: "1 agent seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
           [ComparePlanCat1.AI_SUMMARIZE]: true,
         },
@@ -560,7 +557,7 @@ export const COMPARE_PRICING_LIST: CompareCategoryData[] = [
         key: "cat-2",
         features: {
           [ComparePlanCat1.HEADER]: { details: null },
-          [ComparePlanCat1.FEATURE]: { details: "1 free seat" },
+          [ComparePlanCat1.FEATURE]: { details: "1 agent seat" },
           [ComparePlanCat1.SHARED_INBOX_1]: true,
           [ComparePlanCat1.AI_SUMMARIZE]: true,
         },
@@ -592,23 +589,26 @@ export const ADD_ON_LIST: AddOn[] = [
     id: 1,
     src: PublicExtras.SATE_ICON,
     title: "Sate tokens",
-    description: "Every AI activity feeds off the sate tokens.",
+    description:
+      "Power your AI agents with extra credits for continuous customer and co-pilot conversations.",
     price: 4,
     size: "per 1M S8 tokens",
   },
   {
     id: 2,
     src: PublicExtras.DATABASE_ICON,
-    title: "Knowlege Base Space",
-    description: "Every AI activity feeds off the sate tokens.",
+    title: "Knowledge base space",
+    description:
+      "Expand your documentation storage to provide more context for Sate to respond to your customers and act as a co-pilot.",
     price: 2,
     size: "per 5MB",
   },
   {
     id: 3,
     src: PublicExtras.AGENT_ICON,
-    title: "1 Humber Agent",
-    description: "Every AI activity feeds off the sate tokens.",
+    title: "1 Human agent",
+    description:
+      "Add a collaborative seat for human-in-the-loop oversight and complex handoffs.",
     price: 4,
     size: "per agent",
   },
@@ -616,7 +616,8 @@ export const ADD_ON_LIST: AddOn[] = [
     id: 4,
     src: PublicExtras.DEVSPACE_ICONS,
     title: "Devspace functions",
-    description: "Every AI activity feeds off the sate tokens.",
+    description:
+      "Enable additional custom system code functions in our system to enhance Sate’s accuracy for real-time information updates.",
     price: 0.5,
     size: "per function",
   },
@@ -628,49 +629,36 @@ export const HELP_CENTER_QUESTIONS = {
       id: 1,
       key: "q-1",
       question: "What is EUSATE?",
-      answer: `
-EUSATE is a B2B customer support service company that provides AI-powered customer support solutions to businesses across all sectors. We operate as an AI-first company, meaning artificial intelligence — specifically our AI system called SATE — is at the core of our service delivery. We take full ownership of your customer support operations so you can focus on running your business.
-      `,
+      answer:
+        "EUSATE is a B2B customer support service company that provides AI-powered customer support solutions to businesses across all sectors. We operate as an AI-first company, which means artificial intelligence sits at the core of our service delivery through our proprietary AI system, SATE. By taking full ownership of your customer support operations, we free you to focus on running your business",
     },
     {
       id: 2,
       key: "q-2",
       question: "What is SATE?",
-      answer: `
-SATE is EUSATE's proprietary AI customer support agent. It acts as your first line of intelligent support — it attempts to resolve all customer issues before escalating to a human agent. SATE isn't just another chatbot; it can process refunds, track shipments, update account settings, check inventory, and more — not just send a link to your FAQ.
-      `,
+      answer:
+        "SATE is EUSATE's proprietary AI customer support agent. It acts as your first line of intelligent support, attempting to resolve all customer issues before escalating to a human agent. SATE isn't just another chatbot; it can process refunds, track shipments, update account settings, check inventory, and more, rather than simply sending a link to your FAQ.",
     },
     {
       id: 3,
       key: "q-3",
       question: "Who is EUSATE built for?",
-      answer: `
-EUSATE is built for startups and SMBs that need enterprise-grade customer support without the complexity or heavy price tag. We focus on the unique needs of lean teams, giving startups and SMEs the same powerful tools as enterprises. We are sector-agnostic, serving any business that requires customer support.
-      `,
+      answer:
+        "EUSATE is built for startups and SMBs that need enterprise-grade customer support without the complexity or heavy price tag. We focus on the unique needs of lean teams, giving startups and SMEs the same powerful tools as enterprises. We are sector-agnostic, serving any business that requires customer support.",
     },
     {
       id: 4,
       key: "q-4",
       question: "How quickly can I get started?",
-      answer: `
-EUSATE is designed for a fast time-to-value. Integration typically takes hours, not weeks, with an impact on support efficiency from day one. Most customers are live and handling customers within 2-3 weeks following a structured implementation journey: Week 1 for integration and setup, Weeks 2-3 for beta testing and refinement, and Week 4+ for full launch.
-      `,
-    },
-    {
-      id: 5,
-      key: "q-5",
-      question: "What does the implementation journey look like?",
-      answer: `
-Phase 1 (Week 1): Set up API/SDK with your existing endpoints, configure Developer Space tools, upload initial knowledge base content, and test SATE in the playground environment. Phase 2 (Weeks 2-3): Deploy to a small user group, monitor real-time interactions, refine AI responses and escalation rules, and train your team on helpdesk features. Phase 3 (Week 4+): Roll out to all customers, enable all channel integrations, implement advanced analytics, and establish a regular optimization cadence.
-      `,
+      answer:
+        "EUSATE is designed for a fast time-to-value. Integration typically takes hours, not weeks, with an impact on support efficiency from day one.",
     },
     {
       id: 6,
       key: "q-6",
       question: "How do I access EUSATE?",
-      answer: `
-You can access the EUSATE platform through the web application at app.eusate.com. From the dashboard you can manage your knowledge base, configure DevSpace, monitor the helpdesk in real-time, run playground tests, and access analytics. Technical integration with your systems is done via the SDK or API.
-      `,
+      answer:
+        "You can access the EUSATE platform through the web application at app.eusate.com. From the dashboard you can manage your knowledge base, configure DevSpace, monitor the helpdesk in real-time, run playground tests, and access analytics. Technical integration with your systems is done via the SDK or API.",
     },
   ],
 
@@ -1297,7 +1285,7 @@ export const HD_FEATURES: HDFeature[] = [
     highlightTitle: "Unified Conversation",
     title: "Management",
     description:
-      "A customer starts on email, follows up on WhatsApp, then tweets publicly. The Helpdesk shows this as one continuous conversation. Full context, complete history, zero switching between platforms. Your team sees the whole picture, always.Context is everything in support. Unified conversations mean no question gets asked twice and no customer repeats themselves.",
+      "All your customer conversations from different channels (email, WhatsApp, social media, and more) appear in a single helpdesk. Your team can see the full conversation history in one place instead of switching between platforms.",
     imgSrc: "/images/hd-feature-1.webp",
   },
   {
@@ -1321,7 +1309,7 @@ export const HD_FEATURES: HDFeature[] = [
     highlightTitle: "Save Responses",
     title: "for consistency",
     description:
-      "Customizable response templates for common queries. When agents face a shipping delay, they use /shipping-delay or a macro. The system inserts a response, fills in the order number and tracking link, updates ticket status, and schedules a follow-up—all in one action. For complex cases, agents can customize templates with variables like {{customer_name}} and {{order_id}}.",
+      "Customizable response templates for common queries. When agents face a shipping delay, they use a macro. The system inserts a response, fills in the order number and tracking link, updates ticket status, and schedules a follow-up, all in one action.",
     imgSrc: "/images/hd-feature-4.webp",
   },
 ];
@@ -1417,7 +1405,7 @@ export const KB_FEATURES = [
     id: 1,
     title: "Multi-Source Content Integration",
     description:
-      "Your documentation exists. Knowledge Base adapts to you without forcing migration. Upload documents, paste URLs, or write in the editor. Our system parses and indexes content for AI retrieval. No manual tagging needed, but you can add it. Document uploads (PDF, DOCX, TXT, MD, RTF), URL linking, custom articles, FAQ imports, API connections, and spreadsheet data.",
+      "Your documentation exists. Knowledge Base adapts to you without forcing migration. Upload documents, paste URLs, or write in the editor. Our system parses and indexes content for AI retrieval. No manual tagging needed, but you can add it. Document uploads (PDF, DOCX, and TXT), URL linking, custom articles, and FAQs.",
     panelSrc: "/images/kb-feature-1.webp",
   },
   {
@@ -1431,7 +1419,7 @@ export const KB_FEATURES = [
     id: 3,
     title: "Content Analytics and Optimization",
     description:
-      "Control visibility of sensitive information. Tag content with access levels. SATE respects permissions—customers don’t see internal docs, free users miss premium content, and regional restrictions apply. Granular control ensures the right info reaches the right people.",
+      "Control visibility of sensitive information. Tag content with access levels. SATE respects permissions; customers don’t see internal docs, free users miss premium content, and regional restrictions apply. Granular control ensures the right info reaches the right people.",
     panelSrc: "/images/kb-feature-3.webp",
   },
   {

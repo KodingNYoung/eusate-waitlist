@@ -87,9 +87,9 @@ export const SectionTemplate = ({
   return (
     <section
       id={id}
+      style={{ backgroundColor: color }}
       className={cls(
         "transition-colors duration-300",
-        color,
         className,
         classNames?.base,
       )}

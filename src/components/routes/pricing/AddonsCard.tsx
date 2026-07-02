@@ -39,7 +39,7 @@ export const AddOnCard: FC<Props> = ({
           </Typography>
           <Typography
             as="p"
-            className="text-gray-400 text-semibold-sm md:text-semibold-base"
+            className="text-gray-400 text-semibold-sm md:text-semibold-base max-w-[500px]"
           >
             {description}
           </Typography>

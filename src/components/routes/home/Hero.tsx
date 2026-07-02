@@ -11,7 +11,7 @@ export const Hero = () => {
     <ParallaxHero
       chipLabel={
         <Typography className="flex gap-4 items-center text-medium-sm md:text-medium-lg leading-[150%] text-white/80">
-          10 Customers <span>{NotEqualIcon}</span> 10X CX team
+          10 Customers <span>{NotEqualIcon}</span> 10× CX team
         </Typography>
       }
       classNames={{
@@ -21,7 +21,7 @@ export const Hero = () => {
         descriptionContainer: "items-start md:items-center",
         wrapper: "md:pt-[23px] pt-6 gap-y-10",
         title: "text-left md:text-center",
-        chip: "bg-transparent bg-[linear-gradient(90deg,_rgba(215,171,7,0.3)_0%,_rgba(232,101,85,0.3)_100%)] backdrop-blur-3xl text-white ",
+        chip: "bg-transparent bg-[linear-gradient(90deg,_#d7ab074c_0%,_#e865554c_100%)] backdrop-blur-xs text-white text-medium-sm sm:text-medium-lg",
       }}
       imgSrc="/images/helpdesk-hero.webp"
       startContent={
@@ -37,10 +37,7 @@ export const Hero = () => {
         </div>
       }
       cta={
-        <Link
-          href={FE_URL + ROUTES.SIGNUP}
-          className="w-full md:w-fit"
-        >
+        <Link href={FE_URL + ROUTES.SIGNUP} className="w-full md:w-fit">
           <Button
             size="sm"
             className="bg-brand-gradient px-12 py-2.5 md:py-4 w-full md:w-auto"

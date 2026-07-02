@@ -12,8 +12,7 @@ type Slots =
   | "title"
   | "description"
   | "titleContainer"
-  | "descriptionContainer"
-  | "chipContainer";
+  | "descriptionContainer";
 type Orientation = "horizontal" | "vertical";
 type Position = "center" | "left";
 type Variant = "header" | "sub";
@@ -30,8 +29,6 @@ const positionVariantSubHeader: {
 } = {
   center: {
     root: "flex-col justify-center",
-    chip: "flex items-start justify-center",
-    chipContainer: "flex justify-center",
     titleContainer: "self-center",
     title: "text-center",
   },
@@ -108,26 +105,14 @@ export const PageHeader = forwardRef<HTMLDivElement, Props>(
             {/* TITLE */}
             <div className={cls("grid gap-y-8", classNames?.titleContainer)}>
               {startTitleContainer}
-              <div
+              <Chip
                 className={cls(
-                  position === "center" && "flex justify-center",
-                  classNames?.chipContainer,
+                  classNames?.chip,
+                  position === "center" && "mx-auto",
                 )}
               >
-                <Chip
-                  classNames={{
-                    container:
-                      "w-fit p-1.5 md:p-2 text-medium-sm md:text-medium-base",
-                  }}
-                  className={cls(
-                    "bg-gold-100 rounded-full p",
-                    position === "center" && "flex items-start justify-center",
-                    classNames?.chip,
-                  )}
-                >
-                  {chipLabel}
-                </Chip>
-              </div>
+                {chipLabel}
+              </Chip>
               {typeof title === "string" ? (
                 <Typography
                   as="h1"
@@ -146,28 +131,34 @@ export const PageHeader = forwardRef<HTMLDivElement, Props>(
             </div>
 
             {/* DESCRIPTION AND CTA */}
-            <div className={cls("space-y-2", classNames?.descriptionContainer)}>
-              <Typography
-                as="p"
-                className={cls(
-                  "md:text-regular-xl text-gray-700",
-                  position === "center" && "text-center",
-                  classNames?.description,
-                )}
-                {...descriptionProps}
+            {(description || cta) && (
+              <div
+                className={cls("space-y-2", classNames?.descriptionContainer)}
               >
-                {description}
-              </Typography>
-              {cta && (
-                <div
-                  className={cls(
-                    position === "center" && "flex justify-center",
-                  )}
-                >
-                  {cta}
-                </div>
-              )}
-            </div>
+                {description && (
+                  <Typography
+                    as="p"
+                    className={cls(
+                      "md:text-regular-xl text-gray-700",
+                      position === "center" && "text-center",
+                      classNames?.description,
+                    )}
+                    {...descriptionProps}
+                  >
+                    {description}
+                  </Typography>
+                )}
+                {cta && (
+                  <div
+                    className={cls(
+                      position === "center" && "flex justify-center",
+                    )}
+                  >
+                    {cta}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {endContent}
@@ -223,12 +214,7 @@ export const SubHeader: FC<SubHeaderProps> = ({
           )}
         >
           {chipLabel && (
-            <Chip
-              classNames={{
-                content:
-                  "text-medium-sm md:text-medium-base px-4 py-2 block bg-gold-100 rounded-full",
-              }}
-            >
+            <Chip className={cls(position === "center" && "mx-auto")}>
               {chipLabel}
             </Chip>
           )}

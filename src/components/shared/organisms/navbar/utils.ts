@@ -47,8 +47,13 @@ export const NAV_EXPLORE_LIST: Explore[] = [
         label: "Devspace",
         link: ROUTES.DEVSPACE,
       },
+      {
+        key: 5,
+        label: "Integrations",
+        link: ROUTES.INTEGRATIONS,
+      },
       // {
-      //   key: 5,
+      //   key: 6,
       //   label: "Reports",
       //   link: ROUTES.REPORTS,
       // },
@@ -62,11 +67,6 @@ export const NAV_EXPLORE_LIST: Explore[] = [
         key: 1,
         label: "About us",
         link: ROUTES.ABOUT,
-      },
-      {
-        key: 3,
-        label: "Integrations",
-        link: ROUTES.INTEGRATIONS,
       },
       {
         key: 4,
@@ -118,11 +118,11 @@ export const FOOTER_EXPLORE_LIST: Explore[] = [
         label: "Devspace",
         link: ROUTES.DEVSPACE,
       },
-      // {
-      //   key: 5,
-      //   label: "Reports",
-      //   link: ROUTES.REPORTS,
-      // },
+      {
+        key: 3,
+        label: "Integrations",
+        link: ROUTES.INTEGRATIONS,
+      },
     ],
   },
   {
@@ -139,11 +139,6 @@ export const FOOTER_EXPLORE_LIST: Explore[] = [
         label: "Pricing",
         use: "footer",
         link: ROUTES.PRICING,
-      },
-      {
-        key: 3,
-        label: "Integrations",
-        link: ROUTES.INTEGRATIONS,
       },
       {
         key: 4,

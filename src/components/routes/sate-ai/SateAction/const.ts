@@ -22,7 +22,7 @@ export const CARDS: Card[] = [
     num: "02",
     title: "Adapt to Emotional State",
     imgSrc: "/sate-ai/images/help-pop-out.webp",
-    desc: "SATE reads emotional cues and adjusts its tone — staying calm, empathetic, and supportive when customers need it most.",
+    desc: "SATE reads emotional cues and adjusts its tone; staying calm, empathetic, and supportive when customers need it most.",
     chat: [
       {
         from: "ai",
@@ -59,7 +59,7 @@ export const CARDS: Card[] = [
   {
     num: "04",
     title: "Actually Solve Problems 🎉",
-    desc: "SATE goes beyond answering questions — it takes action, processes requests, and resolves issues end-to-end without unnecessary hand-offs.",
+    desc: "SATE goes beyond answering questions; it takes action, processes requests, and resolves issues end-to-end without unnecessary hand-offs.",
     imgSrc: "/sate-ai/images/help-pop-out.webp",
     chat: [
       {
@@ -95,7 +95,7 @@ export const HOME_CARDS: Card[] = [
   },
   {
     num: "02",
-    title: "Test State in playground",
+    title: "Test Sate in playground",
     imgSrc: "/sate-ai/images/test-playground.webp",
     desc: "Test responses in the Playground. Tune tone and style to match your brand perfectly.",
     chat: [

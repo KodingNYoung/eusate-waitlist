@@ -1,4 +1,3 @@
-import Chip from "@/components/shared/molecules/Chip";
 import Typography from "@/components/shared/atoms/Typography";
 import { InfoCircleIcon, TickCircleIcon } from "@/assets/icons";
 import Button from "@/components/shared/molecules/Button";
@@ -29,14 +28,11 @@ export const CompareGrid: FC<Props> = ({
 
   return (
     <div className="w-full overflow-x-auto">
-      <table className="w-full min-w-[800px] border-separate border-spacing-0 overflow-hidden rounded-3xl border border-gray-100">
+      <table className="w-full min-w-[800px] border-separate border-spacing-0 overflow-hidden rounded-3xl border border-gray-100 break-words">
         <thead>
           <tr>
-            <th className="pb-[10px] text-left align-bottom min-w-[231px]">
-              <Typography
-                variant="bold-xl"
-                className="text-bold-base md:text-bold-xl p-8 "
-              >
+            <th className="pb-[10px] text-left align-bottom min-w-44 w-fit max-w-1/5 sticky left-0">
+              <Typography className="text-bold-base md:text-bold-xl p-6 lg:p-8">
                 {headerTitle}
               </Typography>
             </th>
@@ -44,26 +40,19 @@ export const CompareGrid: FC<Props> = ({
               <th
                 key={key}
                 scope="col"
-                className="border-l pt-6 pb-[10px] text-left align-top min-w-[241px]"
+                className="border-l pt-6 pb-[10px] text-left align-top min-w-44 max-w-1/5"
               >
                 <div className="flex flex-col gap-[10px]">
-                  <div className="px-8">
-                    <Chip
-                      variant="light"
-                      classNames={{
-                        container: "w-full",
-                        content: "text-semibold-sm md:text-semibold-base",
-                      }}
-                    >
+                  <div className="px-6 lg:px-8">
+                    <Typography className="w-full text-gray-700 text-semibold-md md:text-semibold-base">
                       {label}
-                    </Chip>
+                    </Typography>
                   </div>
-                  <Typography
-                    variant="bold-4xl"
-                    className="flex p-8 flex-col items-start text-bold-4xl md:text-bold-5xl"
-                  >
-                    {symbol}
-                    {convert(price).toLocaleString("en-US")}
+                  <Typography className="flex p-6 lg:p-8 flex-col items-start text-bold-3xl">
+                    <span className="tracking-[-0.08em]">
+                      {symbol}
+                      {convert(price).toLocaleString("en-US")}
+                    </span>
                     <span className="text-semibold-base text-gray-400">
                       per month
                     </span>
@@ -85,9 +74,8 @@ export const CompareGrid: FC<Props> = ({
               <tr key={itemKey}>
                 {itemKey === ComparePlanCat1.HEADER ? (
                   <th
-                    // colSpan={1 + data.length}
                     scope="row"
-                    className="border-t p-6 text-left"
+                    className="border-t p-6 text-left sticky left-0"
                   >
                     <Typography
                       variant="bold-lg"

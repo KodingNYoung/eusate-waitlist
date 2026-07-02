@@ -5,7 +5,6 @@ import {
 } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
-import Chip from "@/components/shared/molecules/Chip";
 import { CURRENCY_SYMBOLS, FE_URL, ROUTES } from "@/utils/constants";
 import { cls } from "@/utils/helpers";
 import { FC, InternalPath } from "@/utils/types";
@@ -37,11 +36,10 @@ export const PricingCard: FC<Props> = ({
       data-featured={recomended}
       className={cls(
         "rounded-3xl h-fit grid gap-[10px] p-6 w-full max-w-full md:max-w-[322px] bg-gold-50",
-        "data-[featured=true]:bg-black",
+        "data-[featured=true]:bg-black group",
       )}
     >
       <header
-        data-featured={recomended}
         className={cls(
           "rounded-2xl space-y-6 p-8",
           recomended
@@ -49,22 +47,12 @@ export const PricingCard: FC<Props> = ({
             : "bg-white",
         )}
       >
-        <Chip
-          data-featured={recomended}
-          variant="light"
-          classNames={{
-            base: cls(
-              "text-semibold-base",
-              "data-[featured=true]:text-white/60",
-            ),
-          }}
-        >
+        <Typography className="text-semibold-base text-gray-700 group-data-[featured=true]:text-white/60">
           {label}
-        </Chip>
+        </Typography>
         <Typography
-          data-featured={recomended}
           variant="bold-4xl"
-          className="flex flex-col items-start data-[featured=true]:text-white"
+          className="flex flex-col items-start group-data-[featured=true]:text-white"
         >
           {symbol || CURRENCY_SYMBOLS.USD}
           {(convert ? convert(price) : price).toLocaleString("en-US")}
@@ -76,9 +64,8 @@ export const PricingCard: FC<Props> = ({
           <div key={id} className="flex gap-3">
             <span>{checked ? TickCircleIcon : CloseCircleIcon}</span>
             <Typography
-              data-featured={recomended}
               className={
-                "data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700 leading-[150%]"
+                "group-data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700 leading-[150%]"
               }
             >
               {text}
@@ -99,8 +86,7 @@ export const PricingCard: FC<Props> = ({
           <Link href={ROUTES.PRICING + "#cp"} scroll>
             <Button
               variant="tetiary"
-              data-featured={recomended}
-              className="group text-gray-600 w-full p-4 data-[featured=true]:text-white data-[featured=true]:hover:!bg-transparent"
+              className="text-gray-600 w-full p-4 group-data-[featured=true]:text-white group-data-[featured=true]:hover:!bg-transparent"
               endContent={
                 <span className="stroke-gray-600 group-data-[featured=true]:stroke-white">
                   {ArrowRightIcon}

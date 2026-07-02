@@ -7,10 +7,17 @@ import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { FormSection } from "@/components/routes/contact/FormSection";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const ContactPage = () => {
   return (
     <div>
+      <MetaProps
+        title="Contact Eusate | Book a Demo"
+        description="Have questions or ready to transform your customer support? Contact the Eusate team or book a personalized product demo today."
+        path="/contact"
+        jsonLdData={{ type: "software" }}
+      />
       <AnimatedBlock variants={staggerContainer}>
         <PageTemplate
           classNames={{

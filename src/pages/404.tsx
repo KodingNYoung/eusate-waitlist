@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from "@/assets/icons";
 import Typography from "@/components/shared/atoms/Typography";
 import Button from "@/components/shared/molecules/Button";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 import Navbar from "@/components/shared/organisms/navbar";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +10,12 @@ import React from "react";
 const Custom404 = () => {
   return (
     <main className="h-screen bg-[url(/images/404-swatch.webp)] bg-center bg-no-repeat bg-cover">
+      <MetaProps
+        title="Page Not Found | Eusate"
+        description="The page you're looking for doesn't exist or has moved. Head back to Eusate's homepage to keep exploring AI-powered customer support."
+        path="/404"
+        jsonLdData={{ type: "software" }}
+      />
       <Navbar />
       <section className="h-full flex flex-col items-center justify-center gap-5 container">
         <Image

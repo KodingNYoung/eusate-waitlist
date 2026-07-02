@@ -67,7 +67,7 @@ const Footer = () => {
             </Button>
           </Link>
         </div>
-        <div className="absolute left-0 bottom-0 z-3 opacity-10 w-full h-[20rem] translate-y-[2rem]">
+        <div className="absolute left-0 bottom-0 z-3 opacity-10 w-full h-[20rem] pointer-events-none translate-y-[2rem]">
           <Image src="/logos/full-gradient-white.svg" fill alt="footer-img" />
         </div>
       </div>

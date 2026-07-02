@@ -54,14 +54,14 @@ export const HomeIntegrations = () => {
         </AnimatedBlock>
         <div className="relative z-2 flex flex-col items-center justify-center gap-y-6 w-[70%] md:w-full">
           <Typography
-            className="text-center text-bold-3xl md:text-bold-5xl leading-[120%]"
+            className="text-center text-bold-3xl md:text-bold-5xl leading-[120%] max-w-[570px]"
             as="h1"
           >
-            Because Great Support Starts with{" "}
-            <span className="text-gradient">Great Tool</span>
+            Great support starts with{" "}
+            <span className="text-gradient">Great Tools</span>
           </Typography>
           <Typography
-            className="text-gray-400 text-medium-base text-medium-lg leading-[150%] text-center"
+            className="text-gray-400 text-medium-lg leading-[150%] text-center"
             as="p"
           >
             Eusate connects to the tools and platforms your customers already

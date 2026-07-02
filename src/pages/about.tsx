@@ -15,6 +15,7 @@ import { GridImageMobile } from "@/components/routes/about/GridImageMobile";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const AboutPage = () => {
   const isMobile = useMediaQuery();
@@ -23,12 +24,17 @@ const AboutPage = () => {
       gradientVariant="yellow"
       classNames={{ wrapper: "w-full pb-12" }}
     >
+      <MetaProps
+        title="About Eusate | AI-Powered Customer Support"
+        description="Learn how Eusate is redefining customer support with AI, helping businesses deliver faster, smarter, and more human customer experiences."
+        path="/about"
+        jsonLdData={{ type: "software" }}
+      />
       <PageHero classNames={{ wrapper: "px-5" }}>
         <AnimatedBlock variants={fadeVariants}>
           <PageHeader
             title="Our Story"
             chipLabel="About us"
-            description="Last updated: 12/12/2026"
             position={isMobile ? "left" : "center"}
             classNames={{
               container: "md:h-auto !py-0 mt-20 md:mt-24 mb-12 md:mb-20",
@@ -78,13 +84,13 @@ const AboutPage = () => {
           <VisionCard
             icon={TelescopeIcon}
             title="Our Vision"
-            content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
+            content="A world where every customer interaction with AI builds trust instead of frustration. We see a future where technology no longer feels like a barrier between businesses and the people they serve, but a bridge that helps customers feel heard the moment they reach out, and allows businesses to deliver care at any scale without losing the human warmth that earned their customers in the first place."
           />
           <VisionCard
             icon={MissionIcon}
             title="Our Mission"
             animationDelay={2}
-            content="Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders. Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both."
+            content="To build culturally empathetic AI customer support that speaks every user's language, understands their context, and works alongside businesses like a trusted partner. We make enterprise-grade service accessible to startups and the customers they serve, creating intelligence that goes beyond translation to grasp the nuance, emotion, and cultural meaning behind every conversation."
           />
         </div>
       </PageSection>

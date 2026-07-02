@@ -1,17 +1,34 @@
 import { cls } from "@/utils/helpers";
-import { FC, TWClassNames } from "@/utils/types";
-import { Chip as ChipBase, ChipProps } from "@heroui/chip";
+import { FC } from "@/utils/types";
+import Typography, { TypographyProps } from "../../atoms/Typography";
 
-type Slots = "container" | keyof NonNullable<ChipProps["classNames"]>;
+type Color = "gold";
 
-type Props = Omit<ChipProps, "classNames"> & {
-  classNames?: { [slot in Slots]?: TWClassNames };
+type ChipProps = TypographyProps & {
+  color?: Color;
 };
-const Chip: FC<Props> = ({ children, ...props }) => {
+
+const chipColor = {
+  gold: "bg-gold-100 text-black",
+};
+
+const Chip: FC<ChipProps> = ({
+  children,
+  className,
+  color = "gold",
+  ...props
+}) => {
   return (
-    <div className={cls(props.classNames?.container)}>
-      <ChipBase {...props}>{children}</ChipBase>
-    </div>
+    <Typography
+      {...props}
+      className={cls(
+        className,
+        "text-medium-sm md:text-medium-base px-4 py-2 rounded-full w-fit",
+        chipColor[color],
+      )}
+    >
+      {children}
+    </Typography>
   );
 };
 

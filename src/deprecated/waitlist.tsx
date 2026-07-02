@@ -1,8 +1,7 @@
 import { FlashGradientIcon } from "@/assets/icons";
-import WaitlistForm from "@/components/routes/waitlist/WaitlistForm";
+import WaitlistForm from "./_components/waitlist/WaitlistForm";
 import GradientBorder from "@/components/shared/atoms/GradientBorder";
 import Typography from "@/components/shared/atoms/Typography";
-import MetaProps from "@/components/shared/molecules/MetaProps";
 import Navbar from "@/components/shared/organisms/navbar";
 import { FC } from "@/utils/types";
 import React from "react";
@@ -11,18 +10,6 @@ import { motion } from "motion/react";
 const Waitlist: FC = () => {
   return (
     <main className="h-screen bg-[url(/images/waitlist-sm.webp),_linear-gradient(#000000,_#000000)] sm:bg-[url(/images/waitlist.webp),_linear-gradient(#000000,_#000000)] bg-center bg-no-repeat bg-cover">
-      <MetaProps
-        title="Join eusate Waitlist - Early Access to AI Customer Support"
-        description="Be among the first to experience EUSATE's exceptional customer support. Join our waitlist for early access, exclusive updates, and special launch pricing for your business and startup."
-        path="/waitlist"
-        jsonLdData={{
-          type: "software",
-          data: {
-            description:
-              "Join the waitlist for Eusate - AI-powered customer support platform launching soon. Get early access notifications and exclusive benefits.",
-          },
-        }}
-      />
       <Navbar />
       <section className="h-full flex flex-col md:items-center justify-center gap-10 container">
         <header className="flex flex-col md:items-center justify-center gap-6 md:text-center">

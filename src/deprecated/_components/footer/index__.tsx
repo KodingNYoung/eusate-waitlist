@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "../../atoms/Logo";
+import Logo from "../../../components/shared/atoms/Logo";
 import { InstagramIcon, LinkedinIcon, TwitterIcon } from "@/assets/icons";
 import Link from "next/link";
-import Typography from "../../atoms/Typography";
+import Typography from "../../../components/shared/atoms/Typography";
 import { EUSATE_SOCIALS } from "@/utils/constants";
 
 const Footer = () => {

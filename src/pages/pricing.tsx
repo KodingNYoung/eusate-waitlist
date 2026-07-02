@@ -26,27 +26,34 @@ import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/va
 import { IntegrationPricingCard } from "@/components/routes/pricing/IntegrationPricingCard";
 import { useCurrencyToggle } from "@/utils/hooks";
 import CurrencyToggle from "@/components/shared/molecules/CurrencyToggle";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const Pricing = () => {
   const { currency, setCurrency, convert, symbol } = useCurrencyToggle();
 
   return (
     <div>
+      <MetaProps
+        title="Eusate Pricing | Flexible AI Support Plans"
+        description="Find the right Eusate plan for your business. Scale customer support with AI, automation, analytics, and omnichannel communication."
+        path="/pricing"
+        jsonLdData={{ type: "software" }}
+      />
       <PageTemplate
         gradientVariant="yellow"
         classNames={{
-          wrapper: "grid gap-y-12 md:gap-y-20 px-5",
+          wrapper: "grid gap-y-12 md:gap-y-20",
         }}
       >
-        <PageHero>
-          <div className="flex items-center justify-center mt-2.5 mb-8">
-            <CurrencyToggle currency={currency} onChange={setCurrency} />
-          </div>
+        <div className="flex items-center justify-center mt-2.5 mb-8 sticky top-[98px]">
+          <CurrencyToggle currency={currency} onChange={setCurrency} />
+        </div>
+        <PageHero classNames={{ base: "xl:!p-0" }}>
           <PageHeader
             chipLabel="Our Pricing"
             title="Unlock Full Access"
             classNames={{
-              container: "md:h-auto",
+              container: "md:h-auto px-5",
               root: "flex-col w-full md:w-[60%] gap-y-4",
               wrapper:
                 "md:justify-between flex-col md:flex-row md:items-end space-y-8",
@@ -99,7 +106,7 @@ const Pricing = () => {
           id="cp"
           classNames={{
             base: "flex flex-col items-center pt-[60px] md:py-20",
-            container: "!gap-y-20",
+            container: "!gap-y-20 !max-w-[1512px]",
           }}
         >
           <AnimatedBlock>
@@ -108,13 +115,9 @@ const Pricing = () => {
               classNames={{
                 container: "space-y-4",
                 title: "text-bold-3xl md:text-bold-6xl text-center",
-                description:
-                  "md:text-regular-xl text-center md:w-[70%] mx-auto",
                 root: "flex-col gap-4 items-center ",
               }}
               title="Compare our plans"
-              description="We charge by value delivered, not vanity metrics. Transparent
-              plans. No hidden fees. Cancel anytime."
             />
           </AnimatedBlock>
 

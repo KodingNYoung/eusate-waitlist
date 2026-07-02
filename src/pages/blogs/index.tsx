@@ -13,6 +13,7 @@ import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { BLOG_POST } from "@/utils/constants";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const BlogPage = () => {
   const [search, setSearch] = useState("");
@@ -27,6 +28,12 @@ const BlogPage = () => {
 
   return (
     <div>
+      <MetaProps
+        title="Customer Support & AI Insights | Eusate Blog"
+        description="Explore expert articles on AI customer support, automation, customer experience, helpdesk best practices, and business growth."
+        path="/blogs"
+        jsonLdData={{ type: "software" }}
+      />
       <PageTemplate
         gradientVariant="gray"
         classNames={{
@@ -67,7 +74,7 @@ const BlogPage = () => {
         <PageSection classNames={{ wrapper: "px-5" }}>
           {search.length ? (
             searchedBlogs.length ? (
-              <div className="flex w-full justify-start md:justify-between flex-wrap gap-8">
+              <div className="flex w-full justify-start md:justify-start flex-wrap gap-8">
                 {searchedBlogs.map(
                   ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                     <BlogCard

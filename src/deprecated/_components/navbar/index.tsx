@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Logo from "../../atoms/Logo";
+import Logo from "@/components/shared/atoms/Logo";
 import Link from "next/link";
-import Button from "../../molecules/Button";
+import Button from "@/components/shared/molecules/Button";
 import { ArrowRightIcon, CloseIcon, JamMenu } from "@/assets/icons";
 import { cls } from "@/utils/helpers";
 import { AnimatePresence, motion } from "motion/react";

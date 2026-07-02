@@ -8,10 +8,17 @@ import { BorderGradient } from "@/components/shared/organisms/BorderGradient";
 import Typography from "@/components/shared/atoms/Typography";
 import Link from "next/link";
 import { GradientIcon } from "@/components/shared/atoms/Icon";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const HelpDeskPage = () => {
   return (
     <PageTemplate classNames={{ wrapper: "" }}>
+      <MetaProps
+        title="Omnichannel Helpdesk Software | Eusate"
+        description="Manage every customer conversation from one intelligent helpdesk. Respond faster across WhatsApp, Email, Live Chat, Discord, and Voice."
+        path="/helpdesk"
+        jsonLdData={{ type: "software" }}
+      />
       <ParallaxHero
         chipLabel="Helpdesk"
         title={
@@ -21,7 +28,7 @@ const HelpDeskPage = () => {
           </Typography>
         }
         classNames={{
-          chipContainer: "justify-center",
+          chip: "mx-auto",
           description: "text-center",
           descriptionContainer: "items-center",
           wrapper: "gap-y-20",

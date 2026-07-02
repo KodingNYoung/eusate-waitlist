@@ -3,6 +3,7 @@ import {
   CopilotIcon,
   CustomerTemperamentIcon,
   GapAnalysisIcon,
+  HumanAgentHandoffIcon,
   TicketCtxIcon,
 } from "@/assets/icons";
 import { InternalPath } from "@/utils/types";
@@ -28,7 +29,7 @@ export const SATE_FEATURES: SateFeature[] = [
     key: "co-pilot",
     title: "Co-pilot",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Work alongside AI to draft, refine, and complete responses to customers with context-aware assistance.",
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ export const SATE_FEATURES: SateFeature[] = [
     icon: GapAnalysisIcon,
     title: "Gap Analysis",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Identify missing information, inconsistencies, and opportunities to improve the knowledge base.",
   },
   {
     id: 3,
@@ -44,7 +45,7 @@ export const SATE_FEATURES: SateFeature[] = [
     icon: AiPlaygroundIcon,
     title: "AI playground",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Experiment with prompts, dev space functions, and AI settings in a flexible environment for rapid iteration.",
   },
   {
     id: 4,
@@ -52,7 +53,7 @@ export const SATE_FEATURES: SateFeature[] = [
     icon: TicketCtxIcon,
     title: "Ticket Context",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Automatically gather conversations, history, and customer data to provide complete ticket context.",
   },
   {
     id: 5,
@@ -60,15 +61,15 @@ export const SATE_FEATURES: SateFeature[] = [
     icon: CustomerTemperamentIcon,
     title: "Customer Temperament",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Recognize customer emotions and intent to deliver more thoughtful, personalized support.",
   },
   {
     id: 6,
     key: "human-agent-handoff",
-    icon: CustomerTemperamentIcon,
+    icon: HumanAgentHandoffIcon,
     title: "Human Agent Handoff",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Transition from AI to human support without losing context or disrupting the customer experience.",
   },
 ];
 
@@ -79,7 +80,7 @@ export const SATE_FEATURES_B: SateFeature[] = [
     key: "co-pilot",
     title: "Co-pilot",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Work alongside AI to draft, refine, and complete responses to customers with context-aware assistance.",
   },
   {
     id: 2,
@@ -92,10 +93,10 @@ export const SATE_FEATURES_B: SateFeature[] = [
   {
     id: 7,
     key: "gap-analysis",
-    src: "/sate-ai/svg/customer-calls-gradient-icon.svg",
+    src: "/sate-ai/svg/gap-analysis.svg",
     title: "Gap Analysis",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Identify missing information, inconsistencies, and opportunities to improve the knowledge base.",
   },
   {
     id: 3,
@@ -103,7 +104,7 @@ export const SATE_FEATURES_B: SateFeature[] = [
     src: "/sate-ai/svg/ai-playgroud-gradient-icon.svg",
     title: "AI playground",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Experiment with prompts, dev space functions, and AI settings in a flexible environment for rapid iteration.",
   },
   {
     id: 4,
@@ -111,7 +112,7 @@ export const SATE_FEATURES_B: SateFeature[] = [
     src: "/sate-ai/svg/ticket-context-gradient-icon.svg",
     title: "Ticket Context",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Automatically gather conversations, history, and customer data to provide complete ticket context.",
   },
   {
     id: 5,
@@ -119,7 +120,7 @@ export const SATE_FEATURES_B: SateFeature[] = [
     src: "/sate-ai/svg/temperant-gradient-icon.svg",
     title: "Customer Temperament",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Recognize customer emotions and intent to deliver more thoughtful, personalized support.",
   },
   {
     id: 6,
@@ -127,6 +128,6 @@ export const SATE_FEATURES_B: SateFeature[] = [
     src: "/sate-ai/svg/human-agent-gradient-icon.svg",
     title: "Human Agent Handoff",
     description:
-      "Create custom content directly in our built-in text editor or import using links.",
+      "Transition from AI to human support without losing context or disrupting the customer experience.",
   },
 ];

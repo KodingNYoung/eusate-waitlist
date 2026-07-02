@@ -17,8 +17,7 @@ type Slots =
   | "img"
   | "description"
   | "titleContainer"
-  | "descriptionContainer"
-  | "chipContainer";
+  | "descriptionContainer";
 
 type Props = {
   title: string | ReactElement;
@@ -98,25 +97,9 @@ export const ParallaxHero: FC<Props> = ({
               classNames?.root,
             )}
           >
-            <div
-              className={cls(
-                "flex justify-start md:justify-center",
-                classNames?.chipContainer,
-              )}
-            >
-              <Chip
-                classNames={{
-                  container:
-                    "w-fit px-3 py-1 md:px-3 md:py text-medium-sm md:text-medium-base",
-                }}
-                className={cls(
-                  "bg-gold-100 rounded-full flex items-start",
-                  classNames?.chip,
-                )}
-              >
-                {chipLabel}
-              </Chip>
-            </div>
+            <Chip className={cls("md:mx-auto", classNames?.chip)}>
+              {chipLabel}
+            </Chip>
             <div className={cls("space-y-4", classNames?.titleContainer)}>
               {typeof title === "string" ? (
                 <Typography

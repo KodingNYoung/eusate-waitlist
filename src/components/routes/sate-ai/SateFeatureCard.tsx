@@ -33,7 +33,7 @@ export const SateFeatureCard: FC<Props> = ({
       animate={animate}
       delay={id ? id / 10 : 0}
       className={cls(
-        "bg-white p-8 grid flex-0 gap-4 rounded-[7px] w-full md:w-[328px] h-auto",
+        "bg-white p-8 grid content-start flex-0 gap-4 rounded-[7px] w-full md:w-[328px] h-auto",
         className,
         classNames?.base,
       )}

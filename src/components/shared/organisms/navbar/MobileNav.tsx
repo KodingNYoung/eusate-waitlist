@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { cls } from "@/utils/helpers";
 import { NAV_EXPLORE_LIST } from "./utils";
-import { ROUTES } from "@/utils/constants";
+import { FE_URL, ROUTES } from "@/utils/constants";
 import Button from "../../molecules/Button";
 import Typography from "../../atoms/Typography";
 import { Accordion } from "../../molecules/Accordion";
@@ -49,7 +49,7 @@ export const MobileNav = () => {
         </nav>
 
         <div className="grid gap-6 w-full">
-          <Link href="/apply" target="_blank" rel="noreferrer">
+          <Link href={FE_URL + ROUTES.LOGIN} target="_blank" rel="noreferrer">
             <Button
               variant="tetiaryText"
               classNames={{
@@ -60,7 +60,7 @@ export const MobileNav = () => {
               Login
             </Button>
           </Link>
-          <Link href="/apply" target="_blank" rel="noreferrer">
+          <Link href={FE_URL + ROUTES.SIGNUP} target="_blank" rel="noreferrer">
             <Button
               classNames={{
                 root: "w-full py-4",

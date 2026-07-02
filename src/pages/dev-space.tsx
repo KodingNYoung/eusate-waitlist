@@ -4,6 +4,7 @@ import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/varian
 import { PageHeader } from "@/components/shared/organisms/PageHeader";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { PageTemplate } from "@/components/shared/organisms/PageTemplate";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const Devspace = () => {
   return (
@@ -14,6 +15,12 @@ const Devspace = () => {
         wrapper: "relative md:space-y-24 pb-24",
       }}
     >
+      <MetaProps
+        title="DevSpace | APIs & Developer Tools | Eusate"
+        description="Build, customize, and integrate with Eusate using powerful APIs, SDKs, webhooks, and developer-friendly documentation."
+        path="/dev-space"
+        jsonLdData={{ type: "software" }}
+      />
       <PageHero
         classNames={{
           base: "bg-[url(/images/devspace-bg.webp)] bg-right md:bg-center flex justify-center h-[600px] md:h-[600px] pb-12 md:pb-20 md:mx-4 px-5",

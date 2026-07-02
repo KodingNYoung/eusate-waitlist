@@ -18,12 +18,19 @@ import { useMediaQuery } from "@/utils/hooks";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { useRef } from "react";
+import MetaProps from "@/components/shared/molecules/MetaProps";
 
 const SateAiPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery();
   return (
     <PageTemplate classNames={{ wrapper: "grid gap-[50px]" }}>
+      <MetaProps
+        title="Meet Sate | AI Customer Support Agent"
+        description="Meet Sate, the AI agent behind Eusate. Automate conversations, resolve customer inquiries, and deliver support that feels human."
+        path="/sate-ai"
+        jsonLdData={{ type: "software" }}
+      />
       <PageHero
         classNames={{
           base: "bg-[url(/images/sate-ai-bg.webp)] bg-contain md:bg-cover bg-right pt-20 md:pt-0 md:h-[700px] flex items-start pb-12 md:pb-20 justify-center mx-0",
@@ -33,7 +40,7 @@ const SateAiPage = () => {
       >
         <AnimatedBlock variants={fadeVariants} duration={2}>
           <PageHeader
-            chipLabel="Sate Ai"
+            chipLabel="Sate AI"
             orientation="horizontal"
             startTitleContainer={
               <div className="relative">

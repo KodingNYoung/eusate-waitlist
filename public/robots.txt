@@ -4,8 +4,6 @@
 # Allow all search engines to crawl all public content
 User-agent: *
 Allow: /
-Allow: /beta
-Allow: /waitlist
 Allow: /privacy
 Allow: /terms
 

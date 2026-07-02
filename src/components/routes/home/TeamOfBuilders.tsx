@@ -57,7 +57,7 @@ export const TeamOfBuilders = () => {
             }}
             text={[
               "Engineers, support veterans, AI researchers, we've been in your shoes. We're not a faceless enterprise vendor. We're founders serving founders.Every startup hits the same wall: grow support or grow product. Pick one. We refused to choose. So we built Eusate, a platform that lets teams do both.",
-              "We're; based in Akure, Nigeria, building for the global startup community. Our team has scaled support operations, shipped AI products, and felt the pain of 2am customer emergencies. We know this problem intimately because we lived it.",
+              "We're based in Akure, Nigeria, building for the global startup community. Our team has scaled support operations, shipped AI products, and felt the pain of 2am customer emergencies. We know this problem intimately because we lived it.",
             ]}
           />
         </div>

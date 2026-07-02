@@ -15,12 +15,12 @@ export const Post = () => {
 
   return post ? (
     <div className="grid gap-y-8">
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full aspect-[1032/580]">
         <Image
           src={post.imgSrc}
           alt={post.title}
-          width={330}
-          height={293}
+          width={1032}
+          height={580}
           className="w-full h-full rounded-x20 object-cover"
         />
       </div>
