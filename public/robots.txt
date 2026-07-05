@@ -4,8 +4,18 @@
 # Allow all search engines to crawl all public content
 User-agent: *
 Allow: /
-Allow: /privacy
-Allow: /terms
+Allow: /pricing
+Allow: /knowledge-base
+Allow: /helpdesk
+Allow: /sate-ai
+Allow: /dev-space
+Allow: /integrations
+Allow: /about
+Allow: /contact
+Allow: /help-center
+Allow: /blogs
+Allow: /privacy-policy
+Allow: /terms-and-condition
 
 # Block Next.js internal files and API routes
 Disallow: /_next/
