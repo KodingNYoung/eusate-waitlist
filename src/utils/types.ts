@@ -142,7 +142,7 @@ export type Blog = {
   summary: string;
   readingSpan: string;
   spotlight?: boolean;
-  timestamp: Date;
+  timestamp: string;
   content: {
     title: string;
     introduction: string;

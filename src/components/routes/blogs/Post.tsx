@@ -1,19 +1,17 @@
 import Typography from "@/components/shared/atoms/Typography";
-import { BLOG_POST } from "@/utils/constants";
+import { Blog } from "@/utils/types";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { useMemo } from "react";
 
-export const Post = () => {
-  const router = useRouter();
-  const { id } = router.query;
+type Props = {
+  post: Blog;
+};
 
-  const post = useMemo(
-    () => BLOG_POST.find((blog) => id && blog.id === id),
-    [id],
-  );
-
-  return post ? (
+// `post` now comes from getStaticProps in pages/blogs/[id].tsx (so its title/
+// summary can be baked into the static HTML for SEO) instead of being looked
+// up here from router.query. This contract stays the same once posts move to
+// the backend — only the data-fetching in getStaticProps needs to change.
+export const Post = ({ post }: Props) => {
+  return (
     <div className="grid gap-y-8">
       <div className="relative w-full aspect-[1032/580]">
         <Image
@@ -50,5 +48,5 @@ export const Post = () => {
         ))}
       </section>
     </div>
-  ) : null;
+  );
 };

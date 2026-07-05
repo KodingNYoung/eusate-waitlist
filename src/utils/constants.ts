@@ -668,7 +668,7 @@ export const HELP_CENTER_QUESTIONS = {
       key: "q-1",
       question: "What can SATE actually do for my customers?",
       answer: `
-SATE handles a wide range of customer support tasks autonomously. It can answer product and service questions, process refunds, track orders, update account information, check inventory, manage billing inquiries, handle subscription changes, and more — all without human intervention. For example, when a customer asks 'Where is my order?', SATE can access your order management system, retrieve the status, and provide a comprehensive update including expected delivery date.
+SATE handles a wide range of customer support tasks autonomously. It can answer product and service questions, process refunds, track orders, update account information, check inventory, manage billing inquiries, handle subscription changes, and more, all without human intervention. For example, when a customer asks 'Where is my order?', SATE can access your order management system, retrieve the status, and provide a comprehensive update including the expected delivery date.
       `,
     },
     {
@@ -684,7 +684,7 @@ No. EUSATE is about the right AI-human balance, not replacing humans entirely. S
       key: "q-3",
       question: "How does SATE know about my business?",
       answer: `
-SATE learns your business through the Knowledge Base. You can upload your documentation, link your websites and blogs, and write custom articles. SATE is trained on your specific context, documentation, and processes — it finds the right answer, not just the right article.
+SATE learns your business through the Knowledge Base. You can upload your documentation, link your websites and blogs, and write custom articles. SATE is trained on your specific context, documentation, and processes, so it finds the right answer, not just the right article.
       `,
     },
     {
@@ -700,7 +700,7 @@ SATE operates across multiple communication channels including web chat (embedde
       key: "q-5",
       question: "How does SATE handle escalations?",
       answer: `
-Escalation rules are configurable — you decide when human intervention is needed. SATE uses priority intelligence to automatically prioritize tickets based on issue complexity. When a conversation is escalated, agents can perform a seamless takeover, picking up exactly where SATE left off with full conversation history and customer context available.
+Escalation rules are configurable, so you decide when human intervention is needed. SATE uses priority intelligence to automatically prioritise tickets based on issue complexity. When a conversation is escalated, agents can perform a seamless takeover, picking up exactly where SATE left off with full conversation history and customer context available.
       `,
     },
     {
@@ -716,7 +716,7 @@ Yes. SATE includes sentiment tracking that monitors customer mood throughout int
       key: "q-7",
       question: "What happens if SATE encounters a bug or widespread issue?",
       answer: `
-SATE proactively detects potential system bugs when customer interaction patterns indicate a widespread issue. It automatically reports these to your designated channels — Slack, Discord, or Google Sheets — so your engineering team can be alerted without delay.
+SATE proactively detects potential system bugs when customer interaction patterns indicate a widespread issue. It automatically reports these to your designated channels, such as Slack, Discord, or Google Sheets, so your engineering team can be alerted without delay.
       `,
     },
   ],
@@ -727,7 +727,7 @@ SATE proactively detects potential system bugs when customer interaction pattern
       key: "q-1",
       question: "What is the Knowledge Base?",
       answer: `
-The Knowledge Base is where SATE gets its intelligence about your business. It supports multi-source training — you can upload documents, link websites and blogs, and write custom articles directly in the platform. It keeps content dynamic and fresh as your product evolves, and uses smart retrieval so SATE finds the right answer, not just the right article.
+The Knowledge Base is where SATE gets its intelligence about your business. It supports multi-source training, so you can upload documents, link websites and blogs, and write custom articles directly in the platform. It keeps content dynamic and fresh as your product evolves, and uses smart retrieval so SATE finds the right answer, not just the right article.
       `,
     },
     {
@@ -746,6 +746,31 @@ You can add content from multiple sources: upload documents directly, link websi
 Yes. The system supports Content Freshness Tracking, which monitors web content for updates and changes. RSS Feed Integration automatically incorporates new blog posts. You can also use the built-in review reminders and version history to ensure content stays accurate and current as your product evolves.
       `,
     },
+    {
+      id: 4,
+      key: "q-4",
+      question: "Can I create FAQs inside the Knowledge Base?",
+      answer: `
+Yes. The system includes specialised FAQ creation and management tools. It can identify common customer questions from your support interactions, suggest answer templates for consistent responses, rank FAQs by frequency and importance, identify related questions that often appear together, and validate that answers align with current policies. Usage analytics also track which FAQs are accessed most and whether they successfully resolve customer issues.
+      `,
+    },
+    {
+      id: 5,
+      key: "q-5",
+      question:
+        "How does SATE find the right information from the Knowledge Base?",
+      answer: `
+The Knowledge Base uses advanced search technologies including Semantic Search (which understands the meaning behind a query, not just keywords), Contextual Relevance (considering the conversation context when retrieving information), Fuzzy Matching (finding relevant content even with typos or variations), and Multi-Language Support (searching across content in multiple languages).
+      `,
+    },
+    {
+      id: 6,
+      key: "q-6",
+      question: "Can multiple team members collaborate on Knowledge Base content?",
+      answer: `
+Yes. The built-in text editor supports Collaborative Editing, allowing multiple team members to work on content simultaneously. A complete Version History is maintained, and you can restore previous versions at any time.
+      `,
+    },
   ],
   [HelpCenterKey.DEVSPACE]: [
     {
@@ -753,7 +778,7 @@ Yes. The system supports Content Freshness Tracking, which monitors web content 
       key: "q-1",
       question: "What is DevSpace?",
       answer: `
-DevSpace enables SATE to go beyond knowledge base responses by executing custom functions that interact with your infrastructure. Instead of escalating complex requests to humans, SATE can perform actions directly through your APIs — like processing a refund, tracking an order, or updating account settings. It is the feature that connects SATE to your systems so it can actually solve problems, not just provide answers.
+DevSpace enables SATE to go beyond knowledge base responses by executing custom functions that interact with your infrastructure. Instead of escalating complex requests to humans, SATE can perform actions directly through your APIs, like processing a refund, tracking an order, or updating account settings. It is the feature that connects SATE to your systems so it can actually solve problems, not just provide answers.
       `,
     },
     {
@@ -812,7 +837,7 @@ DevSpace implements end-to-end encryption for all data transmission, granular Ac
       key: "q-1",
       question: "What is the Helpdesk?",
       answer: `
-The Helpdesk is EUSATE's real-time monitoring and ticket management platform. It gives you full visibility and control over all customer interactions — both SATE-handled and human-agent-handled. You can watch SATE interact with customers live, jump into conversations instantly, track customer sentiment, and manage your team's workload from a single interface.
+The Helpdesk is EUSATE's real-time monitoring and ticket management platform. It gives you full visibility and control over all customer interactions, both SATE-handled and human-agent-handled. You can watch SATE interact with customers live, jump into conversations instantly, track customer sentiment, and manage your team's workload from a single interface.
       `,
     },
     {
@@ -820,7 +845,7 @@ The Helpdesk is EUSATE's real-time monitoring and ticket management platform. It
       key: "q-2",
       question: "Can I watch SATE talking to customers in real time?",
       answer: `
-Yes. The Helpdesk includes Live Streaming — you can watch SATE interact with customers in real time. You can monitor multiple conversations simultaneously and see a real-time overlay of customer information, the actions SATE is taking, and the full conversation history.
+Yes. The Helpdesk includes Live Streaming, so you can watch SATE interact with customers in real time. You can monitor multiple conversations simultaneously and see a real-time overlay of customer information, the actions SATE is taking, and the full conversation history.
       `,
     },
     {
@@ -828,15 +853,15 @@ Yes. The Helpdesk includes Live Streaming — you can watch SATE interact with c
       key: "q-3",
       question: "What happens if I need to take over a conversation from SATE?",
       answer: `
-You can perform an Instant Takeover at any time — the transition from SATE to a human agent is seamless and the customer experience remains uninterrupted. The agent gets the full conversation context, customer information, and history the moment they take over.
+You can perform an Instant Takeover at any time. The transition from SATE to a human agent is seamless and the customer experience remains uninterrupted. The agent gets the full conversation context, customer information, and history the moment they take over.
       `,
     },
     {
       id: 4,
       key: "q-4",
-      question: "How does ticket prioritization work?",
+      question: "How does ticket prioritisation work?",
       answer: `
-The Helpdesk uses Priority Intelligence to automatically prioritize tickets based on issue complexity, customer value, and business impact. Tickets are intelligently categorized and routed to the appropriate agents based on expertise and availability. SLA tracking and escalation are handled automatically.
+The Helpdesk uses Priority Intelligence to automatically prioritise tickets based on issue complexity, customer value, and business impact. Tickets are intelligently categorised and routed to the appropriate agents based on expertise and availability. SLA tracking and escalation are handled automatically.
       `,
     },
     {
@@ -844,7 +869,7 @@ The Helpdesk uses Priority Intelligence to automatically prioritize tickets base
       key: "q-5",
       question: "What is Agent Copilot?",
       answer: `
-Agent Copilot is an AI assistance feature for human agents handling escalated tickets. It helps agents resolve issues faster by providing relevant suggestions, surfacing knowledge base content, and offering context from the customer's interaction history — so agents spend less time searching and more time resolving.
+Agent Copilot is an AI assistance feature for human agents handling escalated tickets. It helps agents resolve issues faster by providing relevant suggestions, surfacing knowledge base content, and offering context from the customer's interaction history, so agents spend less time searching and more time resolving.
       `,
     },
     {
@@ -852,7 +877,7 @@ Agent Copilot is an AI assistance feature for human agents handling escalated ti
       key: "q-6",
       question: "What ticket views are available in the Helpdesk?",
       answer: `
-The Helpdesk provides several views including All Tickets, Assigned to Me, AI Tickets (handled by SATE), and Ongoing Calls. You can filter by Priority, Assignee, Date Created, Last Updated, and Temperament (customer sentiment/mood). Each ticket shows its current status — Open, Taken, Resolved & Closed.
+The Helpdesk provides several views including All Tickets, Assigned to Me, AI Tickets (handled by SATE), and Ongoing Calls. You can filter by Priority, Assignee, Date Created, Last Updated, and Temperament (customer sentiment/mood). Each ticket shows its current status: Open, Taken, or Resolved & Closed.
       `,
     },
     {
@@ -872,7 +897,7 @@ Yes. There is a dedicated AI Tickets tab in the Helpdesk so you can track exactl
       key: "q-1",
       question: "What is the AI Playground?",
       answer: `
-The AI Playground is a safe testing environment where you can test and optimize SATE's responses before they ever reach your customers. You can try edge cases, refine SATE's personality to match your brand, and run continuous improvement tests without any customer impact.
+The AI Playground is a safe testing environment where you can test and optimise SATE's responses before they ever reach your customers. You can try edge cases, refine SATE's personality to match your brand, and run continuous improvement tests without any customer impact.
       `,
     },
     {
@@ -904,7 +929,7 @@ Within the Playground, you can refine SATE's personality to match your brand voi
       key: "q-5",
       question: "Can I benchmark SATE's performance?",
       answer: `
-Yes. The Playground includes Benchmark Categories covering Response Time Analysis, Resolution Rate Tracking, Customer Satisfaction Correlation, Escalation Rate Optimization, and Efficiency Metrics. You can set performance goals, track trends over time, and compare against industry standards.
+Yes. The Playground includes Benchmark Categories covering Response Time Analysis, Resolution Rate Tracking, Customer Satisfaction Correlation, Escalation Rate Optimisation, and Efficiency Metrics. You can set performance goals, track trends over time, and compare against industry standards.
       `,
     },
   ],
@@ -922,7 +947,7 @@ EUSATE provides a comprehensive two-mode reporting system. Dashboard Mode gives 
       key: "q-2",
       question: "What types of reports are available?",
       answer: `
-Three main report types are available: (1) Overall Performance Summary Report — covers ticket volume and resolution metrics, average resolution times, agent productivity scores, customer satisfaction metrics, and channel distribution analysis. (2) Agent Performance Report — covers individual agent resolution times, productivity analysis, and resolution rate comparisons. (3) Operational Efficiency Report — covers escalation rates, SATE vs. agent resolution analysis, workload reduction metrics, and takeover statistics.
+Three main report types are available. The Overall Performance Summary Report covers ticket volume and resolution metrics, average resolution times, agent productivity scores, customer satisfaction metrics, and channel distribution analysis. The Agent Performance Report covers individual agent resolution times, productivity analysis, and resolution rate comparisons. The Operational Efficiency Report covers escalation rates, SATE vs. agent resolution analysis, workload reduction metrics, and takeover statistics.
       `,
     },
     {
@@ -930,7 +955,7 @@ Three main report types are available: (1) Overall Performance Summary Report �
       key: "q-3",
       question: "Does EUSATE offer trend analysis?",
       answer: `
-Yes. The Trend Analysis Engine analyzes current and comparison periods (previous 3-5 equivalent periods) and quarterly context. It calculates trend direction and strength, performs volatility analysis and anomaly detection, identifies cross-metric correlations, and generates narrative insights for business decision-making. Reports are on-demand — clients select the duration and request when needed.
+Yes. The Trend Analysis Engine analyses current and comparison periods (previous 3-5 equivalent periods) and quarterly context. It calculates trend direction and strength, performs volatility analysis and anomaly detection, identifies cross-metric correlations, and generates narrative insights for business decision-making. Reports are on-demand, so clients select the duration and request when needed.
       `,
     },
     {
@@ -957,7 +982,7 @@ Yes. Reports generated in Report Mode are available in downloadable format, desi
       key: "q-1",
       question: "What communication channels can EUSATE integrate with?",
       answer: `
-EUSATE supports integration with Discord, WhatsApp, Twitter/X, Facebook, Instagram, LinkedIn, Slack, email, and web chat widgets. Channel support is available as a paid integration — users pay to integrate EUSATE with their support channels for ticket routing.
+EUSATE supports integration with Discord, WhatsApp, Twitter/X, Facebook, Instagram, LinkedIn, Slack, email, and web chat widgets. Channel support is available as a paid integration, so users pay to integrate EUSATE with their support channels for ticket routing.
       `,
     },
     {
@@ -1001,7 +1026,7 @@ Yes. Through DevSpace, EUSATE integrates with CRM systems (for accessing custome
       key: "q-1",
       question: "How does EUSATE pricing work?",
       answer: `
-EUSATE uses three revenue streams: (1) Subscription Model — users pay for Standard or Pro plans to access core product features, giving them predictable costs as they scale. (2) Pay As You Go — users can purchase extra services, agents, tokens, or extra knowledge base space on demand for scalable usage-based revenue. (3) Integrations — users pay to integrate EUSATE with their support channels like WhatsApp, Discord, Twitter, and Telegram for ticket routing.
+EUSATE uses three revenue streams. With the Subscription Model, users pay for Standard or Pro plans to access core product features, giving them predictable costs as they scale. With Pay As You Go, users can purchase extra services, agents, tokens, or additional knowledge base space on demand for scalable usage-based revenue. With Integrations, users pay to integrate EUSATE with their support channels like WhatsApp, Discord, Twitter, and Telegram for ticket routing.
       `,
     },
     {
@@ -1469,14 +1494,14 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 
 export const BLOG_POST: Blog[] = [
   {
-    id: "3f1a2b4e-8d5c-4f6b-9a7e-2c1d8b9f0e6a",
+    id: "10-signs-your-business-has-outgrown-its-customer-support-system",
     imgSrc: "/blogs/10-signs.webp", // Placeholder path for the image
     title: "10 Signs Your Business Has Outgrown Its Customer Support System",
     summary:
       "Growth has a way of exposing cracks in your customer service. Learn the 10 warning signs that your current support system is holding your business back—and how to fix it before your customers notice.",
     readingSpan: "5 min read",
     spotlight: true,
-    timestamp: new Date("2026-06-18"),
+    timestamp: new Date("2026-06-18").toISOString(),
     content: {
       title: "10 Signs Your Business Has Outgrown Its Customer Support System",
       introduction:
@@ -1566,7 +1591,7 @@ export const BLOG_POST: Blog[] = [
       "The short answer is no, but the real future is much more interesting. Discover why the ultimate customer service strategy isn't humans vs. AI—it's humans and AI working together.",
     readingSpan: "4 min read",
     spotlight: false,
-    timestamp: new Date("2026-06-18"),
+    timestamp: new Date("2026-06-18").toISOString(),
     content: {
       title: "Can AI Replace Customer Support Teams?",
       introduction:

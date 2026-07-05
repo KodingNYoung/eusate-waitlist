@@ -20,7 +20,7 @@ type Props = {
   summary: string;
   readingSpan: string;
   spotlight?: boolean;
-  timestamp: Date;
+  timestamp: string;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 

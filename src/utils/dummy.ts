@@ -8,7 +8,7 @@ export const BlogPost: Blog[] = [
     summary:
       "SATE now speaks 12 languages fluently. Automatically detects customer language and responds appropriately. No manual switching. No language barriers. Just global support.",
     readingSpan: "2 min read",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     content: {
       title: "We just shipped: Multi-language support for SATE",
       introduction:
@@ -42,7 +42,7 @@ export const BlogPost: Blog[] = [
     summary:
       "Most founders underestimate their true support costs by 40-60%. He'e the f...",
     readingSpan: "2 min read",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     content: {
       title: "We just shipped: Multi-language support for SATE",
       introduction:
@@ -76,7 +76,7 @@ export const BlogPost: Blog[] = [
     summary:
       "Most founders underestimate their true support costs by 40-60%. He'e the f...",
     readingSpan: "2 min read",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     content: {
       title: "We just shipped: Multi-language support for SATE",
       introduction:
@@ -110,7 +110,7 @@ export const BlogPost: Blog[] = [
     summary:
       "Most founders underestimate their true support costs by 40-60%. He'e the f...",
     readingSpan: "2 min read",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     content: {
       title: "We just shipped: Multi-language support for SATE",
       introduction:
@@ -144,7 +144,7 @@ export const BlogPost: Blog[] = [
     summary:
       "Most founders underestimate their true support costs by 40-60%. He'e the f...",
     readingSpan: "2 min read",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     content: {
       title: "We just shipped: Multi-language support for SATE",
       introduction:
@@ -178,7 +178,7 @@ export const BlogPost: Blog[] = [
     summary:
       "Most founders underestimate their true support costs by 40-60%. He'e the f...",
     readingSpan: "2 min read",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     content: {
       title: "We just shipped: Multi-language support for SATE",
       introduction:
