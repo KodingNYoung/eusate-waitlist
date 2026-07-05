@@ -4,10 +4,11 @@ import { HelpCenterKey } from "@/utils/enum";
 import { HelpCenterQuestion } from "@/utils/types";
 import { HELP_CENTER_TABS } from "@/utils/constants";
 import { Accordion } from "@/components/shared/molecules/Accordion";
+import { linkifyText } from "@/utils/linkify";
 
 export const QuestionsDesktop = () => {
   return (
-    <div className="flex w-full hidden md:flex">
+    <div className="w-full hidden md:flex">
       {/* FOR DESKTOP */}
       <AppTab<HelpCenterKey, HelpCenterQuestion[]>
         classNames={{
@@ -34,11 +35,12 @@ export const QuestionsDesktop = () => {
               titleWrapper: "flex-0",
               title: "text-semibold-lg",
               base: "border border-gray-50 py rounded-x24",
+              content: "[&_a]:underline",
             }}
             items={content.map(({ key, question, answer }) => ({
               key,
               title: question,
-              content: answer,
+              content: linkifyText(answer),
             }))}
           />
         )}

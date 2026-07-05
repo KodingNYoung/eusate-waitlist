@@ -2,6 +2,7 @@ import { cls } from "@/utils/helpers";
 import { HELP_CENTER_TABS } from "@/utils/constants";
 import { Accordion } from "@/components/shared/molecules/Accordion";
 import { ArrowDown } from "@/assets/icons";
+import { linkifyText } from "@/utils/linkify";
 
 export const QuestionMobile = () => {
   return (
@@ -40,11 +41,12 @@ export const QuestionMobile = () => {
                 titleWrapper: "flex-0",
                 title: "text-semibold-sm text-left",
                 base: "px-[8px] border border-gray-50 py rounded-x24",
+                content: "[&_a]:underline"
               }}
               items={content.map(({ key, question, answer }) => ({
                 key,
                 title: question,
-                content: answer,
+                content: linkifyText(answer),
               }))}
             />
           ),
