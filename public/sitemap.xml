@@ -3,36 +3,99 @@
   <!-- Homepage - Highest priority -->
   <url>
     <loc>https://www.eusate.com/</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Beta Application - High priority -->
+  <!-- Pricing - High priority (key conversion page) -->
   <url>
-    <loc>https://www.eusate.com/apply</loc>
-    <lastmod>2025-08-27</lastmod>
+    <loc>https://www.eusate.com/pricing</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Waitlist Application - High priority -->
+  <!-- Product pages -->
   <url>
-    <loc>https://www.eusate.com/waitlist</loc>
-    <lastmod>2025-08-27</lastmod>
+    <loc>https://www.eusate.com/knowledge-base</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/helpdesk</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/sate-ai</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/dev-space</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/integrations</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Privacy Policy - Lower priority -->
+  <!-- Company pages -->
+  <url>
+    <loc>https://www.eusate.com/about</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/contact</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Resources -->
+  <url>
+    <loc>https://www.eusate.com/help-center</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/blogs</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Individual blog posts (kept in sync manually with BLOG_POST in src/utils/constants.ts until sitemap generation is automated) -->
+  <url>
+    <loc>https://www.eusate.com/blogs/10-signs-your-business-has-outgrown-its-customer-support-system</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.eusate.com/blogs/can-ai-replace-customer-support-teams</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Legal - Lower priority -->
   <url>
     <loc>https://www.eusate.com/privacy-policy</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
-  <!-- Terms and Conditions - Lower priority -->
   <url>
     <loc>https://www.eusate.com/terms-and-condition</loc>
     <lastmod>2025-08-27</lastmod>

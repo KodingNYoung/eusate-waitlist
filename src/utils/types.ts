@@ -1,4 +1,13 @@
+import { z } from "zod";
 import { HTMLProps, PropsWithChildren, ReactElement } from "react";
+import {
+  ComparePlanCat1,
+  Currency,
+  HelpCenterKey,
+  Plan,
+  ProductKey,
+} from "./enum";
+import { contactFormSchema } from "./schemas";
 
 export type TWClassNames = HTMLProps<HTMLElement>["className"];
 
@@ -62,7 +71,131 @@ export type LogoVariants =
 export type FC<PropsType = unknown> = {
   (
     props: { className?: TWClassNames } & PropsWithChildren<PropsType>, // These line automatically add `className` and `children` to all component using the `FC` type
-    context?: unknown
+    context?: unknown,
   ): ReactElement | null;
   displayName?: string;
+};
+
+export type CompareCategoryKey = "cat-1" | "cat-2" | "cat-3" | "cat-4";
+export type CompareCategory =
+  (typeof ComparePlanCat1)[keyof typeof ComparePlanCat1];
+export type CompareCategoryData = {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  categories: {
+    key: CompareCategoryKey;
+    features: {
+      [cat in CompareCategory]?: boolean | { details: string | null };
+    };
+  }[];
+  action: () => void;
+};
+
+export type CategoryList = {
+  id: number;
+  key: CompareCategoryKey;
+  label: string;
+  items: { key: CompareCategory; label: string; tooltip?: string }[];
+};
+export type PricingPlan = {
+  id: number;
+  key: Plan;
+  label: string;
+  price: number;
+  redirect: InternalPath;
+  features: {
+    text: string;
+    checked: boolean;
+  }[];
+  recomended?: boolean;
+  action: () => void;
+};
+
+export type AddOn = {
+  id: number;
+  src: string;
+  size: string;
+  title: string;
+  description: string;
+  price: number;
+};
+
+export type HelpCenterTab = {
+  id: number;
+  key: HelpCenterKey;
+  label: string;
+  content: HelpCenterQuestion[];
+};
+export type HelpCenterQuestion = {
+  id: number;
+  key: string;
+  question: string;
+  answer: string;
+};
+
+export type Blog = {
+  id: string;
+  imgSrc: string;
+  title: string;
+  summary: string;
+  readingSpan: string;
+  spotlight?: boolean;
+  timestamp: string;
+  content: {
+    title: string;
+    introduction: string;
+    subheaders: {
+      id: number;
+      title: string;
+      content: string;
+    }[];
+  };
+};
+export type InternalPath = `/${string}`;
+export type HexColor = `#${string}`;
+export type HDFeature = {
+  id: number;
+  highlightTitle: string;
+  title: string;
+  description: string;
+  imgSrc: InternalPath;
+};
+export type ReportFeature = {
+  id: number;
+  imgSrc: InternalPath;
+  title: string;
+  color: HexColor;
+  description: string;
+};
+export type ProductsTab = {
+  id: number;
+  icon: ReactElement;
+  key: ProductKey;
+  label: string;
+  link: InternalPath;
+  content: InternalPath;
+};
+export type Testimonial = {
+  id: number;
+  imgSrc: InternalPath;
+  name: string;
+  color: TWClassNames;
+  testimony: string;
+  company: string;
+  role: string;
+};
+export type ContactForm = z.infer<typeof contactFormSchema>;
+export type IntegrationPricing = {
+  id: number;
+  name: string;
+  icon: InternalPath;
+  description: string;
+  price: number;
+};
+export type CurrencyRate = {
+  from: Currency;
+  to: Currency;
+  rate: number;
 };

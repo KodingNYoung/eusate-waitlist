@@ -1,105 +1,113 @@
-import React, { useState } from "react";
-import Logo from "../../atoms/Logo";
+import {
+  ArrowDown,
+  ArrowRight,
+  CloseIcon,
+  HamburgerMenu,
+} from "@/assets/icons";
 import Link from "next/link";
-import Button from "../../molecules/Button";
-import { ArrowRightIcon, CloseIcon, JamMenu } from "@/assets/icons";
+import { useState } from "react";
+import Logo from "../../atoms/Logo";
 import { cls } from "@/utils/helpers";
-import { AnimatePresence, motion } from "motion/react";
-import { FC, LogoVariants } from "@/utils/types";
+import styles from "./style.module.css";
+import { MobileNav } from "./MobileNav";
+import { FE_URL, ROUTES } from "@/utils/constants";
+import { NAV_EXPLORE_LIST } from "./utils";
+import Button from "../../molecules/Button";
+import { AnimatePresence } from "framer-motion";
+import Typography from "../../atoms/Typography";
+import AppDropdown from "../../molecules/Popups/AppDropdown";
 
-type Props = {
-  logoType?: LogoVariants;
-  betaType?: "light" | "dark";
-};
-const Navbar: FC<Props> = ({ logoType = "full-gradient-white", betaType }) => {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <>
-      <header
+    <div
+      data-open={open}
+      className={cls(
+        "fixed inset-0 h-[80px] md:h-[88px] w-full z-50 md:drop-shadow-[0_0_80px_rgba(0,0,0,0.2)]",
+        "data-[open=true]:fixed",
+      )}
+    >
+      <div
         className={cls(
-          "absolute w-full backdrop-blur-[12px] py-6 z-3",
-          open && "pb-0 sm:pb-6"
+          styles.navbarBg,
+          "flex relative bg-white w-full z-3 h-[80px] max-h-[80px] md:max-h-[88px] justify-around shadow-3xl",
         )}
       >
-        <div className="container max-w-[1344px] flex items-center relative">
-          <div className="w-3/5 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2.5">
-              <Logo type={logoType} betaType={betaType} className="h-7 w-28" />
-            </Link>
-            <nav className="md:flex items-center justify-end gap-8 hidden">
-              <Link
-                href="/#features"
-                className="text-gray-400 text-medium-base"
-              >
-                Features
-              </Link>
-              <Link
-                href="/#benefits"
-                className="text-gray-400 text-medium-base"
-              >
-                Benefits
-              </Link>
-              <Link href="/#roadmap" className="text-gray-400 text-medium-base">
-                Roadmap
-              </Link>
-            </nav>
-          </div>
-          <div className="ml-auto">
-            <Link href="/apply" target="_blank" rel="noreferrer">
-              <Button className="px-4.5 py-3 hidden md:flex" size="lg">
-                Apply to be an Early Tester
-              </Button>
-            </Link>
-            <button
-              onClick={() => setOpen((curr) => !curr)}
-              className="md:hidden size-12 border border-transparent flex items-center justify-center fill-white stroke-white"
-            >
-              {open ? CloseIcon : JamMenu}
-            </button>
-          </div>
-        </div>
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 283, opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="w-full flex flex-col gap-12 overflow-hidden backdrop-blur-[12px] border-b border-[#FFFFFF26] rounded-b-x20 p-5 md:hidden"
-            >
-              <nav className="flex flex-col items-center gap-8">
-                <Link href="/#features" className="text-white text-medium-base">
-                  Features
-                </Link>
-                <Link href="/#benefits" className="text-white text-medium-base">
-                  Benefits
-                </Link>
-                <Link href="/#roadmap" className="text-white text-medium-base">
-                  Roadmap
-                </Link>
-              </nav>
-              <Link
-                href="/apply"
-                target="_blank"
-                rel="noreferrer"
-                className="mx-auto"
-              >
-                <Button
-                  classNames={{
-                    root: "gradient py-4.5 px-7",
-                    label: "text-semibold-sm",
+        <div className="container flex justify-between items-center w-full md:w-[70%] ">
+          {/* EXPLORE */}
+          <div className="hidden xl:flex gap-5 ">
+            {NAV_EXPLORE_LIST.map(({ id, label, items: items_ }) => {
+              const items = items_.filter((item) => item.use !== "footer");
+              return (
+                <AppDropdown
+                  key={id}
+                  sections={[{ items }]}
+                  classNames={{ content: "bg-white rounded-lg" }}
+                  menuProps={{
+                    itemClasses: { title: "text-gray-900 text-regular-xs" },
                   }}
-                  endContent={
-                    <span className="stroke-white">{ArrowRightIcon}</span>
+                  triggerBtnProps={{
+                    endContent: (
+                      <span className="stroke-gray-400">{ArrowDown}</span>
+                    ),
+                  }}
+                  triggerEl={
+                    <Typography variant="medium-base" className="text-gray-400">
+                      {label}
+                    </Typography>
                   }
+                />
+              );
+            })}
+          </div>
+
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-2.5">
+            <Logo type="full-gradient-black" className="h-7 w-28" />
+          </Link>
+
+          {/* CTA */}
+          <nav className="hidden xl:flex items-center gap-12">
+            <Link
+              href={ROUTES.PRICING}
+              className="text-gray-400 text-medium-base"
+            >
+              Pricing
+            </Link>
+            <span className="text-gray-100">|</span>
+            <div className="flex items-center gap-6">
+              <Link
+                href={FE_URL + ROUTES.LOGIN}
+                className="text-medium-sm text-gray-500"
+              >
+                Login
+              </Link>
+              <Link href={FE_URL + ROUTES.SIGNUP}>
+                <Button
+                  endContent={
+                    <span className="stroke-white">{ArrowRight}</span>
+                  }
+                  className="py-2 px-6"
                 >
-                  Apply to be an Early Tester
+                  Sign up
                 </Button>
               </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-    </>
+            </div>
+          </nav>
+
+          {/* HAMBURGER */}
+          <Button
+            variant="text"
+            onClick={() => setOpen((curr) => !curr)}
+            className="xl:hidden size-12 border border-transparent flex items-center justify-center fill-black stroke-black"
+          >
+            {open ? CloseIcon : HamburgerMenu}
+          </Button>
+        </div>
+      </div>
+      {/* MOBILE NAV */}
+      <AnimatePresence>{open && <MobileNav />}</AnimatePresence>
+    </div>
   );
 };
 
