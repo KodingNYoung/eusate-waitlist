@@ -35,7 +35,7 @@ export const PricingCard: FC<Props> = ({
     <div
       data-featured={recomended}
       className={cls(
-        "rounded-3xl h-fit grid gap-[10px] p-6 w-full max-w-full md:max-w-[322px] bg-gold-50",
+        "rounded-3xl h-fit grid gap-[10px] p-5 w-full max-w-full md:max-w-[322px] bg-gold-50",
         "data-[featured=true]:bg-black group",
       )}
     >
@@ -65,7 +65,7 @@ export const PricingCard: FC<Props> = ({
             <span>{checked ? TickCircleIcon : CloseCircleIcon}</span>
             <Typography
               className={
-                "group-data-[featured=true]:text-gray-200 text-medium-base md:text-medium-lg text-gray-700 leading-[150%]"
+                "group-data-[featured=true]:text-gray-200 text-medium-sm md:text-medium-base text-gray-700 leading-[150%]"
               }
             >
               {text}

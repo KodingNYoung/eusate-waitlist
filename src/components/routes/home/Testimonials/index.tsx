@@ -9,7 +9,7 @@ import { TESTIMONIALS } from "@/constants/home";
 const testimonialLength = TESTIMONIALS.length;
 
 export const Testimonials = () => {
-  const [paused] = useState(false);
+  const [paused, setPaused] = useState(false);
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
   const [direction, setDirection] = useState<Direction>(1);
@@ -51,6 +51,8 @@ export const Testimonials = () => {
     <SectionTemplate
       color={testimonial.color}
       className="max-w-screen overflow-hidden rounded-x20 md:rounded-x40 py-20"
+      onMouseDown={() => setPaused(true)}
+      onMouseUp={() => setPaused(false)}
     >
       <div className="flex flex-wrap gap-x-20 justify-center items-center md:justify-between">
         <div className="space-y-6">

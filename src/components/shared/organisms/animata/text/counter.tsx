@@ -79,8 +79,8 @@ export default function Counter({
   }, [springValue, format]);
 
   const initialDisplay = format
-    ? format(isGoingUp ? 0 : targetValue)
-    : String(isGoingUp ? 0 : targetValue);
+    ? format(isGoingUp ? 1 : targetValue)
+    : String(isGoingUp ? 1 : targetValue);
 
   return (
     <span

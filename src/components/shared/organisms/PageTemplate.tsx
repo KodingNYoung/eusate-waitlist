@@ -4,7 +4,7 @@ import GradientBackground, {
 import Navbar from "@/components/shared/organisms/navbar";
 import { cls } from "@/utils/helpers";
 import { TWClassNames } from "@/utils/types";
-import { ReactElement, ReactNode } from "react";
+import { HTMLProps, ReactElement, ReactNode } from "react";
 import Footer from "./footer";
 
 type Slots = "base" | "container" | "wrapper";
@@ -67,12 +67,8 @@ export const PageTemplate = ({
   );
 };
 
-type SectionTemplateProps = {
-  id?: string;
-  color?: TWClassNames;
+type SectionTemplateProps = HTMLProps<HTMLDivElement> & {
   header?: ReactElement;
-  children: ReactNode;
-  className?: TWClassNames;
   classNames?: { [slot in Slots]?: TWClassNames };
 };
 
@@ -83,6 +79,7 @@ export const SectionTemplate = ({
   children,
   className,
   classNames,
+  ...props
 }: SectionTemplateProps) => {
   return (
     <section
@@ -93,6 +90,7 @@ export const SectionTemplate = ({
         className,
         classNames?.base,
       )}
+      {...props}
     >
       <div className={cls("md:container space-y-8", classNames?.container)}>
         {header}
