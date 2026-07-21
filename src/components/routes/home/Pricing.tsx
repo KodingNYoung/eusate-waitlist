@@ -5,13 +5,17 @@ import { PageSection } from "@/components/shared/organisms/PageTemplate";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { fadeVariants } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { cls } from "@/utils/helpers";
+import { useCurrencyToggle } from "@/utils/hooks";
+import CurrencyToggle from "@/components/shared/molecules/CurrencyToggle";
 
 export const Pricing = () => {
+  const { currency, setCurrency, convert, symbol } = useCurrencyToggle();
+
   return (
     <PageSection
       classNames={{
         base: "py-20 px-5",
-        container: "md:!gap-y-20 pb-20 md:!max-w-full",
+        container: "md:!gap-y-10 pb-20 md:!max-w-full",
       }}
     >
       <AnimatedBlock variants={fadeVariants}>
@@ -21,6 +25,9 @@ export const Pricing = () => {
           title="Enterprise results. Startup pricing"
         />
       </AnimatedBlock>
+      <div className="flex items-center justify-center">
+        <CurrencyToggle currency={currency} onChange={setCurrency} />
+      </div>
       <div className="flex justify-center">
         <div className="flex flex-wrap gap-4 justify-center">
           {PRICING.map(({ key, id, ...pricing }) => (
@@ -34,7 +41,12 @@ export const Pricing = () => {
               )}
             >
               <AnimatedBlock delay={id / 10}>
-                <PricingCard showCompare {...pricing} />
+                <PricingCard
+                  convert={convert}
+                  symbol={symbol}
+                  showCompare
+                  {...pricing}
+                />
               </AnimatedBlock>
             </div>
           ))}
