@@ -1307,13 +1307,165 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 
 export const BLOG_POST: Blog[] = [
   {
+    id: "the-2-a-m-support-emergency-that-made-us-build-eusate",
+    imgSrc: "/blogs/2am-support-emergency.webp",
+    title: "The 2 A.M. Support Emergency That Made Us Build Eusate",
+    summary:
+      "It's 2 a.m. and a customer's payment just failed, but their business's support inbox won't open until 9. Here's the gap in WhatsApp-first, emerging-market support we saw, and why we built Eusate to close it.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-07-24").toISOString(),
+    content: {
+      title: "The 2 A.M. Support Emergency That Made Us Build Eusate",
+      introduction: `<p>It's 2 a.m. somewhere in Lagos, Nairobi, or Manila, and a customer's payment has failed.</p>
+         <p>Their money is stuck somewhere between their bank and an app, and they want answers now, not at 9 a.m. when a support team logs back in. They don't care that it's the middle of the night. They care that their money is gone and nobody is responding.</p>
+         <p>That scene isn't rare. It's Tuesday, every week, for thousands of businesses across emerging markets. We just noticed something the rest of the industry hadn't: nobody was building the tool to actually fix it.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title:
+            "The Problem Wasn't One Company's Support Team. It Was the Whole Category.",
+          content: `<p>We didn't stumble into this by running a business and getting burned by our own support inbox. We looked at the AI customer support market from the outside; as founders, as builders, and saw a gap that was hiding in plain sight.<p>
+          <p>Here's what the category kept missing: across Nigeria, wider Africa, LATAM, and South Asia, customers don't email businesses. They don't open tickets. They message on WhatsApp, Discord, start a live chat, or even send an email at every hour, expecting a real answer immediately. That's not a niche behavior. It's how commerce actually happens in these markets.</p>
+
+          <p>And yet every major AI support platform we looked at treated WhatsApp as an afterthought:</p>
+
+          <ul>
+          <li><strong>Intercom, Zendesk, and the enterprise players</strong> were built widget-first, for chat bubbles on websites, with WhatsApp bolted on as a checkbox integration.</li>
+          <li><strong>Cheap chatbots</strong> deflected questions instead of resolving them. A frustrated customer bouncing off a scripted bot at 2 a.m. is worse than no bot at all.</li>
+          <li><strong>Self-hosted tools</strong> like Chatwoot demanded engineering time most early-stage teams in these markets simply didn't have.</li>
+          </ul>
+          <p>The category had proven the demand for AI support. Intercom's Fin alone passed $100 million in ARR resolving roughly a million issues a week. But every one of those platforms was built for a different customer than the ones drowning in WhatsApp conversations every night. Nobody credible was serving the businesses actually living this problem.</p>`,
+        },
+        {
+          id: 2,
+          title: "What the Market Actually Needed",
+          content: `<p>Looking at the gap, the requirements were obvious:</p>
+             <ol>
+             <li><strong>Resolve conversations end-to-end</strong>, not just answer FAQs and punt everything else to a human.</li>
+             <li><strong>Live where customers already were</strong> not bolted on as an afterthought.</li>
+             <li><strong>Hand off intelligently</strong> when it hits the edge of its knowledge, with full context, not a blank slate for the human picking it up.</li>
+             <li><strong>Cost a predictable amount</strong>, not spike every time a business had a busy month.</li>
+             </ol>
+             <p>The AI customer support market, a category worth roughly $15 billion in 2026, had already proven the demand and the technology. What it hadn't proven was a platform built for founders and support teams in emerging markets: businesses with dollar-sensitive budgets, WhatsApp-first customers, and none of the enterprise procurement runway that Intercom or Zendesk's biggest accounts have.</p>
+             <p>So we decided to build it.</p>`,
+        },
+        {
+          id: 3,
+          title: "Founders Building for the Segments the Category King Ignores",
+          content: `<p>Eusate exists because we identified a specific, unclaimed position in a fast-growing category: deep AI resolution, flat predictable pricing, a full support stack, and WhatsApp and voice built in from day one, not bolted on later.</p>
+            <p>We built <strong>Sate</strong>, an AI agent that actually resolves conversations, not just deflects them, across WhatsApp, live chat, email, and Discord. It learns from your existing documentation instantly, reads customer context and temperament, and hands off to a human the moment it's genuinely stuck, without losing the thread of the conversation.</p>
+            <p>We built it flat-priced, because we watched an entire category of businesses get burned by bills that grow every time the AI succeeds.</p>
+            <p>We built it in Akure, Nigeria, because the businesses living this exact problem: fintechs, logistics companies, marketplaces, deserved a platform built by people who understood their market, not a checkbox feature inside someone else's roadmap.</p>`,
+        },
+        {
+          id: 4,
+          title: "This Is Still Day One",
+          content: `<p>Eusate isn't trying to be the biggest AI customer support platform in the world. We're trying to occupy the position nobody else credibly holds: deep AI resolution, flat pricing, a full support stack, built for the channels that customers in emerging markets actually use.</p>
+            <p>If your business has its own version of that 2 a.m. moment, a support inbox on fire, a customer who won't wait until morning, a tool that wasn't built for how your customers actually communicate, that's exactly the gap we built Eusate to close.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Want to see how Sate handles a real support conversation? Try the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and test it against your own documentation in ten minutes.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "ai-customer-support-for-logistics-automating-delivery-tracking-enquiries",
+    imgSrc: "/blogs/logistics-ai-customer-support.webp",
+    title:
+      "AI Customer Support for Logistics: Automating Delivery and Tracking Enquiries",
+    summary:
+      "\"Where's my package?\" hundreds of times a day is a staffing problem your team shouldn't own. Here's why logistics support is a perfect fit for AI automation, and what good automation actually looks like on WhatsApp.",
+    readingSpan: "6 min read",
+    spotlight: true,
+    timestamp: new Date("2026-07-21").toISOString(),
+    content: {
+      title:
+        "AI Customer Support for Logistics: Automating Delivery and Tracking Enquiries",
+      introduction: `<p>If you run support for a logistics or supply chain business, you already know the pattern: the same five questions, on repeat, hundreds of times a day.</p>
+         <i>"Where's my package?" "Why is my delivery delayed?" "Can I reschedule?" "My tracking number isn't updating." "The driver said it would arrive yesterday."</i>
+         <p>These conversations aren't complicated. They're <strong>repetitive, predictable, and high-volume</strong>; which makes them exactly the kind of workload that shouldn't require a human agent typing the same answer for the hundredth time this week.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "Why Logistics Support Is a Perfect Fit for AI Automation",
+          content: `<p>Logistics companies face a specific combination of pressures that most generic support tools weren't designed for:<p>
+          <ul>
+          <li><strong>High conversation volume.</strong> Every shipment generates potential enquiries: status checks, delays, address changes, delivery confirmations.</li>
+          <li><strong>Predictable workflows.</strong> Unlike, say, technical support for software, most logistics questions follow the same few paths: tracking status, delivery windows, rescheduling, exceptions.</li>
+          <li><strong>Time sensitivity.</strong> A customer asking "where's my order" wants an answer in seconds, not after waiting in a ticket queue.</li>
+          <li><strong>Multi-channel reality.</strong> Customers don't all use the same channel. Many, especially in emerging markets, expect to ask these questions over <strong>WhatsApp</strong>, not email or a website chat widget.</li>
+          </ul>
+          <p>This is precisely the profile of support volume and complexity that justifies real automation investment, not just a chatbot bolted onto a website.</p>`,
+        },
+        {
+          id: 2,
+          title: "What Actually Needs to Be Automated",
+          content: `<p>A logistics support automation strategy generally needs to handle:</p>
+             <ol>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                <span style="font-weight: 500;">Real-Time Tracking and Status Enquiries</span>
+                <p class="mt-1">The most common support request by far. An AI agent that can pull tracking data and answer instantly, without a human touching the ticket, removes the majority of routine volume from your team's plate.</p>
+              </li>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                 <span style="font-weight: 500;">Delivery Delays and Exceptions</span>
+                <p class="mt-1">When something goes wrong (weather, customs, routing issues), customers want proactive communication, not silence. AI support can flag exceptions and message affected customers before they even ask.</p>
+              </li>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                 <span style="font-weight: 500;">Rescheduling and Address Changes</span>
+                <p class="mt-1">Simple, rules-based requests that don't need a human, but often get routed to one anyway because the support tooling isn't built to close the loop automatically.</p>
+              </li>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                <span style="font-weight: 500;">Escalation for Genuine Problems</span>
+                <p class="mt-1">Not everything should be automated. Lost packages, damaged goods, or disputes need a human with full context, and the AI's job is to gather that context and hand it off cleanly, not make the customer repeat themselves.</p>
+              </li>
+             </ol>`,
+        },
+        {
+          id: 3,
+          title: "Why Channel Matters as Much as the AI",
+          content: `<p>Here's where most AI support tools fall short for logistics companies operating in emerging markets: <strong>they treat WhatsApp as a checkbox integration</strong>, bolted onto a chat-widget-first product.</p>
+            <p>But for a huge share of customers, particularly across Africa, LATAM, and South Asia, WhatsApp isn't a secondary channel. It's the primary way people communicate, full stop. A logistics company that can't resolve a tracking question inside WhatsApp is forcing customers into a channel they don't want to use, which drives up ticket abandonment and frustration.</p>
+            <p>An AI support platform built <strong>WhatsApp-native</strong>, not WhatsApp-as-afterthought, resolves these enquiries where customers already are, without asking them to download an app or visit a separate portal.</p>`,
+        },
+        {
+          id: 4,
+          title: "What Good Automation Looks Like in Practice",
+          content: `<p>A well-implemented AI support setup for a logistics business should be able to:</p>
+          <ul>
+            <li>Resolve the majority of tracking and status questions automatically, without human involvement</li>
+            <li>Operate natively across WhatsApp, live chat, email, and voice</li>
+            <li>Read context from order and shipment data to give specific, accurate answers rather than generic responses</li>
+            <li>Detect when a query needs a human (damaged goods, lost shipments, disputes) and hand off with full conversation history</li>
+            <li>Do all of this at a flat, predictable monthly cost rather than a per-resolution fee that scales unpredictably as your shipment volume grows</li>
+          </ul>
+          <p>That last point matters more than it sounds. Logistics businesses already operate on thin margins. A support tool that charges per resolution means your support costs increase exactly when your business is succeeding and shipment volume is climbing, the worst possible time for an unpredictable bill.</p>`,
+        },
+        {
+          id: 4,
+          title: "The Bottom Line",
+          content: `<p>Logistics support is repetitive by nature, which makes it one of the clearest wins for AI automation in customer service today. The businesses that get the most value aren't the ones automating everything, they're the ones automating the predictable 80% (tracking, status, rescheduling) so their human team can focus on the 20% that actually needs a person: exceptions, disputes, and genuinely difficult conversations.</p>
+            <p>If your support team is still manually answering "where's my package" for the tenth time today, that's not a staffing problem. That's an automation gap.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Curious what AI-driven resolution rates look like for logistics support specifically? Test Sate against your own tracking and order data in the free  <a href="${FE_URL}/sign-up" target="_blank" rel="noreferrer noopener"> playground</a></i>`,
+        },
+      ],
+    },
+  },
+  {
     id: "10-signs-your-business-has-outgrown-its-customer-support-system",
     imgSrc: "/blogs/10-signs.webp", // Placeholder path for the image
     title: "10 Signs Your Business Has Outgrown Its Customer Support System",
     summary:
       "Growth has a way of exposing cracks in your customer service. Learn the 10 warning signs that your current support system is holding your business back—and how to fix it before your customers notice.",
     readingSpan: "5 min read",
-    spotlight: true,
+    spotlight: false,
     timestamp: new Date("2026-06-18").toISOString(),
     content: {
       title: "10 Signs Your Business Has Outgrown Its Customer Support System",
