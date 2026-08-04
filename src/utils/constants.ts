@@ -58,6 +58,7 @@ export const ROUTES = {
   REPORTS: "/reports",
   PLAYGROUND: "/playground",
   CONTACT: "/contact",
+  SECURITY: "/security",
 } as const;
 
 export const CURRENCY_SYMBOLS: Record<Currency, string> = {

@@ -10,7 +10,7 @@ const variantProps: { [variant in GradientVariants]: TWClassNames } = {
   gray: "bg-[linear-gradient(180deg,_#F0F1F3_0%,_#FFFFFF_100%)]",
 };
 
-type GradientBackgroundProps = {
+export type GradientBackgroundProps = {
   variant?: GradientVariants;
   from?: string;
   to?: string;
@@ -32,7 +32,7 @@ const GradientBackground = ({
         className={cls(
           "w-full absolute inset-0 rounded-3xl -z-1 min-h-[394px]",
           variantProps[variant],
-          gradient,
+          from && to && gradient,
           className,
         )}
       >

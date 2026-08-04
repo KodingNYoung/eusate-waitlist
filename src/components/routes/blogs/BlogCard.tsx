@@ -13,7 +13,6 @@ type Variant = "inline" | "page";
 
 type Props = {
   id: string;
-  idx?: number;
   variant?: Variant;
   imgSrc: string;
   title: string;
@@ -34,7 +33,6 @@ const spotlightVariant: { [slot in Slots]?: TWClassNames } = {
 
 export const BlogCard: FC<Props> = ({
   id,
-  idx,
   title,
   summary,
   imgSrc,
@@ -47,7 +45,10 @@ export const BlogCard: FC<Props> = ({
   return (
     <motion.a
       variants={fadeUpVariants}
-      transition={{ ...defaultTransition, delay: idx ? idx / 10 : 0 }}
+      transition={{
+        duration: defaultTransition.duration,
+        ease: defaultTransition.ease,
+      }}
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(

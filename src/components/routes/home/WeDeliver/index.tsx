@@ -4,6 +4,7 @@ import { CSATScore } from "./cards/CSATScore";
 import { ROIFounders } from "./cards/ROIFounders";
 import { PageSection } from "@/components/shared/organisms/PageTemplate";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { StaggerItem } from "@/components/shared/organisms/AnimatedBlock/StaggerItem";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 
 export const WeDeliver = () => {
@@ -26,9 +27,15 @@ export const WeDeliver = () => {
         variants={staggerContainer}
         className="flex flex-wrap justify-center xl:justify-between gap-4"
       >
-        <ResolutionRate />
-        <CSATScore />
-        <ROIFounders />
+        <StaggerItem>
+          <ResolutionRate />
+        </StaggerItem>
+        <StaggerItem>
+          <CSATScore />
+        </StaggerItem>
+        <StaggerItem>
+          <ROIFounders />
+        </StaggerItem>
       </AnimatedBlock>
     </PageSection>
   );

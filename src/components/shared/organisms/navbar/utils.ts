@@ -73,6 +73,11 @@ export const NAV_EXPLORE_LIST: Explore[] = [
         label: "Contact us",
         link: ROUTES.CONTACT,
       },
+      {
+        key: 2,
+        label: "Security",
+        link: ROUTES.SECURITY,
+      },
     ],
   },
   {
@@ -144,6 +149,11 @@ export const FOOTER_EXPLORE_LIST: Explore[] = [
         key: 4,
         label: "Contact us",
         link: ROUTES.CONTACT,
+      },
+      {
+        key: 5,
+        label: "Security",
+        link: ROUTES.SECURITY,
       },
     ],
   },

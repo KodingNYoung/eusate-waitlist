@@ -4,11 +4,9 @@ import { FC, InternalPath } from "@/utils/types";
 import Typography from "@/components/shared/atoms/Typography";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  fadeUpVariants,
-  staggerContainer,
-} from "@/components/shared/organisms/AnimatedBlock/variants";
+import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { AnimatedBlock } from "../../shared/organisms/AnimatedBlock";
+import { StaggerItem } from "../../shared/organisms/AnimatedBlock/StaggerItem";
 
 type Props = {
   id: number;
@@ -41,7 +39,7 @@ export const HDFeatureCard: FC<Props> = ({
         id % 2 ? "flex-row" : "md:flex-row-reverse",
       )}
     >
-      <motion.div variants={fadeUpVariants} className="">
+      <StaggerItem>
         <div className="space-y-12 max-w-[500px]">
           <AnimatedBlock className="space-y-[6px]">
             <Typography
@@ -69,7 +67,7 @@ export const HDFeatureCard: FC<Props> = ({
             </Typography>
           </AnimatedBlock>
         </div>
-      </motion.div>
+      </StaggerItem>
 
       <motion.div
         className={cls(
