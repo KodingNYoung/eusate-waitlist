@@ -1308,6 +1308,128 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 
 export const BLOG_POST: Blog[] = [
   {
+    id: "how-we-think-about-ai-trust-what-sate-will-and-wont-do-without-a-human",
+    imgSrc: "/blogs/how-we-think-about-ai-trust.webp",
+    title:
+      "How We Think About AI Trust: What Sate Will and Won't Do Without a Human",
+    summary:
+      "\"Can I trust an AI with my customers?\" is the first real objection every prospect raises. Here's exactly where we've drawn the lines for Sate — what it will never do without a human, and why.",
+    readingSpan: "3 min read",
+    spotlight: true,
+    timestamp: new Date("2026-08-01").toISOString(),
+    content: {
+      title:
+        "How We Think About AI Trust: What Sate Will and Won't Do Without a Human",
+      introduction: `<p>"Can I trust an AI with my customers?" is the first real objection every prospect raises, and it should be. You're not evaluating a feature. You're deciding whether to hand a stranger's conversation with your customer to software you didn't write.</p>
+         <p>Here's exactly how we think about that at Eusate, and where we've drawn the lines for Sate.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "The Default Assumption Should Be Skepticism",
+          content: `<p>Most AI support pitches lead with confidence: "our AI handles everything." That's the wrong opening line, because it's not true of any AI system today, and pretending otherwise is how trust gets broken the first time the AI gets something wrong.</p>
+            <p>We'd rather tell you what Sate won't do before we tell you what it will.</p>`,
+        },
+        {
+          id: 2,
+          title: "What Sate Will Never Do",
+          content: `<ul>
+            <li><strong>Sate never answers outside your approved knowledge.</strong> It doesn't improvise, guess, or draw on general internet knowledge to fill a gap in your documentation. If your knowledge base doesn't cover something, Sate doesn't invent a plausible-sounding answer, it flags the gap and routes the conversation instead of gambling on a confident wrong answer.</li>
+            <li><strong>Sate never hides its uncertainty from you.</strong> Through Gap Analysis, every place where Sate's confidence drops or your documentation falls short gets surfaced back to your team, not buried in a transcript nobody reads. If Sate is guessing, you'll know, because it will tell you, not because a customer complains later.</li>
+            <li><strong>Sate never freelances on sensitive conversations.</strong> Customer Temperament reads the emotional tone and intent of a conversation. When something reads as frustrated, high-stakes, or ambiguous; a disputed charge, a failed payment, a complaint, that's a signal to hand off, not a signal to try harder.</li>
+            </ul>`,
+        },
+        {
+          id: 3,
+          title: "What Sate Will Do",
+          content: `<ul>
+            <li><strong>Resolve the routine, end to end.</strong> The queries your documentation actually answers: status checks, how-to questions, account basics, Sate closes completely, without a human touching the ticket. That's the resolution rate that matters: not questions deflected, but conversations actually finished.</li>
+            <li><strong>Hand off with full context, not a blank slate.</strong> When Sate reaches the edge of what it should handle alone, it doesn't dump the customer back to square one. Ticket Context carries the full conversation history, gathered customer data, and relevant background to the human agent picking it up, so your customer never has to repeat themselves to a person who clearly wasn't paying attention.</li>
+            <li><strong>Work alongside your team, not around them.</strong> Co-pilot lets your agents draft and refine responses with AI assistance rather than replacing their judgment entirely. The AI augments your team's decisions on complex cases instead of trying to make those decisions unsupervised.</li>
+            </ul>`,
+        },
+        {
+          id: 4,
+          title: "Why We Built It This Way",
+          content: `<p>We didn't arrive at these guardrails from a compliance checklist. We arrived at them because we're founders who've had to explain to our own customers why something went wrong, and "the AI said so" is not an answer anyone accepts, in fintech or anywhere else.</p>
+            <p>Trust in AI support isn't built by claiming the AI is right all the time. It's built by being honest about exactly where it stops, and making sure a human is always standing right behind that line with full context, not starting cold.</p>`,
+        },
+        {
+          id: 5,
+          title: "What This Means for Your Team",
+          content: `<p>If you're evaluating whether to hand customer conversations to Sate, here's the actual question worth asking; not "can it handle everything," but "does it know what it doesn't know, and does it hand off cleanly when it hits that line."</p>
+            <p>That's the bar we hold ourselves to. It's also the bar we'd encourage you to hold any AI support vendor to, including us, ask to see a real handoff, not just a resolved ticket.</p>`,
+        },
+        {
+          id: 6,
+          title: "",
+          content: `<i>You watch every conversation Sate has, in real time, from day one. Test Sate on your own documentation in the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and see exactly where it draws its own lines.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "customer-support-benchmarks-for-african-fintech-startups",
+    imgSrc:
+      "/blogs/customer-support-benchmarks-for-african-fintech-startups.webp",
+    title: "Customer Support Benchmarks for African Fintech Startups",
+    summary:
+      "Most published support benchmarks come from US and European SaaS companies, and that's not the bar a digital bank needs to clear. Here's a practical benchmarking framework built for African fintech specifically.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-07-28").toISOString(),
+    content: {
+      title: "Customer Support Benchmarks for African Fintech Startups",
+      introduction: `<p>If you run support for a fintech in Nigeria, Kenya, Egypt, or elsewhere on the continent, you've probably wondered: <i>are our numbers actually good?</i></p>
+         <p>It's harder to answer than it sounds. Most published support benchmarks come from US and European SaaS companies; different channels, different urgency, different stakes. A "good" first-response time for a project management tool isn't the bar a digital bank needs to clear when a customer's rent money is stuck mid-transfer.</p>
+         <p>Here's a practical benchmarking framework built for African fintech specifically.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "Why Fintech Support Is a Different Category",
+          content: `<ul>
+            <li><strong>Money problems are urgent by definition.</strong> A failed payment isn't an inconvenience, it's often rent, inventory, or a family remittance stuck in limbo.</li>
+            <li><strong>Trust is the product.</strong> One bad support experience can undo months of acquisition work.</li>
+            <li><strong>WhatsApp is the primary channel</strong>, not a side channel, an assumption most global benchmarks don't make.</li>
+            <li><strong>Regulatory stakes are real.</strong> KYC issues and account access problems carry more weight than a typical SaaS ticket.</li>
+            </ul>`,
+        },
+        {
+          id: 2,
+          title: "The Benchmarks That Matter",
+          content: `<ol>
+            <li><strong>First Response Time.</strong> For fintech, this should be measured in seconds to minutes, not hours, especially for payment-related enquiries. A slow reply on a delayed transfer reads as "did my money disappear," not "please hold."</li>
+            <li><strong>Resolution Rate, Not Deflection Rate.</strong> Top AI support platforms resolve 70%+ of routine queries, and that's a useful ceiling. But watch for tools that quietly measure "the customer stopped asking" and report it as resolution. Audit a sample of "resolved" tickets monthly to confirm the label is honest.</li>
+            <li><strong>Escalation Accuracy.</strong> If your human agents spend the day answering "how do I reset my PIN," that's not an escalation problem, that's an automation gap. Humans should only see disputes, fraud, and genuinely ambiguous cases.</li>
+            <li><strong>Channel-Specific Resolution.</strong> Break resolution out by channel: WhatsApp, chat, email, voice, instead of blending it into one number. For most African fintech customers, WhatsApp volume will dwarf everything else combined. If your WhatsApp resolution lags your web chat, your tooling was likely built widget-first with WhatsApp bolted on.</li>
+            <li><strong>Cost Per Resolution.</strong> Track not just what you spend, but whether it's predictable as volume grows. Per-resolution and per-agent pricing can make your support bill grow faster than revenue right when you're trying to prove unit economics to investors.</li>
+            <li><strong>CSAT on Financial Interactions Specifically.</strong> Score money-related conversations separately from general enquiries. This number deserves its own bar, customers are inherently more anxious here, so a strong score signals real trust, not just politeness.</li>
+            </ol>`,
+        },
+        {
+          id: 3,
+          title: "Build Your Own Baseline First",
+          content: `<p>Most fintech support teams can't confidently answer their own resolution rate, because it's never been measured consistently. Before chasing an external benchmark:</p>
+            <ol>
+            <li>Measure first response and resolution rate separately, per channel, for 30 days.</li>
+            <li>Audit a sample of "resolved" tickets by hand.</li>
+            <li>Break out financial-interaction metrics from general volume.</li>
+            <li>Re-measure monthly; a number checked once is a snapshot, not a benchmark.</li>
+            </ol>`,
+        },
+        {
+          id: 4,
+          title: "The Point",
+          content: `<p>Most fintech support tools weren't built to give you WhatsApp-specific metrics in the first place, they were built widget-first, with WhatsApp bolted on as an afterthought. Eusate was built the opposite way: WhatsApp-native from day one, with resolution tracked separately across every channel your customers actually use.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Test Sate against your own support documentation in the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and see your real resolution rate in minutes.</i>`,
+        },
+      ],
+    },
+  },
+  {
     id: "the-2-a-m-support-emergency-that-made-us-build-eusate",
     imgSrc: "/blogs/2am-support-emergency.webp",
     title: "The 2 A.M. Support Emergency That Made Us Build Eusate",

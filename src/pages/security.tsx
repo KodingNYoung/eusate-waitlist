@@ -16,10 +16,10 @@ const security = () => {
       classNames={{ wrapper: "space-y-12 md:space-y-20 mb-20 md:mb-40" }}
     >
       <MetaProps
-        title="AI Knowledge Base Software | Eusate"
-        description="Create a smart knowledge base that empowers Sate to answer customer questions accurately and consistently."
-        path="/knowledge-base"
-        jsonLdData={{ type: "software" }}
+        title="How Eusate Secures Your Customer Data (39 characters)"
+        description="EU-based hosting, TLS 1.2/1.3 encryption, isolated databases, and full audit trails. Here's exactly how Eusate keeps your support data safe."
+        path="/security"
+        jsonLdData={{ type: "legal" }}
       />
       <SecurityHero />
       <SecuritySummary />
