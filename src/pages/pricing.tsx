@@ -21,7 +21,7 @@ import Link from "next/link";
 import { cls } from "@/utils/helpers";
 import { PageHero } from "@/components/shared/organisms/PageHero";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
-import { motion } from "motion/react";
+import { StaggerItem } from "@/components/shared/organisms/AnimatedBlock/StaggerItem";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { IntegrationPricingCard } from "@/components/routes/pricing/IntegrationPricingCard";
 import { useCurrencyToggle } from "@/utils/hooks";
@@ -33,18 +33,18 @@ const Pricing = () => {
 
   return (
     <div>
-      <MetaProps
-        title="Eusate Pricing | Flexible AI Support Plans"
-        description="Find the right Eusate plan for your business. Scale customer support with AI, automation, analytics, and omnichannel communication."
-        path="/pricing"
-        jsonLdData={{ type: "software" }}
-      />
       <PageTemplate
-        gradientVariant="yellow"
+        gradientProps={{ variant: "yellow" }}
         classNames={{
           wrapper: "grid gap-y-12 md:gap-y-20",
         }}
       >
+        <MetaProps
+          title="Eusate Pricing | Flexible AI Support Plans"
+          description="Find the right Eusate plan for your business. Scale customer support with AI, automation, analytics, and omnichannel communication."
+          path="/pricing"
+          jsonLdData={{ type: "software" }}
+        />
         <div className="flex items-center justify-center mt-2.5 mb-8 sticky top-[98px]">
           <CurrencyToggle currency={currency} onChange={setCurrency} />
         </div>
@@ -75,7 +75,7 @@ const Pricing = () => {
             container: "md:max-w-full",
           }}
         >
-          <motion.div
+          <AnimatedBlock
             variants={staggerContainer}
             className="flex flex-wrap gap-4 justify-center"
           >
@@ -89,17 +89,17 @@ const Pricing = () => {
                   id === 4 && "order-1 md:order-4",
                 )}
               >
-                <AnimatedBlock delay={id / 10}>
+                <StaggerItem>
                   <PricingCard
                     convert={convert}
                     symbol={symbol}
                     showCompare
                     {...pricing}
                   />
-                </AnimatedBlock>
+                </StaggerItem>
               </div>
             ))}
-          </motion.div>
+          </AnimatedBlock>
         </PageSection>
         {/* COMPARE PLANS */}
         <PageSection

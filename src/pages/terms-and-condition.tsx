@@ -30,7 +30,7 @@ const TermsAndCondition = () => {
       />
 
       <PageTemplate
-        gradientVariant="peach"
+        gradientProps={{ variant: "peach" }}
         classNames={{
           wrapper: "pt-20 pb-10 md:pt-24 md:pb-40 space-y-20 px-5",
         }}

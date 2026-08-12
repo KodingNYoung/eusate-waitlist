@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
         }}
       />
       <PageTemplate
-        gradientVariant="yellow"
+        gradientProps={{ variant: "yellow" }}
         classNames={{
           wrapper: "pt-20 pb-12 md:pt-24 md:pb-40 space-y-20 px-5",
         }}
@@ -224,7 +224,8 @@ const PrivacyPolicy = () => {
                   as="span"
                   className="text-gray-600 leading-relaxed text-regular-sm sm:text-regular-lg"
                 >
-                  Your data is stored on secure servers located in UK, London.
+                  Your data is stored on secure servers located in Madrid,
+                  Spain.
                 </Typography>
               </li>
               <li>

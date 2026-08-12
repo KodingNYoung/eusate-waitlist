@@ -558,7 +558,7 @@ export const CheckIcon = (
   >
     <path
       d="M10.5972 18.3334C15.1806 18.3334 18.9306 14.5834 18.9306 10.0001C18.9306 5.41675 15.1806 1.66675 10.5972 1.66675C6.01392 1.66675 2.26392 5.41675 2.26392 10.0001C2.26392 14.5834 6.01392 18.3334 10.5972 18.3334Z"
-      fill="#0A0A0A"
+      fill="currentColor"
     />
     <path
       d="M7.05542 9.99993L9.41375 12.3583L14.1388 7.6416"
@@ -1300,7 +1300,7 @@ export const CopilotIcon = (
     <path
       d="M46.666 0.583008C57.3895 0.583008 66.083 9.27647 66.083 20C66.083 30.7235 57.3895 39.417 46.666 39.417C35.9425 39.417 27.249 30.7235 27.249 20C27.249 9.27647 35.9425 0.583008 46.666 0.583008Z"
       stroke="url(#paint0_linear_228_10524)"
-      stroke-width="1.16667"
+      strokeWidth="1.16667"
     />
     <g filter="url(#filter0_d_228_10524)">
       <circle
@@ -1308,8 +1308,8 @@ export const CopilotIcon = (
         cy="20"
         r="19.4167"
         stroke="url(#paint1_linear_228_10524)"
-        stroke-width="1.16667"
-        shape-rendering="crispEdges"
+        strokeWidth="1.16667"
+        shapeRendering="crispEdges"
       />
     </g>
     <defs>
@@ -1320,9 +1320,9 @@ export const CopilotIcon = (
         width="49.3333"
         height="58.6667"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1356,8 +1356,8 @@ export const CopilotIcon = (
         y2="41.1111"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_228_10524"
@@ -1367,8 +1367,8 @@ export const CopilotIcon = (
         y2="47.2222"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" />
-        <stop offset="1" stop-color="white" stop-opacity="0" />
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -4149,7 +4149,7 @@ export const ArrowUpRightIcon = (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+    className="lucide lucide-arrow-upRight-icon lucide-arrow-upRight"
   >
     <path d="M7 7h10v10" />
     <path d="M7 17 17 7" />
@@ -4296,21 +4296,239 @@ export const SpeakerIcon = (
     <path
       d="M2 10V14C2 16 3 17 5 17H6.43C6.8 17 7.17 17.11 7.49 17.3L10.41 19.13C12.93 20.71 15 19.56 15 16.59V7.41C15 4.43 12.93 3.29 10.41 4.87L7.49 6.7C7.17 6.89 6.8 7 6.43 7H5C3 7 2 8 2 10Z"
       stroke="currentColor"
-      stroke-width="1.5"
+      strokeWidth="1.5"
     />
     <path
       d="M18 8C19.78 10.37 19.78 13.63 18 16"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M19.8301 5.5C22.7201 9.35 22.7201 14.65 19.8301 18.5"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
+  </svg>
+);
+export const ServerIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.99935 4.9974H5.00768M4.99935 14.9974H5.00768M3.33268 1.66406H16.666C17.5865 1.66406 18.3327 2.41025 18.3327 3.33073V6.66406C18.3327 7.58454 17.5865 8.33073 16.666 8.33073H3.33268C2.41221 8.33073 1.66602 7.58454 1.66602 6.66406V3.33073C1.66602 2.41025 2.41221 1.66406 3.33268 1.66406ZM3.33268 11.6641H16.666C17.5865 11.6641 18.3327 12.4103 18.3327 13.3307V16.6641C18.3327 17.5845 17.5865 18.3307 16.666 18.3307H3.33268C2.41221 18.3307 1.66602 17.5845 1.66602 16.6641V13.3307C1.66602 12.4103 2.41221 11.6641 3.33268 11.6641Z"
+      stroke="url(#paint0_linear_2751_12374)"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2751_12374"
+        x1="1.66602"
+        y1="9.9974"
+        x2="18.3327"
+        y2="9.9974"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const UploadCloudIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6.6659 13.3313L9.99923 9.99795L13.3326 13.3313M9.99923 9.99795L9.99924 17.498M16.9909 15.323C17.8037 14.8798 18.4458 14.1787 18.8158 13.3301C19.1858 12.4816 19.2627 11.534 19.0344 10.6369C18.8061 9.73974 18.2855 8.94421 17.5548 8.37582C16.8241 7.80744 15.925 7.49856 14.9992 7.49795H13.9492C13.697 6.52232 13.2269 5.61656 12.5742 4.84878C11.9215 4.08099 11.1033 3.47116 10.181 3.06512C9.2587 2.65909 8.25636 2.46742 7.24933 2.50452C6.2423 2.54162 5.25679 2.80654 4.36688 3.27934C3.47697 3.75214 2.70583 4.42054 2.11142 5.23427C1.51701 6.048 1.11481 6.9859 0.935051 7.97745C0.755293 8.969 0.802655 9.98839 1.07358 10.959C1.3445 11.9296 1.83194 12.8262 2.49924 13.5813"
+      stroke="url(#paint0_linear_2751_12392)"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2751_12392"
+        x1="0.828125"
+        y1="9.99898"
+        x2="19.1632"
+        y2="9.99898"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const SecuritySafeIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.4242 9.26561C17.4242 13.3406 14.4659 17.1573 10.4242 18.2739C10.1492 18.3489 9.84921 18.3489 9.57421 18.2739C5.53255 17.1573 2.57422 13.3406 2.57422 9.26561V5.60726C2.57422 4.92393 3.0909 4.14893 3.73256 3.8906L8.37421 1.99062C9.41588 1.56563 10.5909 1.56563 11.6325 1.99062L16.2742 3.8906C16.9076 4.14893 17.4326 4.92393 17.4326 5.60726L17.4242 9.26561Z"
+      stroke="url(#paint0_linear_2751_12420)"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.0007 10.4193C10.9211 10.4193 11.6673 9.67308 11.6673 8.7526C11.6673 7.83213 10.9211 7.08594 10.0007 7.08594C9.08018 7.08594 8.33398 7.83213 8.33398 8.7526C8.33398 9.67308 9.08018 10.4193 10.0007 10.4193Z"
+      stroke="url(#paint1_linear_2751_12420)"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 10.4219V12.9219"
+      stroke="url(#paint2_linear_2751_12420)"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2751_12420"
+        x1="2.57422"
+        y1="10.001"
+        x2="17.4326"
+        y2="10.001"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_2751_12420"
+        x1="8.33398"
+        y1="8.7526"
+        x2="11.6673"
+        y2="8.7526"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+      <linearGradient
+        id="paint2_linear_2751_12420"
+        x1="10"
+        y1="11.6719"
+        x2="11"
+        y2="11.6719"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const KeyIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.4993 1.66406L15.8326 3.33073M15.8326 3.33073L18.3326 5.83073L15.4159 8.7474L12.9159 6.2474M15.8326 3.33073L12.9159 6.2474M9.49092 9.6724C9.9212 10.097 10.2633 10.6024 10.4974 11.1597C10.7315 11.717 10.8531 12.3151 10.8551 12.9196C10.8571 13.5241 10.7396 14.123 10.5092 14.6818C10.2788 15.2407 9.94014 15.7484 9.51271 16.1758C9.08528 16.6033 8.57752 16.9419 8.01867 17.1723C7.45982 17.4027 6.86092 17.5203 6.25645 17.5183C5.65197 17.5162 5.05387 17.3947 4.49658 17.1605C3.93928 16.9264 3.43381 16.5843 3.00925 16.1541C2.17436 15.2896 1.71239 14.1319 1.72283 12.9301C1.73327 11.7284 2.2153 10.5788 3.06508 9.72906C3.91487 8.87927 5.06443 8.39725 6.26616 8.38681C7.4679 8.37636 8.62566 8.83834 9.49009 9.67323L9.49092 9.6724ZM9.49092 9.6724L12.9159 6.2474"
+      stroke="url(#paint0_linear_2751_12636)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2751_12636"
+        x1="1.72266"
+        y1="9.59117"
+        x2="18.3326"
+        y2="9.59117"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const MailIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M18.3327 5.0026C18.3327 4.08594 17.5827 3.33594 16.666 3.33594H3.33268C2.41602 3.33594 1.66602 4.08594 1.66602 5.0026M18.3327 5.0026V15.0026C18.3327 15.9193 17.5827 16.6693 16.666 16.6693H3.33268C2.41602 16.6693 1.66602 15.9193 1.66602 15.0026V5.0026M18.3327 5.0026L9.99935 10.8359L1.66602 5.0026"
+      stroke="url(#paint0_linear_2751_12692)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2751_12692"
+        x1="1.66602"
+        y1="10.0026"
+        x2="18.3327"
+        y2="10.0026"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const FileTextIcon = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.6673 6.66406L11.6673 1.66406H5.00065C4.55862 1.66406 4.1347 1.83966 3.82214 2.15222C3.50958 2.46478 3.33398 2.8887 3.33398 3.33073V16.6641C3.33398 17.1061 3.50958 17.53 3.82214 17.8426C4.1347 18.1551 4.55862 18.3307 5.00065 18.3307H15.0007C15.4427 18.3307 15.8666 18.1551 16.1792 17.8426C16.4917 17.53 16.6673 17.1061 16.6673 16.6641V6.66406ZM11.6673 1.66406L11.6673 6.66406H16.6673M13.334 10.8307H6.66732M13.334 14.1641H6.66732M8.33398 7.4974H6.66732"
+      stroke="url(#paint0_linear_2751_12709)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2751_12709"
+        x1="3.33398"
+        y1="9.9974"
+        x2="16.6673"
+        y2="9.9974"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D7AB07" />
+        <stop offset="1" stopColor="#E86555" />
+      </linearGradient>
+    </defs>
   </svg>
 );

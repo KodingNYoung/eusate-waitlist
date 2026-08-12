@@ -7,7 +7,7 @@ import MetaProps from "@/components/shared/molecules/MetaProps";
 const KnowledgeBasePage = () => {
   return (
     <PageTemplate
-      hideGradient
+      gradientProps={{ hide: true }}
       classNames={{ wrapper: "space-y-12 md:space-y-24" }}
     >
       <MetaProps

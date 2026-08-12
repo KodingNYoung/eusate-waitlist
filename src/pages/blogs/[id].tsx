@@ -25,7 +25,7 @@ const BlogPost = ({ post }: Props) => {
         jsonLdData={{ type: "software" }}
       />
       <PageTemplate
-        gradientVariant="gray"
+        gradientProps={{ variant: "gray" }}
         classNames={{ wrapper: "md:pt-[100px] " }}
       >
         <AnimatedBlock variants={fadeVariants} duration={2}>

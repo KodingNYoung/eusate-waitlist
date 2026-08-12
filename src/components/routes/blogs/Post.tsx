@@ -26,24 +26,22 @@ export const Post = ({ post }: Props) => {
         {post.title}
       </Typography>
       <Typography
-        as="p"
-        className="text-regular-base md:text-regular-xl text-gray-700 leading-[180%]"
-      >
-        {post.content.introduction}
-      </Typography>
+        as="div"
+        className="text-regular-base md:text-regular-xl text-gray-700 leading-[180%] space-y-4 [&>*]:block"
+        dangerouslySetInnerHTML={{ __html: post.content.introduction }}
+      />
 
       <section className="space-y-6">
         {post.content.subheaders.map(({ id, title, content }) => (
-          <div key={id} className="space-y-6">
+          <div key={id} className="space-y-3 md:space-y-6">
             <Typography as="h2" className="text-bold-xl md:text-semibold-3xl">
               {title}
             </Typography>
             <Typography
-              as="p"
-              className="text-regular-base md:text-regular-xl text-gray-700 leading-[180%]"
-            >
-              {content}
-            </Typography>
+              as="div"
+              className="text-regular-base md:text-regular-xl text-gray-700 leading-[180%] space-y-4 [&_li]:list-outside [&_ul]:list-disc [&_ol]:list-decimal [&_li]:ml-5 md:[&_li]:ml-10 [&_ul]:space-y-1 [&_ol]:space-y-1 [&_a]:underline [&_a:hover]:no-underline [&_a]:underline-offset-8"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
           </div>
         ))}
       </section>

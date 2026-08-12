@@ -58,6 +58,7 @@ export const ROUTES = {
   REPORTS: "/reports",
   PLAYGROUND: "/playground",
   CONTACT: "/contact",
+  SECURITY: "/security",
 } as const;
 
 export const CURRENCY_SYMBOLS: Record<Currency, string> = {
@@ -1307,13 +1308,287 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 
 export const BLOG_POST: Blog[] = [
   {
+    id: "how-we-think-about-ai-trust-what-sate-will-and-wont-do-without-a-human",
+    imgSrc: "/blogs/how-we-think-about-ai-trust.webp",
+    title:
+      "How We Think About AI Trust: What Sate Will and Won't Do Without a Human",
+    summary:
+      "\"Can I trust an AI with my customers?\" is the first real objection every prospect raises. Here's exactly where we've drawn the lines for Sate — what it will never do without a human, and why.",
+    readingSpan: "3 min read",
+    spotlight: true,
+    timestamp: new Date("2026-08-01").toISOString(),
+    content: {
+      title:
+        "How We Think About AI Trust: What Sate Will and Won't Do Without a Human",
+      introduction: `<p>"Can I trust an AI with my customers?" is the first real objection every prospect raises, and it should be. You're not evaluating a feature. You're deciding whether to hand a stranger's conversation with your customer to software you didn't write.</p>
+         <p>Here's exactly how we think about that at Eusate, and where we've drawn the lines for Sate.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "The Default Assumption Should Be Skepticism",
+          content: `<p>Most AI support pitches lead with confidence: "our AI handles everything." That's the wrong opening line, because it's not true of any AI system today, and pretending otherwise is how trust gets broken the first time the AI gets something wrong.</p>
+            <p>We'd rather tell you what Sate won't do before we tell you what it will.</p>`,
+        },
+        {
+          id: 2,
+          title: "What Sate Will Never Do",
+          content: `<ul>
+            <li><strong>Sate never answers outside your approved knowledge.</strong> It doesn't improvise, guess, or draw on general internet knowledge to fill a gap in your documentation. If your knowledge base doesn't cover something, Sate doesn't invent a plausible-sounding answer, it flags the gap and routes the conversation instead of gambling on a confident wrong answer.</li>
+            <li><strong>Sate never hides its uncertainty from you.</strong> Through Gap Analysis, every place where Sate's confidence drops or your documentation falls short gets surfaced back to your team, not buried in a transcript nobody reads. If Sate is guessing, you'll know, because it will tell you, not because a customer complains later.</li>
+            <li><strong>Sate never freelances on sensitive conversations.</strong> Customer Temperament reads the emotional tone and intent of a conversation. When something reads as frustrated, high-stakes, or ambiguous; a disputed charge, a failed payment, a complaint, that's a signal to hand off, not a signal to try harder.</li>
+            </ul>`,
+        },
+        {
+          id: 3,
+          title: "What Sate Will Do",
+          content: `<ul>
+            <li><strong>Resolve the routine, end to end.</strong> The queries your documentation actually answers: status checks, how-to questions, account basics, Sate closes completely, without a human touching the ticket. That's the resolution rate that matters: not questions deflected, but conversations actually finished.</li>
+            <li><strong>Hand off with full context, not a blank slate.</strong> When Sate reaches the edge of what it should handle alone, it doesn't dump the customer back to square one. Ticket Context carries the full conversation history, gathered customer data, and relevant background to the human agent picking it up, so your customer never has to repeat themselves to a person who clearly wasn't paying attention.</li>
+            <li><strong>Work alongside your team, not around them.</strong> Co-pilot lets your agents draft and refine responses with AI assistance rather than replacing their judgment entirely. The AI augments your team's decisions on complex cases instead of trying to make those decisions unsupervised.</li>
+            </ul>`,
+        },
+        {
+          id: 4,
+          title: "Why We Built It This Way",
+          content: `<p>We didn't arrive at these guardrails from a compliance checklist. We arrived at them because we're founders who've had to explain to our own customers why something went wrong, and "the AI said so" is not an answer anyone accepts, in fintech or anywhere else.</p>
+            <p>Trust in AI support isn't built by claiming the AI is right all the time. It's built by being honest about exactly where it stops, and making sure a human is always standing right behind that line with full context, not starting cold.</p>`,
+        },
+        {
+          id: 5,
+          title: "What This Means for Your Team",
+          content: `<p>If you're evaluating whether to hand customer conversations to Sate, here's the actual question worth asking; not "can it handle everything," but "does it know what it doesn't know, and does it hand off cleanly when it hits that line."</p>
+            <p>That's the bar we hold ourselves to. It's also the bar we'd encourage you to hold any AI support vendor to, including us, ask to see a real handoff, not just a resolved ticket.</p>`,
+        },
+        {
+          id: 6,
+          title: "",
+          content: `<i>You watch every conversation Sate has, in real time, from day one. Test Sate on your own documentation in the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and see exactly where it draws its own lines.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "customer-support-benchmarks-for-african-fintech-startups",
+    imgSrc:
+      "/blogs/customer-support-benchmarks-for-african-fintech-startups.webp",
+    title: "Customer Support Benchmarks for African Fintech Startups",
+    summary:
+      "Most published support benchmarks come from US and European SaaS companies, and that's not the bar a digital bank needs to clear. Here's a practical benchmarking framework built for African fintech specifically.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-07-28").toISOString(),
+    content: {
+      title: "Customer Support Benchmarks for African Fintech Startups",
+      introduction: `<p>If you run support for a fintech in Nigeria, Kenya, Egypt, or elsewhere on the continent, you've probably wondered: <i>are our numbers actually good?</i></p>
+         <p>It's harder to answer than it sounds. Most published support benchmarks come from US and European SaaS companies; different channels, different urgency, different stakes. A "good" first-response time for a project management tool isn't the bar a digital bank needs to clear when a customer's rent money is stuck mid-transfer.</p>
+         <p>Here's a practical benchmarking framework built for African fintech specifically.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "Why Fintech Support Is a Different Category",
+          content: `<ul>
+            <li><strong>Money problems are urgent by definition.</strong> A failed payment isn't an inconvenience, it's often rent, inventory, or a family remittance stuck in limbo.</li>
+            <li><strong>Trust is the product.</strong> One bad support experience can undo months of acquisition work.</li>
+            <li><strong>WhatsApp is the primary channel</strong>, not a side channel, an assumption most global benchmarks don't make.</li>
+            <li><strong>Regulatory stakes are real.</strong> KYC issues and account access problems carry more weight than a typical SaaS ticket.</li>
+            </ul>`,
+        },
+        {
+          id: 2,
+          title: "The Benchmarks That Matter",
+          content: `<ol>
+            <li><strong>First Response Time.</strong> For fintech, this should be measured in seconds to minutes, not hours, especially for payment-related enquiries. A slow reply on a delayed transfer reads as "did my money disappear," not "please hold."</li>
+            <li><strong>Resolution Rate, Not Deflection Rate.</strong> Top AI support platforms resolve 70%+ of routine queries, and that's a useful ceiling. But watch for tools that quietly measure "the customer stopped asking" and report it as resolution. Audit a sample of "resolved" tickets monthly to confirm the label is honest.</li>
+            <li><strong>Escalation Accuracy.</strong> If your human agents spend the day answering "how do I reset my PIN," that's not an escalation problem, that's an automation gap. Humans should only see disputes, fraud, and genuinely ambiguous cases.</li>
+            <li><strong>Channel-Specific Resolution.</strong> Break resolution out by channel: WhatsApp, chat, email, voice, instead of blending it into one number. For most African fintech customers, WhatsApp volume will dwarf everything else combined. If your WhatsApp resolution lags your web chat, your tooling was likely built widget-first with WhatsApp bolted on.</li>
+            <li><strong>Cost Per Resolution.</strong> Track not just what you spend, but whether it's predictable as volume grows. Per-resolution and per-agent pricing can make your support bill grow faster than revenue right when you're trying to prove unit economics to investors.</li>
+            <li><strong>CSAT on Financial Interactions Specifically.</strong> Score money-related conversations separately from general enquiries. This number deserves its own bar, customers are inherently more anxious here, so a strong score signals real trust, not just politeness.</li>
+            </ol>`,
+        },
+        {
+          id: 3,
+          title: "Build Your Own Baseline First",
+          content: `<p>Most fintech support teams can't confidently answer their own resolution rate, because it's never been measured consistently. Before chasing an external benchmark:</p>
+            <ol>
+            <li>Measure first response and resolution rate separately, per channel, for 30 days.</li>
+            <li>Audit a sample of "resolved" tickets by hand.</li>
+            <li>Break out financial-interaction metrics from general volume.</li>
+            <li>Re-measure monthly; a number checked once is a snapshot, not a benchmark.</li>
+            </ol>`,
+        },
+        {
+          id: 4,
+          title: "The Point",
+          content: `<p>Most fintech support tools weren't built to give you WhatsApp-specific metrics in the first place, they were built widget-first, with WhatsApp bolted on as an afterthought. Eusate was built the opposite way: WhatsApp-native from day one, with resolution tracked separately across every channel your customers actually use.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Test Sate against your own support documentation in the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and see your real resolution rate in minutes.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "the-2-a-m-support-emergency-that-made-us-build-eusate",
+    imgSrc: "/blogs/2am-support-emergency.webp",
+    title: "The 2 A.M. Support Emergency That Made Us Build Eusate",
+    summary:
+      "It's 2 a.m. and a customer's payment just failed, but their business's support inbox won't open until 9. Here's the gap in WhatsApp-first, emerging-market support we saw, and why we built Eusate to close it.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-07-24").toISOString(),
+    content: {
+      title: "The 2 A.M. Support Emergency That Made Us Build Eusate",
+      introduction: `<p>It's 2 a.m. somewhere in Lagos, Nairobi, or Manila, and a customer's payment has failed.</p>
+         <p>Their money is stuck somewhere between their bank and an app, and they want answers now, not at 9 a.m. when a support team logs back in. They don't care that it's the middle of the night. They care that their money is gone and nobody is responding.</p>
+         <p>That scene isn't rare. It's Tuesday, every week, for thousands of businesses across emerging markets. We just noticed something the rest of the industry hadn't: nobody was building the tool to actually fix it.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title:
+            "The Problem Wasn't One Company's Support Team. It Was the Whole Category.",
+          content: `<p>We didn't stumble into this by running a business and getting burned by our own support inbox. We looked at the AI customer support market from the outside; as founders, as builders, and saw a gap that was hiding in plain sight.<p>
+          <p>Here's what the category kept missing: across Nigeria, wider Africa, LATAM, and South Asia, customers don't email businesses. They don't open tickets. They message on WhatsApp, Discord, start a live chat, or even send an email at every hour, expecting a real answer immediately. That's not a niche behavior. It's how commerce actually happens in these markets.</p>
+
+          <p>And yet every major AI support platform we looked at treated WhatsApp as an afterthought:</p>
+
+          <ul>
+          <li><strong>Intercom, Zendesk, and the enterprise players</strong> were built widget-first, for chat bubbles on websites, with WhatsApp bolted on as a checkbox integration.</li>
+          <li><strong>Cheap chatbots</strong> deflected questions instead of resolving them. A frustrated customer bouncing off a scripted bot at 2 a.m. is worse than no bot at all.</li>
+          <li><strong>Self-hosted tools</strong> like Chatwoot demanded engineering time most early-stage teams in these markets simply didn't have.</li>
+          </ul>
+          <p>The category had proven the demand for AI support. Intercom's Fin alone passed $100 million in ARR resolving roughly a million issues a week. But every one of those platforms was built for a different customer than the ones drowning in WhatsApp conversations every night. Nobody credible was serving the businesses actually living this problem.</p>`,
+        },
+        {
+          id: 2,
+          title: "What the Market Actually Needed",
+          content: `<p>Looking at the gap, the requirements were obvious:</p>
+             <ol>
+             <li><strong>Resolve conversations end-to-end</strong>, not just answer FAQs and punt everything else to a human.</li>
+             <li><strong>Live where customers already were</strong> not bolted on as an afterthought.</li>
+             <li><strong>Hand off intelligently</strong> when it hits the edge of its knowledge, with full context, not a blank slate for the human picking it up.</li>
+             <li><strong>Cost a predictable amount</strong>, not spike every time a business had a busy month.</li>
+             </ol>
+             <p>The AI customer support market, a category worth roughly $15 billion in 2026, had already proven the demand and the technology. What it hadn't proven was a platform built for founders and support teams in emerging markets: businesses with dollar-sensitive budgets, WhatsApp-first customers, and none of the enterprise procurement runway that Intercom or Zendesk's biggest accounts have.</p>
+             <p>So we decided to build it.</p>`,
+        },
+        {
+          id: 3,
+          title: "Founders Building for the Segments the Category King Ignores",
+          content: `<p>Eusate exists because we identified a specific, unclaimed position in a fast-growing category: deep AI resolution, flat predictable pricing, a full support stack, and WhatsApp and voice built in from day one, not bolted on later.</p>
+            <p>We built <strong>Sate</strong>, an AI agent that actually resolves conversations, not just deflects them, across WhatsApp, live chat, email, and Discord. It learns from your existing documentation instantly, reads customer context and temperament, and hands off to a human the moment it's genuinely stuck, without losing the thread of the conversation.</p>
+            <p>We built it flat-priced, because we watched an entire category of businesses get burned by bills that grow every time the AI succeeds.</p>
+            <p>We built it in Akure, Nigeria, because the businesses living this exact problem: fintechs, logistics companies, marketplaces, deserved a platform built by people who understood their market, not a checkbox feature inside someone else's roadmap.</p>`,
+        },
+        {
+          id: 4,
+          title: "This Is Still Day One",
+          content: `<p>Eusate isn't trying to be the biggest AI customer support platform in the world. We're trying to occupy the position nobody else credibly holds: deep AI resolution, flat pricing, a full support stack, built for the channels that customers in emerging markets actually use.</p>
+            <p>If your business has its own version of that 2 a.m. moment, a support inbox on fire, a customer who won't wait until morning, a tool that wasn't built for how your customers actually communicate, that's exactly the gap we built Eusate to close.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Want to see how Sate handles a real support conversation? Try the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and test it against your own documentation in ten minutes.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "ai-customer-support-for-logistics-automating-delivery-tracking-enquiries",
+    imgSrc: "/blogs/logistics-ai-customer-support.webp",
+    title:
+      "AI Customer Support for Logistics: Automating Delivery and Tracking Enquiries",
+    summary:
+      "\"Where's my package?\" hundreds of times a day is a staffing problem your team shouldn't own. Here's why logistics support is a perfect fit for AI automation, and what good automation actually looks like on WhatsApp.",
+    readingSpan: "6 min read",
+    spotlight: true,
+    timestamp: new Date("2026-07-21").toISOString(),
+    content: {
+      title:
+        "AI Customer Support for Logistics: Automating Delivery and Tracking Enquiries",
+      introduction: `<p>If you run support for a logistics or supply chain business, you already know the pattern: the same five questions, on repeat, hundreds of times a day.</p>
+         <i>"Where's my package?" "Why is my delivery delayed?" "Can I reschedule?" "My tracking number isn't updating." "The driver said it would arrive yesterday."</i>
+         <p>These conversations aren't complicated. They're <strong>repetitive, predictable, and high-volume</strong>; which makes them exactly the kind of workload that shouldn't require a human agent typing the same answer for the hundredth time this week.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "Why Logistics Support Is a Perfect Fit for AI Automation",
+          content: `<p>Logistics companies face a specific combination of pressures that most generic support tools weren't designed for:<p>
+          <ul>
+          <li><strong>High conversation volume.</strong> Every shipment generates potential enquiries: status checks, delays, address changes, delivery confirmations.</li>
+          <li><strong>Predictable workflows.</strong> Unlike, say, technical support for software, most logistics questions follow the same few paths: tracking status, delivery windows, rescheduling, exceptions.</li>
+          <li><strong>Time sensitivity.</strong> A customer asking "where's my order" wants an answer in seconds, not after waiting in a ticket queue.</li>
+          <li><strong>Multi-channel reality.</strong> Customers don't all use the same channel. Many, especially in emerging markets, expect to ask these questions over <strong>WhatsApp</strong>, not email or a website chat widget.</li>
+          </ul>
+          <p>This is precisely the profile of support volume and complexity that justifies real automation investment, not just a chatbot bolted onto a website.</p>`,
+        },
+        {
+          id: 2,
+          title: "What Actually Needs to Be Automated",
+          content: `<p>A logistics support automation strategy generally needs to handle:</p>
+             <ol>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                <span style="font-weight: 500;">Real-Time Tracking and Status Enquiries</span>
+                <p class="mt-1">The most common support request by far. An AI agent that can pull tracking data and answer instantly, without a human touching the ticket, removes the majority of routine volume from your team's plate.</p>
+              </li>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                 <span style="font-weight: 500;">Delivery Delays and Exceptions</span>
+                <p class="mt-1">When something goes wrong (weather, customs, routing issues), customers want proactive communication, not silence. AI support can flag exceptions and message affected customers before they even ask.</p>
+              </li>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                 <span style="font-weight: 500;">Rescheduling and Address Changes</span>
+                <p class="mt-1">Simple, rules-based requests that don't need a human, but often get routed to one anyway because the support tooling isn't built to close the loop automatically.</p>
+              </li>
+              <li style="margin-top:12px;margin-left:0;list-style-position:inside;">
+                <span style="font-weight: 500;">Escalation for Genuine Problems</span>
+                <p class="mt-1">Not everything should be automated. Lost packages, damaged goods, or disputes need a human with full context, and the AI's job is to gather that context and hand it off cleanly, not make the customer repeat themselves.</p>
+              </li>
+             </ol>`,
+        },
+        {
+          id: 3,
+          title: "Why Channel Matters as Much as the AI",
+          content: `<p>Here's where most AI support tools fall short for logistics companies operating in emerging markets: <strong>they treat WhatsApp as a checkbox integration</strong>, bolted onto a chat-widget-first product.</p>
+            <p>But for a huge share of customers, particularly across Africa, LATAM, and South Asia, WhatsApp isn't a secondary channel. It's the primary way people communicate, full stop. A logistics company that can't resolve a tracking question inside WhatsApp is forcing customers into a channel they don't want to use, which drives up ticket abandonment and frustration.</p>
+            <p>An AI support platform built <strong>WhatsApp-native</strong>, not WhatsApp-as-afterthought, resolves these enquiries where customers already are, without asking them to download an app or visit a separate portal.</p>`,
+        },
+        {
+          id: 4,
+          title: "What Good Automation Looks Like in Practice",
+          content: `<p>A well-implemented AI support setup for a logistics business should be able to:</p>
+          <ul>
+            <li>Resolve the majority of tracking and status questions automatically, without human involvement</li>
+            <li>Operate natively across WhatsApp, live chat, email, and voice</li>
+            <li>Read context from order and shipment data to give specific, accurate answers rather than generic responses</li>
+            <li>Detect when a query needs a human (damaged goods, lost shipments, disputes) and hand off with full conversation history</li>
+            <li>Do all of this at a flat, predictable monthly cost rather than a per-resolution fee that scales unpredictably as your shipment volume grows</li>
+          </ul>
+          <p>That last point matters more than it sounds. Logistics businesses already operate on thin margins. A support tool that charges per resolution means your support costs increase exactly when your business is succeeding and shipment volume is climbing, the worst possible time for an unpredictable bill.</p>`,
+        },
+        {
+          id: 4,
+          title: "The Bottom Line",
+          content: `<p>Logistics support is repetitive by nature, which makes it one of the clearest wins for AI automation in customer service today. The businesses that get the most value aren't the ones automating everything, they're the ones automating the predictable 80% (tracking, status, rescheduling) so their human team can focus on the 20% that actually needs a person: exceptions, disputes, and genuinely difficult conversations.</p>
+            <p>If your support team is still manually answering "where's my package" for the tenth time today, that's not a staffing problem. That's an automation gap.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Curious what AI-driven resolution rates look like for logistics support specifically? Test Sate against your own tracking and order data in the free  <a href="${FE_URL}/sign-up" target="_blank" rel="noreferrer noopener"> playground</a></i>`,
+        },
+      ],
+    },
+  },
+  {
     id: "10-signs-your-business-has-outgrown-its-customer-support-system",
     imgSrc: "/blogs/10-signs.webp", // Placeholder path for the image
     title: "10 Signs Your Business Has Outgrown Its Customer Support System",
     summary:
       "Growth has a way of exposing cracks in your customer service. Learn the 10 warning signs that your current support system is holding your business back—and how to fix it before your customers notice.",
     readingSpan: "5 min read",
-    spotlight: true,
+    spotlight: false,
     timestamp: new Date("2026-06-18").toISOString(),
     content: {
       title: "10 Signs Your Business Has Outgrown Its Customer Support System",

@@ -37,11 +37,10 @@ export const BlogFeed = () => {
         <AnimatedBlock variants={staggerContainer}>
           <div className="flex w-fit justify-center md:justify-around xl:justify-between flex-wrap gap-8">
             {BLOG_POST.map(
-              ({ id, imgSrc, title, summary, readingSpan, timestamp }, idx) => (
+              ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                 <BlogCard
                   key={id}
                   id={id}
-                  idx={idx}
                   imgSrc={imgSrc}
                   title={title}
                   summary={summary}

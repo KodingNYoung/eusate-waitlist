@@ -6,6 +6,7 @@ import { SocialLinks } from "@/components/routes/contact/Socials";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { FormSection } from "@/components/routes/contact/FormSection";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { StaggerItem } from "@/components/shared/organisms/AnimatedBlock/StaggerItem";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import MetaProps from "@/components/shared/molecules/MetaProps";
 
@@ -26,7 +27,7 @@ const ContactPage = () => {
           }}
         >
           {/* CONTACT INFO */}
-          <AnimatedBlock duration={2} className="w-full md:w-auto">
+          <StaggerItem duration={2} className="w-full md:w-auto">
             <PageSection
               classNames={{
                 container: "space-y-10 md:space-y-20",
@@ -45,7 +46,7 @@ const ContactPage = () => {
               />
               <SocialLinks />
             </PageSection>
-          </AnimatedBlock>
+          </StaggerItem>
 
           {/* MESSAGE FORM */}
           <FormSection />

@@ -3,6 +3,7 @@ import { KB_HIGHLIGHTS } from "@/utils/constants";
 import { DevActionCard } from "../devspace/DevActionCard";
 import { PageSection } from "@/components/shared/organisms/PageTemplate";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
+import { StaggerItem } from "@/components/shared/organisms/AnimatedBlock/StaggerItem";
 import {
   fadeLeftVariants,
   fadeRightVariants,
@@ -12,8 +13,8 @@ import {
 export const KBFunctionalities = () => {
   return (
     <AnimatedBlock variants={staggerContainer}>
-      <PageSection classNames={{ base: "px-5", container: "grid gap-y-22" }}>
-        <AnimatedBlock variants={fadeLeftVariants} delay={0.5} duration={2}>
+      <PageSection classNames={{ base: "px-5", container: "grid !gap-y-20" }}>
+        <StaggerItem variants={fadeLeftVariants} duration={2}>
           <div className="flex flex-wrap justify-start gap-y-10 md:justify-around items-center">
             <div>
               <Typography
@@ -38,8 +39,8 @@ export const KBFunctionalities = () => {
               ))}
             </div>
           </div>
-        </AnimatedBlock>
-        <AnimatedBlock variants={fadeRightVariants} delay={0.5} duration={2}>
+        </StaggerItem>
+        <StaggerItem variants={fadeRightVariants} duration={2}>
           <div className="flex flex-wrap items-center justify-start gap-y-10 md:justify-around">
             <div className="bg-gray-50 order-2 md:order-1 flex flex-wrap p-[4px] gap-[4px] rounded-lg">
               {KB_HIGHLIGHTS.slice(2).map(({ id, title, description }) => (
@@ -64,7 +65,7 @@ export const KBFunctionalities = () => {
               </Typography>
             </div>
           </div>
-        </AnimatedBlock>
+        </StaggerItem>
       </PageSection>
     </AnimatedBlock>
   );

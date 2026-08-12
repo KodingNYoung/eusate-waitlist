@@ -21,7 +21,7 @@ const AboutPage = () => {
   const isMobile = useMediaQuery();
   return (
     <PageTemplate
-      gradientVariant="yellow"
+      gradientProps={{ variant: "yellow" }}
       classNames={{ wrapper: "w-full pb-12" }}
     >
       <MetaProps

@@ -120,6 +120,7 @@ const config: Config = {
         100: "#0A0A0A",
       },
       gray: {
+        20: "#E2E8F0",
         25: "#FAFBFC",
         50: "#F0F1F3",
         100: "#D0D3D9",

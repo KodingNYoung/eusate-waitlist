@@ -9,7 +9,7 @@ import MetaProps from "@/components/shared/molecules/MetaProps";
 const Devspace = () => {
   return (
     <PageTemplate
-      hideGradient
+      gradientProps={{ hide: true }}
       classNames={{
         base: "md:!px-0",
         wrapper: "relative md:space-y-24 pb-24",

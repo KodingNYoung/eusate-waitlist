@@ -1,9 +1,7 @@
 import Typography from "@/components/shared/atoms/Typography";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
-import {
-  fadeUpVariants,
-  staggerContainer,
-} from "@/components/shared/organisms/AnimatedBlock/variants";
+import { StaggerItem } from "@/components/shared/organisms/AnimatedBlock/StaggerItem";
+import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { SubHeader } from "@/components/shared/organisms/PageHeader";
 import { InternalPath } from "@/utils/types";
 import { motion } from "framer-motion";
@@ -53,12 +51,6 @@ const team: Member[] = [
     name: "Daramola Daniel",
     role: "Creative Designer & Video Editor",
   },
-  {
-    id: 7,
-    imgSrc: "/about/images/ayotomi.webp",
-    name: "Ayotomi Odusina",
-    role: "Marketer",
-  },
 ];
 
 export const MeetTeam = () => {
@@ -87,9 +79,8 @@ export const MeetTeam = () => {
 
 const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
   return (
-    <motion.div
-      variants={fadeUpVariants}
-      transition={{ duration: 2 }}
+    <StaggerItem
+      duration={2}
       className="relative flex flex-col gap-4 group w-full max-w-[329px]"
     >
       <div className="relative w-full h-[320px] self-start rounded-x24 overflow-hidden">
@@ -109,6 +100,6 @@ const MemberCard = ({ imgSrc, role, name }: Omit<Member, "id">) => {
           {role}
         </Typography>
       </div>
-    </motion.div>
+    </StaggerItem>
   );
 };

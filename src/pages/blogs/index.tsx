@@ -35,7 +35,7 @@ const BlogPage = () => {
         jsonLdData={{ type: "software" }}
       />
       <PageTemplate
-        gradientVariant="gray"
+        gradientProps={{ variant: "gray" }}
         classNames={{
           wrapper: "grid gap-y-8 md:gap-y-20 mt-20 md:mt-24 pb-20",
         }}
