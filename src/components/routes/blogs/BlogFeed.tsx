@@ -1,16 +1,19 @@
 import { BlogCard } from "@/components/routes/blogs/BlogCard";
 import AppPagination from "@/components/shared/molecules/Pagination";
-import { PageQueryKey } from "@/utils/enum";
 import { PageSection } from "@/components/shared/organisms/PageTemplate";
-import { useQueryParams } from "@/utils/hooks";
 import { AnimatedBlock } from "@/components/shared/organisms/AnimatedBlock";
 import { staggerContainer } from "@/components/shared/organisms/AnimatedBlock/variants";
 import { BLOG_POST } from "@/utils/constants";
+import { useState } from "react";
 
-const MIN_BLOG_FOR_PAGINATION = 6;
+const BLOGS_PER_PAGE = 9;
 
 export const BlogFeed = () => {
-  const { set } = useQueryParams();
+  const [page, setPage] = useState(1);
+
+  const start = (page - 1) * BLOGS_PER_PAGE;
+  const end = start + BLOGS_PER_PAGE;
+  const noOfPages = Math.ceil(BLOG_POST.length / BLOGS_PER_PAGE);
   return (
     <PageSection
       classNames={{
@@ -35,8 +38,8 @@ export const BlogFeed = () => {
         </AnimatedBlock>
 
         <AnimatedBlock variants={staggerContainer}>
-          <div className="flex w-fit justify-center md:justify-around xl:justify-between flex-wrap gap-8">
-            {BLOG_POST.map(
+          <div className="flex w-fit flex-wrap gap-8">
+            {BLOG_POST.slice(start, end).map(
               ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                 <BlogCard
                   key={id}
@@ -46,6 +49,7 @@ export const BlogFeed = () => {
                   summary={summary}
                   readingSpan={readingSpan}
                   timestamp={timestamp}
+                  classNames={{ container: "max-w-[363px]" }}
                 />
               ),
             )}
@@ -53,12 +57,8 @@ export const BlogFeed = () => {
         </AnimatedBlock>
       </div>
 
-      {BLOG_POST.length > MIN_BLOG_FOR_PAGINATION && (
-        <AppPagination
-          page={1}
-          total={10}
-          onChange={(page) => set(PageQueryKey.PAGE, page)}
-        />
+      {noOfPages > 1 && (
+        <AppPagination page={page} total={noOfPages} onChange={setPage} />
       )}
     </PageSection>
   );

@@ -1308,6 +1308,132 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 
 export const BLOG_POST: Blog[] = [
   {
+    id: "first-response-time-what-is-good-and-how-can-you-improve-it",
+    imgSrc: "/blogs/first-response-time.webp",
+    title: "First Response Time: What Is Good and How Can You Improve It?",
+    summary:
+      "A fast reply doesn't guarantee a good experience, but a slow one almost always guarantees a bad one. Here's what actually counts as a good first response time by channel, and the practical levers that move the number.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-08-18").toISOString(),
+    content: {
+      title: "First Response Time: What Is Good and How Can You Improve It?",
+      introduction: `<p>First response time (FRT), how long a customer waits before hearing anything back, is one of the most-watched metrics in customer support, and one of the most misunderstood. A fast reply doesn't guarantee a good experience. But a slow one almost always guarantees a bad one.</p>
+         <p>Here's what actually counts as good, and the practical levers that move the number.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "What Counts as a Good First Response Time?",
+          content: `<p>There's no single universal benchmark, the right number depends on your channel and your industry, but general ranges hold up across most support teams:</p>
+            <ul>
+            <li><strong>Live chat:</strong> Under 1 minute is excellent; under 5 minutes is acceptable. Customers on chat expect near-real-time interaction, it's the whole reason they chose that channel over email.</li>
+            <li><strong>WhatsApp and messaging apps:</strong> Similar to live chat, customers expect a reply within minutes, not hours, because that's the standard set by every other conversation happening in their inbox.</li>
+            <li><strong>Email:</strong> Under 1 hour is strong; under 24 hours is the widely accepted baseline. Beyond that, response time starts actively damaging satisfaction.</li>
+            <li><strong>Social media:</strong> Under 1 hour during business hours, public visibility raises the stakes on speed.</li>
+            </ul>
+            <p>The pattern across all of them: customers judge your response time against the channel's norms, not some universal standard. A 2-hour email reply feels fine. A 2-hour WhatsApp reply feels like being ignored.</p>`,
+        },
+        {
+          id: 2,
+          title: "Why First Response Time Matters More Than It Seems",
+          content: `<p>FRT isn't just a satisfaction metric, it's a leading indicator of several things at once:</p>
+            <ul>
+            <li><strong>It predicts CSAT.</strong> Customers consistently rate speed as one of the top two or three factors in their support satisfaction, often ahead of how the issue was actually resolved.</li>
+            <li><strong>It predicts churn risk.</strong> A slow first response signals to the customer that they're not a priority, and that impression is hard to undo even if the eventual resolution is good.</li>
+            <li><strong>It's a proxy for capacity.</strong> A rising FRT trend is often the earliest visible sign that your support team is understaffed relative to ticket volume, before backlog or CSAT even start to show it.</li>
+            </ul>`,
+        },
+        {
+          id: 3,
+          title: "How to Actually Improve It",
+          content: `<ol>
+            <li><strong>Separate Routine Questions From Complex Ones.</strong> Most support queues blend everything into one line; a simple "what are your hours" question waits behind a genuinely complicated billing dispute. Triaging by complexity, not just order received, lets simple questions get answered instantly instead of waiting in line behind harder ones.</li>
+            <li><strong>Resolve the Repetitive Stuff Automatically.</strong> A significant share of most teams' ticket volume, often 60-80%, is the same handful of questions asked repeatedly: order status, password resets, basic account questions. An AI agent that can answer these instantly, without a human touching the ticket, removes the biggest bottleneck in your FRT entirely for that portion of volume.</li>
+            <li><strong>Set Channel-Specific Expectations and Staff Accordingly.</strong> If your WhatsApp volume spikes in the evening and your team logs off at 5pm, that gap is where FRT quietly falls apart. Map your actual volume patterns by channel and hour, then staff (or automate) around the real pattern, not around a generic 9-to-5 assumption.</li>
+            <li><strong>Use Canned Responses for the First Reply, Not the Whole Answer.</strong> A fast acknowledgment ("we're looking into this now") buys time and improves perceived FRT even before the full answer is ready. This isn't a substitute for actually resolving the issue quickly, but it prevents the silence that makes customers feel ignored while a complex ticket gets worked.</li>
+            <li><strong>Watch FRT by Channel, Not as One Blended Number.</strong> A blended average can hide a real problem, strong email FRT can mask a WhatsApp response time that's quietly terrible. Track each channel separately so a weak spot doesn't get buried in a good-looking overall average.</li>
+            <li><strong>Route Escalations Immediately, Not Eventually.</strong> If your FRT looks good on average but occasionally spikes badly on your most sensitive tickets, the issue usually isn't overall capacity, it's routing. Make sure genuinely urgent conversations get flagged and prioritized the moment they come in, not discovered during a routine queue sweep.</li>
+            </ol>`,
+        },
+        {
+          id: 4,
+          title: "The Bottom Line",
+          content: `<p>Improving first response time isn't really about typing faster. It's about making sure a human is only spending time on the tickets that actually need one, and that everything else gets answered the moment it arrives, not whenever someone gets to it.</p>
+            <p>Most support teams' FRT problem isn't a speed problem, it's a triage problem, with routine and complex tickets sitting in the same queue.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>Eusate's AI agent, Sate, resolves routine questions instantly across WhatsApp, chat, email, and voice, and routes anything genuinely complex to your team with full context attached so your human first response time improves too, because your team isn't buried under questions that never needed them in the first place. Test Sate against your own documentation in the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and see your real FRT improve.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "7-signs-your-support-team-is-overworked",
+    imgSrc: "/blogs/7-signs-that-your-support-team-is-overworked.webp",
+    title: "7 Signs Your Support Team Is Overworked",
+    summary:
+      "Support burnout doesn't usually announce itself, it shows up gradually until one day the metrics can't be ignored. Here are seven signs your team has quietly crossed the line from busy to overworked, and what each one is actually telling you.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-08-14").toISOString(),
+    content: {
+      title: "7 Signs Your Support Team Is Overworked",
+      introduction: `<p>Support burnout doesn't usually announce itself. It shows up gradually; a slightly slower reply here, a more clipped tone there, until one day you look at your metrics and wonder how things got this bad without anyone raising a flag.</p>
+         <p>Here are seven signs your support team has quietly crossed the line from busy to overworked, and what each one is actually telling you.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title:
+            "1. First Response Times Are Creeping Up (And Nobody's Talking About It)",
+          content: `<p>A slow response time on its own isn't always a red flag, sometimes it's a busy week. What matters is the trend. If your average first response time has been slowly climbing for weeks and nobody's flagged it as urgent, that's usually not a process problem. It's a capacity problem that's been normalized because everyone's too busy putting out fires to step back and look at the trend line.</p>`,
+        },
+        {
+          id: 2,
+          title: "2. Agents Are Handling the Same Questions Dozens of Times a Day",
+          content: `<p>If your team is manually typing near-identical answers to "where's my order," "how do I reset my password," or "what's your refund policy" multiple times an hour, that's not support work, that's a documentation and automation gap disguised as busywork. Repetitive tickets are the clearest signal that routine volume has outgrown what a human team should be manually handling.</p>`,
+        },
+        {
+          id: 3,
+          title: "3. Your Backlog Never Actually Hits Zero",
+          content: `<p>Every support team has busy days. The warning sign is a backlog that never fully clears, where "caught up" has quietly become a memory rather than a daily occurrence. A backlog that persists day after day means your incoming volume has permanently outpaced your team's resolution capacity, not just temporarily spiked.</p>`,
+        },
+        {
+          id: 4,
+          title: "4. CSAT Is Dropping, But Nobody Can Pinpoint Why",
+          content: `<p>Individually, your agents are still doing everything right. But your CSAT scores have been sliding for a few weeks. This is often the quiet cost of overwork: agents rushing to clear volume, giving technically correct but slightly less thoughtful answers, or losing the context of a conversation because they're juggling too many threads at once. The drop is rarely dramatic, it's a slow erosion that's easy to miss until a customer says something pointed in a review.</p>`,
+        },
+        {
+          id: 5,
+          title: "5. Agent Turnover Is Higher Than It Used To Be",
+          content: `<p>Support is already one of the higher-turnover roles in most companies. When that turnover accelerates, when people who used to stay a year or more are leaving in months, it's worth asking directly whether workload is the cause. Exit interviews that mention "burnout," "unmanageable volume," or "no time to actually help people" are a clear signal, not an isolated complaint.</p>`,
+        },
+        {
+          id: 6,
+          title: "6. Escalations Are Being Missed or Delayed",
+          content: `<p>When a team is stretched thin, the conversations that actually need urgent attention, a fraud concern, a major complaint, a churn-risk customer, can get buried in the same queue as routine questions. If escalations are slipping through or getting delayed because everyone's heads-down clearing volume, that's one of the more dangerous signs of overwork, because it's the conversations that matter most that are falling through the cracks.</p>`,
+        },
+        {
+          id: 7,
+          title: "7. \"We Need to Hire\" Has Become the Only Solution on the Table",
+          content: `<p>If every conversation about support capacity ends with "we just need more headcount," it's worth pausing on that assumption. Hiring is sometimes genuinely the answer, but it's also the most expensive fix, and it doesn't address the root issue if 60–80% of your ticket volume is repetitive, low-complexity questions that don't require a human to answer in the first place. When headcount is the only lever anyone considers, it usually means nobody's stopped to ask what percentage of the workload could be automated instead.</p>`,
+        },
+        {
+          id: 8,
+          title: "What to Do If You Recognize These Signs",
+          content: `<p>The instinct when a support team is drowning is almost always to hire. But before adding headcount, it's worth separating your ticket volume into two categories: the routine, repetitive questions your documentation already answers, and the genuinely complex conversations that need a human's judgment.</p>
+            <p>For most growing companies, that split is more lopsided than expected; often 70–80% of volume falls into the first category. Automating that portion doesn't replace your team; it gives the humans on it room to actually do the parts of the job that need a person: judgment calls, de-escalation, and the conversations where empathy matters more than speed.</p>`,
+        },
+        {
+          id: 9,
+          title: "",
+          content: `<i>If any of these seven signs sound familiar, that's usually not a sign you need more people, it's a sign the routine 70% of your ticket volume needs a better first line of response. Eusate's AI agent, Sate, resolves the repetitive questions end-to-end across WhatsApp, chat, email, and voice, and hands off the genuinely complex conversations to your team with full context, so the humans on your support team spend their time on the work that actually needs them. Test Sate against your own documentation in the free <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">playground</a> and see how much of your ticket volume it could take off your team's plate today.</i>`,
+        },
+      ],
+    },
+  },
+  {
     id: "how-we-think-about-ai-trust-what-sate-will-and-wont-do-without-a-human",
     imgSrc: "/blogs/how-we-think-about-ai-trust.webp",
     title:

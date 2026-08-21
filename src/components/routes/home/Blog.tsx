@@ -36,12 +36,12 @@ export const Blog = () => {
       />
       <div className="flex justify-center w-full">
         <AnimatedBlock variants={staggerContainer}>
-          <motion.div className="flex flex-wrap justify-start xl:justify-between gap-8 w-fit">
+          <motion.div className="flex flex-wrap gap-8 w-full">
             {BLOG_POST?.slice(0, 3)?.map(
               ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                 <BlogCard
                   variant="inline"
-                  classNames={{ container: "self-start items-start " }}
+                  classNames={{ container: "max-w-[378px]" }}
                   key={id}
                   id={id}
                   imgSrc={imgSrc}

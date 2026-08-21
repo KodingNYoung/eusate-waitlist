@@ -74,7 +74,7 @@ const BlogPage = () => {
         <PageSection classNames={{ wrapper: "px-5" }}>
           {search.length ? (
             searchedBlogs.length ? (
-              <div className="flex w-full justify-start md:justify-start flex-wrap gap-8">
+              <div className="flex w-full justify-start flex-wrap gap-8">
                 {searchedBlogs.map(
                   ({ id, imgSrc, title, summary, readingSpan, timestamp }) => (
                     <BlogCard

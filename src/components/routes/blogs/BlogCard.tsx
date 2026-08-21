@@ -1,4 +1,4 @@
-import { cls, truncateWords } from "@/utils/helpers";
+import { cls } from "@/utils/helpers";
 import { FC, TWClassNames } from "@/utils/types";
 import Typography from "../../shared/atoms/Typography";
 import Image from "next/image";
@@ -52,7 +52,7 @@ export const BlogCard: FC<Props> = ({
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
-        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6",
+        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 flex-1",
         spotlightVariant?.container,
         variant === "page" && "border border-gray-50 p-4 shadow-soft-xxsmall",
         classNames?.container,
@@ -82,16 +82,16 @@ export const BlogCard: FC<Props> = ({
       <Typography
         data-spotlight={spotlight}
         as="h4"
-        className="text-bold-xl data-[spotlight=true]:text-bold-2xl"
+        className="text-bold-xl data-[spotlight=true]:text-bold-2xl line-clamp-2"
       >
-        {truncateWords(title, 55)}
+        {title}
       </Typography>
       <Typography
         as="p"
         data-spotlight={spotlight}
-        className="text-regular-base text-gray-600 data-[spotlight=true]:text-regular-lg"
+        className="text-regular-base text-gray-600 data-[spotlight=true]:text-regular-lg line-clamp-3"
       >
-        {truncateWords(summary, 77)}
+        {summary}
       </Typography>
       <div className="space-x-4">
         <Typography
@@ -111,7 +111,7 @@ export const BlogCard: FC<Props> = ({
         <Typography
           data-spotlight={spotlight}
           as="span"
-          className="text-gray-600 text-regular-base data-[spotlight=true]:text-regular-lg"
+          className="text-gray-600 text-regular-base data-[spotlight=true]:text-regular-lg mt-auto"
         >
           {dayjs(timestamp).format("MMM DD, YYYY")}
         </Typography>

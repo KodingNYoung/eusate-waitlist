@@ -6,7 +6,7 @@ import {
   PaginationItemRenderProps,
   PaginationItemType,
 } from "@heroui/pagination";
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import Button from "../Button";
 import { ArrowRightIcon } from "@/assets/icons";
 import { cls } from "@/utils/helpers";
@@ -20,7 +20,6 @@ export type AppPaginationProps = {
 };
 
 const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
-  const [currentPage, setCurrentPage] = useState(1);
   const isMobile = useMediaQuery();
 
   const renderItem = useCallback(
@@ -35,27 +34,16 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
       setPage,
       className,
     }: PaginationItemRenderProps) => {
-      const _onPrevious = () => {
-        setCurrentPage((v) => v - 1);
-        onPrevious();
-      };
-
-      const _onNext = () => {
-        setCurrentPage((v) => v - 1);
-        onNext();
-      };
-
       if (value === PaginationItemType.PREV) {
         return (
           <Button
             variant="text"
-            onClick={_onPrevious}
+            onClick={onPrevious}
+            disabled={page === 1}
             className={cls(
               className,
-              "rounded-full !w-12 !h-12 rotate-180 ",
-              currentPage === 1
-                ? "!bg-gray-100 !stroke-gray-400"
-                : "!bg-black !stroke-white",
+              "rounded-full !w-12 !h-12 rotate-180 !bg-black !stroke-white !hover:bg-black ",
+              "disabled:!bg-gray-100 disabled:!stroke-gray-400",
             )}
           >
             <span>{ArrowRightIcon}</span>
@@ -66,13 +54,12 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
         return (
           <Button
             variant="text"
-            onClick={_onNext}
+            onClick={onNext}
+            disabled={page >= total}
             className={cls(
               className,
-              "rounded-full !w-12 !h-12 ",
-              currentPage === total
-                ? "!bg-gray-100 !stroke-gray-400"
-                : "!bg-black !stroke-white !hover:bg-black",
+              "rounded-full !w-12 !h-12 !bg-black !stroke-white !hover:bg-black ",
+              "disabled:!bg-gray-100 disabled:!stroke-gray-400",
             )}
           >
             <span>{ArrowRightIcon}</span>
@@ -84,7 +71,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
         return (
           <Button
             variant="tetiary"
-            onClick={_onPrevious}
+            onClick={onPrevious}
             className={cls(
               className,
               "rounded-full stroke-gray-400 !w-12 !h-12",
@@ -107,14 +94,13 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
           )}
           onClick={() => {
             setPage(value);
-            setCurrentPage(value);
           }}
         >
           {value}
         </button>
       );
     },
-    [currentPage],
+    [page, total],
   );
   return (
     <div className="flex justify-center w-full pt-4 md:pt-6">
@@ -131,6 +117,7 @@ const AppPagination: FC<AppPaginationProps> = ({ page, total, onChange }) => {
         classNames={{
           cursor:
             "bg-gray-50 border-none right-0 shadow-none rounded-none !text-gray-900 text-medium-sm w-[39px] min-w-[39px]",
+          wrapper: "gap-3",
         }}
       />
     </div>
