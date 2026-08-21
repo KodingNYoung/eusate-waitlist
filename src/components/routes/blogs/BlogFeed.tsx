@@ -24,7 +24,7 @@ export const BlogFeed = () => {
       <div className="grid gap-y-10">
         {/* SPOTLIGHT */}
         <AnimatedBlock>
-          <div className="flex w-full">
+          <div className="hidden w-full md:flex">
             <BlogCard
               spotlight
               id={BLOG_POST[0].id}
@@ -49,7 +49,7 @@ export const BlogFeed = () => {
                   summary={summary}
                   readingSpan={readingSpan}
                   timestamp={timestamp}
-                  classNames={{ container: "max-w-[363px]" }}
+                  classNames={{ container: "md:max-w-[363px]" }}
                 />
               ),
             )}
