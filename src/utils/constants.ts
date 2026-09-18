@@ -1308,6 +1308,151 @@ export const INTEGRATIONS_PRICING: IntegrationPricing[] = [
 
 export const BLOG_POST: Blog[] = [
   {
+    id: "ai-shouldnt-sound-like-a-robot",
+    imgSrc: "/blogs/ai-shouldnt-sound-like-a-robot.webp",
+    title: "AI Shouldn't Sound Like a Robot",
+    summary:
+      "\"Sounds robotic\" isn't a minor style complaint, it's a churn risk. Here's what actually causes robotic AI responses, and what it takes to build support that doesn't make customers feel like they're talking to a wall.",
+    readingSpan: "4 min read",
+    spotlight: true,
+    timestamp: new Date("2026-09-15").toISOString(),
+    content: {
+      title: "AI Shouldn't Sound Like a Robot",
+      introduction: `<p>You've talked to one. The chatbot that says "I understand your frustration" right after ignoring what you actually said. The one that answers a question you didn't ask, three times in a row, in the same chipper tone no matter what you type. You didn't get help. You got a wall with a typing indicator.</p>
+         <p>That experience has a name in the support world: the uncanny valley of customer service. Close enough to a real conversation that you expect it to behave like one, far enough off that every reply reminds you it isn't. And it's the single fastest way to burn the trust an AI support agent is supposed to be building.</p>
+         <p>If you're rolling out AI customer support, "sounds robotic" isn't a minor style complaint. It's a churn risk.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "Why Robotic AI Responses Cost You More Than They Save",
+          content: `<p>The whole pitch of AI customer support is speed without sacrificing quality. Robotic responses break that trade in the worst way; customers get the speed, then immediately question whether they got real help at all.</p>
+            <p>A few things happen when support sounds obviously scripted:</p>
+            <ul>
+            <li><strong>Customers start testing it.</strong> The moment someone suspects they're talking to a bot that doesn't really get it, they stop describing their problem naturally and start hunting for the phrase that'll trigger a useful answer, or a human.</li>
+            <li><strong>Escalations go up, not down.</strong> Ironically, the AI meant to reduce ticket volume ends up generating more of it, because customers repeat themselves, rephrase, and eventually demand a person.</li>
+            <li><strong>Trust erodes before the issue is even resolved.</strong> Tone is information. A flat, generic reply to someone who's clearly frustrated tells them nobody, human or AI, is actually paying attention.</li>
+            </ul>
+            <p>None of this is about the AI being wrong. It's about the AI being right in a voice that feels like nobody's home.</p>`,
+        },
+        {
+          id: 2,
+          title: "What \"Sounding Robotic\" Actually Means",
+          content: `<p>It's tempting to think this is just a language problem; swap in some contractions, add an exclamation point, done. It's not. Robotic AI usually comes from a handful of specific failures:</p>
+            <ul>
+            <li><strong>It answers the words, not the intent.</strong> Someone asks "why did my order get cancelled" out of genuine worry, and the bot returns a dictionary-accurate definition of the cancellation policy. Technically correct, completely tone-deaf.</li>
+            <li><strong>It repeats itself instead of adapting.</strong> Say the same thing two different ways, get the same canned response twice. Real conversations build on what was just said. Robotic ones reset every turn.</li>
+            <li><strong>It never adjusts to emotion.</strong> An angry customer and a mildly curious one get identical phrasing. People notice when they're clearly upset and the response reads like a form letter.</li>
+            <li><strong>It's overconfident when it should be careful.</strong> Robotic AI rarely says "I'm not sure, let me check on that." It picks an answer and delivers it with the same flat certainty whether it's right or guessing.</li>
+            <li><strong>It has no memory of what it just said.</strong> Ask a follow-up, and it treats the conversation like it started fresh. Humans don't do that, and customers register it instantly when a bot does.</li>
+            </ul>
+            <p>Fix these, and you don't need a personality makeover. You need an AI that's actually built to understand context instead of pattern-matching to the nearest scripted answer.</p>`,
+        },
+        {
+          id: 3,
+          title: "What Human-Sounding AI Actually Requires",
+          content: `<ul>
+            <li><strong>Context, not just answers.</strong> An AI that only knows your FAQ will only ever sound like your FAQ. Real understanding comes from feeding it the messier material: resolved tickets, past conversations, the way your team actually explains things when a customer is confused rather than when a doc is being written for clarity. That's the difference between an AI that recites policy and one that explains it.</li>
+            <li><strong>Tone that shifts with the customer.</strong> The same information delivered to a frustrated customer and a curious one shouldn't read identically. Good AI support reads the room, shorter, more direct answers when someone's clearly annoyed; more explanation when someone's exploring options.</li>
+            <li><strong>Honesty about uncertainty.</strong> Ironically, the fastest way to sound more human is to be willing to say "I don't know, let me get you someone who does." Certainty about everything is what makes AI sound artificial in the first place, real people hedge, check, and admit limits.</li>
+            <li><strong>A visible way to reach a person.</strong> Even a well-trained AI benefits from an obvious, friction-free handoff to a human agent. Customers trust AI more, not less, when they know a person is one step away if they need one.</li>
+            <li><strong>Continuous correction, not a one-time setup.</strong> Language that felt natural at launch will start to feel stale as your product, customers, and common questions evolve. Human-sounding AI is a maintained thing, not a shipped one.</li>
+            </ul>`,
+        },
+        {
+          id: 4,
+          title: "How Eusate Approaches This",
+          content: `<p>This is the exact problem we built Sate, Eusate's AI agent, to solve. Instead of training on a static FAQ, Sate pulls context from the sources that actually reflect how your business talks to customers, past tickets, documentation, internal notes, so its answers sound like they came from someone who actually works there.</p>`,
+        },
+        {
+          id: 5,
+          title: "",
+          content: `<i>You can test and adjust its responses in the <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">Playground</a> before a single customer sees them, run it in co-pilot mode so a human reviews and refines its replies early on, and hand off seamlessly to a live agent the moment a conversation needs a human touch. The goal isn't an AI that pretends to be a person. It's one that doesn't make customers feel like they're talking to a wall.</i>`,
+        },
+      ],
+    },
+  },
+  {
+    id: "how-to-train-an-ai-customer-support-agent-on-your-business",
+    imgSrc: "/blogs/how-to-train-an-ai-cs-agent-on-your-biz.webp",
+    title: "How to Train an AI Customer Support Agent on Your Business",
+    summary:
+      "Most AI support tools fail for the same reason: someone connects a knowledge base and assumes the agent is ready. Training an AI agent is closer to onboarding a new hire than a setup step, here's what actually goes into doing it well.",
+    readingSpan: "5 min read",
+    spotlight: true,
+    timestamp: new Date("2026-09-10").toISOString(),
+    content: {
+      title: "How to Train an AI Customer Support Agent on Your Business",
+      introduction: `<p>Most AI support tools fail for the same reason: someone connects a knowledge base, writes a cheerful welcome message, and assumes the agent is ready.</p>
+         <p>Then it starts giving outdated pricing, contradicting your refund policy, or confidently explaining a feature you retired last year.</p>
+         <p>Training an AI agent isn't a setup step. It's closer to onboarding a new hire, except this one can talk to thousands of customers at once, so mistakes scale just as quickly as the wins.</p>
+         <p>Here's what actually goes into doing it well.</p>`,
+      subheaders: [
+        {
+          id: 1,
+          title: "Start With What Your Team Already Knows",
+          content: `<p>Your best training material isn't necessarily a new document you create for the AI. It's the information your team already uses: support tickets, Slack conversations, call transcripts, internal wikis, and notes about tricky customer issues.</p>
+            <p>Pull from all of it.</p>
+            <p>A polished help centre can tell an AI what your business <i>says</i>. Real support conversations show it how your business actually <i>works</i>, including the billing edge cases, unusual questions, and problems customers ask five different ways.</p>
+            <p>If your team has answered a question more than twice, that's a signal the AI should probably know the answer too.</p>`,
+        },
+        {
+          id: 2,
+          title: "Feed It Context, Not Just Content",
+          content: `<p>There's a difference between giving an AI information and giving it understanding.</p>
+            <p>"Refunds are processed within 5–7 business days" is a fact. Explaining why they take that long, how to respond to a frustrated customer, and when an exception can be made gives the AI context.</p>
+            <p>The best AI support platforms allow businesses to bring together different sources: help docs, product information, resolved tickets, and internal guidance, so the agent understands more than a list of FAQs.</p>
+            <p>That's the thinking behind Eusate's dynamic documentation: Sate can learn from the sources your team already relies on instead of requiring you to build everything from scratch.</p>`,
+        },
+        {
+          id: 3,
+          title: "Test Before Your Customers Do",
+          content: `<p>Nobody would put a new support hire in front of customers without training first. The same should apply to AI.</p>
+            <p>Start with difficult scenarios: an angry customer, a question outside your policy, a request for an unauthorised discount, or a situation where the right answer is simply "I need to check."</p>
+            <p>You want to find out where the AI becomes too confident, where it gets something wrong, and when it knows to hand the conversation to a human.</p>
+            <p>A playground environment gives you a safe place to test, adjust, and improve before real customers are involved.</p>`,
+        },
+        {
+          id: 4,
+          title: "Give It Clear Boundaries",
+          content: `<p>An AI agent that knows everything about your product but doesn't know its limits can be dangerous.</p>
+            <p>Define what it should never promise and what should always trigger a human handoff. This could include exceptions to refund policies, custom pricing, sensitive financial issues, or conversations with particularly frustrated customers.</p>
+            <p>The goal isn't to limit the AI. It's to make sure it fails safely instead of failing confidently.</p>
+            <p>A good support agent knows when to say, "Let me bring in a teammate."</p>`,
+        },
+        {
+          id: 5,
+          title: "Keep a Human in the Loop",
+          content: `<p>The fastest way to improve an AI agent isn't always adding more documentation. It's watching how it performs in real conversations.</p>
+            <p>Early on, have your team review its responses and look for patterns: questions it almost answers correctly, moments where its tone feels robotic, or situations where it should have escalated.</p>
+            <p>This is where co-pilot mode can be valuable. Instead of letting AI answer customers alone from day one, let it draft responses for human agents to review and send.</p>
+            <p>You get the speed benefit while your team continues to provide valuable feedback.</p>`,
+        },
+        {
+          id: 6,
+          title: "Treat Training as Ongoing",
+          content: `<p>Your product changes. Your policies change. Customers ask new questions.</p>
+            <p>An AI agent trained once and forgotten will eventually become outdated.</p>
+            <p>Build a regular process for updating its knowledge, correcting mistakes, reviewing conversations, and adding information whenever your business changes.</p>
+            <p>The companies that get the most from AI support aren't necessarily the ones with the fanciest initial setup. They're the ones that keep improving it.</p>`,
+        },
+        {
+          id: 7,
+          title: "The Real Goal",
+          content: `<p>Training an AI support agent isn't about making it sound human for the sake of it.</p>
+            <p>It's about making sure customers get answers that are <strong>accurate, relevant, and consistent</strong>, with a clear path to a human whenever one is needed.</p>
+            <p>That's not a one-time integration. It's an ongoing habit, the same one that makes any support team good in the first place.</p>
+            <p>That's what Eusate is built for.</p>
+            <p><strong>Sate</strong>, Eusate's AI support agent, learns from the sources your business already has, from documentation and internal notes to past support conversations.</p>`,
+        },
+        {
+          id: 8,
+          title: "",
+          content: `<i>You can test it in the <a href="${FE_URL}/playground" target="_blank" rel="noreferrer noopener">Playground</a>, run it in co-pilot mode alongside your team, and expand its role as you build confidence. The goal isn't to replace your support team. It's to give them a system that makes them better.</i>`,
+        },
+      ],
+    },
+  },
+  {
     id: "first-response-time-what-is-good-and-how-can-you-improve-it",
     imgSrc: "/blogs/first-response-time.webp",
     title: "First Response Time: What Is Good and How Can You Improve It?",
