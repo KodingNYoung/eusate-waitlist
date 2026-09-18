@@ -52,7 +52,7 @@ export const BlogCard: FC<Props> = ({
       data-spotlight={spotlight}
       href={"/blogs/" + id}
       className={cls(
-        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 flex-1",
+        "group w-full min-w-[344px] md:w-[340px] cursor-pointer rounded-2xl space-y-6 flex-1 flex flex-col",
         spotlightVariant?.container,
         variant === "page" && "border border-gray-50 p-4 shadow-soft-xxsmall",
         classNames?.container,
@@ -82,7 +82,7 @@ export const BlogCard: FC<Props> = ({
       <Typography
         data-spotlight={spotlight}
         as="h4"
-        className="text-bold-xl data-[spotlight=true]:text-bold-2xl line-clamp-2"
+        className="text-bold-xl data-[spotlight=true]:text-bold-2xl line-clamp-1"
       >
         {title}
       </Typography>
@@ -93,7 +93,7 @@ export const BlogCard: FC<Props> = ({
       >
         {summary}
       </Typography>
-      <div className="space-x-4">
+      <div className="space-x-4 mt-auto">
         <Typography
           data-spotlight={spotlight}
           as="span"
